@@ -62,7 +62,6 @@ class ListViewController: BaseViewController, UITableViewDelegate {
         tableView = UITableView(frame: CGRect.zero, style: .plain)
         tableView?.delegate = self
         view.addSubview(tableView!)
-
         tableView?.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
@@ -71,22 +70,16 @@ class ListViewController: BaseViewController, UITableViewDelegate {
         tableView?.separatorStyle = .singleLine
         tableView?.tableHeaderView = UIView()
         tableView?.tableFooterView = UIView()
-        //self.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
-        //self.tableFooterView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
-
         //warning: 注意不能是CGFLOAT_MIN
         tableView?.estimatedRowHeight = 0
         tableView?.estimatedSectionHeaderHeight = 0
         tableView?.estimatedSectionFooterHeight = 0
-
         tableView?.dataSource = viewModel
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = dataArray?[indexPath.row] as? ListModel
-
         let className = model?.fileName ?? ""
-
 
         //1:动态获取命名空间
         guard let nameSpace = Bundle.main.infoDictionary!["CFBundleExecutable"] as? String else {
@@ -103,7 +96,6 @@ class ListViewController: BaseViewController, UITableViewDelegate {
 
         if model?.subVc_array?.count != nil {
             let vc: ListViewController? = classVc.init() as? ListViewController
-            //或者加载xib;   let myVC = typeClass.init(nibName: name, bundle: nil)
             vc?.title = model?.title
             //[vc setLeftBarButtonTitle:LocalizedString(_naviItem_backTitle)];
             vc?.dataArray = model?.subVc_array
@@ -124,7 +116,6 @@ class ListViewController: BaseViewController, UITableViewDelegate {
                 navigationController?.pushViewController(vc, animated: true)
             }
         }
-
         let cell = tableView.cellForRow(at: indexPath)
         cell?.isSelected = false
     }
@@ -133,7 +124,7 @@ class ListViewController: BaseViewController, UITableViewDelegate {
 
     }
 
-    func toJSONString(dict:NSDictionary?)->String {
+    func toJSONString(dict: NSDictionary?) -> String {
         let data = try? JSONSerialization.data(withJSONObject: dict!, options: JSONSerialization.WritingOptions.prettyPrinted)
         let strJson = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
         return strJson! as String

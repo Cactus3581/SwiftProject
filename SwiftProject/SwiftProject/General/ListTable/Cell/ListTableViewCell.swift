@@ -17,30 +17,27 @@ class ListTableViewCell: UITableViewCell {
     var _titleLabel: UILabel?
     var _detailLabel: UILabel?
 
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        initializeUI()
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.selectionStyle = .none
+        initializeUI()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        initializeUI()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     class func cellWithTableView(_ tableView: UITableView, indexPath: IndexPath) -> Self {
-
-
         var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
         //let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier,for: indexPath)
-
         if cell == nil {
             cell = ListTableViewCell(style: .default, reuseIdentifier: cellIdentifier)
         }
@@ -49,22 +46,25 @@ class ListTableViewCell: UITableViewCell {
 
     // MARK: - initialize methods
     func initializeUI() {
+
+        //self.selectionStyle = .none
         self.backgroundColor = UIColor.white
-        let songNameLabel: UILabel = UILabel()
-        _titleLabel = songNameLabel
-        songNameLabel.numberOfLines = 0
-        self.contentView.addSubview(songNameLabel)
-        songNameLabel.snp.makeConstraints { (make) in
+
+        let titleLabel: UILabel = UILabel()
+        _titleLabel = titleLabel
+        titleLabel.numberOfLines = 0
+        self.contentView.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { (make) in
             make.leading.equalTo(self).offset(10);
             make.top.equalTo(self).offset(10);
         }
 
-        let artistLabel: UILabel = UILabel()
-        _detailLabel = artistLabel
-        self.contentView.addSubview(artistLabel)
-        artistLabel.snp.makeConstraints { (make) in
-            make.leading.equalTo(songNameLabel);
-            make.top.equalTo(songNameLabel.snp_bottomMargin).offset(2.5);
+        let detailLabel: UILabel = UILabel()
+        _detailLabel = detailLabel
+        self.contentView.addSubview(detailLabel)
+        detailLabel.snp.makeConstraints { (make) in
+            make.leading.equalTo(titleLabel);
+            make.top.equalTo(titleLabel.snp_bottomMargin).offset(2.5);
         }
 
         _titleLabel?.backgroundColor = UIColor.red
@@ -72,12 +72,15 @@ class ListTableViewCell: UITableViewCell {
     }
 
     func setModel(_ model: ListModel, indexPath: NSIndexPath) {
+
         self.model = model
+
         if model.subVc_array?.count ?? 0 > 0 {
             self.accessoryType = .disclosureIndicator
         } else {
             self.accessoryType = .none
         }
+
         if indexPath != nil {
             self.textLabel?.text = "\(indexPath.row+1). \(String(describing: model.title!))"
         } else {

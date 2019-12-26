@@ -27,10 +27,6 @@ enum BPImportance : Int {
 
 class ListModel: NSObject, HandyJSON {
 
-    required override init() {
-        
-    }
-
     var title: String?
     var fileName: String?
     var subVc_array:[ListModel]?
@@ -43,14 +39,7 @@ class ListModel: NSObject, HandyJSON {
     var completePerformance: BPCompletePerformance!/*完成情况 */
     var importance: BPImportance!//涉及的知识重要程度
 
-    // 这里面积area中就不能再用arrayValue获取了，因为arrayValue获取的为JSON类型，我们需要转为我们需要的对象
-    init(jsonData: JSON) {
-        title = jsonData["title"].stringValue
-        fileName = jsonData["fileName"].stringValue
-//        subVc_array = jsonData["subVc_array"].arrayObject as! [AnyHashable]
-        dynamicJumpString = jsonData["dynamicJumpString"].stringValue
-        briefIntro = jsonData["briefIntro"].stringValue
-    }
+    required override init() {}
 
     func mapping(mapper: HelpingMapper) {
         //写法一
@@ -58,5 +47,14 @@ class ListModel: NSObject, HandyJSON {
             //self.id <-- "cat_id"
         //写法二
             //mapper.specify(property: &id, name: "cat_id")
+    }
+
+    // 这里面积area中就不能再用arrayValue获取了，因为arrayValue获取的为JSON类型，我们需要转为我们需要的对象
+    init(jsonData: JSON) {
+        title = jsonData["title"].stringValue
+        fileName = jsonData["fileName"].stringValue
+//        subVc_array = jsonData["subVc_array"].arrayObject as! [AnyHashable]
+        dynamicJumpString = jsonData["dynamicJumpString"].stringValue
+        briefIntro = jsonData["briefIntro"].stringValue
     }
 }

@@ -30,6 +30,7 @@
 		01EA7C0723ABAAFD00712B20 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA7C0623ABAAFD00712B20 /* RootTabBarController.swift */; };
 		01EA7C0923ABAB1300712B20 /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA7C0823ABAB1300712B20 /* RootNavigationController.swift */; };
 		01EA7C0C23AC69ED00712B20 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA7C0B23AC69ED00712B20 /* ListViewModel.swift */; };
+		01EE5DBE23B4E47100879BA5 /* simpleMVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EE5DBD23B4E47100879BA5 /* simpleMVVMViewController.swift */; };
 		235E9168D353E7999CFACF49 /* Pods_SwiftProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9847732F357B69C8139F8CA2 /* Pods_SwiftProjectTests.framework */; };
 		940100AA012F54B13D3D76AF /* Pods_SwiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A882ABBE491E084E7CF053 /* Pods_SwiftProject.framework */; };
 		CF62C4077E897668DAB0C2B1 /* Pods_SwiftProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD91B97E7BD8440AE716CCC /* Pods_SwiftProjectUITests.framework */; };
@@ -86,6 +87,7 @@
 		01EA7C0623ABAAFD00712B20 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		01EA7C0823ABAB1300712B20 /* RootNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
 		01EA7C0B23AC69ED00712B20 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		01EE5DBD23B4E47100879BA5 /* simpleMVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simpleMVVMViewController.swift; sourceTree = "<group>"; };
 		1915CA2FEB8E8D836B0B0B01 /* Pods-SwiftProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftProjectTests/Pods-SwiftProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		2A58B499B2B4B6FBD70B84C7 /* Pods-SwiftProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-SwiftProjectUITests/Pods-SwiftProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2CD91B97E7BD8440AE716CCC /* Pods_SwiftProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +133,14 @@
 				010D6AD423A9FDB500B84621 /* BPSubViewController.swift */,
 			);
 			path = Old;
+			sourceTree = "<group>";
+		};
+		010442B523B4E3F700B1BF54 /* DesignPatterns */ = {
+			isa = PBXGroup;
+			children = (
+				01EE5DBC23B4E46400879BA5 /* MVVM */,
+			);
+			path = DesignPatterns;
 			sourceTree = "<group>";
 		};
 		010CE4E623B0D6D900AE57A9 /* Plist */ = {
@@ -355,6 +365,7 @@
 		01EA7BF323ABA50C00712B20 /* BaseKnowledge */ = {
 			isa = PBXGroup;
 			children = (
+				010442B523B4E3F700B1BF54 /* DesignPatterns */,
 				01A9C6C623B1733E000349E2 /* Foundation */,
 				01EA7BF523ABA5DC00712B20 /* LearnSwift */,
 			);
@@ -434,6 +445,14 @@
 				01EA7C0B23AC69ED00712B20 /* ListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		01EE5DBC23B4E46400879BA5 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				01EE5DBD23B4E47100879BA5 /* simpleMVVMViewController.swift */,
+			);
+			path = MVVM;
 			sourceTree = "<group>";
 		};
 		3F1C19F28C91C959EECCE131 /* Frameworks */ = {
@@ -695,6 +714,7 @@
 				010D6AD523A9FDB500B84621 /* BPSubViewController.swift in Sources */,
 				010D6ACA23A9FD8F00B84621 /* BPContainer.swift in Sources */,
 				010D6A9423A9FB4A00B84621 /* SceneDelegate.swift in Sources */,
+				01EE5DBE23B4E47100879BA5 /* simpleMVVMViewController.swift in Sources */,
 				01EA7BFD23ABA87A00712B20 /* ListViewController.swift in Sources */,
 				010442B423B4E1C100B1BF54 /* OptionalViewController.swift in Sources */,
 				010D6AC423A9FC6200B84621 /* BaseViewController.swift in Sources */,
