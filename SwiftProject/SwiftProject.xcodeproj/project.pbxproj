@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010442B423B4E1C100B1BF54 /* OptionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010442B323B4E1C100B1BF54 /* OptionalViewController.swift */; };
+		010CD84623B0C61300AE57A9 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010CD84523B0C61300AE57A9 /* TestViewController.swift */; };
+		010CE4E823B0D6E900AE57A9 /* BasicKnowledgCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 010CE4E723B0D6E800AE57A9 /* BasicKnowledgCatalog.plist */; };
 		010D6A9223A9FB4A00B84621 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010D6A9123A9FB4A00B84621 /* AppDelegate.swift */; };
 		010D6A9423A9FB4A00B84621 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010D6A9323A9FB4A00B84621 /* SceneDelegate.swift */; };
 		010D6A9B23A9FB4C00B84621 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 010D6A9A23A9FB4C00B84621 /* Assets.xcassets */; };
@@ -14,13 +17,19 @@
 		010D6AA923A9FB4D00B84621 /* SwiftProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010D6AA823A9FB4D00B84621 /* SwiftProjectTests.swift */; };
 		010D6AB423A9FB4D00B84621 /* SwiftProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010D6AB323A9FB4D00B84621 /* SwiftProjectUITests.swift */; };
 		010D6AC423A9FC6200B84621 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010D6AC223A9FC6200B84621 /* BaseViewController.swift */; };
-		010D6AC523A9FC6200B84621 /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010D6AC323A9FC6200B84621 /* BaseViewController.xib */; };
 		010D6ACA23A9FD8F00B84621 /* BPContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010D6AC723A9FD8F00B84621 /* BPContainer.swift */; };
 		010D6ACB23A9FD8F00B84621 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010D6AC823A9FD8F00B84621 /* CarViewController.swift */; };
 		010D6ACC23A9FD8F00B84621 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010D6AC923A9FD8F00B84621 /* PersonViewController.swift */; };
 		010D6AD223A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D6ACE23A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.m */; };
 		010D6AD523A9FDB500B84621 /* BPSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010D6AD423A9FDB500B84621 /* BPSubViewController.swift */; };
 		010D6AD923A9FF6F00B84621 /* TestBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D6AD723A9FF6F00B84621 /* TestBridge.m */; };
+		0195230223B173D600AE491B /* BasicContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0195230123B173D600AE491B /* BasicContentViewController.swift */; };
+		01EA7BFD23ABA87A00712B20 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA7BFB23ABA87900712B20 /* ListViewController.swift */; };
+		01EA7C0023ABA97600712B20 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA7BFF23ABA97600712B20 /* ListTableViewCell.swift */; };
+		01EA7C0223ABA99700712B20 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA7C0123ABA99700712B20 /* ListModel.swift */; };
+		01EA7C0723ABAAFD00712B20 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA7C0623ABAAFD00712B20 /* RootTabBarController.swift */; };
+		01EA7C0923ABAB1300712B20 /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA7C0823ABAB1300712B20 /* RootNavigationController.swift */; };
+		01EA7C0C23AC69ED00712B20 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA7C0B23AC69ED00712B20 /* ListViewModel.swift */; };
 		235E9168D353E7999CFACF49 /* Pods_SwiftProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9847732F357B69C8139F8CA2 /* Pods_SwiftProjectTests.framework */; };
 		940100AA012F54B13D3D76AF /* Pods_SwiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A882ABBE491E084E7CF053 /* Pods_SwiftProject.framework */; };
 		CF62C4077E897668DAB0C2B1 /* Pods_SwiftProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD91B97E7BD8440AE716CCC /* Pods_SwiftProjectUITests.framework */; };
@@ -44,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		010442B323B4E1C100B1BF54 /* OptionalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalViewController.swift; sourceTree = "<group>"; };
+		010CD84523B0C61300AE57A9 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		010CE4E723B0D6E800AE57A9 /* BasicKnowledgCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BasicKnowledgCatalog.plist; sourceTree = "<group>"; };
 		010D6A8E23A9FB4A00B84621 /* SwiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		010D6A9123A9FB4A00B84621 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		010D6A9323A9FB4A00B84621 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,7 +69,6 @@
 		010D6AB323A9FB4D00B84621 /* SwiftProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftProjectUITests.swift; sourceTree = "<group>"; };
 		010D6AB523A9FB4D00B84621 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		010D6AC223A9FC6200B84621 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		010D6AC323A9FC6200B84621 /* BaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
 		010D6AC723A9FD8F00B84621 /* BPContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPContainer.swift; sourceTree = "<group>"; };
 		010D6AC823A9FD8F00B84621 /* CarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
 		010D6AC923A9FD8F00B84621 /* PersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +79,13 @@
 		010D6AD823A9FF6F00B84621 /* TestBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestBridge.h; sourceTree = "<group>"; };
 		010D6ADA23A9FFA900B84621 /* SwiftProject-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		0127DAE30FD31B3FF2766436 /* Pods-SwiftProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftProjectUITests/Pods-SwiftProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0195230123B173D600AE491B /* BasicContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicContentViewController.swift; sourceTree = "<group>"; };
+		01EA7BFB23ABA87900712B20 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		01EA7BFF23ABA97600712B20 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		01EA7C0123ABA99700712B20 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
+		01EA7C0623ABAAFD00712B20 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
+		01EA7C0823ABAB1300712B20 /* RootNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
+		01EA7C0B23AC69ED00712B20 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		1915CA2FEB8E8D836B0B0B01 /* Pods-SwiftProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftProjectTests/Pods-SwiftProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		2A58B499B2B4B6FBD70B84C7 /* Pods-SwiftProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-SwiftProjectUITests/Pods-SwiftProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2CD91B97E7BD8440AE716CCC /* Pods_SwiftProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +124,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		010442B223B4E1A400B1BF54 /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				010CD84523B0C61300AE57A9 /* TestViewController.swift */,
+				010D6AD423A9FDB500B84621 /* BPSubViewController.swift */,
+			);
+			path = Old;
+			sourceTree = "<group>";
+		};
+		010CE4E623B0D6D900AE57A9 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				010CE4E723B0D6E800AE57A9 /* BasicKnowledgCatalog.plist */,
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
 		010D6A8523A9FB4A00B84621 = {
 			isa = PBXGroup;
 			children = (
@@ -131,11 +166,16 @@
 		010D6A9023A9FB4A00B84621 /* SwiftProject */ = {
 			isa = PBXGroup;
 			children = (
-				010D6A9123A9FB4A00B84621 /* AppDelegate.swift */,
-				010D6A9323A9FB4A00B84621 /* SceneDelegate.swift */,
-				010D6ACD23A9FD9E00B84621 /* Bridge */,
-				010D6AC623A9FD8F00B84621 /* Swinject */,
-				010D6AC123A9FBC300B84621 /* Base */,
+				010D6ADA23A9FFA900B84621 /* SwiftProject-Bridging-Header.h */,
+				01EA7BED23ABA43900712B20 /* Vendors */,
+				01EA7BEC23ABA43300712B20 /* Utility */,
+				01EA7BEB23ABA42B00712B20 /* Scenes */,
+				01EA7BEA23ABA42200712B20 /* Resources */,
+				01EA7BE923ABA41A00712B20 /* Macro */,
+				01EA7BE823ABA41300712B20 /* Helpers */,
+				01EA7BE723ABA40700712B20 /* General */,
+				01EA7BE623ABA3FC00712B20 /* BaseClass */,
+				01EA7BE523ABA3F000712B20 /* Application */,
 				010D6A9A23A9FB4C00B84621 /* Assets.xcassets */,
 				010D6A9C23A9FB4C00B84621 /* LaunchScreen.storyboard */,
 				010D6A9F23A9FB4C00B84621 /* Info.plist */,
@@ -161,16 +201,6 @@
 			path = SwiftProjectUITests;
 			sourceTree = "<group>";
 		};
-		010D6AC123A9FBC300B84621 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				010D6AC223A9FC6200B84621 /* BaseViewController.swift */,
-				010D6AC323A9FC6200B84621 /* BaseViewController.xib */,
-				010D6AD423A9FDB500B84621 /* BPSubViewController.swift */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
 		010D6AC623A9FD8F00B84621 /* Swinject */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,13 +214,226 @@
 		010D6ACD23A9FD9E00B84621 /* Bridge */ = {
 			isa = PBXGroup;
 			children = (
-				010D6ADA23A9FFA900B84621 /* SwiftProject-Bridging-Header.h */,
 				010D6AD023A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.h */,
 				010D6ACE23A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.m */,
 				010D6AD823A9FF6F00B84621 /* TestBridge.h */,
 				010D6AD723A9FF6F00B84621 /* TestBridge.m */,
 			);
 			path = Bridge;
+			sourceTree = "<group>";
+		};
+		01A9C6C623B1733E000349E2 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				010D6AC623A9FD8F00B84621 /* Swinject */,
+				01EA7BF623ABA65600712B20 /* MVVM */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		01A9C6C723B17392000349E2 /* BasicContent */ = {
+			isa = PBXGroup;
+			children = (
+				0195230123B173D600AE491B /* BasicContentViewController.swift */,
+				010442B323B4E1C100B1BF54 /* OptionalViewController.swift */,
+			);
+			path = BasicContent;
+			sourceTree = "<group>";
+		};
+		01EA7BE523ABA3F000712B20 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				01EA7BF123ABA4E000712B20 /* RootController */,
+				01EA7BF023ABA4D900712B20 /* AppDelegate */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		01EA7BE623ABA3FC00712B20 /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				01EA7C0323ABA9D600712B20 /* BaseViewController */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		01EA7BE723ABA40700712B20 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				01EA7BF723ABA82700712B20 /* ListTable */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		01EA7BE823ABA41300712B20 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		01EA7BE923ABA41A00712B20 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		01EA7BEA23ABA42200712B20 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				010CE4E623B0D6D900AE57A9 /* Plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		01EA7BEB23ABA42B00712B20 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				01EA7BF423ABA51300712B20 /* ImprovingTips */,
+				01EA7BF323ABA50C00712B20 /* BaseKnowledge */,
+				01EA7BF223ABA50400712B20 /* Features */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		01EA7BEC23ABA43300712B20 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				01EA7BEF23ABA46A00712B20 /* Inherit */,
+				01EA7BEE23ABA46100712B20 /* Category */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		01EA7BED23ABA43900712B20 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		01EA7BEE23ABA46100712B20 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		01EA7BEF23ABA46A00712B20 /* Inherit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Inherit;
+			sourceTree = "<group>";
+		};
+		01EA7BF023ABA4D900712B20 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				010D6A9123A9FB4A00B84621 /* AppDelegate.swift */,
+				010D6A9323A9FB4A00B84621 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		01EA7BF123ABA4E000712B20 /* RootController */ = {
+			isa = PBXGroup;
+			children = (
+				01EA7C0623ABAAFD00712B20 /* RootTabBarController.swift */,
+				01EA7C0823ABAB1300712B20 /* RootNavigationController.swift */,
+			);
+			path = RootController;
+			sourceTree = "<group>";
+		};
+		01EA7BF223ABA50400712B20 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		01EA7BF323ABA50C00712B20 /* BaseKnowledge */ = {
+			isa = PBXGroup;
+			children = (
+				01A9C6C623B1733E000349E2 /* Foundation */,
+				01EA7BF523ABA5DC00712B20 /* LearnSwift */,
+			);
+			path = BaseKnowledge;
+			sourceTree = "<group>";
+		};
+		01EA7BF423ABA51300712B20 /* ImprovingTips */ = {
+			isa = PBXGroup;
+			children = (
+				010D6ACD23A9FD9E00B84621 /* Bridge */,
+			);
+			path = ImprovingTips;
+			sourceTree = "<group>";
+		};
+		01EA7BF523ABA5DC00712B20 /* LearnSwift */ = {
+			isa = PBXGroup;
+			children = (
+				010442B223B4E1A400B1BF54 /* Old */,
+				01A9C6C723B17392000349E2 /* BasicContent */,
+			);
+			path = LearnSwift;
+			sourceTree = "<group>";
+		};
+		01EA7BF623ABA65600712B20 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		01EA7BF723ABA82700712B20 /* ListTable */ = {
+			isa = PBXGroup;
+			children = (
+				01EA7C0A23AC69DD00712B20 /* ViewModel */,
+				01EA7BFA23ABA83D00712B20 /* Model */,
+				01EA7BF923ABA83700712B20 /* Cell */,
+				01EA7BF823ABA82D00712B20 /* Controller */,
+			);
+			path = ListTable;
+			sourceTree = "<group>";
+		};
+		01EA7BF823ABA82D00712B20 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				01EA7BFB23ABA87900712B20 /* ListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		01EA7BF923ABA83700712B20 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				01EA7BFF23ABA97600712B20 /* ListTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		01EA7BFA23ABA83D00712B20 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				01EA7C0123ABA99700712B20 /* ListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		01EA7C0323ABA9D600712B20 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				010D6AC223A9FC6200B84621 /* BaseViewController.swift */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		01EA7C0A23AC69DD00712B20 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				01EA7C0B23AC69ED00712B20 /* ListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		3F1C19F28C91C959EECCE131 /* Frameworks */ = {
@@ -324,7 +567,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				010D6AC523A9FC6200B84621 /* BaseViewController.xib in Resources */,
+				010CE4E823B0D6E900AE57A9 /* BasicKnowledgCatalog.plist in Resources */,
 				010D6A9E23A9FB4C00B84621 /* LaunchScreen.storyboard in Resources */,
 				010D6A9B23A9FB4C00B84621 /* Assets.xcassets in Resources */,
 			);
@@ -437,14 +680,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01EA7C0023ABA97600712B20 /* ListTableViewCell.swift in Sources */,
+				01EA7C0723ABAAFD00712B20 /* RootTabBarController.swift in Sources */,
+				010CD84623B0C61300AE57A9 /* TestViewController.swift in Sources */,
+				0195230223B173D600AE491B /* BasicContentViewController.swift in Sources */,
 				010D6ACB23A9FD8F00B84621 /* CarViewController.swift in Sources */,
 				010D6ACC23A9FD8F00B84621 /* PersonViewController.swift in Sources */,
+				01EA7C0223ABA99700712B20 /* ListModel.swift in Sources */,
+				01EA7C0C23AC69ED00712B20 /* ListViewModel.swift in Sources */,
+				01EA7C0923ABAB1300712B20 /* RootNavigationController.swift in Sources */,
 				010D6AD923A9FF6F00B84621 /* TestBridge.m in Sources */,
 				010D6AD223A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.m in Sources */,
 				010D6A9223A9FB4A00B84621 /* AppDelegate.swift in Sources */,
 				010D6AD523A9FDB500B84621 /* BPSubViewController.swift in Sources */,
 				010D6ACA23A9FD8F00B84621 /* BPContainer.swift in Sources */,
 				010D6A9423A9FB4A00B84621 /* SceneDelegate.swift in Sources */,
+				01EA7BFD23ABA87A00712B20 /* ListViewController.swift in Sources */,
+				010442B423B4E1C100B1BF54 /* OptionalViewController.swift in Sources */,
 				010D6AC423A9FC6200B84621 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,6 +864,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = SwiftProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -620,7 +873,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cactus.SwiftProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SwiftProject/Bridge/SwiftProject-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SwiftProject/SwiftProject-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -640,7 +893,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cactus.SwiftProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SwiftProject/Bridge/SwiftProject-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SwiftProject/SwiftProject-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

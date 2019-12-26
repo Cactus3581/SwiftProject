@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>swift学习</string>
+		<key>fileName</key>
+		<string>ListViewController</string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>基本数据类型</string>
+				<key>fileName</key>
+				<string>ListViewController</string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>基础内容</string>
+						<key>fileName</key>
+						<string>BasicContentViewController</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>可选值</string>
+						<key>fileName</key>
+						<string>OptionalViewController</string>
+					</dict>
+				</array>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>

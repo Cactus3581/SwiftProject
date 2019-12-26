@@ -6,8 +6,13 @@ target 'SwiftProject' do
   use_frameworks!
 
   # Pods for SwiftProject
-    pod 'Swinject'
     pod 'RxSwift'
+    pod 'Swinject'
+    pod 'SnapKit'
+    pod 'Kingfisher'
+    pod 'Alamofire'
+    pod 'SwiftyJSON'
+    pod 'HandyJSON'
 
   target 'SwiftProjectTests' do
     inherit! :search_paths
