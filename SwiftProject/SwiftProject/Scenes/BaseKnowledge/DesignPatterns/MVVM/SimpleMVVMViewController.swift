@@ -8,7 +8,7 @@
 
 import UIKit
 
-class simpleMVVMViewController: BaseViewController {
+class SimpleMVVMViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

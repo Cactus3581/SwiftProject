@@ -32,5 +32,41 @@
 			</dict>
 		</array>
 	</dict>
+	<dict>
+		<key>title</key>
+		<string>设计模式</string>
+		<key>fileName</key>
+		<string>ListViewController</string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>MVVM</string>
+				<key>fileName</key>
+				<string>ListViewController</string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>简单MVVM</string>
+						<key>fileName</key>
+						<string>SimpleMVVMViewController</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>RxSwift 与 MVVM</string>
+						<key>fileName</key>
+						<string>RxSwiftViewController</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>多种cell构造</string>
+						<key>fileName</key>
+						<string>MultipleCellsViewController</string>
+					</dict>
+				</array>
+			</dict>
+		</array>
+	</dict>
 </array>
 </plist>

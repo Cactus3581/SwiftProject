@@ -24,13 +24,15 @@
 		010D6AD523A9FDB500B84621 /* BPSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010D6AD423A9FDB500B84621 /* BPSubViewController.swift */; };
 		010D6AD923A9FF6F00B84621 /* TestBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D6AD723A9FF6F00B84621 /* TestBridge.m */; };
 		0195230223B173D600AE491B /* BasicContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0195230123B173D600AE491B /* BasicContentViewController.swift */; };
+		01E2967223B4EEE7004C08A9 /* RxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E2967123B4EEE7004C08A9 /* RxSwiftViewController.swift */; };
+		01E2967423B4EF11004C08A9 /* MultipleCellsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E2967323B4EF11004C08A9 /* MultipleCellsViewController.swift */; };
 		01EA7BFD23ABA87A00712B20 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA7BFB23ABA87900712B20 /* ListViewController.swift */; };
 		01EA7C0023ABA97600712B20 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA7BFF23ABA97600712B20 /* ListTableViewCell.swift */; };
 		01EA7C0223ABA99700712B20 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA7C0123ABA99700712B20 /* ListModel.swift */; };
 		01EA7C0723ABAAFD00712B20 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA7C0623ABAAFD00712B20 /* RootTabBarController.swift */; };
 		01EA7C0923ABAB1300712B20 /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA7C0823ABAB1300712B20 /* RootNavigationController.swift */; };
 		01EA7C0C23AC69ED00712B20 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA7C0B23AC69ED00712B20 /* ListViewModel.swift */; };
-		01EE5DBE23B4E47100879BA5 /* simpleMVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EE5DBD23B4E47100879BA5 /* simpleMVVMViewController.swift */; };
+		01EE5DBE23B4E47100879BA5 /* SimpleMVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EE5DBD23B4E47100879BA5 /* SimpleMVVMViewController.swift */; };
 		235E9168D353E7999CFACF49 /* Pods_SwiftProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9847732F357B69C8139F8CA2 /* Pods_SwiftProjectTests.framework */; };
 		940100AA012F54B13D3D76AF /* Pods_SwiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A882ABBE491E084E7CF053 /* Pods_SwiftProject.framework */; };
 		CF62C4077E897668DAB0C2B1 /* Pods_SwiftProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD91B97E7BD8440AE716CCC /* Pods_SwiftProjectUITests.framework */; };
@@ -81,13 +83,15 @@
 		010D6ADA23A9FFA900B84621 /* SwiftProject-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		0127DAE30FD31B3FF2766436 /* Pods-SwiftProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftProjectUITests/Pods-SwiftProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0195230123B173D600AE491B /* BasicContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicContentViewController.swift; sourceTree = "<group>"; };
+		01E2967123B4EEE7004C08A9 /* RxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftViewController.swift; sourceTree = "<group>"; };
+		01E2967323B4EF11004C08A9 /* MultipleCellsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleCellsViewController.swift; sourceTree = "<group>"; };
 		01EA7BFB23ABA87900712B20 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		01EA7BFF23ABA97600712B20 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		01EA7C0123ABA99700712B20 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		01EA7C0623ABAAFD00712B20 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		01EA7C0823ABAB1300712B20 /* RootNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
 		01EA7C0B23AC69ED00712B20 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
-		01EE5DBD23B4E47100879BA5 /* simpleMVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simpleMVVMViewController.swift; sourceTree = "<group>"; };
+		01EE5DBD23B4E47100879BA5 /* SimpleMVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMVVMViewController.swift; sourceTree = "<group>"; };
 		1915CA2FEB8E8D836B0B0B01 /* Pods-SwiftProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftProjectTests/Pods-SwiftProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		2A58B499B2B4B6FBD70B84C7 /* Pods-SwiftProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-SwiftProjectUITests/Pods-SwiftProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2CD91B97E7BD8440AE716CCC /* Pods_SwiftProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -450,7 +454,9 @@
 		01EE5DBC23B4E46400879BA5 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				01EE5DBD23B4E47100879BA5 /* simpleMVVMViewController.swift */,
+				01EE5DBD23B4E47100879BA5 /* SimpleMVVMViewController.swift */,
+				01E2967123B4EEE7004C08A9 /* RxSwiftViewController.swift */,
+				01E2967323B4EF11004C08A9 /* MultipleCellsViewController.swift */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
@@ -706,15 +712,17 @@
 				010D6ACB23A9FD8F00B84621 /* CarViewController.swift in Sources */,
 				010D6ACC23A9FD8F00B84621 /* PersonViewController.swift in Sources */,
 				01EA7C0223ABA99700712B20 /* ListModel.swift in Sources */,
+				01E2967423B4EF11004C08A9 /* MultipleCellsViewController.swift in Sources */,
 				01EA7C0C23AC69ED00712B20 /* ListViewModel.swift in Sources */,
 				01EA7C0923ABAB1300712B20 /* RootNavigationController.swift in Sources */,
 				010D6AD923A9FF6F00B84621 /* TestBridge.m in Sources */,
 				010D6AD223A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.m in Sources */,
 				010D6A9223A9FB4A00B84621 /* AppDelegate.swift in Sources */,
+				01E2967223B4EEE7004C08A9 /* RxSwiftViewController.swift in Sources */,
 				010D6AD523A9FDB500B84621 /* BPSubViewController.swift in Sources */,
 				010D6ACA23A9FD8F00B84621 /* BPContainer.swift in Sources */,
 				010D6A9423A9FB4A00B84621 /* SceneDelegate.swift in Sources */,
-				01EE5DBE23B4E47100879BA5 /* simpleMVVMViewController.swift in Sources */,
+				01EE5DBE23B4E47100879BA5 /* SimpleMVVMViewController.swift in Sources */,
 				01EA7BFD23ABA87A00712B20 /* ListViewController.swift in Sources */,
 				010442B423B4E1C100B1BF54 /* OptionalViewController.swift in Sources */,
 				010D6AC423A9FC6200B84621 /* BaseViewController.swift in Sources */,
