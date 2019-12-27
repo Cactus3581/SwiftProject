@@ -23,6 +23,8 @@
 		010D6AD223A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D6ACE23A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.m */; };
 		010D6AD523A9FDB500B84621 /* BPSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010D6AD423A9FDB500B84621 /* BPSubViewController.swift */; };
 		010D6AD923A9FF6F00B84621 /* TestBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D6AD723A9FF6F00B84621 /* TestBridge.m */; };
+		016FE6D823B5DD7800CE8784 /* statistics.py in Resources */ = {isa = PBXBuildFile; fileRef = 016FE6D623B5DD7800CE8784 /* statistics.py */; };
+		016FE6D923B5DD7800CE8784 /* sql.py in Resources */ = {isa = PBXBuildFile; fileRef = 016FE6D723B5DD7800CE8784 /* sql.py */; };
 		0195230223B173D600AE491B /* BasicContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0195230123B173D600AE491B /* BasicContentViewController.swift */; };
 		01E2967223B4EEE7004C08A9 /* RxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E2967123B4EEE7004C08A9 /* RxSwiftViewController.swift */; };
 		01E2967423B4EF11004C08A9 /* MultipleCellsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E2967323B4EF11004C08A9 /* MultipleCellsViewController.swift */; };
@@ -82,6 +84,8 @@
 		010D6AD823A9FF6F00B84621 /* TestBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestBridge.h; sourceTree = "<group>"; };
 		010D6ADA23A9FFA900B84621 /* SwiftProject-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		0127DAE30FD31B3FF2766436 /* Pods-SwiftProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftProjectUITests/Pods-SwiftProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		016FE6D623B5DD7800CE8784 /* statistics.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = statistics.py; sourceTree = "<group>"; };
+		016FE6D723B5DD7800CE8784 /* sql.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = sql.py; sourceTree = "<group>"; };
 		0195230123B173D600AE491B /* BasicContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicContentViewController.swift; sourceTree = "<group>"; };
 		01E2967123B4EEE7004C08A9 /* RxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftViewController.swift; sourceTree = "<group>"; };
 		01E2967323B4EF11004C08A9 /* MultipleCellsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleCellsViewController.swift; sourceTree = "<group>"; };
@@ -403,6 +407,8 @@
 		01EA7BF723ABA82700712B20 /* ListTable */ = {
 			isa = PBXGroup;
 			children = (
+				016FE6D723B5DD7800CE8784 /* sql.py */,
+				016FE6D623B5DD7800CE8784 /* statistics.py */,
 				01EA7C0A23AC69DD00712B20 /* ViewModel */,
 				01EA7BFA23ABA83D00712B20 /* Model */,
 				01EA7BF923ABA83700712B20 /* Cell */,
@@ -592,9 +598,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				016FE6D923B5DD7800CE8784 /* sql.py in Resources */,
 				010CE4E823B0D6E900AE57A9 /* BasicKnowledgCatalog.plist in Resources */,
 				010D6A9E23A9FB4C00B84621 /* LaunchScreen.storyboard in Resources */,
 				010D6A9B23A9FB4C00B84621 /* Assets.xcassets in Resources */,
+				016FE6D823B5DD7800CE8784 /* statistics.py in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

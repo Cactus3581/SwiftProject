@@ -53,7 +53,7 @@ class ListModel: NSObject, HandyJSON {
     init(jsonData: JSON) {
         title = jsonData["title"].stringValue
         fileName = jsonData["fileName"].stringValue
-//        subVc_array = jsonData["subVc_array"].arrayObject as! [AnyHashable]
+        //subVc_array = jsonData["subVc_array"].arrayObject as! [AnyHashable]
         dynamicJumpString = jsonData["dynamicJumpString"].stringValue
         briefIntro = jsonData["briefIntro"].stringValue
     }

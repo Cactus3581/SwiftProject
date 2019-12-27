@@ -32,6 +32,7 @@ class ListViewModel: NSObject, UITableViewDataSource {
         //再初始化继承来的属性
     }
 
+    // MARK: 数据处理
     func setDataLoadWithUrl(_ url: String?, successed aSuccessed: @escaping (_ dataSource: [AnyHashable]?) -> Void, failed: @escaping () -> ()) {
         self.url = url
         self.successed = aSuccessed
@@ -68,11 +69,11 @@ class ListViewModel: NSObject, UITableViewDataSource {
         }
     }
 
+    // MARK: - <UITableViewDataSource>
     func configTableviewCell(_ cellConfig: @escaping (UITableView, IndexPath) -> UITableViewCell) {
         tableviewCellConfig = cellConfig
     }
 
-    // MARK: - <UITableViewDataSource>
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data?.count ?? 0
     }
