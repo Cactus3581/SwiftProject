@@ -48,6 +48,12 @@
 				<array>
 					<dict>
 						<key>title</key>
+						<string>简单MVC</string>
+						<key>fileName</key>
+						<string>MVCViewController</string>
+					</dict>
+					<dict>
+						<key>title</key>
 						<string>简单MVVM</string>
 						<key>fileName</key>
 						<string>SimpleMVVMViewController</string>

@@ -104,7 +104,7 @@ class ListViewController: BaseViewController, UITableViewDelegate {
                 navigationController?.pushViewController(vc, animated: true)
             }
         } else {
-            let vc: BaseViewController? = BaseViewController.init()
+            let vc: BaseViewController? = classVc.init() as? BaseViewController
             vc?.hidesBottomBarWhenPushed = true
             //vc.navigationItem.title = model.title;
             vc?.title = model?.title

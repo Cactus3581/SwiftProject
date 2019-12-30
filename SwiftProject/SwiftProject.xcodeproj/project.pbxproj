@@ -23,6 +23,10 @@
 		010D6AD223A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D6ACE23A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.m */; };
 		010D6AD523A9FDB500B84621 /* BPSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010D6AD423A9FDB500B84621 /* BPSubViewController.swift */; };
 		010D6AD923A9FF6F00B84621 /* TestBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D6AD723A9FF6F00B84621 /* TestBridge.m */; };
+		013C7D3123B8600000804143 /* MVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C7D3023B8600000804143 /* MVCViewController.swift */; };
+		013C7D3523B8602D00804143 /* MVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C7D3423B8602D00804143 /* MVCModel.swift */; };
+		013C7D3923B8604500804143 /* MVCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C7D3823B8604500804143 /* MVCView.swift */; };
+		013C7D3C23B87B1700804143 /* MVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C7D3B23B87B1700804143 /* MVVMViewModel.swift */; };
 		016FE6D823B5DD7800CE8784 /* statistics.py in Resources */ = {isa = PBXBuildFile; fileRef = 016FE6D623B5DD7800CE8784 /* statistics.py */; };
 		016FE6D923B5DD7800CE8784 /* sql.py in Resources */ = {isa = PBXBuildFile; fileRef = 016FE6D723B5DD7800CE8784 /* sql.py */; };
 		0195230223B173D600AE491B /* BasicContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0195230123B173D600AE491B /* BasicContentViewController.swift */; };
@@ -84,6 +88,10 @@
 		010D6AD823A9FF6F00B84621 /* TestBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestBridge.h; sourceTree = "<group>"; };
 		010D6ADA23A9FFA900B84621 /* SwiftProject-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		0127DAE30FD31B3FF2766436 /* Pods-SwiftProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftProjectUITests/Pods-SwiftProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		013C7D3023B8600000804143 /* MVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCViewController.swift; sourceTree = "<group>"; };
+		013C7D3423B8602D00804143 /* MVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCModel.swift; sourceTree = "<group>"; };
+		013C7D3823B8604500804143 /* MVCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCView.swift; sourceTree = "<group>"; };
+		013C7D3B23B87B1700804143 /* MVVMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewModel.swift; sourceTree = "<group>"; };
 		016FE6D623B5DD7800CE8784 /* statistics.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = statistics.py; sourceTree = "<group>"; };
 		016FE6D723B5DD7800CE8784 /* sql.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = sql.py; sourceTree = "<group>"; };
 		0195230123B173D600AE491B /* BasicContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicContentViewController.swift; sourceTree = "<group>"; };
@@ -238,6 +246,49 @@
 				010D6AD723A9FF6F00B84621 /* TestBridge.m */,
 			);
 			path = Bridge;
+			sourceTree = "<group>";
+		};
+		013C7D3223B8601900804143 /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				013C7D3A23B87B0000804143 /* ViewModel */,
+				013C7D3723B8603700804143 /* View */,
+				013C7D3623B8603000804143 /* Controller */,
+				013C7D3323B8602000804143 /* Model */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		013C7D3323B8602000804143 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				013C7D3423B8602D00804143 /* MVCModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		013C7D3623B8603000804143 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				013C7D3023B8600000804143 /* MVCViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		013C7D3723B8603700804143 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				013C7D3823B8604500804143 /* MVCView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		013C7D3A23B87B0000804143 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				013C7D3B23B87B1700804143 /* MVVMViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		01A9C6C623B1733E000349E2 /* Foundation */ = {
@@ -463,6 +514,7 @@
 				01EE5DBD23B4E47100879BA5 /* SimpleMVVMViewController.swift */,
 				01E2967123B4EEE7004C08A9 /* RxSwiftViewController.swift */,
 				01E2967323B4EF11004C08A9 /* MultipleCellsViewController.swift */,
+				013C7D3223B8601900804143 /* MVC */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
@@ -722,12 +774,16 @@
 				01EA7C0223ABA99700712B20 /* ListModel.swift in Sources */,
 				01E2967423B4EF11004C08A9 /* MultipleCellsViewController.swift in Sources */,
 				01EA7C0C23AC69ED00712B20 /* ListViewModel.swift in Sources */,
+				013C7D3923B8604500804143 /* MVCView.swift in Sources */,
 				01EA7C0923ABAB1300712B20 /* RootNavigationController.swift in Sources */,
 				010D6AD923A9FF6F00B84621 /* TestBridge.m in Sources */,
 				010D6AD223A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.m in Sources */,
 				010D6A9223A9FB4A00B84621 /* AppDelegate.swift in Sources */,
+				013C7D3523B8602D00804143 /* MVCModel.swift in Sources */,
 				01E2967223B4EEE7004C08A9 /* RxSwiftViewController.swift in Sources */,
 				010D6AD523A9FDB500B84621 /* BPSubViewController.swift in Sources */,
+				013C7D3123B8600000804143 /* MVCViewController.swift in Sources */,
+				013C7D3C23B87B1700804143 /* MVVMViewModel.swift in Sources */,
 				010D6ACA23A9FD8F00B84621 /* BPContainer.swift in Sources */,
 				010D6A9423A9FB4A00B84621 /* SceneDelegate.swift in Sources */,
 				01EE5DBE23B4E47100879BA5 /* SimpleMVVMViewController.swift in Sources */,
