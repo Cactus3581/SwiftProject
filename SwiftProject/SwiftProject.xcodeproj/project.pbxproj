@@ -23,7 +23,10 @@
 		010D6AD223A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D6ACE23A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.m */; };
 		010D6AD523A9FDB500B84621 /* BPSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010D6AD423A9FDB500B84621 /* BPSubViewController.swift */; };
 		010D6AD923A9FF6F00B84621 /* TestBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D6AD723A9FF6F00B84621 /* TestBridge.m */; };
-		01169D4223BF5621007CD4A0 /* RxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01169D4123BF5621007CD4A0 /* RxSwiftViewController.swift */; };
+		0112F9A523BF57B30002788E /* BaseOperatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0112F9A423BF57B30002788E /* BaseOperatorViewController.swift */; };
+		0112F9A823BF57CA0002788E /* StringAndCharViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0112F9A723BF57CA0002788E /* StringAndCharViewController.swift */; };
+		0112F9AB23BF57E30002788E /* CollectionTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0112F9AA23BF57E30002788E /* CollectionTypesViewController.swift */; };
+		0112F9AE23BF57FD0002788E /* ControlFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0112F9AD23BF57FD0002788E /* ControlFlowViewController.swift */; };
 		011E9E9023BE28BE00BD0A17 /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011E9E8F23BE28BE00BD0A17 /* ExtensionViewController.swift */; };
 		013C7D3123B8600000804143 /* MVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C7D3023B8600000804143 /* MVCViewController.swift */; };
 		013C7D3523B8602D00804143 /* MVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C7D3423B8602D00804143 /* MVCModel.swift */; };
@@ -33,7 +36,11 @@
 		0156813023BE28F100B42FB9 /* ProtocolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156812F23BE28F100B42FB9 /* ProtocolViewController.swift */; };
 		016FE6D823B5DD7800CE8784 /* statistics.py in Resources */ = {isa = PBXBuildFile; fileRef = 016FE6D623B5DD7800CE8784 /* statistics.py */; };
 		016FE6D923B5DD7800CE8784 /* sql.py in Resources */ = {isa = PBXBuildFile; fileRef = 016FE6D723B5DD7800CE8784 /* sql.py */; };
-		0195230223B173D600AE491B /* BasicContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0195230123B173D600AE491B /* BasicContentViewController.swift */; };
+		0195230223B173D600AE491B /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0195230123B173D600AE491B /* BasicViewController.swift */; };
+		01A3A40323BF5A18003FEA19 /* ARCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A3A40223BF5A18003FEA19 /* ARCViewController.swift */; };
+		01A3A40623BF5A3C003FEA19 /* MemorySafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A3A40523BF5A3C003FEA19 /* MemorySafeViewController.swift */; };
+		01A3A40923BF5A55003FEA19 /* AccessControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A3A40823BF5A55003FEA19 /* AccessControlViewController.swift */; };
+		01A3A40C23BF6218003FEA19 /* AdvancedOperatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A3A40B23BF6218003FEA19 /* AdvancedOperatorViewController.swift */; };
 		01A5D3B223BEDB920057D144 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5D3B123BEDB920057D144 /* ProfileViewController.swift */; };
 		01A5D7AB23BEDBB00057D144 /* EmailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A5D7A123BEDBAE0057D144 /* EmailCell.xib */; };
 		01A5D7AC23BEDBB00057D144 /* NamePictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5D7A223BEDBAE0057D144 /* NamePictureCell.swift */; };
@@ -56,6 +63,14 @@
 		01B24E2F23BF358100677023 /* DataTypeConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B24E2E23BF358100677023 /* DataTypeConvertViewController.swift */; };
 		01C01BB123BDE699008B2D9E /* EnumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C01BB023BDE699008B2D9E /* EnumViewController.swift */; };
 		01C01BB423BDEA97008B2D9E /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C01BB323BDEA97008B2D9E /* ClosureViewController.swift */; };
+		01E15CC923BF583100A69E23 /* MethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CC823BF583100A69E23 /* MethodViewController.swift */; };
+		01E15CCC23BF58D800A69E23 /* SubscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CCB23BF58D800A69E23 /* SubscriptViewController.swift */; };
+		01E15CCF23BF58F300A69E23 /* InitializeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CCE23BF58F300A69E23 /* InitializeViewController.swift */; };
+		01E15CD223BF590B00A69E23 /* DeinitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CD123BF590B00A69E23 /* DeinitViewController.swift */; };
+		01E15CD523BF593300A69E23 /* OptionalChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CD423BF593300A69E23 /* OptionalChainViewController.swift */; };
+		01E15CD823BF595200A69E23 /* ErrorhandlingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CD723BF595200A69E23 /* ErrorhandlingViewController.swift */; };
+		01E15CDB23BF59BB00A69E23 /* NestedTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CDA23BF59BB00A69E23 /* NestedTypeViewController.swift */; };
+		01E15CDE23BF59E400A69E23 /* OpaqueTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CDD23BF59E400A69E23 /* OpaqueTypeViewController.swift */; };
 		01E2967223B4EEE7004C08A9 /* RxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E2967123B4EEE7004C08A9 /* RxSwiftViewController.swift */; };
 		01E2967423B4EF11004C08A9 /* MultipleCellsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E2967323B4EF11004C08A9 /* MultipleCellsViewController.swift */; };
 		01EA7BFD23ABA87A00712B20 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA7BFB23ABA87900712B20 /* ListViewController.swift */; };
@@ -113,7 +128,10 @@
 		010D6AD723A9FF6F00B84621 /* TestBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestBridge.m; sourceTree = "<group>"; };
 		010D6AD823A9FF6F00B84621 /* TestBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestBridge.h; sourceTree = "<group>"; };
 		010D6ADA23A9FFA900B84621 /* SwiftProject-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftProject-Bridging-Header.h"; sourceTree = "<group>"; };
-		01169D4123BF5621007CD4A0 /* RxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftViewController.swift; sourceTree = "<group>"; };
+		0112F9A423BF57B30002788E /* BaseOperatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOperatorViewController.swift; sourceTree = "<group>"; };
+		0112F9A723BF57CA0002788E /* StringAndCharViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringAndCharViewController.swift; sourceTree = "<group>"; };
+		0112F9AA23BF57E30002788E /* CollectionTypesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTypesViewController.swift; sourceTree = "<group>"; };
+		0112F9AD23BF57FD0002788E /* ControlFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlFlowViewController.swift; sourceTree = "<group>"; };
 		011E9E8F23BE28BE00BD0A17 /* ExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionViewController.swift; sourceTree = "<group>"; };
 		0127DAE30FD31B3FF2766436 /* Pods-SwiftProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftProjectUITests/Pods-SwiftProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		013C7D3023B8600000804143 /* MVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCViewController.swift; sourceTree = "<group>"; };
@@ -124,7 +142,11 @@
 		0156812F23BE28F100B42FB9 /* ProtocolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolViewController.swift; sourceTree = "<group>"; tabWidth = 3; };
 		016FE6D623B5DD7800CE8784 /* statistics.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = statistics.py; sourceTree = "<group>"; };
 		016FE6D723B5DD7800CE8784 /* sql.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = sql.py; sourceTree = "<group>"; };
-		0195230123B173D600AE491B /* BasicContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicContentViewController.swift; sourceTree = "<group>"; };
+		0195230123B173D600AE491B /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
+		01A3A40223BF5A18003FEA19 /* ARCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCViewController.swift; sourceTree = "<group>"; };
+		01A3A40523BF5A3C003FEA19 /* MemorySafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorySafeViewController.swift; sourceTree = "<group>"; };
+		01A3A40823BF5A55003FEA19 /* AccessControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessControlViewController.swift; sourceTree = "<group>"; };
+		01A3A40B23BF6218003FEA19 /* AdvancedOperatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedOperatorViewController.swift; sourceTree = "<group>"; };
 		01A5D3B123BEDB920057D144 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		01A5D7A123BEDBAE0057D144 /* EmailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmailCell.xib; sourceTree = "<group>"; };
 		01A5D7A223BEDBAE0057D144 /* NamePictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamePictureCell.swift; sourceTree = "<group>"; };
@@ -147,6 +169,14 @@
 		01B24E2E23BF358100677023 /* DataTypeConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypeConvertViewController.swift; sourceTree = "<group>"; };
 		01C01BB023BDE699008B2D9E /* EnumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumViewController.swift; sourceTree = "<group>"; };
 		01C01BB323BDEA97008B2D9E /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
+		01E15CC823BF583100A69E23 /* MethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodViewController.swift; sourceTree = "<group>"; };
+		01E15CCB23BF58D800A69E23 /* SubscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptViewController.swift; sourceTree = "<group>"; };
+		01E15CCE23BF58F300A69E23 /* InitializeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializeViewController.swift; sourceTree = "<group>"; };
+		01E15CD123BF590B00A69E23 /* DeinitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeinitViewController.swift; sourceTree = "<group>"; };
+		01E15CD423BF593300A69E23 /* OptionalChainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalChainViewController.swift; sourceTree = "<group>"; };
+		01E15CD723BF595200A69E23 /* ErrorhandlingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorhandlingViewController.swift; sourceTree = "<group>"; };
+		01E15CDA23BF59BB00A69E23 /* NestedTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedTypeViewController.swift; sourceTree = "<group>"; };
+		01E15CDD23BF59E400A69E23 /* OpaqueTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpaqueTypeViewController.swift; sourceTree = "<group>"; };
 		01E2967123B4EEE7004C08A9 /* RxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftViewController.swift; sourceTree = "<group>"; };
 		01E2967323B4EF11004C08A9 /* MultipleCellsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleCellsViewController.swift; sourceTree = "<group>"; };
 		01EA7BFB23ABA87900712B20 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -301,6 +331,46 @@
 			path = Bridge;
 			sourceTree = "<group>";
 		};
+		0112F9A623BF57BC0002788E /* StringAndChar */ = {
+			isa = PBXGroup;
+			children = (
+				0112F9A723BF57CA0002788E /* StringAndCharViewController.swift */,
+			);
+			path = StringAndChar;
+			sourceTree = "<group>";
+		};
+		0112F9A923BF57D90002788E /* CollectionTypes */ = {
+			isa = PBXGroup;
+			children = (
+				0112F9AA23BF57E30002788E /* CollectionTypesViewController.swift */,
+			);
+			path = CollectionTypes;
+			sourceTree = "<group>";
+		};
+		0112F9AC23BF57EF0002788E /* ControlFlow */ = {
+			isa = PBXGroup;
+			children = (
+				0112F9AD23BF57FD0002788E /* ControlFlowViewController.swift */,
+			);
+			path = ControlFlow;
+			sourceTree = "<group>";
+		};
+		0112F9AF23BF58060002788E /* Method */ = {
+			isa = PBXGroup;
+			children = (
+				01E15CC823BF583100A69E23 /* MethodViewController.swift */,
+			);
+			path = Method;
+			sourceTree = "<group>";
+		};
+		01169D4323BF5795007CD4A0 /* BaseOperator */ = {
+			isa = PBXGroup;
+			children = (
+				0112F9A423BF57B30002788E /* BaseOperatorViewController.swift */,
+			);
+			path = BaseOperator;
+			sourceTree = "<group>";
+		};
 		011E9E9123BE28C200BD0A17 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,6 +446,30 @@
 			path = Property;
 			sourceTree = "<group>";
 		};
+		01A3A40423BF5A1D003FEA19 /* MemorySafe */ = {
+			isa = PBXGroup;
+			children = (
+				01A3A40523BF5A3C003FEA19 /* MemorySafeViewController.swift */,
+			);
+			path = MemorySafe;
+			sourceTree = "<group>";
+		};
+		01A3A40723BF5A45003FEA19 /* AccessControl */ = {
+			isa = PBXGroup;
+			children = (
+				01A3A40823BF5A55003FEA19 /* AccessControlViewController.swift */,
+			);
+			path = AccessControl;
+			sourceTree = "<group>";
+		};
+		01A3A40A23BF61FB003FEA19 /* AdvancedOperator */ = {
+			isa = PBXGroup;
+			children = (
+				01A3A40B23BF6218003FEA19 /* AdvancedOperatorViewController.swift */,
+			);
+			path = AdvancedOperator;
+			sourceTree = "<group>";
+		};
 		01A5D7B723BEE1AF0057D144 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,12 +488,12 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
-		01A9C6C723B17392000349E2 /* BasicContent */ = {
+		01A9C6C723B17392000349E2 /* Basics */ = {
 			isa = PBXGroup;
 			children = (
-				0195230123B173D600AE491B /* BasicContentViewController.swift */,
+				0195230123B173D600AE491B /* BasicViewController.swift */,
 			);
-			path = BasicContent;
+			path = Basics;
 			sourceTree = "<group>";
 		};
 		01ADB56923BE293800EAB005 /* Inherit */ = {
@@ -488,18 +582,18 @@
 			path = Generics;
 			sourceTree = "<group>";
 		};
-		01B24E2D23BF356B00677023 /* DataTypeConvert */ = {
+		01B24E2D23BF356B00677023 /* TypeCasting */ = {
 			isa = PBXGroup;
 			children = (
 				01B24E2E23BF358100677023 /* DataTypeConvertViewController.swift */,
 			);
-			path = DataTypeConvert;
+			path = TypeCasting;
 			sourceTree = "<group>";
 		};
 		01B25D0723BF55EB00677023 /* RxSwift */ = {
 			isa = PBXGroup;
 			children = (
-				01169D4123BF5621007CD4A0 /* RxSwiftViewController.swift */,
+				01E2967123B4EEE7004C08A9 /* RxSwiftViewController.swift */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -518,6 +612,70 @@
 				01C01BB323BDEA97008B2D9E /* ClosureViewController.swift */,
 			);
 			path = Closure;
+			sourceTree = "<group>";
+		};
+		01E15CCA23BF58CD00A69E23 /* Subscript */ = {
+			isa = PBXGroup;
+			children = (
+				01E15CCB23BF58D800A69E23 /* SubscriptViewController.swift */,
+			);
+			path = Subscript;
+			sourceTree = "<group>";
+		};
+		01E15CCD23BF58EB00A69E23 /* Initialize */ = {
+			isa = PBXGroup;
+			children = (
+				01E15CCE23BF58F300A69E23 /* InitializeViewController.swift */,
+			);
+			path = Initialize;
+			sourceTree = "<group>";
+		};
+		01E15CD023BF58FC00A69E23 /* Deinit */ = {
+			isa = PBXGroup;
+			children = (
+				01E15CD123BF590B00A69E23 /* DeinitViewController.swift */,
+			);
+			path = Deinit;
+			sourceTree = "<group>";
+		};
+		01E15CD323BF591100A69E23 /* OptionalChain */ = {
+			isa = PBXGroup;
+			children = (
+				01E15CD423BF593300A69E23 /* OptionalChainViewController.swift */,
+			);
+			path = OptionalChain;
+			sourceTree = "<group>";
+		};
+		01E15CD623BF594200A69E23 /* Errorhandling */ = {
+			isa = PBXGroup;
+			children = (
+				01E15CD723BF595200A69E23 /* ErrorhandlingViewController.swift */,
+			);
+			path = Errorhandling;
+			sourceTree = "<group>";
+		};
+		01E15CD923BF59AE00A69E23 /* NestedType */ = {
+			isa = PBXGroup;
+			children = (
+				01E15CDA23BF59BB00A69E23 /* NestedTypeViewController.swift */,
+			);
+			path = NestedType;
+			sourceTree = "<group>";
+		};
+		01E15CDC23BF59D400A69E23 /* OpaqueType */ = {
+			isa = PBXGroup;
+			children = (
+				01E15CDD23BF59E400A69E23 /* OpaqueTypeViewController.swift */,
+			);
+			path = OpaqueType;
+			sourceTree = "<group>";
+		};
+		01E15CDF23BF59F800A69E23 /* ARC */ = {
+			isa = PBXGroup;
+			children = (
+				01A3A40223BF5A18003FEA19 /* ARCViewController.swift */,
+			);
+			path = ARC;
 			sourceTree = "<group>";
 		};
 		01EA7BE523ABA3F000712B20 /* Application */ = {
@@ -653,19 +811,35 @@
 		01EA7BF523ABA5DC00712B20 /* LearnSwift */ = {
 			isa = PBXGroup;
 			children = (
-				01B24E2D23BF356B00677023 /* DataTypeConvert */,
-				01B24E2A23BF339200677023 /* Generics */,
+				010442B223B4E1A400B1BF54 /* Old */,
 				01ADC44523BE3ACE00EAB005 /* Optional */,
-				01ADB56C23BE295500EAB005 /* ClassStruct */,
-				01ADB56923BE293800EAB005 /* Inherit */,
-				0156813123BE28F600B42FB9 /* Property */,
-				011E9E9123BE28C200BD0A17 /* Protocol */,
-				013D09FA23BE28720050F15A /* Extension */,
+				01A9C6C723B17392000349E2 /* Basics */,
+				01169D4323BF5795007CD4A0 /* BaseOperator */,
+				0112F9A623BF57BC0002788E /* StringAndChar */,
+				0112F9A923BF57D90002788E /* CollectionTypes */,
+				0112F9AC23BF57EF0002788E /* ControlFlow */,
 				013D09F623BE280B0050F15A /* Function */,
 				01C01BB223BDEA88008B2D9E /* Closure */,
 				01C01BAF23BDE660008B2D9E /* Enum */,
-				010442B223B4E1A400B1BF54 /* Old */,
-				01A9C6C723B17392000349E2 /* BasicContent */,
+				01ADB56C23BE295500EAB005 /* ClassStruct */,
+				0156813123BE28F600B42FB9 /* Property */,
+				0112F9AF23BF58060002788E /* Method */,
+				01E15CCA23BF58CD00A69E23 /* Subscript */,
+				01ADB56923BE293800EAB005 /* Inherit */,
+				01E15CCD23BF58EB00A69E23 /* Initialize */,
+				01E15CD023BF58FC00A69E23 /* Deinit */,
+				01E15CD323BF591100A69E23 /* OptionalChain */,
+				01E15CD623BF594200A69E23 /* Errorhandling */,
+				01B24E2D23BF356B00677023 /* TypeCasting */,
+				01E15CD923BF59AE00A69E23 /* NestedType */,
+				013D09FA23BE28720050F15A /* Extension */,
+				011E9E9123BE28C200BD0A17 /* Protocol */,
+				01B24E2A23BF339200677023 /* Generics */,
+				01E15CDC23BF59D400A69E23 /* OpaqueType */,
+				01E15CDF23BF59F800A69E23 /* ARC */,
+				01A3A40423BF5A1D003FEA19 /* MemorySafe */,
+				01A3A40723BF5A45003FEA19 /* AccessControl */,
+				01A3A40A23BF61FB003FEA19 /* AdvancedOperator */,
 			);
 			path = LearnSwift;
 			sourceTree = "<group>";
@@ -734,7 +908,6 @@
 			isa = PBXGroup;
 			children = (
 				01EE5DBD23B4E47100879BA5 /* SimpleMVVMViewController.swift */,
-				01E2967123B4EEE7004C08A9 /* RxSwiftViewController.swift */,
 				01E2967323B4EF11004C08A9 /* MultipleCellsViewController.swift */,
 				013C7D3223B8601900804143 /* MVC */,
 			);
@@ -993,23 +1166,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01A3A40623BF5A3C003FEA19 /* MemorySafeViewController.swift in Sources */,
 				01C01BB423BDEA97008B2D9E /* ClosureViewController.swift in Sources */,
+				01E15CC923BF583100A69E23 /* MethodViewController.swift in Sources */,
 				01A5D7AD23BEDBB00057D144 /* AboutCell.swift in Sources */,
 				01EA7C0023ABA97600712B20 /* ListTableViewCell.swift in Sources */,
 				01EA7C0723ABAAFD00712B20 /* RootTabBarController.swift in Sources */,
+				01A3A40923BF5A55003FEA19 /* AccessControlViewController.swift in Sources */,
+				01E15CDB23BF59BB00A69E23 /* NestedTypeViewController.swift in Sources */,
 				010CD84623B0C61300AE57A9 /* TestViewController.swift in Sources */,
 				013D09F823BE281A0050F15A /* FunctionViewController.swift in Sources */,
-				0195230223B173D600AE491B /* BasicContentViewController.swift in Sources */,
+				0195230223B173D600AE491B /* BasicViewController.swift in Sources */,
+				0112F9AE23BF57FD0002788E /* ControlFlowViewController.swift in Sources */,
 				01A5D3B223BEDB920057D144 /* ProfileViewController.swift in Sources */,
 				01B24E2C23BF33A500677023 /* GenericsViewController.swift in Sources */,
 				010D6ACB23A9FD8F00B84621 /* CarViewController.swift in Sources */,
 				010D6ACC23A9FD8F00B84621 /* PersonViewController.swift in Sources */,
 				01A5D7B423BEDBB00057D144 /* AttributeCell.swift in Sources */,
+				0112F9A823BF57CA0002788E /* StringAndCharViewController.swift in Sources */,
 				01ADB56B23BE294300EAB005 /* InheritViewController.swift in Sources */,
 				01A5D7AC23BEDBB00057D144 /* NamePictureCell.swift in Sources */,
 				01ADD32223BEDB2500EAB005 /* ProfileModel.swift in Sources */,
+				01E15CD523BF593300A69E23 /* OptionalChainViewController.swift in Sources */,
+				01E15CCF23BF58F300A69E23 /* InitializeViewController.swift in Sources */,
+				01A3A40C23BF6218003FEA19 /* AdvancedOperatorViewController.swift in Sources */,
 				01ADB56823BE290F00EAB005 /* PropertyViewController.swift in Sources */,
 				01EA7C0223ABA99700712B20 /* ListModel.swift in Sources */,
+				01A3A40323BF5A18003FEA19 /* ARCViewController.swift in Sources */,
 				01A5D7B923BEE1C30057D144 /* ProfileFactory.swift in Sources */,
 				011E9E9023BE28BE00BD0A17 /* ExtensionViewController.swift in Sources */,
 				01E2967423B4EF11004C08A9 /* MultipleCellsViewController.swift in Sources */,
@@ -1019,13 +1202,13 @@
 				01EA7C0923ABAB1300712B20 /* RootNavigationController.swift in Sources */,
 				010D6AD923A9FF6F00B84621 /* TestBridge.m in Sources */,
 				010D6AD223A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.m in Sources */,
+				01E15CD823BF595200A69E23 /* ErrorhandlingViewController.swift in Sources */,
 				0156813023BE28F100B42FB9 /* ProtocolViewController.swift in Sources */,
 				010D6A9223A9FB4A00B84621 /* AppDelegate.swift in Sources */,
 				013C7D3523B8602D00804143 /* MVCModel.swift in Sources */,
 				01E2967223B4EEE7004C08A9 /* RxSwiftViewController.swift in Sources */,
 				010D6AD523A9FDB500B84621 /* BPSubViewController.swift in Sources */,
 				01C01BB123BDE699008B2D9E /* EnumViewController.swift in Sources */,
-				01169D4223BF5621007CD4A0 /* RxSwiftViewController.swift in Sources */,
 				013C7D3123B8600000804143 /* MVCViewController.swift in Sources */,
 				013C7D3C23B87B1700804143 /* MVVMViewModel.swift in Sources */,
 				010D6ACA23A9FD8F00B84621 /* BPContainer.swift in Sources */,
@@ -1033,10 +1216,15 @@
 				01EE5DBE23B4E47100879BA5 /* SimpleMVVMViewController.swift in Sources */,
 				01EA7BFD23ABA87A00712B20 /* ListViewController.swift in Sources */,
 				01ADB56E23BE296700EAB005 /* ClassStructViewController.swift in Sources */,
+				01E15CDE23BF59E400A69E23 /* OpaqueTypeViewController.swift in Sources */,
 				010442B423B4E1C100B1BF54 /* OptionalViewController.swift in Sources */,
+				01E15CCC23BF58D800A69E23 /* SubscriptViewController.swift in Sources */,
 				010D6AC423A9FC6200B84621 /* BaseViewController.swift in Sources */,
+				01E15CD223BF590B00A69E23 /* DeinitViewController.swift in Sources */,
+				0112F9A523BF57B30002788E /* BaseOperatorViewController.swift in Sources */,
 				01A5D7AF23BEDBB00057D144 /* FriendCell.swift in Sources */,
 				01B24E2F23BF358100677023 /* DataTypeConvertViewController.swift in Sources */,
+				0112F9AB23BF57E30002788E /* CollectionTypesViewController.swift in Sources */,
 				01ADD32423BEDB2A00EAB005 /* ProfileViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

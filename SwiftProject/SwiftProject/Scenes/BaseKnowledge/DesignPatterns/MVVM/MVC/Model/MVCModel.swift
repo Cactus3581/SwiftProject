@@ -2,7 +2,7 @@
 //  MVCModel.swift
 //  SwiftProject
 //
-//  Created by 夏汝震 on 2019/12/29.
+//  Created by ryan on 2019/12/29.
 //  Copyright © 2019 cactus. All rights reserved.
 //
 

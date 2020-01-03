@@ -1,5 +1,5 @@
 //
-//  BasicContentViewController.swift
+//  BasicViewController.swift
 //  SwiftProject
 //
 //  Created by ryan on 2019/12/24.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BasicContentViewController: BaseViewController {
+class BasicViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
