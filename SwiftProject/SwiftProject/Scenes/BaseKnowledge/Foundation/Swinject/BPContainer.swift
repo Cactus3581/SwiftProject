@@ -103,7 +103,6 @@ class BPContainer: NSObject {
 //            controller.person = resolver.resolve(Person.self)
 //            return controller
 //        }
-
         return container
     }()
 }

@@ -23,6 +23,7 @@
 		010D6AD223A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D6ACE23A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.m */; };
 		010D6AD523A9FDB500B84621 /* BPSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010D6AD423A9FDB500B84621 /* BPSubViewController.swift */; };
 		010D6AD923A9FF6F00B84621 /* TestBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D6AD723A9FF6F00B84621 /* TestBridge.m */; };
+		01169D4223BF5621007CD4A0 /* RxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01169D4123BF5621007CD4A0 /* RxSwiftViewController.swift */; };
 		011E9E9023BE28BE00BD0A17 /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011E9E8F23BE28BE00BD0A17 /* ExtensionViewController.swift */; };
 		013C7D3123B8600000804143 /* MVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C7D3023B8600000804143 /* MVCViewController.swift */; };
 		013C7D3523B8602D00804143 /* MVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C7D3423B8602D00804143 /* MVCModel.swift */; };
@@ -51,6 +52,8 @@
 		01ADB56E23BE296700EAB005 /* ClassStructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADB56D23BE296700EAB005 /* ClassStructViewController.swift */; };
 		01ADD32223BEDB2500EAB005 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADD32123BEDB2400EAB005 /* ProfileModel.swift */; };
 		01ADD32423BEDB2A00EAB005 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADD32323BEDB2A00EAB005 /* ProfileViewModel.swift */; };
+		01B24E2C23BF33A500677023 /* GenericsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B24E2B23BF33A500677023 /* GenericsViewController.swift */; };
+		01B24E2F23BF358100677023 /* DataTypeConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B24E2E23BF358100677023 /* DataTypeConvertViewController.swift */; };
 		01C01BB123BDE699008B2D9E /* EnumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C01BB023BDE699008B2D9E /* EnumViewController.swift */; };
 		01C01BB423BDEA97008B2D9E /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C01BB323BDEA97008B2D9E /* ClosureViewController.swift */; };
 		01E2967223B4EEE7004C08A9 /* RxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E2967123B4EEE7004C08A9 /* RxSwiftViewController.swift */; };
@@ -110,6 +113,7 @@
 		010D6AD723A9FF6F00B84621 /* TestBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestBridge.m; sourceTree = "<group>"; };
 		010D6AD823A9FF6F00B84621 /* TestBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestBridge.h; sourceTree = "<group>"; };
 		010D6ADA23A9FFA900B84621 /* SwiftProject-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		01169D4123BF5621007CD4A0 /* RxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftViewController.swift; sourceTree = "<group>"; };
 		011E9E8F23BE28BE00BD0A17 /* ExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionViewController.swift; sourceTree = "<group>"; };
 		0127DAE30FD31B3FF2766436 /* Pods-SwiftProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftProjectUITests/Pods-SwiftProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		013C7D3023B8600000804143 /* MVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 		01ADB56D23BE296700EAB005 /* ClassStructViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassStructViewController.swift; sourceTree = "<group>"; };
 		01ADD32123BEDB2400EAB005 /* ProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		01ADD32323BEDB2A00EAB005 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		01B24E2B23BF33A500677023 /* GenericsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericsViewController.swift; sourceTree = "<group>"; };
+		01B24E2E23BF358100677023 /* DataTypeConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypeConvertViewController.swift; sourceTree = "<group>"; };
 		01C01BB023BDE699008B2D9E /* EnumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumViewController.swift; sourceTree = "<group>"; };
 		01C01BB323BDEA97008B2D9E /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
 		01E2967123B4EEE7004C08A9 /* RxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftViewController.swift; sourceTree = "<group>"; };
@@ -381,6 +387,7 @@
 		01A9C6C623B1733E000349E2 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				01B25D0723BF55EB00677023 /* RxSwift */,
 				010D6AC623A9FD8F00B84621 /* Swinject */,
 				01EA7BF623ABA65600712B20 /* MVVM */,
 			);
@@ -450,16 +457,16 @@
 		01ADC44923BEDA8A00EAB005 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				01A5D7A323BEDBAE0057D144 /* AboutCell.swift */,
-				01A5D7A923BEDBB00057D144 /* AboutCell.xib */,
-				01A5D7AA23BEDBB00057D144 /* AttributeCell.swift */,
-				01A5D7A423BEDBAE0057D144 /* AttributeCell.xib */,
-				01A5D7A623BEDBAF0057D144 /* EmailCell.swift */,
-				01A5D7A123BEDBAE0057D144 /* EmailCell.xib */,
-				01A5D7A523BEDBAF0057D144 /* FriendCell.swift */,
-				01A5D7A723BEDBAF0057D144 /* FriendCell.xib */,
 				01A5D7A223BEDBAE0057D144 /* NamePictureCell.swift */,
 				01A5D7A823BEDBB00057D144 /* NamePictureCell.xib */,
+				01A5D7A323BEDBAE0057D144 /* AboutCell.swift */,
+				01A5D7A923BEDBB00057D144 /* AboutCell.xib */,
+				01A5D7A623BEDBAF0057D144 /* EmailCell.swift */,
+				01A5D7A123BEDBAE0057D144 /* EmailCell.xib */,
+				01A5D7AA23BEDBB00057D144 /* AttributeCell.swift */,
+				01A5D7A423BEDBAE0057D144 /* AttributeCell.xib */,
+				01A5D7A523BEDBAF0057D144 /* FriendCell.swift */,
+				01A5D7A723BEDBAF0057D144 /* FriendCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -471,6 +478,30 @@
 				01A5D7B523BEDD4B0057D144 /* ServerData.json */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		01B24E2A23BF339200677023 /* Generics */ = {
+			isa = PBXGroup;
+			children = (
+				01B24E2B23BF33A500677023 /* GenericsViewController.swift */,
+			);
+			path = Generics;
+			sourceTree = "<group>";
+		};
+		01B24E2D23BF356B00677023 /* DataTypeConvert */ = {
+			isa = PBXGroup;
+			children = (
+				01B24E2E23BF358100677023 /* DataTypeConvertViewController.swift */,
+			);
+			path = DataTypeConvert;
+			sourceTree = "<group>";
+		};
+		01B25D0723BF55EB00677023 /* RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				01169D4123BF5621007CD4A0 /* RxSwiftViewController.swift */,
+			);
+			path = RxSwift;
 			sourceTree = "<group>";
 		};
 		01C01BAF23BDE660008B2D9E /* Enum */ = {
@@ -622,6 +653,8 @@
 		01EA7BF523ABA5DC00712B20 /* LearnSwift */ = {
 			isa = PBXGroup;
 			children = (
+				01B24E2D23BF356B00677023 /* DataTypeConvert */,
+				01B24E2A23BF339200677023 /* Generics */,
 				01ADC44523BE3ACE00EAB005 /* Optional */,
 				01ADB56C23BE295500EAB005 /* ClassStruct */,
 				01ADB56923BE293800EAB005 /* Inherit */,
@@ -968,6 +1001,7 @@
 				013D09F823BE281A0050F15A /* FunctionViewController.swift in Sources */,
 				0195230223B173D600AE491B /* BasicContentViewController.swift in Sources */,
 				01A5D3B223BEDB920057D144 /* ProfileViewController.swift in Sources */,
+				01B24E2C23BF33A500677023 /* GenericsViewController.swift in Sources */,
 				010D6ACB23A9FD8F00B84621 /* CarViewController.swift in Sources */,
 				010D6ACC23A9FD8F00B84621 /* PersonViewController.swift in Sources */,
 				01A5D7B423BEDBB00057D144 /* AttributeCell.swift in Sources */,
@@ -991,6 +1025,7 @@
 				01E2967223B4EEE7004C08A9 /* RxSwiftViewController.swift in Sources */,
 				010D6AD523A9FDB500B84621 /* BPSubViewController.swift in Sources */,
 				01C01BB123BDE699008B2D9E /* EnumViewController.swift in Sources */,
+				01169D4223BF5621007CD4A0 /* RxSwiftViewController.swift in Sources */,
 				013C7D3123B8600000804143 /* MVCViewController.swift in Sources */,
 				013C7D3C23B87B1700804143 /* MVVMViewModel.swift in Sources */,
 				010D6ACA23A9FD8F00B84621 /* BPContainer.swift in Sources */,
@@ -1001,6 +1036,7 @@
 				010442B423B4E1C100B1BF54 /* OptionalViewController.swift in Sources */,
 				010D6AC423A9FC6200B84621 /* BaseViewController.swift in Sources */,
 				01A5D7AF23BEDBB00057D144 /* FriendCell.swift in Sources */,
+				01B24E2F23BF358100677023 /* DataTypeConvertViewController.swift in Sources */,
 				01ADD32423BEDB2A00EAB005 /* ProfileViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

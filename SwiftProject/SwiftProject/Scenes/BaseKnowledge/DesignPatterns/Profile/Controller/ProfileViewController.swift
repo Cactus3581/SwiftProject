@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class ProfileViewController: BaseViewController {
 
@@ -15,6 +16,7 @@ class ProfileViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
 
         tableView = UITableView(frame: CGRect.zero, style: .plain)
         view.addSubview(tableView!)

@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import RxSwift
 
 class AboutCell: UITableViewCell {
 
     @IBOutlet weak var aboutLabel: UILabel?
-    
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var subtractButton: UIButton!
+    @IBOutlet weak var contentLabel: UILabel!
+
     var item: ProfileViewModelItemProtocol? {
         didSet {
             guard  let item = item as? ProfileAboutCellViewModel else {
@@ -21,6 +25,13 @@ class AboutCell: UITableViewCell {
         }
     }
     
+    @IBAction func IBOutletweakvarsubtractButtonUIButtonsubtractAction(_ sender: Any) {
+
+
+    }
+    
+    @IBAction func addAction(_ sender: Any) {
+    }
     static var nib:UINib {
         return UINib(nibName: identifier, bundle: nil)
     }

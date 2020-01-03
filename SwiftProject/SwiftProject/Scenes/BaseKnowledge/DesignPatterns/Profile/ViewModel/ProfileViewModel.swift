@@ -12,9 +12,12 @@ import HandyJSON
 
 /*
  * cell 去除 case。注册/工厂
- * cellVM 和 Cell 有问题
- * 加入事件，并引入RxSwift
+ * cellVM 和 Cell 有问题，是否应该加cellModel
+ * 加入事件，并引入RxSwift/路由
  * 加入Swinject
+
+ 可以优化的：
+ 枚举
  */
 
 enum ProfileViewModelItemType {
@@ -28,6 +31,12 @@ enum ProfileViewModelItemType {
 protocol ProfileViewModelItemProtocol {
     var type: ProfileViewModelItemType { get } // case
     var rowCount: Int { get } // tableViewDataSource
+}
+
+extension ProfileViewModelItemProtocol {
+   var rowCount: Int {
+      return 1
+   }
 }
 
 class ProfileViewModel: NSObject {
@@ -82,7 +91,9 @@ extension ProfileViewModel: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         let item = items[indexPath.section]
+
         switch item.type {
         case .nameAndPicture:
             if let cell = tableView.dequeueReusableCell(withIdentifier: NamePictureCell.identifier, for: indexPath) as? NamePictureCell {
@@ -121,10 +132,6 @@ class ProfileNamePictureViewModel: ProfileViewModelItemProtocol {
     var type: ProfileViewModelItemType {
         return .nameAndPicture
     }
-    
-    var rowCount: Int {
-        return 1
-    }
 
     let model: ProfileModel
     var name: String
@@ -140,10 +147,6 @@ class ProfileAboutCellViewModel: ProfileViewModelItemProtocol {
     var type: ProfileViewModelItemType {
         return .about
     }
-    
-    var rowCount: Int {
-        return 1
-    }
 
     let model: ProfileModel
     var about: String
@@ -156,10 +159,6 @@ class ProfileAboutCellViewModel: ProfileViewModelItemProtocol {
 class ProfileEmailCellViewModel: ProfileViewModelItemProtocol {
     var type: ProfileViewModelItemType {
         return .email
-    }
-    
-    var rowCount: Int {
-        return 1
     }
 
     let model: ProfileModel
@@ -189,7 +188,7 @@ class ProfileFriendsCellViewModel: ProfileViewModelItemProtocol {
     var type: ProfileViewModelItemType {
         return .friend
     }
-    
+
     var rowCount: Int {
         return friends.count
     }
