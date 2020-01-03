@@ -10,6 +10,13 @@ import Foundation
 import UIKit
 import HandyJSON
 
+/*
+ * cell 去除 case。注册/工厂
+ * cellVM 和 Cell 有问题
+ * 加入事件，并引入RxSwift
+ * 加入Swinject
+ */
+
 enum ProfileViewModelItemType {
     case nameAndPicture
     case about
