@@ -15,7 +15,7 @@ class NamePictureCell: UITableViewCell {
     
     var item: ProfileViewModelItemProtocol? {
         didSet {
-            guard let item = item as? ProfileViewModelNamePictureViewModel else {
+            guard let item = item as? ProfileNamePictureViewModel else {
                 return
             }
             

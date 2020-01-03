@@ -30,44 +30,37 @@ class ProfileViewModel: NSObject {
     override init() {
         super.init()
 
+        guard let data = dataFromFile("ServerData"), let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any], let body = json["data"] as? [String: Any] else  {
+            return
+        }
 
-        var muArray: [AnyHashable] = []
-
-//        guard let data = dataFromFile("ServerData"), let profile = ProfileModel(data: data) else {
-//            return
-//        }
-
-        guard let data = dataFromFile("ServerData"), let model = ProfileModel.deserialize(from: data as! Dictionary) else {
-             return
+        guard let model = ProfileModel.deserialize(from: body) else {
+              return
          }
-        
 
-//        if let name = profile.fullName, let pictureUrl = profile.pictureUrl {
-//            let nameAndPictureItem = ProfileViewModelNamePictureViewModel(name: name, pictureUrl: pictureUrl)
-//            items.append(nameAndPictureItem)
-//        }
-//
-//        if let about = profile.about {
-//            let aboutItem = ProfileViewModelAboutCellViewModel(about: about)
-//            items.append(aboutItem)
-//        }
-//
-//        if let email = profile.email {
-//            let dobItem = ProfileViewModelEmailCellViewModel(email: email)
-//            items.append(dobItem)
-//        }
-//
-//        let attributes = profile.profileAttributes
-//        if !attributes.isEmpty {
-//            let attributesItem = ProfileViewModeAttributeCellViewModel(attributes: attributes)
-//            items.append(attributesItem)
-//        }
-//
-//        let friends = profile.friends
-//        if !profile.friends.isEmpty {
-//            let friendsItem = ProfileViewModeFriendsCellViewModel(friends: friends)
-//            items.append(friendsItem)
-//        }
+        let nameAndPictureItem = ProfileNamePictureViewModel(model: model)
+        items.append(nameAndPictureItem)
+
+        let aboutItem = ProfileAboutCellViewModel(model: model)
+        items.append(aboutItem)
+
+        let dobItem = ProfileEmailCellViewModel(model: model)
+        items.append(dobItem)
+
+        let attributesItem = ProfileAttributeCellViewModel(attributes: model.profileAttributes)
+        items.append(attributesItem)
+
+        let friendsItem = ProfileFriendsCellViewModel(friends: model.friends)
+        items.append(friendsItem)
+    }
+
+    private func dataFromFile(_ filename: String) -> Data? {
+        @objc class TestClass: NSObject { }
+        let bundle = Bundle(for: TestClass.self)
+        if let path = bundle.path(forResource: filename, ofType: "json") {
+            return (try? Data(contentsOf: URL(fileURLWithPath: path)))
+        }
+        return nil
     }
 }
 
@@ -100,27 +93,23 @@ extension ProfileViewModel: UITableViewDataSource {
                 return cell
             }
         case .friend:
-            if let item = item as? ProfileViewModeFriendsCellViewModel, let cell = tableView.dequeueReusableCell(withIdentifier: FriendCell.identifier, for: indexPath) as? FriendCell {
+            if let item = item as? ProfileFriendsCellViewModel, let cell = tableView.dequeueReusableCell(withIdentifier: FriendCell.identifier, for: indexPath) as? FriendCell {
                 let friend = item.friends[indexPath.row]
                 cell.item = friend
                 return cell
             }
         case .attribute:
-            if let item = item as? ProfileViewModeAttributeCellViewModel, let cell = tableView.dequeueReusableCell(withIdentifier: AttributeCell.identifier, for: indexPath) as? AttributeCell {
+            if let item = item as? ProfileAttributeCellViewModel, let cell = tableView.dequeueReusableCell(withIdentifier: AttributeCell.identifier, for: indexPath) as? AttributeCell {
                 cell.item = item.attributes[indexPath.row]
                 return cell
             }
         }
         return UITableViewCell()
     }
-    
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return items[section].sectionTitle
-//    }
 }
 
 
-class ProfileViewModelNamePictureViewModel: ProfileViewModelItemProtocol {
+class ProfileNamePictureViewModel: ProfileViewModelItemProtocol {
 
     var type: ProfileViewModelItemType {
         return .nameAndPicture
@@ -140,7 +129,7 @@ class ProfileViewModelNamePictureViewModel: ProfileViewModelItemProtocol {
     }
 }
 
-class ProfileViewModelAboutCellViewModel: ProfileViewModelItemProtocol {
+class ProfileAboutCellViewModel: ProfileViewModelItemProtocol {
     var type: ProfileViewModelItemType {
         return .about
     }
@@ -148,15 +137,16 @@ class ProfileViewModelAboutCellViewModel: ProfileViewModelItemProtocol {
     var rowCount: Int {
         return 1
     }
-    
+
+    let model: ProfileModel
     var about: String
-    
-    init(about: String) {
-        self.about = about
+    init(model: ProfileModel) {
+        self.model = model
+        self.about = model.about ?? ""
     }
 }
 
-class ProfileViewModelEmailCellViewModel: ProfileViewModelItemProtocol {
+class ProfileEmailCellViewModel: ProfileViewModelItemProtocol {
     var type: ProfileViewModelItemType {
         return .email
     }
@@ -164,15 +154,16 @@ class ProfileViewModelEmailCellViewModel: ProfileViewModelItemProtocol {
     var rowCount: Int {
         return 1
     }
-    
+
+    let model: ProfileModel
     var email: String
-    
-    init(email: String) {
-        self.email = email
+    init(model: ProfileModel) {
+        self.model = model
+        self.email = model.email ?? ""
     }
 }
 
-class ProfileViewModeAttributeCellViewModel: ProfileViewModelItemProtocol {
+class ProfileAttributeCellViewModel: ProfileViewModelItemProtocol {
     var type: ProfileViewModelItemType {
         return .attribute
     }
@@ -182,13 +173,12 @@ class ProfileViewModeAttributeCellViewModel: ProfileViewModelItemProtocol {
     }
     
     var attributes: [AttributeModel]
-    
     init(attributes: [AttributeModel]) {
         self.attributes = attributes
     }
 }
 
-class ProfileViewModeFriendsCellViewModel: ProfileViewModelItemProtocol {
+class ProfileFriendsCellViewModel: ProfileViewModelItemProtocol {
     var type: ProfileViewModelItemType {
         return .friend
     }

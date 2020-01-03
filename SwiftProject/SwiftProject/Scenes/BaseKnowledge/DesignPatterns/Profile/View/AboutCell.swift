@@ -1,5 +1,5 @@
 //
-//  EmailCell.swift
+//  AboutCell.swift
 //  SwiftProject
 //
 //  Created by 夏汝震 on 2020/1/2.
@@ -8,20 +8,19 @@
 
 import UIKit
 
-class EmailCell: UITableViewCell {
+class AboutCell: UITableViewCell {
 
-    @IBOutlet weak var emailLabel: UILabel?
+    @IBOutlet weak var aboutLabel: UILabel?
     
     var item: ProfileViewModelItemProtocol? {
         didSet {
-            guard let item = item as? ProfileViewModelEmailCellViewModel else {
+            guard  let item = item as? ProfileAboutCellViewModel else {
                 return
             }
-            
-            emailLabel?.text = item.email
+            aboutLabel?.text = item.about
         }
     }
-
+    
     static var nib:UINib {
         return UINib(nibName: identifier, bundle: nil)
     }

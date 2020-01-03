@@ -200,7 +200,7 @@
 		010442B523B4E3F700B1BF54 /* DesignPatterns */ = {
 			isa = PBXGroup;
 			children = (
-				01ADC44623BEDA6700EAB005 /* PersonCard */,
+				01ADC44623BEDA6700EAB005 /* Profile */,
 				01EE5DBC23B4E46400879BA5 /* MVVM */,
 			);
 			path = DesignPatterns;
@@ -419,7 +419,7 @@
 			path = Optional;
 			sourceTree = "<group>";
 		};
-		01ADC44623BEDA6700EAB005 /* PersonCard */ = {
+		01ADC44623BEDA6700EAB005 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				01ADC44723BEDA7B00EAB005 /* Controller */,
@@ -428,7 +428,7 @@
 				01A5D7B723BEE1AF0057D144 /* Helper */,
 				01ADC44923BEDA8A00EAB005 /* View */,
 			);
-			path = PersonCard;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		01ADC44723BEDA7B00EAB005 /* Controller */ = {
