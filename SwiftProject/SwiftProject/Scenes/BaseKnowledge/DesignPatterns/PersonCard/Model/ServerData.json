@@ -1,0 +1,39 @@
+{
+    "data": {
+        "error": 0,
+        "message": "Success",
+        "id": 1,
+        "fullName": "xxx",
+        "pictureUrl": "xxx",
+        "email": "xxx@gmail.com",
+        "about": "xxx",
+        "friends": [
+                    {
+                        "name": "a",
+                        "pictureUrl": "a1"
+                    },
+                    {
+                        "name": "b",
+                        "pictureUrl": "b1"
+                    },
+                    {
+                        "name": "c",
+                        "pictureUrl": "c1"
+                    }
+                ],
+        "profileAttributes": [
+                              {
+                                  "key": "职位",
+                                  "value": "iOS"
+                              },
+                              {
+                                  "key": "公司",
+                                  "value": "xxx"
+                              },
+                              {
+                                  "key": "部门",
+                                  "value": "技术"
+                              }
+                            ]
+    }
+}

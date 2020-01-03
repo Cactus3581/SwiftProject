@@ -229,4 +229,38 @@ class OptionalViewController: BaseViewController {
        return nil
     }
 
+    //MARK: 作为函数返回值
+    func optionalReturn() {
+        func minMax(array: [Int]) -> (min: Int, max: Int)? {
+            if array.isEmpty { return nil } // 因为这句话必须使用可选项
+            var currentMin = array[0]
+            var currentMax = array[0]
+            for value in array[1..<array.count] {
+                if value < currentMin {
+                    currentMin = value
+                } else if value > currentMax {
+                    currentMax = value
+                }
+            }
+            return (currentMin, currentMax)
+        }
+
+        if let bounds = minMax(array: [8, -6, 2, 109, 3, 71]) {
+            print("min is \(bounds.min) and max is \(bounds.max)")
+        }
+    }
+
+    //MARK: 作为全局变量/常量
+    //MARK: 作为局部静态变量
+    //MARK: 作为局部普通变量
+    //MARK: 作为属性
+    //MARK: 作为函数参数
+
+    /*
+
+     如果你确定某变量有值，那么可以不使用可选项；
+     如果不确定是否有值，就必须使用可选项，因为当没有值的时候，一旦使用该变量，就会crash，而且从编译器静态检查上也不允许可能出现nil的情况
+
+     */
+
 }

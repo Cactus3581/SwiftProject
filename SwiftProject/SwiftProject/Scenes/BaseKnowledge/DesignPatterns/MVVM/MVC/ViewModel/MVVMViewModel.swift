@@ -24,7 +24,7 @@ class MVVMViewModel: NSObject {
 
     var greeting: String? {
         didSet {
-            self.greetingDidChange!
+//            self.greetingDidChange!
         }
     }
 

@@ -11,24 +11,63 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string>基本数据类型</string>
+				<string>可选值</string>
 				<key>fileName</key>
-				<string>ListViewController</string>
-				<key>subVc_array</key>
-				<array>
-					<dict>
-						<key>title</key>
-						<string>基础内容</string>
-						<key>fileName</key>
-						<string>BasicContentViewController</string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>可选值</string>
-						<key>fileName</key>
-						<string>OptionalViewController</string>
-					</dict>
-				</array>
+				<string>OptionalViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>基础内容</string>
+				<key>fileName</key>
+				<string>BasicContentViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>枚举</string>
+				<key>fileName</key>
+				<string>EnumViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>闭包</string>
+				<key>fileName</key>
+				<string>EnumViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>函数</string>
+				<key>fileName</key>
+				<string>FunctionViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>扩展</string>
+				<key>fileName</key>
+				<string>ExtensionViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>协议</string>
+				<key>fileName</key>
+				<string>ProtocolViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>属性</string>
+				<key>fileName</key>
+				<string>PropertyViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>继承</string>
+				<key>fileName</key>
+				<string>InheritViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>类和结构体</string>
+				<key>fileName</key>
+				<string>ClassStructViewController</string>
 			</dict>
 		</array>
 	</dict>
@@ -39,6 +78,12 @@
 		<string>ListViewController</string>
 		<key>subVc_array</key>
 		<array>
+			<dict>
+				<key>title</key>
+				<string>Profile</string>
+				<key>fileName</key>
+				<string>ProfileViewController</string>
+			</dict>
 			<dict>
 				<key>title</key>
 				<string>MVVM</string>

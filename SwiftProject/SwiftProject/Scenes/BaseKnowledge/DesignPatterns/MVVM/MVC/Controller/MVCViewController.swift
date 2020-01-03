@@ -43,10 +43,10 @@ class MVCViewController: BaseViewController, MVCProtocol {
         customView.nameLabel?.text = viewModel.name
         customView.birthdayLabel?.text = viewModel.birthday
 
-        viewModel.greetingDidChange = { [unowned self] viewModel in
-            //self.greetingLabel.text = viewModel.greeting
-            self.customView.birthdayLabel?.text =  dateFormatter.string(from: model.birthday)
-        }
+//        viewModel.greetingDidChange = { [unowned self] viewModel in
+//            //self.greetingLabel.text = viewModel.greeting
+//            self.customView.birthdayLabel?.text =  dateFormatter.string(from: model.birthday)
+//        }
     }
 
     func touchBegin() {
