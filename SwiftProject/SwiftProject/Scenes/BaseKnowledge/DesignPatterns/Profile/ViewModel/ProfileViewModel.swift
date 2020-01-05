@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import HandyJSON
+import RxSwift
+import RxCocoa
 
 /*
  * cell: cellVM 工厂方法/注册 -> viewModel创建cell，合理性？
@@ -44,6 +46,7 @@ protocol ProfileCellViewModelProtocol {
     func jumpDetail()
     func sutractAction()
     func addAction()
+    func canHandle(viewModel: ProfileCellViewModelProtocol) -> Bool
 }
 
 extension ProfileCellViewModelProtocol {
@@ -75,12 +78,19 @@ extension ProfileCellViewModelProtocol {
     func addAction() {
         
     }
+
+    func canHandle(viewModel: ProfileCellViewModelProtocol) -> Bool {
+        if viewModel as? ProfileAboutCellViewModel != nil {
+            return true
+        }
+        return false
+    }
 }
 
 class ProfileViewModel: NSObject {
 
     var items = [ProfileCellViewModelProtocol]()
-    
+
     override init() {
         super.init()
         parseData()
@@ -105,20 +115,19 @@ class ProfileViewModel: NSObject {
         let serverList: Array! = model.list
         for dic in serverList {
             let tResult = dic as![String:Any]
-            let type1 = tResult["type"]
-            let type:Int = type1 as! Int
+            let type = tResult["type"] as! Int
             switch type {
-            case 2:
+            case ProfileViewModelItemType.about.rawValue:
                 if let model = AboutModel.deserialize(from: tResult) {
                     let aboutItem = ProfileAboutCellViewModel(model: model)
                     items.append(aboutItem)
                 }
-            case 3:
+            case ProfileViewModelItemType.friend.rawValue:
                 if let model = AttributeModel.deserialize(from: tResult) {
                     let friendsItem = ProfileAttributeCellViewModel(attributes: model.list ?? [] as! [AttributeItemModel])
                     items.append(friendsItem)
                 }
-            case 4:
+            case ProfileViewModelItemType.attribute.rawValue:
                 if let model = FriendModel.deserialize(from: tResult) {
                     let friendsItem = ProfileFriendsCellViewModel(friends: model.list ?? [])
                     items.append(friendsItem)

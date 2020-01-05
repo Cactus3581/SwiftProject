@@ -35,6 +35,8 @@
 		013C7D3C23B87B1700804143 /* MVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C7D3B23B87B1700804143 /* MVVMViewModel.swift */; };
 		013D09F823BE281A0050F15A /* FunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D09F723BE281A0050F15A /* FunctionViewController.swift */; };
 		0156813023BE28F100B42FB9 /* ProtocolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156812F23BE28F100B42FB9 /* ProtocolViewController.swift */; };
+		016C892C23C1C8F40084A326 /* ProfileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016C892B23C1C8F40084A326 /* ProfileFactory.swift */; };
+		016C980423C1CD690084A326 /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016C980323C1CD690084A326 /* ProfileAssembly.swift */; };
 		016FE6D823B5DD7800CE8784 /* statistics.py in Resources */ = {isa = PBXBuildFile; fileRef = 016FE6D623B5DD7800CE8784 /* statistics.py */; };
 		016FE6D923B5DD7800CE8784 /* sql.py in Resources */ = {isa = PBXBuildFile; fileRef = 016FE6D723B5DD7800CE8784 /* sql.py */; };
 		0195230223B173D600AE491B /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0195230123B173D600AE491B /* BasicViewController.swift */; };
@@ -144,6 +146,8 @@
 		013C7D3B23B87B1700804143 /* MVVMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewModel.swift; sourceTree = "<group>"; };
 		013D09F723BE281A0050F15A /* FunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionViewController.swift; sourceTree = "<group>"; };
 		0156812F23BE28F100B42FB9 /* ProtocolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolViewController.swift; sourceTree = "<group>"; tabWidth = 3; };
+		016C892B23C1C8F40084A326 /* ProfileFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFactory.swift; sourceTree = "<group>"; };
+		016C980323C1CD690084A326 /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
 		016FE6D623B5DD7800CE8784 /* statistics.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = statistics.py; sourceTree = "<group>"; };
 		016FE6D723B5DD7800CE8784 /* sql.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = sql.py; sourceTree = "<group>"; };
 		0195230123B173D600AE491B /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
@@ -453,6 +457,15 @@
 			path = Property;
 			sourceTree = "<group>";
 		};
+		016C892A23C1C8A50084A326 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				016C980323C1CD690084A326 /* ProfileAssembly.swift */,
+				016C892B23C1C8F40084A326 /* ProfileFactory.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		019FE1A023C0E98600B241B1 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,6 +546,7 @@
 		01ADC44623BEDA6700EAB005 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				016C892A23C1C8A50084A326 /* Helper */,
 				01ADC44723BEDA7B00EAB005 /* Controller */,
 				01ADC44823BEDA8400EAB005 /* ViewModel */,
 				01ADC44A23BEDA9100EAB005 /* Model */,
@@ -1195,10 +1209,12 @@
 				010D6ACB23A9FD8F00B84621 /* CarViewController.swift in Sources */,
 				010D6ACC23A9FD8F00B84621 /* PersonViewController.swift in Sources */,
 				01A5D7B423BEDBB00057D144 /* AttributeCell.swift in Sources */,
+				016C980423C1CD690084A326 /* ProfileAssembly.swift in Sources */,
 				0112F9A823BF57CA0002788E /* StringAndCharViewController.swift in Sources */,
 				01ADB56B23BE294300EAB005 /* InheritViewController.swift in Sources */,
 				01A5D7AC23BEDBB00057D144 /* NamePictureCell.swift in Sources */,
 				01ADD32223BEDB2500EAB005 /* ProfileModel.swift in Sources */,
+				016C892C23C1C8F40084A326 /* ProfileFactory.swift in Sources */,
 				01E15CD523BF593300A69E23 /* OptionalChainViewController.swift in Sources */,
 				01E15CCF23BF58F300A69E23 /* InitializeViewController.swift in Sources */,
 				01A3A40C23BF6218003FEA19 /* AdvancedOperatorViewController.swift in Sources */,
