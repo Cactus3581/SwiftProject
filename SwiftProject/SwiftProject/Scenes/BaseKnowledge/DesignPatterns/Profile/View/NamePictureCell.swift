@@ -12,18 +12,25 @@ class NamePictureCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel?
     @IBOutlet weak var pictureImageView: UIImageView?
-    
-    var item: ProfileViewModelItemProtocol? {
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        pictureImageView?.layer.cornerRadius = 50
+        pictureImageView?.clipsToBounds = true
+        pictureImageView?.contentMode = .scaleAspectFit
+        pictureImageView?.backgroundColor = UIColor.lightGray
+    }
+
+    var item: ProfileCellViewModelProtocol? {
         didSet {
             guard let item = item as? ProfileNamePictureViewModel else {
                 return
             }
-            
             nameLabel?.text = item.name
             pictureImageView?.image = UIImage(named: item.pictureUrl)
         }
     }
-    
+
     static var nib:UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
@@ -32,15 +39,6 @@ class NamePictureCell: UITableViewCell {
         return String(describing: self)
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        pictureImageView?.layer.cornerRadius = 50
-        pictureImageView?.clipsToBounds = true
-        pictureImageView?.contentMode = .scaleAspectFit
-        pictureImageView?.backgroundColor = UIColor.lightGray
-    }
-
     override func prepareForReuse() {
         super.prepareForReuse()
         pictureImageView?.image = nil

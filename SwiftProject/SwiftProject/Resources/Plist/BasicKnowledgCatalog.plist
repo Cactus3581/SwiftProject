@@ -11,15 +11,15 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string>可选项</string>
-				<key>fileName</key>
-				<string>OptionalViewController</string>
-			</dict>
-			<dict>
-				<key>title</key>
 				<string>基础内容</string>
 				<key>fileName</key>
 				<string>BasicContentViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>可选项</string>
+				<key>fileName</key>
+				<string>OptionalViewController</string>
 			</dict>
 			<dict>
 				<key>title</key>

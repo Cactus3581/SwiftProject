@@ -13,7 +13,7 @@ class AttributeCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel?
     @IBOutlet weak var valueLabel: UILabel?
     
-    var item: AttributeModel?  {
+    var item: AttributeItemModel?  {
         didSet {
             titleLabel?.text = item?.key
             valueLabel?.text = item?.value

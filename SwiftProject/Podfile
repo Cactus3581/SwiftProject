@@ -7,12 +7,19 @@ target 'SwiftProject' do
 
   # Pods for SwiftProject
     pod 'RxSwift'
+    pod 'RxCocoa'
     pod 'Swinject'
     pod 'SnapKit'
-    pod 'Kingfisher'
-    pod 'Alamofire'
+    pod 'Kingfisher' #图片库
+    pod 'Alamofire' #网络库
     pod 'SwiftyJSON'
     pod 'HandyJSON'
+    #pod 'Locksmith' # Keychain
+    #pod 'SwiftLint' # Swift 代码规范检查工具
+    #pod 'Aspects' 
+    #pod 'Quick' # 测试框架
+    #pod 'CocoaLumberjack/Swift' # 日志
+
 
   target 'SwiftProjectTests' do
     inherit! :search_paths

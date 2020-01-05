@@ -16,13 +16,41 @@ class ClosureViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let names = ["Chris","Alex","Ewa","Barry","Daniella"]
+        func backward(_ s1: String, _ s2: String) -> Bool {
+            return s1 > s2
+        }
+        var reversedNames = names.sorted(by: backward)
+        print("\(reversedNames)")
+
+        var closure = { (s1: String, s2: String) -> Bool in
+            return s1 > s2
+        }
+
+        closure = { s1, s2 in
+            return s1 > s2
+        }
+
+        closure = {
+            s1, s2 in
+            s1 > s2
+        }
+
+        closure = {
+            $0 > $1
+        }
+
+        reversedNames = names.sorted(by: closure)
+        print("\(reversedNames)")
 
         let block = { (a: Int, b: Int) -> Int in
             return a+b
         }
 
-        let c =  block(1,2)
+        let c =  closure("a","b")
         print(c)
+
+        //MARK:尾随闭包
 
         func loadData(finished: @escaping (Int,Int) -> Int) {
             // 记录闭包

@@ -12,12 +12,11 @@ class EmailCell: UITableViewCell {
 
     @IBOutlet weak var emailLabel: UILabel?
     
-    var item: ProfileViewModelItemProtocol? {
+    var item: ProfileCellViewModelProtocol? {
         didSet {
             guard let item = item as? ProfileEmailCellViewModel else {
                 return
             }
-            
             emailLabel?.text = item.email
         }
     }

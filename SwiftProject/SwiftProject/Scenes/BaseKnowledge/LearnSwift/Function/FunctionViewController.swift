@@ -13,29 +13,6 @@ class FunctionViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // MARK:
-        /*
-        1 定义和调用函数
-        2 函数的形式参数和返回值
-        2.1 无形式参数的函数
-        2.2 多形式参数的函数
-        2.3 无返回值的函数
-        2.4 多返回值的函数
-        2.5 可选元组返回类型
-        2.6 隐式返回的函数
-        3 函数实际参数标签和形式参数名
-        3.1 指定实际参数标签
-        3.2 省略实际参数标签
-        3.3 默认形式参数值
-        3.4 可变形式参数
-        3.5 输入输出形式参数
-        4 函数类型
-        4.1 使用函数类型
-        4.2 函数类型作为形式参数类型
-        4.3 函数类型作为返回类型
-        5 内嵌函数
- */
-
         //MARK:函数的形式参数和返回值
 
        //函数可以作为一个函数的形式参数、返回值。函数也可以内嵌（定义在函数内部）
@@ -70,17 +47,59 @@ class FunctionViewController: BaseViewController {
 
         print("min is \(min) and max is \(max)")
         // Prints "min is -6 and max is 109"
+
+        // MARK:输入输出参数
+        func swapTwoInts(_ a: inout Int, _ b: inout Int) {
+            let temporaryA = a
+            a = b
+            b = temporaryA
+        }
+        var a = 1;
+        var b = 2;
+        swapTwoInts(&a, &b)
+        print("\(a),\(b)")
+
+        //MARK:函数作为普通类型赋值
+        func addTwoInts(_ a: Int, _ b: Int) -> Int {
+            return a + b
+        }
+        let mathFunction: (Int, Int) -> Int = addTwoInts
+        print("Result: \(mathFunction(2, 3))")
+
+        //MARK:函数作为参数
+        func printMathResult(_ mathFunction: (Int, Int) -> Int, _ a: Int, _ b: Int) {
+            print("Result: \(mathFunction(a, b))")
+        }
+        printMathResult(addTwoInts, 3, 5)
+
+        //MARK:函数作为返回值
+        func stepForward(_ input: Int) -> Int {
+            return input + 1
+        }
+        func stepBackward(_ input: Int) -> Int {
+            return input - 1
+        }
+        func chooseStepFunction(backwards: Bool) -> (Int) -> Int {
+            return backwards ? stepBackward : stepForward
+        }
+        var currentValue = 3
+        var moveNearerToZero = chooseStepFunction(backwards: currentValue > 0)
+        while currentValue != 0 {
+            currentValue = moveNearerToZero(currentValue)
+        }
+
+        //MARK:内嵌函数
+        func chooseStepFunction1(backward: Bool) -> (Int) -> Int {
+            func stepForward(input: Int) -> Int {
+                return input + 1
+            }
+            func stepBackward(input: Int) -> Int {
+                return input - 1
+            }
+            return backward ? stepBackward : stepForward
+        }
+        moveNearerToZero = chooseStepFunction1(backward: currentValue > 0)
+        currentValue = moveNearerToZero(currentValue)
+        print("\(currentValue)")
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

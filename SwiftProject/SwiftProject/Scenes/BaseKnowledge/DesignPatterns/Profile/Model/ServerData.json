@@ -3,11 +3,34 @@
         "error": 0,
         "message": "Success",
         "id": 1,
-        "fullName": "xxx",
-        "pictureUrl": "xxx",
+        "fullName": "name",
+        "pictureUrl": "pci",
         "email": "xxx@gmail.com",
-        "about": "xxx",
-        "friends": [
+        "list": [
+            {
+                "list":[
+                    {
+                      "key": "职位",
+                      "value": "iOS"
+                    },
+                    {
+                      "key": "公司",
+                      "value": "xxx"
+                    },
+                    {
+                      "key": "部门",
+                      "value": "技术"
+                    }
+                    ],
+                "type":3
+            },
+            {
+                "about": "about",
+                "count": "0",
+                "type":2
+            },
+            {
+                "list":[
                     {
                         "name": "a",
                         "pictureUrl": "a1"
@@ -21,19 +44,8 @@
                         "pictureUrl": "c1"
                     }
                 ],
-        "profileAttributes": [
-                              {
-                                  "key": "职位",
-                                  "value": "iOS"
-                              },
-                              {
-                                  "key": "公司",
-                                  "value": "xxx"
-                              },
-                              {
-                                  "key": "部门",
-                                  "value": "技术"
-                              }
-                            ]
+                "type":4
+            }
+        ]
     }
 }

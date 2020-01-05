@@ -13,7 +13,7 @@ class FriendCell: UITableViewCell {
     @IBOutlet weak var pictureImageView: UIImageView?
     @IBOutlet weak var nameLabel: UILabel?
     
-    var item: FriendModel? {
+    var item: FriendItemModel? {
         didSet {
             guard let item = item else {
                 return
@@ -35,7 +35,6 @@ class FriendCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        pictureImageView?.layer.cornerRadius = 40
         pictureImageView?.clipsToBounds = true
         pictureImageView?.contentMode = .scaleAspectFit
         pictureImageView?.backgroundColor = UIColor.lightGray

@@ -16,22 +16,24 @@ class AboutCell: UITableViewCell {
     @IBOutlet weak var subtractButton: UIButton!
     @IBOutlet weak var contentLabel: UILabel!
 
-    var item: ProfileViewModelItemProtocol? {
+    var item: ProfileCellViewModelProtocol? {
         didSet {
             guard  let item = item as? ProfileAboutCellViewModel else {
                 return
             }
             aboutLabel?.text = item.about
+            contentLabel?.text = item.count
         }
     }
     
-    @IBAction func IBOutletweakvarsubtractButtonUIButtonsubtractAction(_ sender: Any) {
-
-
+    @IBAction func sutractAction(_ sender: Any) {
+        item?.sutractAction()
     }
     
     @IBAction func addAction(_ sender: Any) {
+        item?.addAction()
     }
+    
     static var nib:UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
