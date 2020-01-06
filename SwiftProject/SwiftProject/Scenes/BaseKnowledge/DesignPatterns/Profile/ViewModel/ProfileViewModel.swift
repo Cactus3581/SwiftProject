@@ -39,14 +39,22 @@ enum ProfileViewModelItemType: Int{
 }
 
 protocol ProfileCellViewModelProtocol {
+
+    // 生成cellVM的方法
+    static func canHandle(type: Int) -> Bool
+    // 定义构造函数
+    init(data: ProfileModel)
+
+    // cellVM的通用方法
     var cellHeight: Double { get } //cell高度
     var rowCount: Int { get } // tableViewDataSource
     func setupCell(tableView: UITableView,indexPath:IndexPath,item:ProfileCellViewModelProtocol) -> UITableViewCell//获取cell
     func tableView(tableView: UITableView, didSelectRowAt indexPath: IndexPath)//cell 点击
+
+    // 不同的cellVM使用不同的方法
     func jumpDetail()
     func sutractAction()
     func addAction()
-    func canHandle(viewModel: ProfileCellViewModelProtocol) -> Bool
 }
 
 extension ProfileCellViewModelProtocol {
@@ -79,11 +87,12 @@ extension ProfileCellViewModelProtocol {
         
     }
 
-    func canHandle(viewModel: ProfileCellViewModelProtocol) -> Bool {
-        if viewModel as? ProfileAboutCellViewModel != nil {
-            return true
-        }
+    static func canHandle(type: Int) -> Bool {
         return false
+    }
+
+    init(data: ProfileModel) {
+        self.init(data: data)
     }
 }
 
@@ -106,36 +115,38 @@ class ProfileViewModel: NSObject {
             return
         }
 
-        let nameAndPictureItem = ProfileNamePictureViewModel(model: model)
-        items.append(nameAndPictureItem)
+        items = ProfileFactory.createWithContent(data: model) ?? []
 
-        let dobItem = ProfileEmailCellViewModel(model: model)
-        items.append(dobItem)
+//        let nameAndPictureItem = ProfileNamePictureViewModel(model: model)
+//        items.append(nameAndPictureItem)
+//
+//        let dobItem = ProfileEmailCellViewModel(model: model)
+//        items.append(dobItem)
 
-        let serverList: Array! = model.list
-        for dic in serverList {
-            let tResult = dic as![String:Any]
-            let type = tResult["type"] as! Int
-            switch type {
-            case ProfileViewModelItemType.about.rawValue:
-                if let model = AboutModel.deserialize(from: tResult) {
-                    let aboutItem = ProfileAboutCellViewModel(model: model)
-                    items.append(aboutItem)
-                }
-            case ProfileViewModelItemType.friend.rawValue:
-                if let model = AttributeModel.deserialize(from: tResult) {
-                    let friendsItem = ProfileAttributeCellViewModel(attributes: model.list ?? [] as! [AttributeItemModel])
-                    items.append(friendsItem)
-                }
-            case ProfileViewModelItemType.attribute.rawValue:
-                if let model = FriendModel.deserialize(from: tResult) {
-                    let friendsItem = ProfileFriendsCellViewModel(friends: model.list ?? [])
-                    items.append(friendsItem)
-                }
-            default:
-                print("1")
-            }
-        }
+//        let serverList: Array! = model.list
+//        for dic in serverList {
+//            let tResult = dic as![String:Any]
+//            let type = tResult["type"] as! Int
+//            switch type {
+//            case ProfileViewModelItemType.about.rawValue:
+//                if let model = AboutModel.deserialize(from: tResult) {
+//                    let aboutItem = ProfileAboutCellViewModel(model: model)
+//                    items.append(aboutItem)
+//                }
+//            case ProfileViewModelItemType.friend.rawValue:
+//                if let model = AttributeModel.deserialize(from: tResult) {
+//                    let friendsItem = ProfileAttributeCellViewModel(attributes: model.list ?? [] as! [AttributeItemModel])
+//                    items.append(friendsItem)
+//                }
+//            case ProfileViewModelItemType.attribute.rawValue:
+//                if let model = FriendModel.deserialize(from: tResult) {
+//                    let friendsItem = ProfileFriendsCellViewModel(friends: model.list ?? [])
+//                    items.append(friendsItem)
+//                }
+//            default:
+//                print("1")
+//            }
+//        }
     }
 
     private func dataFromFile(_ filename: String) -> Data? {
@@ -145,6 +156,11 @@ class ProfileViewModel: NSObject {
             return (try? Data(contentsOf: URL(fileURLWithPath: path)))
         }
         return nil
+    }
+
+    // 获取指定的cellVM
+    func getCellViewModel(indexPath:NSIndexPath) -> ProfileCellViewModelProtocol {
+        return items[indexPath.section]
     }
 }
 
@@ -170,14 +186,61 @@ class ProfileNamePictureViewModel: ProfileCellViewModelProtocol {
     var name: String
     var pictureUrl: String
 
-    init(model: ProfileModel) {
-        self.model = model
+    static var style: Int = 0
+    static func canHandle(type: Int) -> Bool {
+        if type == style {
+            return true
+        }
+        return false
+    }
+
+    required init(data: ProfileModel) {
+        self.model = data
         self.name = model.fullName ?? ""
         self.pictureUrl = model.pictureUrl ?? ""
     }
 
+//    init(model: ProfileModel) {
+//        self.model = model
+//        self.name = model.fullName ?? ""
+//        self.pictureUrl = model.pictureUrl ?? ""
+//    }
+
     func setupCell(tableView: UITableView,indexPath:IndexPath,item:ProfileCellViewModelProtocol) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: NamePictureCell.identifier, for: indexPath) as? NamePictureCell {
+            cell.item = item
+            return cell
+        }else {
+            return UITableViewCell()
+        }
+    }
+}
+
+class ProfileEmailCellViewModel: ProfileCellViewModelProtocol {
+
+    let model: ProfileModel
+    var email: String
+
+    static var style: Int = 1
+    static func canHandle(type: Int) -> Bool {
+        if type == style {
+            return true
+        }
+        return false
+    }
+
+    required init(data: ProfileModel) {
+        self.model = data
+        self.email = data.email ?? ""
+    }
+
+//    init(model: ProfileModel) {
+//        self.model = model
+//        self.email = model.email ?? ""
+//    }
+
+    func setupCell(tableView: UITableView,indexPath:IndexPath,item:ProfileCellViewModelProtocol) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: EmailCell.identifier, for: indexPath) as? EmailCell {
             cell.item = item
             return cell
         }else {
@@ -190,17 +253,49 @@ class ProfileAboutCellViewModel:NSObject, ProfileCellViewModelProtocol {
 
     @objc dynamic let model: AboutModel
     var about: String
+    var eventType: Int
+
     @objc dynamic var count: String {
         didSet {
             print("\(count)")
         }
     }
 
-    init(model: AboutModel) {
-        self.model = model
+    static var style: Int = 2
+    static func canHandle(type: Int) -> Bool {
+        if type == style {
+            return true
+        }
+        return false
+    }
+
+    required init(data: ProfileModel) {
+        var result:[String:Any]?
+        let serverList: Array! = data.list
+        for dic in serverList {
+            let tResult = dic as![String:Any]
+            let type = tResult["type"] as! Int
+            if type == ProfileAboutCellViewModel.style {
+                result = tResult;
+                break
+            }
+        }
+
+        let tResult1 = result ?? ["":""]
+        let model1 = AboutModel.deserialize(from: tResult1)
+        self.model = model1 ?? AboutModel.init()
         self.about = model.about ?? ""
         self.count = model.count ?? ""
+        self.eventType = model.eventType ?? -1
     }
+
+//
+//    init(model: AboutModel) {
+//        self.model = model
+//        self.about = model.about ?? ""
+//        self.count = model.count ?? ""
+//        self.eventType = model.eventType ?? -1
+//    }
 
     func setupCell(tableView: UITableView,indexPath:IndexPath,item:ProfileCellViewModelProtocol) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: AboutCell.identifier, for: indexPath) as? AboutCell {
@@ -208,6 +303,28 @@ class ProfileAboutCellViewModel:NSObject, ProfileCellViewModelProtocol {
             return cell
         }else {
             return UITableViewCell()
+        }
+    }
+
+    func callAction() {
+
+    }
+
+    func messageAction() {
+
+    }
+
+    func unSureAction() {
+
+        switch eventType {
+        case 1:
+            // 打电话
+            callAction()
+        case 2:
+            //发短信
+            messageAction()
+        default:
+            print("")
         }
     }
 
@@ -227,26 +344,6 @@ class ProfileAboutCellViewModel:NSObject, ProfileCellViewModelProtocol {
     }
 }
 
-class ProfileEmailCellViewModel: ProfileCellViewModelProtocol {
-
-    let model: ProfileModel
-    var email: String
-
-    init(model: ProfileModel) {
-        self.model = model
-        self.email = model.email ?? ""
-    }
-
-    func setupCell(tableView: UITableView,indexPath:IndexPath,item:ProfileCellViewModelProtocol) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: EmailCell.identifier, for: indexPath) as? EmailCell {
-            cell.item = item
-            return cell
-        }else {
-            return UITableViewCell()
-        }
-    }
-}
-
 class ProfileAttributeCellViewModel: ProfileCellViewModelProtocol {
 
     var attributes: [AttributeItemModel]
@@ -255,9 +352,36 @@ class ProfileAttributeCellViewModel: ProfileCellViewModelProtocol {
         return attributes.count
     }
 
-    init(attributes: [AttributeItemModel]) {
-        self.attributes = attributes
+    static var style: Int = 3
+    static func canHandle(type: Int) -> Bool {
+        if type == style {
+            return true
+        }
+        return false
     }
+
+    required init(data: ProfileModel) {
+        var result:[String:Any]?
+        let serverList: Array! = data.list
+        for dic in serverList {
+            let tResult = dic as![String:Any]
+            let type = tResult["type"] as! Int
+            if type == ProfileAttributeCellViewModel.style {
+                result = tResult;
+                break
+            }
+        }
+
+        if let model = AttributeModel.deserialize(from: result) {
+            self.attributes = model.list ?? []
+        } else {
+            self.attributes = []
+        }
+    }
+
+//    init(attributes: [AttributeItemModel]) {
+//        self.attributes = attributes
+//    }
 
     func setupCell(tableView: UITableView,indexPath:IndexPath,item:ProfileCellViewModelProtocol) -> UITableViewCell {
         if let item = item as? ProfileAttributeCellViewModel, let cell = tableView.dequeueReusableCell(withIdentifier: AttributeCell.identifier, for: indexPath) as? AttributeCell {
@@ -275,6 +399,33 @@ class ProfileFriendsCellViewModel: ProfileCellViewModelProtocol {
 
     var rowCount: Int {
         return friends.count
+    }
+
+    static var style: Int = 4
+    static func canHandle(type: Int) -> Bool {
+        if type == style {
+            return true
+        }
+        return false
+    }
+
+    required init(data: ProfileModel) {
+        var result:[String:Any]?
+        let serverList: Array! = data.list
+        for dic in serverList {
+            let tResult = dic as![String:Any]
+            let type = tResult["type"] as! Int
+            if type == ProfileFriendsCellViewModel.style {
+                result = tResult;
+                break
+            }
+        }
+
+        if let model = FriendModel.deserialize(from: result) {
+            self.friends = model.list ?? []
+        } else {
+            self.friends = []
+        }
     }
 
     init(friends: [FriendItemModel]) {

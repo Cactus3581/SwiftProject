@@ -15,6 +15,7 @@ class ProfileModel: HandyJSON {
     var email: String?
     var about: AboutModel?
     var list: Array<Any>?
+    var order: Array<Int>?
     required init() {}
 }
 
@@ -22,6 +23,7 @@ class AboutModel: NSObject, HandyJSON {
     required override init() {}
     var type: Int?
     var about: String?
+    var eventType: Int? // 1为打电话，2为发短信
     @objc dynamic var count: String?
 }
 

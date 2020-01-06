@@ -32,6 +32,7 @@ class AboutCell: UITableViewCell {
     
     @IBAction func addAction(_ sender: Any) {
         item?.addAction()
+        //item?.unSureAction() //适用于： Cell样式一样，事件不一样
     }
     
     static var nib:UINib {

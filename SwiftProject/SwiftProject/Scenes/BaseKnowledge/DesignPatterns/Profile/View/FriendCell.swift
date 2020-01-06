@@ -12,6 +12,7 @@ class FriendCell: UITableViewCell {
 
     @IBOutlet weak var pictureImageView: UIImageView?
     @IBOutlet weak var nameLabel: UILabel?
+    @IBOutlet weak var button: UIButton!
     
     var item: FriendItemModel? {
         didSet {
@@ -47,5 +48,9 @@ class FriendCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         pictureImageView?.image = nil
+    }
+
+    @IBAction func buttonAction(_ sender: Any) {
+
     }
 }

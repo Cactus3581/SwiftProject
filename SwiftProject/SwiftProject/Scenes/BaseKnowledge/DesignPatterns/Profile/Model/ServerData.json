@@ -6,6 +6,7 @@
         "fullName": "name",
         "pictureUrl": "pci",
         "email": "xxx@gmail.com",
+        "order":[0,1,2,3,4,2],
         "list": [
             {
                 "list":[
@@ -45,6 +46,11 @@
                     }
                 ],
                 "type":4
+            },
+            {
+                "about": "about",
+                "count": "0",
+                "type":2
             }
         ]
     }

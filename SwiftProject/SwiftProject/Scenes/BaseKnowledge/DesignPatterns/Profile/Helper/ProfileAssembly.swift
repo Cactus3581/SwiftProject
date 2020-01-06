@@ -10,9 +10,12 @@ import UIKit
 
 class ProfileAssembly {
 
-    private func profileRegister() {
+    static func profileRegister() {
         ProfileFactory.register(vm: ProfileAboutCellViewModel.self)
+        ProfileFactory.register(vm: ProfileAttributeCellViewModel.self)
+        ProfileFactory.register(vm: ProfileFriendsCellViewModel.self)
+        ProfileFactory.register(vm: ProfileEmailCellViewModel.self)
         ProfileFactory.register(vm: ProfileNamePictureViewModel.self)
+
     }
-    
 }
