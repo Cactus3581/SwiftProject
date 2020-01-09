@@ -10,55 +10,65 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class RxSwiftViewController: BaseViewController {
+private let minimalUsernameLength = 5
+private let minimalPasswordLength = 5
 
-    var tableView: UITableView?
+class RxSwiftViewController : BaseViewController {
+
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
-        rx_bindViewModel()
-    }
 
-    func setupViews() {
-        tableView = UITableView(frame: CGRect.zero, style: .plain)
-        view.addSubview(tableView!)
-        tableView?.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
-        tableView?.backgroundColor = UIColor.white
-        tableView?.separatorStyle = .singleLine
-        tableView?.tableHeaderView = UIView()
-        tableView?.tableFooterView = UIView()
-        tableView?.estimatedRowHeight = 100
-        tableView?.estimatedSectionHeaderHeight = 0
-        tableView?.estimatedSectionFooterHeight = 0
-        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-    }
-
-    func rx_bindViewModel() {
         let disposeBag = DisposeBag()
 
-        //1.创建可观察数据源
-        let texts = ["Objective-C", "Swift", "RXSwift"]
-        let textsObservable = Observable.from(optional: texts)
-        //2. 将数据源与 tableView 绑定
-        textsObservable.bind(to: (tableView?.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self))!) { (row, text, cell) in
-            cell.textLabel?.text = text
-        }.disposed(by: disposeBag)
+        usernameLabel.text = "Username has to be at least \(minimalUsernameLength) characters"
+        passwordLabel.text = "Password has to be at least \(minimalPasswordLength) characters"
 
-        //3. 绑定 tableView 的事件
-        tableView?.rx.itemSelected.bind { (indexPath) in
-            print(indexPath)
-        }.disposed(by: disposeBag)
+        let usernameValid = usernameTextField.rx.text.orEmpty
+            .map { $0.count >= minimalUsernameLength }
+            .share(replay: 1) // without this map would be executed once for each binding, rx is stateless by default
+        let passwordValid = passwordTextField.rx.text.orEmpty
+            .map { $0.count >= minimalPasswordLength }
+            .share(replay: 1)
 
-        //4. 设置 tableView Delegate/DataSource 的代理方法
-//        tableView?.rx.setDelegate(self).disposed(by: disposeBag)
-//        tableView?.rx.setDataSource(self).disposed(by: disposeBag)
+        let everythingValid = Observable.combineLatest(usernameValid, passwordValid) { $0 && $1 }
+            .share(replay: 1)
+
+        usernameValid
+            .bind(to: passwordTextField.rx.isEnabled)
+            .disposed(by: disposeBag)
+
+        usernameValid
+            .bind(to: usernameLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+
+        passwordValid
+            .bind(to: passwordLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+
+        everythingValid
+            .bind(to: loginButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+
+        loginButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in self?.showAlert() })
+            .disposed(by: disposeBag)
     }
 
+    func showAlert() {
+        let alertView = UIAlertView(
+            title: "RxExample",
+            message: "This is wonderful",
+            delegate: nil,
+            cancelButtonTitle: "OK"
+        )
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        alertView.show()
     }
+
 }

@@ -11,6 +11,12 @@
 		<array>
 			<dict>
 				<key>title</key>
+				<string>Tips</string>
+				<key>fileName</key>
+				<string>SwiftTipsViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
 				<string>基础内容</string>
 				<key>fileName</key>
 				<string>BasicContentViewController</string>

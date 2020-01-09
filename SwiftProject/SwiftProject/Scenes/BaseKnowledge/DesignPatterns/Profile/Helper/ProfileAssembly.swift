@@ -11,11 +11,10 @@ import UIKit
 class ProfileAssembly {
 
     static func profileRegister() {
-        ProfileFactory.register(vm: ProfileAboutCellViewModel.self)
-        ProfileFactory.register(vm: ProfileAttributeCellViewModel.self)
-        ProfileFactory.register(vm: ProfileFriendsCellViewModel.self)
-        ProfileFactory.register(vm: ProfileEmailCellViewModel.self)
-        ProfileFactory.register(vm: ProfileNamePictureViewModel.self)
-
+        ProfileFactory.register(viewModel: ProfileAboutCellViewModel.self)
+        ProfileFactory.register(viewModel: ProfileAttributeCellViewModel.self)
+        ProfileFactory.register(viewModel: ProfileFriendsCellViewModel.self)
+//        ProfileFactory.register(viewModel: ProfileEmailCellViewModel.self)
+//        ProfileFactory.register(viewModel: ProfileNamePictureViewModel.self)
     }
 }
