@@ -14,7 +14,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         ProfileAssembly.profileRegister()
+        BPListAssembly.profileRegister()
+        print("DidFinishLaunch")
         return true
+    }
+
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        print("将进入前台")
+    }
+
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        print("已变成活跃")
+    }
+
+    func applicationWillResignActive(_ application: UIApplication) {
+        print("将取消活跃")
+    }
+
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        print("已进入后台")
+    }
+
+    func applicationWillTerminate(_ application: UIApplication) {
+        print("WillTerminate")
+    }
+
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+        print("DidFinishLaunching")
+    }
+
+    func applicationDidReceiveMemoryWarning(_ application: UIApplication) {
+        print("DidReceiveMemoryWarning")
     }
 
     // MARK: UISceneSession Lifecycle

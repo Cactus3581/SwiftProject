@@ -40,9 +40,15 @@
 		016C980423C1CD690084A326 /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016C980323C1CD690084A326 /* ProfileAssembly.swift */; };
 		016FE6D823B5DD7800CE8784 /* statistics.py in Resources */ = {isa = PBXBuildFile; fileRef = 016FE6D623B5DD7800CE8784 /* statistics.py */; };
 		016FE6D923B5DD7800CE8784 /* sql.py in Resources */ = {isa = PBXBuildFile; fileRef = 016FE6D723B5DD7800CE8784 /* sql.py */; };
+		0171CBD123EBD04D00823722 /* SceneDelegate2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0171CBD023EBD04D00823722 /* SceneDelegate2.swift */; };
 		0182346D23C4AA8C00FB30A9 /* RxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182346B23C4AA8C00FB30A9 /* RxSwiftViewController.swift */; };
 		0182346E23C4AA8C00FB30A9 /* RxSwiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0182346C23C4AA8C00FB30A9 /* RxSwiftViewController.xib */; };
 		0195230223B173D600AE491B /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0195230123B173D600AE491B /* BasicViewController.swift */; };
+		0196CDE823D1888300112AB8 /* SnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0196CDE623D1888300112AB8 /* SnapViewController.swift */; };
+		0196CDE923D1888300112AB8 /* SnapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0196CDE723D1888300112AB8 /* SnapViewController.xib */; };
+		0196DCC323D1897500112AB8 /* SnapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0196DCC223D1897500112AB8 /* SnapView.swift */; };
+		0196DCC523D1898500112AB8 /* SnapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0196DCC423D1898500112AB8 /* SnapView.xib */; };
+		019BBDE023D3FB2C00061503 /* GCDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019BBDDF23D3FB2C00061503 /* GCDViewController.swift */; };
 		019FE1A223C0E99F00B241B1 /* FactoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FE1A123C0E99F00B241B1 /* FactoryViewController.swift */; };
 		019FE1A423C0E9B700B241B1 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FE1A323C0E9B700B241B1 /* Factory.swift */; };
 		019FE1A623C0E9BF00B241B1 /* Produce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FE1A523C0E9BF00B241B1 /* Produce.swift */; };
@@ -61,7 +67,6 @@
 		01A5D7B223BEDBB00057D144 /* NamePictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A5D7A823BEDBB00057D144 /* NamePictureCell.xib */; };
 		01A5D7B323BEDBB00057D144 /* AboutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A5D7A923BEDBB00057D144 /* AboutCell.xib */; };
 		01A5D7B423BEDBB00057D144 /* AttributeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5D7AA23BEDBB00057D144 /* AttributeCell.swift */; };
-		01A5D7B623BEDD4B0057D144 /* ServerData.json in Resources */ = {isa = PBXBuildFile; fileRef = 01A5D7B523BEDD4B0057D144 /* ServerData.json */; };
 		01ADB56823BE290F00EAB005 /* PropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADB56723BE290F00EAB005 /* PropertyViewController.swift */; };
 		01ADB56B23BE294300EAB005 /* InheritViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADB56A23BE294300EAB005 /* InheritViewController.swift */; };
 		01ADB56E23BE296700EAB005 /* ClassStructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADB56D23BE296700EAB005 /* ClassStructViewController.swift */; };
@@ -71,6 +76,28 @@
 		01B24E2F23BF358100677023 /* DataTypeConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B24E2E23BF358100677023 /* DataTypeConvertViewController.swift */; };
 		01C01BB123BDE699008B2D9E /* EnumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C01BB023BDE699008B2D9E /* EnumViewController.swift */; };
 		01C01BB423BDEA97008B2D9E /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C01BB323BDEA97008B2D9E /* ClosureViewController.swift */; };
+		01D76FA523CEBB1800525363 /* BPTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FA323CEBB1800525363 /* BPTableViewController.swift */; };
+		01D76FA623CEBB1800525363 /* BPTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D76FA423CEBB1800525363 /* BPTableViewController.xib */; };
+		01D76FA823CEBB4F00525363 /* BPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FA723CEBB4F00525363 /* BPViewModel.swift */; };
+		01D76FAA23CEBB7000525363 /* BPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FA923CEBB7000525363 /* BPModel.swift */; };
+		01D76FAD23CED8FC00525363 /* BPTableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FAC23CED8FC00525363 /* BPTableViewProtocol.swift */; };
+		01D76FB423CEE47100525363 /* a.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 01D76FB323CEE47100525363 /* a.geojson */; };
+		01D76FB823CEFFA900525363 /* BPLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FB623CEFFA900525363 /* BPLabelTableViewCell.swift */; };
+		01D76FB923CEFFA900525363 /* BPLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D76FB723CEFFA900525363 /* BPLabelTableViewCell.xib */; };
+		01D76FBC23CEFFBA00525363 /* BPImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FBA23CEFFBA00525363 /* BPImageTableViewCell.swift */; };
+		01D76FBD23CEFFBA00525363 /* BPImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D76FBB23CEFFBA00525363 /* BPImageTableViewCell.xib */; };
+		01D76FC023CEFFD000525363 /* BPButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FBE23CEFFD000525363 /* BPButtonTableViewCell.swift */; };
+		01D76FC123CEFFD000525363 /* BPButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D76FBF23CEFFD000525363 /* BPButtonTableViewCell.xib */; };
+		01D76FC323CF009B00525363 /* server.json in Resources */ = {isa = PBXBuildFile; fileRef = 01D76FC223CF009B00525363 /* server.json */; };
+		01D76FC623CF01A600525363 /* BPListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FC523CF01A600525363 /* BPListFactory.swift */; };
+		01D76FC823CF01B600525363 /* BPListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FC723CF01B600525363 /* BPListAssembly.swift */; };
+		01D76FCA23CF02A500525363 /* BPCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FC923CF02A500525363 /* BPCellViewModel.swift */; };
+		01D76FCC23CF02AE00525363 /* BPSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FCB23CF02AE00525363 /* BPSessionViewModel.swift */; };
+		01D76FD123CF103900525363 /* BPTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FD023CF103900525363 /* BPTableViewHeaderView.swift */; };
+		01D76FD323CF104800525363 /* BPTableViewFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FD223CF104800525363 /* BPTableViewFooterView.swift */; };
+		01D76FD523CF105D00525363 /* BPTableViewHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D76FD423CF105D00525363 /* BPTableViewHeaderView.xib */; };
+		01D76FD723CF106300525363 /* BPTableViewFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D76FD623CF106300525363 /* BPTableViewFooterView.xib */; };
+		01D76FD923CF12B500525363 /* c.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 01D76FD823CF12B500525363 /* c.geojson */; };
 		01E15CC923BF583100A69E23 /* MethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CC823BF583100A69E23 /* MethodViewController.swift */; };
 		01E15CCC23BF58D800A69E23 /* SubscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CCB23BF58D800A69E23 /* SubscriptViewController.swift */; };
 		01E15CCF23BF58F300A69E23 /* InitializeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CCE23BF58F300A69E23 /* InitializeViewController.swift */; };
@@ -153,9 +180,15 @@
 		016C980323C1CD690084A326 /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
 		016FE6D623B5DD7800CE8784 /* statistics.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = statistics.py; sourceTree = "<group>"; };
 		016FE6D723B5DD7800CE8784 /* sql.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = sql.py; sourceTree = "<group>"; };
+		0171CBD023EBD04D00823722 /* SceneDelegate2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate2.swift; sourceTree = "<group>"; };
 		0182346B23C4AA8C00FB30A9 /* RxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftViewController.swift; sourceTree = "<group>"; };
 		0182346C23C4AA8C00FB30A9 /* RxSwiftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxSwiftViewController.xib; sourceTree = "<group>"; };
 		0195230123B173D600AE491B /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
+		0196CDE623D1888300112AB8 /* SnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapViewController.swift; sourceTree = "<group>"; };
+		0196CDE723D1888300112AB8 /* SnapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SnapViewController.xib; sourceTree = "<group>"; };
+		0196DCC223D1897500112AB8 /* SnapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapView.swift; sourceTree = "<group>"; };
+		0196DCC423D1898500112AB8 /* SnapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SnapView.xib; sourceTree = "<group>"; };
+		019BBDDF23D3FB2C00061503 /* GCDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDViewController.swift; sourceTree = "<group>"; };
 		019FE1A123C0E99F00B241B1 /* FactoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryViewController.swift; sourceTree = "<group>"; };
 		019FE1A323C0E9B700B241B1 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		019FE1A523C0E9BF00B241B1 /* Produce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Produce.swift; sourceTree = "<group>"; };
@@ -174,7 +207,6 @@
 		01A5D7A823BEDBB00057D144 /* NamePictureCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NamePictureCell.xib; sourceTree = "<group>"; };
 		01A5D7A923BEDBB00057D144 /* AboutCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutCell.xib; sourceTree = "<group>"; };
 		01A5D7AA23BEDBB00057D144 /* AttributeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeCell.swift; sourceTree = "<group>"; };
-		01A5D7B523BEDD4B0057D144 /* ServerData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ServerData.json; sourceTree = "<group>"; };
 		01ADB56723BE290F00EAB005 /* PropertyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyViewController.swift; sourceTree = "<group>"; };
 		01ADB56A23BE294300EAB005 /* InheritViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InheritViewController.swift; sourceTree = "<group>"; };
 		01ADB56D23BE296700EAB005 /* ClassStructViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassStructViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +216,29 @@
 		01B24E2E23BF358100677023 /* DataTypeConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypeConvertViewController.swift; sourceTree = "<group>"; };
 		01C01BB023BDE699008B2D9E /* EnumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumViewController.swift; sourceTree = "<group>"; };
 		01C01BB323BDEA97008B2D9E /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
+		01D76FA323CEBB1800525363 /* BPTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPTableViewController.swift; sourceTree = "<group>"; };
+		01D76FA423CEBB1800525363 /* BPTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPTableViewController.xib; sourceTree = "<group>"; };
+		01D76FA723CEBB4F00525363 /* BPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPViewModel.swift; sourceTree = "<group>"; };
+		01D76FA923CEBB7000525363 /* BPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPModel.swift; sourceTree = "<group>"; };
+		01D76FAC23CED8FC00525363 /* BPTableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPTableViewProtocol.swift; sourceTree = "<group>"; };
+		01D76FB323CEE47100525363 /* a.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = a.geojson; sourceTree = "<group>"; };
+		01D76FB623CEFFA900525363 /* BPLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPLabelTableViewCell.swift; sourceTree = "<group>"; };
+		01D76FB723CEFFA900525363 /* BPLabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPLabelTableViewCell.xib; sourceTree = "<group>"; };
+		01D76FBA23CEFFBA00525363 /* BPImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPImageTableViewCell.swift; sourceTree = "<group>"; };
+		01D76FBB23CEFFBA00525363 /* BPImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPImageTableViewCell.xib; sourceTree = "<group>"; };
+		01D76FBE23CEFFD000525363 /* BPButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPButtonTableViewCell.swift; sourceTree = "<group>"; };
+		01D76FBF23CEFFD000525363 /* BPButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPButtonTableViewCell.xib; sourceTree = "<group>"; };
+		01D76FC223CF009B00525363 /* server.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = server.json; sourceTree = "<group>"; };
+		01D76FC523CF01A600525363 /* BPListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPListFactory.swift; sourceTree = "<group>"; };
+		01D76FC723CF01B600525363 /* BPListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPListAssembly.swift; sourceTree = "<group>"; };
+		01D76FC923CF02A500525363 /* BPCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPCellViewModel.swift; sourceTree = "<group>"; };
+		01D76FCB23CF02AE00525363 /* BPSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPSessionViewModel.swift; sourceTree = "<group>"; };
+		01D76FCD23CF0F9000525363 /* b.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = b.geojson; sourceTree = "<group>"; };
+		01D76FD023CF103900525363 /* BPTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPTableViewHeaderView.swift; sourceTree = "<group>"; };
+		01D76FD223CF104800525363 /* BPTableViewFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPTableViewFooterView.swift; sourceTree = "<group>"; };
+		01D76FD423CF105D00525363 /* BPTableViewHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPTableViewHeaderView.xib; sourceTree = "<group>"; };
+		01D76FD623CF106300525363 /* BPTableViewFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPTableViewFooterView.xib; sourceTree = "<group>"; };
+		01D76FD823CF12B500525363 /* c.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = c.geojson; sourceTree = "<group>"; };
 		01E15CC823BF583100A69E23 /* MethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodViewController.swift; sourceTree = "<group>"; };
 		01E15CCB23BF58D800A69E23 /* SubscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptViewController.swift; sourceTree = "<group>"; };
 		01E15CCE23BF58F300A69E23 /* InitializeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializeViewController.swift; sourceTree = "<group>"; };
@@ -250,6 +305,7 @@
 		010442B523B4E3F700B1BF54 /* DesignPatterns */ = {
 			isa = PBXGroup;
 			children = (
+				01D76F9E23CEBA8D00525363 /* TableView */,
 				019FE1A023C0E98600B241B1 /* Factory */,
 				01ADC44623BEDA6700EAB005 /* Profile */,
 				01EE5DBC23B4E46400879BA5 /* MVVM */,
@@ -478,6 +534,49 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		0196CDE523D182FB00112AB8 /* Snap */ = {
+			isa = PBXGroup;
+			children = (
+				0196DCC123D1896500112AB8 /* View */,
+				0196DCC023D1895800112AB8 /* Controller */,
+			);
+			path = Snap;
+			sourceTree = "<group>";
+		};
+		0196DCC023D1895800112AB8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0196CDE623D1888300112AB8 /* SnapViewController.swift */,
+				0196CDE723D1888300112AB8 /* SnapViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0196DCC123D1896500112AB8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0196DCC223D1897500112AB8 /* SnapView.swift */,
+				0196DCC423D1898500112AB8 /* SnapView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		019BBDDD23D3FB0700061503 /* Thread */ = {
+			isa = PBXGroup;
+			children = (
+				019BBDDE23D3FB0E00061503 /* GCD */,
+			);
+			path = Thread;
+			sourceTree = "<group>";
+		};
+		019BBDDE23D3FB0E00061503 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				019BBDDF23D3FB2C00061503 /* GCDViewController.swift */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
 		019FE1A023C0E98600B241B1 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
@@ -516,9 +615,9 @@
 		01A9C6C623B1733E000349E2 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				0196CDE523D182FB00112AB8 /* Snap */,
 				01B25D0723BF55EB00677023 /* RxSwift */,
 				010D6AC623A9FD8F00B84621 /* Swinject */,
-				01EA7BF623ABA65600712B20 /* MVVM */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -604,7 +703,7 @@
 			isa = PBXGroup;
 			children = (
 				01ADD32123BEDB2400EAB005 /* ProfileModel.swift */,
-				01A5D7B523BEDD4B0057D144 /* ServerData.json */,
+				01D76FC223CF009B00525363 /* server.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -648,6 +747,99 @@
 				01C01BB323BDEA97008B2D9E /* ClosureViewController.swift */,
 			);
 			path = Closure;
+			sourceTree = "<group>";
+		};
+		01D76F9E23CEBA8D00525363 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				01D76FC423CF018100525363 /* Service */,
+				01D76FAB23CED8E300525363 /* Protocol */,
+				01D76FA223CEBAB300525363 /* ViewModel */,
+				01D76FA123CEBAAC00525363 /* Model */,
+				01D76FA023CEBAA300525363 /* View */,
+				01D76F9F23CEBA9900525363 /* Controller */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		01D76F9F23CEBA9900525363 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				01D76FA323CEBB1800525363 /* BPTableViewController.swift */,
+				01D76FA423CEBB1800525363 /* BPTableViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		01D76FA023CEBAA300525363 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				01D76FCE23CF0FEB00525363 /* Session */,
+				01D76FB523CEFD6D00525363 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		01D76FA123CEBAAC00525363 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				01D76FA923CEBB7000525363 /* BPModel.swift */,
+				01D76FB323CEE47100525363 /* a.geojson */,
+				01D76FCD23CF0F9000525363 /* b.geojson */,
+				01D76FD823CF12B500525363 /* c.geojson */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		01D76FA223CEBAB300525363 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				01D76FA723CEBB4F00525363 /* BPViewModel.swift */,
+				01D76FCB23CF02AE00525363 /* BPSessionViewModel.swift */,
+				01D76FC923CF02A500525363 /* BPCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		01D76FAB23CED8E300525363 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				01D76FAC23CED8FC00525363 /* BPTableViewProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		01D76FB523CEFD6D00525363 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				01D76FB623CEFFA900525363 /* BPLabelTableViewCell.swift */,
+				01D76FB723CEFFA900525363 /* BPLabelTableViewCell.xib */,
+				01D76FBA23CEFFBA00525363 /* BPImageTableViewCell.swift */,
+				01D76FBB23CEFFBA00525363 /* BPImageTableViewCell.xib */,
+				01D76FBE23CEFFD000525363 /* BPButtonTableViewCell.swift */,
+				01D76FBF23CEFFD000525363 /* BPButtonTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		01D76FC423CF018100525363 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				01D76FC723CF01B600525363 /* BPListAssembly.swift */,
+				01D76FC523CF01A600525363 /* BPListFactory.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		01D76FCE23CF0FEB00525363 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				01D76FD023CF103900525363 /* BPTableViewHeaderView.swift */,
+				01D76FD423CF105D00525363 /* BPTableViewHeaderView.xib */,
+				01D76FD223CF104800525363 /* BPTableViewFooterView.swift */,
+				01D76FD623CF106300525363 /* BPTableViewFooterView.xib */,
+			);
+			path = Session;
 			sourceTree = "<group>";
 		};
 		01E15CCA23BF58CD00A69E23 /* Subscript */ = {
@@ -806,6 +998,7 @@
 			children = (
 				010D6A9123A9FB4A00B84621 /* AppDelegate.swift */,
 				010D6A9323A9FB4A00B84621 /* SceneDelegate.swift */,
+				0171CBD023EBD04D00823722 /* SceneDelegate2.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -829,6 +1022,7 @@
 		01EA7BF323ABA50C00712B20 /* BaseKnowledge */ = {
 			isa = PBXGroup;
 			children = (
+				019BBDDD23D3FB0700061503 /* Thread */,
 				010442B523B4E3F700B1BF54 /* DesignPatterns */,
 				01A9C6C623B1733E000349E2 /* Foundation */,
 				01EA7BF523ABA5DC00712B20 /* LearnSwift */,
@@ -879,13 +1073,6 @@
 				01A3A40A23BF61FB003FEA19 /* AdvancedOperator */,
 			);
 			path = LearnSwift;
-			sourceTree = "<group>";
-		};
-		01EA7BF623ABA65600712B20 /* MVVM */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MVVM;
 			sourceTree = "<group>";
 		};
 		01EA7BF723ABA82700712B20 /* ListTable */ = {
@@ -1083,17 +1270,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				01A5D7B223BEDBB00057D144 /* NamePictureCell.xib in Resources */,
+				01D76FBD23CEFFBA00525363 /* BPImageTableViewCell.xib in Resources */,
+				01D76FC323CF009B00525363 /* server.json in Resources */,
+				01D76FD923CF12B500525363 /* c.geojson in Resources */,
+				01D76FA623CEBB1800525363 /* BPTableViewController.xib in Resources */,
 				01A5D7AB23BEDBB00057D144 /* EmailCell.xib in Resources */,
+				01D76FD523CF105D00525363 /* BPTableViewHeaderView.xib in Resources */,
+				0196CDE923D1888300112AB8 /* SnapViewController.xib in Resources */,
 				016FE6D923B5DD7800CE8784 /* sql.py in Resources */,
 				01A5D7AE23BEDBB00057D144 /* AttributeCell.xib in Resources */,
+				01D76FB423CEE47100525363 /* a.geojson in Resources */,
+				01D76FD723CF106300525363 /* BPTableViewFooterView.xib in Resources */,
 				010CE4E823B0D6E900AE57A9 /* BasicKnowledgCatalog.plist in Resources */,
 				0182346E23C4AA8C00FB30A9 /* RxSwiftViewController.xib in Resources */,
+				0196DCC523D1898500112AB8 /* SnapView.xib in Resources */,
+				01D76FB923CEFFA900525363 /* BPLabelTableViewCell.xib in Resources */,
 				010D6A9E23A9FB4C00B84621 /* LaunchScreen.storyboard in Resources */,
+				01D76FC123CEFFD000525363 /* BPButtonTableViewCell.xib in Resources */,
 				010D6A9B23A9FB4C00B84621 /* Assets.xcassets in Resources */,
 				01A5D7B323BEDBB00057D144 /* AboutCell.xib in Resources */,
 				016FE6D823B5DD7800CE8784 /* statistics.py in Resources */,
 				01A5D7B123BEDBB00057D144 /* FriendCell.xib in Resources */,
-				01A5D7B623BEDD4B0057D144 /* ServerData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1206,6 +1403,7 @@
 			files = (
 				01A3A40623BF5A3C003FEA19 /* MemorySafeViewController.swift in Sources */,
 				01C01BB423BDEA97008B2D9E /* ClosureViewController.swift in Sources */,
+				01D76FA823CEBB4F00525363 /* BPViewModel.swift in Sources */,
 				019FE1A623C0E9BF00B241B1 /* Produce.swift in Sources */,
 				01E15CC923BF583100A69E23 /* MethodViewController.swift in Sources */,
 				01A5D7AD23BEDBB00057D144 /* AboutCell.swift in Sources */,
@@ -1218,8 +1416,12 @@
 				013D09F823BE281A0050F15A /* FunctionViewController.swift in Sources */,
 				0195230223B173D600AE491B /* BasicViewController.swift in Sources */,
 				019FE1A223C0E99F00B241B1 /* FactoryViewController.swift in Sources */,
+				01D76FA523CEBB1800525363 /* BPTableViewController.swift in Sources */,
 				0112F9AE23BF57FD0002788E /* ControlFlowViewController.swift in Sources */,
 				01A5D3B223BEDB920057D144 /* ProfileViewController.swift in Sources */,
+				01D76FC623CF01A600525363 /* BPListFactory.swift in Sources */,
+				01D76FC023CEFFD000525363 /* BPButtonTableViewCell.swift in Sources */,
+				0196CDE823D1888300112AB8 /* SnapViewController.swift in Sources */,
 				01B24E2C23BF33A500677023 /* GenericsViewController.swift in Sources */,
 				010D6ACB23A9FD8F00B84621 /* CarViewController.swift in Sources */,
 				010D6ACC23A9FD8F00B84621 /* PersonViewController.swift in Sources */,
@@ -1232,9 +1434,11 @@
 				01A5D7AC23BEDBB00057D144 /* NamePictureCell.swift in Sources */,
 				01ADD32223BEDB2500EAB005 /* ProfileModel.swift in Sources */,
 				016C892C23C1C8F40084A326 /* ProfileFactory.swift in Sources */,
+				01D76FAA23CEBB7000525363 /* BPModel.swift in Sources */,
 				01E15CD523BF593300A69E23 /* OptionalChainViewController.swift in Sources */,
 				01E15CCF23BF58F300A69E23 /* InitializeViewController.swift in Sources */,
 				01A3A40C23BF6218003FEA19 /* AdvancedOperatorViewController.swift in Sources */,
+				019BBDE023D3FB2C00061503 /* GCDViewController.swift in Sources */,
 				01ADB56823BE290F00EAB005 /* PropertyViewController.swift in Sources */,
 				01EA7C0223ABA99700712B20 /* ListModel.swift in Sources */,
 				01A3A40323BF5A18003FEA19 /* ARCViewController.swift in Sources */,
@@ -1244,12 +1448,16 @@
 				01A5D7B023BEDBB00057D144 /* EmailCell.swift in Sources */,
 				013C7D3923B8604500804143 /* MVCView.swift in Sources */,
 				01EA7C0923ABAB1300712B20 /* RootNavigationController.swift in Sources */,
+				01D76FD123CF103900525363 /* BPTableViewHeaderView.swift in Sources */,
+				01D76FD323CF104800525363 /* BPTableViewFooterView.swift in Sources */,
 				010D6AD923A9FF6F00B84621 /* TestBridge.m in Sources */,
 				010D6AD223A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.m in Sources */,
 				01E15CD823BF595200A69E23 /* ErrorhandlingViewController.swift in Sources */,
 				0156813023BE28F100B42FB9 /* ProtocolViewController.swift in Sources */,
 				010D6A9223A9FB4A00B84621 /* AppDelegate.swift in Sources */,
+				0171CBD123EBD04D00823722 /* SceneDelegate2.swift in Sources */,
 				013C7D3523B8602D00804143 /* MVCModel.swift in Sources */,
+				01D76FAD23CED8FC00525363 /* BPTableViewProtocol.swift in Sources */,
 				012E2EBB23C0EBE5008F6253 /* Produce1.swift in Sources */,
 				010D6AD523A9FDB500B84621 /* BPSubViewController.swift in Sources */,
 				01C01BB123BDE699008B2D9E /* EnumViewController.swift in Sources */,
@@ -1257,17 +1465,23 @@
 				013C7D3C23B87B1700804143 /* MVVMViewModel.swift in Sources */,
 				010D6ACA23A9FD8F00B84621 /* BPContainer.swift in Sources */,
 				010D6A9423A9FB4A00B84621 /* SceneDelegate.swift in Sources */,
+				01D76FC823CF01B600525363 /* BPListAssembly.swift in Sources */,
 				01EE5DBE23B4E47100879BA5 /* SimpleMVVMViewController.swift in Sources */,
 				01EA7BFD23ABA87A00712B20 /* ListViewController.swift in Sources */,
+				01D76FCA23CF02A500525363 /* BPCellViewModel.swift in Sources */,
+				01D76FB823CEFFA900525363 /* BPLabelTableViewCell.swift in Sources */,
 				01ADB56E23BE296700EAB005 /* ClassStructViewController.swift in Sources */,
+				0196DCC323D1897500112AB8 /* SnapView.swift in Sources */,
 				01E15CDE23BF59E400A69E23 /* OpaqueTypeViewController.swift in Sources */,
 				010442B423B4E1C100B1BF54 /* OptionalViewController.swift in Sources */,
 				01E15CCC23BF58D800A69E23 /* SubscriptViewController.swift in Sources */,
 				010D6AC423A9FC6200B84621 /* BaseViewController.swift in Sources */,
 				01E15CD223BF590B00A69E23 /* DeinitViewController.swift in Sources */,
 				0112F9A523BF57B30002788E /* BaseOperatorViewController.swift in Sources */,
+				01D76FCC23CF02AE00525363 /* BPSessionViewModel.swift in Sources */,
 				01A5D7AF23BEDBB00057D144 /* FriendCell.swift in Sources */,
 				01B24E2F23BF358100677023 /* DataTypeConvertViewController.swift in Sources */,
+				01D76FBC23CEFFBA00525363 /* BPImageTableViewCell.swift in Sources */,
 				0112F9AB23BF57E30002788E /* CollectionTypesViewController.swift in Sources */,
 				01ADD32423BEDB2A00EAB005 /* ProfileViewModel.swift in Sources */,
 			);
@@ -1438,6 +1652,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = NO;
+				DEVELOPMENT_TEAM = 599FJK8FBV;
 				INFOPLIST_FILE = SwiftProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1458,6 +1673,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = NO;
+				DEVELOPMENT_TEAM = 599FJK8FBV;
 				INFOPLIST_FILE = SwiftProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

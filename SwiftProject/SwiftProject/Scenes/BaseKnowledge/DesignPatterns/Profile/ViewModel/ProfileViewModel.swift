@@ -39,30 +39,6 @@ protocol ProfileCellViewModelProtocol {
     func jumpDetail()
     func sutractAction()
     func addAction()
-
-    /// 头像预览
-    func presentPreviewAvatarController(_ controller: PersonalCardController, avatarKey: String, hideUpdateButton: Bool)
-    /// 跳转个人名片页
-    func pushPersonCard(_ controller: PersonalCardController, chatterId: String)
-    /// 打开链接
-    func openLink(_ controller: PersonalCardController, url: URL, userInfo: [String: Any])
-    /// 拨打电话
-    func openTel(_ controller: PersonalCardController, number: String)
-    /// 进入聊天界面
-    func pushChatController(_ controller: PersonalCardController, feedId: String, chatterId: String, isCrypto: Bool)
-    /// 进入我的二维码界面
-    func pushShareCard(_ controller: PersonalCardController)
-    /// 进入添加好友界面
-    func pushAddFriendsVC(_ controller: PersonalCardController, chatId: String, contactToken: String, applyBlock: (() -> Void)?)
-    /// 进入设置别名界面，目前暂不支持设置同一个群对方的别名
-    func pushSetAliasVC(_ controller: PersonalCardController,
-                        currentAlias: String,
-                        setBlock: ((_ alias: String) -> Void)?)
-    /// 跳转日程
-    func pushCalendar(_ controller: PersonalCardController, chatterId: String)
-    /// 视频聊天
-    func didSelectVideo(_ controller: PersonalCardController, chatterId: String, channelType: ChannelType)
-    func presentSetQueryNumberController(_ controller: PersonalCardController, chatterId: String)
 }
 
 extension ProfileCellViewModelProtocol {
@@ -96,55 +72,6 @@ extension ProfileCellViewModelProtocol {
     init(data: ProfileModel) {
         self.init(data: data)
     }
-
-    /// 头像预览
-    func presentPreviewAvatarController(_ controller: PersonalCardController, avatarKey: String, hideUpdateButton: Bool) {
-
-    }
-
-    /// 跳转个人名片页
-    func pushPersonCard(_ controller: PersonalCardController, chatterId: String) {
-
-    }
-
-    /// 打开链接
-    func openLink(_ controller: PersonalCardController, url: URL, userInfo: [String: Any]) {
-
-    }
-    /// 拨打电话
-    func openTel(_ controller: PersonalCardController, number: String) {
-
-    }
-    /// 进入聊天界面
-    func pushChatController(_ controller: PersonalCardController, feedId: String, chatterId: String, isCrypto: Bool) {
-
-    }
-    /// 进入我的二维码界面
-    func pushShareCard(_ controller: PersonalCardController) {
-
-    }
-    /// 进入添加好友界面
-    func pushAddFriendsVC(_ controller: PersonalCardController, chatId: String, contactToken: String, applyBlock: (() -> Void)?) {
-
-    }
-    /// 进入设置别名界面，目前暂不支持设置同一个群对方的别名
-    func pushSetAliasVC(_ controller: PersonalCardController,
-                        currentAlias: String,
-                        setBlock: ((_ alias: String) -> Void)?) {
-
-    }
-    /// 跳转日程
-    func pushCalendar(_ controller: PersonalCardController, chatterId: String) {
-
-    }
-    /// 视频聊天
-    func didSelectVideo(_ controller: PersonalCardController, chatterId: String, channelType: ChannelType) {
-
-    }
-    
-    func presentSetQueryNumberController(_ controller: PersonalCardController, chatterId: String) {
-
-    }
 }
 
 class ProfileViewModel: NSObject {
@@ -158,7 +85,7 @@ class ProfileViewModel: NSObject {
 
     private func parseData()  {
 
-        guard let data = dataFromFile("ServerData"), let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any], let body = json["data"] as? [String: Any] else  {
+        guard let data = dataFromFile("Directions"), let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any], let body = json["data"] as? [String: Any] else  {
             return
         }
 
@@ -290,8 +217,6 @@ class ProfileNamePictureViewModel: ProfileCellViewModelProtocol {
         self.name = model.fullName ?? ""
         self.pictureUrl = model.pictureUrl ?? ""
     }
-
-
 
     init(model: ProfileModel) {
         self.model = model

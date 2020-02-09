@@ -233,5 +233,38 @@
 			</dict>
 		</array>
 	</dict>
+	<dict>
+		<key>title</key>
+		<string>tableview</string>
+		<key>fileName</key>
+		<string>BPTableViewController</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>第三方框架</string>
+		<key>fileName</key>
+		<string>ListViewController</string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>SnapKit</string>
+				<key>fileName</key>
+				<string>SnapViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Swinject</string>
+				<key>fileName</key>
+				<string>Swinject</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>RxSwift</string>
+				<key>fileName</key>
+				<string>RxSwift</string>
+			</dict>
+		</array>
+	</dict>
 </array>
 </plist>

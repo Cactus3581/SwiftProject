@@ -194,11 +194,11 @@ class ClosureViewController: BaseViewController {
 
         //MARK:CompactMap
         // 可以把一个集合中的空值去除，并且返回一个去除nil值得数组。 把flatMap的filter过滤nil值的作用单独拿出来，就叫做CompactMap
-        let numbers = ["1", "2", "three", nil, "5"]
-        let compactMapResult = numbers.compactMap { (number) -> Int? in
-            return Int(number)
-        }
-        print(compactMapResult)
+//        let numbers = ["1", "2", "three", nil, "5"]
+//        let compactMapResult = numbers.compactMap { (number) -> Int? in
+//            return Int(number)
+//        }
+//        print(compactMapResult)
 
 
 
