@@ -8,6 +8,8 @@
 
 import UIKit
 
+// diyici
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
