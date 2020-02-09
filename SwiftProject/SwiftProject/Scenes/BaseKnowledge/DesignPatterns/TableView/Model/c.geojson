@@ -1,0 +1,28 @@
+{
+    "data": {
+        "error": 0,
+        "message": "Success",
+        "label": {
+            "title":"label",
+            "list":[
+                "name":"cell",
+                "name":"cell"
+            ]
+        },
+        "image": {
+            "title":"image",
+            "list":[
+                "name":"cell",
+                "name":"cell"
+            ]
+        },
+        "button": {
+            "title":"jump",
+            "list":[
+                "name":"cell",
+                "name":"cell"
+            ]
+        },
+        "order":["label","image","button"]
+    }
+}
