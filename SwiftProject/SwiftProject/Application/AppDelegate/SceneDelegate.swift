@@ -7,7 +7,9 @@
 //
 
 import UIKit
-//2
+
+
+// sada
 
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
