@@ -8,10 +8,8 @@
 
 import UIKit
 
-// a
-// c
-// b
-//d
+// m-a
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
