@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BPListAssembly.profileRegister()
         print("DidFinishLaunch")
         
+        
+        
+        
         return true
     }
 
