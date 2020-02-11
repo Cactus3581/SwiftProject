@@ -7,7 +7,9 @@
 //
 
 import UIKit
-//2
+
+
+// f
 
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {

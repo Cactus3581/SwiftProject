@@ -2,6 +2,10 @@
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
+
+/SwiftProject/SwiftProject/Application/AppDelegate/SceneDelegate2.swift
+/SwiftProject/SwiftProject/Application/AppDelegate/SceneDelegate3.swift
+
 ## User settings
 xcuserdata/
 

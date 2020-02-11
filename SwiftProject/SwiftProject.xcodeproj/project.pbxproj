@@ -40,7 +40,6 @@
 		016C980423C1CD690084A326 /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016C980323C1CD690084A326 /* ProfileAssembly.swift */; };
 		016FE6D823B5DD7800CE8784 /* statistics.py in Resources */ = {isa = PBXBuildFile; fileRef = 016FE6D623B5DD7800CE8784 /* statistics.py */; };
 		016FE6D923B5DD7800CE8784 /* sql.py in Resources */ = {isa = PBXBuildFile; fileRef = 016FE6D723B5DD7800CE8784 /* sql.py */; };
-		0171CBD123EBD04D00823722 /* SceneDelegate2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0171CBD023EBD04D00823722 /* SceneDelegate2.swift */; };
 		0182346D23C4AA8C00FB30A9 /* RxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182346B23C4AA8C00FB30A9 /* RxSwiftViewController.swift */; };
 		0182346E23C4AA8C00FB30A9 /* RxSwiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0182346C23C4AA8C00FB30A9 /* RxSwiftViewController.xib */; };
 		0195230223B173D600AE491B /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0195230123B173D600AE491B /* BasicViewController.swift */; };
@@ -180,7 +179,6 @@
 		016C980323C1CD690084A326 /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
 		016FE6D623B5DD7800CE8784 /* statistics.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = statistics.py; sourceTree = "<group>"; };
 		016FE6D723B5DD7800CE8784 /* sql.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = sql.py; sourceTree = "<group>"; };
-		0171CBD023EBD04D00823722 /* SceneDelegate2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate2.swift; sourceTree = "<group>"; };
 		0182346B23C4AA8C00FB30A9 /* RxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftViewController.swift; sourceTree = "<group>"; };
 		0182346C23C4AA8C00FB30A9 /* RxSwiftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxSwiftViewController.xib; sourceTree = "<group>"; };
 		0195230123B173D600AE491B /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
@@ -998,7 +996,6 @@
 			children = (
 				010D6A9123A9FB4A00B84621 /* AppDelegate.swift */,
 				010D6A9323A9FB4A00B84621 /* SceneDelegate.swift */,
-				0171CBD023EBD04D00823722 /* SceneDelegate2.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -1455,7 +1452,6 @@
 				01E15CD823BF595200A69E23 /* ErrorhandlingViewController.swift in Sources */,
 				0156813023BE28F100B42FB9 /* ProtocolViewController.swift in Sources */,
 				010D6A9223A9FB4A00B84621 /* AppDelegate.swift in Sources */,
-				0171CBD123EBD04D00823722 /* SceneDelegate2.swift in Sources */,
 				013C7D3523B8602D00804143 /* MVCModel.swift in Sources */,
 				01D76FAD23CED8FC00525363 /* BPTableViewProtocol.swift in Sources */,
 				012E2EBB23C0EBE5008F6253 /* Produce1.swift in Sources */,
