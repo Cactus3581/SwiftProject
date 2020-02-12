@@ -75,6 +75,7 @@
 		01B24E2F23BF358100677023 /* DataTypeConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B24E2E23BF358100677023 /* DataTypeConvertViewController.swift */; };
 		01C01BB123BDE699008B2D9E /* EnumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C01BB023BDE699008B2D9E /* EnumViewController.swift */; };
 		01C01BB423BDEA97008B2D9E /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C01BB323BDEA97008B2D9E /* ClosureViewController.swift */; };
+		01CABD5523F3C413009410C3 /* haha.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01CABD5423F3C413009410C3 /* haha.plist */; };
 		01D76FA523CEBB1800525363 /* BPTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FA323CEBB1800525363 /* BPTableViewController.swift */; };
 		01D76FA623CEBB1800525363 /* BPTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D76FA423CEBB1800525363 /* BPTableViewController.xib */; };
 		01D76FA823CEBB4F00525363 /* BPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FA723CEBB4F00525363 /* BPViewModel.swift */; };
@@ -214,6 +215,7 @@
 		01B24E2E23BF358100677023 /* DataTypeConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypeConvertViewController.swift; sourceTree = "<group>"; };
 		01C01BB023BDE699008B2D9E /* EnumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumViewController.swift; sourceTree = "<group>"; };
 		01C01BB323BDEA97008B2D9E /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
+		01CABD5423F3C413009410C3 /* haha.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = haha.plist; sourceTree = "<group>"; };
 		01D76FA323CEBB1800525363 /* BPTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPTableViewController.swift; sourceTree = "<group>"; };
 		01D76FA423CEBB1800525363 /* BPTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPTableViewController.xib; sourceTree = "<group>"; };
 		01D76FA723CEBB4F00525363 /* BPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPViewModel.swift; sourceTree = "<group>"; };
@@ -727,6 +729,7 @@
 			children = (
 				0182346B23C4AA8C00FB30A9 /* RxSwiftViewController.swift */,
 				0182346C23C4AA8C00FB30A9 /* RxSwiftViewController.xib */,
+				01CABD5423F3C413009410C3 /* haha.plist */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -1281,6 +1284,7 @@
 				010CE4E823B0D6E900AE57A9 /* BasicKnowledgCatalog.plist in Resources */,
 				0182346E23C4AA8C00FB30A9 /* RxSwiftViewController.xib in Resources */,
 				0196DCC523D1898500112AB8 /* SnapView.xib in Resources */,
+				01CABD5523F3C413009410C3 /* haha.plist in Resources */,
 				01D76FB923CEFFA900525363 /* BPLabelTableViewCell.xib in Resources */,
 				010D6A9E23A9FB4C00B84621 /* LaunchScreen.storyboard in Resources */,
 				01D76FC123CEFFD000525363 /* BPButtonTableViewCell.xib in Resources */,
