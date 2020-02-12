@@ -32,10 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         
         
-        
-        
-        ll
-        ;kl
+    //1
         
         
         
