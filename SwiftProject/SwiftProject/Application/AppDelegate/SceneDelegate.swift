@@ -39,6 +39,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         
         
+        
+        
+        
+        
         self.window?.frame = UIScreen.main.bounds
         //当你操作可选项(带?)的值的时候，比如方法，属性和下标：如果 ?前的值是 nil，那 ?后的所有内容都会被忽略并且整个表达式的值都是 nil。否则，可选项的值将被展开，然后 ?后边的代码根据展开的值执行。
 
