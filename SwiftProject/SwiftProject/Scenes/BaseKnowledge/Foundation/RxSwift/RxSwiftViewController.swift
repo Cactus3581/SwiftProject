@@ -68,14 +68,19 @@ class RxSwiftViewController : BaseViewController {
             cancelButtonTitle: "OK"
         )
 
+<<<<<<< HEAD
 
         
+        alertView.show()
+=======
+        
+>>>>>>> develop
+
         alertView.show()
 
 
 
 
-
         
 
 
@@ -84,6 +89,11 @@ class RxSwiftViewController : BaseViewController {
         
 
         
+
+
+
+
+
     }
 
 }

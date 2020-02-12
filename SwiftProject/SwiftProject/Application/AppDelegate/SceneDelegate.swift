@@ -19,8 +19,7 @@ dsadasda
     var window: UIWindow?
     
     
-    
-    
+
 
         //由于 swift 中的类属性都是 lazy 方式求值的, 所以需要在 AppDelegate 中先引用一次, 以保证 container 中的所有注册内容都是在程序最开始就运行:
 //    let container = BPContainer.container
@@ -28,10 +27,24 @@ dsadasda
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
+        
+        
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         self.window = UIWindow(windowScene: scene as! UIWindowScene)
+        
+        
+        
+    //1
+        
+        
+        
+        
+        
+        
+        
+        
         self.window?.frame = UIScreen.main.bounds
         //当你操作可选项(带?)的值的时候，比如方法，属性和下标：如果 ?前的值是 nil，那 ?后的所有内容都会被忽略并且整个表达式的值都是 nil。否则，可选项的值将被展开，然后 ?后边的代码根据展开的值执行。
 
