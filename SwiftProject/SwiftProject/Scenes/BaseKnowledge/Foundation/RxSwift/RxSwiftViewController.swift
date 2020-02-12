@@ -70,6 +70,7 @@ class RxSwiftViewController : BaseViewController {
 
         
 
+        
         alertView.show()
 
 
