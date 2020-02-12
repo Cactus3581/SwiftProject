@@ -109,7 +109,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
         print("将进入前台")
-        print("将进入前台")
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
