@@ -2,9 +2,16 @@
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
-
-/SwiftProject/SwiftProject/Application/AppDelegate/SceneDelegate2.swift
-/SwiftProject/SwiftProject/Application/AppDelegate/SceneDelegate3.swift
+## 自己加入的
+*.xcuserstate
+*/.DS_Store
+.DS_Store
+project.xcworkspace
+xcuserdata
+UserInterfaceState.xcuserstate
+project.xcworkspace/
+xcuserdata/
+UserInterface.xcuserstate
 
 ## User settings
 xcuserdata/
