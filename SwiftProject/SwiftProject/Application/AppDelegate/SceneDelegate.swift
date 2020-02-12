@@ -12,7 +12,7 @@ import UIKit
 // f1
 
 
-
+//mine
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
