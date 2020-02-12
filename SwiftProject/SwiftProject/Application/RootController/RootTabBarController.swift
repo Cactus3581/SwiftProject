@@ -11,6 +11,7 @@ import UIKit
 class RootTabBarController: UITabBarController {
 
     private let kFeatureCatalog = "FeatureCatalog"
+    
     private let kBasicKnowledgCatalog = "BasicKnowledgCatalog"
     private let kImprovingTipCatalog = "ImprovingTipCatalog"
 

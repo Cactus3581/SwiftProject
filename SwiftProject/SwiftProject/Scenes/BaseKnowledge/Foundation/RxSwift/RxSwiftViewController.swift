@@ -69,13 +69,11 @@ class RxSwiftViewController : BaseViewController {
         )
 
 
-        
         alertView.show()
 
 
 
 
-
         
 
 
@@ -84,6 +82,11 @@ class RxSwiftViewController : BaseViewController {
         
 
         
+
+
+
+
+
     }
 
 }
