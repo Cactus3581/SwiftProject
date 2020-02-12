@@ -67,34 +67,6 @@ class RxSwiftViewController : BaseViewController {
             delegate: nil,
             cancelButtonTitle: "OK"
         )
-
-<<<<<<< HEAD
-
-        
         alertView.show()
-=======
-        
->>>>>>> develop
-
-        
-        alertView.show()
-
-
-
-
-        
-
-
-
-
-        
-
-        
-
-
-
-
-
     }
-
 }
