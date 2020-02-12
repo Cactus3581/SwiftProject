@@ -40,6 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // L
     // O
+    //V
 
 
     func applicationWillEnterForeground(_ application: UIApplication) {
