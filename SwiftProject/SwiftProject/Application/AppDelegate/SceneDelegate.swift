@@ -131,5 +131,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
         print("已进入后台")
         print("已进入后台")
+        //
     }
 }
