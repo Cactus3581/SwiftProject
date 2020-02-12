@@ -6,6 +6,8 @@
 //  Copyright © 2019 cactus. All rights reserved.
 //
 
+//>>
+
 import UIKit
 
 class RootTabBarController: UITabBarController {
@@ -19,6 +21,7 @@ class RootTabBarController: UITabBarController {
         super.viewDidLoad()
         addChildViewController()
 
+        // develop
         // Do any additional setup after loading the view.
     }
     /**
@@ -26,6 +29,7 @@ class RootTabBarController: UITabBarController {
      */
     func addChildViewController() {
 
+        // master-1
         let featureVC = UIViewController();
 //        featureVC.url = kFeatureCatalog;
         setUpChildViewController(viewController: featureVC, image: UIImage.init(named: "tabbar_hotScenes")!, title: "场景")
@@ -50,6 +54,7 @@ class RootTabBarController: UITabBarController {
         navC.tabBarItem.image = image;
         navC.tabBarItem.selectedImage = image;
         addChild(navC)
+        //b
     }
 
 }

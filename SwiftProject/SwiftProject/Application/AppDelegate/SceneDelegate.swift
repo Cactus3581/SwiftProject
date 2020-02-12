@@ -20,7 +20,10 @@ import UIKit
 //lark-10
 //master -11
 //master -20
-//develop -20
+
+//master -21
+//master -30
+//master -301
 
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -118,6 +121,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called when the scene will move from an active state to an inactive state.
         // This may occur due to temporary interruptions (ex. an incoming phone call).
         print("将取消活跃")
+        print("将取消活跃")
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
@@ -125,5 +129,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
         print("已进入后台")
+        print("已进入后台")
+        //1
+        //2
+        //10
+        //11
+        //12
+        //13
     }
 }

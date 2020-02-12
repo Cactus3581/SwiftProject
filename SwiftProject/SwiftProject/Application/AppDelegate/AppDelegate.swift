@@ -30,22 +30,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-    // lark
-    //lark
-    //lark
-    //lark
-    //lark2
-    //lark1-10
-    //lark1-11
-//lark1-12
+
+
+
+
+
+
+
 
     //lark1-21
     func applicationWillEnterForeground(_ application: UIApplication) {
         print("将进入前台")
-        //lark1-101
-        //lark1-102
-        //2
-        //4
+
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -54,6 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillResignActive(_ application: UIApplication) {
         print("将取消活跃")
+        // zhen
 
         
     }
@@ -89,6 +86,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+
+        //
+
+
+
+        //---
+
+        //222
+
+        // m-2
+
+
     }
 
 

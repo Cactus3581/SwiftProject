@@ -6,12 +6,14 @@
 //  Copyright © 2019 cactus. All rights reserved.
 //
 
+//<
 import UIKit
 
 class RootNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //<<
 
     }
 }
