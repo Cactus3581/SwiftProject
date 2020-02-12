@@ -37,8 +37,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     //a
+<<<<<<< HEAD
     //b
     //c
+=======
+>>>>>>> parent of 8e0bd52... b
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         print("将进入前台")
