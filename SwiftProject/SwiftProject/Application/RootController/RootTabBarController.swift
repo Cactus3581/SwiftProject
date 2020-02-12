@@ -27,6 +27,7 @@ class RootTabBarController: UITabBarController {
      */
     func addChildViewController() {
 
+        // master-1
         let featureVC = UIViewController();
 //        featureVC.url = kFeatureCatalog;
         setUpChildViewController(viewController: featureVC, image: UIImage.init(named: "tabbar_hotScenes")!, title: "场景")
