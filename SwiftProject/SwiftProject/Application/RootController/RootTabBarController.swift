@@ -52,6 +52,7 @@ class RootTabBarController: UITabBarController {
         navC.tabBarItem.image = image;
         navC.tabBarItem.selectedImage = image;
         addChild(navC)
+        //b
     }
 
 }
