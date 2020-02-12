@@ -75,6 +75,7 @@
 		01B24E2F23BF358100677023 /* DataTypeConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B24E2E23BF358100677023 /* DataTypeConvertViewController.swift */; };
 		01C01BB123BDE699008B2D9E /* EnumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C01BB023BDE699008B2D9E /* EnumViewController.swift */; };
 		01C01BB423BDEA97008B2D9E /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C01BB323BDEA97008B2D9E /* ClosureViewController.swift */; };
+		01CABD6023F4016D009410C3 /* hahaha.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01CABD5F23F4016D009410C3 /* hahaha.plist */; };
 		01D76FA523CEBB1800525363 /* BPTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FA323CEBB1800525363 /* BPTableViewController.swift */; };
 		01D76FA623CEBB1800525363 /* BPTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D76FA423CEBB1800525363 /* BPTableViewController.xib */; };
 		01D76FA823CEBB4F00525363 /* BPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FA723CEBB4F00525363 /* BPViewModel.swift */; };
@@ -214,6 +215,7 @@
 		01B24E2E23BF358100677023 /* DataTypeConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypeConvertViewController.swift; sourceTree = "<group>"; };
 		01C01BB023BDE699008B2D9E /* EnumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumViewController.swift; sourceTree = "<group>"; };
 		01C01BB323BDEA97008B2D9E /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
+		01CABD5F23F4016D009410C3 /* hahaha.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = hahaha.plist; sourceTree = "<group>"; };
 		01D76FA323CEBB1800525363 /* BPTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPTableViewController.swift; sourceTree = "<group>"; };
 		01D76FA423CEBB1800525363 /* BPTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPTableViewController.xib; sourceTree = "<group>"; };
 		01D76FA723CEBB4F00525363 /* BPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPViewModel.swift; sourceTree = "<group>"; };
@@ -996,6 +998,7 @@
 			children = (
 				010D6A9123A9FB4A00B84621 /* AppDelegate.swift */,
 				010D6A9323A9FB4A00B84621 /* SceneDelegate.swift */,
+				01CABD5F23F4016D009410C3 /* hahaha.plist */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -1274,6 +1277,7 @@
 				01A5D7AB23BEDBB00057D144 /* EmailCell.xib in Resources */,
 				01D76FD523CF105D00525363 /* BPTableViewHeaderView.xib in Resources */,
 				0196CDE923D1888300112AB8 /* SnapViewController.xib in Resources */,
+				01CABD6023F4016D009410C3 /* hahaha.plist in Resources */,
 				016FE6D923B5DD7800CE8784 /* sql.py in Resources */,
 				01A5D7AE23BEDBB00057D144 /* AttributeCell.xib in Resources */,
 				01D76FB423CEE47100525363 /* a.geojson in Resources */,
