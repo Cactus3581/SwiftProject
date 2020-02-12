@@ -45,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillEnterForeground(_ application: UIApplication) {
         print("将进入前台")
         // xia
+        // ruzhen
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
