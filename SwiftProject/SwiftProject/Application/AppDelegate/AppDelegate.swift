@@ -42,6 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //lark1-21
     func applicationWillEnterForeground(_ application: UIApplication) {
         print("将进入前台")
+        //lark1-101
+        //lark1-101
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
