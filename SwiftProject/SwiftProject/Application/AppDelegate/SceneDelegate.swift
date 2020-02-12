@@ -132,6 +132,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         print("已进入后台")
         print("已进入后台")
         //1
-        
+        //2
     }
 }
