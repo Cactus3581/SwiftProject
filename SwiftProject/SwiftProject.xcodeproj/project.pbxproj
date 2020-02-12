@@ -347,12 +347,12 @@
 			isa = PBXGroup;
 			children = (
 				010D6ADA23A9FFA900B84621 /* SwiftProject-Bridging-Header.h */,
-				01EA7BED23ABA43900712B20 /* Vendors */,
-				01EA7BEC23ABA43300712B20 /* Utility */,
+				01CABD5E23F3D39A009410C3 /* Vendors */,
+				01CABD5D23F3D392009410C3 /* Utility */,
+				01CABD5B23F3D370009410C3 /* Macro */,
+				01CABD5A23F3D360009410C3 /* Helpers */,
 				01EA7BEB23ABA42B00712B20 /* Scenes */,
 				01EA7BEA23ABA42200712B20 /* Resources */,
-				01EA7BE923ABA41A00712B20 /* Macro */,
-				01EA7BE823ABA41300712B20 /* Helpers */,
 				01EA7BE723ABA40700712B20 /* General */,
 				01EA7BE623ABA3FC00712B20 /* BaseClass */,
 				01EA7BE523ABA3F000712B20 /* Application */,
@@ -749,6 +749,41 @@
 			path = Closure;
 			sourceTree = "<group>";
 		};
+		01CABD5A23F3D360009410C3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		01CABD5B23F3D370009410C3 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		01CABD5C23F3D382009410C3 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		01CABD5D23F3D392009410C3 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		01CABD5E23F3D39A009410C3 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
 		01D76F9E23CEBA8D00525363 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -931,20 +966,6 @@
 			path = General;
 			sourceTree = "<group>";
 		};
-		01EA7BE823ABA41300712B20 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		01EA7BE923ABA41A00712B20 /* Macro */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Macro;
-			sourceTree = "<group>";
-		};
 		01EA7BEA23ABA42200712B20 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -956,41 +977,11 @@
 		01EA7BEB23ABA42B00712B20 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				01CABD5C23F3D382009410C3 /* Features */,
 				01EA7BF423ABA51300712B20 /* ImprovingTips */,
 				01EA7BF323ABA50C00712B20 /* BaseKnowledge */,
-				01EA7BF223ABA50400712B20 /* Features */,
 			);
 			path = Scenes;
-			sourceTree = "<group>";
-		};
-		01EA7BEC23ABA43300712B20 /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-				01EA7BEF23ABA46A00712B20 /* Inherit */,
-				01EA7BEE23ABA46100712B20 /* Category */,
-			);
-			path = Utility;
-			sourceTree = "<group>";
-		};
-		01EA7BED23ABA43900712B20 /* Vendors */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Vendors;
-			sourceTree = "<group>";
-		};
-		01EA7BEE23ABA46100712B20 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
-		01EA7BEF23ABA46A00712B20 /* Inherit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Inherit;
 			sourceTree = "<group>";
 		};
 		01EA7BF023ABA4D900712B20 /* AppDelegate */ = {
@@ -1010,13 +1001,6 @@
 				01EA7C0823ABAB1300712B20 /* RootNavigationController.swift */,
 			);
 			path = RootController;
-			sourceTree = "<group>";
-		};
-		01EA7BF223ABA50400712B20 /* Features */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Features;
 			sourceTree = "<group>";
 		};
 		01EA7BF323ABA50C00712B20 /* BaseKnowledge */ = {

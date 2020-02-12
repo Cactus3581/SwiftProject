@@ -30,10 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-//1
-//2
-//3
-//4
 
 
 
@@ -41,9 +37,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
+
+    //lark1-21
     func applicationWillEnterForeground(_ application: UIApplication) {
         print("将进入前台")
-        // xia
+
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
