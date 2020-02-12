@@ -44,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("将进入前台")
         //lark1-101
         //lark1-102
+        //2
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
