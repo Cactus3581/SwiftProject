@@ -37,6 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillResignActive(_ application: UIApplication) {
         print("将取消活跃")
+
+        
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
