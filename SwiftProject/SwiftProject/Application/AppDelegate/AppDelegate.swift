@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 //1
 //2
-    
+//3
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         print("将进入前台")
