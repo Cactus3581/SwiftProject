@@ -9,6 +9,7 @@
 import UIKit
 
 // 11
+// diyici
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
