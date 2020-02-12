@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("DidFinishLaunch")
         
         
-        '''
         
         
         
