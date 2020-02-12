@@ -48,7 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         print("已变成活跃")
-        // ru
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
