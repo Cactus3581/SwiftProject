@@ -24,6 +24,7 @@ dsadasda
 
         //由于 swift 中的类属性都是 lazy 方式求值的, 所以需要在 AppDelegate 中先引用一次, 以保证 container 中的所有注册内容都是在程序最开始就运行:
 //    let container = BPContainer.container
+    //2
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
