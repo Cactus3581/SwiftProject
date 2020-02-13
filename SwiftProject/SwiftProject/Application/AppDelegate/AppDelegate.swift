@@ -8,40 +8,21 @@
 
 import UIKit
 
-// 11
-// diyici
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    // diyici
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         ProfileAssembly.profileRegister()
         BPListAssembly.profileRegister()
         
         print("DidFinishLaunch")
-        
-            
-        
-        
-        
-
-        
         return true
     }
 
-
-
-
-
-
-
-
-    //lark1-21
     func applicationWillEnterForeground(_ application: UIApplication) {
         print("将进入前台")
-
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -50,9 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillResignActive(_ application: UIApplication) {
         print("将取消活跃")
-        // zhen
-
-        
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -61,9 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         print("WillTerminate")
-
-
-        //master
     }
 
     func applicationDidFinishLaunching(_ application: UIApplication) {
@@ -86,20 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-
-        //
-
-
-
-        //---
-
-        //222
-
-        // m-2
-
-
     }
-
-
 }
 

@@ -20,9 +20,6 @@ class RootTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addChildViewController()
-
-        // develop
-        // Do any additional setup after loading the view.
     }
     /**
      *  添加所有子控制器方法
@@ -54,7 +51,6 @@ class RootTabBarController: UITabBarController {
         navC.tabBarItem.image = image;
         navC.tabBarItem.selectedImage = image;
         addChild(navC)
-        //b
     }
 
 }

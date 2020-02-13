@@ -8,8 +8,6 @@
 
 import UIKit
 
-// dev-1
-// dev-2
 class BaseViewController: UIViewController {
 
     // MARK - 动态跳转
@@ -23,7 +21,5 @@ class BaseViewController: UIViewController {
     }
 
     func handleDynamicJumpData() {
-        //master-2
-        //master-4
     }
 }
