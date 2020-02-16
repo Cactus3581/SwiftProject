@@ -241,12 +241,14 @@ class ClosureViewController: BaseViewController {
 
         //调用函数时，参数像是String类型而不是闭包，但是参数会自动转换为闭包，因为参数的类型被标记为 @autoclosure 了
         serve(customer: customersInLine.remove(at: 0))
+
     }
 
     //MARK:逃逸闭包：闭包在函数体外使用，需要使用@escaping修饰，否则会编译错误
     func escaping() {
         let block = { (a: Int, b: Int) -> Int in
             return a+b
+            
         }
 
         func loadData(finished: @escaping (Int,Int) -> Int) {
