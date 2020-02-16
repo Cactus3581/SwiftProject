@@ -10,7 +10,8 @@ import UIKit
 
 class ClosureViewController: BaseViewController {
 
-    var block1: ((Int, Int) -> Int)?
+    var escapingClosure: ((Int, Int) -> Int)?
+
     var a = 10
 
     override func viewDidLoad() {
@@ -42,12 +43,13 @@ class ClosureViewController: BaseViewController {
 
 
         //MARK:sorted - 排序
-        let names = ["Chris","Alex","Ewa","Barry","Daniella"]
 
         // 方式1:作为函数传进去
         func backward(_ s1: String, _ s2: String) -> Bool {
             return s1 > s2
         }
+
+        let names = ["Chris","Alex","Ewa","Barry","Daniella"]
         var reversedNames = names.sorted(by: backward)
         print(reversedNames)
 
@@ -57,7 +59,8 @@ class ClosureViewController: BaseViewController {
 
         // 方式3:直接写闭包
         reversedNames = names.sorted(by: { (s1: String, s2: String) -> Bool in
-            return s1 > s2 }
+                return s1 > s2
+            }
         )
 
         //简化后
@@ -77,15 +80,7 @@ class ClosureViewController: BaseViewController {
         reversedNames = names.sorted { $0 > $1 }
 
 
-        //MARK:逃逸闭包：在函数体外可以使用的闭包，一旦不在函数体内，需要使用@escaping修饰
-        let block = { (a: Int, b: Int) -> Int in
-            return a+b
-        }
 
-        func loadData(finished: @escaping (Int,Int) -> Int) {
-            // 记录闭包
-            self.block1 = finished
-        }
 
         //MARK:自动闭包
         // 直接使用闭包变量，而不是把闭包作为参数传递到某个函数中，然后再调用该函数，函数内再调用闭包
@@ -125,6 +120,10 @@ class ClosureViewController: BaseViewController {
         serve1(customer: customersInLine.remove(at: 0))
         // Prints "Now serving Ewa!"
 
+
+        func loadData(finished: @escaping (Int,Int) -> Int) {
+            // 记录闭包
+        }
 
         // 解决方式一: weak
         weak var weakSelf = self
@@ -228,8 +227,97 @@ class ClosureViewController: BaseViewController {
             button.tag = i
             return button
         }
+    }
+
+    //MARK:自动闭包
+    func autoclosure() {
+        var customersInLine = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
+
+        //使用 @autoclosure 标记它的参数使用自动闭包
+
+        func serve(customer customerProvider: @autoclosure () -> String) {
+            print("Now serving \(customerProvider())!")
+        }
+
+        //调用函数时，参数像是String类型而不是闭包，但是参数会自动转换为闭包，因为参数的类型被标记为 @autoclosure 了
+        serve(customer: customersInLine.remove(at: 0))
+    }
+
+    //MARK:逃逸闭包：闭包在函数体外使用，需要使用@escaping修饰，否则会编译错误
+    func escaping() {
+        let block = { (a: Int, b: Int) -> Int in
+            return a+b
+        }
+
+        func loadData(finished: @escaping (Int,Int) -> Int) {
+            // 记录闭包
+            self.escapingClosure = finished
+        }
+
+        loadData { (a, b) -> Int in
+            return 2
+        }
+    }
 
 
 
+    func base() {
+        //创建了一个参数为函数类型的函数，这个参数是函数或者是闭包
+        func foo1(name: (_ para: String) -> String)  {
+            // do
+            print(name("a"))
+        }
+
+        //调用方式1:传参时创建和定义一个闭包
+        foo1(name: {
+            (para: String) -> String in
+                return "\(para)调用方式1"
+        })
+
+        //调用方式2:传参时创建和定义一个闭包 - 简化版
+        foo1(name: {
+            "\($0)调用方式2"
+        })
+
+        //调用方式3: 单独创建和定义一个闭包
+        let block = {
+            (para: String) -> String in
+            return "\(para)调用方式3"
+        }
+        foo1(name: block)
+
+        //调用方式4: 单独创建和定义一个闭包 - 因为没有上下文所以无法简化
+//        let escapingClosure = {
+//            return "\($0)调用方式4"
+//        }
+//        foo1(name: escapingClosure)
+
+        //调用方式5: 使用普通函数而不是闭包
+        func foo2(para: String) -> String  {
+            return "\(para)调用方式5"
+        }
+        foo1(name: foo2)
+
+        // 尾随闭包-省略参数
+        //调用方式1:传参时创建和定义一个闭包
+        func foo4(name: String, closure: (_ para: String) -> String)  {
+            // do
+            print(closure("a"))
+        }
+
+        // 不使用尾随闭包
+        foo4(name: "", closure: { (para) -> String in
+            return "\(para)调用方式1"
+        })
+
+        // 尾随闭包-省略参数
+        foo4(name: "") { (para) -> String in
+            return "\(para)调用方式1"
+        }
+
+        // 使用尾随闭包+当函数只有一个参数时-可以省略圆括号
+        foo1 {
+            "\($0)调用方式2"
+        }
     }
 }
