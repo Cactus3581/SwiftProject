@@ -13,18 +13,25 @@ class MethodViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
         // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+class Test: NSObject {
+    var name:String?
+
+        // 自定义的类创建的实例对象属于引用类型，不需要使用 mutating
+    func change(name:String) {
+        self.name = name
     }
-    */
+}
 
+struct Test1 {
+    var name:Int?
+    // 自定义的结构体创建的实例属于值类型，不能直接更改它的属性m，需要使用 mutating
+    mutating func change(name:Int) {
+        self.name = name
+    }
 }

@@ -219,12 +219,6 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>RxSwift 与 MVVM</string>
-						<key>fileName</key>
-						<string>RxSwiftViewController</string>
-					</dict>
-					<dict>
-						<key>title</key>
 						<string>多种cell构造</string>
 						<key>fileName</key>
 						<string>MultipleCellsViewController</string>
@@ -262,7 +256,22 @@
 				<key>title</key>
 				<string>RxSwift</string>
 				<key>fileName</key>
-				<string>RxSwift</string>
+				<string>ListViewController</string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>RxSwift</string>
+						<key>fileName</key>
+						<string>RxSwiftViewController</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>SPSwift</string>
+						<key>fileName</key>
+						<string>SPSwiftViewController</string>
+					</dict>
+				</array>
 			</dict>
 		</array>
 	</dict>

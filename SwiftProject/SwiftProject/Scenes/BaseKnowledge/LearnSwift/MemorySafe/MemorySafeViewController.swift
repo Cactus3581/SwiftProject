@@ -10,6 +10,10 @@ import UIKit
 
 class MemorySafeViewController: BaseViewController {
 
+    /*不涉及并发和多线程代码。
+1. Swift 会保证在使用前就初始化，
+     数组会检查越界错误。
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
 
