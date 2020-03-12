@@ -194,44 +194,68 @@
 		<array>
 			<dict>
 				<key>title</key>
+				<string>tableview</string>
+				<key>fileName</key>
+				<string>BPTableViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
 				<string>Profile</string>
 				<key>fileName</key>
 				<string>ProfileViewController</string>
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>MVVM</string>
+				<string>列表设计模式</string>
 				<key>fileName</key>
 				<string>ListViewController</string>
 				<key>subVc_array</key>
 				<array>
 					<dict>
 						<key>title</key>
-						<string>简单MVC</string>
+						<string>MVC</string>
 						<key>fileName</key>
-						<string>MVCViewController</string>
+						<string>ListViewController</string>
+						<key>subVc_array</key>
+						<array>
+							<dict>
+								<key>title</key>
+								<string>普通MVC</string>
+								<key>fileName</key>
+								<string>MVCViewController</string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>列表MVC</string>
+								<key>fileName</key>
+								<string>MVCListViewController</string>
+							</dict>
+						</array>
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>简单MVVM</string>
+						<string>MVVM</string>
 						<key>fileName</key>
-						<string>SimpleMVVMViewController</string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>多种cell构造</string>
-						<key>fileName</key>
-						<string>MultipleCellsViewController</string>
+						<string>ListViewController</string>
+						<key>subVc_array</key>
+						<array>
+							<dict>
+								<key>title</key>
+								<string>普通MVVM</string>
+								<key>fileName</key>
+								<string>MVVMViewController</string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>列表MVVM</string>
+								<key>fileName</key>
+								<string>MVVMListViewController</string>
+							</dict>
+						</array>
 					</dict>
 				</array>
 			</dict>
 		</array>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>tableview</string>
-		<key>fileName</key>
-		<string>BPTableViewController</string>
 	</dict>
 	<dict>
 		<key>title</key>
@@ -274,6 +298,12 @@
 				</array>
 			</dict>
 		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string> 线程</string>
+		<key>fileName</key>
+		<string>GCDViewController</string>
 	</dict>
 </array>
 </plist>

@@ -98,8 +98,8 @@ class BPContainer: NSObject {
         }.inObjectScope(.container)
 
 
-//        container.register(PersonViewController.self) { resolver in
-//            let controller = PersonViewController()
+//        container.register(SwinjectViewController.self) { resolver in
+//            let controller = SwinjectViewController()
 //            controller.person = resolver.resolve(Person.self)
 //            return controller
 //        }
