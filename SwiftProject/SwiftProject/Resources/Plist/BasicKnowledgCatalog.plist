@@ -251,6 +251,12 @@
 								<key>fileName</key>
 								<string>MVVMListViewController</string>
 							</dict>
+							<dict>
+								<key>title</key>
+								<string>列表 带session的MVVM</string>
+								<key>fileName</key>
+								<string>MVVMListSecViewController</string>
+							</dict>
 						</array>
 					</dict>
 				</array>
