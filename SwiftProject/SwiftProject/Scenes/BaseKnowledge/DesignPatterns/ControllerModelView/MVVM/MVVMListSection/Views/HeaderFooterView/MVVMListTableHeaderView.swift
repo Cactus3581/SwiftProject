@@ -35,7 +35,6 @@ class MVVMListTableHeaderView: UIView {
 
     var viewModel: MVVMListSecViewModel? {
         didSet {
-            // 赋值
             button?.setTitle(viewModel?.model?.header, for: .normal)
         }
     }

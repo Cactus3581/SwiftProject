@@ -8,16 +8,15 @@
 
 import UIKit
 
-//协议的作用就是解决通用性问题，替代继承用的
-//MARK:服务于sessionViewModel，为sessionView提供数据，接收事件
+//MARK:该协议服务于sessionViewModel，为sessionView提供数据和事件。协议的作用就是解决通用性问题，替代继承用的
 protocol MVVMListSectionViewModelProtocol {
-    //  以下的定义没有问题
     static func canHandle(type: String) -> Bool
     init(data: MVVMListSecModel)
 
     var headerIdentifier: String { get }
     var footerIdentifier: String { get }
-    var identifier: String { get }
+
+    var identifier: String { get } //现在默认sessionViewm只有一种cell类型，所以可以放到sessionViewModelProtocol协议里，如果以后需要支持sessionView存在多种cell类型，需要放到CellViewModelProtocol里
 
     var list: Array<Any>? { set get }
 }
@@ -40,17 +39,6 @@ protocol MVVMListSectionTextViewModelProtocol: MVVMListSectionViewModelProtocol 
 }
 
 extension MVVMListSectionTextViewModelProtocol {
-    // 针对多对1的方案
-    /*  以下的定义，因为涉及一个view对应多个sessionViewModel/model的问题，所以：
-     1. 需要将数据单独抽出来
-     2. 事件也单独列出来
-
-     除非不复用view，那不可能不复用
-     复用的情况：
-     1. view和model一对一:是非常完美的情况:
-     2. 多个view使用一个vm：首先UI样式不一样，但是数据或者说model/vm是一样的，这种情况很少，但是跟第一种情况差不多，也很好处理；
-     3. 多个vm使用一个view:现在的情况就是，多个sessionViewModel使用了同一个sectionHeaderView
-     */
     var headerText: String? {return ""}
     var footerText: String? {return ""}
 
@@ -118,7 +106,6 @@ class MVVMListTextListeningSectionViewModel: MVVMListSectionTextViewModelProtoco
     }
 
     func footerClick() {
-        // 具体事件具体分析
         print("Text Footer点击")
     }
 }
@@ -161,12 +148,10 @@ class MVVMListTextListeningSameSectionViewModel: MVVMListSectionTextViewModelPro
     }
 
     func headerJump() {
-        // 通过路由
         print("Text Header跳转")
     }
 
     func footerClick() {
-        // 具体事件具体分析
         print("Text Footer点击")
     }
 }
@@ -258,12 +243,10 @@ class MVVMListTextSpeakSessionViewModel: MVVMListSectionTextViewModelProtocol {
     }
 
     func headerJump() {
-        // 通过路由
         print("Header 事件：跳转")
     }
 
     func footerClick() {
-        // 具体事件具体分析
         print("Header 事件：点击")
     }
 }

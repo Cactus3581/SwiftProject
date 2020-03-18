@@ -44,8 +44,7 @@ class MVVMListListeningTableViewCell: UITableViewCell,MVVMListSecTableViewCellPr
             guard let cellViewModel = cellViewModel as? MVVMListListeningCellViewModel else {
                 return
             }
-            // 赋值
-            button?.setTitle(cellViewModel.model?.ListeningName, for: .normal)
+            button?.setTitle(cellViewModel.model?.title, for: .normal)
         }
     }
 

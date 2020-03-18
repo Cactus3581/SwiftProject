@@ -8,29 +8,19 @@
 
 import UIKit
 
-//MARK:在一个session中存在多种cell，需要使用cellVMProtocol
-// 因为identifier可以由sessionVM提供，生成数据的方式不需要统一成一个接口，因为sessionVM已经确定了单个的scellVM的方式。如果sessionVM里面会有多种类型，那么必须提供CellVMProtocol
+//TODO:允许在一个session中存在多种cell类型，需要提供cellViewModelMProtocol解决，统一共用的必要接口
 protocol MVVMListSecCellViewModelProtocol {
-
-    // 如果默认session只有一种类型
-    init(itemData: Any) // 因为已经确认只有一种类型，所以也是可以明确的创建方法
-    var identifier: String { get } //可以省略掉，放到sessionViewModelProtocol里
-
-    // 因为一种vm对应一种cell，所以不需要统一的接口来提供数据和事件
+    // 因为sessionVM已经确定了单个的scellVM的方式，所以：identifier可以由sessionVM提供，并且生成数据的方式不需要统一成一个接口
+    init(itemData: Any)
+    var identifier: String { get }
 }
 
 extension MVVMListSecCellViewModelProtocol {
-
-    init(itemData: Any) {
-        self.init(itemData: itemData)
-    }
-
-    var identifier: String {
-       return ""
-    }
+    init(itemData: Any) {self.init(itemData: itemData)}
+    var identifier: String {return ""}
 }
 
-//MARK:多种cellVM对应同一个cell，使用协议的方式
+//MARK:多种cellVM对应同一个cell，使用协议提供统一的接口来提供数据和事件
 protocol MVVMListCourseCellViewModelProtocol {
     var title: String? { get }
 }
@@ -55,7 +45,6 @@ class MVVMListListeningCellViewModel: NSObject {
     }
 
     func click() {
-        // 具体事件具体分析
         print("事件：点击")
     }
 

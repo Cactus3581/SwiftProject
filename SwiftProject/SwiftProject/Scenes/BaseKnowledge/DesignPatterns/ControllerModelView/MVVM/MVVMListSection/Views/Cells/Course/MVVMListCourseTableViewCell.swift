@@ -59,7 +59,6 @@ class MVVMListCourseTableViewCell: UITableViewCell, MVVMListSecTableViewCellProt
             guard let cellViewModel = cellViewModel as? MVVMListCourseCellViewModelProtocol else {
                 return
             }
-            // 赋值
             titleLabel?.text = cellViewModel.title
             //coverImageView?.image = UIImage(named: item.pictureUrl)
         }

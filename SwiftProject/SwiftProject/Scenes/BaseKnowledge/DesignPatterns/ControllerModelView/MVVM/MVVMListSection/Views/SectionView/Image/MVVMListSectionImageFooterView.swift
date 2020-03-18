@@ -40,7 +40,6 @@ class MVVMListSectionImageFooterView: UITableViewHeaderFooterView,MVVMListSectio
             guard let sectionViewModel = self.sessionViewModel as? MVVMListSectionImageViewModelProtocol else {
                 return
             }
-            // 赋值
             button?.setTitle(sectionViewModel.footerImageUrl, for: .normal)
         }
     }

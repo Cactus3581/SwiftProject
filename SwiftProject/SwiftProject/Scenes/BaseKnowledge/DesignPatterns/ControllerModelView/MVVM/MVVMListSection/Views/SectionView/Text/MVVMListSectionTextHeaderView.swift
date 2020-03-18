@@ -42,7 +42,6 @@ class MVVMListSectionTextHeaderView: UITableViewHeaderFooterView,MVVMListSection
             guard let sectionViewModel = self.sessionViewModel as? MVVMListSectionTextViewModelProtocol else {
                 return
             }
-            // 赋值
             button?.setTitle(sectionViewModel.headerText, for: .normal)
         }
     }

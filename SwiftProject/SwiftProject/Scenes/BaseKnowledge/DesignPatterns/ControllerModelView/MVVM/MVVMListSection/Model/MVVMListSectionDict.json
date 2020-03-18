@@ -3,16 +3,17 @@
     "footer": "页脚",
     "order": ["listening", "listeningSame", "circle", "speak", "course", "group"],
     "listening": {
-        "ListeningName": "VOA"
+        "title": "VOA"
     },
     "listeningSame": {
-        "ListeningName": "VOE"
+        "title": "VOE"
     },
     "circle": {
-        "ListeningName": "VOD"
+        "title": "VOD"
     },
     "speak": {
-        "list": [{
+        "list": [
+            {
                 "speakScore": "100"
             },
             {
@@ -21,7 +22,8 @@
         ]
     },
     "course": {
-        "list": [{
+        "list": [
+            {
                 "courseName": "英语四级",
                 "courseTeacher": "tom1"
             },

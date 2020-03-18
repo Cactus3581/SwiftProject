@@ -24,7 +24,7 @@ class MVVMListSecModel: NSObject,HandyJSON {
 
 // listen
 class MVVMListListeningModel: NSObject,HandyJSON {
-    var ListeningName: String?
+    var title: String?
     override required init() {}
 }
 

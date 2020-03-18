@@ -1,7 +1,7 @@
 {
     "list": [
         [{
-                "type": "listen",
+                "type": "listening",
                 "header": {
                     "title": "听力"
                 },
@@ -22,7 +22,7 @@
             {
                 "type": "course",
                 "header": {
-                    "title": " 课程"
+                    "title": "课程"
                 },
                 "list": [{
                         "courseName": "新东方课程1",
