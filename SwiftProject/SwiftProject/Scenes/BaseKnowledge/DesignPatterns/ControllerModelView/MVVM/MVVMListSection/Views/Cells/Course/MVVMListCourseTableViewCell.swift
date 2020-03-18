@@ -11,12 +11,16 @@ import UIKit
 class MVVMListCourseTableViewCell: UITableViewCell, MVVMListSecTableViewCellProtocol {
 
     let titleLabel: UILabel?
+    let coverImageView: UIImageView?
 
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+
+        let coverImageView: UIImageView = UIImageView()
+        self.coverImageView = coverImageView
 
         let label: UILabel = UILabel()
         self.titleLabel = label
@@ -25,9 +29,23 @@ class MVVMListCourseTableViewCell: UITableViewCell, MVVMListSecTableViewCellProt
 
         self.contentView.backgroundColor = UIColor.white
 
+        self.contentView.addSubview(coverImageView)
+        coverImageView.snp.makeConstraints {
+            $0.width.height.equalTo(80)
+            $0.leading.equalToSuperview().offset(15)
+            $0.top.equalToSuperview().offset(10)
+            $0.bottom.equalToSuperview().offset(-10)
+        }
+
+        coverImageView.layer.cornerRadius = 40
+        coverImageView.clipsToBounds = true
+        coverImageView.contentMode = .scaleAspectFit
+        coverImageView.backgroundColor = UIColor.lightGray
+
         self.contentView.addSubview(label)
         label.snp.makeConstraints {
-            $0.edges.equalToSuperview().inset(10)
+            $0.leading.equalTo(coverImageView.snp.trailing).offset(50)
+            $0.centerY.equalToSuperview()
         }
         label.textColor = UIColor.red
     }
@@ -43,6 +61,7 @@ class MVVMListCourseTableViewCell: UITableViewCell, MVVMListSecTableViewCellProt
             }
             // 赋值
             titleLabel?.text = cellViewModel.title
+            //coverImageView?.image = UIImage(named: item.pictureUrl)
         }
     }
 
@@ -52,5 +71,14 @@ class MVVMListCourseTableViewCell: UITableViewCell, MVVMListSecTableViewCellProt
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        coverImageView?.image = nil
+    }
+
+    static var nib:UINib {
+        return UINib(nibName: identifier, bundle: nil)
     }
 }

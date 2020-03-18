@@ -37,8 +37,6 @@
 		0156813023BE28F100B42FB9 /* ProtocolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156812F23BE28F100B42FB9 /* ProtocolViewController.swift */; };
 		0167EE842418F2EC00E4830F /* MVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0167EE832418F2EC00E4830F /* MVVMViewController.swift */; };
 		016B8EF623C58A19007F6EC5 /* SwiftTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016B8EF523C58A19007F6EC5 /* SwiftTipsViewController.swift */; };
-		016C892C23C1C8F40084A326 /* ProfileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016C892B23C1C8F40084A326 /* ProfileFactory.swift */; };
-		016C980423C1CD690084A326 /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016C980323C1CD690084A326 /* ProfileAssembly.swift */; };
 		016FE6D823B5DD7800CE8784 /* statistics.py in Resources */ = {isa = PBXBuildFile; fileRef = 016FE6D623B5DD7800CE8784 /* statistics.py */; };
 		016FE6D923B5DD7800CE8784 /* sql.py in Resources */ = {isa = PBXBuildFile; fileRef = 016FE6D723B5DD7800CE8784 /* sql.py */; };
 		0182346D23C4AA8C00FB30A9 /* RxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182346B23C4AA8C00FB30A9 /* RxSwiftViewController.swift */; };
@@ -74,22 +72,9 @@
 		01A3A40623BF5A3C003FEA19 /* MemorySafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A3A40523BF5A3C003FEA19 /* MemorySafeViewController.swift */; };
 		01A3A40923BF5A55003FEA19 /* AccessControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A3A40823BF5A55003FEA19 /* AccessControlViewController.swift */; };
 		01A3A40C23BF6218003FEA19 /* AdvancedOperatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A3A40B23BF6218003FEA19 /* AdvancedOperatorViewController.swift */; };
-		01A5D3B223BEDB920057D144 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5D3B123BEDB920057D144 /* ProfileViewController.swift */; };
-		01A5D7AB23BEDBB00057D144 /* EmailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A5D7A123BEDBAE0057D144 /* EmailCell.xib */; };
-		01A5D7AC23BEDBB00057D144 /* NamePictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5D7A223BEDBAE0057D144 /* NamePictureCell.swift */; };
-		01A5D7AD23BEDBB00057D144 /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5D7A323BEDBAE0057D144 /* AboutCell.swift */; };
-		01A5D7AE23BEDBB00057D144 /* AttributeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A5D7A423BEDBAE0057D144 /* AttributeCell.xib */; };
-		01A5D7AF23BEDBB00057D144 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5D7A523BEDBAF0057D144 /* FriendCell.swift */; };
-		01A5D7B023BEDBB00057D144 /* EmailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5D7A623BEDBAF0057D144 /* EmailCell.swift */; };
-		01A5D7B123BEDBB00057D144 /* FriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A5D7A723BEDBAF0057D144 /* FriendCell.xib */; };
-		01A5D7B223BEDBB00057D144 /* NamePictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A5D7A823BEDBB00057D144 /* NamePictureCell.xib */; };
-		01A5D7B323BEDBB00057D144 /* AboutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A5D7A923BEDBB00057D144 /* AboutCell.xib */; };
-		01A5D7B423BEDBB00057D144 /* AttributeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A5D7AA23BEDBB00057D144 /* AttributeCell.swift */; };
 		01ADB56823BE290F00EAB005 /* PropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADB56723BE290F00EAB005 /* PropertyViewController.swift */; };
 		01ADB56B23BE294300EAB005 /* InheritViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADB56A23BE294300EAB005 /* InheritViewController.swift */; };
 		01ADB56E23BE296700EAB005 /* ClassStructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADB56D23BE296700EAB005 /* ClassStructViewController.swift */; };
-		01ADD32223BEDB2500EAB005 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADD32123BEDB2400EAB005 /* ProfileModel.swift */; };
-		01ADD32423BEDB2A00EAB005 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADD32323BEDB2A00EAB005 /* ProfileViewModel.swift */; };
 		01B24E2C23BF33A500677023 /* GenericsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B24E2B23BF33A500677023 /* GenericsViewController.swift */; };
 		01B24E2F23BF358100677023 /* DataTypeConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B24E2E23BF358100677023 /* DataTypeConvertViewController.swift */; };
 		01C01BB123BDE699008B2D9E /* EnumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C01BB023BDE699008B2D9E /* EnumViewController.swift */; };
@@ -102,28 +87,6 @@
 		01D38A10241A770E00F6D74D /* MVVMListSecTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D38A05241A770E00F6D74D /* MVVMListSecTableViewCellProtocol.swift */; };
 		01D38A13241A770E00F6D74D /* MVVMLisSecFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D38A0A241A770E00F6D74D /* MVVMLisSecFactory.swift */; };
 		01D38A14241A770E00F6D74D /* MVVMListSecAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D38A0B241A770E00F6D74D /* MVVMListSecAssembly.swift */; };
-		01D76FA523CEBB1800525363 /* BPTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FA323CEBB1800525363 /* BPTableViewController.swift */; };
-		01D76FA623CEBB1800525363 /* BPTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D76FA423CEBB1800525363 /* BPTableViewController.xib */; };
-		01D76FA823CEBB4F00525363 /* BPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FA723CEBB4F00525363 /* BPViewModel.swift */; };
-		01D76FAA23CEBB7000525363 /* BPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FA923CEBB7000525363 /* BPModel.swift */; };
-		01D76FAD23CED8FC00525363 /* BPTableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FAC23CED8FC00525363 /* BPTableViewProtocol.swift */; };
-		01D76FB423CEE47100525363 /* a.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 01D76FB323CEE47100525363 /* a.geojson */; };
-		01D76FB823CEFFA900525363 /* BPLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FB623CEFFA900525363 /* BPLabelTableViewCell.swift */; };
-		01D76FB923CEFFA900525363 /* BPLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D76FB723CEFFA900525363 /* BPLabelTableViewCell.xib */; };
-		01D76FBC23CEFFBA00525363 /* BPImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FBA23CEFFBA00525363 /* BPImageTableViewCell.swift */; };
-		01D76FBD23CEFFBA00525363 /* BPImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D76FBB23CEFFBA00525363 /* BPImageTableViewCell.xib */; };
-		01D76FC023CEFFD000525363 /* BPButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FBE23CEFFD000525363 /* BPButtonTableViewCell.swift */; };
-		01D76FC123CEFFD000525363 /* BPButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D76FBF23CEFFD000525363 /* BPButtonTableViewCell.xib */; };
-		01D76FC323CF009B00525363 /* server.json in Resources */ = {isa = PBXBuildFile; fileRef = 01D76FC223CF009B00525363 /* server.json */; };
-		01D76FC623CF01A600525363 /* BPListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FC523CF01A600525363 /* BPListFactory.swift */; };
-		01D76FC823CF01B600525363 /* BPListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FC723CF01B600525363 /* BPListAssembly.swift */; };
-		01D76FCA23CF02A500525363 /* BPCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FC923CF02A500525363 /* BPCellViewModel.swift */; };
-		01D76FCC23CF02AE00525363 /* BPSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FCB23CF02AE00525363 /* BPSessionViewModel.swift */; };
-		01D76FD123CF103900525363 /* BPTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FD023CF103900525363 /* BPTableViewHeaderView.swift */; };
-		01D76FD323CF104800525363 /* BPTableViewFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D76FD223CF104800525363 /* BPTableViewFooterView.swift */; };
-		01D76FD523CF105D00525363 /* BPTableViewHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D76FD423CF105D00525363 /* BPTableViewHeaderView.xib */; };
-		01D76FD723CF106300525363 /* BPTableViewFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D76FD623CF106300525363 /* BPTableViewFooterView.xib */; };
-		01D76FD923CF12B500525363 /* c.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 01D76FD823CF12B500525363 /* c.geojson */; };
 		01E15CC923BF583100A69E23 /* MethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CC823BF583100A69E23 /* MethodViewController.swift */; };
 		01E15CCC23BF58D800A69E23 /* SubscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CCB23BF58D800A69E23 /* SubscriptViewController.swift */; };
 		01E15CCF23BF58F300A69E23 /* InitializeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CCE23BF58F300A69E23 /* InitializeViewController.swift */; };
@@ -207,8 +170,6 @@
 		0156812F23BE28F100B42FB9 /* ProtocolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolViewController.swift; sourceTree = "<group>"; tabWidth = 3; };
 		0167EE832418F2EC00E4830F /* MVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewController.swift; sourceTree = "<group>"; };
 		016B8EF523C58A19007F6EC5 /* SwiftTipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTipsViewController.swift; sourceTree = "<group>"; };
-		016C892B23C1C8F40084A326 /* ProfileFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFactory.swift; sourceTree = "<group>"; };
-		016C980323C1CD690084A326 /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
 		016FE6D623B5DD7800CE8784 /* statistics.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = statistics.py; sourceTree = "<group>"; };
 		016FE6D723B5DD7800CE8784 /* sql.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = sql.py; sourceTree = "<group>"; };
 		0182346B23C4AA8C00FB30A9 /* RxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftViewController.swift; sourceTree = "<group>"; };
@@ -244,22 +205,9 @@
 		01A3A40523BF5A3C003FEA19 /* MemorySafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorySafeViewController.swift; sourceTree = "<group>"; };
 		01A3A40823BF5A55003FEA19 /* AccessControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessControlViewController.swift; sourceTree = "<group>"; };
 		01A3A40B23BF6218003FEA19 /* AdvancedOperatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedOperatorViewController.swift; sourceTree = "<group>"; };
-		01A5D3B123BEDB920057D144 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		01A5D7A123BEDBAE0057D144 /* EmailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmailCell.xib; sourceTree = "<group>"; };
-		01A5D7A223BEDBAE0057D144 /* NamePictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamePictureCell.swift; sourceTree = "<group>"; };
-		01A5D7A323BEDBAE0057D144 /* AboutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
-		01A5D7A423BEDBAE0057D144 /* AttributeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttributeCell.xib; sourceTree = "<group>"; };
-		01A5D7A523BEDBAF0057D144 /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
-		01A5D7A623BEDBAF0057D144 /* EmailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailCell.swift; sourceTree = "<group>"; };
-		01A5D7A723BEDBAF0057D144 /* FriendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendCell.xib; sourceTree = "<group>"; };
-		01A5D7A823BEDBB00057D144 /* NamePictureCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NamePictureCell.xib; sourceTree = "<group>"; };
-		01A5D7A923BEDBB00057D144 /* AboutCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutCell.xib; sourceTree = "<group>"; };
-		01A5D7AA23BEDBB00057D144 /* AttributeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeCell.swift; sourceTree = "<group>"; };
 		01ADB56723BE290F00EAB005 /* PropertyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyViewController.swift; sourceTree = "<group>"; };
 		01ADB56A23BE294300EAB005 /* InheritViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InheritViewController.swift; sourceTree = "<group>"; };
 		01ADB56D23BE296700EAB005 /* ClassStructViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassStructViewController.swift; sourceTree = "<group>"; };
-		01ADD32123BEDB2400EAB005 /* ProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
-		01ADD32323BEDB2A00EAB005 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		01B24E2B23BF33A500677023 /* GenericsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericsViewController.swift; sourceTree = "<group>"; };
 		01B24E2E23BF358100677023 /* DataTypeConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypeConvertViewController.swift; sourceTree = "<group>"; };
 		01C01BB023BDE699008B2D9E /* EnumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumViewController.swift; sourceTree = "<group>"; };
@@ -271,29 +219,6 @@
 		01D38A05241A770E00F6D74D /* MVVMListSecTableViewCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMListSecTableViewCellProtocol.swift; sourceTree = "<group>"; };
 		01D38A0A241A770E00F6D74D /* MVVMLisSecFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMLisSecFactory.swift; sourceTree = "<group>"; };
 		01D38A0B241A770E00F6D74D /* MVVMListSecAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMListSecAssembly.swift; sourceTree = "<group>"; };
-		01D76FA323CEBB1800525363 /* BPTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPTableViewController.swift; sourceTree = "<group>"; };
-		01D76FA423CEBB1800525363 /* BPTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPTableViewController.xib; sourceTree = "<group>"; };
-		01D76FA723CEBB4F00525363 /* BPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPViewModel.swift; sourceTree = "<group>"; };
-		01D76FA923CEBB7000525363 /* BPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPModel.swift; sourceTree = "<group>"; };
-		01D76FAC23CED8FC00525363 /* BPTableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPTableViewProtocol.swift; sourceTree = "<group>"; };
-		01D76FB323CEE47100525363 /* a.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = a.geojson; sourceTree = "<group>"; };
-		01D76FB623CEFFA900525363 /* BPLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPLabelTableViewCell.swift; sourceTree = "<group>"; };
-		01D76FB723CEFFA900525363 /* BPLabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPLabelTableViewCell.xib; sourceTree = "<group>"; };
-		01D76FBA23CEFFBA00525363 /* BPImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPImageTableViewCell.swift; sourceTree = "<group>"; };
-		01D76FBB23CEFFBA00525363 /* BPImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPImageTableViewCell.xib; sourceTree = "<group>"; };
-		01D76FBE23CEFFD000525363 /* BPButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPButtonTableViewCell.swift; sourceTree = "<group>"; };
-		01D76FBF23CEFFD000525363 /* BPButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPButtonTableViewCell.xib; sourceTree = "<group>"; };
-		01D76FC223CF009B00525363 /* server.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = server.json; sourceTree = "<group>"; };
-		01D76FC523CF01A600525363 /* BPListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPListFactory.swift; sourceTree = "<group>"; };
-		01D76FC723CF01B600525363 /* BPListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPListAssembly.swift; sourceTree = "<group>"; };
-		01D76FC923CF02A500525363 /* BPCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPCellViewModel.swift; sourceTree = "<group>"; };
-		01D76FCB23CF02AE00525363 /* BPSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPSessionViewModel.swift; sourceTree = "<group>"; };
-		01D76FCD23CF0F9000525363 /* b.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = b.geojson; sourceTree = "<group>"; };
-		01D76FD023CF103900525363 /* BPTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPTableViewHeaderView.swift; sourceTree = "<group>"; };
-		01D76FD223CF104800525363 /* BPTableViewFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPTableViewFooterView.swift; sourceTree = "<group>"; };
-		01D76FD423CF105D00525363 /* BPTableViewHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPTableViewHeaderView.xib; sourceTree = "<group>"; };
-		01D76FD623CF106300525363 /* BPTableViewFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPTableViewFooterView.xib; sourceTree = "<group>"; };
-		01D76FD823CF12B500525363 /* c.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = c.geojson; sourceTree = "<group>"; };
 		01E15CC823BF583100A69E23 /* MethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodViewController.swift; sourceTree = "<group>"; };
 		01E15CCB23BF58D800A69E23 /* SubscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptViewController.swift; sourceTree = "<group>"; };
 		01E15CCE23BF58F300A69E23 /* InitializeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializeViewController.swift; sourceTree = "<group>"; };
@@ -571,13 +496,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		014276772419C1EF0069A6BC /* Register */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Register;
-			sourceTree = "<group>";
-		};
 		0156813123BE28F600B42FB9 /* Property */ = {
 			isa = PBXGroup;
 			children = (
@@ -675,15 +593,6 @@
 				016B8EF523C58A19007F6EC5 /* SwiftTipsViewController.swift */,
 			);
 			path = SwiftTips;
-			sourceTree = "<group>";
-		};
-		016C892A23C1C8A50084A326 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				016C980323C1CD690084A326 /* ProfileAssembly.swift */,
-				016C892B23C1C8F40084A326 /* ProfileFactory.swift */,
-			);
-			path = Helper;
 			sourceTree = "<group>";
 		};
 		0182B7C0241A786D0033BF0A /* SectionView */ = {
@@ -887,60 +796,6 @@
 			path = Optional;
 			sourceTree = "<group>";
 		};
-		01ADC44623BEDA6700EAB005 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				016C892A23C1C8A50084A326 /* Helper */,
-				01ADC44723BEDA7B00EAB005 /* Controller */,
-				01ADC44823BEDA8400EAB005 /* ViewModel */,
-				01ADC44A23BEDA9100EAB005 /* Model */,
-				01ADC44923BEDA8A00EAB005 /* View */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		01ADC44723BEDA7B00EAB005 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				01A5D3B123BEDB920057D144 /* ProfileViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		01ADC44823BEDA8400EAB005 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				01ADD32323BEDB2A00EAB005 /* ProfileViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		01ADC44923BEDA8A00EAB005 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				01A5D7A223BEDBAE0057D144 /* NamePictureCell.swift */,
-				01A5D7A823BEDBB00057D144 /* NamePictureCell.xib */,
-				01A5D7A323BEDBAE0057D144 /* AboutCell.swift */,
-				01A5D7A923BEDBB00057D144 /* AboutCell.xib */,
-				01A5D7A623BEDBAF0057D144 /* EmailCell.swift */,
-				01A5D7A123BEDBAE0057D144 /* EmailCell.xib */,
-				01A5D7AA23BEDBB00057D144 /* AttributeCell.swift */,
-				01A5D7A423BEDBAE0057D144 /* AttributeCell.xib */,
-				01A5D7A523BEDBAF0057D144 /* FriendCell.swift */,
-				01A5D7A723BEDBAF0057D144 /* FriendCell.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		01ADC44A23BEDA9100EAB005 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				01ADD32123BEDB2400EAB005 /* ProfileModel.swift */,
-				01D76FC223CF009B00525363 /* server.json */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		01B24E2A23BF339200677023 /* Generics */ = {
 			isa = PBXGroup;
 			children = (
@@ -1091,99 +946,6 @@
 				01D38A0A241A770E00F6D74D /* MVVMLisSecFactory.swift */,
 			);
 			path = Helper;
-			sourceTree = "<group>";
-		};
-		01D76F9E23CEBA8D00525363 /* TableView */ = {
-			isa = PBXGroup;
-			children = (
-				01D76FC423CF018100525363 /* Service */,
-				01D76FAB23CED8E300525363 /* Protocol */,
-				01D76FA223CEBAB300525363 /* ViewModel */,
-				01D76FA123CEBAAC00525363 /* Model */,
-				01D76FA023CEBAA300525363 /* View */,
-				01D76F9F23CEBA9900525363 /* Controller */,
-			);
-			path = TableView;
-			sourceTree = "<group>";
-		};
-		01D76F9F23CEBA9900525363 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				01D76FA323CEBB1800525363 /* BPTableViewController.swift */,
-				01D76FA423CEBB1800525363 /* BPTableViewController.xib */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		01D76FA023CEBAA300525363 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				01D76FCE23CF0FEB00525363 /* Session */,
-				01D76FB523CEFD6D00525363 /* Cell */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		01D76FA123CEBAAC00525363 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				01D76FA923CEBB7000525363 /* BPModel.swift */,
-				01D76FB323CEE47100525363 /* a.geojson */,
-				01D76FCD23CF0F9000525363 /* b.geojson */,
-				01D76FD823CF12B500525363 /* c.geojson */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		01D76FA223CEBAB300525363 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				01D76FA723CEBB4F00525363 /* BPViewModel.swift */,
-				01D76FCB23CF02AE00525363 /* BPSessionViewModel.swift */,
-				01D76FC923CF02A500525363 /* BPCellViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		01D76FAB23CED8E300525363 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				01D76FAC23CED8FC00525363 /* BPTableViewProtocol.swift */,
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
-		01D76FB523CEFD6D00525363 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				01D76FB623CEFFA900525363 /* BPLabelTableViewCell.swift */,
-				01D76FB723CEFFA900525363 /* BPLabelTableViewCell.xib */,
-				01D76FBA23CEFFBA00525363 /* BPImageTableViewCell.swift */,
-				01D76FBB23CEFFBA00525363 /* BPImageTableViewCell.xib */,
-				01D76FBE23CEFFD000525363 /* BPButtonTableViewCell.swift */,
-				01D76FBF23CEFFD000525363 /* BPButtonTableViewCell.xib */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		01D76FC423CF018100525363 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				01D76FC723CF01B600525363 /* BPListAssembly.swift */,
-				01D76FC523CF01A600525363 /* BPListFactory.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		01D76FCE23CF0FEB00525363 /* Session */ = {
-			isa = PBXGroup;
-			children = (
-				01D76FD023CF103900525363 /* BPTableViewHeaderView.swift */,
-				01D76FD423CF105D00525363 /* BPTableViewHeaderView.xib */,
-				01D76FD223CF104800525363 /* BPTableViewFooterView.swift */,
-				01D76FD623CF106300525363 /* BPTableViewFooterView.xib */,
-			);
-			path = Session;
 			sourceTree = "<group>";
 		};
 		01E15CCA23BF58CD00A69E23 /* Subscript */ = {
@@ -1473,9 +1235,6 @@
 		01EE5DBC23B4E46400879BA5 /* ControllerModelView */ = {
 			isa = PBXGroup;
 			children = (
-				014276772419C1EF0069A6BC /* Register */,
-				01ADC44623BEDA6700EAB005 /* Profile */,
-				01D76F9E23CEBA8D00525363 /* TableView */,
 				0167EE7D2418F17A00E4830F /* MVVM */,
 				013C7D3223B8601900804143 /* MVC */,
 			);
@@ -1613,29 +1372,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01A5D7B223BEDBB00057D144 /* NamePictureCell.xib in Resources */,
-				01D76FBD23CEFFBA00525363 /* BPImageTableViewCell.xib in Resources */,
-				01D76FC323CF009B00525363 /* server.json in Resources */,
-				01D76FD923CF12B500525363 /* c.geojson in Resources */,
-				01D76FA623CEBB1800525363 /* BPTableViewController.xib in Resources */,
-				01A5D7AB23BEDBB00057D144 /* EmailCell.xib in Resources */,
-				01D76FD523CF105D00525363 /* BPTableViewHeaderView.xib in Resources */,
 				0196CDE923D1888300112AB8 /* SnapViewController.xib in Resources */,
 				016FE6D923B5DD7800CE8784 /* sql.py in Resources */,
-				01A5D7AE23BEDBB00057D144 /* AttributeCell.xib in Resources */,
-				01D76FB423CEE47100525363 /* a.geojson in Resources */,
-				01D76FD723CF106300525363 /* BPTableViewFooterView.xib in Resources */,
 				010CE4E823B0D6E900AE57A9 /* BasicKnowledgCatalog.plist in Resources */,
 				0182346E23C4AA8C00FB30A9 /* RxSwiftViewController.xib in Resources */,
 				01EE3A202415288A008ECA89 /* SPSwiftViewController.xib in Resources */,
 				0196DCC523D1898500112AB8 /* SnapView.xib in Resources */,
-				01D76FB923CEFFA900525363 /* BPLabelTableViewCell.xib in Resources */,
 				010D6A9E23A9FB4C00B84621 /* LaunchScreen.storyboard in Resources */,
-				01D76FC123CEFFD000525363 /* BPButtonTableViewCell.xib in Resources */,
 				010D6A9B23A9FB4C00B84621 /* Assets.xcassets in Resources */,
-				01A5D7B323BEDBB00057D144 /* AboutCell.xib in Resources */,
 				016FE6D823B5DD7800CE8784 /* statistics.py in Resources */,
-				01A5D7B123BEDBB00057D144 /* FriendCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1750,11 +1495,9 @@
 				01A3A40623BF5A3C003FEA19 /* MemorySafeViewController.swift in Sources */,
 				01EE3A1F2415288A008ECA89 /* SPSwiftViewController.swift in Sources */,
 				01C01BB423BDEA97008B2D9E /* ClosureViewController.swift in Sources */,
-				01D76FA823CEBB4F00525363 /* BPViewModel.swift in Sources */,
 				0182B7C6241A79050033BF0A /* MVVMListSectionTextHeaderView.swift in Sources */,
 				019FE1A623C0E9BF00B241B1 /* Produce.swift in Sources */,
 				01E15CC923BF583100A69E23 /* MethodViewController.swift in Sources */,
-				01A5D7AD23BEDBB00057D144 /* AboutCell.swift in Sources */,
 				01D38A0C241A770E00F6D74D /* MVVMListSecViewModel.swift in Sources */,
 				019FE1A423C0E9B700B241B1 /* Factory.swift in Sources */,
 				01EA7C0023ABA97600712B20 /* ListTableViewCell.swift in Sources */,
@@ -1765,19 +1508,13 @@
 				013D09F823BE281A0050F15A /* FunctionViewController.swift in Sources */,
 				0195230223B173D600AE491B /* BasicViewController.swift in Sources */,
 				019FE1A223C0E99F00B241B1 /* FactoryViewController.swift in Sources */,
-				01D76FA523CEBB1800525363 /* BPTableViewController.swift in Sources */,
 				01937ECA2418FF91009BD6AD /* MVVMModel.swift in Sources */,
 				0112F9AE23BF57FD0002788E /* ControlFlowViewController.swift in Sources */,
-				01A5D3B223BEDB920057D144 /* ProfileViewController.swift in Sources */,
-				01D76FC623CF01A600525363 /* BPListFactory.swift in Sources */,
-				01D76FC023CEFFD000525363 /* BPButtonTableViewCell.swift in Sources */,
 				0196CDE823D1888300112AB8 /* SnapViewController.swift in Sources */,
 				01B24E2C23BF33A500677023 /* GenericsViewController.swift in Sources */,
 				010D6ACB23A9FD8F00B84621 /* CarViewController.swift in Sources */,
 				010D6ACC23A9FD8F00B84621 /* SwinjectViewController.swift in Sources */,
-				01A5D7B423BEDBB00057D144 /* AttributeCell.swift in Sources */,
 				0182346D23C4AA8C00FB30A9 /* RxSwiftViewController.swift in Sources */,
-				016C980423C1CD690084A326 /* ProfileAssembly.swift in Sources */,
 				0112F9A823BF57CA0002788E /* StringAndCharViewController.swift in Sources */,
 				01ADB56B23BE294300EAB005 /* InheritViewController.swift in Sources */,
 				01937ED5241906D3009BD6AD /* MVVMListViewModel.swift in Sources */,
@@ -1786,10 +1523,6 @@
 				016B8EF623C58A19007F6EC5 /* SwiftTipsViewController.swift in Sources */,
 				01D38A10241A770E00F6D74D /* MVVMListSecTableViewCellProtocol.swift in Sources */,
 				01937EE324192DEA009BD6AD /* MVVMListTableViewCellProtocol.swift in Sources */,
-				01A5D7AC23BEDBB00057D144 /* NamePictureCell.swift in Sources */,
-				01ADD32223BEDB2500EAB005 /* ProfileModel.swift in Sources */,
-				016C892C23C1C8F40084A326 /* ProfileFactory.swift in Sources */,
-				01D76FAA23CEBB7000525363 /* BPModel.swift in Sources */,
 				01E15CD523BF593300A69E23 /* OptionalChainViewController.swift in Sources */,
 				0182B7C4241A78F40033BF0A /* MVVMListSectionTextFooterView.swift in Sources */,
 				01E15CCF23BF58F300A69E23 /* InitializeViewController.swift in Sources */,
@@ -1803,13 +1536,10 @@
 				011E9E9023BE28BE00BD0A17 /* ExtensionViewController.swift in Sources */,
 				0182B7D4241A882B0033BF0A /* MVVMListSecCellViewModel.swift in Sources */,
 				01EA7C0C23AC69ED00712B20 /* ListViewModel.swift in Sources */,
-				01A5D7B023BEDBB00057D144 /* EmailCell.swift in Sources */,
 				01937EE624193344009BD6AD /* MVVMListAssembly.swift in Sources */,
 				013C7D3923B8604500804143 /* MVCView.swift in Sources */,
 				01EA7C0923ABAB1300712B20 /* RootNavigationController.swift in Sources */,
-				01D76FD123CF103900525363 /* BPTableViewHeaderView.swift in Sources */,
 				01D38A0D241A770E00F6D74D /* MVVMListSecViewController.swift in Sources */,
-				01D76FD323CF104800525363 /* BPTableViewFooterView.swift in Sources */,
 				010D6AD923A9FF6F00B84621 /* TestBridge.m in Sources */,
 				010D6AD223A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.m in Sources */,
 				01E15CD823BF595200A69E23 /* ErrorhandlingViewController.swift in Sources */,
@@ -1817,7 +1547,6 @@
 				01E9B3552420D9F000FF618D /* MVVMListSectionImageHeaderView.swift in Sources */,
 				010D6A9223A9FB4A00B84621 /* AppDelegate.swift in Sources */,
 				013C7D3523B8602D00804143 /* MVCModel.swift in Sources */,
-				01D76FAD23CED8FC00525363 /* BPTableViewProtocol.swift in Sources */,
 				01EE3A1C24152264008ECA89 /* SPSwift.swift in Sources */,
 				012E2EBB23C0EBE5008F6253 /* Produce1.swift in Sources */,
 				010D6AD523A9FDB500B84621 /* BPSubViewController.swift in Sources */,
@@ -1831,11 +1560,8 @@
 				0182B7D2241A881E0033BF0A /* MVVMListSessionViewModel.swift in Sources */,
 				010D6ACA23A9FD8F00B84621 /* BPContainer.swift in Sources */,
 				010D6A9423A9FB4A00B84621 /* SceneDelegate.swift in Sources */,
-				01D76FC823CF01B600525363 /* BPListAssembly.swift in Sources */,
 				01D38A0F241A770E00F6D74D /* MVVMListListeningTableViewCell.swift in Sources */,
 				01EA7BFD23ABA87A00712B20 /* ListViewController.swift in Sources */,
-				01D76FCA23CF02A500525363 /* BPCellViewModel.swift in Sources */,
-				01D76FB823CEFFA900525363 /* BPLabelTableViewCell.swift in Sources */,
 				01ADB56E23BE296700EAB005 /* ClassStructViewController.swift in Sources */,
 				01D38A13241A770E00F6D74D /* MVVMLisSecFactory.swift in Sources */,
 				0196DCC323D1897500112AB8 /* SnapView.swift in Sources */,
@@ -1850,13 +1576,9 @@
 				01D38A0E241A770E00F6D74D /* MVVMListSecModel.swift in Sources */,
 				01E15CD223BF590B00A69E23 /* DeinitViewController.swift in Sources */,
 				0112F9A523BF57B30002788E /* BaseOperatorViewController.swift in Sources */,
-				01D76FCC23CF02AE00525363 /* BPSessionViewModel.swift in Sources */,
 				01937ECC2418FFA5009BD6AD /* MVVMView.swift in Sources */,
-				01A5D7AF23BEDBB00057D144 /* FriendCell.swift in Sources */,
 				01B24E2F23BF358100677023 /* DataTypeConvertViewController.swift in Sources */,
-				01D76FBC23CEFFBA00525363 /* BPImageTableViewCell.swift in Sources */,
 				0112F9AB23BF57E30002788E /* CollectionTypesViewController.swift in Sources */,
-				01ADD32423BEDB2A00EAB005 /* ProfileViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
