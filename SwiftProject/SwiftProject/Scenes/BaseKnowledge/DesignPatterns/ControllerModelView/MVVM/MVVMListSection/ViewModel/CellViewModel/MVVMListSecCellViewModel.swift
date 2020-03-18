@@ -8,13 +8,12 @@
 
 import UIKit
 
-//MARK:如果在每个session的cell都一致的情况下，没有必要使用cellVMProtocol
+//MARK:在一个session中存在多种cell，需要使用cellVMProtocol
 // 因为identifier可以由sessionVM提供，生成数据的方式不需要统一成一个接口，因为sessionVM已经确定了单个的scellVM的方式。如果sessionVM里面会有多种类型，那么必须提供CellVMProtocol
 protocol MVVMListSecCellViewModelProtocol {
 
     // 如果默认session只有一种类型
-    static func canHandle(type: String) -> Bool
-    init(data: Any) // 因为已经确认只有一种类型，所以也是可以明确的创建方法
+    init(itemData: Any) // 因为已经确认只有一种类型，所以也是可以明确的创建方法
     var identifier: String { get } //可以省略掉，放到sessionViewModelProtocol里
 
     // 因为一种vm对应一种cell，所以不需要统一的接口来提供数据和事件
@@ -22,12 +21,8 @@ protocol MVVMListSecCellViewModelProtocol {
 
 extension MVVMListSecCellViewModelProtocol {
 
-    static func canHandle(type: String) -> Bool {
-        return false
-    }
-
-    init(data: Any) {
-        self.init(data: data)
+    init(itemData: Any) {
+        self.init(itemData: itemData)
     }
 
     var identifier: String {
@@ -35,21 +30,20 @@ extension MVVMListSecCellViewModelProtocol {
     }
 }
 
-class MVVMListListeningCellViewModel: MVVMListSecCellViewModelProtocol {
+//MARK:多种cellVM对应同一个cell，使用协议的方式
+protocol MVVMListCourseCellViewModelProtocol {
+    var title: String? { get }
+}
+
+extension MVVMListCourseCellViewModelProtocol {
+    var title: String? {
+       return ""
+    }
+}
+
+class MVVMListListeningCellViewModel: NSObject {
 
     var model: MVVMListListeningModel?
-
-    static func canHandle(type: String) -> Bool {
-        if type == "button" {
-            return true
-        }
-        return false
-    }
-
-    required init(data: Any) {
-        let model = data as? MVVMListSecModel
-        self.model = model?.listening
-    }
 
     var identifier: String {
         return MVVMListListeningTableViewCell.identifier
@@ -71,7 +65,25 @@ class MVVMListListeningCellViewModel: MVVMListSecCellViewModelProtocol {
     }
 }
 
-class MVVMListCourseCellViewModel: MVVMListSecCellViewModelProtocol {
+
+class MVVMListSpeakCellViewModel: MVVMListCourseCellViewModelProtocol {
+
+    var model: MVVMListSpeakItemModel?
+
+    required init(itemData: Any) {
+        model = itemData as? MVVMListSpeakItemModel
+    }
+
+    var title: String? {
+        return model?.speakScore
+    }
+
+    var identifier: String {
+        return MVVMListCourseTableViewCell.identifier
+    }
+}
+
+class MVVMListCourseCellViewModel: MVVMListCourseCellViewModelProtocol {
 
     var model: MVVMListCourseItemModel?
 
@@ -82,8 +94,12 @@ class MVVMListCourseCellViewModel: MVVMListSecCellViewModelProtocol {
         return false
     }
 
-    required init(data: Any) {
-        model = data as? MVVMListCourseItemModel
+    required init(itemData: Any) {
+        model = itemData as? MVVMListCourseItemModel
+    }
+
+    var title: String? {
+        return model?.courseName
     }
 
     var identifier: String {

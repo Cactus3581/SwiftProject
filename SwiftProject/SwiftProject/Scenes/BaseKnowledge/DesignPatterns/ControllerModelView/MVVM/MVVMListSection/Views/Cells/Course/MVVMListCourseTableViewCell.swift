@@ -36,13 +36,13 @@ class MVVMListCourseTableViewCell: UITableViewCell, MVVMListSecTableViewCellProt
         fatalError("init(coder:) has not been implemented")
     }
 
-    var cellViewModel: MVVMListSecCellViewModelProtocol? {
+    var cellViewModel: Any? {
         didSet {
-            guard let cellViewModel = cellViewModel as? MVVMListCourseCellViewModel else {
+            guard let cellViewModel = cellViewModel as? MVVMListCourseCellViewModelProtocol else {
                 return
             }
             // 赋值
-            titleLabel?.text = cellViewModel.model?.courseName
+            titleLabel?.text = cellViewModel.title
         }
     }
 

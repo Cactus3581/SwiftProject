@@ -23,9 +23,21 @@ class MVVMListSecViewModel: NSObject {
         let dict = [
                 "header" : "页眉",
                 "footer" : "页脚",
-                "order":["listening","course"],
+                "order":["listening","listeningSame","circle","speak","course","group"],
                 "listening":[
                     "ListeningName" : "VOA"
+                ],
+                "listeningSame":[
+                    "ListeningName" : "VOE"
+                ],
+                "circle":[
+                    "ListeningName" : "VOD"
+                ],
+                "speak":[
+                    "list" : [
+                              ["speakScore": "100"],
+                              ["speakScore": "98"]
+                            ]
                 ],
                 "course":[
                     "list" : [
@@ -35,6 +47,9 @@ class MVVMListSecViewModel: NSObject {
                               ["courseName":"雅思","courseTeacher":"tom4"],
                               ["courseName": "托福","courseTeacher": "tom5"]
                             ]
+                ],
+                "group":[
+                
                 ]
             ] as [String : Any]
 
@@ -72,11 +87,12 @@ extension MVVMListSecViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section:MVVMListSectionViewModelProtocol = array[indexPath.section]
         let item = section.list?[indexPath.row]
-        if var cell = tableView.dequeueReusableCell(withIdentifier: item?.identifier ?? "", for: indexPath) as? MVVMListSecTableViewCellProtocol {
+        if var cell = tableView.dequeueReusableCell(withIdentifier: section.identifier ?? "", for: indexPath) as? MVVMListSecTableViewCellProtocol {
             cell.cellViewModel = item!
             return cell as! UITableViewCell
         }else {
             return UITableViewCell()
         }
     }
+
 }

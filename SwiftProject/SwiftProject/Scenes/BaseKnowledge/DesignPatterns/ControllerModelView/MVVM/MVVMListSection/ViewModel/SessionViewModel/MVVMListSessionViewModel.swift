@@ -17,8 +17,9 @@ protocol MVVMListSectionViewModelProtocol {
 
     var headerIdentifier: String { get }
     var footerIdentifier: String { get }
+    var identifier: String { get }
 
-    var list: Array<MVVMListSecCellViewModelProtocol>? { set get }
+    var list: Array<Any>? { set get }
 }
 
 extension MVVMListSectionViewModelProtocol {
@@ -27,6 +28,7 @@ extension MVVMListSectionViewModelProtocol {
 
     var headerIdentifier: String {return ""}
     var footerIdentifier: String {return ""}
+    var identifier: String {return ""}
 }
 
 //MARK:针对多对1问题提供的方案
@@ -74,7 +76,7 @@ extension MVVMListSectionImageViewModelProtocol {
 //MARK:四种组合
 class MVVMListTextListeningSectionViewModel: MVVMListSectionTextViewModelProtocol {
 
-    var list: Array<MVVMListSecCellViewModelProtocol>?
+    var list: Array<Any>?
 
     var headerText: String?
     var footerText: String?
@@ -91,8 +93,10 @@ class MVVMListTextListeningSectionViewModel: MVVMListSectionTextViewModelProtoco
         self.headerText = "Text Listening Header"
         self.footerText = "Text Listening Footer"
 
-        let cellViewModel = MVVMListListeningCellViewModel.init(data: data)
-        list = [cellViewModel] as? Array<MVVMListSecCellViewModelProtocol>
+        let cellViewModel = MVVMListListeningCellViewModel()
+        let model = data as? MVVMListSecModel
+        cellViewModel.model = model?.listening
+        list = [cellViewModel] as? Array<Any>
     }
 
     var headerIdentifier: String {
@@ -101,6 +105,59 @@ class MVVMListTextListeningSectionViewModel: MVVMListSectionTextViewModelProtoco
 
     var footerIdentifier: String {
         return MVVMListSectionTextFooterView.identifier
+    }
+
+    var identifier: String {
+        return MVVMListListeningTableViewCell.identifier
+    }
+
+
+    func headerJump() {
+        // 通过路由
+        print("Text Header跳转")
+    }
+
+    func footerClick() {
+        // 具体事件具体分析
+        print("Text Footer点击")
+    }
+}
+
+class MVVMListTextListeningSameSectionViewModel: MVVMListSectionTextViewModelProtocol {
+
+    var list: Array<Any>?
+
+    var headerText: String?
+    var footerText: String?
+
+    static func canHandle(type: String) -> Bool {
+        if type == "listeningSame" {
+            return true
+        }
+        return false
+    }
+
+    required init(data: MVVMListSecModel) {
+
+        self.headerText = "Text ListeningSame Header"
+        self.footerText = "Text ListeningSame Footer"
+
+        let cellViewModel = MVVMListListeningCellViewModel()
+        let model = data as? MVVMListSecModel
+        cellViewModel.model = model?.listeningSame
+        list = [cellViewModel] as? Array<Any>
+    }
+
+    var headerIdentifier: String {
+        return MVVMListSectionTextHeaderView.identifier
+    }
+
+    var footerIdentifier: String {
+        return MVVMListSectionTextFooterView.identifier
+    }
+
+    var identifier: String {
+        return MVVMListListeningTableViewCell.identifier
     }
 
     func headerJump() {
@@ -114,29 +171,28 @@ class MVVMListTextListeningSectionViewModel: MVVMListSectionTextViewModelProtoco
     }
 }
 
-class MVVMListImageCourseSectionViewModel: MVVMListSectionImageViewModelProtocol {
 
-    var list: Array<MVVMListSecCellViewModelProtocol>?
+class MVVMListImageCircleSectionViewModel: MVVMListSectionImageViewModelProtocol {
+
+    var list: Array<Any>?
 
     var headerImageUrl: String?
     var footerImageUrl: String?
 
     static func canHandle(type: String) -> Bool {
-        if type == "course" {
+        if type == "circle" {
             return true
         }
         return false
     }
 
     required init(data: MVVMListSecModel) {
-        self.headerImageUrl = "Image Course Header"
-        self.footerImageUrl = "Image Course Footer"
-        var list = [Any]()
-        for str in data.course?.list ?? Array() {
-            let model = MVVMListCourseCellViewModel.init(data: str)
-            list.append(model)
-        }
-        self.list = list as? Array<MVVMListSecCellViewModelProtocol>
+        self.headerImageUrl = "Image Circle Header"
+        self.footerImageUrl = "Image Circle Footer"
+        let cellViewModel = MVVMListListeningCellViewModel()
+        let model = data as? MVVMListSecModel
+        cellViewModel.model = model?.circle
+        list = [cellViewModel] as? Array<Any>
     }
 
     var headerIdentifier: String {
@@ -145,6 +201,10 @@ class MVVMListImageCourseSectionViewModel: MVVMListSectionImageViewModelProtocol
 
     var footerIdentifier: String {
         return MVVMListSectionImageFooterView.identifier
+    }
+
+    var identifier: String {
+        return MVVMListListeningTableViewCell.identifier
     }
 
     func downLoad() {
@@ -160,29 +220,29 @@ class MVVMListImageCourseSectionViewModel: MVVMListSectionImageViewModelProtocol
     }
 }
 
-class MVVMListTextCourseSessionViewModel: MVVMListSectionTextViewModelProtocol {
+class MVVMListTextSpeakSessionViewModel: MVVMListSectionTextViewModelProtocol {
 
-    var list: Array<MVVMListSecCellViewModelProtocol>?
+    var list: Array<Any>?
 
     var headerText: String?
     var footerText: String?
 
     static func canHandle(type: String) -> Bool {
-        if type == "sec" {
+        if type == "speak" {
             return true
         }
         return false
     }
 
     required init(data: MVVMListSecModel) {
-        self.headerText = "Gropup Header"
-        self.footerText = "Gropup Footer"
+        self.headerText = "Text Speak Header"
+        self.footerText = "Text Speak Header"
         var list = [Any]()
-        for str in data.course?.list ?? Array() {
-            let model = MVVMListCourseCellViewModel.init(data: str)
+        for str in data.speak?.list ?? Array() {
+            let model = MVVMListSpeakCellViewModel.init(itemData: str)
             list.append(model)
         }
-        self.list = list as? Array<MVVMListSecCellViewModelProtocol>
+        self.list = list as? Array<Any>
     }
 
     var headerIdentifier: String {
@@ -191,6 +251,10 @@ class MVVMListTextCourseSessionViewModel: MVVMListSectionTextViewModelProtocol {
 
     var footerIdentifier: String {
         return MVVMListSectionTextFooterView.identifier
+    }
+
+    var identifier: String {
+        return MVVMListCourseTableViewCell.identifier
     }
 
     func headerJump() {
@@ -203,30 +267,30 @@ class MVVMListTextCourseSessionViewModel: MVVMListSectionTextViewModelProtocol {
         print("Header 事件：点击")
     }
 }
+      
+class MVVMListImageCourseSectionViewModel: MVVMListSectionImageViewModelProtocol {
 
-class MVVMListImageListeningSessionViewModel: MVVMListSectionImageViewModelProtocol {
+    var list: Array<Any>?
 
-    var list: Array<MVVMListSecCellViewModelProtocol>? = [MVVMListSecCellViewModelProtocol]()
     var headerImageUrl: String?
     var footerImageUrl: String?
 
     static func canHandle(type: String) -> Bool {
-        if type == "plain" {
+        if type == "course" {
             return true
         }
         return false
     }
 
     required init(data: MVVMListSecModel) {
-        self.headerImageUrl = "iamgeTop"
-        self.footerImageUrl = "iamgeBottom"
+        self.headerImageUrl = "Image Course Header"
+        self.footerImageUrl = "Image Course Footer"
         var list = [Any]()
-//        for str in data.plain?.list ?? Array() {
-//            let model = MVVMListCourseCellViewModel.init(data: str)
-//            list.append(model)
-//        }
-
-        self.list = list as? Array<MVVMListSecCellViewModelProtocol>
+        for courseModel in data.course?.list ?? Array() {
+            let courseCellViewModel = MVVMListCourseCellViewModel.init(itemData: courseModel)
+            list.append(courseCellViewModel)
+        }
+        self.list = list as? Array<Any>
     }
 
     var headerIdentifier: String {
@@ -237,7 +301,19 @@ class MVVMListImageListeningSessionViewModel: MVVMListSectionImageViewModelProto
         return MVVMListSectionImageFooterView.identifier
     }
 
+    var identifier: String {
+        return MVVMListCourseTableViewCell.identifier
+    }
+
     func downLoad() {
         print("Footer 事件：downLoad")
+    }
+
+    func headerShowToast() {
+        print("Image Header 弹toast")
+    }
+
+    func footerShowAlert () {
+        print("Image Footer 弹窗")
     }
 }

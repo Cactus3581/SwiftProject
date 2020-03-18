@@ -31,7 +31,7 @@ class MVVMListListeningTableViewCell: UITableViewCell,MVVMListSecTableViewCellPr
             $0.top.bottom.equalToSuperview()
         }
 
-        button.setTitleColor(UIColor.red,for: .normal)
+        button.setTitleColor(UIColor.blue,for: .normal)
         button.addTarget(self, action: #selector(click), for: .touchUpInside)
     }
 
@@ -39,7 +39,7 @@ class MVVMListListeningTableViewCell: UITableViewCell,MVVMListSecTableViewCellPr
         fatalError("init(coder:) has not been implemented")
     }
 
-    var cellViewModel: MVVMListSecCellViewModelProtocol? {
+    var cellViewModel: Any? {
         didSet {
             guard let cellViewModel = cellViewModel as? MVVMListListeningCellViewModel else {
                 return
