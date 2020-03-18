@@ -50,6 +50,8 @@
 		0182B7D0241A86F00033BF0A /* MVVMListCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182B7CF241A86F00033BF0A /* MVVMListCourseTableViewCell.swift */; };
 		0182B7D2241A881E0033BF0A /* MVVMListSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182B7D1241A881E0033BF0A /* MVVMListSessionViewModel.swift */; };
 		0182B7D4241A882B0033BF0A /* MVVMListSecCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182B7D3241A882B0033BF0A /* MVVMListSecCellViewModel.swift */; };
+		0192A6C0242270110015F9CD /* MVVMListSectionDict.json in Resources */ = {isa = PBXBuildFile; fileRef = 0192A6BF242270110015F9CD /* MVVMListSectionDict.json */; };
+		0192A6C22422703D0015F9CD /* MVVMListSectionArray.json in Resources */ = {isa = PBXBuildFile; fileRef = 0192A6C12422703D0015F9CD /* MVVMListSectionArray.json */; };
 		01937ECA2418FF91009BD6AD /* MVVMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01937EC92418FF91009BD6AD /* MVVMModel.swift */; };
 		01937ECC2418FFA5009BD6AD /* MVVMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01937ECB2418FFA5009BD6AD /* MVVMView.swift */; };
 		01937ED2241906B1009BD6AD /* MVVMListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01937ED1241906B1009BD6AD /* MVVMListViewController.swift */; };
@@ -183,6 +185,8 @@
 		0182B7CF241A86F00033BF0A /* MVVMListCourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMListCourseTableViewCell.swift; sourceTree = "<group>"; };
 		0182B7D1241A881E0033BF0A /* MVVMListSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSessionViewModel.swift; sourceTree = "<group>"; };
 		0182B7D3241A882B0033BF0A /* MVVMListSecCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSecCellViewModel.swift; sourceTree = "<group>"; };
+		0192A6BF242270110015F9CD /* MVVMListSectionDict.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MVVMListSectionDict.json; sourceTree = "<group>"; };
+		0192A6C12422703D0015F9CD /* MVVMListSectionArray.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MVVMListSectionArray.json; sourceTree = "<group>"; };
 		01937EC92418FF91009BD6AD /* MVVMModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMModel.swift; sourceTree = "<group>"; };
 		01937ECB2418FFA5009BD6AD /* MVVMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMView.swift; sourceTree = "<group>"; };
 		01937ED1241906B1009BD6AD /* MVVMListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListViewController.swift; sourceTree = "<group>"; };
@@ -906,6 +910,8 @@
 			isa = PBXGroup;
 			children = (
 				01D38A01241A770E00F6D74D /* MVVMListSecModel.swift */,
+				0192A6BF242270110015F9CD /* MVVMListSectionDict.json */,
+				0192A6C12422703D0015F9CD /* MVVMListSectionArray.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1373,11 +1379,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0196CDE923D1888300112AB8 /* SnapViewController.xib in Resources */,
+				0192A6C0242270110015F9CD /* MVVMListSectionDict.json in Resources */,
 				016FE6D923B5DD7800CE8784 /* sql.py in Resources */,
 				010CE4E823B0D6E900AE57A9 /* BasicKnowledgCatalog.plist in Resources */,
 				0182346E23C4AA8C00FB30A9 /* RxSwiftViewController.xib in Resources */,
 				01EE3A202415288A008ECA89 /* SPSwiftViewController.xib in Resources */,
 				0196DCC523D1898500112AB8 /* SnapView.xib in Resources */,
+				0192A6C22422703D0015F9CD /* MVVMListSectionArray.json in Resources */,
 				010D6A9E23A9FB4C00B84621 /* LaunchScreen.storyboard in Resources */,
 				010D6A9B23A9FB4C00B84621 /* Assets.xcassets in Resources */,
 				016FE6D823B5DD7800CE8784 /* statistics.py in Resources */,

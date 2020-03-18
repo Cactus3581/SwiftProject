@@ -94,9 +94,9 @@ class MVVMListTextListeningSectionViewModel: MVVMListSectionTextViewModelProtoco
         self.footerText = "Text Listening Footer"
 
         let cellViewModel = MVVMListListeningCellViewModel()
-        let model = data as? MVVMListSecModel
-        cellViewModel.model = model?.listening
-        list = [cellViewModel] as? Array<Any>
+        let model = data as MVVMListSecModel
+        cellViewModel.model = model.listening
+        list = [cellViewModel] as Array<Any>
     }
 
     var headerIdentifier: String {
@@ -143,9 +143,9 @@ class MVVMListTextListeningSameSectionViewModel: MVVMListSectionTextViewModelPro
         self.footerText = "Text ListeningSame Footer"
 
         let cellViewModel = MVVMListListeningCellViewModel()
-        let model = data as? MVVMListSecModel
-        cellViewModel.model = model?.listeningSame
-        list = [cellViewModel] as? Array<Any>
+        let model = data as MVVMListSecModel
+        cellViewModel.model = model.listeningSame
+        list = [cellViewModel] as Array<Any>
     }
 
     var headerIdentifier: String {
@@ -189,9 +189,9 @@ class MVVMListImageCircleSectionViewModel: MVVMListSectionImageViewModelProtocol
         self.headerImageUrl = "Image Circle Header"
         self.footerImageUrl = "Image Circle Footer"
         let cellViewModel = MVVMListListeningCellViewModel()
-        let model = data as? MVVMListSecModel
-        cellViewModel.model = model?.circle
-        list = [cellViewModel] as? Array<Any>
+        let model = data as MVVMListSecModel
+        cellViewModel.model = model.circle
+        list = [cellViewModel] as Array<Any>
     }
 
     var headerIdentifier: String {
@@ -242,7 +242,7 @@ class MVVMListTextSpeakSessionViewModel: MVVMListSectionTextViewModelProtocol {
             cellViewModel.model = speakItemModel
             list.append(cellViewModel)
         }
-        self.list = list as? Array<Any>
+        self.list = list as Array<Any>
     }
 
     var headerIdentifier: String {
@@ -292,7 +292,7 @@ class MVVMListImageCourseSectionViewModel: MVVMListSectionImageViewModelProtocol
             cellViewModel.model = courseModel
             list.append(cellViewModel)
         }
-        self.list = list as? Array<Any>
+        self.list = list as Array<Any>
     }
 
     var headerIdentifier: String {

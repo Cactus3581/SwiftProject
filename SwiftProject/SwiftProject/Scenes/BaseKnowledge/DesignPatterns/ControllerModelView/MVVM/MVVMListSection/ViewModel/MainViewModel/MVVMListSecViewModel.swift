@@ -20,49 +20,34 @@ class MVVMListSecViewModel: NSObject {
     }
 
     private func handleData()  {
-        let dict = [
-                "header" : "页眉",
-                "footer" : "页脚",
-                "order":["listening","listeningSame","circle","speak","course","group"],
-                "listening":[
-                    "ListeningName" : "VOA"
-                ],
-                "listeningSame":[
-                    "ListeningName" : "VOE"
-                ],
-                "circle":[
-                    "ListeningName" : "VOD"
-                ],
-                "speak":[
-                    "list" : [
-                              ["speakScore": "100"],
-                              ["speakScore": "98"]
-                            ]
-                ],
-                "course":[
-                    "list" : [
-                              ["courseName": "英语四级","courseTeacher": "tom1"],
-                              ["courseName": "英语六级","courseTeacher": "tom2"],
-                              ["courseName": "英语八级","courseTeacher": "tom3"],
-                              ["courseName":"雅思","courseTeacher":"tom4"],
-                              ["courseName": "托福","courseTeacher": "tom5"]
-                            ]
-                ],
-                "group":[
-                
-                ]
-            ] as [String : Any]
 
-        guard let model = MVVMListSecModel.deserialize(from: dict) else {
+        guard let data = getDataFromFile("MVVMListSectionDict"), let json = jsonSerial(data) as? [String: Any] else  {
             return
         }
+
+        guard let model = MVVMListSecModel.deserialize(from: json) else {
+            return
+        }
+
         self.model = model
-        guard let data = MVVMListSecFactory.createWithContent(data: model)  else {
-            return
+        if let data1 = MVVMListSecFactory.createWithContent(data: model) {
+            array = data1
         }
-
-        array = data
     }
+
+    private func getDataFromFile(_ filename: String) -> Data? {
+        @objc class TestClass: NSObject { }
+        let bundle = Bundle(for: TestClass.self)
+        if let path = bundle.path(forResource: filename, ofType: "json") {
+            return (try? Data(contentsOf: URL(fileURLWithPath: path)))
+        }
+        return nil
+    }
+
+    private func jsonSerial(_ data: Data) -> Any? {
+        return try? JSONSerialization.jsonObject(with: data, options: [])
+    }
+
 
     func headerClick(){
         print("页眉 click")
@@ -87,7 +72,7 @@ extension MVVMListSecViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section:MVVMListSectionViewModelProtocol = array[indexPath.section]
         let item = section.list?[indexPath.row]
-        if var cell = tableView.dequeueReusableCell(withIdentifier: section.identifier ?? "", for: indexPath) as? MVVMListSecTableViewCellProtocol {
+        if var cell = tableView.dequeueReusableCell(withIdentifier: section.identifier , for: indexPath) as? MVVMListSecTableViewCellProtocol {
             cell.cellViewModel = item!
             return cell as! UITableViewCell
         }else {

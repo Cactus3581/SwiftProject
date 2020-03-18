@@ -1,0 +1,49 @@
+{
+    "header": "页眉",
+    "footer": "页脚",
+    "order": ["listening", "listeningSame", "circle", "speak", "course", "group"],
+    "listening": {
+        "ListeningName": "VOA"
+    },
+    "listeningSame": {
+        "ListeningName": "VOE"
+    },
+    "circle": {
+        "ListeningName": "VOD"
+    },
+    "speak": {
+        "list": [{
+                "speakScore": "100"
+            },
+            {
+                "speakScore": "98"
+            }
+        ]
+    },
+    "course": {
+        "list": [{
+                "courseName": "英语四级",
+                "courseTeacher": "tom1"
+            },
+            {
+                "courseName": "英语六级",
+                "courseTeacher": "tom2"
+            },
+            {
+                "courseName": "英语八级",
+                "courseTeacher": "tom3"
+            },
+            {
+                "courseName": "雅思",
+                "courseTeacher": "tom4"
+            },
+            {
+                "courseName": "托福",
+                "courseTeacher": "tom5"
+            }
+        ]
+    },
+    "group": {
+
+    }
+}

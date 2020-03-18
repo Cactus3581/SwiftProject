@@ -1,0 +1,39 @@
+{
+    "list": [
+        [{
+                "type": "listen",
+                "header": {
+                    "title": "听力"
+                },
+                "list": [{
+                        "title": "英语四级"
+                    },
+                    {
+                        "title": "英语六级"
+                    },
+                    {
+                        "title": "雅思"
+                    },
+                    {
+                        "title": "托福"
+                    }
+                ]
+            },
+            {
+                "type": "course",
+                "header": {
+                    "title": " 课程"
+                },
+                "list": [{
+                        "courseName": "新东方课程1",
+                        "courseTeacher": "tom"
+                    },
+                    {
+                        "courseName": "新东方课程2",
+                        "courseTeacher": "mary"
+                    }
+                ]
+            }
+        ]
+    ]
+}
