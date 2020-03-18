@@ -73,7 +73,7 @@ extension MVVMListSectionImageViewModelProtocol {
     func footerShowAlert(){}
 }
 
-//MARK:四种组合
+//MARK:五种组合
 class MVVMListTextListeningSectionViewModel: MVVMListSectionTextViewModelProtocol {
 
     var list: Array<Any>?
@@ -171,7 +171,6 @@ class MVVMListTextListeningSameSectionViewModel: MVVMListSectionTextViewModelPro
     }
 }
 
-
 class MVVMListImageCircleSectionViewModel: MVVMListSectionImageViewModelProtocol {
 
     var list: Array<Any>?
@@ -238,9 +237,10 @@ class MVVMListTextSpeakSessionViewModel: MVVMListSectionTextViewModelProtocol {
         self.headerText = "Text Speak Header"
         self.footerText = "Text Speak Header"
         var list = [Any]()
-        for str in data.speak?.list ?? Array() {
-            let model = MVVMListSpeakCellViewModel.init(itemData: str)
-            list.append(model)
+        for speakItemModel in data.speak?.list ?? Array() {
+            let cellViewModel = MVVMListSpeakCellViewModel()
+            cellViewModel.model = speakItemModel
+            list.append(cellViewModel)
         }
         self.list = list as? Array<Any>
     }
@@ -287,8 +287,10 @@ class MVVMListImageCourseSectionViewModel: MVVMListSectionImageViewModelProtocol
         self.footerImageUrl = "Image Course Footer"
         var list = [Any]()
         for courseModel in data.course?.list ?? Array() {
-            let courseCellViewModel = MVVMListCourseCellViewModel.init(itemData: courseModel)
-            list.append(courseCellViewModel)
+            // 因为默认一个session只有一种cell，所以这里可以明确类型
+            let cellViewModel = MVVMListCourseCellViewModel()
+            cellViewModel.model = courseModel
+            list.append(cellViewModel)
         }
         self.list = list as? Array<Any>
     }

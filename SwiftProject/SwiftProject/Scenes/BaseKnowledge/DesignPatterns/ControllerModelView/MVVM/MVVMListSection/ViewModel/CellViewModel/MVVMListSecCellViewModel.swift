@@ -65,14 +65,9 @@ class MVVMListListeningCellViewModel: NSObject {
     }
 }
 
-
 class MVVMListSpeakCellViewModel: MVVMListCourseCellViewModelProtocol {
 
     var model: MVVMListSpeakItemModel?
-
-    required init(itemData: Any) {
-        model = itemData as? MVVMListSpeakItemModel
-    }
 
     var title: String? {
         return model?.speakScore
@@ -86,18 +81,7 @@ class MVVMListSpeakCellViewModel: MVVMListCourseCellViewModelProtocol {
 class MVVMListCourseCellViewModel: MVVMListCourseCellViewModelProtocol {
 
     var model: MVVMListCourseItemModel?
-
-    static func canHandle(type: String) -> Bool {
-        if type == "label" {
-            return true
-        }
-        return false
-    }
-
-    required init(itemData: Any) {
-        model = itemData as? MVVMListCourseItemModel
-    }
-
+    
     var title: String? {
         return model?.courseName
     }
