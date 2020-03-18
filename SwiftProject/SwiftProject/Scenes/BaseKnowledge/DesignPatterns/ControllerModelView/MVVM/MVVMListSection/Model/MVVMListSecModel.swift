@@ -13,17 +13,29 @@ class MVVMListSecModel: NSObject,HandyJSON {
     var order: Array<String>?
     var header: String?
     var footer: String?
-    var button: MVVMListSecButtonModel?
-    var sec: MVVMListSectionModel?
+    var listening: MVVMListListeningModel?
+    var course: MVVMListCourseModel?
+//    var plain: MVVMListCourseModel?
+//    var plaain: MVVMListListeningModel?
     override required init() {}
 }
 
-class MVVMListSecButtonModel: NSObject,HandyJSON {
-    var buttonTitle: String?
+class MVVMListListeningModel: NSObject,HandyJSON {
+    var headerText: String?
+    var footerText: String?
+    var ListeningName: String?
     override required init() {}
 }
 
-class MVVMListSectionModel: NSObject,HandyJSON {
-    var list: Array<String>?
+class MVVMListCourseModel: NSObject,HandyJSON {
+    var headerImageUrl: String?
+    var footerImageUrl: String?
+    var list: Array<MVVMListCourseItemModel>?
+    override required init() {}
+}
+
+class MVVMListCourseItemModel: NSObject,HandyJSON {
+    var courseName: String?
+    var courseTeacher: String?
     override required init() {}
 }

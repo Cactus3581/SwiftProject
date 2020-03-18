@@ -1,5 +1,5 @@
 //
-//  MVVMListSecButtonTableViewCell.swift
+//  MVVMListListeningTableViewCell.swift
 //  SwiftProject
 //
 //  Created by ryan on 2020/3/11.
@@ -8,19 +8,9 @@
 
 import UIKit
 
-class MVVMListSecButtonTableViewCell: UITableViewCell,MVVMListSecTableViewCellProtocol {
+class MVVMListListeningTableViewCell: UITableViewCell,MVVMListSecTableViewCellProtocol {
 
     let button: UIButton?
-
-    var cellViewModel: MVVMListSecCellViewModelProtocol? {
-        didSet {
-            guard let cellViewModel = cellViewModel as? MVVMListSecButtonCellViewModel else {
-                return
-            }
-            // 赋值
-            button?.setTitle(cellViewModel.model?.buttonTitle, for: .normal)
-        }
-    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -49,8 +39,18 @@ class MVVMListSecButtonTableViewCell: UITableViewCell,MVVMListSecTableViewCellPr
         fatalError("init(coder:) has not been implemented")
     }
 
+    var cellViewModel: MVVMListSecCellViewModelProtocol? {
+        didSet {
+            guard let cellViewModel = cellViewModel as? MVVMListListeningCellViewModel else {
+                return
+            }
+            // 赋值
+            button?.setTitle(cellViewModel.model?.ListeningName, for: .normal)
+        }
+    }
+
     @objc func click(){
-        guard let cellViewModel = cellViewModel as? MVVMListSecButtonCellViewModel else {
+        guard let cellViewModel = cellViewModel as? MVVMListListeningCellViewModel else {
             return
         }
 
@@ -58,18 +58,18 @@ class MVVMListSecButtonTableViewCell: UITableViewCell,MVVMListSecTableViewCellPr
     }
 
     func jump(){
-        guard let cellViewModel = cellViewModel as? MVVMListButtonSectionViewModel else {
+        guard let cellViewModel = cellViewModel as? MVVMListTextListeningSectionViewModel else {
             return
         }
 
-        cellViewModel.jump()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        cellViewModel.headerJump()
     }
 
     static var identifier: String {
         return String(describing: self)
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
     }
 }

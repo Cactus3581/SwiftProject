@@ -10,7 +10,9 @@ import UIKit
 
 class MVVMListSecAssembly: NSObject {
     static func register() {
-        MVVMListSecFactory.register(viewModel: MVVMListButtonSectionViewModel.self)
-        MVVMListSecFactory.register(viewModel: MVVMListGroupSessionViewModel.self)
+        MVVMListSecFactory.register(viewModel: MVVMListTextListeningSectionViewModel.self)
+        MVVMListSecFactory.register(viewModel: MVVMListTextCourseSessionViewModel.self)
+        MVVMListSecFactory.register(viewModel: MVVMListImageListeningSessionViewModel.self)
+        MVVMListSecFactory.register(viewModel: MVVMListImageCourseSectionViewModel.self)
     }
 }

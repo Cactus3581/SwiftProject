@@ -13,13 +13,6 @@ class MVVMListTableFooterView: UIView {
 
     let button: UIButton?
 
-    var viewModel: MVVMListSecViewModel? {
-        didSet {
-            // 赋值
-            button?.setTitle(viewModel?.model?.footer, for: .normal)
-        }
-    }
-
     override init(frame: CGRect) {
 
         let button: UIButton = UIButton()
@@ -34,18 +27,21 @@ class MVVMListTableFooterView: UIView {
             $0.center.equalToSuperview()
         }
         button.setTitleColor(UIColor.white,for: .normal)
-        button.addTarget(self, action: #selector(click), for: .touchUpInside)
+        button.addTarget(self, action: #selector(jump), for: .touchUpInside)
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    @objc func click(){
-        self.viewModel?.click()
+    var viewModel: MVVMListSecViewModel? {
+        didSet {
+            // 赋值
+            button?.setTitle(viewModel?.model?.footer, for: .normal)
+        }
     }
-
-    func jump(){
-        self.viewModel?.jump()
+    
+    @objc func jump(){
+        self.viewModel?.footerJump()
     }
 }

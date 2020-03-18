@@ -12,13 +12,6 @@ class MVVMListTableHeaderView: UIView {
 
     let button: UIButton?
 
-    var viewModel: MVVMListSecViewModel? {
-        didSet {
-            // 赋值
-            button?.setTitle(viewModel?.model?.header, for: .normal)
-        }
-    }
-
     override init(frame: CGRect) {
 
         let button: UIButton = UIButton()
@@ -40,11 +33,14 @@ class MVVMListTableHeaderView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    @objc func click(){
-        self.viewModel?.click()
+    var viewModel: MVVMListSecViewModel? {
+        didSet {
+            // 赋值
+            button?.setTitle(viewModel?.model?.header, for: .normal)
+        }
     }
 
-    func jump(){
-        self.viewModel?.jump()
+    @objc func click(){
+        self.viewModel?.headerClick()
     }
 }

@@ -21,14 +21,20 @@ class MVVMListSecViewModel: NSObject {
 
     private func handleData()  {
         let dict = [
-                "header" : "header",
-                "footer" : "footer",
-                "order":["button","sec"],
-                "button":[
-                    "buttonTitle" : "ryan"
+                "header" : "页眉",
+                "footer" : "页脚",
+                "order":["listening","course"],
+                "listening":[
+                    "ListeningName" : "VOA"
                 ],
-                "sec":[
-                    "list" : ["1","2","3","4","5","6","7","8"]
+                "course":[
+                    "list" : [
+                              ["courseName": "英语四级","courseTeacher": "tom1"],
+                              ["courseName": "英语六级","courseTeacher": "tom2"],
+                              ["courseName": "英语八级","courseTeacher": "tom3"],
+                              ["courseName":"雅思","courseTeacher":"tom4"],
+                              ["courseName": "托福","courseTeacher": "tom5"]
+                            ]
                 ]
             ] as [String : Any]
 
@@ -43,12 +49,12 @@ class MVVMListSecViewModel: NSObject {
         array = data
     }
 
-    func click(){
-        print("tableHeader/FooterView click")
+    func headerClick(){
+        print("页眉 click")
     }
 
-    func jump(){
-        print("tableHeader/FooterView jump")
+    func footerJump(){
+        print("页脚 jump")
     }
 }
 

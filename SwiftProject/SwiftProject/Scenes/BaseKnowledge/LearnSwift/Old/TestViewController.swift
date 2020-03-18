@@ -354,7 +354,7 @@ class TestViewController: BaseViewController {
 //        print(statistics.sum)
 //        print(statistics.2)
 //
-//        //函数同样可以接受多个参数，然后把它们存放进数组当中
+//        //函数同样可以接收多个参数，然后把它们存放进数组当中
 //        func sumOf(numbers: Int...) -> Int {
 //            var sum = 0
 //            for number in numbers {

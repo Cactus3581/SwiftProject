@@ -9,8 +9,8 @@
 import UIKit
 
 protocol MVVMListSecTableViewCellProtocol {
-    static var identifier: String { get }
-    var cellViewModel: MVVMListSecCellViewModelProtocol? { set get }
+    var cellViewModel: MVVMListSecCellViewModelProtocol? { set get }// 提供赋值方式
+    static var identifier: String { get }// 注册的时候用
 }
 
 extension MVVMListSecTableViewCellProtocol {

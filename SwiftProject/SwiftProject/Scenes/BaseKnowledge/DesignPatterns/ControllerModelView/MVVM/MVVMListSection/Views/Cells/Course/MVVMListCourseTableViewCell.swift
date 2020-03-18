@@ -1,5 +1,5 @@
 //
-//  MVVMListSecGroupTableViewCell.swift
+//  MVVMListCourseTableViewCell.swift
 //  SwiftProject
 //
 //  Created by ryan on 2020/3/11.
@@ -8,19 +8,9 @@
 
 import UIKit
 
-class MVVMListSecGroupTableViewCell: UITableViewCell, MVVMListSecTableViewCellProtocol {
+class MVVMListCourseTableViewCell: UITableViewCell, MVVMListSecTableViewCellProtocol {
 
     let titleLabel: UILabel?
-
-    var cellViewModel: MVVMListSecCellViewModelProtocol? {
-        didSet {
-            guard let cellViewModel = cellViewModel as? MVVMListSecGroupCellViewModel else {
-                return
-            }
-            // 赋值
-            titleLabel?.text = cellViewModel.lableTitle
-        }
-    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,11 +36,21 @@ class MVVMListSecGroupTableViewCell: UITableViewCell, MVVMListSecTableViewCellPr
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    var cellViewModel: MVVMListSecCellViewModelProtocol? {
+        didSet {
+            guard let cellViewModel = cellViewModel as? MVVMListCourseCellViewModel else {
+                return
+            }
+            // 赋值
+            titleLabel?.text = cellViewModel.model?.courseName
+        }
     }
 
     static var identifier: String {
         return String(describing: self)
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
     }
 }

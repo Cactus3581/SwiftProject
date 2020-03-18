@@ -26,7 +26,7 @@ class MVVMListSecViewController: BaseViewController, UITableViewDelegate {
 
     func initializeViews() {
 
-        tableView = UITableView(frame: CGRect.zero, style: .plain)
+        tableView = UITableView(frame: CGRect.zero, style: .grouped)
         view.addSubview(tableView!)
         tableView?.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
@@ -35,10 +35,12 @@ class MVVMListSecViewController: BaseViewController, UITableViewDelegate {
         tableView?.backgroundColor = UIColor.white
         tableView?.separatorStyle = .singleLine
 
-        tableView?.register(MVVMListSectionHeaderView.self, forHeaderFooterViewReuseIdentifier: MVVMListSectionHeaderView.identifier)
-        tableView?.register(MVVMListSectionFooterView.self, forHeaderFooterViewReuseIdentifier: MVVMListSectionFooterView.identifier)
-        tableView?.register(MVVMListSecGroupTableViewCell.self, forCellReuseIdentifier: MVVMListSecGroupTableViewCell.identifier)
-        tableView?.register(MVVMListSecButtonTableViewCell.self, forCellReuseIdentifier: MVVMListSecButtonTableViewCell.identifier)
+        tableView?.register(MVVMListSectionTextHeaderView.self, forHeaderFooterViewReuseIdentifier: MVVMListSectionTextHeaderView.identifier)
+        tableView?.register(MVVMListSectionTextFooterView.self, forHeaderFooterViewReuseIdentifier: MVVMListSectionTextFooterView.identifier)
+        tableView?.register(MVVMListSectionImageHeaderView.self, forHeaderFooterViewReuseIdentifier: MVVMListSectionImageHeaderView.identifier)
+        tableView?.register(MVVMListSectionImageFooterView.self, forHeaderFooterViewReuseIdentifier: MVVMListSectionImageFooterView.identifier)
+        tableView?.register(MVVMListCourseTableViewCell.self, forCellReuseIdentifier: MVVMListCourseTableViewCell.identifier)
+        tableView?.register(MVVMListListeningTableViewCell.self, forCellReuseIdentifier: MVVMListListeningTableViewCell.identifier)
 
         let headerView =  MVVMListTableHeaderView.init(frame: CGRect(x: 0, y: 0, width: tableView?.bounds.width ?? 0, height: 50))
         tableView?.tableHeaderView = headerView
@@ -62,9 +64,11 @@ class MVVMListSecViewController: BaseViewController, UITableViewDelegate {
         }
 
         let sessionViewModel = viewModel.array[section]
-        let view: MVVMListSectionHeaderView = tableView.dequeueReusableHeaderFooterView(withIdentifier: sessionViewModel.headerIdentifier) as! MVVMListSectionHeaderView
-        view.viewModel = viewModel.array[section]
-        return view
+        if var view = tableView.dequeueReusableHeaderFooterView(withIdentifier: sessionViewModel.headerIdentifier) as? MVVMListSectionViewProtocol {
+            view.sessionViewModel = viewModel.array[section]
+            return view as? UIView
+        }
+        return nil
     }
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -72,9 +76,11 @@ class MVVMListSecViewController: BaseViewController, UITableViewDelegate {
             return nil
         }
         let sessionViewModel = viewModel.array[section]
-        let view: MVVMListSectionFooterView = tableView.dequeueReusableHeaderFooterView(withIdentifier: sessionViewModel.footerIdentifier) as! MVVMListSectionFooterView
-        view.viewModel = viewModel.array[section]
-        return view
+        if var view = tableView.dequeueReusableHeaderFooterView(withIdentifier: sessionViewModel.footerIdentifier) as? MVVMListSectionViewProtocol {
+            view.sessionViewModel = viewModel.array[section]
+            return view as! UIView
+        }
+        return nil
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

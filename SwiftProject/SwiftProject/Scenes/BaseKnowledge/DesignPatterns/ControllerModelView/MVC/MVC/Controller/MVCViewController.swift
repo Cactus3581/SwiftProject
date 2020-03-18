@@ -11,7 +11,7 @@ import UIKit
 /*
 
  1. controller：创建view，网络请求，将model封装，然后将model数据给view赋值；
- 2. view接受事件，然后将事件传递给controller
+ 2. view接收事件，然后将事件传递给controller
  3. model和view不会有任何引用关系
  */
 class MVCViewController: BaseViewController, MVCViewProtocol {
