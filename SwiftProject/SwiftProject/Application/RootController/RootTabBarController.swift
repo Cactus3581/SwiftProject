@@ -6,14 +6,12 @@
 //  Copyright © 2019 cactus. All rights reserved.
 //
 
-//>>
 
 import UIKit
 
 class RootTabBarController: UITabBarController {
 
     private let kFeatureCatalog = "FeatureCatalog"
-    
     private let kBasicKnowledgCatalog = "BasicKnowledgCatalog"
     private let kImprovingTipCatalog = "ImprovingTipCatalog"
 
@@ -26,17 +24,16 @@ class RootTabBarController: UITabBarController {
      */
     func addChildViewController() {
 
-        // master-1
-        let featureVC = UIViewController();
-//        featureVC.url = kFeatureCatalog;
+        let featureVC = ListViewController();
+        featureVC.url = kFeatureCatalog;
         setUpChildViewController(viewController: featureVC, image: UIImage.init(named: "tabbar_hotScenes")!, title: "场景")
 
         let baseKnowledgeVC = ListViewController();
         baseKnowledgeVC.url = kBasicKnowledgCatalog;
         setUpChildViewController(viewController: baseKnowledgeVC, image: UIImage.init(named: "tabbar_knowledge")!, title: "知识点")
 
-        let improvingTipVC = UIViewController();
-//        improvingTipVC.url = kImprovingTipCatalog;
+        let improvingTipVC = ListViewController();
+        improvingTipVC.url = kImprovingTipCatalog;
         setUpChildViewController(viewController: improvingTipVC, image: UIImage.init(named: "tabbar_skill")!, title: "技巧")
     }
 
@@ -52,5 +49,4 @@ class RootTabBarController: UITabBarController {
         navC.tabBarItem.selectedImage = image;
         addChild(navC)
     }
-
 }

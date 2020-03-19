@@ -26,7 +26,7 @@ class MVVMListSecViewController: BaseViewController, UITableViewDelegate {
 
     func initializeViews() {
 
-        tableView = UITableView(frame: CGRect.zero, style: .grouped)
+        self.tableView = UITableView(frame: CGRect.zero, style: .grouped)
         view.addSubview(tableView!)
         tableView?.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
@@ -42,7 +42,7 @@ class MVVMListSecViewController: BaseViewController, UITableViewDelegate {
         tableView?.register(MVVMListCourseTableViewCell.self, forCellReuseIdentifier: MVVMListCourseTableViewCell.identifier)
         tableView?.register(MVVMListListeningTableViewCell.self, forCellReuseIdentifier: MVVMListListeningTableViewCell.identifier)
 
-        let headerView =  MVVMListTableHeaderView.init(frame: CGRect(x: 0, y: 0, width: tableView?.bounds.width ?? 0, height: 50))
+        let headerView =  MVVMListTableHeaderView.init(frame: CGRect(x: 0, y: 0, width: tableView?.bounds.width ?? 0, height: 300))
         tableView?.tableHeaderView = headerView
         headerView.viewModel = viewModel
 

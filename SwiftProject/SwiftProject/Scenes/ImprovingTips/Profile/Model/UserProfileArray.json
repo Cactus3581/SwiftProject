@@ -1,0 +1,85 @@
+{
+    "header": {
+        "title": "页眉"
+    },
+    "footer": {
+        "title": "页脚"
+    },
+    "list": [{
+            "type": "listening",
+            "header": {
+                "title": "听力"
+            },
+            "list": [{
+                "title": "VOA"
+            }]
+        },
+        {
+            "type": "ads",
+            "header": {
+                "title": "广告"
+            },
+            "list": [{
+                "title": "京东广告"
+            }]
+        },
+        {
+            "type": "circle",
+            "header": {
+                "title": "圈子"
+            },
+            "list": [{
+                "title": "英语君"
+            }]
+        },
+        {
+            "type": "speak",
+            "header": {
+                "title": "口语"
+            },
+            "list": [{
+                    "speakScore": "100"
+                },
+                {
+                    "speakScore": "98"
+                }
+            ]
+        },
+        {
+            "type": "course",
+            "header": {
+                "title": "课程"
+            },
+            "list": [{
+                    "courseName": "英语四级课程",
+                    "courseTeacher": "tom1"
+                },
+                {
+                    "courseName": "英语六级课程",
+                    "courseTeacher": "tom2"
+                },
+                {
+                    "courseName": "英语八级课程",
+                    "courseTeacher": "tom3"
+                },
+                {
+                    "courseName": "雅思课程",
+                    "courseTeacher": "tom4"
+                },
+                {
+                    "courseName": "托福课程",
+                    "courseTeacher": "tom5"
+                }
+            ]
+        },
+        {
+            "type": "ads",
+            "header": {
+                "title": "广告1"
+            },
+            "list": [{
+                "title": "京东广告1"
+            }]
+        },
+    ]
+}

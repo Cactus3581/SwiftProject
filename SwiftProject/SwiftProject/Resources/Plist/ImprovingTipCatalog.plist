@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>Demo</string>
+		<key>fileName</key>
+		<string>ListViewController</string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>Profile</string>
+				<key>fileName</key>
+				<string>UserProfileViewController</string>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>

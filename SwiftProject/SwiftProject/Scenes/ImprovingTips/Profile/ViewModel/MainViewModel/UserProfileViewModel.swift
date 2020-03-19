@@ -1,5 +1,5 @@
 //
-//  MVVMListSecViewModel.swift
+//  UserProfileViewModel.swift
 //  SwiftProject
 //
 //  Created by ryan on 2020/3/11.
@@ -8,11 +8,12 @@
 
 import UIKit
 
-class MVVMListSecViewModel: NSObject {
+class UserProfileViewModel: NSObject {
 
-    var array:Array<MVVMListSectionViewModelProtocol> = [MVVMListSectionViewModelProtocol]()
+    var array:Array<UserProfileViewModelProtocol> = [UserProfileViewModelProtocol]()
+    var ctaList:Array<UserProfileCTAItemViewModel> = [UserProfileCTAItemViewModel]()
 
-    var model: MVVMListSecModel?
+    var model: UserProfileModel?
 
     override init() {
         super.init()
@@ -21,26 +22,32 @@ class MVVMListSecViewModel: NSObject {
 
     private func handleData()  {
 
-        let jsonName = "MVVMListSectionArray"
-        //let jsonName = "MVVMListSectionDict"
+        //let jsonName = "UserProfileArray"
+        let jsonName = "UserProfileDict"
 
         guard let data = getDataFromFile(jsonName), let json = jsonSerial(data) as? [String: Any] else  {
             return
         }
 
-        guard let model = MVVMListSecModel.deserialize(from: json) else {
+        guard let model = UserProfileModel.deserialize(from: json) else {
             return
         }
 
         self.model = model
-        if jsonName ==  "MVVMListSectionArray" {
-            if let data1 = MVVMListSecFactory.createSessionViewModelByArray(data: model) {
+        if jsonName ==  "UserProfileArray" {
+            if let data1 = UserProfileFactory.createSessionViewModelByArray(data: model) {
                 array = data1
             }
-        } else if jsonName == "MVVMListSectionDict" {
-            if let data1 = MVVMListSecFactory.createSessionViewModelByDict(data: model) {
+        } else if jsonName == "UserProfileDict" {
+            if let data1 = UserProfileFactory.createSessionViewModelByDict(data: model) {
                 array = data1
             }
+        }
+
+        for ctaItemModel in model.ctaList ?? [] {
+            let viewModel = UserProfileCTAItemViewModel()
+            viewModel.model = ctaItemModel
+            ctaList.append(viewModel)
         }
     }
 
@@ -67,21 +74,21 @@ class MVVMListSecViewModel: NSObject {
     }
 }
 
-extension MVVMListSecViewModel: UITableViewDataSource {
+extension UserProfileViewModel: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return array.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let section:MVVMListSectionViewModelProtocol = array[section]
+        let section:UserProfileViewModelProtocol = array[section]
         return section.list?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let section:MVVMListSectionViewModelProtocol = array[indexPath.section]
+        let section:UserProfileViewModelProtocol = array[indexPath.section]
         let item = section.list?[indexPath.row]
-        if var cell = tableView.dequeueReusableCell(withIdentifier: section.identifier , for: indexPath) as? MVVMListSecTableViewCellProtocol {
+        if var cell = tableView.dequeueReusableCell(withIdentifier: section.identifier , for: indexPath) as? UserProfileTableViewCellProtocol {
             cell.cellViewModel = item!
             return cell as! UITableViewCell
         }else {

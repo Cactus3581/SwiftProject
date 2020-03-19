@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0102673A242379B900CA6D00 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102671C242379B900CA6D00 /* UserProfileViewModel.swift */; };
+		0102673B242379B900CA6D00 /* UserProfileCTAItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102671E242379B900CA6D00 /* UserProfileCTAItemViewModel.swift */; };
+		0102673C242379B900CA6D00 /* UserProfileCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026720242379B900CA6D00 /* UserProfileCellViewModel.swift */; };
+		0102673D242379B900CA6D00 /* UserProfileSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026722242379B900CA6D00 /* UserProfileSessionViewModel.swift */; };
+		0102673E242379B900CA6D00 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026724242379B900CA6D00 /* UserProfileViewController.swift */; };
+		0102673F242379B900CA6D00 /* UserProfileArray.json in Resources */ = {isa = PBXBuildFile; fileRef = 01026726242379B900CA6D00 /* UserProfileArray.json */; };
+		01026740242379B900CA6D00 /* UserProfileDict.json in Resources */ = {isa = PBXBuildFile; fileRef = 01026727242379B900CA6D00 /* UserProfileDict.json */; };
+		01026741242379B900CA6D00 /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026728242379B900CA6D00 /* UserProfileModel.swift */; };
+		01026742242379B900CA6D00 /* UserProfileCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102672C242379B900CA6D00 /* UserProfileCourseTableViewCell.swift */; };
+		01026743242379B900CA6D00 /* UserProfileListeningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102672E242379B900CA6D00 /* UserProfileListeningTableViewCell.swift */; };
+		01026744242379B900CA6D00 /* UserProfileTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102672F242379B900CA6D00 /* UserProfileTableViewCellProtocol.swift */; };
+		01026745242379B900CA6D00 /* UserProfileSectionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026731242379B900CA6D00 /* UserProfileSectionViewProtocol.swift */; };
+		01026746242379B900CA6D00 /* UserProfileSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026732242379B900CA6D00 /* UserProfileSectionHeaderView.swift */; };
+		01026747242379B900CA6D00 /* UserProfileTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026734242379B900CA6D00 /* UserProfileTableFooterView.swift */; };
+		01026748242379B900CA6D00 /* UserProfileTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026735242379B900CA6D00 /* UserProfileTableHeaderView.swift */; };
+		01026749242379B900CA6D00 /* UserProfileCTAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026736242379B900CA6D00 /* UserProfileCTAView.swift */; };
+		0102674A242379B900CA6D00 /* UserProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026738242379B900CA6D00 /* UserProfileAssembly.swift */; };
+		0102674B242379B900CA6D00 /* UserProfileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026739242379B900CA6D00 /* UserProfileFactory.swift */; };
+		0102674D24237B5600CA6D00 /* ImprovingTipCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0102674C24237B5600CA6D00 /* ImprovingTipCatalog.plist */; };
+		0102674F24237B6A00CA6D00 /* FeatureCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0102674E24237B6A00CA6D00 /* FeatureCatalog.plist */; };
 		010442B423B4E1C100B1BF54 /* OptionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010442B323B4E1C100B1BF54 /* OptionalViewController.swift */; };
 		010CD84623B0C61300AE57A9 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010CD84523B0C61300AE57A9 /* TestViewController.swift */; };
 		010CE4E823B0D6E900AE57A9 /* BasicKnowledgCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 010CE4E723B0D6E800AE57A9 /* BasicKnowledgCatalog.plist */; };
@@ -132,6 +152,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0102671C242379B900CA6D00 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
+		0102671E242379B900CA6D00 /* UserProfileCTAItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileCTAItemViewModel.swift; sourceTree = "<group>"; };
+		01026720242379B900CA6D00 /* UserProfileCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileCellViewModel.swift; sourceTree = "<group>"; };
+		01026722242379B900CA6D00 /* UserProfileSessionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileSessionViewModel.swift; sourceTree = "<group>"; };
+		01026724242379B900CA6D00 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		01026726242379B900CA6D00 /* UserProfileArray.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserProfileArray.json; sourceTree = "<group>"; };
+		01026727242379B900CA6D00 /* UserProfileDict.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserProfileDict.json; sourceTree = "<group>"; };
+		01026728242379B900CA6D00 /* UserProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
+		0102672C242379B900CA6D00 /* UserProfileCourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileCourseTableViewCell.swift; sourceTree = "<group>"; };
+		0102672E242379B900CA6D00 /* UserProfileListeningTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileListeningTableViewCell.swift; sourceTree = "<group>"; };
+		0102672F242379B900CA6D00 /* UserProfileTableViewCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewCellProtocol.swift; sourceTree = "<group>"; };
+		01026731242379B900CA6D00 /* UserProfileSectionViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileSectionViewProtocol.swift; sourceTree = "<group>"; };
+		01026732242379B900CA6D00 /* UserProfileSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileSectionHeaderView.swift; sourceTree = "<group>"; };
+		01026734242379B900CA6D00 /* UserProfileTableFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileTableFooterView.swift; sourceTree = "<group>"; };
+		01026735242379B900CA6D00 /* UserProfileTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileTableHeaderView.swift; sourceTree = "<group>"; };
+		01026736242379B900CA6D00 /* UserProfileCTAView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileCTAView.swift; sourceTree = "<group>"; };
+		01026738242379B900CA6D00 /* UserProfileAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileAssembly.swift; sourceTree = "<group>"; };
+		01026739242379B900CA6D00 /* UserProfileFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileFactory.swift; sourceTree = "<group>"; };
+		0102674C24237B5600CA6D00 /* ImprovingTipCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ImprovingTipCatalog.plist; sourceTree = "<group>"; };
+		0102674E24237B6A00CA6D00 /* FeatureCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FeatureCatalog.plist; sourceTree = "<group>"; };
 		010442B323B4E1C100B1BF54 /* OptionalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalViewController.swift; sourceTree = "<group>"; };
 		010CD84523B0C61300AE57A9 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		010CE4E723B0D6E800AE57A9 /* BasicKnowledgCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BasicKnowledgCatalog.plist; sourceTree = "<group>"; };
@@ -281,6 +321,143 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01026719242379B900CA6D00 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0102671A242379B900CA6D00 /* ViewModel */,
+				01026723242379B900CA6D00 /* Controller */,
+				01026725242379B900CA6D00 /* Model */,
+				01026729242379B900CA6D00 /* Views */,
+				01026737242379B900CA6D00 /* Helper */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		0102671A242379B900CA6D00 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0102671B242379B900CA6D00 /* MainViewModel */,
+				0102671D242379B900CA6D00 /* CTAViewModel */,
+				0102671F242379B900CA6D00 /* CellViewModel */,
+				01026721242379B900CA6D00 /* SessionViewModel */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0102671B242379B900CA6D00 /* MainViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0102671C242379B900CA6D00 /* UserProfileViewModel.swift */,
+			);
+			path = MainViewModel;
+			sourceTree = "<group>";
+		};
+		0102671D242379B900CA6D00 /* CTAViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0102671E242379B900CA6D00 /* UserProfileCTAItemViewModel.swift */,
+			);
+			path = CTAViewModel;
+			sourceTree = "<group>";
+		};
+		0102671F242379B900CA6D00 /* CellViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				01026720242379B900CA6D00 /* UserProfileCellViewModel.swift */,
+			);
+			path = CellViewModel;
+			sourceTree = "<group>";
+		};
+		01026721242379B900CA6D00 /* SessionViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				01026722242379B900CA6D00 /* UserProfileSessionViewModel.swift */,
+			);
+			path = SessionViewModel;
+			sourceTree = "<group>";
+		};
+		01026723242379B900CA6D00 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				01026724242379B900CA6D00 /* UserProfileViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		01026725242379B900CA6D00 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				01026726242379B900CA6D00 /* UserProfileArray.json */,
+				01026727242379B900CA6D00 /* UserProfileDict.json */,
+				01026728242379B900CA6D00 /* UserProfileModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		01026729242379B900CA6D00 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0102672A242379B900CA6D00 /* Cells */,
+				01026730242379B900CA6D00 /* SectionView */,
+				01026733242379B900CA6D00 /* HeaderFooterView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0102672A242379B900CA6D00 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0102672B242379B900CA6D00 /* Course */,
+				0102672D242379B900CA6D00 /* Listening */,
+				0102672F242379B900CA6D00 /* UserProfileTableViewCellProtocol.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		0102672B242379B900CA6D00 /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				0102672C242379B900CA6D00 /* UserProfileCourseTableViewCell.swift */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
+		0102672D242379B900CA6D00 /* Listening */ = {
+			isa = PBXGroup;
+			children = (
+				0102672E242379B900CA6D00 /* UserProfileListeningTableViewCell.swift */,
+			);
+			path = Listening;
+			sourceTree = "<group>";
+		};
+		01026730242379B900CA6D00 /* SectionView */ = {
+			isa = PBXGroup;
+			children = (
+				01026731242379B900CA6D00 /* UserProfileSectionViewProtocol.swift */,
+				01026732242379B900CA6D00 /* UserProfileSectionHeaderView.swift */,
+			);
+			path = SectionView;
+			sourceTree = "<group>";
+		};
+		01026733242379B900CA6D00 /* HeaderFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				01026734242379B900CA6D00 /* UserProfileTableFooterView.swift */,
+				01026735242379B900CA6D00 /* UserProfileTableHeaderView.swift */,
+				01026736242379B900CA6D00 /* UserProfileCTAView.swift */,
+			);
+			path = HeaderFooterView;
+			sourceTree = "<group>";
+		};
+		01026737242379B900CA6D00 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				01026738242379B900CA6D00 /* UserProfileAssembly.swift */,
+				01026739242379B900CA6D00 /* UserProfileFactory.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		010442B223B4E1A400B1BF54 /* Old */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +480,8 @@
 			isa = PBXGroup;
 			children = (
 				010CE4E723B0D6E800AE57A9 /* BasicKnowledgCatalog.plist */,
+				0102674C24237B5600CA6D00 /* ImprovingTipCatalog.plist */,
+				0102674E24237B6A00CA6D00 /* FeatureCatalog.plist */,
 			);
 			path = Plist;
 			sourceTree = "<group>";
@@ -1133,6 +1312,7 @@
 		01EA7BF423ABA51300712B20 /* ImprovingTips */ = {
 			isa = PBXGroup;
 			children = (
+				01026719242379B900CA6D00 /* Profile */,
 				010D6ACD23A9FD9E00B84621 /* Bridge */,
 			);
 			path = ImprovingTips;
@@ -1378,10 +1558,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0102674D24237B5600CA6D00 /* ImprovingTipCatalog.plist in Resources */,
+				01026740242379B900CA6D00 /* UserProfileDict.json in Resources */,
 				0196CDE923D1888300112AB8 /* SnapViewController.xib in Resources */,
 				0192A6C0242270110015F9CD /* MVVMListSectionDict.json in Resources */,
 				016FE6D923B5DD7800CE8784 /* sql.py in Resources */,
+				0102674F24237B6A00CA6D00 /* FeatureCatalog.plist in Resources */,
 				010CE4E823B0D6E900AE57A9 /* BasicKnowledgCatalog.plist in Resources */,
+				0102673F242379B900CA6D00 /* UserProfileArray.json in Resources */,
 				0182346E23C4AA8C00FB30A9 /* RxSwiftViewController.xib in Resources */,
 				01EE3A202415288A008ECA89 /* SPSwiftViewController.xib in Resources */,
 				0196DCC523D1898500112AB8 /* SnapView.xib in Resources */,
@@ -1504,7 +1688,9 @@
 				01EE3A1F2415288A008ECA89 /* SPSwiftViewController.swift in Sources */,
 				01C01BB423BDEA97008B2D9E /* ClosureViewController.swift in Sources */,
 				0182B7C6241A79050033BF0A /* MVVMListSectionTextHeaderView.swift in Sources */,
+				01026745242379B900CA6D00 /* UserProfileSectionViewProtocol.swift in Sources */,
 				019FE1A623C0E9BF00B241B1 /* Produce.swift in Sources */,
+				0102673D242379B900CA6D00 /* UserProfileSessionViewModel.swift in Sources */,
 				01E15CC923BF583100A69E23 /* MethodViewController.swift in Sources */,
 				01D38A0C241A770E00F6D74D /* MVVMListSecViewModel.swift in Sources */,
 				019FE1A423C0E9B700B241B1 /* Factory.swift in Sources */,
@@ -1516,20 +1702,26 @@
 				013D09F823BE281A0050F15A /* FunctionViewController.swift in Sources */,
 				0195230223B173D600AE491B /* BasicViewController.swift in Sources */,
 				019FE1A223C0E99F00B241B1 /* FactoryViewController.swift in Sources */,
+				0102673B242379B900CA6D00 /* UserProfileCTAItemViewModel.swift in Sources */,
 				01937ECA2418FF91009BD6AD /* MVVMModel.swift in Sources */,
 				0112F9AE23BF57FD0002788E /* ControlFlowViewController.swift in Sources */,
+				0102673E242379B900CA6D00 /* UserProfileViewController.swift in Sources */,
 				0196CDE823D1888300112AB8 /* SnapViewController.swift in Sources */,
+				01026744242379B900CA6D00 /* UserProfileTableViewCellProtocol.swift in Sources */,
+				0102674A242379B900CA6D00 /* UserProfileAssembly.swift in Sources */,
 				01B24E2C23BF33A500677023 /* GenericsViewController.swift in Sources */,
 				010D6ACB23A9FD8F00B84621 /* CarViewController.swift in Sources */,
 				010D6ACC23A9FD8F00B84621 /* SwinjectViewController.swift in Sources */,
 				0182346D23C4AA8C00FB30A9 /* RxSwiftViewController.swift in Sources */,
 				0112F9A823BF57CA0002788E /* StringAndCharViewController.swift in Sources */,
+				01026749242379B900CA6D00 /* UserProfileCTAView.swift in Sources */,
 				01ADB56B23BE294300EAB005 /* InheritViewController.swift in Sources */,
 				01937ED5241906D3009BD6AD /* MVVMListViewModel.swift in Sources */,
 				01937EE124190748009BD6AD /* MVVMListButtonTableViewCell.swift in Sources */,
 				0182B7C8241A792E0033BF0A /* MVVMListTableHeaderView.swift in Sources */,
 				016B8EF623C58A19007F6EC5 /* SwiftTipsViewController.swift in Sources */,
 				01D38A10241A770E00F6D74D /* MVVMListSecTableViewCellProtocol.swift in Sources */,
+				0102674B242379B900CA6D00 /* UserProfileFactory.swift in Sources */,
 				01937EE324192DEA009BD6AD /* MVVMListTableViewCellProtocol.swift in Sources */,
 				01E15CD523BF593300A69E23 /* OptionalChainViewController.swift in Sources */,
 				0182B7C4241A78F40033BF0A /* MVVMListSectionTextFooterView.swift in Sources */,
@@ -1543,6 +1735,8 @@
 				01A3A40323BF5A18003FEA19 /* ARCViewController.swift in Sources */,
 				011E9E9023BE28BE00BD0A17 /* ExtensionViewController.swift in Sources */,
 				0182B7D4241A882B0033BF0A /* MVVMListSecCellViewModel.swift in Sources */,
+				0102673A242379B900CA6D00 /* UserProfileViewModel.swift in Sources */,
+				01026748242379B900CA6D00 /* UserProfileTableHeaderView.swift in Sources */,
 				01EA7C0C23AC69ED00712B20 /* ListViewModel.swift in Sources */,
 				01937EE624193344009BD6AD /* MVVMListAssembly.swift in Sources */,
 				013C7D3923B8604500804143 /* MVCView.swift in Sources */,
@@ -1550,6 +1744,7 @@
 				01D38A0D241A770E00F6D74D /* MVVMListSecViewController.swift in Sources */,
 				010D6AD923A9FF6F00B84621 /* TestBridge.m in Sources */,
 				010D6AD223A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.m in Sources */,
+				0102673C242379B900CA6D00 /* UserProfileCellViewModel.swift in Sources */,
 				01E15CD823BF595200A69E23 /* ErrorhandlingViewController.swift in Sources */,
 				0156813023BE28F100B42FB9 /* ProtocolViewController.swift in Sources */,
 				01E9B3552420D9F000FF618D /* MVVMListSectionImageHeaderView.swift in Sources */,
@@ -1563,6 +1758,7 @@
 				013C7D3C23B87B1700804143 /* MVVMViewModel.swift in Sources */,
 				0182B7D0241A86F00033BF0A /* MVVMListCourseTableViewCell.swift in Sources */,
 				01937ED9241906F5009BD6AD /* MVVMListModel.swift in Sources */,
+				01026743242379B900CA6D00 /* UserProfileListeningTableViewCell.swift in Sources */,
 				0182B7CA241A793A0033BF0A /* MVVMListTableFooterView.swift in Sources */,
 				01E9B3592420DE1A00FF618D /* MVVMListSectionViewProtocol.swift in Sources */,
 				0182B7D2241A881E0033BF0A /* MVVMListSessionViewModel.swift in Sources */,
@@ -1575,10 +1771,13 @@
 				0196DCC323D1897500112AB8 /* SnapView.swift in Sources */,
 				01E15CDE23BF59E400A69E23 /* OpaqueTypeViewController.swift in Sources */,
 				0167EE842418F2EC00E4830F /* MVVMViewController.swift in Sources */,
+				01026741242379B900CA6D00 /* UserProfileModel.swift in Sources */,
 				01937EE824193353009BD6AD /* MVVMListFactory.swift in Sources */,
 				010442B423B4E1C100B1BF54 /* OptionalViewController.swift in Sources */,
+				01026742242379B900CA6D00 /* UserProfileCourseTableViewCell.swift in Sources */,
 				0182B7CE241A86C00033BF0A /* MVVMListImageTableViewCell.swift in Sources */,
 				01E15CCC23BF58D800A69E23 /* SubscriptViewController.swift in Sources */,
+				01026746242379B900CA6D00 /* UserProfileSectionHeaderView.swift in Sources */,
 				010D6AC423A9FC6200B84621 /* BaseViewController.swift in Sources */,
 				01937ED2241906B1009BD6AD /* MVVMListViewController.swift in Sources */,
 				01D38A0E241A770E00F6D74D /* MVVMListSecModel.swift in Sources */,
@@ -1586,6 +1785,7 @@
 				0112F9A523BF57B30002788E /* BaseOperatorViewController.swift in Sources */,
 				01937ECC2418FFA5009BD6AD /* MVVMView.swift in Sources */,
 				01B24E2F23BF358100677023 /* DataTypeConvertViewController.swift in Sources */,
+				01026747242379B900CA6D00 /* UserProfileTableFooterView.swift in Sources */,
 				0112F9AB23BF57E30002788E /* CollectionTypesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
