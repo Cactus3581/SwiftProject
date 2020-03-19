@@ -1274,8 +1274,8 @@
 			isa = PBXGroup;
 			children = (
 				01CABD5C23F3D382009410C3 /* Features */,
-				01EA7BF423ABA51300712B20 /* ImprovingTips */,
 				01EA7BF323ABA50C00712B20 /* BaseKnowledge */,
+				01EA7BF423ABA51300712B20 /* ImprovingTips */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
