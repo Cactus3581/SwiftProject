@@ -387,9 +387,9 @@
 		01026725242379B900CA6D00 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				01026728242379B900CA6D00 /* UserProfileModel.swift */,
 				01026726242379B900CA6D00 /* UserProfileArray.json */,
 				01026727242379B900CA6D00 /* UserProfileDict.json */,
-				01026728242379B900CA6D00 /* UserProfileModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -407,9 +407,9 @@
 		0102672A242379B900CA6D00 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				0102672F242379B900CA6D00 /* UserProfileTableViewCellProtocol.swift */,
 				0102672B242379B900CA6D00 /* Course */,
 				0102672D242379B900CA6D00 /* Listening */,
-				0102672F242379B900CA6D00 /* UserProfileTableViewCellProtocol.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";

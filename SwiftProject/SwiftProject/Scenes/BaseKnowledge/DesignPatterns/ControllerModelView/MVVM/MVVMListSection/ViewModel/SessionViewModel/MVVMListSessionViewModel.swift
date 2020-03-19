@@ -2,7 +2,7 @@
 //  MVVMListSectionViewModel.swift
 //  SwiftProject
 //
-//  Created by 夏汝震 on 2020/3/12.
+//  Created by ryan on 2020/3/12.
 //  Copyright © 2020 cactus. All rights reserved.
 //
 
