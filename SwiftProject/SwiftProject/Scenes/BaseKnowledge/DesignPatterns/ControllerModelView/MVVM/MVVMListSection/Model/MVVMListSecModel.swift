@@ -11,14 +11,27 @@ import HandyJSON
 
 class MVVMListSecModel: NSObject,HandyJSON {
     var order: Array<String>?
-    var header: String?
-    var footer: String?
+    var header: MVVMListListeningModel?
+    var footer: MVVMListListeningModel?
     var listening: MVVMListListeningModel? // section1、cell1，标准
-    var listeningSame: MVVMListListeningModel? // section1、cell1，标准
+    var ads: MVVMListListeningModel? // section1、cell1，标准
     var circle: MVVMListListeningModel? // section2、cell1，测试同样的cell，不同的sessionView
     var speak: MVVMListSpeakModel? // section1、cell2 测试不同的cell，相同的sessionView + 测试多种cellVM对应同一个cell
     var course: MVVMListCourseModel?// section2、cell2，测试不同的cell，不同的sessionView + 测试多种sessionVM对应同一个sessionView
-    var group: MVVMListSpeakModel? // 测试在一个session中存在多种cell
+    var group: String? // 测试在一个session中存在多种cell
+    var exam: String?
+    var iap: String?
+    var xmPush: String?
+    var bookCatalogue: String?
+
+    var list: Array<MVVMListSessionModel>?
+    override required init() {}
+}
+
+class MVVMListSessionModel: NSObject,HandyJSON {
+    var type: String?
+    var header: MVVMListListeningModel?
+    var list: Array<Any>?
     override required init() {}
 }
 
@@ -48,11 +61,5 @@ class MVVMListCourseModel: NSObject,HandyJSON {
 class MVVMListCourseItemModel: NSObject,HandyJSON {
     var courseName: String?
     var courseTeacher: String?
-    override required init() {}
-}
-
-// group
-class MVVMListGroupModel: NSObject,HandyJSON {
-    var list: Array<MVVMListSpeakItemModel>?
     override required init() {}
 }

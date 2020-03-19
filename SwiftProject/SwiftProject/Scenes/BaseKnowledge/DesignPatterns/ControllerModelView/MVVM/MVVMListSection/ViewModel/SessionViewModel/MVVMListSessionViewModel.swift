@@ -11,7 +11,8 @@ import UIKit
 //MARK:该协议服务于sessionViewModel，为sessionView提供数据和事件。协议的作用就是解决通用性问题，替代继承用的
 protocol MVVMListSectionViewModelProtocol {
     static func canHandle(type: String) -> Bool
-    init(data: MVVMListSecModel)
+    init(dictData: MVVMListSecModel)
+    init(arrayData: MVVMListSessionModel)
 
     var headerIdentifier: String { get }
     var footerIdentifier: String { get }
@@ -23,7 +24,7 @@ protocol MVVMListSectionViewModelProtocol {
 
 extension MVVMListSectionViewModelProtocol {
     static func canHandle(type: String) -> Bool {return false}
-    init(data: MVVMListSecModel) {self.init(data: data)}
+    init(dictData: MVVMListSecModel) {self.init(dictData: dictData)}
 
     var headerIdentifier: String {return ""}
     var footerIdentifier: String {return ""}
@@ -76,15 +77,29 @@ class MVVMListTextListeningSectionViewModel: MVVMListSectionTextViewModelProtoco
         return false
     }
 
-    required init(data: MVVMListSecModel) {
+    required init(dictData: MVVMListSecModel) {
 
         self.headerText = "Text Listening Header"
         self.footerText = "Text Listening Footer"
 
         let cellViewModel = MVVMListListeningCellViewModel()
-        let model = data as MVVMListSecModel
+        let model = dictData as MVVMListSecModel
         cellViewModel.model = model.listening
         list = [cellViewModel] as Array<Any>
+    }
+
+    required init(arrayData: MVVMListSessionModel) {
+        var list = [Any]()
+        self.headerText = arrayData.header?.title
+        self.footerText = arrayData.header?.title
+        for dict in arrayData.list ?? [] {
+            if let itemModel = MVVMListListeningModel.deserialize(from: dict as? [String:Any]) {
+                let cellViewModel = MVVMListListeningCellViewModel()
+                cellViewModel.model = itemModel
+                list.append(cellViewModel)
+            }
+        }
+        self.list = list as Array<Any>
     }
 
     var headerIdentifier: String {
@@ -110,7 +125,7 @@ class MVVMListTextListeningSectionViewModel: MVVMListSectionTextViewModelProtoco
     }
 }
 
-class MVVMListTextListeningSameSectionViewModel: MVVMListSectionTextViewModelProtocol {
+class MVVMListTextAdsSectionViewModel: MVVMListSectionTextViewModelProtocol {
 
     var list: Array<Any>?
 
@@ -118,21 +133,35 @@ class MVVMListTextListeningSameSectionViewModel: MVVMListSectionTextViewModelPro
     var footerText: String?
 
     static func canHandle(type: String) -> Bool {
-        if type == "listeningSame" {
+        if type == "ads" {
             return true
         }
         return false
     }
 
-    required init(data: MVVMListSecModel) {
+    required init(dictData: MVVMListSecModel) {
 
-        self.headerText = "Text ListeningSame Header"
-        self.footerText = "Text ListeningSame Footer"
+        self.headerText = "Text Ads Header"
+        self.footerText = "Text Ads Footer"
 
         let cellViewModel = MVVMListListeningCellViewModel()
-        let model = data as MVVMListSecModel
-        cellViewModel.model = model.listeningSame
+        let model = dictData as MVVMListSecModel
+        cellViewModel.model = model.ads
         list = [cellViewModel] as Array<Any>
+    }
+
+    required init(arrayData: MVVMListSessionModel) {
+        var list = [Any]()
+        self.headerText = arrayData.header?.title
+        self.footerText = arrayData.header?.title
+        for dict in arrayData.list ?? [] {
+            if let itemModel = MVVMListListeningModel.deserialize(from: dict as? [String:Any]) {
+                let cellViewModel = MVVMListListeningCellViewModel()
+                cellViewModel.model = itemModel
+                list.append(cellViewModel)
+            }
+        }
+        self.list = list as Array<Any>
     }
 
     var headerIdentifier: String {
@@ -170,13 +199,27 @@ class MVVMListImageCircleSectionViewModel: MVVMListSectionImageViewModelProtocol
         return false
     }
 
-    required init(data: MVVMListSecModel) {
+    required init(dictData: MVVMListSecModel) {
         self.headerImageUrl = "Image Circle Header"
         self.footerImageUrl = "Image Circle Footer"
         let cellViewModel = MVVMListListeningCellViewModel()
-        let model = data as MVVMListSecModel
+        let model = dictData as MVVMListSecModel
         cellViewModel.model = model.circle
         list = [cellViewModel] as Array<Any>
+    }
+
+    required init(arrayData: MVVMListSessionModel) {
+        var list = [Any]()
+        self.headerImageUrl = arrayData.header?.title
+        self.footerImageUrl = arrayData.header?.title
+        for dict in arrayData.list ?? [] {
+            if let itemModel = MVVMListListeningModel.deserialize(from: dict as? [String:Any]) {
+                let cellViewModel = MVVMListListeningCellViewModel()
+                cellViewModel.model = itemModel
+                list.append(cellViewModel)
+            }
+        }
+        self.list = list as Array<Any>
     }
 
     var headerIdentifier: String {
@@ -218,14 +261,28 @@ class MVVMListTextSpeakSessionViewModel: MVVMListSectionTextViewModelProtocol {
         return false
     }
 
-    required init(data: MVVMListSecModel) {
+    required init(dictData: MVVMListSecModel) {
         self.headerText = "Text Speak Header"
         self.footerText = "Text Speak Header"
         var list = [Any]()
-        for speakItemModel in data.speak?.list ?? Array() {
+        for speakItemModel in dictData.speak?.list ?? Array() {
             let cellViewModel = MVVMListSpeakCellViewModel()
             cellViewModel.model = speakItemModel
             list.append(cellViewModel)
+        }
+        self.list = list as Array<Any>
+    }
+
+    required init(arrayData: MVVMListSessionModel) {
+        var list = [Any]()
+        self.headerText = arrayData.header?.title
+        self.footerText = arrayData.header?.title
+        for dict in arrayData.list ?? [] {
+            if let itemModel = MVVMListSpeakItemModel.deserialize(from: dict as? [String:Any]) {
+                let cellViewModel = MVVMListSpeakCellViewModel()
+                cellViewModel.model = itemModel
+                list.append(cellViewModel)
+            }
         }
         self.list = list as Array<Any>
     }
@@ -265,15 +322,29 @@ class MVVMListImageCourseSectionViewModel: MVVMListSectionImageViewModelProtocol
         return false
     }
 
-    required init(data: MVVMListSecModel) {
+    required init(dictData: MVVMListSecModel) {
         self.headerImageUrl = "Image Course Header"
         self.footerImageUrl = "Image Course Footer"
         var list = [Any]()
-        for courseModel in data.course?.list ?? Array() {
+        for courseModel in dictData.course?.list ?? Array() {
             // 因为默认一个session只有一种cell，所以这里可以明确类型
             let cellViewModel = MVVMListCourseCellViewModel()
             cellViewModel.model = courseModel
             list.append(cellViewModel)
+        }
+        self.list = list as Array<Any>
+    }
+
+    required init(arrayData: MVVMListSessionModel) {
+        var list = [Any]()
+        self.headerImageUrl = arrayData.header?.title
+        self.footerImageUrl = arrayData.header?.title
+        for dict in arrayData.list ?? [] {
+            if let itemModel = MVVMListCourseItemModel.deserialize(from: dict as? [String:Any]) {
+                let cellViewModel = MVVMListCourseCellViewModel()
+                cellViewModel.model = itemModel
+                list.append(cellViewModel)
+            }
         }
         self.list = list as Array<Any>
     }

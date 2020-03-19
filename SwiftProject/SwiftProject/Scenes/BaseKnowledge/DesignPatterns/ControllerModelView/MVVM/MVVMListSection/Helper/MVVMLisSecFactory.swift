@@ -18,24 +18,34 @@ class MVVMListSecFactory {
         }
     }
 
-    static func createWithContent(data: MVVMListSecModel) -> [MVVMListSectionViewModelProtocol]? {
-
-        guard let types = data.order else { return nil } // 已排好序的列表
-        var clses:[MVVMListSectionViewModelProtocol.Type] = []// 即将排好序的vm类的列表
-
-        // 根据types数组，找到对应的类，并装入排序好的类的数组中
-        for type in types {
-            for tClass in MVVMListSecFactory.viewModels {
-                if tClass.canHandle(type: type) {
-                    clses.append(tClass)
-                    break
-                }
+    static func createSessionViewModelByDict(data: MVVMListSecModel) -> [MVVMListSectionViewModelProtocol]? {
+        var list:[MVVMListSectionViewModelProtocol] = []
+        for type in data.order ?? [] {
+            let tclass = getClass(type: type)
+            if let tclass1 = tclass {
+                list.append(tclass1.init(dictData: data))
             }
         }
+        return list
+    }
 
-        // 创建vm对象
-        return clses.map { (type) -> MVVMListSectionViewModelProtocol in
-            type.init(data: data)
+    static func createSessionViewModelByArray(data: MVVMListSecModel) -> [MVVMListSectionViewModelProtocol]? {
+        var list:[MVVMListSectionViewModelProtocol] = []
+        for sessionModel in data.list ?? [] {
+            let tclass = getClass(type: sessionModel.type ?? "")
+            if let tclass1 = tclass {
+                list.append(tclass1.init(arrayData: sessionModel))
+            }
         }
+        return list
+    }
+
+    static func getClass(type: String) -> MVVMListSectionViewModelProtocol.Type? {
+        for tClass in MVVMListSecFactory.viewModels {
+            if tClass.canHandle(type: type) {
+               return tClass
+            }
+        }
+        return nil
     }
 }

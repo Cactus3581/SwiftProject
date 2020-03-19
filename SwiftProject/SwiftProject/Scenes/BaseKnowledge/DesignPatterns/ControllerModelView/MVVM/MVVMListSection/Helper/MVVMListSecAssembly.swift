@@ -11,12 +11,9 @@ import UIKit
 class MVVMListSecAssembly: NSObject {
     static func register() {
         MVVMListSecFactory.register(viewModel: MVVMListTextListeningSectionViewModel.self)
-        MVVMListSecFactory.register(viewModel: MVVMListImageCourseSectionViewModel.self)
-        MVVMListSecFactory.register(viewModel: MVVMListTextSpeakSessionViewModel.self)
         MVVMListSecFactory.register(viewModel: MVVMListImageCircleSectionViewModel.self)
-        MVVMListSecFactory.register(viewModel: MVVMListTextListeningSameSectionViewModel.self)
-
-
-
+        MVVMListSecFactory.register(viewModel: MVVMListTextAdsSectionViewModel.self)
+        MVVMListSecFactory.register(viewModel: MVVMListTextSpeakSessionViewModel.self)
+        MVVMListSecFactory.register(viewModel: MVVMListImageCourseSectionViewModel.self)
     }
 }

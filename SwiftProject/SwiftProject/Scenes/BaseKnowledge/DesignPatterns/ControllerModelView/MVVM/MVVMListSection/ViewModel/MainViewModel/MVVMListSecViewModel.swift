@@ -21,7 +21,10 @@ class MVVMListSecViewModel: NSObject {
 
     private func handleData()  {
 
-        guard let data = getDataFromFile("MVVMListSectionDict"), let json = jsonSerial(data) as? [String: Any] else  {
+        let jsonName = "MVVMListSectionArray"
+//        let jsonName = "MVVMListSectionDict"
+
+        guard let data = getDataFromFile(jsonName), let json = jsonSerial(data) as? [String: Any] else  {
             return
         }
 
@@ -30,8 +33,14 @@ class MVVMListSecViewModel: NSObject {
         }
 
         self.model = model
-        if let data1 = MVVMListSecFactory.createWithContent(data: model) {
-            array = data1
+        if jsonName ==  "MVVMListSectionArray" {
+            if let data1 = MVVMListSecFactory.createSessionViewModelByArray(data: model) {
+                array = data1
+            }
+        } else if jsonName == "MVVMListSectionDict" {
+            if let data1 = MVVMListSecFactory.createSessionViewModelByDict(data: model) {
+                array = data1
+            }
         }
     }
 

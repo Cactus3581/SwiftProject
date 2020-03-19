@@ -36,7 +36,7 @@ class MVVMListTableFooterView: UIView {
 
     var viewModel: MVVMListSecViewModel? {
         didSet {
-            button?.setTitle(viewModel?.model?.footer, for: .normal)
+            button?.setTitle(viewModel?.model?.footer?.title, for: .normal)
         }
     }
     
