@@ -11,19 +11,19 @@ import UIKit
 
 
 class UserProfileSectionHeaderView: UITableViewHeaderFooterView,UserProfileSectionViewProtocol {
-
+    
     let label: UILabel?
     var section: Int?
-
+    
     override init(reuseIdentifier: String?) {
-
+        
         let label: UILabel = UILabel()
         self.label = label
-
+        
         super.init(reuseIdentifier: reuseIdentifier)
-
+        
         self.contentView.backgroundColor = UIColor.white
-
+        
         self.contentView.addSubview(label)
         label.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(16)
@@ -33,11 +33,11 @@ class UserProfileSectionHeaderView: UITableViewHeaderFooterView,UserProfileSecti
         label.textColor = UIColor.lightGray
         label.font = UIFont.systemFont(ofSize: 14)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     var sessionViewModel: UserProfileSessionViewModelProtocol? {
         didSet {
             guard let sectionViewModel = self.sessionViewModel else {
@@ -46,7 +46,7 @@ class UserProfileSectionHeaderView: UITableViewHeaderFooterView,UserProfileSecti
             label?.text = sectionViewModel.headerText
         }
     }
-
+    
     static var identifier: String {
         return String(describing: self)
     }

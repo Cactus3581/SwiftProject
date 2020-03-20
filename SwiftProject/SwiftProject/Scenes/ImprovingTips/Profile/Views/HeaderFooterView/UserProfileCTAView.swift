@@ -11,14 +11,14 @@ import UIKit
 
 
 class UserProfileCTAView: UIView {
-
+    
     var stackView: UIStackView!
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.white
-
-         //创建StackView
+        
+        //创建StackView
         let stackView = UIStackView()
         self.stackView = stackView
         stackView.clipsToBounds = true
@@ -40,21 +40,21 @@ class UserProfileCTAView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     var ctaList: Array<UserProfileCTAItemViewModel>? {
-           didSet {
-               guard let ctaList = ctaList else {
-                   return
-               }
-
-               for itemViewModel in ctaList {
-                    let view = UserProfileCTAItemView()
-                    stackView.addArrangedSubview(view)
-                    view.viewModel = itemViewModel
-               }
-           }
-       }
-
+        didSet {
+            guard let ctaList = ctaList else {
+                return
+            }
+            
+            for itemViewModel in ctaList {
+                let view = UserProfileCTAItemView()
+                stackView.addArrangedSubview(view)
+                view.viewModel = itemViewModel
+            }
+        }
+    }
+    
     func setShadow(view: UIView, shadowColor: UIColor, opacity: Float, offset: CGSize,  shadowRadius: CGFloat) {
         //设置阴影颜色
         view.layer.shadowColor = shadowColor.cgColor
@@ -71,13 +71,13 @@ class UserProfileCTAView: UIView {
 class UserProfileCTAItemView: UIView  {
     let coverImageView: UIImageView?
     let label: UILabel?
-
+    
     override init(frame: CGRect) {
         let coverImageView: UIImageView = UIImageView()
         self.coverImageView = coverImageView
         let label: UILabel = UILabel()
         self.label = label
-
+        
         super.init(frame: frame)
         self.backgroundColor = UIColor.white
         self.addSubview(coverImageView)
@@ -86,37 +86,37 @@ class UserProfileCTAItemView: UIView  {
             make.width.equalTo(30)
             make.height.equalTo(coverImageView.snp_width).multipliedBy(1)
         }
-       coverImageView.image = UIImage(named: "cactus_explicit")
-       coverImageView.clipsToBounds = true
-       coverImageView.contentMode = .scaleAspectFill
-       coverImageView.backgroundColor = UIColor.green
-
+        coverImageView.image = UIImage(named: "cactus_explicit")
+        coverImageView.clipsToBounds = true
+        coverImageView.contentMode = .scaleAspectFill
+        coverImageView.backgroundColor = UIColor.green
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(jump))
         coverImageView.isUserInteractionEnabled = true
         coverImageView.addGestureRecognizer(tap)
-
-       self.addSubview(label)
+        
+        self.addSubview(label)
         label.font = UIFont.systemFont(ofSize: 12)
-       label.snp.makeConstraints{  (make) in
-           make.centerX.bottom.equalToSuperview()
-           make.top.equalTo(coverImageView.snp_bottom)
-       }
+        label.snp.makeConstraints{  (make) in
+            make.centerX.bottom.equalToSuperview()
+            make.top.equalTo(coverImageView.snp_bottom)
+        }
     }
-
-
-
+    
+    
+    
     @objc func jump() {
         self.viewModel?.jump()
     }
-
+    
     required init?(coder: NSCoder) {
-       fatalError("init(coder:) has not been implemented")
+        fatalError("init(coder:) has not been implemented")
     }
-
+    
     var viewModel: UserProfileCTAItemViewModel? {
-       didSet {
-        self.label?.text = viewModel?.model?.title
-        self.coverImageView?.image = UIImage(named: viewModel?.model?.imageUrl ?? "") 
-       }
+        didSet {
+            self.label?.text = viewModel?.model?.title
+            self.coverImageView?.image = UIImage(named: viewModel?.model?.imageUrl ?? "") 
+        }
     }
 }

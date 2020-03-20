@@ -21,9 +21,9 @@ extension UserProfileCellViewModelProtocol {
 }
 
 class UserProfileCommonCellViewModel:NSObject, UserProfileCellViewModelProtocol {
-
+    
     var model: UserProfileCommonModel?
-
+    
     var identifier: String {
         return UserProfileCommonTableViewCell.identifier
     }
@@ -39,26 +39,26 @@ extension UserProfilePhoneCellViewModelProtocol {
 }
 
 class UserProfilePhoneCellViewModel: NSObject, UserProfilePhoneCellViewModelProtocol {
-
+    
     @objc dynamic var model: UserProfilePhoneModel?
     var indexPath: NSIndexPath?
-
+    
     func show(indexPath: NSIndexPath) {
         // 请求数据
         //成功
         self.model?.isShow = !(self.model?.isShow ?? false)
         self.indexPath = indexPath
     }
-
+    
     var identifier: String {
         return UserProfileMultiDepartmentTableViewCell.identifier
     }
 }
 
 class UserProfileDepartmentCellViewModel: NSObject, UserProfileCellViewModelProtocol {
-
+    
     var model: UserProfileDepartmentItemModel?
-
+    
     var identifier: String {
         return UserProfileMultiDepartmentTableViewCell.identifier
     }

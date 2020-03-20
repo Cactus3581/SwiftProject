@@ -13,6 +13,6 @@ class UserProfileAssembly: NSObject {
         UserProfileFactory.register(viewModel: UserProfileCommonSessionViewModel.self)
         UserProfileFactory.register(viewModel: UserProfilePhoneSessionViewModel.self)
         UserProfileFactory.register(viewModel: UserProfileDepartmentSessionViewModel.self)
-
+        
     }
 }

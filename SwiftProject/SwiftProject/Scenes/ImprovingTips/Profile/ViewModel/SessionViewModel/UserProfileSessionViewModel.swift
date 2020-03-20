@@ -30,12 +30,12 @@ extension UserProfileSessionViewModelProtocol {
 }
 
 class UserProfileCommonSessionViewModel: NSObject, UserProfileSessionViewModelProtocol {
-
+    
     var list: Array<Any>?
     var headerText: String?
     static let types: Set<String> = ["job","personalStatus"]
     static var type: String = ""
-
+    
     static func canHandle(type: String) -> Bool {
         if types.contains(type) {
             self.type = type
@@ -43,11 +43,11 @@ class UserProfileCommonSessionViewModel: NSObject, UserProfileSessionViewModelPr
         }
         return false
     }
-
+    
     required init(dictData: UserProfileModel) {
         super.init()
         let cellViewModel = UserProfileCommonCellViewModel()
-
+        
         if UserProfileCommonSessionViewModel.type == "job" {
             self.headerText = "职位"
             cellViewModel.model = dictData.job
@@ -55,14 +55,14 @@ class UserProfileCommonSessionViewModel: NSObject, UserProfileSessionViewModelPr
             self.headerText = "状态"
             cellViewModel.model = dictData.personalStatus
         }
-
+        
         self.list = [cellViewModel]
     }
-
+    
     var headerIdentifier: String? {
         return UserProfileSectionHeaderView.identifier
     }
-
+    
     var identifier: String {
         return UserProfileCommonTableViewCell.identifier
     }
@@ -70,17 +70,17 @@ class UserProfileCommonSessionViewModel: NSObject, UserProfileSessionViewModelPr
 
 
 class UserProfilePhoneSessionViewModel: NSObject, UserProfileSessionViewModelProtocol {
-
+    
     var list: Array<Any>?
     var headerText: String?
-
+    
     static func canHandle(type: String) -> Bool {
         if type == "phone" {
             return true
         }
         return false
     }
-
+    
     required init(dictData: UserProfileModel) {
         super.init()
         let cellViewModel = UserProfilePhoneCellViewModel()
@@ -88,11 +88,11 @@ class UserProfilePhoneSessionViewModel: NSObject, UserProfileSessionViewModelPro
         self.list = [cellViewModel]
         self.headerText = "手机号"
     }
-
+    
     var headerIdentifier: String? {
         return UserProfileSectionHeaderView.identifier
     }
-
+    
     var identifier: String {
         return UserProfilePhoneTableViewCell.identifier
     }
@@ -111,21 +111,21 @@ extension UserProfileDepartmentSessionViewModelProtocol {
 }
 
 class UserProfileDepartmentSessionViewModel: NSObject, UserProfileDepartmentSessionViewModelProtocol {
-
+    
     @objc dynamic var list: Array<Any>?
     var headerText: String?
     var footerText: String?
     var isExpand: Bool = false
     var allList: Array<Any> = [Any]()
     var section: Int?
-
+    
     static func canHandle(type: String) -> Bool {
         if type == "department" {
             return true
         }
         return false
     }
-
+    
     required init(dictData: UserProfileModel) {
         super.init()
         for speakItemModel in dictData.department ?? Array() {
@@ -133,39 +133,39 @@ class UserProfileDepartmentSessionViewModel: NSObject, UserProfileDepartmentSess
             cellViewModel.model = speakItemModel
             allList.append(cellViewModel)
         }
-
+        
         if allList.count > 5 {
             self.list = [] + allList.prefix(5)
         } else {
             self.list = allList
         }
-
+        
         self.headerText = "部门"
-
+        
         if isMoreFive() {
             self.footerText = "展开"
         }
         isExpand = false
     }
-
+    
     var headerIdentifier: String? {
         return UserProfileSectionHeaderView.identifier
     }
-
+    
     var footerIdentifier: String? {
         if isMoreFive() {
             return UserProfileSectionFooterView.identifier
         }
         return nil
     }
-
+    
     var identifier: String {
         if isMuilt() {
             return UserProfileMultiDepartmentTableViewCell.identifier
         }
         return UserProfileCommonTableViewCell.identifier
     }
-
+    
     func reloadData (section: Int) {
         isExpand = !isExpand
         self.section = section
@@ -177,14 +177,14 @@ class UserProfileDepartmentSessionViewModel: NSObject, UserProfileDepartmentSess
             self.list = [] + allList.prefix(5)
         }
     }
-
+    
     func isMuilt() -> Bool {
         if allList.count > 1 {
             return true
         }
         return false
     }
-
+    
     func isMoreFive() -> Bool {
         if isMuilt() {
             if allList.count > 5 {

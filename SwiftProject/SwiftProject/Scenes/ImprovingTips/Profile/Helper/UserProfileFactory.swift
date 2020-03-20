@@ -33,7 +33,7 @@ class UserProfileFactory {
     static func getClass(type: String) -> UserProfileSessionViewModelProtocol.Type? {
         for tClass in UserProfileFactory.viewModels {
             if tClass.canHandle(type: type) {
-               return tClass
+                return tClass
             }
         }
         return nil

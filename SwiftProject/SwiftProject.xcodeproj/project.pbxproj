@@ -12,7 +12,6 @@
 		0102673C242379B900CA6D00 /* UserProfileCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026720242379B900CA6D00 /* UserProfileCellViewModel.swift */; };
 		0102673D242379B900CA6D00 /* UserProfileSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026722242379B900CA6D00 /* UserProfileSessionViewModel.swift */; };
 		0102673E242379B900CA6D00 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026724242379B900CA6D00 /* UserProfileViewController.swift */; };
-		0102673F242379B900CA6D00 /* UserProfileArray.json in Resources */ = {isa = PBXBuildFile; fileRef = 01026726242379B900CA6D00 /* UserProfileArray.json */; };
 		01026740242379B900CA6D00 /* UserProfileDict.json in Resources */ = {isa = PBXBuildFile; fileRef = 01026727242379B900CA6D00 /* UserProfileDict.json */; };
 		01026741242379B900CA6D00 /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026728242379B900CA6D00 /* UserProfileModel.swift */; };
 		01026742242379B900CA6D00 /* UserProfileMultiDepartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102672C242379B900CA6D00 /* UserProfileMultiDepartmentTableViewCell.swift */; };
@@ -158,7 +157,6 @@
 		01026720242379B900CA6D00 /* UserProfileCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileCellViewModel.swift; sourceTree = "<group>"; };
 		01026722242379B900CA6D00 /* UserProfileSessionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileSessionViewModel.swift; sourceTree = "<group>"; };
 		01026724242379B900CA6D00 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
-		01026726242379B900CA6D00 /* UserProfileArray.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserProfileArray.json; sourceTree = "<group>"; };
 		01026727242379B900CA6D00 /* UserProfileDict.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserProfileDict.json; sourceTree = "<group>"; };
 		01026728242379B900CA6D00 /* UserProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
 		0102672C242379B900CA6D00 /* UserProfileMultiDepartmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileMultiDepartmentTableViewCell.swift; sourceTree = "<group>"; };
@@ -391,7 +389,6 @@
 			children = (
 				01026728242379B900CA6D00 /* UserProfileModel.swift */,
 				01026727242379B900CA6D00 /* UserProfileDict.json */,
-				01026726242379B900CA6D00 /* UserProfileArray.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1552,7 +1549,6 @@
 				016FE6D923B5DD7800CE8784 /* sql.py in Resources */,
 				0102674F24237B6A00CA6D00 /* FeatureCatalog.plist in Resources */,
 				010CE4E823B0D6E900AE57A9 /* BasicKnowledgCatalog.plist in Resources */,
-				0102673F242379B900CA6D00 /* UserProfileArray.json in Resources */,
 				0182346E23C4AA8C00FB30A9 /* RxSwiftViewController.xib in Resources */,
 				01EE3A202415288A008ECA89 /* SPSwiftViewController.xib in Resources */,
 				0196DCC523D1898500112AB8 /* SnapView.xib in Resources */,

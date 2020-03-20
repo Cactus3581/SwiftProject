@@ -2,39 +2,39 @@
 //  UserProfilePhoneTableViewCell.swift
 //  SwiftProject
 //
-//  Created by 夏汝震 on 2020/3/20.
+//  Created by ryan on 2020/3/20.
 //  Copyright © 2020 cactus. All rights reserved.
 //
 
 import UIKit
 
 class UserProfilePhoneTableViewCell: UITableViewCell, UserProfileTableViewCellProtocol {
-
+    
     let phoneLabel: UILabel?
     let showButton: UIButton?
     let lineView: UIView?
     var indexPath: NSIndexPath?
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-
-
+        
+        
         let phoneLabel: UILabel = UILabel()
         self.phoneLabel = phoneLabel
-
+        
         let showButton: UIButton = UIButton()
         self.showButton = showButton
-
+        
         let lineView: UIView = UIView()
         self.lineView = lineView
-
+        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
+        
         self.contentView.backgroundColor = UIColor.white
-
+        
         self.contentView.addSubview(phoneLabel)
         phoneLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(16)
@@ -42,7 +42,7 @@ class UserProfilePhoneTableViewCell: UITableViewCell, UserProfileTableViewCellPr
         }
         phoneLabel.font = UIFont.systemFont(ofSize: 16)
         phoneLabel.textColor = UIColor.darkText
-
+        
         self.contentView.addSubview(showButton)
         showButton.snp.makeConstraints {
             $0.leading.equalTo(phoneLabel.snp_trailing).offset(15)
@@ -50,7 +50,7 @@ class UserProfilePhoneTableViewCell: UITableViewCell, UserProfileTableViewCellPr
         }
         showButton.setTitleColor(UIColor.blue,for: .normal)
         showButton.addTarget(self, action: #selector(show), for: .touchUpInside)
-
+        
         self.contentView.addSubview(lineView)
         lineView.backgroundColor = UIColor.lightGray
         lineView.snp.makeConstraints {
@@ -60,11 +60,11 @@ class UserProfilePhoneTableViewCell: UITableViewCell, UserProfileTableViewCellPr
             $0.height.equalTo(1/UIScreen.main.scale)
         }
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     var cellViewModel: Any? {
         didSet {
             guard let cellViewModel = cellViewModel as? UserProfilePhoneCellViewModel else {
@@ -80,7 +80,7 @@ class UserProfilePhoneTableViewCell: UITableViewCell, UserProfileTableViewCellPr
             }
         }
     }
-
+    
     
     @objc func show() {
         guard let cellViewModel1 = cellViewModel as? UserProfilePhoneCellViewModel else {
@@ -88,11 +88,11 @@ class UserProfilePhoneTableViewCell: UITableViewCell, UserProfileTableViewCellPr
         }
         cellViewModel1.show(indexPath: self.indexPath!)
     }
-
+    
     static var identifier: String {
         return String(describing: self)
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

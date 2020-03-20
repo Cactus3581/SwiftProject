@@ -9,41 +9,41 @@
 import UIKit
 
 class UserProfileMultiDepartmentTableViewCell: UITableViewCell, UserProfileTableViewCellProtocol {
-
+    
     let titleLabel: UILabel?
     let lineView: UIView?
     let dotView: UIView?
     var indexPath: NSIndexPath?
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-
+        
         let dotView: UIView = UIView()
         self.dotView = dotView
-
+        
         let label: UILabel = UILabel()
         self.titleLabel = label
-
+        
         let lineView: UIView = UIView()
         self.lineView = lineView
-
+        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
+        
         self.contentView.backgroundColor = UIColor.white
-
+        
         self.contentView.addSubview(dotView)
         dotView.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(16)
             $0.centerY.equalToSuperview()
             $0.width.height.equalTo(6)
-
+            
         }
         dotView.backgroundColor = UIColor.lightGray
         dotView.layer.cornerRadius = 3
-
+        
         self.contentView.addSubview(label)
         label.numberOfLines = 3
         label.snp.makeConstraints {
@@ -52,7 +52,7 @@ class UserProfileMultiDepartmentTableViewCell: UITableViewCell, UserProfileTable
         }
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = UIColor.darkText
-
+        
         self.contentView.addSubview(lineView)
         lineView.backgroundColor = UIColor.lightGray
         lineView.snp.makeConstraints {
@@ -62,11 +62,11 @@ class UserProfileMultiDepartmentTableViewCell: UITableViewCell, UserProfileTable
             $0.height.equalTo(1/UIScreen.main.scale)
         }
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     var cellViewModel: Any? {
         didSet {
             guard let cellViewModel = cellViewModel as? UserProfileDepartmentCellViewModel else {
@@ -76,11 +76,11 @@ class UserProfileMultiDepartmentTableViewCell: UITableViewCell, UserProfileTable
             //coverImageView?.image = UIImage(named: item.pictureUrl)
         }
     }
-
+    
     static var identifier: String {
         return String(describing: self)
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
