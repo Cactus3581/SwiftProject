@@ -46,29 +46,29 @@
             ]
         },
         {
-            "type": "course",
+            "type": "department",
             "header": {
                 "title": "课程"
             },
             "list": [{
-                    "courseName": "英语四级课程",
-                    "courseTeacher": "tom1"
+                    "departmentName": "英语四级课程",
+                    "departmentTeacher": "tom1"
                 },
                 {
-                    "courseName": "英语六级课程",
-                    "courseTeacher": "tom2"
+                    "departmentName": "英语六级课程",
+                    "departmentTeacher": "tom2"
                 },
                 {
-                    "courseName": "英语八级课程",
-                    "courseTeacher": "tom3"
+                    "departmentName": "英语八级课程",
+                    "departmentTeacher": "tom3"
                 },
                 {
-                    "courseName": "雅思课程",
-                    "courseTeacher": "tom4"
+                    "departmentName": "雅思课程",
+                    "departmentTeacher": "tom4"
                 },
                 {
-                    "courseName": "托福课程",
-                    "courseTeacher": "tom5"
+                    "departmentName": "托福课程",
+                    "departmentTeacher": "tom5"
                 }
             ]
         },

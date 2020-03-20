@@ -10,16 +10,16 @@ import Foundation
 
 class UserProfileFactory {
 
-    static var viewModels: [UserProfileViewModelProtocol.Type] = []
+    static var viewModels: [UserProfileSessionViewModelProtocol.Type] = []
 
-    static func register(viewModel: UserProfileViewModelProtocol.Type) {
+    static func register(viewModel: UserProfileSessionViewModelProtocol.Type) {
         if !UserProfileFactory.viewModels.contains(where: { $0 == viewModel }) {
             UserProfileFactory.viewModels.append(viewModel)
         }
     }
 
-    static func createSessionViewModelByDict(data: UserProfileModel) -> [UserProfileViewModelProtocol]? {
-        var list:[UserProfileViewModelProtocol] = []
+    static func createSessionViewModelByDict(data: UserProfileModel) -> [UserProfileSessionViewModelProtocol]? {
+        var list:[UserProfileSessionViewModelProtocol] = []
         for type in data.order ?? [] {
             let tclass = getClass(type: type)
             if let tclass1 = tclass {
@@ -29,18 +29,8 @@ class UserProfileFactory {
         return list
     }
 
-    static func createSessionViewModelByArray(data: UserProfileModel) -> [UserProfileViewModelProtocol]? {
-        var list:[UserProfileViewModelProtocol] = []
-        for sessionModel in data.list ?? [] {
-            let tclass = getClass(type: sessionModel.type ?? "")
-            if let tclass1 = tclass {
-                list.append(tclass1.init(arrayData: sessionModel))
-            }
-        }
-        return list
-    }
 
-    static func getClass(type: String) -> UserProfileViewModelProtocol.Type? {
+    static func getClass(type: String) -> UserProfileSessionViewModelProtocol.Type? {
         for tClass in UserProfileFactory.viewModels {
             if tClass.canHandle(type: type) {
                return tClass
@@ -48,16 +38,4 @@ class UserProfileFactory {
         }
         return nil
     }
-
-    static func createSessionViewModelByArray1(data: UserProfileModel) -> [UserProfileViewModelProtocol]? {
-        var list:[UserProfileViewModelProtocol] = []
-        for sessionModel in data.list ?? [] {
-            let tclass = getClass(type: sessionModel.type ?? "")
-            if let tclass1 = tclass {
-                list.append(tclass1.init(arrayData: sessionModel))
-            }
-        }
-        return list
-    }
-
 }

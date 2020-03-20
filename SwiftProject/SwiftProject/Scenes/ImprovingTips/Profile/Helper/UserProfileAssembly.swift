@@ -10,8 +10,9 @@ import UIKit
 
 class UserProfileAssembly: NSObject {
     static func register() {
-        UserProfileFactory.register(viewModel: UserProfileTextListeningSectionViewModel.self)
-        UserProfileFactory.register(viewModel: UserProfileTextAdsSectionViewModel.self)
-        UserProfileFactory.register(viewModel: UserProfileTextSpeakSessionViewModel.self)
+        UserProfileFactory.register(viewModel: UserProfileCommonSessionViewModel.self)
+        UserProfileFactory.register(viewModel: UserProfilePhoneSessionViewModel.self)
+        UserProfileFactory.register(viewModel: UserProfileDepartmentSessionViewModel.self)
+
     }
 }

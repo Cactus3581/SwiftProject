@@ -9,26 +9,40 @@
 import UIKit
 import HandyJSON
 
+enum FieldType: Int {
+    case UNKNOWN
+    case DEFAULT
+    case CUSTOM
+}
+
+enum FieldValueType: Int {
+    case UNKNOWN
+    case TEXT
+    case HREF
+}
+
 class UserProfileModel: NSObject,HandyJSON {
     var order: Array<String>?
-    var header: UserProfileListeningModel?
-    var footer: UserProfileListeningModel?
-    var listening: UserProfileListeningModel? // section1、cell1，标准
-    var ads: UserProfileListeningModel? // section1、cell1，标准
-    var circle: UserProfileListeningModel? // section2、cell1，测试同样的cell，不同的sessionView
-    var speak: UserProfileSpeakModel? // section1、cell2 测试不同的cell，相同的sessionView + 测试多种cellVM对应同一个cell
-    var course: UserProfileCourseModel?// section2、cell2，测试不同的cell，不同的sessionView + 测试多种sessionVM对应同一个sessionView
-    var group: String? // 测试在一个session中存在多种cell
-    var exam: String?
-    var iap: String?
-    var xmPush: String?
-    var bookCatalogue: String?
-
-    var list: Array<UserProfileSessionModel>?
+    var info: UserProfileInfoModel?
     var ctaList: Array<UserProfileCTAItemModel>?
+    var job: UserProfileCommonModel?
+    var personalStatus: UserProfileCommonModel?
+    var phone: UserProfilePhoneModel?
+    var department: Array<UserProfileDepartmentItemModel>?
+    var nickName: UserProfileNickNameModel?
     override required init() {}
 }
 
+// CTA以上区域
+class UserProfileInfoModel: NSObject,HandyJSON {
+    var name: String?
+    var tags: Array<String>?
+    var company: String?
+    var timeZone: String?
+    override required init() {}
+}
+
+// CTA区域
 class UserProfileCTAItemModel: NSObject,HandyJSON {
     var type: String?
     var title: String?
@@ -37,38 +51,31 @@ class UserProfileCTAItemModel: NSObject,HandyJSON {
     override required init() {}
 }
 
-class UserProfileSessionModel: NSObject,HandyJSON {
-    var type: String?
-    var header: UserProfileListeningModel?
-    var list: Array<Any>?
-    override required init() {}
-}
-
-// listen
-class UserProfileListeningModel: NSObject,HandyJSON {
+// CTA下 Cell区域
+// 通用
+class UserProfileCommonModel: NSObject,HandyJSON {
     var title: String?
     override required init() {}
 }
 
-// speak
-class UserProfileSpeakModel: NSObject,HandyJSON {
-    var list: Array<UserProfileSpeakItemModel>?
+// 电话
+class UserProfilePhoneModel: NSObject,HandyJSON {
+    var phone: String?
+    var code: String?
+    @objc dynamic var isShow: Bool = false
     override required init() {}
 }
 
-class UserProfileSpeakItemModel: NSObject,HandyJSON {
-    var speakScore: String?
+// 部门
+class UserProfileDepartmentItemModel: NSObject,HandyJSON {
+    var type: String?
+    var title: String?
     override required init() {}
 }
 
-// course
-class UserProfileCourseModel: NSObject,HandyJSON {
-    var list: Array<UserProfileCourseItemModel>?
+// 备注
+class UserProfileNickNameModel: NSObject,HandyJSON {
+    var nickName: String?
     override required init() {}
 }
 
-class UserProfileCourseItemModel: NSObject,HandyJSON {
-    var courseName: String?
-    var courseTeacher: String?
-    override required init() {}
-}

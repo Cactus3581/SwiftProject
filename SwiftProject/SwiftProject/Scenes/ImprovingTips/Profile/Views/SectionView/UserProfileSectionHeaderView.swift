@@ -12,36 +12,38 @@ import UIKit
 
 class UserProfileSectionHeaderView: UITableViewHeaderFooterView,UserProfileSectionViewProtocol {
 
-    let button: UIButton?
+    let label: UILabel?
+    var section: Int?
 
     override init(reuseIdentifier: String?) {
 
-        let button: UIButton = UIButton()
-        self.button = button
+        let label: UILabel = UILabel()
+        self.label = label
 
         super.init(reuseIdentifier: reuseIdentifier)
 
-        self.contentView.backgroundColor = UIColor.green
+        self.contentView.backgroundColor = UIColor.white
 
-        self.contentView.addSubview(button)
-        button.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().offset(10)
-            $0.bottom.equalToSuperview().offset(-10)
+        self.contentView.addSubview(label)
+        label.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(16)
+            $0.top.equalToSuperview().offset(12)
+            $0.bottom.equalToSuperview()
         }
-        button.setTitleColor(UIColor.white,for: .normal)
+        label.textColor = UIColor.lightGray
+        label.font = UIFont.systemFont(ofSize: 14)
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    var sessionViewModel: UserProfileViewModelProtocol? {
+    var sessionViewModel: UserProfileSessionViewModelProtocol? {
         didSet {
-            guard let sectionViewModel = self.sessionViewModel as? UserProfileTextViewModelProtocol else {
+            guard let sectionViewModel = self.sessionViewModel else {
                 return
             }
-            button?.setTitle(sectionViewModel.headerText, for: .normal)
+            label?.text = sectionViewModel.headerText
         }
     }
 

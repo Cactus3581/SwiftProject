@@ -1,56 +1,10 @@
 {
-    "header":{
+    "order": ["job","personalStatus","phone", "department"],
+    "info":{
+        "name": "页眉",
+        "tags": ["在职"],
+        "company": "字节跳动",
         "title": "页眉"
-    },
-    "footer":{
-        "title": "页脚"
-    },
-    "order": ["listening", "ads", "circle", "speak", "course", "group"],
-    "listening": {
-        "title": "VOA"
-    },
-    "ads": {
-        "title": "京东广告"
-    },
-    "circle": {
-        "title": "英语君"
-    },
-    "speak": {
-        "list": [
-            {
-                "speakScore": "100"
-            },
-            {
-                "speakScore": "98"
-            }
-        ]
-    },
-    "course": {
-        "list": [
-            {
-                "courseName": "英语四级课程",
-                "courseTeacher": "tom1"
-            },
-            {
-                "courseName": "英语六级课程",
-                "courseTeacher": "tom2"
-            },
-            {
-                "courseName": "英语八级课程",
-                "courseTeacher": "tom3"
-            },
-            {
-                "courseName": "雅思课程",
-                "courseTeacher": "tom4"
-            },
-            {
-                "courseName": "托福课程",
-                "courseTeacher": "tom5"
-            }
-        ]
-    },
-    "group": {
-
     },
     "ctaList": [
             {
@@ -76,6 +30,39 @@
                 "title": "更多",
                 "imageUrl": "phone",
                 "routeUrl": "phone"
+            }
+    ],
+    "job": {
+        "title": "UX"
+    },
+    "personalStatus": {
+        "title": "I'm fine"
+    },
+    "phone": {
+        "phone": "135 **** 0689",
+        "code": "+86"
+    },
+    "nickName": {
+        "nickName": "ryan"
+    },
+    "department": [
+            {
+                "title": "英语四级课程"
             },
+            {
+                "title": "英语四级课程"
+            },
+            {
+                "title": "英语四级课程"
+            },
+            {
+                "title": "英语四级课程"
+            },
+            {
+                "title": "英语四级课程"
+            },
+            {
+                "title": "英语四级课程"
+            }
     ]
 }

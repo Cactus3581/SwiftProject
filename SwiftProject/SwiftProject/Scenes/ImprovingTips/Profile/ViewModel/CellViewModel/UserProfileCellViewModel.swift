@@ -20,62 +20,46 @@ extension UserProfileCellViewModelProtocol {
     var identifier: String {return ""}
 }
 
+class UserProfileCommonCellViewModel:NSObject, UserProfileCellViewModelProtocol {
+
+    var model: UserProfileCommonModel?
+
+    var identifier: String {
+        return UserProfileCommonTableViewCell.identifier
+    }
+}
+
 //MARK:多种cellVM对应同一个cell，使用协议提供统一的接口来提供数据和事件
-protocol UserProfileCourseCellViewModelProtocol {
-    var title: String? { get }
+protocol UserProfilePhoneCellViewModelProtocol {
+    func show(indexPath: NSIndexPath)
 }
 
-extension UserProfileCourseCellViewModelProtocol {
-    var title: String? {
-       return ""
-    }
+extension UserProfilePhoneCellViewModelProtocol {
+    func show(indexPath: NSIndexPath) {}
 }
 
-class UserProfileListeningCellViewModel: NSObject {
+class UserProfilePhoneCellViewModel: NSObject, UserProfilePhoneCellViewModelProtocol {
 
-    var model: UserProfileListeningModel?
+    @objc dynamic var model: UserProfilePhoneModel?
+    var indexPath: NSIndexPath?
 
-    var identifier: String {
-        return UserProfileListeningTableViewCell.identifier
-    }
-
-    func jump() {
-        // 通过路由
-        print("事件：跳转")
-    }
-
-    func click() {
-        print("事件：点击")
-    }
-
-    func updateData(result: ((UserProfileListeningCellViewModel) -> ())) {
-        // 数据更新
-        result(self)
-    }
-}
-
-class UserProfileSpeakCellViewModel: UserProfileCourseCellViewModelProtocol {
-
-    var model: UserProfileSpeakItemModel?
-
-    var title: String? {
-        return model?.speakScore
+    func show(indexPath: NSIndexPath) {
+        // 请求数据
+        //成功
+        self.model?.isShow = !(self.model?.isShow ?? false)
+        self.indexPath = indexPath
     }
 
     var identifier: String {
-        return UserProfileCourseTableViewCell.identifier
+        return UserProfileMultiDepartmentTableViewCell.identifier
     }
 }
 
-class UserProfileCourseCellViewModel: UserProfileCourseCellViewModelProtocol {
+class UserProfileDepartmentCellViewModel: NSObject, UserProfileCellViewModelProtocol {
 
-    var model: UserProfileCourseItemModel?
-    
-    var title: String? {
-        return model?.courseName
-    }
+    var model: UserProfileDepartmentItemModel?
 
     var identifier: String {
-        return UserProfileCourseTableViewCell.identifier
+        return UserProfileMultiDepartmentTableViewCell.identifier
     }
 }

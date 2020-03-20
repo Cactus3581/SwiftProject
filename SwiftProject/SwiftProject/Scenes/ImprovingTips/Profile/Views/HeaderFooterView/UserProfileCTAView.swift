@@ -18,7 +18,6 @@ class UserProfileCTAView: UIView {
         super.init(frame: frame)
         self.backgroundColor = UIColor.white
 
-        self.clipsToBounds = true
          //创建StackView
         let stackView = UIStackView()
         self.stackView = stackView
@@ -35,6 +34,7 @@ class UserProfileCTAView: UIView {
             make.leading.equalToSuperview().offset(15)
             make.trailing.equalToSuperview().offset(-15)
         }
+        setShadow(view: self, shadowColor: UIColor.lightGray, opacity: 0.6, offset: CGSize(width: 0, height: 3), shadowRadius: 3)
     }
     
     required init?(coder: NSCoder) {
@@ -54,6 +54,17 @@ class UserProfileCTAView: UIView {
                }
            }
        }
+
+    func setShadow(view: UIView, shadowColor: UIColor, opacity: Float, offset: CGSize,  shadowRadius: CGFloat) {
+        //设置阴影颜色
+        view.layer.shadowColor = shadowColor.cgColor
+        //设置透明度
+        view.layer.shadowOpacity = opacity
+        //设置阴影偏移量
+        view.layer.shadowOffset = offset
+        //设置阴影半径
+        view.layer.shadowRadius = shadowRadius
+    }
 }
 
 
@@ -68,7 +79,7 @@ class UserProfileCTAItemView: UIView  {
         self.label = label
 
         super.init(frame: frame)
-        self.backgroundColor = UIColor.red
+        self.backgroundColor = UIColor.white
         self.addSubview(coverImageView)
         coverImageView.snp.makeConstraints { (make) in
             make.top.leading.trailing.equalToSuperview()
@@ -85,12 +96,14 @@ class UserProfileCTAItemView: UIView  {
         coverImageView.addGestureRecognizer(tap)
 
        self.addSubview(label)
-        label.backgroundColor = UIColor.yellow
+        label.font = UIFont.systemFont(ofSize: 12)
        label.snp.makeConstraints{  (make) in
            make.centerX.bottom.equalToSuperview()
            make.top.equalTo(coverImageView.snp_bottom)
        }
     }
+
+
 
     @objc func jump() {
         self.viewModel?.jump()
