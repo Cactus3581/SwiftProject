@@ -55,6 +55,8 @@
 		0156813023BE28F100B42FB9 /* ProtocolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156812F23BE28F100B42FB9 /* ProtocolViewController.swift */; };
 		015846FE24239FA700B7BEBE /* UserProfileCommonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015846FD24239FA700B7BEBE /* UserProfileCommonTableViewCell.swift */; };
 		015847002423A13000B7BEBE /* UserProfileSectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015846FF2423A13000B7BEBE /* UserProfileSectionFooterView.swift */; };
+		015E177C24275F7000351EA9 /* UserProfileTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E177B24275F7000351EA9 /* UserProfileTableViewDelegate.swift */; };
+		015E177E242763D200351EA9 /* UserProfileDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E177D242763D200351EA9 /* UserProfileDataHandler.swift */; };
 		0167EE842418F2EC00E4830F /* MVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0167EE832418F2EC00E4830F /* MVVMViewController.swift */; };
 		016B8EF623C58A19007F6EC5 /* SwiftTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016B8EF523C58A19007F6EC5 /* SwiftTipsViewController.swift */; };
 		016FE6D823B5DD7800CE8784 /* statistics.py in Resources */ = {isa = PBXBuildFile; fileRef = 016FE6D623B5DD7800CE8784 /* statistics.py */; };
@@ -210,6 +212,8 @@
 		0156812F23BE28F100B42FB9 /* ProtocolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolViewController.swift; sourceTree = "<group>"; tabWidth = 3; };
 		015846FD24239FA700B7BEBE /* UserProfileCommonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCommonTableViewCell.swift; sourceTree = "<group>"; };
 		015846FF2423A13000B7BEBE /* UserProfileSectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileSectionFooterView.swift; sourceTree = "<group>"; };
+		015E177B24275F7000351EA9 /* UserProfileTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewDelegate.swift; sourceTree = "<group>"; };
+		015E177D242763D200351EA9 /* UserProfileDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDataHandler.swift; sourceTree = "<group>"; };
 		0167EE832418F2EC00E4830F /* MVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewController.swift; sourceTree = "<group>"; };
 		016B8EF523C58A19007F6EC5 /* SwiftTipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTipsViewController.swift; sourceTree = "<group>"; };
 		016FE6D623B5DD7800CE8784 /* statistics.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = statistics.py; sourceTree = "<group>"; };
@@ -396,6 +400,7 @@
 		01026729242379B900CA6D00 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				015E177B24275F7000351EA9 /* UserProfileTableViewDelegate.swift */,
 				0102672A242379B900CA6D00 /* Cells */,
 				01026730242379B900CA6D00 /* SectionView */,
 				01026733242379B900CA6D00 /* HeaderFooterView */,
@@ -1113,6 +1118,7 @@
 			children = (
 				01D38A0B241A770E00F6D74D /* MVVMListSecAssembly.swift */,
 				01D38A0A241A770E00F6D74D /* MVVMLisSecFactory.swift */,
+				015E177D242763D200351EA9 /* UserProfileDataHandler.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1701,6 +1707,7 @@
 				01ADB56B23BE294300EAB005 /* InheritViewController.swift in Sources */,
 				01937ED5241906D3009BD6AD /* MVVMListViewModel.swift in Sources */,
 				01937EE124190748009BD6AD /* MVVMListButtonTableViewCell.swift in Sources */,
+				015E177E242763D200351EA9 /* UserProfileDataHandler.swift in Sources */,
 				0182B7C8241A792E0033BF0A /* MVVMListTableHeaderView.swift in Sources */,
 				016B8EF623C58A19007F6EC5 /* SwiftTipsViewController.swift in Sources */,
 				01D38A10241A770E00F6D74D /* MVVMListSecTableViewCellProtocol.swift in Sources */,
@@ -1725,6 +1732,7 @@
 				01EA7C0C23AC69ED00712B20 /* ListViewModel.swift in Sources */,
 				01937EE624193344009BD6AD /* MVVMListAssembly.swift in Sources */,
 				013C7D3923B8604500804143 /* MVCView.swift in Sources */,
+				015E177C24275F7000351EA9 /* UserProfileTableViewDelegate.swift in Sources */,
 				01EA7C0923ABAB1300712B20 /* RootNavigationController.swift in Sources */,
 				01D38A0D241A770E00F6D74D /* MVVMListSecViewController.swift in Sources */,
 				015847002423A13000B7BEBE /* UserProfileSectionFooterView.swift in Sources */,

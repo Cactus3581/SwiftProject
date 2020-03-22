@@ -10,24 +10,25 @@ import UIKit
 
 class UserProfileViewModel: NSObject {
 
+    var model: UserProfileModel?
     var array:Array<UserProfileSessionViewModelProtocol> = [UserProfileSessionViewModelProtocol]()
     var ctaList:Array<UserProfileCTAItemViewModel> = [UserProfileCTAItemViewModel]()
-    typealias success = () -> ()
-    typealias tableviewCellConfig = (UITableView, NSIndexPath) -> (UITableViewCell)
-    typealias reloadSection = (Int) -> Void
-    typealias reloadCell = (NSIndexPath) -> Void
 
-    var reloadSectionHandler: reloadSection?
-    var reloadCellHandler: reloadCell?
+    typealias DataResultHandler = () -> ()
+    typealias TableviewCellConfig = (UITableView, NSIndexPath) -> (UITableViewCell)
+    typealias ReloadSectionHandler = (Int) -> Void
+    typealias ReloadCellHandler = (NSIndexPath) -> Void
 
-    var tableviewCellConfig1: tableviewCellConfig?
-    var model: UserProfileModel?
+    var reloadSectionHandler: ReloadSectionHandler?
+    var reloadCellHandler: ReloadCellHandler?
+    var tableviewCellConfig: TableviewCellConfig?
 
     override init() {
         super.init()
     }
 
-    func requestData(success: success?)  {
+    //MARK: 数据请求 + 工厂类初始化sessionViewModel + 将数据源array通过闭包抛给vc中的tableview去做刷新 + 监听事件
+    func requestData(result: DataResultHandler?)  {
 
         let jsonName = "UserProfileDict"
 
@@ -50,25 +51,26 @@ class UserProfileViewModel: NSObject {
             ctaList.append(viewModel)
         }
 
-        if let success = success {
-            success()
-            kvo()
+        if let result = result {
+            result()
+            observe()
         }
     }
 
-    func kvo() {
-        //监听list的变化
+    //MARK: 有些事件需要依赖tableview，比如展开更多，所以需要监听list变化，然后将事件抛给 tableview 去做刷新
+    func observe() {
         for sessionViewModel in self.array {
             guard let observableObject = sessionViewModel as? NSObject else {
                 continue
             }
-            observableObject.addObserver(self, forKeyPath: "list", options: [.new, .old], context:nil)
+            //监听list的变化
+            observableObject.addObserver(self, forKeyPath: "list", options: [.new], context:nil)
             for cellViewModel in sessionViewModel.list ?? [] {
                 guard let cellObject = cellViewModel as? NSObject else {
                     continue
                 }
                 if cellObject is UserProfilePhoneCellViewModel {
-                    cellObject.addObserver(self, forKeyPath: "model.isShow", options: [.new, .old], context:nil)
+                    //cellObject.addObserver(self, forKeyPath: "model.isShow", options: [.new], context:nil)
                 }
             }
         }
@@ -98,8 +100,8 @@ class UserProfileViewModel: NSObject {
         }
     }
 
-    func configTableviewCell(config: @escaping tableviewCellConfig) {
-        self.tableviewCellConfig1 = config
+    func configTableviewCell(config: @escaping TableviewCellConfig) {
+        self.tableviewCellConfig = config
     }
 
     private func getDataFromFile(_ filename: String) -> Data? {
@@ -119,10 +121,6 @@ class UserProfileViewModel: NSObject {
     func headerClick(){
         print("页眉 click")
     }
-
-    func footerJump(){
-        print("页脚 jump")
-    }
 }
 
 extension UserProfileViewModel: UITableViewDataSource {
@@ -137,7 +135,7 @@ extension UserProfileViewModel: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let config = self.tableviewCellConfig1 {
+        if let config = self.tableviewCellConfig {
             return config(tableView, indexPath as NSIndexPath)
         }
         return UITableViewCell()

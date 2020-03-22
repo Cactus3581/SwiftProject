@@ -15,8 +15,13 @@ protocol UserProfileSessionViewModelProtocol {
     var headerIdentifier: String? { get }
     var footerIdentifier: String? { get }
     var identifier: String { get }
+    var cellClassStr: String { get } // 用来注册
+    var headerViewClassStr: String { get } // 用来注册
+    var footerViewClassStr: String { get } // 用来注册
+    var viewHeight: CGFloat { get } // 高度
     var list: Array<Any>? { set get }
     var headerText: String? { get }
+    func didSelectCellViewModel(cellViewModel: UserProfileCellViewModelProtocol, indexPath: NSIndexPath)
 }
 
 extension UserProfileSessionViewModelProtocol {
@@ -25,8 +30,13 @@ extension UserProfileSessionViewModelProtocol {
     var headerIdentifier: String? {return nil}
     var footerIdentifier: String? {return nil}
     var identifier: String {return ""}
+    var cellClassStr: String {return ""} // 用来注册
+    var headerViewClassStr: String { return "" } // 用来注册
+    var footerViewClassStr: String { return "" } // 用来注册
+    var viewHeight: CGFloat { return 0 } // 高度
     var list: Array<Any>? { set{} get{return nil} }
     var headerText: String? {return ""}
+    func didSelectCellViewModel(cellViewModel: UserProfileCellViewModelProtocol, indexPath: NSIndexPath){}
 }
 
 class UserProfileCommonSessionViewModel: NSObject, UserProfileSessionViewModelProtocol {

@@ -12,10 +12,10 @@ import UIKit
 class UserProfileViewController: BaseViewController, UITableViewDelegate {
     
     fileprivate var viewModel: UserProfileViewModel?
+
     var naviBackView: UIView?
     var titleLabel: UILabel?
     var backButton: UIButton?
-    
     var tableView: UITableView?
     var headerView: UserProfileTableHeaderView?
     var ctaView: UserProfileCTAView?
@@ -93,7 +93,7 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
             make.bottom.equalTo(titleLabel!)
         }
         
-        viewModel?.requestData(success: {[weak self] () -> Void in
+        viewModel?.requestData(result: {[weak self] () -> Void in
             guard let `self` = self else {
                 return
             }
@@ -167,7 +167,15 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        guard let viewModel = self.viewModel else {
+            return
+        }
+
+        let sectionViewModel: UserProfileSessionViewModelProtocol = viewModel.array[indexPath.section]
+        let cellViewModel = sectionViewModel.list?[indexPath.row] as? UserProfileCellViewModelProtocol
+        if let cellViewModel = cellViewModel {
+            sectionViewModel.didSelectCellViewModel(cellViewModel: cellViewModel, indexPath: indexPath as NSIndexPath)
+        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

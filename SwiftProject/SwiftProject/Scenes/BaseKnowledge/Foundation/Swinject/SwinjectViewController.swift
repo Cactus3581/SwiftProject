@@ -8,7 +8,14 @@
 
 import UIKit
 
+/*
 
+ 依赖注入
+
+ 依赖是什么：A类使用B类简单的说，形成A类依赖B类
+ 依赖的缺点：造成耦合，无法单元测试，因为无法隔离
+ 解决方法：使用依赖反转
+ */
 class SwinjectViewController: UIViewController {
 
     override func viewDidLoad() {

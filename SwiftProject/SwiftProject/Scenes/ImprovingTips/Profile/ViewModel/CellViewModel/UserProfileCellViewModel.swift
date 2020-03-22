@@ -49,6 +49,17 @@ class UserProfilePhoneCellViewModel: NSObject, UserProfilePhoneCellViewModelProt
         self.model?.isShow = !(self.model?.isShow ?? false)
         self.indexPath = indexPath
     }
+
+    func show1(indexPath: NSIndexPath, result: () -> Void) {
+        // 请求数据
+        //成功
+        self.model?.isShow = !(self.model?.isShow ?? false)
+        self.indexPath = indexPath
+//        if let result = result {
+            result()
+//        }
+    }
+
     
     var identifier: String {
         return UserProfileMultiDepartmentTableViewCell.identifier

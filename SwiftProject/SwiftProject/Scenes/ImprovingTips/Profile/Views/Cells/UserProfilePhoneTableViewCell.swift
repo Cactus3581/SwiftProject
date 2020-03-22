@@ -83,14 +83,38 @@ class UserProfilePhoneTableViewCell: UITableViewCell, UserProfileTableViewCellPr
     
     
     @objc func show() {
+        //vm绑定view
         guard let cellViewModel1 = cellViewModel as? UserProfilePhoneCellViewModel else {
             return
         }
-        cellViewModel1.show(indexPath: self.indexPath!)
+        // 使用KVO
+        //cellViewModel1.show(indexPath: self.indexPath!)
+
+        //使用闭包
+        cellViewModel1.show1(indexPath: self.indexPath!) {
+            if indexPath == self.indexPath {
+                // update
+                guard let cellViewModel = cellViewModel as? UserProfilePhoneCellViewModel else {
+                    return
+                }
+                if let isShow = cellViewModel.model?.isShow {
+                    if isShow {
+                        showButton?.setTitle("显示", for: .normal)
+                    } else {
+                        showButton?.setTitle("隐藏", for: .normal)
+                    }
+                }
+            }
+        }
     }
     
     static var identifier: String {
         return String(describing: self)
+    }
+
+    override func prepareForReuse() {
+        // 防止重用导致的vm和cell的不匹配
+        // block = nil
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
