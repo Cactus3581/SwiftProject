@@ -1,68 +1,187 @@
 {
-    "order": ["job","personalStatus","phone", "department"],
-    "info":{
-        "name": "页眉",
-        "tags": ["在职"],
-        "company": "字节跳动",
-        "title": "页眉"
+    "userInfo": {
+        "userName": "Cactus",
+        "gender": "",
+        "city": "北京",
+        "isFriend": true,
+        "isResign": false,
+        "tenantName": "字节跳动",
+        "isNotDisturb": false,
+        "workStatus": {
+            "status": 0,
+            "description1": "描述",
+            "startTime": "2020",
+            "endTime": "2020"
+        },
+        "isAdmin": true
     },
-    "ctaList": [
-            {
-                "type": "phone",
-                "title": "电话",
-                "imageUrl": "phone",
-                "routeUrl": "phone"
+    "ctaInfo": {
+        "orders": ["chat", "phone", "video", "secretChat", "voice"],
+        "chat": {
+            "type": "chat",
+            "key": "消息",
+            "chatterId": "",
+            "enable": true
+        },
+        "phone": {
+            "type": "phone",
+            "key": "手机",
+            "chatterId": "",
+            "enable": true
+        },
+        "video": {
+            "type": "video",
+            "key": "视频",
+            "chatterId": "",
+            "enable": true
+        },
+        "secretChat": {
+            "type": "secretChat",
+            "key": "密聊",
+            "url": "www.baidu.com",
+            "enable": true
+        },
+        "voice": {
+            "type": "voice",
+            "key": "语音",
+            "url": "www.baidu.com",
+            "enable": true
+        },
+        "linkItems": [{
+                "type": "1",
+                "key": "我是链接",
+                "url": "www.baidu.com",
+                "enable": true
             },
             {
-                "type": "voice",
-                "title": "音频通话",
-                "imageUrl": "phone",
-                "routeUrl": "phone"
-            },
-            {
-                "type": "video",
-                "title": "视频通话",
-                "imageUrl": "phone",
-                "routeUrl": "phone"
-            },
-            {
-                "type": "more",
-                "title": "更多",
-                "imageUrl": "phone",
-                "routeUrl": "phone"
+                "type": "1",
+                "key": "页眉",
+                "url": "www.baidu.com",
+                "enable": true
             }
-    ],
-    "job": {
-        "title": "UX"
+        ]
     },
-    "personalStatus": {
-        "title": "I'm fine"
-    },
-    "phone": {
-        "phone": "135 **** 0689",
-        "code": "+86"
-    },
-    "nickName": {
-        "nickName": "ryan"
-    },
-    "department": [
-            {
-                "title": "英语四级课程"
+    "profileInfo": {
+        "orders": ["phone", "departments"],
+        "userStatus": {
+            "state": "页眉",
+            "statusInfo": "页眉",
+            "type": "1",
+            "key": "页眉"
+        },
+        "phone": {
+            "state": "页眉",
+            "number": "135 0112 0689",
+            "type": "1",
+            "key": "页眉"
+        },
+        "alias": {
+            "alias": "页眉",
+            "type": "1",
+            "key": "页眉"
+        },
+        "departments": {
+            "departments": [{
+                    "id": "页眉",
+                    "departments": [{
+                            "id": "页眉",
+                            "name": "A1"
+                        },
+                        {
+                            "id": "页眉",
+                            "name": "A2"
+                        }
+                    ]
+                },
+                {
+                    "id": "页眉",
+                    "departments": [{
+                            "id": "页眉",
+                            "name": "B1"
+                        },
+                        {
+                            "id": "页眉",
+                            "name": "B2"
+                        }
+                    ]
+                },
+                {
+                    "id": "页眉",
+                    "departments": [{
+                            "id": "页眉",
+                            "name": "B1"
+                        },
+                        {
+                            "id": "页眉",
+                            "name": "B2"
+                        }
+                    ]
+                },
+                {
+                    "id": "页眉",
+                    "departments": [{
+                            "id": "页眉",
+                            "name": "B1"
+                        },
+                        {
+                            "id": "页眉",
+                            "name": "B2"
+                        }
+                    ]
+                },
+                {
+                    "id": "页眉",
+                    "departments": [{
+                            "id": "页眉",
+                            "name": "B1"
+                        },
+                        {
+                            "id": "页眉",
+                            "name": "B2"
+                        }
+                    ]
+                },
+                {
+                    "id": "页眉",
+                    "departments": [{
+                            "id": "页眉",
+                            "name": "B1"
+                        },
+                        {
+                            "id": "页眉",
+                            "name": "B2"
+                        }
+                    ]
+                }
+                
+            ],
+            "number": "页眉",
+            "type": "1",
+            "key": "页眉"
+        },
+        "textItems": [{
+                "value": "页眉",
+                "type": "1",
+                "key": "页眉"
             },
             {
-                "title": "英语四级课程"
-            },
-            {
-                "title": "英语四级课程"
-            },
-            {
-                "title": "英语四级课程"
-            },
-            {
-                "title": "英语四级课程"
-            },
-            {
-                "title": "英语四级课程"
+                "value": "页眉",
+                "type": "1",
+                "key": "页眉"
             }
-    ]
+        ],
+        "linkItems": [{
+                "linkTitle": "页眉",
+                "url": "www.baidu.com",
+                "type": "1",
+                "key": "页眉"
+            },
+            {
+                "linkTitle": "页眉",
+                "url": "www.baidu.com",
+                "type": "1",
+                "key": "页眉"
+            }
+        ]
+    }
 }

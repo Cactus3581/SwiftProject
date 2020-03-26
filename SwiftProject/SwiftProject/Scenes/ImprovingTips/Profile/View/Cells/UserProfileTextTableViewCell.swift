@@ -1,19 +1,18 @@
 //
-//  UserProfileDepartmentTableViewCell.swift
+//  UserProfileCommonTableViewCell.swift
 //  SwiftProject
 //
-//  Created by ryan on 2020/3/11.
+//  Created by ryan on 2020/3/19.
 //  Copyright © 2020 cactus. All rights reserved.
 //
 
 import UIKit
 
-class UserProfileMultiDepartmentTableViewCell: UITableViewCell, UserProfileTableViewCellProtocol {
+class UserProfileTextTableViewCell: UITableViewCell, UserProfileTableViewCellProtocol {
     
     let titleLabel: UILabel?
     let lineView: UIView?
-    let dotView: UIView?
-    var indexPath: NSIndexPath?
+    var indexPath: IndexPath?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,8 +20,6 @@ class UserProfileMultiDepartmentTableViewCell: UITableViewCell, UserProfileTable
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
-        let dotView: UIView = UIView()
-        self.dotView = dotView
         
         let label: UILabel = UILabel()
         self.titleLabel = label
@@ -34,20 +31,9 @@ class UserProfileMultiDepartmentTableViewCell: UITableViewCell, UserProfileTable
         
         self.contentView.backgroundColor = UIColor.white
         
-        self.contentView.addSubview(dotView)
-        dotView.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(16)
-            $0.centerY.equalToSuperview()
-            $0.width.height.equalTo(6)
-            
-        }
-        dotView.backgroundColor = UIColor.lightGray
-        dotView.layer.cornerRadius = 3
-        
         self.contentView.addSubview(label)
-        label.numberOfLines = 3
         label.snp.makeConstraints {
-            $0.leading.equalTo(dotView.snp_trailing).offset(16)
+            $0.leading.equalToSuperview().offset(16)
             $0.centerY.equalToSuperview()
         }
         label.font = UIFont.systemFont(ofSize: 16)
@@ -69,11 +55,10 @@ class UserProfileMultiDepartmentTableViewCell: UITableViewCell, UserProfileTable
     
     var cellViewModel: Any? {
         didSet {
-            guard let cellViewModel = cellViewModel as? UserProfileDepartmentCellViewModel else {
+            guard let cellViewModel = cellViewModel as? TextItem else {
                 return
             }
-            titleLabel?.text = cellViewModel.model?.title
-            //coverImageView?.image = UIImage(named: item.pictureUrl)
+            titleLabel?.text = cellViewModel.value
         }
     }
     

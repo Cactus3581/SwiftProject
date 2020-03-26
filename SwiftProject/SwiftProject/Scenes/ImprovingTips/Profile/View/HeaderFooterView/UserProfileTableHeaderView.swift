@@ -10,11 +10,15 @@ import UIKit
 
 class UserProfileTableHeaderView: UIView {
     
-    let nameLabel: UILabel?
-    let ctaView: UserProfileCTAView?
-    let coverImageView: UIImageView?
-    let backView: UIView?
-    
+    weak var nameLabel: UILabel!
+    weak var ctaView: UserProfileCTAView!
+    weak var coverImageView: UIImageView!
+    weak var backView: UIView!
+
+    static let height: CGFloat = 300
+    static let bottom: CGFloat = 15
+    static let cornerRadius: CGFloat = 8
+
     override init(frame: CGRect) {
         
         let nameLabel = UILabel()
@@ -25,23 +29,24 @@ class UserProfileTableHeaderView: UIView {
         
         let coverImageView: UIImageView = UIImageView()
         self.coverImageView = coverImageView
+
         let ctaView = UserProfileCTAView()
         self.ctaView = ctaView
         
         super.init(frame: frame)
         
         self.backgroundColor = UIColor.white
-        self.addSubview(coverImageView)
+
         self.addSubview(backView)
-        
         backView.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
-            $0.bottom.equalToSuperview().offset(-45)
+            $0.bottom.equalToSuperview().offset(-(UserProfileCTAView.height/2.0+UserProfileTableHeaderView.bottom))
         }
-        
+
+        self.addSubview(coverImageView)
         coverImageView.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
-            $0.bottom.equalToSuperview().offset(-45)
+            $0.bottom.equalToSuperview().offset(-(UserProfileCTAView.height/2.0+UserProfileTableHeaderView.bottom))
         }
         
         coverImageView.image = UIImage(named: "cactus_explicit")
@@ -51,13 +56,12 @@ class UserProfileTableHeaderView: UIView {
         
         self.addSubview(ctaView)
         ctaView.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(15)
-            $0.trailing.equalToSuperview().offset(-15)
-            $0.height.equalTo(60)
-            $0.centerY.equalTo(self.backView!.snp_bottom)
+            $0.leading.equalToSuperview().offset(UserProfileTableHeaderView.bottom)
+            $0.trailing.equalToSuperview().offset(-UserProfileTableHeaderView.bottom)
+            $0.height.equalTo(UserProfileCTAView.height)
+            $0.centerY.equalTo(self.backView.snp_bottom)
         }
-        
-        ctaView.layer.cornerRadius = 8
+        ctaView.layer.cornerRadius = UserProfileTableHeaderView.cornerRadius
         
         self.addSubview(nameLabel)
         nameLabel.snp.makeConstraints {
@@ -71,7 +75,7 @@ class UserProfileTableHeaderView: UIView {
     
     var viewModel: UserProfileViewModel? {
         didSet {
-            nameLabel?.text = viewModel?.model?.info?.name
+            nameLabel?.text = viewModel?.model?.userInfo?.userName
             self.ctaView?.ctaList = viewModel?.ctaList
         }
     }
@@ -79,6 +83,4 @@ class UserProfileTableHeaderView: UIView {
     @objc func click(){
         self.viewModel?.headerClick()
     }
-    
-    
 }

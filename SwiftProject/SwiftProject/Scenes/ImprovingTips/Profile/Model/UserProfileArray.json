@@ -1,0 +1,142 @@
+{
+    "userInfo": {
+        "userName": "Cactus",
+        "gender": "",
+        "city": "北京",
+        "isFriend": true,
+        "isResign": false,
+        "tenantName": "字节跳动",
+        "isNotDisturb": false,
+        "workStatus": {
+            "status": 0,
+            "description1": "描述",
+            "startTime": "2020",
+            "endTime": "2020"
+        },
+        "isAdmin": true
+    },
+    "ctaInfo": [{
+            "type": "chat",
+            "data": {
+                "type": "1",
+                "key": "页眉",
+                "chatterId": "页眉",
+                "enable": true
+            }
+        },
+        {
+            "type": "phone",
+            "data": {
+                "type": "1",
+                "key": "页眉",
+                "chatterId": "页眉",
+                "enable": true
+            }
+        },
+        {
+            "type": "video",
+            "data": {
+                "type": "1",
+                "key": "页眉",
+                "chatterId": "页眉",
+                "enable": true
+            }
+        },
+        {
+            "type": "secretChat",
+            "data": {
+                "type": "1",
+                "key": "页眉",
+                "url": "www.baidu.com",
+                "enable": true
+            }
+        },
+        {
+            "type": "linkItems",
+            "data": {
+                "type": "1",
+                "key": "我是链接",
+                "url": "www.baidu.com",
+                "enable": true
+            }
+        }
+    ],
+
+    "profileInfo": [{
+            "type": "userStatus",
+            "data": {
+                "state": "页眉",
+                "statusInfo": "页眉",
+                "type": "1",
+                "key": "页眉"
+            }
+        },
+        {
+            "type": "phone",
+            "data": {
+                "state": "页眉",
+                "number": "页眉",
+                "type": "1",
+                "key": "页眉"
+            }
+        },
+        {
+            "type": "alias",
+            "data": {
+                "alias": "页眉",
+                "type": "1",
+                "key": "页眉"
+            }
+        },
+        {
+            "type": "departments",
+            "data": {
+                "departments": [{
+                        "id": "页眉",
+                        "departments": [{
+                                "id": "页眉",
+                                "name": "页眉"
+                            },
+                            {
+                                "id": "页眉",
+                                "name": "页眉"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "页眉",
+                        "departments": [{
+                                "id": "页眉",
+                                "name": "页眉"
+                            },
+                            {
+                                "id": "页眉",
+                                "name": "页眉"
+                            }
+                        ]
+                    }
+                ],
+                "type": "1",
+                "key": "页眉"
+            }
+        },
+        {
+            "type": "textItems",
+            "data": {
+                "value": "页眉",
+                "type": "1",
+                "key": "页眉"
+            }
+        },
+        {
+            "type": "linkItems",
+            "data": {
+                "linkTitle": "页眉",
+                "url": "www.baidu.com",
+                "type": "1",
+                "key": "页眉"
+            }
+        }
+    ]
+
+}

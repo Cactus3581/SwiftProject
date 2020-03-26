@@ -43,7 +43,7 @@ class ListViewController: BaseViewController, UITableViewDelegate {
 
             viewModel?.configTableviewCell({ tableView, indexPath in
                 let cell = ListTableViewCell.cellWithTableView(tableView,indexPath:indexPath)
-                cell.setModel((viewModel?.data?[indexPath.row])!, indexPath: indexPath as NSIndexPath)
+                cell.setModel((viewModel?.data?[indexPath.row])!, indexPath: indexPath as IndexPath)
                 return cell
             })
             _viewModel = viewModel

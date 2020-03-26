@@ -38,7 +38,7 @@ class UserProfileSectionFooterView: UITableViewHeaderFooterView,UserProfileSecti
     
     var sessionViewModel: UserProfileSessionViewModelProtocol? {
         didSet {
-            guard let sectionViewModel = self.sessionViewModel as? UserProfileDepartmentSessionViewModelProtocol else {
+            guard let sectionViewModel = self.sessionViewModel as? UserProfileDepartmentSessionViewModel else {
                 return
             }
             button?.setTitle(sectionViewModel.footerText, for: .normal)
@@ -46,7 +46,7 @@ class UserProfileSectionFooterView: UITableViewHeaderFooterView,UserProfileSecti
     }
     
     @objc func footerClick() {
-        guard let sectionViewModel1 = self.sessionViewModel as? UserProfileDepartmentSessionViewModelProtocol else {
+        guard let sectionViewModel1 = self.sessionViewModel as? UserProfileDepartmentSessionViewModel else {
             return
         }
         

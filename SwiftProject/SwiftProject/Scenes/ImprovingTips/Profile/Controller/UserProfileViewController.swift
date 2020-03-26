@@ -8,105 +8,47 @@
 
 import UIKit
 
-
 class UserProfileViewController: BaseViewController, UITableViewDelegate {
     
-    fileprivate var viewModel: UserProfileViewModel?
 
-    var naviBackView: UIView?
-    var titleLabel: UILabel?
-    var backButton: UIButton?
-    var tableView: UITableView?
-    var headerView: UserProfileTableHeaderView?
-    var ctaView: UserProfileCTAView?
+    weak var naviBackView: UIView!
+    weak var titleLabel: UILabel!
+    weak var backButton: UIButton!
+    weak var threePointButton: UIButton!
+    weak var tableView: UITableView!
+    weak var headerView: UserProfileTableHeaderView!
+    weak var ctaView: UserProfileCTAView?
+
     static var isRemoving: Bool = false
-    
+
+    fileprivate var viewModel: UserProfileViewModel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // 注册 sessionViewModel
-        UserProfileAssembly.register()
-        // 创建 ViewModel
-        self.viewModel = UserProfileViewModel()
-        // 创建 tableView
+        registerTableViewSessionViewModel()
         initializeViews()
+        initializeViewModel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
-    
-    func initializeViews() {
-        
-        self.tableView = UITableView(frame: CGRect.zero, style: .grouped)
-        self.tableView?.contentInsetAdjustmentBehavior = .never
-        view.addSubview(tableView!)
-        
-        tableView?.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
-        
-        tableView?.backgroundColor = UIColor.white
-        tableView?.separatorStyle = .none
-        tableView?.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        
-        tableView?.register(UserProfileSectionHeaderView.self, forHeaderFooterViewReuseIdentifier: UserProfileSectionHeaderView.identifier)
-        tableView?.register(UserProfileSectionFooterView.self, forHeaderFooterViewReuseIdentifier: UserProfileSectionFooterView.identifier)
-        tableView?.register(UserProfileCommonTableViewCell.self, forCellReuseIdentifier: UserProfileCommonTableViewCell.identifier)
-        tableView?.register(UserProfilePhoneTableViewCell.self, forCellReuseIdentifier: UserProfilePhoneTableViewCell.identifier)
-        tableView?.register(UserProfileMultiDepartmentTableViewCell.self, forCellReuseIdentifier: UserProfileMultiDepartmentTableViewCell.identifier)
-        
-        let headerView =  UserProfileTableHeaderView.init(frame: CGRect(x: 0, y: 0, width: tableView?.bounds.width ?? 0, height: 300))
-        self.headerView = headerView
-        tableView?.tableHeaderView = headerView
-        
-        tableView?.estimatedRowHeight = 50
-        tableView?.estimatedSectionHeaderHeight = 50
-        tableView?.estimatedSectionFooterHeight = 50
-        
-        tableView?.dataSource = viewModel
-        tableView?.delegate = self
-        
-        self.naviBackView = UIView()
-        self.naviBackView?.backgroundColor = UIColor.white;
-        naviBackView?.alpha = 0
-        view.addSubview(self.naviBackView!)
-        self.naviBackView?.snp.makeConstraints { (make) in
-            make.top.leading.trailing.equalToSuperview()
-            make.height.equalTo(88)
-        }
-        
-        self.titleLabel = UILabel()
-        titleLabel?.text = "mary"
-        titleLabel?.textColor = UIColor.darkText;
-        naviBackView!.addSubview(titleLabel!)
-        titleLabel?.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-15)
-        }
-        self.backButton = UIButton()
-        self.backButton?.addTarget(self, action: #selector(backAction), for: .touchUpInside)
-        backButton?.setImage(UIImage(named: "player_back"), for: .normal)
-        self.view!.addSubview(backButton!)
-        backButton?.snp.makeConstraints { (make) in
-            make.leading.equalToSuperview().offset(15)
-            make.bottom.equalTo(titleLabel!)
-        }
-        
-        viewModel?.requestData(result: {[weak self] () -> Void in
+
+    // 注册 sessionViewModel
+    func registerTableViewSessionViewModel() {
+        UserProfileAssembly.register()
+    }
+
+    // 创建 ViewModel
+    func initializeViewModel() {
+        self.viewModel = UserProfileViewModel()
+        tableView.dataSource = viewModel
+        viewModel.configTableviewCell(config: { [weak self] (tableView, indexPath) -> (UITableViewCell) in
             guard let `self` = self else {
-                return
-            }
-            headerView.viewModel = self.viewModel
-            self.tableView?.reloadData()
-        })
-        
-        viewModel?.configTableviewCell(config: { (tableView, indexPath) -> (UITableViewCell) in
-            guard let viewModel = self.viewModel else {
                 return UITableViewCell()
             }
-            
-            let sectionViewModel: UserProfileSessionViewModelProtocol = viewModel.array[indexPath.section]
+            let sectionViewModel: UserProfileSessionViewModelProtocol = self.viewModel.array[indexPath.section]
             let cellViewModel = sectionViewModel.list?[indexPath.row]
             if var cell = tableView.dequeueReusableCell(withIdentifier: sectionViewModel.identifier , for: indexPath as IndexPath) as? UserProfileTableViewCellProtocol {
                 cell.cellViewModel = cellViewModel!
@@ -116,26 +58,125 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
                 return UITableViewCell()
             }
         })
-        
+
+        viewModel.requestData(result: {[weak self] () -> Void in
+            guard let `self` = self else {
+                return
+            }
+            self.headerView.viewModel = self.viewModel
+            self.tableView.reloadData()
+        })
+
         //MARK:事件
-        self.viewModel?.reloadCellHandler = { indexPath in
-            self.tableView?.reloadRows(at: [(indexPath as IndexPath)], with: .fade)
+        self.viewModel.reloadCellHandler = { indexPath in
+            self.tableView.reloadRows(at: [(indexPath as IndexPath)], with: .fade)
+        }
+
+        self.viewModel.reloadSectionHandler = { section in
+            self.tableView.reloadSections([section], with: .fade)
+        }
+    }
+
+    // 向tableView注册views
+    func registerViews() {
+        tableView.register(UserProfileSectionHeaderView.self, forHeaderFooterViewReuseIdentifier: UserProfileSectionHeaderView.identifier)
+        tableView.register(UserProfileSectionFooterView.self, forHeaderFooterViewReuseIdentifier: UserProfileSectionFooterView.identifier)
+        tableView.register(UserProfileTextTableViewCell.self, forCellReuseIdentifier: UserProfileTextTableViewCell.identifier)
+        tableView.register(UserProfilePhoneTableViewCell.self, forCellReuseIdentifier: UserProfilePhoneTableViewCell.identifier)
+        tableView.register(UserProfileMultiDepartmentTableViewCell.self, forCellReuseIdentifier: UserProfileMultiDepartmentTableViewCell.identifier)
+    }
+
+
+    func initializeViews() {
+        
+        let tableView = UITableView(frame: CGRect.zero, style: .grouped)
+        self.tableView = tableView
+        tableView.contentInsetAdjustmentBehavior = .never
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
         }
         
-        self.viewModel?.reloadSectionHandler = { section in
-            self.tableView?.reloadSections([section], with: .fade)
+        tableView.backgroundColor = UIColor.white
+        tableView.separatorStyle = .none
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
+        tableView.estimatedRowHeight = 50
+        tableView.estimatedSectionHeaderHeight = 50
+        tableView.estimatedSectionFooterHeight = 50
+
+        let headerView =  UserProfileTableHeaderView.init(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: UserProfileTableHeaderView.height))
+        self.headerView = headerView
+        tableView.tableHeaderView = headerView
+
+        tableView.delegate = self
+        
+        let naviBackView = UIView()
+        self.naviBackView = naviBackView
+        view.addSubview(naviBackView)
+        naviBackView.snp.makeConstraints { (make) in
+            make.top.leading.trailing.equalToSuperview()
+            make.height.equalTo(88)
         }
+        naviBackView.alpha = 0
+        naviBackView.backgroundColor = UIColor.white;
+
+        
+        let titleLabel = UILabel()
+        self.titleLabel = titleLabel
+        naviBackView.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-15)
+        }
+        titleLabel.text = "mary"
+        titleLabel.textColor = UIColor.darkText;
+
+        let backButton = UIButton()
+        self.backButton = backButton
+        self.view!.addSubview(backButton)
+        backButton.snp.makeConstraints { (make) in
+            make.leading.equalToSuperview().offset(15)
+            make.bottom.equalTo(titleLabel)
+        }
+        backButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+        backButton.setImage(UIImage(named: "player_back"), for: .normal)
+
+//        if self.viewModel.isShowThreePoints {
+            let threePointButton = UIButton()
+            self.threePointButton = threePointButton
+            self.view!.addSubview(threePointButton)
+            threePointButton.snp.makeConstraints { (make) in
+                make.trailing.equalToSuperview().offset(-15)
+                make.bottom.equalTo(titleLabel)
+            }
+            threePointButton.addTarget(self, action: #selector(showSheet), for: .touchUpInside)
+            threePointButton.setImage(UIImage(named: "player_back"), for: .normal)
+//        }
+        registerViews()
     }
     
     @objc func backAction() {
         self.navigationController?.popViewController(animated: true)
     }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let viewModel = viewModel else {
-            return nil
+
+    @objc func showSheet() {
+        let alert = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
+        for viewModel in self.viewModel.threePointsList {
+            let action = UIAlertAction(title: viewModel.title, style: .default, handler: {
+                action in
+                viewModel.didClickSheet()
+            })
+            alert.addAction(action)
         }
-        
+
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    //MARK:UITableViewDelagate
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sessionViewModel = viewModel.array[section]
         guard let identifier = sessionViewModel.headerIdentifier else {
             return nil
@@ -149,9 +190,6 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        guard let viewModel = viewModel else {
-            return nil
-        }
         let sessionViewModel = viewModel.array[section]
         guard let identifier = sessionViewModel.footerIdentifier else {
             return nil
@@ -172,9 +210,9 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
         }
 
         let sectionViewModel: UserProfileSessionViewModelProtocol = viewModel.array[indexPath.section]
-        let cellViewModel = sectionViewModel.list?[indexPath.row] as? UserProfileCellViewModelProtocol
+        let cellViewModel = sectionViewModel.list?[indexPath.row]
         if let cellViewModel = cellViewModel {
-            sectionViewModel.didSelectCellViewModel(cellViewModel: cellViewModel, indexPath: indexPath as NSIndexPath)
+            sectionViewModel.didSelectCellViewModel(cellViewModel: cellViewModel, indexPath: indexPath as IndexPath)
         }
     }
     
@@ -185,17 +223,16 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
     //MARK:导航栏动画
     func catViewAnimation(_ scrollView: UIScrollView) {
         
-        let bottom = 15 as CGFloat
         let offsetY = scrollView.contentOffset.y
+        let time = 0.25
         
-        let imageHeight = self.headerView!.bounds.size.height - self.headerView!.ctaView!.bounds.size.height/2.0 - bottom
-        let width = self.headerView!.frame.size.width;
-        print(offsetY)
-        
+        let imageHeight = UserProfileTableHeaderView.height - UserProfileCTAView.height/2.0 - UserProfileTableHeaderView.bottom
+        let width = self.tableView.frame.size.width;
+
         if (offsetY < 0) {
             let heightY = imageHeight + abs(offsetY) - 0;
             let f = heightY / imageHeight;
-            self.headerView!.coverImageView!.snp.remakeConstraints{
+            self.headerView.coverImageView.snp.remakeConstraints{
                 $0.top.equalToSuperview().offset(offsetY+0)
                 $0.leading.equalTo( -(width * f - width) / 2)
                 $0.width.equalTo(width * f)
@@ -203,20 +240,20 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
             }
         }
         
-        let height = (self.headerView!.bounds.size.height-self.headerView!.ctaView!.bounds.size.height-bottom - self.naviBackView!.bounds.size.height)as CGFloat
+        let height = (UserProfileTableHeaderView.height - UserProfileCTAView.height-UserProfileTableHeaderView.bottom - self.naviBackView.bounds.size.height) as CGFloat
         if (offsetY <= height) {
             let rate = offsetY / height
             naviBackView?.alpha = rate;
             if (offsetY <= height / 2.0) {
                 // 由白到透明,proportion:1->0
                 let proportion = 1 - min(1, (offsetY)/(height / 2.0));
-                backButton?.setImage(UIImage(named: "player_back"), for: .normal)
-                backButton?.alpha = proportion;
+                backButton.setImage(UIImage(named: "player_back"), for: .normal)
+                backButton.alpha = proportion;
             } else {
                 // 由透明到黑
                 let proportion = min(1, (offsetY - ((height / 2.0)))/(height / 2.0));
-                backButton?.setImage(UIImage(named: "icon_back"), for: .normal)
-                backButton?.alpha = proportion;
+                backButton.setImage(UIImage(named: "icon_back"), for: .normal)
+                backButton.alpha = proportion;
             }
         } else {
             naviBackView?.alpha = 1;
@@ -227,25 +264,25 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
                 return
             }
             if self.ctaView != nil {
-                self.headerView?.addSubview(self.ctaView!)
+                self.headerView.addSubview(self.ctaView!)
                 self.ctaView = nil
-                self.headerView?.ctaView?.layer.cornerRadius = 8
-                self.headerView?.ctaView?.snp.remakeConstraints {
+                self.headerView.ctaView.layer.cornerRadius = UserProfileTableHeaderView.cornerRadius
+                self.headerView.ctaView.snp.remakeConstraints {
                     $0.leading.equalToSuperview().offset(0)
                     $0.trailing.equalToSuperview().offset(0)
-                    $0.height.equalTo(60)
-                    $0.bottom.equalToSuperview().offset(-15)
+                    $0.height.equalTo(UserProfileCTAView.height)
+                    $0.bottom.equalToSuperview().offset(-UserProfileTableHeaderView.bottom)
                 }
-                self.headerView?.ctaView?.setNeedsLayout()
-                self.headerView?.ctaView?.layoutIfNeeded()
-                self.headerView?.ctaView?.snp.updateConstraints {
-                    $0.leading.equalToSuperview().offset(15)
-                    $0.trailing.equalToSuperview().offset(-15)
+                self.headerView.ctaView.setNeedsLayout()
+                self.headerView.ctaView.layoutIfNeeded()
+                self.headerView.ctaView.snp.updateConstraints {
+                    $0.leading.equalToSuperview().offset(UserProfileTableHeaderView.bottom)
+                    $0.trailing.equalToSuperview().offset(-UserProfileTableHeaderView.bottom)
                 }
                 UserProfileViewController.isRemoving = true
-                UIView.animate(withDuration: 0.25, animations: {
-                    self.headerView?.ctaView?.setNeedsLayout()
-                    self.headerView?.ctaView?.layoutIfNeeded()
+                UIView.animate(withDuration: time, animations: {
+                    self.headerView.ctaView.setNeedsLayout()
+                    self.headerView.ctaView.layoutIfNeeded()
                 }) { (success) in
                     if success {
                         UserProfileViewController.isRemoving = false
@@ -255,12 +292,12 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
         } else {
             if offsetY > 0.0 {
                 if ctaView == nil  {
-                    self.ctaView = self.headerView?.ctaView
+                    self.ctaView = self.headerView.ctaView
                     self.view.addSubview(self.ctaView!)
                     self.ctaView?.snp.makeConstraints {
-                        $0.leading.equalToSuperview().offset(15)
-                        $0.trailing.equalToSuperview().offset(-15)
-                        $0.height.equalTo(60)
+                        $0.leading.equalToSuperview().offset(UserProfileTableHeaderView.bottom)
+                        $0.trailing.equalToSuperview().offset(-UserProfileTableHeaderView.bottom)
+                        $0.height.equalTo(UserProfileCTAView.height)
                         $0.top.equalTo(naviBackView!.snp_bottom)
                     }
                     self.ctaView?.setNeedsLayout()
@@ -270,7 +307,7 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
                         make.trailing.equalToSuperview().offset(0)
                     }
                     
-                    UIView.animate(withDuration: 0.25, animations: {
+                    UIView.animate(withDuration: time, animations: {
                         self.ctaView?.setNeedsLayout()
                         self.ctaView?.layoutIfNeeded()
                     }) { (success) in

@@ -13,7 +13,7 @@ class UserProfilePhoneTableViewCell: UITableViewCell, UserProfileTableViewCellPr
     let phoneLabel: UILabel?
     let showButton: UIButton?
     let lineView: UIView?
-    var indexPath: NSIndexPath?
+    var indexPath: IndexPath?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -70,12 +70,14 @@ class UserProfilePhoneTableViewCell: UITableViewCell, UserProfileTableViewCellPr
             guard let cellViewModel = cellViewModel as? UserProfilePhoneCellViewModel else {
                 return
             }
-            phoneLabel?.text = cellViewModel.model?.phone
-            if let isShow = cellViewModel.model?.isShow {
+            phoneLabel?.text = cellViewModel.model?.number
+            if let isShow = cellViewModel.isShow {
                 if isShow {
                     showButton?.setTitle("显示", for: .normal)
+                    phoneLabel?.text = cellViewModel.model?.number
                 } else {
                     showButton?.setTitle("隐藏", for: .normal)
+                    phoneLabel?.text = cellViewModel.model?.number
                 }
             }
         }
@@ -97,11 +99,13 @@ class UserProfilePhoneTableViewCell: UITableViewCell, UserProfileTableViewCellPr
                 guard let cellViewModel = cellViewModel as? UserProfilePhoneCellViewModel else {
                     return
                 }
-                if let isShow = cellViewModel.model?.isShow {
+                if let isShow = cellViewModel.isShow {
                     if isShow {
                         showButton?.setTitle("显示", for: .normal)
+                        phoneLabel?.text = cellViewModel.model?.number
                     } else {
                         showButton?.setTitle("隐藏", for: .normal)
+                        phoneLabel?.text = cellViewModel.model?.number
                     }
                 }
             }

@@ -13,13 +13,13 @@ protocol MVVMListSecCellViewModelProtocol {
     // 因为sessionVM已经确定了单个的scellVM的方式，所以：identifier可以由sessionVM提供，并且生成数据的方式不需要统一成一个接口
     init(itemData: Any)
     var identifier: String { get }
-    func didSelectCellViewModel(cellViewModel: UserProfileCellViewModelProtocol, indexPath: NSIndexPath)
+    func didSelectCellViewModel(cellViewModel: Any, indexPath: IndexPath)
 }
 
 extension MVVMListSecCellViewModelProtocol {
     init(itemData: Any) {self.init(itemData: itemData)}
     var identifier: String {return ""}
-    func didSelectCellViewModel(cellViewModel: UserProfileCellViewModelProtocol, indexPath: NSIndexPath){}
+    func didSelectCellViewModel(cellViewModel: Any, indexPath: IndexPath){}
 }
 
 //MARK:多种cellVM对应同一个cell，使用协议提供统一的接口来提供数据和事件

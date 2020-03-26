@@ -8,11 +8,11 @@
 
 import UIKit
 
-
-
 class UserProfileCTAView: UIView {
     
-    var stackView: UIStackView!
+    weak var stackView: UIStackView!
+    static let height: CGFloat = 60
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,20 +41,43 @@ class UserProfileCTAView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    var ctaList: Array<UserProfileCTAItemViewModel>? {
+    var ctaList: Array<UserProfileCTAItemViewModelProtocol>? {
         didSet {
             guard let ctaList = ctaList else {
                 return
             }
-            
             for itemViewModel in ctaList {
-                let view = UserProfileCTAItemView()
-                stackView.addArrangedSubview(view)
-                view.viewModel = itemViewModel
+                // 方案1: 使用工厂方法，这种略麻烦，也是依赖具体参数，还得注册，还得写工厂方法
+                if var view = UserProfileCTAViewFactory.viewWithType(type: itemViewModel.viewType) {
+                    stackView.addArrangedSubview(view as! UIView)
+                    view.viewModel = itemViewModel
+                }
+                
+                // 方案2: 使用类反射，也是依赖具体参数，而且该参数必须是view的类名
+//                if let viewClass = getCTAItemViewClassType(className: itemViewModel.viewType) {
+//                    let view = viewClass.init()
+//                    stackView.addArrangedSubview(view)
+//                    if var view = view as? UserProfileCTAItemViewProtocol {
+//                        view.viewModel = itemViewModel
+//                    }
+//                }
             }
         }
     }
-    
+
+    func getCTAItemViewClassType(className: String) -> UIView.Type? {
+        guard let nameSpace = Bundle.main.infoDictionary!["CFBundleExecutable"] as? String else {
+            print("获取命名空间失败")
+            return nil
+        }
+
+        guard let viewClass = NSClassFromString(nameSpace + "." + className) as? UIView.Type else {
+             return nil
+         }
+
+        return viewClass
+    }
+
     func setShadow(view: UIView, shadowColor: UIColor, opacity: Float, offset: CGSize,  shadowRadius: CGFloat) {
         //设置阴影颜色
         view.layer.shadowColor = shadowColor.cgColor
@@ -67,11 +90,30 @@ class UserProfileCTAView: UIView {
     }
 }
 
+protocol UserProfileCTAItemViewProtocol {
+    // 使用工厂方法创建的
+    static func canHandle(type: String) -> Bool
+    init()
+    var viewModel: UserProfileCTAItemViewModelProtocol? { set get }// 提供赋值方式
+}
 
-class UserProfileCTAItemView: UIView  {
+extension UserProfileCTAItemViewProtocol {
+    static func canHandle(type: String) -> Bool {return false}
+    init(){self.init()}
+    var viewModel: UserProfileCTAItemViewModelProtocol? { set{} get{return nil} }
+}
+
+class UserProfileCTAItemView: UIView, UserProfileCTAItemViewProtocol  {
     let coverImageView: UIImageView?
     let label: UILabel?
-    
+
+    static func canHandle(type: String) -> Bool {
+        if type == "phone" {
+            return true
+        }
+        return true
+    }
+
     override init(frame: CGRect) {
         let coverImageView: UIImageView = UIImageView()
         self.coverImageView = coverImageView
@@ -91,10 +133,11 @@ class UserProfileCTAItemView: UIView  {
         coverImageView.contentMode = .scaleAspectFill
         coverImageView.backgroundColor = UIColor.green
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(jump))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didClick))
         coverImageView.isUserInteractionEnabled = true
         coverImageView.addGestureRecognizer(tap)
-        
+
+
         self.addSubview(label)
         label.font = UIFont.systemFont(ofSize: 12)
         label.snp.makeConstraints{  (make) in
@@ -102,21 +145,22 @@ class UserProfileCTAItemView: UIView  {
             make.top.equalTo(coverImageView.snp_bottom)
         }
     }
-    
-    
-    
-    @objc func jump() {
-        self.viewModel?.jump()
+
+    @objc func didClick() {
+        self.viewModel?.didClick()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    var viewModel: UserProfileCTAItemViewModel? {
+
+    var viewModel: UserProfileCTAItemViewModelProtocol? {
         didSet {
-            self.label?.text = viewModel?.model?.title
-            self.coverImageView?.image = UIImage(named: viewModel?.model?.imageUrl ?? "") 
+            guard let viewModel = viewModel else {
+                return
+            }
+            self.label?.text = viewModel.title
+            self.coverImageView?.image = UIImage(named: viewModel.imageUrl ?? "")
         }
     }
 }

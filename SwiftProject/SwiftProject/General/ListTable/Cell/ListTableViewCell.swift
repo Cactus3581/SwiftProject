@@ -71,7 +71,7 @@ class ListTableViewCell: UITableViewCell {
         _detailLabel?.backgroundColor = UIColor.green
     }
 
-    func setModel(_ model: ListModel, indexPath: NSIndexPath) {
+    func setModel(_ model: ListModel, indexPath: IndexPath) {
 
         self.model = model
 

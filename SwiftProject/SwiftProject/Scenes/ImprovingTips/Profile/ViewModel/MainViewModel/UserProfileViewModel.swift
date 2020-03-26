@@ -12,24 +12,42 @@ class UserProfileViewModel: NSObject {
 
     var model: UserProfileModel?
     var array:Array<UserProfileSessionViewModelProtocol> = [UserProfileSessionViewModelProtocol]()
-    var ctaList:Array<UserProfileCTAItemViewModel> = [UserProfileCTAItemViewModel]()
+    var ctaList:Array<UserProfileCTAItemViewModelProtocol> = [UserProfileCTAItemViewModelProtocol]()
+    var threePointsList:Array<UserProfileThreePointsItemViewModelProtocol> = [UserProfileThreePointsItemViewModelProtocol]()
+    var isShowThreePoints: Bool = false
 
     typealias DataResultHandler = () -> ()
-    typealias TableviewCellConfig = (UITableView, NSIndexPath) -> (UITableViewCell)
-    typealias ReloadSectionHandler = (Int) -> Void
-    typealias ReloadCellHandler = (NSIndexPath) -> Void
 
-    var reloadSectionHandler: ReloadSectionHandler?
-    var reloadCellHandler: ReloadCellHandler?
+    typealias TableviewCellConfig = (UITableView, IndexPath) -> (UITableViewCell)
     var tableviewCellConfig: TableviewCellConfig?
+
+    typealias ReloadSectionHandler = (Int) -> Void
+    var reloadSectionHandler: ReloadSectionHandler?
+
+    typealias ReloadCellHandler = (IndexPath) -> Void
+    var reloadCellHandler: ReloadCellHandler?
 
     override init() {
         super.init()
     }
-
+    
     //MARK: 数据请求 + 工厂类初始化sessionViewModel + 将数据源array通过闭包抛给vc中的tableview去做刷新 + 监听事件
     func requestData(result: DataResultHandler?)  {
 
+        let reportItemModel = ProfileThreePointsInfo()
+        reportItemModel.title = "举报"
+        reportItemModel.type = "report"
+
+        let suggestItemModel = ProfileThreePointsInfo()
+        suggestItemModel.title = "建议"
+        suggestItemModel.type = "suggest"
+
+        let threePointsList: [ProfileThreePointsInfo] = [reportItemModel, suggestItemModel]
+        self.threePointsList =  UserProfileViewModelFactory.createThreePointsViewModel(list: threePointsList)
+        if self.threePointsList.count > 0 {
+            isShowThreePoints = true
+        }
+        
         let jsonName = "UserProfileDict"
 
         guard let data = getDataFromFile(jsonName), let json = jsonSerial(data) as? [String: Any] else  {
@@ -41,31 +59,36 @@ class UserProfileViewModel: NSObject {
         }
 
         self.model = model
-        if let data1 = UserProfileFactory.createSessionViewModelByDict(data: model) {
-            array = data1
-        }
+        self.array =  UserProfileViewModelFactory.createSessionViewModel(data: model)
+        self.ctaList =  UserProfileViewModelFactory.createCTAViewModel(data: model)
 
-        for ctaItemModel in model.ctaList ?? [] {
-            let viewModel = UserProfileCTAItemViewModel()
-            viewModel.model = ctaItemModel
-            ctaList.append(viewModel)
+        if let ctaInfo = model.ctaInfo, self.ctaList.count > 4 {
+            let moreViewModel = UserProfileCTAMoreViewModel.init(ctaInfo: ctaInfo)
+            let array = self.ctaList[3...]
+            moreViewModel.array = Array(array)
+            self.ctaList = Array(self.ctaList[...2])
+            self.ctaList.append(moreViewModel)
         }
 
         if let result = result {
             result()
-            observe()
+            observer()
         }
     }
 
-    //MARK: 有些事件需要依赖tableview，比如展开更多，所以需要监听list变化，然后将事件抛给 tableview 去做刷新
-    func observe() {
+    //MARK:有些事件需要依赖tableview，比如展开更多，所以需要监听list变化，然后将事件抛给 tableview 去做刷新
+    func observer() {
         for sessionViewModel in self.array {
             guard let observableObject = sessionViewModel as? NSObject else {
                 continue
             }
             //监听list的变化
             observableObject.addObserver(self, forKeyPath: "list", options: [.new], context:nil)
-            for cellViewModel in sessionViewModel.list ?? [] {
+
+            guard let list = sessionViewModel.list else {
+                continue
+            }
+            for cellViewModel in list {
                 guard let cellObject = cellViewModel as? NSObject else {
                     continue
                 }
@@ -78,23 +101,17 @@ class UserProfileViewModel: NSObject {
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "list" {
-            let obj = object as? UserProfileDepartmentSessionViewModel
-            if let obj1 = obj, let section = obj1.section {
-                let sec1 = section as? Int
-                if let sec2 = sec1 {
-                    if let reloadSectionHandler1 = self.reloadSectionHandler {
-                        reloadSectionHandler1(section)
-                    }
+            let sessionViewModel = object as? UserProfileDepartmentSessionViewModel
+            if let sessionViewModel = sessionViewModel, let section = sessionViewModel.section {
+                if let reloadSectionHandler = self.reloadSectionHandler {
+                    reloadSectionHandler(section)
                 }
             }
         } else if keyPath == "model.isShow" {
-            let obj = object as? UserProfilePhoneCellViewModel
-            if let obj1 = obj, let indexPath = obj1.indexPath {
-                let indexPath1 = indexPath as? NSIndexPath
-                if let indexPath2 = indexPath1 {
-                    if let reloadCellHandler1 = self.reloadCellHandler {
-                        reloadCellHandler1(indexPath2)
-                    }
+            let cellViewModel = object as? UserProfilePhoneCellViewModel
+            if let cellViewModel = cellViewModel, let indexPath = cellViewModel.indexPath {
+                if let reloadCellHandler = self.reloadCellHandler {
+                    reloadCellHandler(indexPath)
                 }
             }
         }
@@ -136,7 +153,7 @@ extension UserProfileViewModel: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let config = self.tableviewCellConfig {
-            return config(tableView, indexPath as NSIndexPath)
+            return config(tableView, indexPath)
         }
         return UITableViewCell()
     }

@@ -15,13 +15,11 @@ protocol UserProfileSessionViewModelProtocol {
     var headerIdentifier: String? { get }
     var footerIdentifier: String? { get }
     var identifier: String { get }
-    var cellClassStr: String { get } // 用来注册
-    var headerViewClassStr: String { get } // 用来注册
-    var footerViewClassStr: String { get } // 用来注册
-    var viewHeight: CGFloat { get } // 高度
     var list: Array<Any>? { set get }
+    func didSelectCellViewModel(cellViewModel: Any, indexPath: IndexPath)
+
+    var viewHeight: CGFloat? { get } // 高度
     var headerText: String? { get }
-    func didSelectCellViewModel(cellViewModel: UserProfileCellViewModelProtocol, indexPath: NSIndexPath)
 }
 
 extension UserProfileSessionViewModelProtocol {
@@ -29,17 +27,14 @@ extension UserProfileSessionViewModelProtocol {
     init(dictData: UserProfileModel) {self.init(dictData: dictData)}
     var headerIdentifier: String? {return nil}
     var footerIdentifier: String? {return nil}
-    var identifier: String {return ""}
-    var cellClassStr: String {return ""} // 用来注册
-    var headerViewClassStr: String { return "" } // 用来注册
-    var footerViewClassStr: String { return "" } // 用来注册
-    var viewHeight: CGFloat { return 0 } // 高度
     var list: Array<Any>? { set{} get{return nil} }
-    var headerText: String? {return ""}
-    func didSelectCellViewModel(cellViewModel: UserProfileCellViewModelProtocol, indexPath: NSIndexPath){}
+
+    var viewHeight: CGFloat? { return 60 }
+    var headerText: String? {return nil}
+    func didSelectCellViewModel(cellViewModel: Any, indexPath: IndexPath){}
 }
 
-class UserProfileCommonSessionViewModel: NSObject, UserProfileSessionViewModelProtocol {
+class UserProfileTextSessionViewModel: NSObject, UserProfileSessionViewModelProtocol {
     
     var list: Array<Any>?
     var headerText: String?
@@ -56,15 +51,15 @@ class UserProfileCommonSessionViewModel: NSObject, UserProfileSessionViewModelPr
     
     required init(dictData: UserProfileModel) {
         super.init()
-        let cellViewModel = UserProfileCommonCellViewModel()
+        let cellViewModel = UserProfileTextCellViewModel()
         
-        if UserProfileCommonSessionViewModel.type == "job" {
-            self.headerText = "职位"
-            cellViewModel.model = dictData.job
-        } else if UserProfileCommonSessionViewModel.type == "personalStatus" {
-            self.headerText = "状态"
-            cellViewModel.model = dictData.personalStatus
-        }
+//        if UserProfileCommonSessionViewModel.type == "job" {
+//            self.headerText = "职位"
+//            cellViewModel.model = dictData.job
+//        } else if UserProfileCommonSessionViewModel.type == "personalStatus" {
+//            self.headerText = "状态"
+//            cellViewModel.model = dictData.personalStatus
+//        }
         
         self.list = [cellViewModel]
     }
@@ -74,7 +69,7 @@ class UserProfileCommonSessionViewModel: NSObject, UserProfileSessionViewModelPr
     }
     
     var identifier: String {
-        return UserProfileCommonTableViewCell.identifier
+        return UserProfileTextTableViewCell.identifier
     }
 }
 
@@ -94,9 +89,9 @@ class UserProfilePhoneSessionViewModel: NSObject, UserProfileSessionViewModelPro
     required init(dictData: UserProfileModel) {
         super.init()
         let cellViewModel = UserProfilePhoneCellViewModel()
-        cellViewModel.model = dictData.phone
+        cellViewModel.model = dictData.profileInfo?.phone
         self.list = [cellViewModel]
-        self.headerText = "手机号"
+        self.headerText = dictData.profileInfo?.phone?.key
     }
     
     var headerIdentifier: String? {
@@ -108,19 +103,7 @@ class UserProfilePhoneSessionViewModel: NSObject, UserProfileSessionViewModelPro
     }
 }
 
-protocol UserProfileDepartmentSessionViewModelProtocol: UserProfileSessionViewModelProtocol {
-    var footerText: String? { get }
-    var isExpand: Bool? { get }
-    func reloadData(section: Int)
-}
-
-extension UserProfileDepartmentSessionViewModelProtocol {
-    var footerText: String? {return nil}
-    func reloadData(section: Int) {}
-    var isExpand: Bool? { return false }
-}
-
-class UserProfileDepartmentSessionViewModel: NSObject, UserProfileDepartmentSessionViewModelProtocol {
+class UserProfileDepartmentSessionViewModel: NSObject, UserProfileSessionViewModelProtocol {
     
     @objc dynamic var list: Array<Any>?
     var headerText: String?
@@ -128,9 +111,9 @@ class UserProfileDepartmentSessionViewModel: NSObject, UserProfileDepartmentSess
     var isExpand: Bool = false
     var allList: Array<Any> = [Any]()
     var section: Int?
-    
+
     static func canHandle(type: String) -> Bool {
-        if type == "department" {
+        if type == "departments" {
             return true
         }
         return false
@@ -138,9 +121,23 @@ class UserProfileDepartmentSessionViewModel: NSObject, UserProfileDepartmentSess
     
     required init(dictData: UserProfileModel) {
         super.init()
-        for speakItemModel in dictData.department ?? Array() {
+        for department in dictData.profileInfo?.departments?.departments ?? Array() {
             let cellViewModel = UserProfileDepartmentCellViewModel()
-            cellViewModel.model = speakItemModel
+            var name: String = ""
+            for meta in department.departments ?? [] {
+                if name.count > 0 {
+                    if let name1  = meta.name {
+                        name =  name + " - " +  name1
+                    }
+                } else {
+                    if let name1  = meta.name {
+                        name = name1
+                    }
+                }
+            }
+
+            department.path = name
+            cellViewModel.model = department
             allList.append(cellViewModel)
         }
         
@@ -173,7 +170,7 @@ class UserProfileDepartmentSessionViewModel: NSObject, UserProfileDepartmentSess
         if isMuilt() {
             return UserProfileMultiDepartmentTableViewCell.identifier
         }
-        return UserProfileCommonTableViewCell.identifier
+        return UserProfileTextTableViewCell.identifier
     }
     
     func reloadData (section: Int) {

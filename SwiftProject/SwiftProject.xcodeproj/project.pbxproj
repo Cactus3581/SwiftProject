@@ -21,7 +21,7 @@
 		01026748242379B900CA6D00 /* UserProfileTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026735242379B900CA6D00 /* UserProfileTableHeaderView.swift */; };
 		01026749242379B900CA6D00 /* UserProfileCTAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026736242379B900CA6D00 /* UserProfileCTAView.swift */; };
 		0102674A242379B900CA6D00 /* UserProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026738242379B900CA6D00 /* UserProfileAssembly.swift */; };
-		0102674B242379B900CA6D00 /* UserProfileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026739242379B900CA6D00 /* UserProfileFactory.swift */; };
+		0102674B242379B900CA6D00 /* UserProfileViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026739242379B900CA6D00 /* UserProfileViewModelFactory.swift */; };
 		0102674D24237B5600CA6D00 /* ImprovingTipCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0102674C24237B5600CA6D00 /* ImprovingTipCatalog.plist */; };
 		0102674F24237B6A00CA6D00 /* FeatureCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0102674E24237B6A00CA6D00 /* FeatureCatalog.plist */; };
 		010442B423B4E1C100B1BF54 /* OptionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010442B323B4E1C100B1BF54 /* OptionalViewController.swift */; };
@@ -53,7 +53,7 @@
 		013D09F823BE281A0050F15A /* FunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D09F723BE281A0050F15A /* FunctionViewController.swift */; };
 		014C81E62424F6CC007129AD /* UserProfilePhoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014C81E52424F6CC007129AD /* UserProfilePhoneTableViewCell.swift */; };
 		0156813023BE28F100B42FB9 /* ProtocolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156812F23BE28F100B42FB9 /* ProtocolViewController.swift */; };
-		015846FE24239FA700B7BEBE /* UserProfileCommonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015846FD24239FA700B7BEBE /* UserProfileCommonTableViewCell.swift */; };
+		015846FE24239FA700B7BEBE /* UserProfileTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015846FD24239FA700B7BEBE /* UserProfileTextTableViewCell.swift */; };
 		015847002423A13000B7BEBE /* UserProfileSectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015846FF2423A13000B7BEBE /* UserProfileSectionFooterView.swift */; };
 		015E177C24275F7000351EA9 /* UserProfileTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E177B24275F7000351EA9 /* UserProfileTableViewDelegate.swift */; };
 		015E177E242763D200351EA9 /* UserProfileDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E177D242763D200351EA9 /* UserProfileDataHandler.swift */; };
@@ -72,6 +72,8 @@
 		0182B7D0241A86F00033BF0A /* MVVMListCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182B7CF241A86F00033BF0A /* MVVMListCourseTableViewCell.swift */; };
 		0182B7D2241A881E0033BF0A /* MVVMListSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182B7D1241A881E0033BF0A /* MVVMListSessionViewModel.swift */; };
 		0182B7D4241A882B0033BF0A /* MVVMListSecCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182B7D3241A882B0033BF0A /* MVVMListSecCellViewModel.swift */; };
+		0188AC7E242A3FA300BA7654 /* UserProfileThreePointsItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0188AC7D242A3FA300BA7654 /* UserProfileThreePointsItemViewModel.swift */; };
+		0188AC82242A4DCD00BA7654 /* UserProfileArray.json in Resources */ = {isa = PBXBuildFile; fileRef = 0188AC81242A4DCD00BA7654 /* UserProfileArray.json */; };
 		0192A6C0242270110015F9CD /* MVVMListSectionDict.json in Resources */ = {isa = PBXBuildFile; fileRef = 0192A6BF242270110015F9CD /* MVVMListSectionDict.json */; };
 		0192A6C22422703D0015F9CD /* MVVMListSectionArray.json in Resources */ = {isa = PBXBuildFile; fileRef = 0192A6C12422703D0015F9CD /* MVVMListSectionArray.json */; };
 		01937ECA2418FF91009BD6AD /* MVVMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01937EC92418FF91009BD6AD /* MVVMModel.swift */; };
@@ -88,6 +90,8 @@
 		0196CDE923D1888300112AB8 /* SnapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0196CDE723D1888300112AB8 /* SnapViewController.xib */; };
 		0196DCC323D1897500112AB8 /* SnapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0196DCC223D1897500112AB8 /* SnapView.swift */; };
 		0196DCC523D1898500112AB8 /* SnapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0196DCC423D1898500112AB8 /* SnapView.xib */; };
+		0197847B242B9AFE009EB2D4 /* UserProfileAliasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197847A242B9AFE009EB2D4 /* UserProfileAliasTableViewCell.swift */; };
+		0197847D242B9B31009EB2D4 /* UserProfileUserStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197847C242B9B31009EB2D4 /* UserProfileUserStatusTableViewCell.swift */; };
 		019BBDE023D3FB2C00061503 /* GCDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019BBDDF23D3FB2C00061503 /* GCDViewController.swift */; };
 		019FE1A223C0E99F00B241B1 /* FactoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FE1A123C0E99F00B241B1 /* FactoryViewController.swift */; };
 		019FE1A423C0E9B700B241B1 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FE1A323C0E9B700B241B1 /* Factory.swift */; };
@@ -96,6 +100,9 @@
 		01A3A40623BF5A3C003FEA19 /* MemorySafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A3A40523BF5A3C003FEA19 /* MemorySafeViewController.swift */; };
 		01A3A40923BF5A55003FEA19 /* AccessControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A3A40823BF5A55003FEA19 /* AccessControlViewController.swift */; };
 		01A3A40C23BF6218003FEA19 /* AdvancedOperatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A3A40B23BF6218003FEA19 /* AdvancedOperatorViewController.swift */; };
+		01A550BE2428649500472B6A /* UserProfileNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A550BD2428649500472B6A /* UserProfileNetWork.swift */; };
+		01A550C1242864C200472B6A /* UserProfileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A550C0242864C200472B6A /* UserProfileStorage.swift */; };
+		01A550C3242864EB00472B6A /* UserProfileTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A550C2242864EB00472B6A /* UserProfileTableViewDataSource.swift */; };
 		01ADB56823BE290F00EAB005 /* PropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADB56723BE290F00EAB005 /* PropertyViewController.swift */; };
 		01ADB56B23BE294300EAB005 /* InheritViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADB56A23BE294300EAB005 /* InheritViewController.swift */; };
 		01ADB56E23BE296700EAB005 /* ClassStructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADB56D23BE296700EAB005 /* ClassStructViewController.swift */; };
@@ -111,6 +118,7 @@
 		01D38A10241A770E00F6D74D /* MVVMListSecTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D38A05241A770E00F6D74D /* MVVMListSecTableViewCellProtocol.swift */; };
 		01D38A13241A770E00F6D74D /* MVVMLisSecFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D38A0A241A770E00F6D74D /* MVVMLisSecFactory.swift */; };
 		01D38A14241A770E00F6D74D /* MVVMListSecAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D38A0B241A770E00F6D74D /* MVVMListSecAssembly.swift */; };
+		01E058C62429E51B0073854E /* UserProfileLinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E058C52429E51B0073854E /* UserProfileLinkTableViewCell.swift */; };
 		01E15CC923BF583100A69E23 /* MethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CC823BF583100A69E23 /* MethodViewController.swift */; };
 		01E15CCC23BF58D800A69E23 /* SubscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CCB23BF58D800A69E23 /* SubscriptViewController.swift */; };
 		01E15CCF23BF58F300A69E23 /* InitializeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CCE23BF58F300A69E23 /* InitializeViewController.swift */; };
@@ -119,6 +127,7 @@
 		01E15CD823BF595200A69E23 /* ErrorhandlingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CD723BF595200A69E23 /* ErrorhandlingViewController.swift */; };
 		01E15CDB23BF59BB00A69E23 /* NestedTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CDA23BF59BB00A69E23 /* NestedTypeViewController.swift */; };
 		01E15CDE23BF59E400A69E23 /* OpaqueTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CDD23BF59E400A69E23 /* OpaqueTypeViewController.swift */; };
+		01E494E0242AE60D005ECD71 /* UserProfileCTAViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E494DF242AE60D005ECD71 /* UserProfileCTAViewFactory.swift */; };
 		01E9B3552420D9F000FF618D /* MVVMListSectionImageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E9B3542420D9F000FF618D /* MVVMListSectionImageHeaderView.swift */; };
 		01E9B3572420D9F800FF618D /* MVVMListSectionImageFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E9B3562420D9F800FF618D /* MVVMListSectionImageFooterView.swift */; };
 		01E9B3592420DE1A00FF618D /* MVVMListSectionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E9B3582420DE1A00FF618D /* MVVMListSectionViewProtocol.swift */; };
@@ -168,7 +177,7 @@
 		01026735242379B900CA6D00 /* UserProfileTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileTableHeaderView.swift; sourceTree = "<group>"; };
 		01026736242379B900CA6D00 /* UserProfileCTAView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileCTAView.swift; sourceTree = "<group>"; };
 		01026738242379B900CA6D00 /* UserProfileAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileAssembly.swift; sourceTree = "<group>"; };
-		01026739242379B900CA6D00 /* UserProfileFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileFactory.swift; sourceTree = "<group>"; };
+		01026739242379B900CA6D00 /* UserProfileViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewModelFactory.swift; sourceTree = "<group>"; };
 		0102674C24237B5600CA6D00 /* ImprovingTipCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ImprovingTipCatalog.plist; sourceTree = "<group>"; };
 		0102674E24237B6A00CA6D00 /* FeatureCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FeatureCatalog.plist; sourceTree = "<group>"; };
 		010442B323B4E1C100B1BF54 /* OptionalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalViewController.swift; sourceTree = "<group>"; };
@@ -210,7 +219,7 @@
 		013D09F723BE281A0050F15A /* FunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionViewController.swift; sourceTree = "<group>"; };
 		014C81E52424F6CC007129AD /* UserProfilePhoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePhoneTableViewCell.swift; sourceTree = "<group>"; };
 		0156812F23BE28F100B42FB9 /* ProtocolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolViewController.swift; sourceTree = "<group>"; tabWidth = 3; };
-		015846FD24239FA700B7BEBE /* UserProfileCommonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCommonTableViewCell.swift; sourceTree = "<group>"; };
+		015846FD24239FA700B7BEBE /* UserProfileTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTextTableViewCell.swift; sourceTree = "<group>"; };
 		015846FF2423A13000B7BEBE /* UserProfileSectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileSectionFooterView.swift; sourceTree = "<group>"; };
 		015E177B24275F7000351EA9 /* UserProfileTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewDelegate.swift; sourceTree = "<group>"; };
 		015E177D242763D200351EA9 /* UserProfileDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDataHandler.swift; sourceTree = "<group>"; };
@@ -229,6 +238,8 @@
 		0182B7CF241A86F00033BF0A /* MVVMListCourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMListCourseTableViewCell.swift; sourceTree = "<group>"; };
 		0182B7D1241A881E0033BF0A /* MVVMListSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSessionViewModel.swift; sourceTree = "<group>"; };
 		0182B7D3241A882B0033BF0A /* MVVMListSecCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSecCellViewModel.swift; sourceTree = "<group>"; };
+		0188AC7D242A3FA300BA7654 /* UserProfileThreePointsItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileThreePointsItemViewModel.swift; sourceTree = "<group>"; };
+		0188AC81242A4DCD00BA7654 /* UserProfileArray.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserProfileArray.json; sourceTree = "<group>"; };
 		0192A6BF242270110015F9CD /* MVVMListSectionDict.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MVVMListSectionDict.json; sourceTree = "<group>"; };
 		0192A6C12422703D0015F9CD /* MVVMListSectionArray.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MVVMListSectionArray.json; sourceTree = "<group>"; };
 		01937EC92418FF91009BD6AD /* MVVMModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMModel.swift; sourceTree = "<group>"; };
@@ -245,6 +256,8 @@
 		0196CDE723D1888300112AB8 /* SnapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SnapViewController.xib; sourceTree = "<group>"; };
 		0196DCC223D1897500112AB8 /* SnapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapView.swift; sourceTree = "<group>"; };
 		0196DCC423D1898500112AB8 /* SnapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SnapView.xib; sourceTree = "<group>"; };
+		0197847A242B9AFE009EB2D4 /* UserProfileAliasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileAliasTableViewCell.swift; sourceTree = "<group>"; };
+		0197847C242B9B31009EB2D4 /* UserProfileUserStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileUserStatusTableViewCell.swift; sourceTree = "<group>"; };
 		019BBDDF23D3FB2C00061503 /* GCDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDViewController.swift; sourceTree = "<group>"; };
 		019FE1A123C0E99F00B241B1 /* FactoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryViewController.swift; sourceTree = "<group>"; };
 		019FE1A323C0E9B700B241B1 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
@@ -253,6 +266,9 @@
 		01A3A40523BF5A3C003FEA19 /* MemorySafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorySafeViewController.swift; sourceTree = "<group>"; };
 		01A3A40823BF5A55003FEA19 /* AccessControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessControlViewController.swift; sourceTree = "<group>"; };
 		01A3A40B23BF6218003FEA19 /* AdvancedOperatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedOperatorViewController.swift; sourceTree = "<group>"; };
+		01A550BD2428649500472B6A /* UserProfileNetWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileNetWork.swift; sourceTree = "<group>"; };
+		01A550C0242864C200472B6A /* UserProfileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileStorage.swift; sourceTree = "<group>"; };
+		01A550C2242864EB00472B6A /* UserProfileTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewDataSource.swift; sourceTree = "<group>"; };
 		01ADB56723BE290F00EAB005 /* PropertyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyViewController.swift; sourceTree = "<group>"; };
 		01ADB56A23BE294300EAB005 /* InheritViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InheritViewController.swift; sourceTree = "<group>"; };
 		01ADB56D23BE296700EAB005 /* ClassStructViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassStructViewController.swift; sourceTree = "<group>"; };
@@ -267,6 +283,7 @@
 		01D38A05241A770E00F6D74D /* MVVMListSecTableViewCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMListSecTableViewCellProtocol.swift; sourceTree = "<group>"; };
 		01D38A0A241A770E00F6D74D /* MVVMLisSecFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMLisSecFactory.swift; sourceTree = "<group>"; };
 		01D38A0B241A770E00F6D74D /* MVVMListSecAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMListSecAssembly.swift; sourceTree = "<group>"; };
+		01E058C52429E51B0073854E /* UserProfileLinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileLinkTableViewCell.swift; sourceTree = "<group>"; };
 		01E15CC823BF583100A69E23 /* MethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodViewController.swift; sourceTree = "<group>"; };
 		01E15CCB23BF58D800A69E23 /* SubscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptViewController.swift; sourceTree = "<group>"; };
 		01E15CCE23BF58F300A69E23 /* InitializeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializeViewController.swift; sourceTree = "<group>"; };
@@ -275,6 +292,7 @@
 		01E15CD723BF595200A69E23 /* ErrorhandlingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorhandlingViewController.swift; sourceTree = "<group>"; };
 		01E15CDA23BF59BB00A69E23 /* NestedTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedTypeViewController.swift; sourceTree = "<group>"; };
 		01E15CDD23BF59E400A69E23 /* OpaqueTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpaqueTypeViewController.swift; sourceTree = "<group>"; };
+		01E494DF242AE60D005ECD71 /* UserProfileCTAViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCTAViewFactory.swift; sourceTree = "<group>"; };
 		01E9B3542420D9F000FF618D /* MVVMListSectionImageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSectionImageHeaderView.swift; sourceTree = "<group>"; };
 		01E9B3562420D9F800FF618D /* MVVMListSectionImageFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSectionImageFooterView.swift; sourceTree = "<group>"; };
 		01E9B3582420DE1A00FF618D /* MVVMListSectionViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSectionViewProtocol.swift; sourceTree = "<group>"; };
@@ -328,11 +346,11 @@
 		01026719242379B900CA6D00 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				0102671A242379B900CA6D00 /* ViewModel */,
 				01026723242379B900CA6D00 /* Controller */,
 				01026725242379B900CA6D00 /* Model */,
-				01026729242379B900CA6D00 /* Views */,
-				01026737242379B900CA6D00 /* Helper */,
+				0102671A242379B900CA6D00 /* ViewModel */,
+				01026729242379B900CA6D00 /* View */,
+				01026737242379B900CA6D00 /* Service */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -341,9 +359,10 @@
 			isa = PBXGroup;
 			children = (
 				0102671B242379B900CA6D00 /* MainViewModel */,
-				0102671D242379B900CA6D00 /* CTAViewModel */,
-				0102671F242379B900CA6D00 /* CellViewModel */,
 				01026721242379B900CA6D00 /* SessionViewModel */,
+				0102671F242379B900CA6D00 /* CellViewModel */,
+				0102671D242379B900CA6D00 /* CTAViewModel */,
+				0188AC7C242A3F7600BA7654 /* ThreePoints */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -384,6 +403,8 @@
 			isa = PBXGroup;
 			children = (
 				01026724242379B900CA6D00 /* UserProfileViewController.swift */,
+				015E177B24275F7000351EA9 /* UserProfileTableViewDelegate.swift */,
+				01A550C2242864EB00472B6A /* UserProfileTableViewDataSource.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -393,28 +414,32 @@
 			children = (
 				01026728242379B900CA6D00 /* UserProfileModel.swift */,
 				01026727242379B900CA6D00 /* UserProfileDict.json */,
+				0188AC81242A4DCD00BA7654 /* UserProfileArray.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		01026729242379B900CA6D00 /* Views */ = {
+		01026729242379B900CA6D00 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				015E177B24275F7000351EA9 /* UserProfileTableViewDelegate.swift */,
+				01E88D9A242B4193003D4313 /* CTAView */,
 				0102672A242379B900CA6D00 /* Cells */,
 				01026730242379B900CA6D00 /* SectionView */,
 				01026733242379B900CA6D00 /* HeaderFooterView */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		0102672A242379B900CA6D00 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				0102672F242379B900CA6D00 /* UserProfileTableViewCellProtocol.swift */,
-				015846FD24239FA700B7BEBE /* UserProfileCommonTableViewCell.swift */,
+				015846FD24239FA700B7BEBE /* UserProfileTextTableViewCell.swift */,
+				01E058C52429E51B0073854E /* UserProfileLinkTableViewCell.swift */,
 				0102672C242379B900CA6D00 /* UserProfileMultiDepartmentTableViewCell.swift */,
 				014C81E52424F6CC007129AD /* UserProfilePhoneTableViewCell.swift */,
+				0197847A242B9AFE009EB2D4 /* UserProfileAliasTableViewCell.swift */,
+				0197847C242B9B31009EB2D4 /* UserProfileUserStatusTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -433,18 +458,18 @@
 			isa = PBXGroup;
 			children = (
 				01026735242379B900CA6D00 /* UserProfileTableHeaderView.swift */,
-				01026736242379B900CA6D00 /* UserProfileCTAView.swift */,
 			);
 			path = HeaderFooterView;
 			sourceTree = "<group>";
 		};
-		01026737242379B900CA6D00 /* Helper */ = {
+		01026737242379B900CA6D00 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				01026738242379B900CA6D00 /* UserProfileAssembly.swift */,
-				01026739242379B900CA6D00 /* UserProfileFactory.swift */,
+				01A550BF242864A700472B6A /* Storage */,
+				01A550BC2428647F00472B6A /* NetWork */,
+				01A550BB2427CDB800472B6A /* FactoryForViewModel */,
 			);
-			path = Helper;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		010442B223B4E1A400B1BF54 /* Old */ = {
@@ -795,6 +820,14 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		0188AC7C242A3F7600BA7654 /* ThreePoints */ = {
+			isa = PBXGroup;
+			children = (
+				0188AC7D242A3FA300BA7654 /* UserProfileThreePointsItemViewModel.swift */,
+			);
+			path = ThreePoints;
+			sourceTree = "<group>";
+		};
 		01937ECD24190665009BD6AD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -924,6 +957,32 @@
 				01A3A40B23BF6218003FEA19 /* AdvancedOperatorViewController.swift */,
 			);
 			path = AdvancedOperator;
+			sourceTree = "<group>";
+		};
+		01A550BB2427CDB800472B6A /* FactoryForViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				01026738242379B900CA6D00 /* UserProfileAssembly.swift */,
+				01E494DF242AE60D005ECD71 /* UserProfileCTAViewFactory.swift */,
+				01026739242379B900CA6D00 /* UserProfileViewModelFactory.swift */,
+			);
+			path = FactoryForViewModel;
+			sourceTree = "<group>";
+		};
+		01A550BC2428647F00472B6A /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				01A550BD2428649500472B6A /* UserProfileNetWork.swift */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		01A550BF242864A700472B6A /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				01A550C0242864C200472B6A /* UserProfileStorage.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		01A9C6C623B1733E000349E2 /* Foundation */ = {
@@ -1185,6 +1244,14 @@
 				01A3A40223BF5A18003FEA19 /* ARCViewController.swift */,
 			);
 			path = ARC;
+			sourceTree = "<group>";
+		};
+		01E88D9A242B4193003D4313 /* CTAView */ = {
+			isa = PBXGroup;
+			children = (
+				01026736242379B900CA6D00 /* UserProfileCTAView.swift */,
+			);
+			path = CTAView;
 			sourceTree = "<group>";
 		};
 		01E9B35E242125AD00FF618D /* Listening */ = {
@@ -1559,6 +1626,7 @@
 				01EE3A202415288A008ECA89 /* SPSwiftViewController.xib in Resources */,
 				0196DCC523D1898500112AB8 /* SnapView.xib in Resources */,
 				0192A6C22422703D0015F9CD /* MVVMListSectionArray.json in Resources */,
+				0188AC82242A4DCD00BA7654 /* UserProfileArray.json in Resources */,
 				010D6A9E23A9FB4C00B84621 /* LaunchScreen.storyboard in Resources */,
 				010D6A9B23A9FB4C00B84621 /* Assets.xcassets in Resources */,
 				016FE6D823B5DD7800CE8784 /* statistics.py in Resources */,
@@ -1676,10 +1744,12 @@
 				01A3A40623BF5A3C003FEA19 /* MemorySafeViewController.swift in Sources */,
 				01EE3A1F2415288A008ECA89 /* SPSwiftViewController.swift in Sources */,
 				01C01BB423BDEA97008B2D9E /* ClosureViewController.swift in Sources */,
+				01A550C1242864C200472B6A /* UserProfileStorage.swift in Sources */,
 				0182B7C6241A79050033BF0A /* MVVMListSectionTextHeaderView.swift in Sources */,
 				01026745242379B900CA6D00 /* UserProfileSectionViewProtocol.swift in Sources */,
 				019FE1A623C0E9BF00B241B1 /* Produce.swift in Sources */,
 				0102673D242379B900CA6D00 /* UserProfileSessionViewModel.swift in Sources */,
+				0197847D242B9B31009EB2D4 /* UserProfileUserStatusTableViewCell.swift in Sources */,
 				01E15CC923BF583100A69E23 /* MethodViewController.swift in Sources */,
 				01D38A0C241A770E00F6D74D /* MVVMListSecViewModel.swift in Sources */,
 				019FE1A423C0E9B700B241B1 /* Factory.swift in Sources */,
@@ -1687,6 +1757,7 @@
 				01EA7C0723ABAAFD00712B20 /* RootTabBarController.swift in Sources */,
 				01A3A40923BF5A55003FEA19 /* AccessControlViewController.swift in Sources */,
 				01E15CDB23BF59BB00A69E23 /* NestedTypeViewController.swift in Sources */,
+				01E058C62429E51B0073854E /* UserProfileLinkTableViewCell.swift in Sources */,
 				010CD84623B0C61300AE57A9 /* TestViewController.swift in Sources */,
 				013D09F823BE281A0050F15A /* FunctionViewController.swift in Sources */,
 				0195230223B173D600AE491B /* BasicViewController.swift in Sources */,
@@ -1697,6 +1768,7 @@
 				0102673E242379B900CA6D00 /* UserProfileViewController.swift in Sources */,
 				0196CDE823D1888300112AB8 /* SnapViewController.swift in Sources */,
 				01026744242379B900CA6D00 /* UserProfileTableViewCellProtocol.swift in Sources */,
+				0197847B242B9AFE009EB2D4 /* UserProfileAliasTableViewCell.swift in Sources */,
 				0102674A242379B900CA6D00 /* UserProfileAssembly.swift in Sources */,
 				01B24E2C23BF33A500677023 /* GenericsViewController.swift in Sources */,
 				010D6ACB23A9FD8F00B84621 /* CarViewController.swift in Sources */,
@@ -1711,7 +1783,7 @@
 				0182B7C8241A792E0033BF0A /* MVVMListTableHeaderView.swift in Sources */,
 				016B8EF623C58A19007F6EC5 /* SwiftTipsViewController.swift in Sources */,
 				01D38A10241A770E00F6D74D /* MVVMListSecTableViewCellProtocol.swift in Sources */,
-				0102674B242379B900CA6D00 /* UserProfileFactory.swift in Sources */,
+				0102674B242379B900CA6D00 /* UserProfileViewModelFactory.swift in Sources */,
 				01937EE324192DEA009BD6AD /* MVVMListTableViewCellProtocol.swift in Sources */,
 				01E15CD523BF593300A69E23 /* OptionalChainViewController.swift in Sources */,
 				0182B7C4241A78F40033BF0A /* MVVMListSectionTextFooterView.swift in Sources */,
@@ -1725,7 +1797,7 @@
 				01EA7C0223ABA99700712B20 /* ListModel.swift in Sources */,
 				01A3A40323BF5A18003FEA19 /* ARCViewController.swift in Sources */,
 				011E9E9023BE28BE00BD0A17 /* ExtensionViewController.swift in Sources */,
-				015846FE24239FA700B7BEBE /* UserProfileCommonTableViewCell.swift in Sources */,
+				015846FE24239FA700B7BEBE /* UserProfileTextTableViewCell.swift in Sources */,
 				0182B7D4241A882B0033BF0A /* MVVMListSecCellViewModel.swift in Sources */,
 				0102673A242379B900CA6D00 /* UserProfileViewModel.swift in Sources */,
 				01026748242379B900CA6D00 /* UserProfileTableHeaderView.swift in Sources */,
@@ -1745,6 +1817,7 @@
 				010D6A9223A9FB4A00B84621 /* AppDelegate.swift in Sources */,
 				013C7D3523B8602D00804143 /* MVCModel.swift in Sources */,
 				01EE3A1C24152264008ECA89 /* SPSwift.swift in Sources */,
+				01A550BE2428649500472B6A /* UserProfileNetWork.swift in Sources */,
 				012E2EBB23C0EBE5008F6253 /* Produce1.swift in Sources */,
 				010D6AD523A9FDB500B84621 /* BPSubViewController.swift in Sources */,
 				01C01BB123BDE699008B2D9E /* EnumViewController.swift in Sources */,
@@ -1769,16 +1842,19 @@
 				010442B423B4E1C100B1BF54 /* OptionalViewController.swift in Sources */,
 				01026742242379B900CA6D00 /* UserProfileMultiDepartmentTableViewCell.swift in Sources */,
 				0182B7CE241A86C00033BF0A /* MVVMListImageTableViewCell.swift in Sources */,
+				0188AC7E242A3FA300BA7654 /* UserProfileThreePointsItemViewModel.swift in Sources */,
 				01E15CCC23BF58D800A69E23 /* SubscriptViewController.swift in Sources */,
 				01026746242379B900CA6D00 /* UserProfileSectionHeaderView.swift in Sources */,
 				010D6AC423A9FC6200B84621 /* BaseViewController.swift in Sources */,
 				01937ED2241906B1009BD6AD /* MVVMListViewController.swift in Sources */,
+				01A550C3242864EB00472B6A /* UserProfileTableViewDataSource.swift in Sources */,
 				01D38A0E241A770E00F6D74D /* MVVMListSecModel.swift in Sources */,
 				01E15CD223BF590B00A69E23 /* DeinitViewController.swift in Sources */,
 				0112F9A523BF57B30002788E /* BaseOperatorViewController.swift in Sources */,
 				01937ECC2418FFA5009BD6AD /* MVVMView.swift in Sources */,
 				01B24E2F23BF358100677023 /* DataTypeConvertViewController.swift in Sources */,
 				0112F9AB23BF57E30002788E /* CollectionTypesViewController.swift in Sources */,
+				01E494E0242AE60D005ECD71 /* UserProfileCTAViewFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
