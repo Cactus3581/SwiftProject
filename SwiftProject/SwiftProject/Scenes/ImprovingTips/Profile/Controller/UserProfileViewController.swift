@@ -20,6 +20,7 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
     weak var ctaView: UserProfileCTAView?
 
     static var isRemoving: Bool = false
+    var naviHeight: CGFloat = 64
 
     fileprivate var viewModel: UserProfileViewModel!
 
@@ -33,6 +34,17 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewSafeAreaInsetsDidChange() {
+        super.viewSafeAreaInsetsDidChange()
+        let inset = self.view.safeAreaInsets
+        var naviHeight = 44 as CGFloat;
+        naviHeight = naviHeight + (inset.top  > 0 ? inset.top : 20)
+        self.naviHeight = naviHeight
+        naviBackView.snp.updateConstraints { (make) in
+            make.height.equalTo(naviHeight)
+        }
     }
 
     // 注册 sessionViewModel
@@ -107,7 +119,7 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
         tableView.estimatedSectionHeaderHeight = 50
         tableView.estimatedSectionFooterHeight = 50
 
-        let headerView =  UserProfileTableHeaderView.init(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: UserProfileTableHeaderView.height))
+        let headerView =  UserProfileTableHeaderView.init(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: (UIScreen.main.bounds.size.width * 330 / 375) as CGFloat))
         self.headerView = headerView
         tableView.tableHeaderView = headerView
 
@@ -118,7 +130,7 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
         view.addSubview(naviBackView)
         naviBackView.snp.makeConstraints { (make) in
             make.top.leading.trailing.equalToSuperview()
-            make.height.equalTo(88)
+            make.height.equalTo(self.naviHeight)
         }
         naviBackView.alpha = 0
         naviBackView.backgroundColor = UIColor.white;
@@ -245,7 +257,7 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
             catViewHeight = self.headerView.ctaView.bounds.size.height
         }
 
-        let imageHeight = UserProfileTableHeaderView.height - catViewHeight/2 - UserProfileTableHeaderView.bottom
+        let imageHeight = self.headerView.bounds.size.height - catViewHeight/2 - UserProfileTableHeaderView.bottom
         let width = self.tableView.frame.size.width;
 
         if (offsetY < 0) {
@@ -259,7 +271,7 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
             }
         }
 
-        let height = (UserProfileTableHeaderView.height - self.naviBackView.bounds.size.height - catViewHeight - UserProfileTableHeaderView.bottom) as CGFloat
+        let height = (self.headerView.bounds.size.height - self.naviBackView.bounds.size.height - catViewHeight - UserProfileTableHeaderView.bottom) as CGFloat
         if (offsetY <= height) {
             let rate = offsetY / height
             naviBackView?.alpha = rate;
@@ -343,7 +355,7 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
         let offsetY = scrollView.contentOffset.y
         let time = 0.25
 
-        let imageHeight = UserProfileTableHeaderView.height - UserProfileCTAView.height/2.0 - UserProfileTableHeaderView.bottom
+        let imageHeight = self.headerView.bounds.size.height - UserProfileCTAView.height/2.0 - UserProfileTableHeaderView.bottom
         let width = self.tableView.frame.size.width;
 
         if (offsetY < 0) {
@@ -357,7 +369,7 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
             }
         }
 
-        let height = (UserProfileTableHeaderView.height - UserProfileCTAView.height-UserProfileTableHeaderView.bottom - self.naviBackView.bounds.size.height) as CGFloat
+        let height = (self.headerView.bounds.size.height - UserProfileCTAView.height-UserProfileTableHeaderView.bottom - self.naviBackView.bounds.size.height) as CGFloat
         if (offsetY <= height) {
             let rate = offsetY / height
             naviBackView?.alpha = rate;
