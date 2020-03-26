@@ -17,26 +17,27 @@ class UserProfileModel: NSObject, HandyJSON {
 }
 
 //CTA之上区域
+//用户信息
+class UserInfo: NSObject, HandyJSON {
+    var userName: String?   // i18n name
+    var gender: Int?    // 性别  0:不展示, 1:男；2:女
+    var avatarKey: String? // 头像
+    var city: String?      // i18n name
+    var isFriend: Bool? // 是否好友
+    var isResign: Bool? // 是否离职
+    var tenantId: String? // 租户ID
+    var tenantName: String? // i18n name
+    var notDisturbEndTime: Int?  // 勿扰模式结束时间
+    var workStatus: WorkStatus?
+    override required init() {}
+}
+
 //工作状态
 class WorkStatus: NSObject, HandyJSON {
     var status: Int?// 工作状态, 默认:0；请假:1；开会:2
     var description1: String?// 工作状态描述
-    var startTime: Double?// 开始时间, 单位 秒
-    var endTime: Double?// 结束时间
-    override required init() {}
-}
-
-//用户信息
-class UserInfo: NSObject, HandyJSON {
-    var userName: String?   // i18n name
-    var gender: String?    // 性别
-    var city: String?      // i18n name
-    var isFriend: Bool? // 是否好友
-    var isResign: Bool? // 是否离职
-    var tenantName: String? // i18n name
-    var isNotDisturb: Bool?  // true为勿扰模式
-    var workStatus: WorkStatus?
-    var isAdmin: Bool?
+    var startTime: Int?// 开始时间, 单位 秒
+    var endTime: Int?// 结束时间
     override required init() {}
 }
 
@@ -44,7 +45,7 @@ class UserInfo: NSObject, HandyJSON {
 //包括type（类型）和 key（字段名）
 class BaseProfileItem: NSObject, HandyJSON {
     var type: Int?
-    var key: String?
+    var key: String? // 根据key排序
     override required init() {}
 }
 
@@ -58,7 +59,8 @@ class BaseCTAProfileItem: BaseProfileItem {
 
 //链接类型（扩展类型，(type = 1）
 class CTALinkItem: BaseCTAProfileItem {
-    var url: String?
+    var url: String? // 跳转链接
+    var iconUrl: String? // 图标链接
     required init() {}
 }
 
@@ -82,26 +84,22 @@ class CTAVideoItem: BaseCTAProfileItem {
 
 //密聊类型 ( type = 5)
 class CTASecretChatItem: BaseCTAProfileItem {
-    var chatterId: Bool?
+    var chatterId: String?
     required init() {}
 }
 
 //CTA数据结构
 class CTAInfo: NSObject, HandyJSON  {
-    var chat: CTAOpenChatItem?
-    var phone: CTAPhoneItem?
-    var video: CTAVideoItem?
-    var secretChat: CTASecretChatItem?
-    var linkItems: Array<CTALinkItem>?
-    var orders: Array<String>? // item顺序
+    var ctas: Array<BaseCTAProfileItem>?
     override required init() {}
 }
 
 //CTA之下区域
-// 文本类型:1； 链接类型:2； 部们:3；手机:4；leader:5；状态:6；alias(备注):7
+// 文本类型:1； 链接类型:2； 部们:3；手机:4；状态:5；alias(备注):6
 //普通文本类型（扩展类型）( type = 1)
 class TextItem: BaseProfileItem {
     var value: String?
+    var copyValue: String?// 可空，长按复制内容
     required init() {}
 }
 
@@ -122,9 +120,7 @@ class DepartmentMeta: NSObject, HandyJSON {
 
 //全部门路径元数据
 class DepartmentsMeta: NSObject, HandyJSON  {
-    var id: String?
     var departments: Array<DepartmentMeta>?
-    var path: String?
     override required init() {}
 }
 
@@ -136,7 +132,7 @@ class DepartmentsItem: BaseProfileItem {
 
 //电话类型 ( type = 4)
 class PhoneItem: BaseProfileItem {
-    var state: Int? // 隐藏:1；受限:2；公开:3
+    var state: Int? // 隐藏:1；受限:2；公开:3，用不到
     var number: String?
     required init() {}
 }
@@ -156,13 +152,7 @@ class UserStatusItem: BaseProfileItem {
 
 //CTA之下数据结构
 class ProfileInfo : NSObject, HandyJSON {
-    var departments:DepartmentsItem?
-    var phone: PhoneItem?
-    var alias: AliasItem?
-    var userStatus: UserStatusItem?
-    var textItems: Array<TextItem>?
-    var linkItems: Array<LinkItem>?
-    var orders: Array<String>?
+    var profiles: Array<BaseProfileItem>?
     override required init() {}
 }
 

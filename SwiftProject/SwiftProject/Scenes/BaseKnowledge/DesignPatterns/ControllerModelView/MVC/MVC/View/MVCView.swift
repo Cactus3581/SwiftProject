@@ -50,13 +50,13 @@ class MVCView: UIView {
 
         self.addSubview(avatarImageView)
         avatarImageView.snp.makeConstraints { (make) in
-            make.top.equalTo(label.snp_bottomMargin).offset(10)
+            make.top.equalTo(label.snp.bottom).offset(10)
             make.centerX.equalTo(label)
         }
 
         self.addSubview(button)
         button.snp.makeConstraints { (make) in
-            make.top.equalTo(avatarImageView.snp_bottomMargin).offset(10)
+            make.top.equalTo(avatarImageView.snp.bottom).offset(10)
             make.bottom.equalTo(self)
             make.centerX.equalTo(label)
         }

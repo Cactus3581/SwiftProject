@@ -34,6 +34,35 @@ class UserProfileViewModel: NSObject {
     //MARK: 数据请求 + 工厂类初始化sessionViewModel + 将数据源array通过闭包抛给vc中的tableview去做刷新 + 监听事件
     func requestData(result: DataResultHandler?)  {
 
+        guard let dict =  handleData() else {
+            return
+        }
+
+        guard let model = UserProfileModel.deserialize(from: dict) else {
+            return
+        }
+
+        self.model = model
+
+        handleThreePointsData()
+        handleCTAData(data: dict)
+        handleListData(data: dict)
+
+        if let result = result {
+            result()
+            observer()
+        }
+    }
+
+    func handleData() -> [String: Any]?{
+        let jsonName = "UserProfileArray"
+        guard let data = getDataFromFile(jsonName), let dict = jsonSerial(data) as? [String: Any] else  {
+            return nil
+        }
+        return dict
+    }
+
+    func handleThreePointsData() {
         let reportItemModel = ProfileThreePointsInfo()
         reportItemModel.title = "举报"
         reportItemModel.type = "report"
@@ -47,34 +76,24 @@ class UserProfileViewModel: NSObject {
         if self.threePointsList.count > 0 {
             isShowThreePoints = true
         }
-        
-        let jsonName = "UserProfileDict"
+    }
 
-        guard let data = getDataFromFile(jsonName), let json = jsonSerial(data) as? [String: Any] else  {
-            return
-        }
-
-        guard let model = UserProfileModel.deserialize(from: json) else {
-            return
-        }
-
-        self.model = model
-        self.array =  UserProfileViewModelFactory.createSessionViewModel(data: model)
-        self.ctaList =  UserProfileViewModelFactory.createCTAViewModel(data: model)
-
-        if let ctaInfo = model.ctaInfo, self.ctaList.count > 4 {
-            let moreViewModel = UserProfileCTAMoreViewModel.init(ctaInfo: ctaInfo)
+    func handleCTAData(data: [String: Any]) {
+        self.ctaList =  UserProfileViewModelFactory.createCTAViewModel(data: data)
+        let ctaMaxCount = 4
+        if self.ctaList.count > ctaMaxCount {
+            let moreViewModel = UserProfileCTAMoreViewModel.init(ctaItems: self.ctaList)
             let array = self.ctaList[3...]
             moreViewModel.array = Array(array)
             self.ctaList = Array(self.ctaList[...2])
             self.ctaList.append(moreViewModel)
         }
-
-        if let result = result {
-            result()
-            observer()
-        }
     }
+
+    func handleListData(data: [String: Any]) {
+        self.array =  UserProfileViewModelFactory.createSessionViewModel(data: data)
+    }
+
 
     //MARK:有些事件需要依赖tableview，比如展开更多，所以需要监听list变化，然后将事件抛给 tableview 去做刷新
     func observer() {

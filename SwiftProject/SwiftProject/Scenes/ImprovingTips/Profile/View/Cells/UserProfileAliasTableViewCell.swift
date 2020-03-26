@@ -29,13 +29,15 @@ class UserProfileAliasTableViewCell: UITableViewCell, UserProfileTableViewCellPr
 
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        self.contentView.backgroundColor = UIColor.white
+        self.contentView.backgroundColor = UIColor.red
 
         self.contentView.addSubview(label)
         label.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(16)
-            $0.centerY.equalToSuperview()
+            $0.top.equalToSuperview().offset(23)
+            $0.bottom.equalToSuperview().offset(-23)
         }
+        label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = UIColor.darkText
 

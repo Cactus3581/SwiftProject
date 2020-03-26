@@ -22,13 +22,13 @@ class UserProfileSectionHeaderView: UITableViewHeaderFooterView,UserProfileSecti
         
         super.init(reuseIdentifier: reuseIdentifier)
         
-        self.contentView.backgroundColor = UIColor.white
+        self.contentView.backgroundColor = UIColor.green
         
         self.contentView.addSubview(label)
         label.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(16)
             $0.top.equalToSuperview().offset(12)
-            $0.bottom.equalToSuperview()
+            $0.bottom.equalToSuperview().offset(-2)
         }
         label.textColor = UIColor.lightGray
         label.font = UIFont.systemFont(ofSize: 14)

@@ -9,30 +9,37 @@
 import UIKit
 
 class UserProfileCTAView: UIView {
-    
-    weak var stackView: UIStackView!
-    static let height: CGFloat = 60
 
-    
+    weak var contentView: UIView!
+    weak var stackView: UIStackView!
+    static let cornerRadius: CGFloat = 8
+    static let height: CGFloat = 90
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.white
-        
+        let contentView = UIView()
+        self.contentView = contentView
+        self.addSubview(contentView)
+        contentView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        contentView.layer.cornerRadius = UserProfileCTAView.cornerRadius
+        contentView.layer.masksToBounds = true
         //创建StackView
         let stackView = UIStackView()
         self.stackView = stackView
-        stackView.clipsToBounds = true
+        stackView.backgroundColor = UIColor.white
+        stackView.layer.masksToBounds = true
         self.stackView.axis = .horizontal
-        self.stackView.spacing = 0 //设置子视图最小间距
-        self.stackView.distribution = .equalSpacing//子视图的分布比例
+        self.stackView.spacing = 8 //设置子视图最小间距
+        self.stackView.distribution = .fillEqually//子视图的分布比例
         self.stackView.alignment = .center//如果子控件水平布局, 则指子控件的垂直方向填充满stackView. 反之亦然
         self.stackView.isBaselineRelativeArrangement = false//视图间的垂直间隙是否根据基线测量得到（默认值：false）
         self.stackView.isLayoutMarginsRelativeArrangement = false//stack view 平铺其管理的视图时是否要参照它的布局边距（默认值：false）
-        self.addSubview(stackView)
+        contentView.addSubview(stackView)
         stackView.snp.makeConstraints { (make) in
-            make.top.bottom.equalToSuperview()
-            make.leading.equalToSuperview().offset(15)
-            make.trailing.equalToSuperview().offset(-15)
+            make.edges.equalToSuperview()
         }
         setShadow(view: self, shadowColor: UIColor.lightGray, opacity: 0.6, offset: CGSize(width: 0, height: 3), shadowRadius: 3)
     }
@@ -48,7 +55,7 @@ class UserProfileCTAView: UIView {
             }
             for itemViewModel in ctaList {
                 // 方案1: 使用工厂方法，这种略麻烦，也是依赖具体参数，还得注册，还得写工厂方法
-                if var view = UserProfileCTAViewFactory.viewWithType(type: itemViewModel.viewType) {
+                if var view = UserProfileViewModelFactory.viewWithType(type: itemViewModel.viewType) {
                     stackView.addArrangedSubview(view as! UIView)
                     view.viewModel = itemViewModel
                 }
@@ -124,9 +131,10 @@ class UserProfileCTAItemView: UIView, UserProfileCTAItemViewProtocol  {
         self.backgroundColor = UIColor.white
         self.addSubview(coverImageView)
         coverImageView.snp.makeConstraints { (make) in
-            make.top.leading.trailing.equalToSuperview()
-            make.width.equalTo(30)
-            make.height.equalTo(coverImageView.snp_width).multipliedBy(1)
+            make.top.equalToSuperview().offset(16)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(24)
+            make.height.equalTo(coverImageView.snp.width).multipliedBy(1)
         }
         coverImageView.image = UIImage(named: "cactus_explicit")
         coverImageView.clipsToBounds = true
@@ -137,12 +145,15 @@ class UserProfileCTAItemView: UIView, UserProfileCTAItemViewProtocol  {
         coverImageView.isUserInteractionEnabled = true
         coverImageView.addGestureRecognizer(tap)
 
-
         self.addSubview(label)
         label.font = UIFont.systemFont(ofSize: 12)
+        label.numberOfLines = 0
+        label.textAlignment = .center
         label.snp.makeConstraints{  (make) in
+            make.top.equalTo(coverImageView.snp.bottom).offset(8)
+//            make.bottom.equalToSuperview().offset((-14))
             make.centerX.bottom.equalToSuperview()
-            make.top.equalTo(coverImageView.snp_bottom)
+//            make.leading.trailing.equalToSuperview() // 加上动画不自然
         }
     }
 

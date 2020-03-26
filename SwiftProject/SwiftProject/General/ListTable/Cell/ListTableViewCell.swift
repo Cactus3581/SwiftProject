@@ -64,7 +64,7 @@ class ListTableViewCell: UITableViewCell {
         self.contentView.addSubview(detailLabel)
         detailLabel.snp.makeConstraints { (make) in
             make.leading.equalTo(titleLabel);
-            make.top.equalTo(titleLabel.snp_bottomMargin).offset(2.5);
+            make.top.equalTo(titleLabel.snp.bottom).offset(2.5);
         }
 
         _titleLabel?.backgroundColor = UIColor.red

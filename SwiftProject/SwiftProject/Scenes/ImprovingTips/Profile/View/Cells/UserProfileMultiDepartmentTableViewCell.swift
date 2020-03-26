@@ -32,14 +32,13 @@ class UserProfileMultiDepartmentTableViewCell: UITableViewCell, UserProfileTable
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.contentView.backgroundColor = UIColor.white
+        self.contentView.backgroundColor = UIColor.red
         
         self.contentView.addSubview(dotView)
         dotView.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(16)
             $0.centerY.equalToSuperview()
             $0.width.height.equalTo(6)
-            
         }
         dotView.backgroundColor = UIColor.lightGray
         dotView.layer.cornerRadius = 3
@@ -47,9 +46,11 @@ class UserProfileMultiDepartmentTableViewCell: UITableViewCell, UserProfileTable
         self.contentView.addSubview(label)
         label.numberOfLines = 3
         label.snp.makeConstraints {
-            $0.leading.equalTo(dotView.snp_trailing).offset(16)
-            $0.centerY.equalToSuperview()
+            $0.leading.equalTo(dotView.snp.trailing).offset(16)
+            $0.top.equalToSuperview().offset(23)
+            $0.bottom.equalToSuperview().offset(-23)
         }
+        label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = UIColor.darkText
         
@@ -72,8 +73,7 @@ class UserProfileMultiDepartmentTableViewCell: UITableViewCell, UserProfileTable
             guard let cellViewModel = cellViewModel as? UserProfileDepartmentCellViewModel else {
                 return
             }
-            titleLabel?.text = cellViewModel.model?.path
-            //coverImageView?.image = UIImage(named: item.pictureUrl)
+            titleLabel?.text = cellViewModel.path
         }
     }
     

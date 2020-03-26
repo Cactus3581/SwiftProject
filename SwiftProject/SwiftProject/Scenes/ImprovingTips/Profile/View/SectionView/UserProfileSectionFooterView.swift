@@ -20,7 +20,7 @@ class UserProfileSectionFooterView: UITableViewHeaderFooterView,UserProfileSecti
         
         super.init(reuseIdentifier: reuseIdentifier)
         
-        self.contentView.backgroundColor = UIColor.white
+        self.contentView.backgroundColor = UIColor.blue
         
         self.contentView.addSubview(button)
         button.snp.makeConstraints {

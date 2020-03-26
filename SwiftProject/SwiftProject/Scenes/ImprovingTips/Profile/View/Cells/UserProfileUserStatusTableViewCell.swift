@@ -29,13 +29,15 @@ class UserProfileUserStatusTableViewCell: UITableViewCell, UserProfileTableViewC
 
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        self.contentView.backgroundColor = UIColor.white
+        self.contentView.backgroundColor = UIColor.red
 
         self.contentView.addSubview(label)
         label.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(16)
-            $0.centerY.equalToSuperview()
+            $0.top.equalToSuperview().offset(23)
+            $0.bottom.equalToSuperview().offset(-23)
         }
+        label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = UIColor.darkText
 
@@ -55,10 +57,10 @@ class UserProfileUserStatusTableViewCell: UITableViewCell, UserProfileTableViewC
 
     var cellViewModel: Any? {
         didSet {
-            guard let cellViewModel = cellViewModel as? UserProfileAliasCellViewModel else {
+            guard let cellViewModel = cellViewModel as? UserProfileUserStatusCellViewModel else {
                 return
             }
-            label?.text = cellViewModel.model?.alias
+            label?.text = cellViewModel.model?.statusInfo
         }
     }
 

@@ -1,142 +1,172 @@
 {
     "userInfo": {
-        "userName": "Cactus",
-        "gender": "",
+        "userName": "CactusCactusCactusCactusCactusCactusCactusC",
+        "gender": 1,
+        "avatarKey": "",
         "city": "北京",
         "isFriend": true,
         "isResign": false,
+        "tenantId": "xxx",
         "tenantName": "字节跳动",
-        "isNotDisturb": false,
+        "notDisturbEndTime": 1232132434,
         "workStatus": {
             "status": 0,
-            "description1": "描述",
-            "startTime": "2020",
-            "endTime": "2020"
-        },
-        "isAdmin": true
+            "description1": "状态描述",
+            "startTime": 2020,
+            "endTime": 2020
+        }
     },
-    "ctaInfo": [{
-            "type": "chat",
-            "data": {
-                "type": "1",
-                "key": "页眉",
-                "chatterId": "页眉",
-                "enable": true
-            }
+    "ctaInfo": {"ctas": [{
+            "key": "发消息",
+            "type": 2,
+            "enable": true,
+            "chatterId": "123"
         },
         {
-            "type": "phone",
-            "data": {
-                "type": "1",
-                "key": "页眉",
-                "chatterId": "页眉",
-                "enable": true
-            }
+            "key": "语音通话",
+            "type": 3,
+            "enable": true,
+            "chatterId": "123"
         },
         {
-            "type": "video",
-            "data": {
-                "type": "1",
-                "key": "页眉",
-                "chatterId": "页眉",
-                "enable": true
-            }
+            "key": "视频通话",
+            "type": 4,
+            "enable": true,
+            "chatterId": "123"
         },
         {
-            "type": "secretChat",
-            "data": {
-                "type": "1",
-                "key": "页眉",
-                "url": "www.baidu.com",
-                "enable": true
-            }
+            "key": "密聊",
+            "type": 5,
+            "enable": true,
+            "chatterId": "123"
         },
         {
-            "type": "linkItems",
-            "data": {
-                "type": "1",
-                "key": "我是链接",
-                "url": "www.baidu.com",
-                "enable": true
-            }
+            "key": "链接1",
+            "type": 1,
+            "enable": true,
+            "url": "www.baidu.com",
+            "iconUrl": "image"
+        },
+        {
+            "key": "链接2",
+            "type": 1,
+            "enable": true,
+            "url": "www.baidu.com",
+            "iconUrl": "image"
         }
-    ],
+    ]},
 
-    "profileInfo": [{
-            "type": "userStatus",
-            "data": {
-                "state": "页眉",
-                "statusInfo": "页眉",
-                "type": "1",
-                "key": "页眉"
-            }
+    "profileInfo": {"profiles": [{
+            "key": "手机号",
+            "type": 4,
+            "state": 3,
+            "number": "13501120689"
         },
         {
-            "type": "phone",
-            "data": {
-                "state": "页眉",
-                "number": "页眉",
-                "type": "1",
-                "key": "页眉"
-            }
+            "key": "备注",
+            "type": 6,
+            "alias": "ryan"
         },
         {
-            "type": "alias",
-            "data": {
-                "alias": "页眉",
-                "type": "1",
-                "key": "页眉"
-            }
+            "key": "状态",
+            "type": 5,
+            "status": 0,
+            "statusInfo": "我很好"
         },
         {
-            "type": "departments",
-            "data": {
-                "departments": [{
-                        "id": "页眉",
-                        "departments": [{
-                                "id": "页眉",
-                                "name": "页眉"
-                            },
-                            {
-                                "id": "页眉",
-                                "name": "页眉"
-                            }
-                        ]
-                    },
-                    {
-                        "id": "页眉",
-                        "departments": [{
-                                "id": "页眉",
-                                "name": "页眉"
-                            },
-                            {
-                                "id": "页眉",
-                                "name": "页眉"
-                            }
-                        ]
-                    }
-                ],
-                "type": "1",
-                "key": "页眉"
-            }
+            "key": "部门",
+            "type": 3,
+            "departments": [{
+                    "departments": [{
+                            "id": "xxx",
+                            "name": "a1部门"
+                        },
+                        {
+                            "id": "xxx",
+                            "name": "a2部门"
+                        }
+                    ]
+                },
+                {
+                    "departments": [{
+                            "id": "xxx",
+                            "name": "b1部门"
+                        },
+                        {
+                            "id": "xxx",
+                            "name": "b2部门"
+                        }
+                    ]
+                },
+                {
+                    "departments": [{
+                            "id": "xxx",
+                            "name": "c1部门"
+                        },
+                        {
+                            "id": "xxx",
+                            "name": "c2部门"
+                        }
+                    ]
+                },
+                {
+                    "departments": [{
+                            "id": "xxx",
+                            "name": "d1部门"
+                        },
+                        {
+                            "id": "xxx",
+                            "name": "d2部门"
+                        }
+                    ]
+                },
+                {
+                    "departments": [{
+                            "id": "xxx",
+                            "name": "e1部门"
+                        },
+                        {
+                            "id": "xxx",
+                            "name": "e2部门"
+                        }
+                    ]
+                },
+                {
+                    "departments": [{
+                            "id": "xxx",
+                            "name": "f1部门"
+                        },
+                        {
+                            "id": "xxx",
+                            "name": "f2部门"
+                        }
+                    ]
+                }
+            ]
         },
         {
-            "type": "textItems",
-            "data": {
-                "value": "页眉",
-                "type": "1",
-                "key": "页眉"
-            }
+            "key": "主岗",
+            "type": 1,
+            "value": "UX 设计师",
+            "copyValue": "UX 设计师"
         },
         {
-            "type": "linkItems",
-            "data": {
-                "linkTitle": "页眉",
-                "url": "www.baidu.com",
-                "type": "1",
-                "key": "页眉"
-            }
+            "key": "直属上级",
+            "type": 2,
+            "linkTitle": "特朗普",
+            "url": "www.baidu.com"
+        },
+        {
+            "key": "邮箱",
+            "type": 2,
+            "linkTitle": "xxx@bytedance.com",
+            "url": "www.baidu.com"
+        },
+        {
+            "key": "OKR",
+            "type": 2,
+            "linkTitle": "",
+            "url": "www.baidu.com"
         }
-    ]
-
+    ]}
 }

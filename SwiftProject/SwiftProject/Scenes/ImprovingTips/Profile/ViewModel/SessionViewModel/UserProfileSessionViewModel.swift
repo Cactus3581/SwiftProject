@@ -10,8 +10,8 @@ import UIKit
 
 //MARK:该协议服务于sessionViewModel，为sessionView提供数据和事件。协议的作用就是解决通用性问题，替代继承用的
 protocol UserProfileSessionViewModelProtocol {
-    static func canHandle(type: String) -> Bool
-    init(dictData: UserProfileModel)
+    static func canHandle(type: Int) -> Bool
+    init(profileItem: [String: Any])
     var headerIdentifier: String? { get }
     var footerIdentifier: String? { get }
     var identifier: String { get }
@@ -23,8 +23,8 @@ protocol UserProfileSessionViewModelProtocol {
 }
 
 extension UserProfileSessionViewModelProtocol {
-    static func canHandle(type: String) -> Bool {return false}
-    init(dictData: UserProfileModel) {self.init(dictData: dictData)}
+    static func canHandle(type: Int) -> Bool {return false}
+    init(profileItem: [String: Any]) {self.init(profileItem: profileItem)}
     var headerIdentifier: String? {return nil}
     var footerIdentifier: String? {return nil}
     var list: Array<Any>? { set{} get{return nil} }
@@ -38,70 +38,71 @@ class UserProfileTextSessionViewModel: NSObject, UserProfileSessionViewModelProt
     
     var list: Array<Any>?
     var headerText: String?
-    static let types: Set<String> = ["job","personalStatus"]
-    static var type: String = ""
-    
-    static func canHandle(type: String) -> Bool {
-        if types.contains(type) {
-            self.type = type
+    var profileItem: TextItem?
+
+    static func canHandle(type: Int) -> Bool {
+        if type == 1 {
             return true
         }
         return false
     }
     
-    required init(dictData: UserProfileModel) {
+    required init(profileItem: [String: Any]) {
         super.init()
+        self.profileItem = TextItem.deserialize(from: profileItem)
+        self.headerText = self.profileItem?.key
+
         let cellViewModel = UserProfileTextCellViewModel()
-        
-//        if UserProfileCommonSessionViewModel.type == "job" {
-//            self.headerText = "职位"
-//            cellViewModel.model = dictData.job
-//        } else if UserProfileCommonSessionViewModel.type == "personalStatus" {
-//            self.headerText = "状态"
-//            cellViewModel.model = dictData.personalStatus
-//        }
-        
+        cellViewModel.model = self.profileItem
         self.list = [cellViewModel]
     }
-    
+
     var headerIdentifier: String? {
+        guard let _ = self.profileItem?.key, let list = self.list, list.count > 0 else {
+            return nil
+        }
         return UserProfileSectionHeaderView.identifier
     }
-    
+
     var identifier: String {
         return UserProfileTextTableViewCell.identifier
     }
 }
 
+class UserProfileLinkSessionViewModel: NSObject, UserProfileSessionViewModelProtocol {
 
-class UserProfilePhoneSessionViewModel: NSObject, UserProfileSessionViewModelProtocol {
-    
     var list: Array<Any>?
     var headerText: String?
-    
-    static func canHandle(type: String) -> Bool {
-        if type == "phone" {
+    var profileItem: LinkItem?
+
+    static func canHandle(type: Int) -> Bool {
+        if type == 2 {
             return true
         }
         return false
     }
-    
-    required init(dictData: UserProfileModel) {
+
+    required init(profileItem: [String: Any]) {
         super.init()
-        let cellViewModel = UserProfilePhoneCellViewModel()
-        cellViewModel.model = dictData.profileInfo?.phone
+        self.profileItem = LinkItem.deserialize(from: profileItem)
+        self.headerText = self.profileItem?.key
+        let cellViewModel = UserProfileLinkCellViewModel()
+        cellViewModel.model = self.profileItem
         self.list = [cellViewModel]
-        self.headerText = dictData.profileInfo?.phone?.key
     }
-    
+
     var headerIdentifier: String? {
+        guard let _ = self.profileItem?.key, let list = self.list, list.count > 0, let linkTitle = self.profileItem?.linkTitle, !linkTitle.isEmpty else {
+            return nil
+        }
         return UserProfileSectionHeaderView.identifier
     }
-    
+
     var identifier: String {
-        return UserProfilePhoneTableViewCell.identifier
+        return UserProfileLinkTableViewCell.identifier
     }
 }
+
 
 class UserProfileDepartmentSessionViewModel: NSObject, UserProfileSessionViewModelProtocol {
     
@@ -111,54 +112,63 @@ class UserProfileDepartmentSessionViewModel: NSObject, UserProfileSessionViewMod
     var isExpand: Bool = false
     var allList: Array<Any> = [Any]()
     var section: Int?
+    var profileItem: DepartmentsItem?
+    var maxCount = 5
 
-    static func canHandle(type: String) -> Bool {
-        if type == "departments" {
+    static func canHandle(type: Int) -> Bool {
+        if type == 3 {
             return true
         }
         return false
     }
     
-    required init(dictData: UserProfileModel) {
+    required init(profileItem: [String: Any]) {
         super.init()
-        for department in dictData.profileInfo?.departments?.departments ?? Array() {
-            let cellViewModel = UserProfileDepartmentCellViewModel()
-            var name: String = ""
-            for meta in department.departments ?? [] {
-                if name.count > 0 {
-                    if let name1  = meta.name {
-                        name =  name + " - " +  name1
+        self.profileItem = DepartmentsItem.deserialize(from: profileItem)
+        if let departments = self.profileItem?.departments {
+            for department in departments {
+                guard let departments = department.departments else {
+                    continue
+                }
+                let cellViewModel = UserProfileDepartmentCellViewModel()
+                var path: String = ""
+                for meta in departments {
+                    guard let name = meta.name else {
+                        continue
                     }
-                } else {
-                    if let name1  = meta.name {
-                        name = name1
+                    if path.count <= 0 {
+                        path = name
+                    } else {
+                        path =  path + " - " + name
                     }
                 }
+                cellViewModel.path = path
+                cellViewModel.model = department
+                allList.append(cellViewModel)
             }
-
-            department.path = name
-            cellViewModel.model = department
-            allList.append(cellViewModel)
         }
         
-        if allList.count > 5 {
-            self.list = [] + allList.prefix(5)
+        if allList.count > maxCount {
+            self.list = [] + allList.prefix(maxCount)
         } else {
             self.list = allList
         }
-        
-        self.headerText = "部门"
-        
+
+        self.headerText = self.profileItem?.key
+        isExpand = false
         if isMoreFive() {
             self.footerText = "展开"
         }
-        isExpand = false
     }
-    
+
     var headerIdentifier: String? {
+        guard let _ = self.profileItem?.key, let list = self.list, list.count > 0 else {
+            return nil
+        }
         return UserProfileSectionHeaderView.identifier
     }
-    
+
+
     var footerIdentifier: String? {
         if isMoreFive() {
             return UserProfileSectionFooterView.identifier
@@ -194,7 +204,7 @@ class UserProfileDepartmentSessionViewModel: NSObject, UserProfileSessionViewMod
     
     func isMoreFive() -> Bool {
         if isMuilt() {
-            if allList.count > 5 {
+            if allList.count > maxCount {
                 return true
             }
         }
@@ -202,3 +212,105 @@ class UserProfileDepartmentSessionViewModel: NSObject, UserProfileSessionViewMod
     }
 }
 
+
+class UserProfilePhoneSessionViewModel: NSObject, UserProfileSessionViewModelProtocol {
+
+    var list: Array<Any>?
+    var headerText: String?
+    var profileItem: PhoneItem?
+
+    static func canHandle(type: Int) -> Bool {
+        if type == 4 {
+            return true
+        }
+        return false
+    }
+
+    required init(profileItem: [String: Any]) {
+        super.init()
+        self.profileItem = PhoneItem.deserialize(from: profileItem)
+        let cellViewModel = UserProfilePhoneCellViewModel()
+        cellViewModel.model = self.profileItem
+        self.list = [cellViewModel]
+        self.headerText = self.profileItem?.key
+    }
+
+    var headerIdentifier: String? {
+        guard let _ = self.profileItem?.key, let list = self.list, list.count > 0 else {
+            return nil
+        }
+        return UserProfileSectionHeaderView.identifier
+    }
+
+    var identifier: String {
+        return UserProfilePhoneTableViewCell.identifier
+    }
+}
+
+class UserProfileUserStatusSessionViewModel: NSObject, UserProfileSessionViewModelProtocol {
+
+    var list: Array<Any>?
+    var headerText: String?
+    var profileItem: UserStatusItem?
+
+    static func canHandle(type: Int) -> Bool {
+        if type == 5 {
+            return true
+        }
+        return false
+    }
+
+    required init(profileItem: [String: Any]) {
+        super.init()
+        self.profileItem = UserStatusItem.deserialize(from: profileItem)
+        let cellViewModel = UserProfileUserStatusCellViewModel()
+        cellViewModel.model = self.profileItem
+        self.list = [cellViewModel]
+        self.headerText = self.profileItem?.key
+    }
+
+    var headerIdentifier: String? {
+        guard let _ = self.profileItem?.key, let list = self.list, list.count > 0 else {
+            return nil
+        }
+        return UserProfileSectionHeaderView.identifier
+    }
+
+    var identifier: String {
+        return UserProfileUserStatusTableViewCell.identifier
+    }
+}
+
+class UserProfileAliasSessionViewModel: NSObject, UserProfileSessionViewModelProtocol {
+
+    var list: Array<Any>?
+    var headerText: String?
+    var profileItem: AliasItem?
+
+    static func canHandle(type: Int) -> Bool {
+        if type == 6 {
+            return true
+        }
+        return false
+    }
+
+    required init(profileItem: [String: Any]) {
+        super.init()
+        self.profileItem = AliasItem.deserialize(from: profileItem)
+        let cellViewModel = UserProfileAliasCellViewModel()
+        cellViewModel.model = self.profileItem
+        self.list = [cellViewModel]
+        self.headerText = self.profileItem?.key
+    }
+
+    var headerIdentifier: String? {
+        guard let _ = self.profileItem?.key, let list = self.list, list.count > 0 else {
+            return nil
+        }
+        return UserProfileSectionHeaderView.identifier
+    }
+
+    var identifier: String {
+        return UserProfileAliasTableViewCell.identifier
+    }
+}

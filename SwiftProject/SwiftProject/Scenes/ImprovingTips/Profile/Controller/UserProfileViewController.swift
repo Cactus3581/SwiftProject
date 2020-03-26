@@ -82,10 +82,12 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
         tableView.register(UserProfileSectionHeaderView.self, forHeaderFooterViewReuseIdentifier: UserProfileSectionHeaderView.identifier)
         tableView.register(UserProfileSectionFooterView.self, forHeaderFooterViewReuseIdentifier: UserProfileSectionFooterView.identifier)
         tableView.register(UserProfileTextTableViewCell.self, forCellReuseIdentifier: UserProfileTextTableViewCell.identifier)
+        tableView.register(UserProfileLinkTableViewCell.self, forCellReuseIdentifier: UserProfileLinkTableViewCell.identifier)
         tableView.register(UserProfilePhoneTableViewCell.self, forCellReuseIdentifier: UserProfilePhoneTableViewCell.identifier)
         tableView.register(UserProfileMultiDepartmentTableViewCell.self, forCellReuseIdentifier: UserProfileMultiDepartmentTableViewCell.identifier)
+        tableView.register(UserProfileAliasTableViewCell.self, forCellReuseIdentifier: UserProfileAliasTableViewCell.identifier)
+        tableView.register(UserProfileUserStatusTableViewCell.self, forCellReuseIdentifier: UserProfileUserStatusTableViewCell.identifier)
     }
-
 
     func initializeViews() {
         
@@ -181,12 +183,12 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
         guard let identifier = sessionViewModel.headerIdentifier else {
             return nil
         }
-        if var view = tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier) as? UserProfileSectionViewProtocol {
-            view.sessionViewModel = viewModel.array[section]
-            view.section = section
-            return view as? UIView
+        guard var view = tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier) as? UserProfileSectionViewProtocol else {
+            return nil
         }
-        return nil
+        view.sessionViewModel = viewModel.array[section]
+        view.section = section
+        return view as? UIView
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -194,16 +196,25 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
         guard let identifier = sessionViewModel.footerIdentifier else {
             return nil
         }
-        
-        if var view = tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier) as? UserProfileSectionViewProtocol {
-            view.sessionViewModel = viewModel.array[section]
-            view.section = section
-            return view as? UIView
+
+        guard var view = tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier) as? UserProfileSectionViewProtocol else {
+            return nil
         }
-        return nil
+        view.sessionViewModel = viewModel.array[section]
+        view.section = section
+        return view as? UIView
     }
     
-    
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        let sessionViewModel = viewModel.array[section]
+//        return sessionViewModel.viewHeight ?? 0
+//    }
+//
+//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        let sessionViewModel = viewModel.array[section]
+//        return sessionViewModel.viewHeight ?? 0
+//    }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let viewModel = self.viewModel else {
             return
@@ -215,18 +226,26 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
             sectionViewModel.didSelectCellViewModel(cellViewModel: cellViewModel, indexPath: indexPath as IndexPath)
         }
     }
-    
+
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         catViewAnimation(scrollView)
     }
     
     //MARK:导航栏动画
-    func catViewAnimation(_ scrollView: UIScrollView) {
+    func catViewAnimation1(_ scrollView: UIScrollView) {
         
         let offsetY = scrollView.contentOffset.y
         let time = 0.25
-        
-        let imageHeight = UserProfileTableHeaderView.height - UserProfileCTAView.height/2.0 - UserProfileTableHeaderView.bottom
+
+        var catViewHeight = 0 as CGFloat
+
+        if let ctaView = self.ctaView {
+            catViewHeight = ctaView.bounds.size.height
+        } else {
+            catViewHeight = self.headerView.ctaView.bounds.size.height
+        }
+
+        let imageHeight = UserProfileTableHeaderView.height - catViewHeight/2 - UserProfileTableHeaderView.bottom
         let width = self.tableView.frame.size.width;
 
         if (offsetY < 0) {
@@ -239,8 +258,8 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
                 $0.height.equalTo(heightY)
             }
         }
-        
-        let height = (UserProfileTableHeaderView.height - UserProfileCTAView.height-UserProfileTableHeaderView.bottom - self.naviBackView.bounds.size.height) as CGFloat
+
+        let height = (UserProfileTableHeaderView.height - self.naviBackView.bounds.size.height - catViewHeight - UserProfileTableHeaderView.bottom) as CGFloat
         if (offsetY <= height) {
             let rate = offsetY / height
             naviBackView?.alpha = rate;
@@ -266,7 +285,105 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
             if self.ctaView != nil {
                 self.headerView.addSubview(self.ctaView!)
                 self.ctaView = nil
-                self.headerView.ctaView.layer.cornerRadius = UserProfileTableHeaderView.cornerRadius
+                self.headerView.ctaView.contentView.layer.cornerRadius = UserProfileCTAView.cornerRadius
+                self.headerView.ctaView.snp.remakeConstraints {
+                    $0.leading.equalToSuperview().offset(0)
+                    $0.trailing.equalToSuperview().offset(0)
+                    $0.bottom.equalToSuperview().offset(-UserProfileTableHeaderView.bottom)
+                }
+                self.headerView.ctaView.setNeedsLayout()
+                self.headerView.ctaView.layoutIfNeeded()
+                self.headerView.ctaView.snp.updateConstraints {
+                    $0.leading.equalToSuperview().offset(16)
+                    $0.trailing.equalToSuperview().offset(-16)
+                }
+                UserProfileViewController.isRemoving = true
+                UIView.animate(withDuration: time, animations: {
+                    self.headerView.ctaView.setNeedsLayout()
+                    self.headerView.ctaView.layoutIfNeeded()
+                }) { (success) in
+                    if success {
+                        UserProfileViewController.isRemoving = false
+                    }
+                }
+            }
+        } else {
+            if offsetY > 0.0 {
+                if ctaView == nil  {
+                    self.ctaView = self.headerView.ctaView
+                    self.view.addSubview(self.ctaView!)
+                    self.ctaView?.snp.makeConstraints {
+                        $0.leading.equalToSuperview().offset(UserProfileTableHeaderView.bottom)
+                        $0.trailing.equalToSuperview().offset(-UserProfileTableHeaderView.bottom)
+                        $0.top.equalTo(naviBackView!.snp.bottom)
+                    }
+                    self.ctaView?.setNeedsLayout()
+                    self.ctaView?.layoutIfNeeded()
+                    self.ctaView?.snp.updateConstraints { (make) in
+                        make.leading.equalToSuperview().offset(0)
+                        make.trailing.equalToSuperview().offset(0)
+                    }
+                    
+                    UIView.animate(withDuration: time, animations: {
+                        self.ctaView?.setNeedsLayout()
+                        self.ctaView?.layoutIfNeeded()
+                    }) { (success) in
+                        if success {
+                            self.ctaView?.contentView.layer.cornerRadius = 0
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    //MARK:导航栏动画
+    func catViewAnimation(_ scrollView: UIScrollView) {
+
+        let offsetY = scrollView.contentOffset.y
+        let time = 0.25
+
+        let imageHeight = UserProfileTableHeaderView.height - UserProfileCTAView.height/2.0 - UserProfileTableHeaderView.bottom
+        let width = self.tableView.frame.size.width;
+
+        if (offsetY < 0) {
+            let heightY = imageHeight + abs(offsetY) - 0;
+            let f = heightY / imageHeight;
+            self.headerView.coverImageView.snp.remakeConstraints{
+                $0.top.equalToSuperview().offset(offsetY+0)
+                $0.leading.equalTo( -(width * f - width) / 2)
+                $0.width.equalTo(width * f)
+                $0.height.equalTo(heightY)
+            }
+        }
+
+        let height = (UserProfileTableHeaderView.height - UserProfileCTAView.height-UserProfileTableHeaderView.bottom - self.naviBackView.bounds.size.height) as CGFloat
+        if (offsetY <= height) {
+            let rate = offsetY / height
+            naviBackView?.alpha = rate;
+            if (offsetY <= height / 2.0) {
+                // 由白到透明,proportion:1->0
+                let proportion = 1 - min(1, (offsetY)/(height / 2.0));
+                backButton.setImage(UIImage(named: "player_back"), for: .normal)
+                backButton.alpha = proportion;
+            } else {
+                // 由透明到黑
+                let proportion = min(1, (offsetY - ((height / 2.0)))/(height / 2.0));
+                backButton.setImage(UIImage(named: "icon_back"), for: .normal)
+                backButton.alpha = proportion;
+            }
+        } else {
+            naviBackView?.alpha = 1;
+        }
+
+        if (offsetY <= height) {
+            if UserProfileViewController.isRemoving {
+                return
+            }
+            if self.ctaView != nil {
+                self.headerView.addSubview(self.ctaView!)
+                self.ctaView = nil
+                self.headerView.ctaView.layer.cornerRadius = UserProfileCTAView.cornerRadius
                 self.headerView.ctaView.snp.remakeConstraints {
                     $0.leading.equalToSuperview().offset(0)
                     $0.trailing.equalToSuperview().offset(0)
@@ -306,7 +423,7 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
                         make.leading.equalToSuperview().offset(0)
                         make.trailing.equalToSuperview().offset(0)
                     }
-                    
+
                     UIView.animate(withDuration: time, animations: {
                         self.ctaView?.setNeedsLayout()
                         self.ctaView?.layoutIfNeeded()

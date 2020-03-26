@@ -33,7 +33,7 @@ class UserProfilePhoneTableViewCell: UITableViewCell, UserProfileTableViewCellPr
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.contentView.backgroundColor = UIColor.white
+        self.contentView.backgroundColor = UIColor.red
         
         self.contentView.addSubview(phoneLabel)
         phoneLabel.snp.makeConstraints {
@@ -42,11 +42,13 @@ class UserProfilePhoneTableViewCell: UITableViewCell, UserProfileTableViewCellPr
         }
         phoneLabel.font = UIFont.systemFont(ofSize: 16)
         phoneLabel.textColor = UIColor.darkText
+        phoneLabel.numberOfLines = 0
         
         self.contentView.addSubview(showButton)
         showButton.snp.makeConstraints {
-            $0.leading.equalTo(phoneLabel.snp_trailing).offset(15)
-            $0.centerY.equalToSuperview()
+            $0.leading.equalTo(phoneLabel.snp.trailing).offset(15)
+            $0.top.equalToSuperview().offset(23)
+            $0.bottom.equalToSuperview().offset(-23)
         }
         showButton.setTitleColor(UIColor.blue,for: .normal)
         showButton.addTarget(self, action: #selector(show), for: .touchUpInside)

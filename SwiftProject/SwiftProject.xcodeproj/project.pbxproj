@@ -127,7 +127,6 @@
 		01E15CD823BF595200A69E23 /* ErrorhandlingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CD723BF595200A69E23 /* ErrorhandlingViewController.swift */; };
 		01E15CDB23BF59BB00A69E23 /* NestedTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CDA23BF59BB00A69E23 /* NestedTypeViewController.swift */; };
 		01E15CDE23BF59E400A69E23 /* OpaqueTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CDD23BF59E400A69E23 /* OpaqueTypeViewController.swift */; };
-		01E494E0242AE60D005ECD71 /* UserProfileCTAViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E494DF242AE60D005ECD71 /* UserProfileCTAViewFactory.swift */; };
 		01E9B3552420D9F000FF618D /* MVVMListSectionImageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E9B3542420D9F000FF618D /* MVVMListSectionImageHeaderView.swift */; };
 		01E9B3572420D9F800FF618D /* MVVMListSectionImageFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E9B3562420D9F800FF618D /* MVVMListSectionImageFooterView.swift */; };
 		01E9B3592420DE1A00FF618D /* MVVMListSectionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E9B3582420DE1A00FF618D /* MVVMListSectionViewProtocol.swift */; };
@@ -292,7 +291,6 @@
 		01E15CD723BF595200A69E23 /* ErrorhandlingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorhandlingViewController.swift; sourceTree = "<group>"; };
 		01E15CDA23BF59BB00A69E23 /* NestedTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedTypeViewController.swift; sourceTree = "<group>"; };
 		01E15CDD23BF59E400A69E23 /* OpaqueTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpaqueTypeViewController.swift; sourceTree = "<group>"; };
-		01E494DF242AE60D005ECD71 /* UserProfileCTAViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCTAViewFactory.swift; sourceTree = "<group>"; };
 		01E9B3542420D9F000FF618D /* MVVMListSectionImageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSectionImageHeaderView.swift; sourceTree = "<group>"; };
 		01E9B3562420D9F800FF618D /* MVVMListSectionImageFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSectionImageFooterView.swift; sourceTree = "<group>"; };
 		01E9B3582420DE1A00FF618D /* MVVMListSectionViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSectionViewProtocol.swift; sourceTree = "<group>"; };
@@ -422,10 +420,10 @@
 		01026729242379B900CA6D00 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				01E88D9A242B4193003D4313 /* CTAView */,
-				0102672A242379B900CA6D00 /* Cells */,
-				01026730242379B900CA6D00 /* SectionView */,
 				01026733242379B900CA6D00 /* HeaderFooterView */,
+				01E88D9A242B4193003D4313 /* CTAView */,
+				01026730242379B900CA6D00 /* SectionView */,
+				0102672A242379B900CA6D00 /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -963,7 +961,6 @@
 			isa = PBXGroup;
 			children = (
 				01026738242379B900CA6D00 /* UserProfileAssembly.swift */,
-				01E494DF242AE60D005ECD71 /* UserProfileCTAViewFactory.swift */,
 				01026739242379B900CA6D00 /* UserProfileViewModelFactory.swift */,
 			);
 			path = FactoryForViewModel;
@@ -1854,7 +1851,6 @@
 				01937ECC2418FFA5009BD6AD /* MVVMView.swift in Sources */,
 				01B24E2F23BF358100677023 /* DataTypeConvertViewController.swift in Sources */,
 				0112F9AB23BF57E30002788E /* CollectionTypesViewController.swift in Sources */,
-				01E494E0242AE60D005ECD71 /* UserProfileCTAViewFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
