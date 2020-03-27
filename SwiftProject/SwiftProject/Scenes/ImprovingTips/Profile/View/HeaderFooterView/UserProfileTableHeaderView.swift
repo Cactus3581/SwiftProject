@@ -14,15 +14,14 @@ class UserProfileTableHeaderView: UIView {
     weak var nameLabel: UILabel!
     weak var tagsView: UserProfileTagsView!
     weak var companyLabel: UILabel!
-    weak var ctaView: UserProfileCTAView!
-    weak var backView: UIView!
+    weak var dependLayoutView: UIView!
+    weak var dependLayoutView1: UIView!
+    weak var ctaView: UserProfileCTAView?
+    weak var ctaAnimationView: UIView?
 
     static let bottom: CGFloat = 15
 
     override init(frame: CGRect) {
-
-        let backView = UIView()
-        self.backView = backView
 
         let coverImageView = UIImageView()
         self.coverImageView = coverImageView
@@ -39,35 +38,59 @@ class UserProfileTableHeaderView: UIView {
         let tagsView = UserProfileTagsView()
         self.tagsView = tagsView
 
+        let dependLayoutView = UIView()
+        self.dependLayoutView = dependLayoutView
+
+        let dependLayoutView1 = UIView()
+        self.dependLayoutView1 = dependLayoutView1
+
+        let ctaAnimationView = UIView()
+        self.ctaAnimationView = ctaAnimationView
+
         super.init(frame: frame)
         
         self.backgroundColor = UIColor.white
-        self.addSubview(backView)
+        self.addSubview(dependLayoutView)
+        self.addSubview(dependLayoutView1)
+
         self.addSubview(coverImageView)
+        self.addSubview(ctaAnimationView)
         self.addSubview(ctaView)
         self.addSubview(companyLabel)
         self.addSubview(nameLabel)
         self.addSubview(tagsView)
 
+        let imageHeight = (UIScreen.main.bounds.size.width / (375.0 / 330.0))
+        coverImageView.snp.makeConstraints {
+            $0.top.leading.trailing.equalToSuperview()
+            $0.height.equalTo(imageHeight)
+        }
+        dependLayoutView.snp.makeConstraints {
+            $0.top.leading.trailing.equalToSuperview()
+            $0.height.equalTo(imageHeight)
+        }
+        dependLayoutView1.snp.makeConstraints {
+            $0.centerY.equalTo(dependLayoutView.snp.bottom)
+            $0.height.equalTo(100)
+            $0.bottom.equalToSuperview().offset(-UserProfileTableHeaderView.bottom)
+            $0.leading.trailing.equalToSuperview()
+        }
         ctaView.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().offset(-16)
-            $0.height.equalTo(UserProfileCTAView.height)
             $0.bottom.equalToSuperview().offset(-UserProfileTableHeaderView.bottom)
         }
-        backView.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
-            $0.bottom.equalToSuperview().offset(-UserProfileTableHeaderView.bottom - (UserProfileCTAView.height/2.0))
+        ctaAnimationView.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().offset(-16)
+            $0.bottom.equalToSuperview().offset(-UserProfileTableHeaderView.bottom)
+            $0.height.equalTo(ctaView.snp.height)
         }
-        coverImageView.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
-            //$0.bottom.equalTo(ctaView.snp.centerY)
-            $0.bottom.equalToSuperview().offset(-UserProfileTableHeaderView.bottom - (UserProfileCTAView.height/2.0))
-        }
+        
         companyLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().offset(-16)
-            $0.bottom.equalTo(backView).offset(-UserProfileCTAView.height/2 - 20)
+            $0.bottom.equalTo(dependLayoutView1.snp.top).offset(-20)
         }
         nameLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(64).priority(.low)
@@ -82,19 +105,21 @@ class UserProfileTableHeaderView: UIView {
             $0.bottom.equalTo(companyLabel.snp.top).offset(-20)
         }
 
+        ctaAnimationView.backgroundColor = UIColor.white
+        ctaView.backgroundColor = UIColor.white
         ctaView.layer.cornerRadius = UserProfileCTAView.cornerRadius
+        ctaView.layer.masksToBounds = true
 
-
+        ctaAnimationView.layer.cornerRadius = UserProfileCTAView.cornerRadius
+        setShadow(view: ctaAnimationView, shadowColor: UIColor.lightGray, opacity: 0.6, offset: CGSize(width: 0, height: 3), shadowRadius: 3)
 
         coverImageView.image = UIImage(named: "cactus_explicit")
         coverImageView.clipsToBounds = true
         coverImageView.contentMode = .scaleAspectFill
 
-
         companyLabel.font = UIFont.systemFont(ofSize: 16)
         companyLabel.textColor = UIColor.white
         companyLabel.numberOfLines = 0
-
 
         nameLabel.font = UIFont.systemFont(ofSize: 32)
         nameLabel.textColor = UIColor.white
@@ -102,15 +127,18 @@ class UserProfileTableHeaderView: UIView {
         nameLabel.minimumScaleFactor = 0.68
         nameLabel.adjustsFontSizeToFitWidth = true
         nameLabel.setContentCompressionResistancePriority(.defaultLow, for: .vertical) //抗压缩
-        nameLabel.setContentHuggingPriority(.defaultLow, for: .vertical)// 抗拉伸
-
-
+//        nameLabel.setContentHuggingPriority(.defaultLow, for: .vertical)// 抗拉伸
 
         let tagsViewWidth = tagsView.bounds.size.width
-
-
     }
-    
+
+    func setShadow(view: UIView, shadowColor: UIColor, opacity: Float, offset: CGSize,  shadowRadius: CGFloat) {
+        view.layer.shadowColor = shadowColor.cgColor // 设置阴影颜色
+        view.layer.shadowOpacity = opacity // 设置透明度
+        view.layer.shadowOffset = offset // 设置阴影偏移量
+        view.layer.shadowRadius = shadowRadius // 设置阴影半径
+    }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

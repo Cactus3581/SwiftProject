@@ -18,6 +18,7 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
     weak var tableView: UITableView!
     weak var headerView: UserProfileTableHeaderView!
     weak var ctaView: UserProfileCTAView?
+    weak var ctaAnimationView: UIView?
 
     static var isRemoving: Bool = false
     var naviHeight: CGFloat = 64
@@ -75,7 +76,16 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
             guard let `self` = self else {
                 return
             }
+
             self.headerView.viewModel = self.viewModel
+
+            let ctaViewHeight = self.headerView.ctaView?.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height ?? 0
+            self.headerView.dependLayoutView1.snp.updateConstraints() {
+                $0.height.equalTo(ctaViewHeight)
+            }
+
+            let headerViewHeight = self.headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
+            self.headerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: headerViewHeight)
             self.tableView.reloadData()
         })
 
@@ -168,7 +178,7 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
         tableView.estimatedSectionHeaderHeight = 50
         tableView.estimatedSectionFooterHeight = 50
 
-        let headerView =  UserProfileTableHeaderView.init(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: (UIScreen.main.bounds.size.width * 330 / 375) as CGFloat))
+        let headerView = UserProfileTableHeaderView.init(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 0))
         self.headerView = headerView
         tableView.tableHeaderView = headerView
 
@@ -255,77 +265,93 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         catViewAnimation(scrollView)
     }
-    
+
     //MARK:导航栏动画
-    func catViewAnimation1(_ scrollView: UIScrollView) {
+    func catViewAnimation(_ scrollView: UIScrollView) {
         
         let offsetY = scrollView.contentOffset.y
-        let time = 0.25
+        let imageHeight = (self.tableView.bounds.size.width / (375.0 / 330.0 ))
 
-        var catViewHeight = 0 as CGFloat
-
-        if let ctaView = self.ctaView {
-            catViewHeight = ctaView.bounds.size.height
-        } else {
-            catViewHeight = self.headerView.ctaView.bounds.size.height
-        }
-
-        let imageHeight = self.headerView.bounds.size.height - catViewHeight/2 - UserProfileTableHeaderView.bottom
-        let width = self.tableView.frame.size.width;
-
+        let constantImageWidth = self.headerView.frame.size.width
         if (offsetY < 0) {
             let heightY = imageHeight + abs(offsetY) - 0;
             let f = heightY / imageHeight;
             self.headerView.coverImageView.snp.remakeConstraints{
                 $0.top.equalToSuperview().offset(offsetY+0)
-                $0.leading.equalTo( -(width * f - width) / 2)
-                $0.width.equalTo(width * f)
+                $0.leading.equalTo( -(constantImageWidth * f - constantImageWidth) / 2)
+                $0.width.equalTo(constantImageWidth * f)
                 $0.height.equalTo(heightY)
             }
         }
 
-        let height = (self.headerView.bounds.size.height - self.naviBackView.bounds.size.height - catViewHeight - UserProfileTableHeaderView.bottom) as CGFloat
-        if (offsetY <= height) {
-            let rate = offsetY / height
+        var catViewHeight = 0 as CGFloat
+        if let ctaView = self.ctaView {
+            catViewHeight = ctaView.bounds.size.height
+        } else if let ctaView = self.headerView.ctaView {
+            catViewHeight = ctaView.bounds.size.height
+        }
+        let gradualDistance = (self.headerView.bounds.size.height - self.naviBackView.bounds.size.height - catViewHeight - UserProfileTableHeaderView.bottom) as CGFloat
+        if (offsetY <= gradualDistance) {
+            let rate = offsetY / gradualDistance
             naviBackView?.alpha = rate;
-            if (offsetY <= height / 2.0) {
+            if (offsetY <= gradualDistance / 2.0) {
                 // 由白到透明,proportion:1->0
-                let proportion = 1 - min(1, (offsetY)/(height / 2.0));
+                let proportion = 1 - min(1, (offsetY)/(gradualDistance / 2.0));
                 backButton.setImage(UIImage(named: "player_back"), for: .normal)
                 backButton.alpha = proportion;
             } else {
                 // 由透明到黑
-                let proportion = min(1, (offsetY - ((height / 2.0)))/(height / 2.0));
+                let proportion = min(1, (offsetY - ((gradualDistance / 2.0)))/(gradualDistance / 2.0));
                 backButton.setImage(UIImage(named: "icon_back"), for: .normal)
                 backButton.alpha = proportion;
             }
         } else {
             naviBackView?.alpha = 1;
         }
-        
-        if (offsetY <= height) {
+
+        let time = 0.25
+        if (offsetY <= gradualDistance) {
             if UserProfileViewController.isRemoving {
                 return
             }
             if self.ctaView != nil {
+                self.headerView.addSubview(self.ctaAnimationView!)
                 self.headerView.addSubview(self.ctaView!)
+
+                self.ctaAnimationView = nil
                 self.ctaView = nil
-                self.headerView.ctaView.contentView.layer.cornerRadius = UserProfileCTAView.cornerRadius
-                self.headerView.ctaView.snp.remakeConstraints {
+
+                self.headerView.ctaAnimationView?.backgroundColor = UIColor.white
+                self.headerView.ctaView?.backgroundColor = UIColor.white
+
+                self.headerView.ctaAnimationView?.layer.cornerRadius = UserProfileCTAView.cornerRadius
+                self.headerView.ctaView?.layer.cornerRadius = UserProfileCTAView.cornerRadius
+
+                self.headerView.ctaAnimationView?.snp.remakeConstraints {
                     $0.leading.equalToSuperview().offset(0)
                     $0.trailing.equalToSuperview().offset(0)
                     $0.bottom.equalToSuperview().offset(-UserProfileTableHeaderView.bottom)
+                    $0.height.equalTo(self.headerView.ctaView!.snp.height)
                 }
-                self.headerView.ctaView.setNeedsLayout()
-                self.headerView.ctaView.layoutIfNeeded()
-                self.headerView.ctaView.snp.updateConstraints {
+
+                self.headerView.ctaView?.snp.remakeConstraints {
+                    $0.leading.equalToSuperview().offset(16)
+                    $0.trailing.equalToSuperview().offset(-16)
+                    $0.bottom.equalToSuperview().offset(-UserProfileTableHeaderView.bottom)
+                }
+                self.headerView.ctaAnimationView?.setNeedsLayout()
+                self.headerView.ctaAnimationView?.layoutIfNeeded()
+                self.headerView.ctaView?.setNeedsLayout()
+                self.headerView.ctaView?.layoutIfNeeded()
+
+                self.headerView.ctaAnimationView?.snp.updateConstraints {
                     $0.leading.equalToSuperview().offset(16)
                     $0.trailing.equalToSuperview().offset(-16)
                 }
                 UserProfileViewController.isRemoving = true
                 UIView.animate(withDuration: time, animations: {
-                    self.headerView.ctaView.setNeedsLayout()
-                    self.headerView.ctaView.layoutIfNeeded()
+                    self.headerView.ctaAnimationView?.setNeedsLayout()
+                    self.headerView.ctaAnimationView?.layoutIfNeeded()
                 }) { (success) in
                     if success {
                         UserProfileViewController.isRemoving = false
@@ -335,130 +361,57 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
         } else {
             if offsetY > 0.0 {
                 if ctaView == nil  {
+
+                    self.ctaAnimationView = self.headerView.ctaAnimationView
+                    self.view.addSubview(self.ctaAnimationView!)
                     self.ctaView = self.headerView.ctaView
                     self.view.addSubview(self.ctaView!)
+
+
+                    self.ctaAnimationView!.backgroundColor = UIColor.white
+                    self.ctaView!.backgroundColor = UIColor.white
+
+                    self.ctaAnimationView?.snp.makeConstraints {
+                         $0.leading.equalToSuperview().offset(16)
+                         $0.trailing.equalToSuperview().offset(-16)
+                         $0.top.equalTo(naviBackView!.snp.bottom)
+                         $0.height.equalTo(self.ctaView!.snp.height)
+                     }
+
                     self.ctaView?.snp.makeConstraints {
-                        $0.leading.equalToSuperview().offset(UserProfileTableHeaderView.bottom)
-                        $0.trailing.equalToSuperview().offset(-UserProfileTableHeaderView.bottom)
+                        $0.leading.equalToSuperview().offset(16)
+                        $0.trailing.equalToSuperview().offset(-16)
                         $0.top.equalTo(naviBackView!.snp.bottom)
                     }
                     self.ctaView?.setNeedsLayout()
                     self.ctaView?.layoutIfNeeded()
-                    self.ctaView?.snp.updateConstraints { (make) in
+                    self.ctaAnimationView?.setNeedsLayout()
+                    self.ctaAnimationView?.layoutIfNeeded()
+
+                    self.ctaAnimationView?.snp.updateConstraints { (make) in
                         make.leading.equalToSuperview().offset(0)
                         make.trailing.equalToSuperview().offset(0)
                     }
-                    
+
                     UIView.animate(withDuration: time, animations: {
-                        self.ctaView?.setNeedsLayout()
-                        self.ctaView?.layoutIfNeeded()
+                        self.ctaAnimationView?.setNeedsLayout()
+                        self.ctaAnimationView?.layoutIfNeeded()
                     }) { (success) in
                         if success {
-                            self.ctaView?.contentView.layer.cornerRadius = 0
+                            self.ctaAnimationView?.layer.cornerRadius = 0
                         }
                     }
                 }
             }
         }
     }
-    
-    //MARK:导航栏动画
-    func catViewAnimation(_ scrollView: UIScrollView) {
 
-        let offsetY = scrollView.contentOffset.y
-        let time = 0.25
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: { (context) in
+            self.tableView.reloadData()
+        }) { (context) in
 
-        let imageHeight = self.headerView.bounds.size.height - UserProfileCTAView.height/2.0 - UserProfileTableHeaderView.bottom
-        let width = self.headerView.frame.size.width;
-
-        if (offsetY < 0) {
-            let heightY = imageHeight + abs(offsetY) - 0;
-            let f = heightY / imageHeight;
-            self.headerView.coverImageView.snp.remakeConstraints{
-                $0.top.equalToSuperview().offset(offsetY+0)
-                $0.leading.equalTo( -(width * f - width) / 2)
-                $0.width.equalTo(width * f)
-                $0.height.equalTo(heightY)
-            }
-        }
-
-        let height = (self.headerView.bounds.size.height - UserProfileCTAView.height-UserProfileTableHeaderView.bottom - self.naviBackView.bounds.size.height) as CGFloat
-        if (offsetY <= height) {
-            let rate = offsetY / height
-            naviBackView?.alpha = rate;
-            if (offsetY <= height / 2.0) {
-                // 由白到透明,proportion:1->0
-                let proportion = 1 - min(1, (offsetY)/(height / 2.0));
-                backButton.setImage(UIImage(named: "player_back"), for: .normal)
-                backButton.alpha = proportion;
-            } else {
-                // 由透明到黑
-                let proportion = min(1, (offsetY - ((height / 2.0)))/(height / 2.0));
-                backButton.setImage(UIImage(named: "icon_back"), for: .normal)
-                backButton.alpha = proportion;
-            }
-        } else {
-            naviBackView?.alpha = 1;
-        }
-
-        if (offsetY <= height) {
-            if UserProfileViewController.isRemoving {
-                return
-            }
-            if self.ctaView != nil {
-                self.headerView.addSubview(self.ctaView!)
-                self.ctaView = nil
-                self.headerView.ctaView.layer.cornerRadius = UserProfileCTAView.cornerRadius
-                self.headerView.ctaView.snp.remakeConstraints {
-                    $0.leading.equalToSuperview().offset(0)
-                    $0.trailing.equalToSuperview().offset(0)
-                    $0.height.equalTo(UserProfileCTAView.height)
-                    $0.bottom.equalToSuperview().offset(-UserProfileTableHeaderView.bottom)
-                }
-                self.headerView.ctaView.setNeedsLayout()
-                self.headerView.ctaView.layoutIfNeeded()
-                self.headerView.ctaView.snp.updateConstraints {
-                    $0.leading.equalToSuperview().offset(UserProfileTableHeaderView.bottom)
-                    $0.trailing.equalToSuperview().offset(-UserProfileTableHeaderView.bottom)
-                }
-                UserProfileViewController.isRemoving = true
-                UIView.animate(withDuration: time, animations: {
-                    self.headerView.ctaView.setNeedsLayout()
-                    self.headerView.ctaView.layoutIfNeeded()
-                }) { (success) in
-                    if success {
-                        UserProfileViewController.isRemoving = false
-                    }
-                }
-            }
-        } else {
-            if offsetY > 0.0 {
-                if ctaView == nil  {
-                    self.ctaView = self.headerView.ctaView
-                    self.view.addSubview(self.ctaView!)
-                    self.ctaView?.snp.makeConstraints {
-                        $0.leading.equalToSuperview().offset(UserProfileTableHeaderView.bottom)
-                        $0.trailing.equalToSuperview().offset(-UserProfileTableHeaderView.bottom)
-                        $0.height.equalTo(UserProfileCTAView.height)
-                        $0.top.equalTo(naviBackView!.snp.bottom)
-                    }
-                    self.ctaView?.setNeedsLayout()
-                    self.ctaView?.layoutIfNeeded()
-                    self.ctaView?.snp.updateConstraints { (make) in
-                        make.leading.equalToSuperview().offset(0)
-                        make.trailing.equalToSuperview().offset(0)
-                    }
-
-                    UIView.animate(withDuration: time, animations: {
-                        self.ctaView?.setNeedsLayout()
-                        self.ctaView?.layoutIfNeeded()
-                    }) { (success) in
-                        if success {
-                            self.ctaView?.layer.cornerRadius = 0
-                        }
-                    }
-                }
-            }
         }
     }
 }

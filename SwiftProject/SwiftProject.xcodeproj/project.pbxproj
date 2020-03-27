@@ -423,7 +423,6 @@
 			isa = PBXGroup;
 			children = (
 				01026733242379B900CA6D00 /* HeaderFooterView */,
-				01E88D9A242B4193003D4313 /* CTAView */,
 				01026730242379B900CA6D00 /* SectionView */,
 				0102672A242379B900CA6D00 /* Cells */,
 			);
@@ -458,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				01026735242379B900CA6D00 /* UserProfileTableHeaderView.swift */,
+				01026736242379B900CA6D00 /* UserProfileCTAView.swift */,
 				01BFFC74242DA501004AA94B /* UserProfileTagsView.swift */,
 			);
 			path = HeaderFooterView;
@@ -1244,14 +1244,6 @@
 				01A3A40223BF5A18003FEA19 /* ARCViewController.swift */,
 			);
 			path = ARC;
-			sourceTree = "<group>";
-		};
-		01E88D9A242B4193003D4313 /* CTAView */ = {
-			isa = PBXGroup;
-			children = (
-				01026736242379B900CA6D00 /* UserProfileCTAView.swift */,
-			);
-			path = CTAView;
 			sourceTree = "<group>";
 		};
 		01E9B35E242125AD00FF618D /* Listening */ = {
