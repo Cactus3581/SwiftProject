@@ -108,6 +108,7 @@
 		01ADB56E23BE296700EAB005 /* ClassStructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADB56D23BE296700EAB005 /* ClassStructViewController.swift */; };
 		01B24E2C23BF33A500677023 /* GenericsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B24E2B23BF33A500677023 /* GenericsViewController.swift */; };
 		01B24E2F23BF358100677023 /* DataTypeConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B24E2E23BF358100677023 /* DataTypeConvertViewController.swift */; };
+		01BFFC75242DA502004AA94B /* UserProfileTagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BFFC74242DA501004AA94B /* UserProfileTagsView.swift */; };
 		01C01BB123BDE699008B2D9E /* EnumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C01BB023BDE699008B2D9E /* EnumViewController.swift */; };
 		01C01BB423BDEA97008B2D9E /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C01BB323BDEA97008B2D9E /* ClosureViewController.swift */; };
 		01C0DCB623FC08610069FF78 /* ProtocolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156812F23BE28F100B42FB9 /* ProtocolViewController.swift */; };
@@ -273,6 +274,7 @@
 		01ADB56D23BE296700EAB005 /* ClassStructViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassStructViewController.swift; sourceTree = "<group>"; };
 		01B24E2B23BF33A500677023 /* GenericsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericsViewController.swift; sourceTree = "<group>"; };
 		01B24E2E23BF358100677023 /* DataTypeConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypeConvertViewController.swift; sourceTree = "<group>"; };
+		01BFFC74242DA501004AA94B /* UserProfileTagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTagsView.swift; sourceTree = "<group>"; };
 		01C01BB023BDE699008B2D9E /* EnumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumViewController.swift; sourceTree = "<group>"; };
 		01C01BB323BDEA97008B2D9E /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
 		01D389FD241A770E00F6D74D /* MVVMListSecViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMListSecViewModel.swift; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 			isa = PBXGroup;
 			children = (
 				01026735242379B900CA6D00 /* UserProfileTableHeaderView.swift */,
+				01BFFC74242DA501004AA94B /* UserProfileTagsView.swift */,
 			);
 			path = HeaderFooterView;
 			sourceTree = "<group>";
@@ -1770,6 +1773,7 @@
 				01B24E2C23BF33A500677023 /* GenericsViewController.swift in Sources */,
 				010D6ACB23A9FD8F00B84621 /* CarViewController.swift in Sources */,
 				010D6ACC23A9FD8F00B84621 /* SwinjectViewController.swift in Sources */,
+				01BFFC75242DA502004AA94B /* UserProfileTagsView.swift in Sources */,
 				0182346D23C4AA8C00FB30A9 /* RxSwiftViewController.swift in Sources */,
 				0112F9A823BF57CA0002788E /* StringAndCharViewController.swift in Sources */,
 				01026749242379B900CA6D00 /* UserProfileCTAView.swift in Sources */,

@@ -10,35 +10,39 @@ import UIKit
 
 class UserProfilePhoneTableViewCell: UITableViewCell, UserProfileTableViewCellProtocol {
     
-    let phoneLabel: UILabel?
-    let showButton: UIButton?
-    let lineView: UIView?
+    weak var phoneLabel: UILabel!
+    weak var showButton: UIButton!
+    weak var arrowImageView: UIImageView!
+    weak var lineView: UIView!
     var indexPath: IndexPath?
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        
-        
+
         let phoneLabel: UILabel = UILabel()
         self.phoneLabel = phoneLabel
         
         let showButton: UIButton = UIButton()
         self.showButton = showButton
-        
+
+        let arrowImageView = UIImageView()
+        self.arrowImageView = arrowImageView
+
         let lineView: UIView = UIView()
         self.lineView = lineView
-        
+
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.contentView.backgroundColor = UIColor.red
+        self.contentView.backgroundColor = UIColor.white
         
         self.contentView.addSubview(phoneLabel)
         phoneLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(16)
-            $0.centerY.equalToSuperview()
+            $0.top.equalToSuperview()
+            $0.bottom.equalToSuperview().offset(-12)
         }
         phoneLabel.font = UIFont.systemFont(ofSize: 16)
         phoneLabel.textColor = UIColor.darkText
@@ -47,11 +51,18 @@ class UserProfilePhoneTableViewCell: UITableViewCell, UserProfileTableViewCellPr
         self.contentView.addSubview(showButton)
         showButton.snp.makeConstraints {
             $0.leading.equalTo(phoneLabel.snp.trailing).offset(15)
-            $0.top.equalToSuperview().offset(23)
-            $0.bottom.equalToSuperview().offset(-23)
+            $0.centerY.equalTo(phoneLabel)
         }
+        showButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         showButton.setTitleColor(UIColor.blue,for: .normal)
         showButton.addTarget(self, action: #selector(show), for: .touchUpInside)
+
+        self.contentView.addSubview(arrowImageView)
+        arrowImageView.snp.makeConstraints { (make) in
+            make.trailing.equalToSuperview().offset(-16)
+            make.centerY.equalTo(phoneLabel)
+        }
+        arrowImageView.image = UIImage(named: "icon_back")
         
         self.contentView.addSubview(lineView)
         lineView.backgroundColor = UIColor.lightGray
@@ -72,42 +83,39 @@ class UserProfilePhoneTableViewCell: UITableViewCell, UserProfileTableViewCellPr
             guard let cellViewModel = cellViewModel as? UserProfilePhoneCellViewModel else {
                 return
             }
-            phoneLabel?.text = cellViewModel.model?.number
+            phoneLabel.text = cellViewModel.model?.number
             if let isShow = cellViewModel.isShow {
                 if isShow {
-                    showButton?.setTitle("显示", for: .normal)
-                    phoneLabel?.text = cellViewModel.model?.number
+                    showButton.setTitle("显示", for: .normal)
+                    phoneLabel.text = cellViewModel.model?.number
                 } else {
-                    showButton?.setTitle("隐藏", for: .normal)
-                    phoneLabel?.text = cellViewModel.model?.number
+                    showButton.setTitle("隐藏", for: .normal)
+                    phoneLabel.text = cellViewModel.model?.number
                 }
             }
         }
     }
     
-    
     @objc func show() {
-        //vm绑定view
-        guard let cellViewModel1 = cellViewModel as? UserProfilePhoneCellViewModel else {
+
+        guard let cellViewModel = cellViewModel as? UserProfilePhoneCellViewModel else {
             return
         }
+
         // 使用KVO
         //cellViewModel1.show(indexPath: self.indexPath!)
 
-        //使用闭包
-        cellViewModel1.show1(indexPath: self.indexPath!) {
+        // 使用闭包
+        cellViewModel.show1(indexPath: self.indexPath!) {
             if indexPath == self.indexPath {
                 // update
-                guard let cellViewModel = cellViewModel as? UserProfilePhoneCellViewModel else {
-                    return
-                }
                 if let isShow = cellViewModel.isShow {
                     if isShow {
-                        showButton?.setTitle("显示", for: .normal)
-                        phoneLabel?.text = cellViewModel.model?.number
+                        showButton.setTitle("显示", for: .normal)
+                        phoneLabel.text = cellViewModel.model?.number
                     } else {
-                        showButton?.setTitle("隐藏", for: .normal)
-                        phoneLabel?.text = cellViewModel.model?.number
+                        showButton.setTitle("隐藏", for: .normal)
+                        phoneLabel.text = cellViewModel.model?.number
                     }
                 }
             }

@@ -48,6 +48,9 @@ class UserProfileUserStatusCellViewModel: NSObject {
 
 class UserProfileTextCellViewModel: NSObject {
     var model: TextItem?
+    func longPressGestureClick() {
+        print("长按手势复制\(model?.copyValue)")
+    }
 }
 
 class UserProfileLinkCellViewModel: NSObject {

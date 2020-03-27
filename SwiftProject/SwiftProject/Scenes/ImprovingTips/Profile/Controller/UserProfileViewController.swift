@@ -102,11 +102,60 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
     }
 
     func initializeViews() {
-        
+
         let tableView = UITableView(frame: CGRect.zero, style: .grouped)
         self.tableView = tableView
+        self.view.addSubview(tableView)
+
+        let naviBackView = UIView()
+        self.naviBackView = naviBackView
+        self.view.addSubview(naviBackView)
+
+        let backButton = UIButton()
+        self.backButton = backButton
+        self.view.addSubview(backButton)
+
+        let titleLabel = UILabel()
+        self.titleLabel = titleLabel
+        naviBackView.addSubview(titleLabel)
+
+        let threePointButton = UIButton()
+        self.threePointButton = threePointButton
+        self.view.addSubview(threePointButton)
+
+        naviBackView.snp.makeConstraints { (make) in
+            make.top.leading.trailing.equalToSuperview()
+            make.height.equalTo(self.naviHeight)
+        }
+        naviBackView.alpha = 0
+        naviBackView.backgroundColor = UIColor.white;
+
+        backButton.snp.makeConstraints { (make) in
+            make.leading.equalToSuperview().offset(15)
+            make.centerY.equalTo(titleLabel)
+        }
+        backButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+        backButton.setImage(UIImage(named: "player_back"), for: .normal)
+
+        titleLabel.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-15)
+            make.leading.greaterThanOrEqualTo(backButton.snp.trailing)
+            make.trailing.lessThanOrEqualTo(threePointButton.snp.leading)
+        }
+        titleLabel.textAlignment = .center
+        titleLabel.text = "mary"
+        titleLabel.textColor = UIColor.darkText;
+
+//        threePointButton.isHidden = true
+        threePointButton.snp.makeConstraints { (make) in
+            make.trailing.equalToSuperview().offset(-15)
+            make.centerY.equalTo(backButton)
+        }
+        threePointButton.addTarget(self, action: #selector(showSheet), for: .touchUpInside)
+        threePointButton.setImage(UIImage(named: "player_back"), for: .normal)
+
         tableView.contentInsetAdjustmentBehavior = .never
-        view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
@@ -124,49 +173,7 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
         tableView.tableHeaderView = headerView
 
         tableView.delegate = self
-        
-        let naviBackView = UIView()
-        self.naviBackView = naviBackView
-        view.addSubview(naviBackView)
-        naviBackView.snp.makeConstraints { (make) in
-            make.top.leading.trailing.equalToSuperview()
-            make.height.equalTo(self.naviHeight)
-        }
-        naviBackView.alpha = 0
-        naviBackView.backgroundColor = UIColor.white;
 
-        
-        let titleLabel = UILabel()
-        self.titleLabel = titleLabel
-        naviBackView.addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-15)
-        }
-        titleLabel.text = "mary"
-        titleLabel.textColor = UIColor.darkText;
-
-        let backButton = UIButton()
-        self.backButton = backButton
-        self.view!.addSubview(backButton)
-        backButton.snp.makeConstraints { (make) in
-            make.leading.equalToSuperview().offset(15)
-            make.bottom.equalTo(titleLabel)
-        }
-        backButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
-        backButton.setImage(UIImage(named: "player_back"), for: .normal)
-
-//        if self.viewModel.isShowThreePoints {
-            let threePointButton = UIButton()
-            self.threePointButton = threePointButton
-            self.view!.addSubview(threePointButton)
-            threePointButton.snp.makeConstraints { (make) in
-                make.trailing.equalToSuperview().offset(-15)
-                make.bottom.equalTo(titleLabel)
-            }
-            threePointButton.addTarget(self, action: #selector(showSheet), for: .touchUpInside)
-            threePointButton.setImage(UIImage(named: "player_back"), for: .normal)
-//        }
         registerViews()
     }
     
@@ -217,15 +224,21 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
         return view as? UIView
     }
     
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        let sessionViewModel = viewModel.array[section]
-//        return sessionViewModel.viewHeight ?? 0
-//    }
-//
-//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        let sessionViewModel = viewModel.array[section]
-//        return sessionViewModel.viewHeight ?? 0
-//    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let sessionViewModel = viewModel.array[section]
+        guard let _ = sessionViewModel.headerIdentifier else {
+            return CGFloat.leastNormalMagnitude
+        }
+        return sessionViewModel.headerHeight ?? CGFloat.leastNormalMagnitude
+    }
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        let sessionViewModel = viewModel.array[section]
+        guard let _ = sessionViewModel.footerIdentifier else {
+            return CGFloat.leastNormalMagnitude
+        }
+        return sessionViewModel.footerHeight ?? CGFloat.leastNormalMagnitude
+    }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let viewModel = self.viewModel else {
@@ -356,7 +369,7 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
         let time = 0.25
 
         let imageHeight = self.headerView.bounds.size.height - UserProfileCTAView.height/2.0 - UserProfileTableHeaderView.bottom
-        let width = self.tableView.frame.size.width;
+        let width = self.headerView.frame.size.width;
 
         if (offsetY < 0) {
             let heightY = imageHeight + abs(offsetY) - 0;
@@ -427,7 +440,7 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
                         $0.leading.equalToSuperview().offset(UserProfileTableHeaderView.bottom)
                         $0.trailing.equalToSuperview().offset(-UserProfileTableHeaderView.bottom)
                         $0.height.equalTo(UserProfileCTAView.height)
-                        $0.top.equalTo(naviBackView!.snp_bottom)
+                        $0.top.equalTo(naviBackView!.snp.bottom)
                     }
                     self.ctaView?.setNeedsLayout()
                     self.ctaView?.layoutIfNeeded()

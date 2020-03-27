@@ -10,8 +10,9 @@ import UIKit
 
 class UserProfileAliasTableViewCell: UITableViewCell, UserProfileTableViewCellProtocol {
 
-    let label: UILabel?
-    let lineView: UIView?
+    weak var label: UILabel!
+    weak var arrowImageView: UIImageView!
+    weak var lineView: UIView!
     var indexPath: IndexPath?
 
     override func awakeFromNib() {
@@ -20,26 +21,36 @@ class UserProfileAliasTableViewCell: UITableViewCell, UserProfileTableViewCellPr
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 
-
         let label: UILabel = UILabel()
         self.label = label
 
         let lineView: UIView = UIView()
         self.lineView = lineView
 
+        let arrowImageView = UIImageView()
+        self.arrowImageView = arrowImageView
+        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        self.contentView.backgroundColor = UIColor.red
+        self.contentView.backgroundColor = UIColor.white
 
         self.contentView.addSubview(label)
         label.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(16)
-            $0.top.equalToSuperview().offset(23)
-            $0.bottom.equalToSuperview().offset(-23)
+            $0.trailing.equalToSuperview().offset(16)
+            $0.top.equalToSuperview()
+            $0.bottom.equalToSuperview().offset(-12)
         }
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = UIColor.darkText
+
+        self.contentView.addSubview(arrowImageView)
+        arrowImageView.snp.makeConstraints { (make) in
+            make.trailing.equalToSuperview().offset(-16)
+            make.centerY.equalTo(label)
+        }
+        arrowImageView.image = UIImage(named: "icon_back")
 
         self.contentView.addSubview(lineView)
         lineView.backgroundColor = UIColor.lightGray
@@ -60,7 +71,7 @@ class UserProfileAliasTableViewCell: UITableViewCell, UserProfileTableViewCellPr
             guard let cellViewModel = cellViewModel as? UserProfileAliasCellViewModel else {
                 return
             }
-            label?.text = cellViewModel.model?.alias
+            label.text = cellViewModel.model?.alias
         }
     }
 

@@ -12,7 +12,7 @@ import UIKit
 
 class UserProfileSectionHeaderView: UITableViewHeaderFooterView,UserProfileSectionViewProtocol {
     
-    let label: UILabel?
+    weak var label: UILabel!
     var section: Int?
     
     override init(reuseIdentifier: String?) {
@@ -22,13 +22,14 @@ class UserProfileSectionHeaderView: UITableViewHeaderFooterView,UserProfileSecti
         
         super.init(reuseIdentifier: reuseIdentifier)
         
-        self.contentView.backgroundColor = UIColor.green
+        self.contentView.backgroundColor = UIColor.white
         
         self.contentView.addSubview(label)
         label.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(16)
-            $0.top.equalToSuperview().offset(12)
+            $0.trailing.equalToSuperview().offset(-16)
             $0.bottom.equalToSuperview().offset(-2)
+            //$0.top.equalToSuperview().offset(12)
         }
         label.textColor = UIColor.lightGray
         label.font = UIFont.systemFont(ofSize: 14)
@@ -43,7 +44,7 @@ class UserProfileSectionHeaderView: UITableViewHeaderFooterView,UserProfileSecti
             guard let sectionViewModel = self.sessionViewModel else {
                 return
             }
-            label?.text = sectionViewModel.headerText
+            label.text = sectionViewModel.headerText
         }
     }
     

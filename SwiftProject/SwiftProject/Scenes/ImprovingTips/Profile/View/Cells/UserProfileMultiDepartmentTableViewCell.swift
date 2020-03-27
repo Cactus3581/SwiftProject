@@ -9,12 +9,13 @@
 import UIKit
 
 class UserProfileMultiDepartmentTableViewCell: UITableViewCell, UserProfileTableViewCellProtocol {
-    
-    let titleLabel: UILabel?
-    let lineView: UIView?
-    let dotView: UIView?
+
+    weak var dotView: UIView!
+    weak var titleLabel: UILabel!
+    weak var lineView: UIView!
     var indexPath: IndexPath?
-    
+    var maxLine = 3
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -32,7 +33,7 @@ class UserProfileMultiDepartmentTableViewCell: UITableViewCell, UserProfileTable
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.contentView.backgroundColor = UIColor.red
+        self.contentView.backgroundColor = UIColor.white
         
         self.contentView.addSubview(dotView)
         dotView.snp.makeConstraints {
@@ -44,13 +45,13 @@ class UserProfileMultiDepartmentTableViewCell: UITableViewCell, UserProfileTable
         dotView.layer.cornerRadius = 3
         
         self.contentView.addSubview(label)
-        label.numberOfLines = 3
+        label.numberOfLines = maxLine
         label.snp.makeConstraints {
             $0.leading.equalTo(dotView.snp.trailing).offset(16)
+            $0.trailing.equalToSuperview().offset(-16)
             $0.top.equalToSuperview().offset(23)
             $0.bottom.equalToSuperview().offset(-23)
         }
-        label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = UIColor.darkText
         
@@ -73,7 +74,7 @@ class UserProfileMultiDepartmentTableViewCell: UITableViewCell, UserProfileTable
             guard let cellViewModel = cellViewModel as? UserProfileDepartmentCellViewModel else {
                 return
             }
-            titleLabel?.text = cellViewModel.path
+            titleLabel.text = cellViewModel.path
         }
     }
     

@@ -17,5 +17,4 @@ protocol UserProfileSectionViewProtocol {
 extension UserProfileSectionViewProtocol {
     var sessionViewModel: UserProfileSessionViewModelProtocol? { set{} get{return nil} }
     var section: Int? { set{} get{return 0} }
-    static var identifier: String { return "" }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class UserProfileSectionFooterView: UITableViewHeaderFooterView,UserProfileSectionViewProtocol {
     
-    let button: UIButton?
+    weak var button: UIButton!
     var section: Int?
     
     override init(reuseIdentifier: String?) {
@@ -20,14 +20,16 @@ class UserProfileSectionFooterView: UITableViewHeaderFooterView,UserProfileSecti
         
         super.init(reuseIdentifier: reuseIdentifier)
         
-        self.contentView.backgroundColor = UIColor.blue
+        self.contentView.backgroundColor = UIColor.white
         
         self.contentView.addSubview(button)
         button.snp.makeConstraints {
-            $0.leading.equalTo(32)
-            $0.top.equalToSuperview().offset(10)
-            $0.bottom.equalToSuperview().offset(-10)
+            $0.leading.equalToSuperview().offset(32)
+            $0.centerY.equalToSuperview()
+            //$0.top.equalToSuperview().offset(10)
+            //$0.bottom.equalToSuperview().offset(-16)
         }
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         button.setTitleColor(UIColor.blue,for: .normal)
         button.addTarget(self, action: #selector(footerClick), for: .touchUpInside)
     }
@@ -41,7 +43,7 @@ class UserProfileSectionFooterView: UITableViewHeaderFooterView,UserProfileSecti
             guard let sectionViewModel = self.sessionViewModel as? UserProfileDepartmentSessionViewModel else {
                 return
             }
-            button?.setTitle(sectionViewModel.footerText, for: .normal)
+            button.setTitle(sectionViewModel.footerText, for: .normal)
         }
     }
     
@@ -49,7 +51,6 @@ class UserProfileSectionFooterView: UITableViewHeaderFooterView,UserProfileSecti
         guard let sectionViewModel1 = self.sessionViewModel as? UserProfileDepartmentSessionViewModel else {
             return
         }
-        
         sectionViewModel1.reloadData(section: self.section!)
     }
     

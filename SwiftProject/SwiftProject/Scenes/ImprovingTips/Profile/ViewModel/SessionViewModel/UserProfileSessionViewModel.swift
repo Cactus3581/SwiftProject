@@ -18,7 +18,8 @@ protocol UserProfileSessionViewModelProtocol {
     var list: Array<Any>? { set get }
     func didSelectCellViewModel(cellViewModel: Any, indexPath: IndexPath)
 
-    var viewHeight: CGFloat? { get } // 高度
+    var headerHeight: CGFloat? { get }
+    var footerHeight: CGFloat? { get }
     var headerText: String? { get }
 }
 
@@ -29,7 +30,8 @@ extension UserProfileSessionViewModelProtocol {
     var footerIdentifier: String? {return nil}
     var list: Array<Any>? { set{} get{return nil} }
 
-    var viewHeight: CGFloat? { return 60 }
+    var headerHeight: CGFloat? { return CGFloat.leastNormalMagnitude }
+    var footerHeight: CGFloat? { return CGFloat.leastNormalMagnitude }
     var headerText: String? {return nil}
     func didSelectCellViewModel(cellViewModel: Any, indexPath: IndexPath){}
 }
@@ -39,6 +41,7 @@ class UserProfileTextSessionViewModel: NSObject, UserProfileSessionViewModelProt
     var list: Array<Any>?
     var headerText: String?
     var profileItem: TextItem?
+    var headerHeight: CGFloat?
 
     static func canHandle(type: Int) -> Bool {
         if type == 1 {
@@ -61,6 +64,7 @@ class UserProfileTextSessionViewModel: NSObject, UserProfileSessionViewModelProt
         guard let _ = self.profileItem?.key, let list = self.list, list.count > 0 else {
             return nil
         }
+        self.headerHeight = 34
         return UserProfileSectionHeaderView.identifier
     }
 
@@ -74,6 +78,7 @@ class UserProfileLinkSessionViewModel: NSObject, UserProfileSessionViewModelProt
     var list: Array<Any>?
     var headerText: String?
     var profileItem: LinkItem?
+    var headerHeight: CGFloat?
 
     static func canHandle(type: Int) -> Bool {
         if type == 2 {
@@ -95,14 +100,19 @@ class UserProfileLinkSessionViewModel: NSObject, UserProfileSessionViewModelProt
         guard let _ = self.profileItem?.key, let list = self.list, list.count > 0, let linkTitle = self.profileItem?.linkTitle, !linkTitle.isEmpty else {
             return nil
         }
+        self.headerHeight = 34
         return UserProfileSectionHeaderView.identifier
     }
 
     var identifier: String {
         return UserProfileLinkTableViewCell.identifier
     }
-}
 
+    func didSelectCellViewModel(cellViewModel: Any, indexPath: IndexPath) {
+        let cellViewModel = cellViewModel as? UserProfileLinkCellViewModel
+        print("点击链接")
+    }
+}
 
 class UserProfileDepartmentSessionViewModel: NSObject, UserProfileSessionViewModelProtocol {
     
@@ -114,6 +124,8 @@ class UserProfileDepartmentSessionViewModel: NSObject, UserProfileSessionViewMod
     var section: Int?
     var profileItem: DepartmentsItem?
     var maxCount = 5
+    var headerHeight: CGFloat?
+    var footerHeight: CGFloat?
 
     static func canHandle(type: Int) -> Bool {
         if type == 3 {
@@ -157,7 +169,7 @@ class UserProfileDepartmentSessionViewModel: NSObject, UserProfileSessionViewMod
         self.headerText = self.profileItem?.key
         isExpand = false
         if isMoreFive() {
-            self.footerText = "展开"
+            self.footerText = "展开更多部门"
         }
     }
 
@@ -165,12 +177,14 @@ class UserProfileDepartmentSessionViewModel: NSObject, UserProfileSessionViewMod
         guard let _ = self.profileItem?.key, let list = self.list, list.count > 0 else {
             return nil
         }
+        self.headerHeight = 34
         return UserProfileSectionHeaderView.identifier
     }
 
 
     var footerIdentifier: String? {
         if isMoreFive() {
+            self.footerHeight = 34
             return UserProfileSectionFooterView.identifier
         }
         return nil
@@ -187,10 +201,10 @@ class UserProfileDepartmentSessionViewModel: NSObject, UserProfileSessionViewMod
         isExpand = !isExpand
         self.section = section
         if isExpand {
-            self.footerText = "收起"
+            self.footerText = "收起更多部门"
             self.list = allList
         } else {
-            self.footerText = "展开"
+            self.footerText = "展开更多部门"
             self.list = [] + allList.prefix(5)
         }
     }
@@ -218,6 +232,7 @@ class UserProfilePhoneSessionViewModel: NSObject, UserProfileSessionViewModelPro
     var list: Array<Any>?
     var headerText: String?
     var profileItem: PhoneItem?
+    var headerHeight: CGFloat?
 
     static func canHandle(type: Int) -> Bool {
         if type == 4 {
@@ -239,11 +254,17 @@ class UserProfilePhoneSessionViewModel: NSObject, UserProfileSessionViewModelPro
         guard let _ = self.profileItem?.key, let list = self.list, list.count > 0 else {
             return nil
         }
+        self.headerHeight = 34
         return UserProfileSectionHeaderView.identifier
     }
 
     var identifier: String {
         return UserProfilePhoneTableViewCell.identifier
+    }
+
+    func didSelectCellViewModel(cellViewModel: Any, indexPath: IndexPath) {
+        let cellViewModel = cellViewModel as? UserProfilePhoneCellViewModel
+        print("点击手机号")
     }
 }
 
@@ -252,6 +273,7 @@ class UserProfileUserStatusSessionViewModel: NSObject, UserProfileSessionViewMod
     var list: Array<Any>?
     var headerText: String?
     var profileItem: UserStatusItem?
+    var headerHeight: CGFloat?
 
     static func canHandle(type: Int) -> Bool {
         if type == 5 {
@@ -269,10 +291,16 @@ class UserProfileUserStatusSessionViewModel: NSObject, UserProfileSessionViewMod
         self.headerText = self.profileItem?.key
     }
 
+    func didSelectCellViewModel(cellViewModel: Any, indexPath: IndexPath) {
+        let cellViewModel = cellViewModel as? UserProfileUserStatusCellViewModel
+        print("点击描述")
+    }
+
     var headerIdentifier: String? {
         guard let _ = self.profileItem?.key, let list = self.list, list.count > 0 else {
             return nil
         }
+        self.headerHeight = 34
         return UserProfileSectionHeaderView.identifier
     }
 
@@ -286,6 +314,7 @@ class UserProfileAliasSessionViewModel: NSObject, UserProfileSessionViewModelPro
     var list: Array<Any>?
     var headerText: String?
     var profileItem: AliasItem?
+    var headerHeight: CGFloat?
 
     static func canHandle(type: Int) -> Bool {
         if type == 6 {
@@ -303,10 +332,16 @@ class UserProfileAliasSessionViewModel: NSObject, UserProfileSessionViewModelPro
         self.headerText = self.profileItem?.key
     }
 
+    func didSelectCellViewModel(cellViewModel: Any, indexPath: IndexPath) {
+        let cellViewModel = cellViewModel as? UserProfileAliasCellViewModel
+        print("点击备注")
+    }
+
     var headerIdentifier: String? {
         guard let _ = self.profileItem?.key, let list = self.list, list.count > 0 else {
             return nil
         }
+        self.headerHeight = 34
         return UserProfileSectionHeaderView.identifier
     }
 

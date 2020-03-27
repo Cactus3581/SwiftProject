@@ -17,5 +17,4 @@ protocol UserProfileTableViewCellProtocol {
 extension UserProfileTableViewCellProtocol {
     var cellViewModel: Any? { set{} get{return nil} }
     var indexPath: IndexPath? { set{} get{return nil} }
-    static var identifier: String { return "" }
 }

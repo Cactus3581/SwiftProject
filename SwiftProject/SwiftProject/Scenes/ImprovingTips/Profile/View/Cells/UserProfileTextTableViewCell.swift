@@ -10,8 +10,8 @@ import UIKit
 
 class UserProfileTextTableViewCell: UITableViewCell, UserProfileTableViewCellProtocol {
     
-    let titleLabel: UILabel?
-    let lineView: UIView?
+    let titleLabel: UILabel!
+    let lineView: UIView!
     var indexPath: IndexPath?
     
     override func awakeFromNib() {
@@ -19,8 +19,7 @@ class UserProfileTextTableViewCell: UITableViewCell, UserProfileTableViewCellPro
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        
-        
+
         let label: UILabel = UILabel()
         self.titleLabel = label
         
@@ -29,13 +28,14 @@ class UserProfileTextTableViewCell: UITableViewCell, UserProfileTableViewCellPro
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.contentView.backgroundColor = UIColor.red
+        self.contentView.backgroundColor = UIColor.white
         
         self.contentView.addSubview(label)
         label.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(16)
-            $0.top.equalToSuperview().offset(23)
-            $0.bottom.equalToSuperview().offset(-23)
+            $0.trailing.equalToSuperview().offset(-16)
+            $0.top.equalToSuperview()
+            $0.bottom.equalToSuperview().offset(-12)
         }
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 16)
@@ -49,8 +49,30 @@ class UserProfileTextTableViewCell: UITableViewCell, UserProfileTableViewCellPro
             $0.bottom.equalToSuperview()
             $0.height.equalTo(1/UIScreen.main.scale)
         }
+
+        initializeLongPressGestureRecognizer()
     }
-    
+
+    //长按手势
+    func initializeLongPressGestureRecognizer() {
+        let method = #selector(longPressGestureClick as (UILongPressGestureRecognizer) -> ())
+        let longPressGestureRecognizer = UILongPressGestureRecognizer.init(target: self, action: method)
+        longPressGestureRecognizer.numberOfTapsRequired = 0// 设置几次长按触发事件
+        longPressGestureRecognizer.numberOfTouchesRequired = 1// 设置几个手指长按
+        longPressGestureRecognizer.minimumPressDuration = 0.5// 设置长按的时间间隔
+        longPressGestureRecognizer.allowableMovement = 10// 设置长按期间可移动的距离
+        self.contentView.addGestureRecognizer(longPressGestureRecognizer)
+    }
+
+    @objc func longPressGestureClick(gesture: UILongPressGestureRecognizer) -> Void {
+        guard let cellViewModel = cellViewModel as? UserProfileTextCellViewModel else {
+            return
+        }
+        if gesture.state == .ended {
+            cellViewModel.longPressGestureClick()
+        }
+    }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -60,7 +82,7 @@ class UserProfileTextTableViewCell: UITableViewCell, UserProfileTableViewCellPro
             guard let cellViewModel = cellViewModel as? UserProfileTextCellViewModel else {
                 return
             }
-            titleLabel?.text = cellViewModel.model?.value
+            titleLabel.text = cellViewModel.model?.value
         }
     }
     

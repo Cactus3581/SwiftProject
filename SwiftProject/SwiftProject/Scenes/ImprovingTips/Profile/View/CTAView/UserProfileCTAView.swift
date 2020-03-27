@@ -12,8 +12,9 @@ class UserProfileCTAView: UIView {
 
     weak var contentView: UIView!
     weak var stackView: UIStackView!
+
     static let cornerRadius: CGFloat = 8
-    static let height: CGFloat = 90
+    static let height: CGFloat = 80
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,7 +27,7 @@ class UserProfileCTAView: UIView {
         }
         contentView.layer.cornerRadius = UserProfileCTAView.cornerRadius
         contentView.layer.masksToBounds = true
-        //创建StackView
+
         let stackView = UIStackView()
         self.stackView = stackView
         stackView.backgroundColor = UIColor.white
@@ -55,45 +56,41 @@ class UserProfileCTAView: UIView {
             }
             for itemViewModel in ctaList {
                 // 方案1: 使用工厂方法，这种略麻烦，也是依赖具体参数，还得注册，还得写工厂方法
-                if var view = UserProfileViewModelFactory.viewWithType(type: itemViewModel.viewType) {
-                    stackView.addArrangedSubview(view as! UIView)
+                if var view = UserProfileViewModelFactory.viewWithType(type: itemViewModel.viewType), let itemView = view as? UIView {
+                    stackView.addArrangedSubview(itemView)
                     view.viewModel = itemViewModel
                 }
                 
                 // 方案2: 使用类反射，也是依赖具体参数，而且该参数必须是view的类名
-//                if let viewClass = getCTAItemViewClassType(className: itemViewModel.viewType) {
-//                    let view = viewClass.init()
-//                    stackView.addArrangedSubview(view)
-//                    if var view = view as? UserProfileCTAItemViewProtocol {
-//                        view.viewModel = itemViewModel
-//                    }
-//                }
+                /*
+                if let viewClass = getCTAItemViewClassType(className: itemViewModel.viewType) {
+                    let view = viewClass.init()
+                    stackView.addArrangedSubview(view)
+                    if var view = view as? UserProfileCTAItemViewProtocol {
+                        view.viewModel = itemViewModel
+                    }
+                }
+                 */
             }
         }
     }
 
     func getCTAItemViewClassType(className: String) -> UIView.Type? {
         guard let nameSpace = Bundle.main.infoDictionary!["CFBundleExecutable"] as? String else {
-            print("获取命名空间失败")
             return nil
         }
 
         guard let viewClass = NSClassFromString(nameSpace + "." + className) as? UIView.Type else {
              return nil
          }
-
         return viewClass
     }
 
     func setShadow(view: UIView, shadowColor: UIColor, opacity: Float, offset: CGSize,  shadowRadius: CGFloat) {
-        //设置阴影颜色
-        view.layer.shadowColor = shadowColor.cgColor
-        //设置透明度
-        view.layer.shadowOpacity = opacity
-        //设置阴影偏移量
-        view.layer.shadowOffset = offset
-        //设置阴影半径
-        view.layer.shadowRadius = shadowRadius
+        view.layer.shadowColor = shadowColor.cgColor // 设置阴影颜色
+        view.layer.shadowOpacity = opacity // 设置透明度
+        view.layer.shadowOffset = offset // 设置阴影偏移量
+        view.layer.shadowRadius = shadowRadius // 设置阴影半径
     }
 }
 
@@ -111,8 +108,8 @@ extension UserProfileCTAItemViewProtocol {
 }
 
 class UserProfileCTAItemView: UIView, UserProfileCTAItemViewProtocol  {
-    let coverImageView: UIImageView?
-    let label: UILabel?
+    weak var coverImageView: UIImageView!
+    weak var label: UILabel!
 
     static func canHandle(type: String) -> Bool {
         if type == "phone" {
@@ -128,6 +125,7 @@ class UserProfileCTAItemView: UIView, UserProfileCTAItemViewProtocol  {
         self.label = label
         
         super.init(frame: frame)
+
         self.backgroundColor = UIColor.white
         self.addSubview(coverImageView)
         coverImageView.snp.makeConstraints { (make) in
@@ -136,25 +134,22 @@ class UserProfileCTAItemView: UIView, UserProfileCTAItemViewProtocol  {
             make.width.equalTo(24)
             make.height.equalTo(coverImageView.snp.width).multipliedBy(1)
         }
-        coverImageView.image = UIImage(named: "cactus_explicit")
         coverImageView.clipsToBounds = true
         coverImageView.contentMode = .scaleAspectFill
-        coverImageView.backgroundColor = UIColor.green
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(didClick))
-        coverImageView.isUserInteractionEnabled = true
-        coverImageView.addGestureRecognizer(tap)
 
         self.addSubview(label)
         label.font = UIFont.systemFont(ofSize: 12)
-        label.numberOfLines = 0
+        //label.numberOfLines = 0
         label.textAlignment = .center
-        label.snp.makeConstraints{  (make) in
+        label.snp.makeConstraints{ (make) in
             make.top.equalTo(coverImageView.snp.bottom).offset(8)
-//            make.bottom.equalToSuperview().offset((-14))
+            //make.bottom.equalToSuperview().offset((-14))
             make.centerX.bottom.equalToSuperview()
-//            make.leading.trailing.equalToSuperview() // 加上动画不自然
+            //make.leading.trailing.equalToSuperview() // 加上动画不自然
         }
+
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didClick))
+        self.addGestureRecognizer(tap)
     }
 
     @objc func didClick() {
