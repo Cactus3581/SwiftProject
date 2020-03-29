@@ -36,6 +36,10 @@ class UserProfilePhoneCellViewModel: NSObject {
 class UserProfileDepartmentCellViewModel: NSObject {
     var model: DepartmentsMeta?
     var path: String?
+    var topic: String?
+    var isFirstOffset: Bool = false
+    var isLastOffset: Bool = false
+    var isFold: Bool = false
 }
 
 class UserProfileAliasCellViewModel: NSObject {

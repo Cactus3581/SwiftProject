@@ -17,7 +17,6 @@
 		01026742242379B900CA6D00 /* UserProfileMultiDepartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102672C242379B900CA6D00 /* UserProfileMultiDepartmentTableViewCell.swift */; };
 		01026744242379B900CA6D00 /* UserProfileTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102672F242379B900CA6D00 /* UserProfileTableViewCellProtocol.swift */; };
 		01026745242379B900CA6D00 /* UserProfileSectionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026731242379B900CA6D00 /* UserProfileSectionViewProtocol.swift */; };
-		01026746242379B900CA6D00 /* UserProfileSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026732242379B900CA6D00 /* UserProfileSectionHeaderView.swift */; };
 		01026748242379B900CA6D00 /* UserProfileTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026735242379B900CA6D00 /* UserProfileTableHeaderView.swift */; };
 		01026749242379B900CA6D00 /* UserProfileCTAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026736242379B900CA6D00 /* UserProfileCTAView.swift */; };
 		0102674A242379B900CA6D00 /* UserProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026738242379B900CA6D00 /* UserProfileAssembly.swift */; };
@@ -58,6 +57,7 @@
 		015E177C24275F7000351EA9 /* UserProfileTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E177B24275F7000351EA9 /* UserProfileTableViewDelegate.swift */; };
 		015E177E242763D200351EA9 /* UserProfileDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E177D242763D200351EA9 /* UserProfileDataHandler.swift */; };
 		0167EE842418F2EC00E4830F /* MVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0167EE832418F2EC00E4830F /* MVVMViewController.swift */; };
+		016A976D2430504200D8C280 /* UserProfileTopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A976C2430504200D8C280 /* UserProfileTopicView.swift */; };
 		016B8EF623C58A19007F6EC5 /* SwiftTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016B8EF523C58A19007F6EC5 /* SwiftTipsViewController.swift */; };
 		016FE6D823B5DD7800CE8784 /* statistics.py in Resources */ = {isa = PBXBuildFile; fileRef = 016FE6D623B5DD7800CE8784 /* statistics.py */; };
 		016FE6D923B5DD7800CE8784 /* sql.py in Resources */ = {isa = PBXBuildFile; fileRef = 016FE6D723B5DD7800CE8784 /* sql.py */; };
@@ -173,7 +173,6 @@
 		0102672C242379B900CA6D00 /* UserProfileMultiDepartmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileMultiDepartmentTableViewCell.swift; sourceTree = "<group>"; };
 		0102672F242379B900CA6D00 /* UserProfileTableViewCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewCellProtocol.swift; sourceTree = "<group>"; };
 		01026731242379B900CA6D00 /* UserProfileSectionViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileSectionViewProtocol.swift; sourceTree = "<group>"; };
-		01026732242379B900CA6D00 /* UserProfileSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileSectionHeaderView.swift; sourceTree = "<group>"; };
 		01026735242379B900CA6D00 /* UserProfileTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileTableHeaderView.swift; sourceTree = "<group>"; };
 		01026736242379B900CA6D00 /* UserProfileCTAView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileCTAView.swift; sourceTree = "<group>"; };
 		01026738242379B900CA6D00 /* UserProfileAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileAssembly.swift; sourceTree = "<group>"; };
@@ -224,6 +223,7 @@
 		015E177B24275F7000351EA9 /* UserProfileTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewDelegate.swift; sourceTree = "<group>"; };
 		015E177D242763D200351EA9 /* UserProfileDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDataHandler.swift; sourceTree = "<group>"; };
 		0167EE832418F2EC00E4830F /* MVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewController.swift; sourceTree = "<group>"; };
+		016A976C2430504200D8C280 /* UserProfileTopicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTopicView.swift; sourceTree = "<group>"; };
 		016B8EF523C58A19007F6EC5 /* SwiftTipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTipsViewController.swift; sourceTree = "<group>"; };
 		016FE6D623B5DD7800CE8784 /* statistics.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = statistics.py; sourceTree = "<group>"; };
 		016FE6D723B5DD7800CE8784 /* sql.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = sql.py; sourceTree = "<group>"; };
@@ -447,7 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				01026731242379B900CA6D00 /* UserProfileSectionViewProtocol.swift */,
-				01026732242379B900CA6D00 /* UserProfileSectionHeaderView.swift */,
+				016A976C2430504200D8C280 /* UserProfileTopicView.swift */,
 				015846FF2423A13000B7BEBE /* UserProfileSectionFooterView.swift */,
 			);
 			path = SectionView;
@@ -1739,6 +1739,7 @@
 				01A550C1242864C200472B6A /* UserProfileStorage.swift in Sources */,
 				0182B7C6241A79050033BF0A /* MVVMListSectionTextHeaderView.swift in Sources */,
 				01026745242379B900CA6D00 /* UserProfileSectionViewProtocol.swift in Sources */,
+				016A976D2430504200D8C280 /* UserProfileTopicView.swift in Sources */,
 				019FE1A623C0E9BF00B241B1 /* Produce.swift in Sources */,
 				0102673D242379B900CA6D00 /* UserProfileSessionViewModel.swift in Sources */,
 				0197847D242B9B31009EB2D4 /* UserProfileUserStatusTableViewCell.swift in Sources */,
@@ -1837,7 +1838,6 @@
 				0182B7CE241A86C00033BF0A /* MVVMListImageTableViewCell.swift in Sources */,
 				0188AC7E242A3FA300BA7654 /* UserProfileThreePointsItemViewModel.swift in Sources */,
 				01E15CCC23BF58D800A69E23 /* SubscriptViewController.swift in Sources */,
-				01026746242379B900CA6D00 /* UserProfileSectionHeaderView.swift in Sources */,
 				010D6AC423A9FC6200B84621 /* BaseViewController.swift in Sources */,
 				01937ED2241906B1009BD6AD /* MVVMListViewController.swift in Sources */,
 				01A550C3242864EB00472B6A /* UserProfileTableViewDataSource.swift in Sources */,

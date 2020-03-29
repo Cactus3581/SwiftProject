@@ -42,6 +42,7 @@ class UserProfileTextSessionViewModel: NSObject, UserProfileSessionViewModelProt
     var headerText: String?
     var profileItem: TextItem?
     var headerHeight: CGFloat?
+    var footerHeight: CGFloat?
 
     static func canHandle(type: Int) -> Bool {
         if type == 1 {
@@ -60,12 +61,12 @@ class UserProfileTextSessionViewModel: NSObject, UserProfileSessionViewModelProt
         self.list = [cellViewModel]
     }
 
-    var headerIdentifier: String? {
-        guard let _ = self.profileItem?.key, let list = self.list, list.count > 0 else {
+    var footerIdentifier: String? {
+        guard let list = self.list, list.count > 0 else {
             return nil
         }
-        self.headerHeight = 34
-        return UserProfileSectionHeaderView.identifier
+        self.footerHeight = 1/UIScreen.main.scale
+        return UserProfileLineSectionFooterView.identifier
     }
 
     var identifier: String {
@@ -79,6 +80,7 @@ class UserProfileLinkSessionViewModel: NSObject, UserProfileSessionViewModelProt
     var headerText: String?
     var profileItem: LinkItem?
     var headerHeight: CGFloat?
+    var footerHeight: CGFloat?
 
     static func canHandle(type: Int) -> Bool {
         if type == 2 {
@@ -96,12 +98,12 @@ class UserProfileLinkSessionViewModel: NSObject, UserProfileSessionViewModelProt
         self.list = [cellViewModel]
     }
 
-    var headerIdentifier: String? {
-        guard let _ = self.profileItem?.key, let list = self.list, list.count > 0, let linkTitle = self.profileItem?.linkTitle, !linkTitle.isEmpty else {
+    var footerIdentifier: String? {
+        guard let list = self.list, list.count > 0 else {
             return nil
         }
-        self.headerHeight = 34
-        return UserProfileSectionHeaderView.identifier
+        self.footerHeight = 1/UIScreen.main.scale
+        return UserProfileLineSectionFooterView.identifier
     }
 
     var identifier: String {
@@ -138,7 +140,7 @@ class UserProfileDepartmentSessionViewModel: NSObject, UserProfileSessionViewMod
         super.init()
         self.profileItem = DepartmentsItem.deserialize(from: profileItem)
         if let departments = self.profileItem?.departments {
-            for department in departments {
+            for (index, department) in departments.enumerated() {
                 guard let departments = department.departments else {
                     continue
                 }
@@ -154,6 +156,9 @@ class UserProfileDepartmentSessionViewModel: NSObject, UserProfileSessionViewMod
                         path =  path + " - " + name
                     }
                 }
+                if index == 0 {
+                    cellViewModel.topic = self.profileItem?.key
+                }
                 cellViewModel.path = path
                 cellViewModel.model = department
                 allList.append(cellViewModel)
@@ -162,8 +167,32 @@ class UserProfileDepartmentSessionViewModel: NSObject, UserProfileSessionViewMod
         
         if allList.count > maxCount {
             self.list = [] + allList.prefix(maxCount)
+            if let list = self.list, list.count > 1 {
+                for (index, cellViewModel) in list.enumerated() {
+                    let cellViewModel = cellViewModel as? UserProfileDepartmentCellViewModel
+                    cellViewModel?.isFirstOffset = false
+                    cellViewModel?.isLastOffset = false
+                    if index == 0 {
+                        cellViewModel?.isFirstOffset = true
+                    } else if index == list.count - 1 {
+                        cellViewModel?.isLastOffset = true
+                    }
+                }
+            }
         } else {
             self.list = allList
+            if let list = self.list {
+                for (index, cellViewModel) in list.enumerated() {
+                  let cellViewModel = cellViewModel as? UserProfileDepartmentCellViewModel
+                  cellViewModel?.isFirstOffset = false
+                  cellViewModel?.isLastOffset = false
+                  if index == 0 {
+                      cellViewModel?.isFirstOffset = true
+                  } else if index == list.count - 1 {
+                      cellViewModel?.isLastOffset = true
+                  }
+                }
+            }
         }
 
         self.headerText = self.profileItem?.key
@@ -173,39 +202,61 @@ class UserProfileDepartmentSessionViewModel: NSObject, UserProfileSessionViewMod
         }
     }
 
-    var headerIdentifier: String? {
-        guard let _ = self.profileItem?.key, let list = self.list, list.count > 0 else {
-            return nil
-        }
-        self.headerHeight = 34
-        return UserProfileSectionHeaderView.identifier
-    }
-
-
     var footerIdentifier: String? {
         if isMoreFive() {
-            self.footerHeight = 34
-            return UserProfileSectionFooterView.identifier
+            self.footerHeight = 40
+            return UserProfileDeparmentSectionFooterView.identifier
         }
-        return nil
+
+        guard let list = self.list, list.count > 0 else {
+            return nil
+        }
+        self.footerHeight = 1/UIScreen.main.scale
+        return UserProfileLineSectionFooterView.identifier
     }
-    
+
     var identifier: String {
         if isMuilt() {
             return UserProfileMultiDepartmentTableViewCell.identifier
         }
-        return UserProfileTextTableViewCell.identifier
+        return UserProfileDepartmentTableViewCell.identifier
     }
     
     func reloadData (section: Int) {
         isExpand = !isExpand
         self.section = section
         if isExpand {
-            self.footerText = "收起更多部门"
-            self.list = allList
+            self.footerText = "收起"
+            let list = allList
+            if list.count > 1 {
+                for (index, cellViewModel) in list.enumerated() {
+                    let cellViewModel = cellViewModel as? UserProfileDepartmentCellViewModel
+                    cellViewModel?.isFirstOffset = false
+                    cellViewModel?.isLastOffset = false
+                    if index == 0 {
+                        cellViewModel?.isFirstOffset = true
+                    } else if index == list.count - 1 {
+                        cellViewModel?.isLastOffset = true
+                    }
+                }
+            }
+            self.list = list
         } else {
             self.footerText = "展开更多部门"
-            self.list = [] + allList.prefix(5)
+            let list = [] + allList.prefix(5)
+            if list.count > 1 {
+                for (index, cellViewModel) in list.enumerated() {
+                    let cellViewModel = cellViewModel as? UserProfileDepartmentCellViewModel
+                    cellViewModel?.isFirstOffset = false
+                    cellViewModel?.isLastOffset = false
+                    if index == 0 {
+                        cellViewModel?.isFirstOffset = true
+                    } else if index == list.count - 1 {
+                        cellViewModel?.isLastOffset = true
+                    }
+                }
+            }
+            self.list = list
         }
     }
     
@@ -233,6 +284,7 @@ class UserProfilePhoneSessionViewModel: NSObject, UserProfileSessionViewModelPro
     var headerText: String?
     var profileItem: PhoneItem?
     var headerHeight: CGFloat?
+    var footerHeight: CGFloat?
 
     static func canHandle(type: Int) -> Bool {
         if type == 4 {
@@ -250,12 +302,12 @@ class UserProfilePhoneSessionViewModel: NSObject, UserProfileSessionViewModelPro
         self.headerText = self.profileItem?.key
     }
 
-    var headerIdentifier: String? {
-        guard let _ = self.profileItem?.key, let list = self.list, list.count > 0 else {
+    var footerIdentifier: String? {
+        guard let list = self.list, list.count > 0 else {
             return nil
         }
-        self.headerHeight = 34
-        return UserProfileSectionHeaderView.identifier
+        self.footerHeight = 1/UIScreen.main.scale
+        return UserProfileLineSectionFooterView.identifier
     }
 
     var identifier: String {
@@ -274,6 +326,7 @@ class UserProfileUserStatusSessionViewModel: NSObject, UserProfileSessionViewMod
     var headerText: String?
     var profileItem: UserStatusItem?
     var headerHeight: CGFloat?
+    var footerHeight: CGFloat?
 
     static func canHandle(type: Int) -> Bool {
         if type == 5 {
@@ -296,12 +349,14 @@ class UserProfileUserStatusSessionViewModel: NSObject, UserProfileSessionViewMod
         print("点击描述")
     }
 
-    var headerIdentifier: String? {
-        guard let _ = self.profileItem?.key, let list = self.list, list.count > 0 else {
+
+
+    var footerIdentifier: String? {
+        guard let list = self.list, list.count > 0 else {
             return nil
         }
-        self.headerHeight = 34
-        return UserProfileSectionHeaderView.identifier
+        self.footerHeight = 1/UIScreen.main.scale
+        return UserProfileLineSectionFooterView.identifier
     }
 
     var identifier: String {
@@ -315,6 +370,7 @@ class UserProfileAliasSessionViewModel: NSObject, UserProfileSessionViewModelPro
     var headerText: String?
     var profileItem: AliasItem?
     var headerHeight: CGFloat?
+    var footerHeight: CGFloat?
 
     static func canHandle(type: Int) -> Bool {
         if type == 6 {
@@ -337,12 +393,14 @@ class UserProfileAliasSessionViewModel: NSObject, UserProfileSessionViewModelPro
         print("点击备注")
     }
 
-    var headerIdentifier: String? {
-        guard let _ = self.profileItem?.key, let list = self.list, list.count > 0 else {
+
+
+    var footerIdentifier: String? {
+        guard let list = self.list, list.count > 0 else {
             return nil
         }
-        self.headerHeight = 34
-        return UserProfileSectionHeaderView.identifier
+        self.footerHeight = 1/UIScreen.main.scale
+        return UserProfileLineSectionFooterView.identifier
     }
 
     var identifier: String {

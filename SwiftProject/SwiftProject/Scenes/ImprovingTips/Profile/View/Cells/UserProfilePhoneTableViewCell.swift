@@ -9,11 +9,11 @@
 import UIKit
 
 class UserProfilePhoneTableViewCell: UITableViewCell, UserProfileTableViewCellProtocol {
-    
-    weak var phoneLabel: UILabel!
+
+    weak var topicView: UserProfileTopicView!
+    weak var label: UILabel!
     weak var showButton: UIButton!
     weak var arrowImageView: UIImageView!
-    weak var lineView: UIView!
     var indexPath: IndexPath?
 
     override func awakeFromNib() {
@@ -22,8 +22,11 @@ class UserProfilePhoneTableViewCell: UITableViewCell, UserProfileTableViewCellPr
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 
-        let phoneLabel: UILabel = UILabel()
-        self.phoneLabel = phoneLabel
+        let topicView = UserProfileTopicView()
+        self.topicView = topicView
+
+        let label = UILabel()
+        self.label = label
         
         let showButton: UIButton = UIButton()
         self.showButton = showButton
@@ -31,27 +34,35 @@ class UserProfilePhoneTableViewCell: UITableViewCell, UserProfileTableViewCellPr
         let arrowImageView = UIImageView()
         self.arrowImageView = arrowImageView
 
-        let lineView: UIView = UIView()
-        self.lineView = lineView
-
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.contentView.backgroundColor = UIColor.white
-        
-        self.contentView.addSubview(phoneLabel)
-        phoneLabel.snp.makeConstraints {
+        self.selectionStyle = .none
+
+        self.contentView.addSubview(topicView)
+        self.contentView.addSubview(label)
+
+
+        topicView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(12)
             $0.leading.equalToSuperview().offset(16)
-            $0.top.equalToSuperview()
-            $0.bottom.equalToSuperview().offset(-12)
+            $0.trailing.equalToSuperview().offset(-16)
         }
-        phoneLabel.font = UIFont.systemFont(ofSize: 16)
-        phoneLabel.textColor = UIColor.darkText
-        phoneLabel.numberOfLines = 0
+
+        label.snp.makeConstraints {
+            $0.top.equalTo(topicView.snp.bottom)
+            $0.bottom.equalToSuperview().offset(-12)
+            $0.leading.equalTo(topicView)
+        }
+
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textColor = UIColor.darkText
+        label.numberOfLines = 0
         
         self.contentView.addSubview(showButton)
         showButton.snp.makeConstraints {
-            $0.leading.equalTo(phoneLabel.snp.trailing).offset(15)
-            $0.centerY.equalTo(phoneLabel)
+            $0.leading.equalTo(label.snp.trailing).offset(15)
+            $0.centerY.equalTo(label)
         }
         showButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         showButton.setTitleColor(UIColor.blue,for: .normal)
@@ -60,18 +71,9 @@ class UserProfilePhoneTableViewCell: UITableViewCell, UserProfileTableViewCellPr
         self.contentView.addSubview(arrowImageView)
         arrowImageView.snp.makeConstraints { (make) in
             make.trailing.equalToSuperview().offset(-16)
-            make.centerY.equalTo(phoneLabel)
+            make.centerY.equalTo(label)
         }
         arrowImageView.image = UIImage(named: "icon_back")
-        
-        self.contentView.addSubview(lineView)
-        lineView.backgroundColor = UIColor.lightGray
-        lineView.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().offset(-16)
-            $0.bottom.equalToSuperview()
-            $0.height.equalTo(1/UIScreen.main.scale)
-        }
     }
     
     required init?(coder: NSCoder) {
@@ -83,14 +85,15 @@ class UserProfilePhoneTableViewCell: UITableViewCell, UserProfileTableViewCellPr
             guard let cellViewModel = cellViewModel as? UserProfilePhoneCellViewModel else {
                 return
             }
-            phoneLabel.text = cellViewModel.model?.number
+            topicView.label.text = cellViewModel.model?.key
+            label.text = cellViewModel.model?.number
             if let isShow = cellViewModel.isShow {
                 if isShow {
                     showButton.setTitle("显示", for: .normal)
-                    phoneLabel.text = cellViewModel.model?.number
+                    label.text = cellViewModel.model?.number
                 } else {
                     showButton.setTitle("隐藏", for: .normal)
-                    phoneLabel.text = cellViewModel.model?.number
+                    label.text = cellViewModel.model?.number
                 }
             }
         }
@@ -112,10 +115,10 @@ class UserProfilePhoneTableViewCell: UITableViewCell, UserProfileTableViewCellPr
                 if let isShow = cellViewModel.isShow {
                     if isShow {
                         showButton.setTitle("显示", for: .normal)
-                        phoneLabel.text = cellViewModel.model?.number
+                        label.text = cellViewModel.model?.number
                     } else {
                         showButton.setTitle("隐藏", for: .normal)
-                        phoneLabel.text = cellViewModel.model?.number
+                        label.text = cellViewModel.model?.number
                     }
                 }
             }
@@ -134,4 +137,23 @@ class UserProfilePhoneTableViewCell: UITableViewCell, UserProfileTableViewCellPr
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+
+    // 高亮状态
+      override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+          super.setHighlighted(highlighted, animated: animated)
+
+          guard let cellViewModel = cellViewModel as? UserProfilePhoneCellViewModel else {
+              return
+          }
+          if (highlighted) {
+              self.contentView.backgroundColor = UIColor.lightGray
+              self.topicView.backgroundColor = UIColor.lightGray
+          } else {
+              // 增加延迟消失动画效果，提升用户体验
+              UIView.animate(withDuration: 0.1, delay: 0.1, options: .curveEaseInOut, animations: {
+                  self.contentView.backgroundColor = UIColor.white
+                  self.topicView.backgroundColor = UIColor.white
+              }, completion: nil)
+          }
+      }
 }

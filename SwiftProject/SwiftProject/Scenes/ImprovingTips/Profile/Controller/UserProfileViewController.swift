@@ -101,11 +101,12 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
 
     // 向tableView注册views
     func registerViews() {
-        tableView.register(UserProfileSectionHeaderView.self, forHeaderFooterViewReuseIdentifier: UserProfileSectionHeaderView.identifier)
-        tableView.register(UserProfileSectionFooterView.self, forHeaderFooterViewReuseIdentifier: UserProfileSectionFooterView.identifier)
+        tableView.register(UserProfileDeparmentSectionFooterView.self, forHeaderFooterViewReuseIdentifier: UserProfileDeparmentSectionFooterView.identifier)
+        tableView.register(UserProfileLineSectionFooterView.self, forHeaderFooterViewReuseIdentifier: UserProfileLineSectionFooterView.identifier)
         tableView.register(UserProfileTextTableViewCell.self, forCellReuseIdentifier: UserProfileTextTableViewCell.identifier)
         tableView.register(UserProfileLinkTableViewCell.self, forCellReuseIdentifier: UserProfileLinkTableViewCell.identifier)
         tableView.register(UserProfilePhoneTableViewCell.self, forCellReuseIdentifier: UserProfilePhoneTableViewCell.identifier)
+        tableView.register(UserProfileDepartmentTableViewCell.self, forCellReuseIdentifier: UserProfileDepartmentTableViewCell.identifier)
         tableView.register(UserProfileMultiDepartmentTableViewCell.self, forCellReuseIdentifier: UserProfileMultiDepartmentTableViewCell.identifier)
         tableView.register(UserProfileAliasTableViewCell.self, forCellReuseIdentifier: UserProfileAliasTableViewCell.identifier)
         tableView.register(UserProfileUserStatusTableViewCell.self, forCellReuseIdentifier: UserProfileUserStatusTableViewCell.identifier)

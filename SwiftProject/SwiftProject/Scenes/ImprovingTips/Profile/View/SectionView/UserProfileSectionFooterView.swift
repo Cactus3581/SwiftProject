@@ -8,16 +8,52 @@
 
 import UIKit
 
-class UserProfileSectionFooterView: UITableViewHeaderFooterView,UserProfileSectionViewProtocol {
+class UserProfileLineSectionFooterView: UITableViewHeaderFooterView, UserProfileSectionViewProtocol {
+
+    weak var lineView: UIView!
+    var section: Int?
+
+    override init(reuseIdentifier: String?) {
+
+        let lineView: UIView = UIView()
+        self.lineView = lineView
+
+        super.init(reuseIdentifier: reuseIdentifier)
+
+        self.contentView.backgroundColor = UIColor.white
+
+        self.contentView.addSubview(lineView)
+        lineView.backgroundColor = UIColor.green
+        lineView.snp.makeConstraints {
+            $0.top.bottom.equalToSuperview()
+            $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().offset(-16)
+            $0.height.equalTo(1/UIScreen.main.scale)
+        }
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    static var identifier: String {
+        return String(describing: self)
+    }
+}
+
+class UserProfileDeparmentSectionFooterView: UITableViewHeaderFooterView, UserProfileSectionViewProtocol {
     
     weak var button: UIButton!
+    weak var lineView: UIView!
     var section: Int?
     
     override init(reuseIdentifier: String?) {
         
         let button: UIButton = UIButton()
         self.button = button
-        
+
+        let lineView: UIView = UIView()
+        self.lineView = lineView
+
         super.init(reuseIdentifier: reuseIdentifier)
         
         self.contentView.backgroundColor = UIColor.white
@@ -25,13 +61,21 @@ class UserProfileSectionFooterView: UITableViewHeaderFooterView,UserProfileSecti
         self.contentView.addSubview(button)
         button.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(32)
-            $0.centerY.equalToSuperview()
-            //$0.top.equalToSuperview().offset(10)
-            //$0.bottom.equalToSuperview().offset(-16)
+            $0.top.equalToSuperview().offset(4)
+//            $0.bottom.equalToSuperview().offset(-16)
         }
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         button.setTitleColor(UIColor.blue,for: .normal)
         button.addTarget(self, action: #selector(footerClick), for: .touchUpInside)
+
+        self.contentView.addSubview(lineView)
+        lineView.backgroundColor = UIColor.red
+        lineView.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().offset(-16)
+            $0.height.equalTo(1/UIScreen.main.scale)
+            $0.bottom.equalToSuperview()
+        }
     }
     
     required init?(coder: NSCoder) {
