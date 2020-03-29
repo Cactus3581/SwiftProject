@@ -45,7 +45,7 @@ class UserProfileTagsView: UIView {
                 let imageView = UIImageView()
                 imageView.clipsToBounds = true
                 imageView.contentMode = .scaleAspectFill
-                imageView.image = UIImage(named: tag)
+                imageView.image = UIImage(named: "profilegender")
                 stackView.addArrangedSubview(imageView)
             }
         }

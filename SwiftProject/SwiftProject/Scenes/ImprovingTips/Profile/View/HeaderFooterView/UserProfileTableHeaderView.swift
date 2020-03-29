@@ -137,15 +137,16 @@ class UserProfileTableHeaderView: UIView {
     override func safeAreaInsetsDidChange() {
         super.safeAreaInsetsDidChange()
         // 导航高度会变，所以会引起动画效果
-//        nameLabel.snp.updateConstraints() {
-//            $0.top.equalToSuperview().offset(self.safeAreaInsets.top+44).priority(.low)
-//        }
+        /*
+        nameLabel.snp.updateConstraints() {
+            $0.top.equalToSuperview().offset(self.safeAreaInsets.top+44).priority(.low)
+        }
+         */
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        ctaAnimationView?.setShadowPath(shadowPathType: .bottom, shadowColor: UIColor.lightGray, shadowOpacity: 0.8, shadowRadius: 10, shadowPathWidth: 3)
-//        ctaAnimationView?.layer.lk_setShadow(color: UIColor.lightGray, alpha: 1, x: 0, y: 3, blur: 10, spread: 3)
+        ctaAnimationView?.layer.sp_setShadowPath(direction: .bottom, shadowColor: UIColor.lightGray, shadowOpacity: 0.8, shadowRadius: 10, shadowPathOffset: 3)
     }
 
     var viewModel: UserProfileViewModel? {
@@ -153,6 +154,18 @@ class UserProfileTableHeaderView: UIView {
             nameLabel?.text = viewModel?.model?.userInfo?.userName
             companyLabel?.text = viewModel?.model?.userInfo?.tenantName
             self.ctaView?.ctaList = viewModel?.ctaList
+            self.tagsView.tags = viewModel?.tags
+            self.tagsView.setNeedsLayout()
+            self.tagsView.layoutIfNeeded()
+
+            let nameLastLineWidth = self.nameLabel.bounds.size.width
+            let tagsWidth = self.tagsView.bounds.size.width
+            let totalWidth = self.bounds.size.width - 16*2
+            if totalWidth < nameLastLineWidth + tagsWidth {
+                // tagsView 换行
+            } else {
+                // tagsView 跟在名字后面
+            }
         }
     }
     
@@ -161,55 +174,53 @@ class UserProfileTableHeaderView: UIView {
     }
 }
 
-extension UIView {
+extension CALayer {
 
-    enum ShadowPathDirection {
+    func sp_setShadow(shadowColor: UIColor, opacity: Float, offset: CGSize,  shadowRadius: CGFloat) {
+        self.shadowColor = shadowColor.cgColor // 设置阴影颜色
+        self.shadowOpacity = opacity // 设置透明度
+        self.shadowOffset = offset // 设置阴影偏移量
+        self.shadowRadius = shadowRadius // 设置阴影半径
+    }
+
+    enum SPShadowPathDirection {
         case top, left, bottom, right, topRL, bottomRL, around
     }
 
-    func setShadowPath(shadowPathType: ShadowPathDirection, shadowColor: UIColor, shadowOpacity: Float, shadowRadius: CGFloat,  shadowPathWidth: CGFloat) {
+    func sp_setShadowPath(direction: SPShadowPathDirection, shadowColor: UIColor, shadowOpacity: Float, shadowRadius: CGFloat,  shadowPathOffset: CGFloat) {
 
-        self.layer.masksToBounds = false //必须要等于NO否则会把阴影切割隐藏掉
-        self.layer.shadowColor = shadowColor.cgColor // 阴影颜色
-        self.layer.shadowOpacity = shadowOpacity // 阴影透明度，默认0
-        self.layer.shadowOffset = CGSize(width: 0, height: 0) //shadowOffset阴影偏移，默认(0, -3),这个跟shadowRadius配合使用
-        self.layer.shadowRadius = shadowRadius //阴影半径/模糊，默认3
+        self.masksToBounds = false
+        self.shadowColor = shadowColor.cgColor // 阴影颜色
+        self.shadowOpacity = shadowOpacity // 阴影透明度，默认0
+        self.shadowRadius = shadowRadius //阴影半径/模糊，默认3
+        self.shadowOffset = CGSize(width: 0, height: 40) //阴影偏移，默认(0, -3)
 
         var shadowRect = CGRect(x: 0, y: 0, width: 0, height: 0)
-        let sizeWidth = self.bounds.size.width
-        let sizeHeight = self.bounds.size.height
+        let width = self.bounds.size.width
+        let height = self.bounds.size.height
 
-        switch shadowPathType {
+        switch direction {
         case .top:
-            shadowRect = CGRect(x: 0, y: -shadowPathWidth, width: sizeWidth, height: shadowPathWidth)
+            shadowRect = CGRect(x: 0, y: -shadowPathOffset, width: width, height: shadowPathOffset)
         case .left:
-            shadowRect = CGRect(x: -shadowPathWidth, y: 0, width: shadowPathWidth, height: sizeHeight)
+            shadowRect = CGRect(x: -shadowPathOffset, y: 0, width: shadowPathOffset, height: height)
         case .bottom:
-            shadowRect = CGRect(x: 0, y: sizeHeight, width: sizeWidth, height: shadowPathWidth)
+            shadowRect = CGRect(x: 0, y: height, width: width, height: shadowPathOffset)
         case .right:
-            shadowRect = CGRect(x: sizeWidth, y: 0, width: shadowPathWidth, height: sizeHeight)
+            shadowRect = CGRect(x: width, y: 0, width: shadowPathOffset, height: height)
         case .topRL:
-            shadowRect = CGRect(x: -shadowPathWidth, y: -shadowPathWidth, width: sizeWidth + shadowPathWidth*2, height: sizeHeight + shadowPathWidth)
+            shadowRect = CGRect(x: -shadowPathOffset, y: -shadowPathOffset, width: width + shadowPathOffset*2, height: height + shadowPathOffset)
         case .bottomRL:
-            shadowRect = CGRect(x: -shadowPathWidth, y: 0, width: sizeWidth + shadowPathWidth*2, height: sizeHeight + shadowPathWidth)
+            shadowRect = CGRect(x: -shadowPathOffset, y: 0, width: width + shadowPathOffset*2, height: height + shadowPathOffset)
         case .around:
-            shadowRect = CGRect(x: -shadowPathWidth, y: -shadowPathWidth, width: sizeWidth + shadowPathWidth*2, height: sizeHeight + shadowPathWidth*2)
+            shadowRect = CGRect(x: -shadowPathOffset, y: -shadowPathOffset, width: width + shadowPathOffset*2, height: height + shadowPathOffset*2)
         }
 
         let path = UIBezierPath(rect: shadowRect)
-        self.layer.shadowPath = path.cgPath
+        self.shadowPath = path.cgPath
     }
 
-    func setShadow(shadowColor: UIColor, opacity: Float, offset: CGSize,  shadowRadius: CGFloat) {
-        self.layer.shadowColor = shadowColor.cgColor // 设置阴影颜色
-        self.layer.shadowOpacity = opacity // 设置透明度
-        self.layer.shadowOffset = offset // 设置阴影偏移量
-        self.layer.shadowRadius = shadowRadius // 设置阴影半径
-    }
-}
-
-extension CALayer {
-    func lk_setShadow(color: UIColor? = .black,
+    func sp_setShadow(color: UIColor? = .black,
                        alpha: CGFloat = 0.5,
                        x: CGFloat = 0, y: CGFloat = 2,
                        blur: CGFloat = 4,

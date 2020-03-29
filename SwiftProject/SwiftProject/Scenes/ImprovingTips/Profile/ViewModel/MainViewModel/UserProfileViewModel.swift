@@ -11,6 +11,7 @@ import UIKit
 class UserProfileViewModel: NSObject {
 
     var model: UserProfileModel?
+    var tags:Array<String> = [String]()
     var array:Array<UserProfileSessionViewModelProtocol> = [UserProfileSessionViewModelProtocol]()
     var ctaList:Array<UserProfileCTAItemViewModelProtocol> = [UserProfileCTAItemViewModelProtocol]()
     var threePointsList:Array<UserProfileThreePointsItemViewModelProtocol> = [UserProfileThreePointsItemViewModelProtocol]()
@@ -45,6 +46,7 @@ class UserProfileViewModel: NSObject {
         self.model = model
 
         handleThreePointsData()
+        handleTags(model: model)
         handleCTAData(data: dict)
         handleListData(data: dict)
 
@@ -75,6 +77,29 @@ class UserProfileViewModel: NSObject {
         self.threePointsList =  UserProfileViewModelFactory.createThreePointsViewModel(list: threePointsList)
         if self.threePointsList.count > 0 {
             isShowThreePoints = true
+        }
+    }
+
+    func handleTags(model: UserProfileModel) {
+        // 性别/勿扰/请假/离职
+        if let gender = model.userInfo?.gender {
+            if gender == 1 {
+                self.tags.append("")
+            } else if gender == 2 {
+                self.tags.append("")
+            }
+        }
+
+        if let notDisturbEndTime = model.userInfo?.notDisturbEndTime {
+
+        }
+
+        if let workStatus = model.userInfo?.workStatus?.status {
+            //工作状态：默认:0；请假:1；开会:2
+        }
+
+        if let isResign = model.userInfo?.isResign {
+
         }
     }
 
