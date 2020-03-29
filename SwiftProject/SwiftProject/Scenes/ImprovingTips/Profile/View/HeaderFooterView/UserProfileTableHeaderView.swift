@@ -111,7 +111,6 @@ class UserProfileTableHeaderView: UIView {
         ctaView.layer.masksToBounds = true
 
         ctaAnimationView.layer.cornerRadius = UserProfileCTAView.cornerRadius
-        setShadow(view: ctaAnimationView, shadowColor: UIColor.lightGray, opacity: 0.6, offset: CGSize(width: 0, height: 3), shadowRadius: 3)
 
         coverImageView.image = UIImage(named: "cactus_explicit")
         coverImageView.clipsToBounds = true
@@ -127,16 +126,8 @@ class UserProfileTableHeaderView: UIView {
         nameLabel.minimumScaleFactor = 0.68
         nameLabel.adjustsFontSizeToFitWidth = true
         nameLabel.setContentCompressionResistancePriority(.defaultLow, for: .vertical) //抗压缩
-//        nameLabel.setContentHuggingPriority(.defaultLow, for: .vertical)// 抗拉伸
-
+        //nameLabel.setContentHuggingPriority(.defaultLow, for: .vertical)// 抗拉伸
         let tagsViewWidth = tagsView.bounds.size.width
-    }
-
-    func setShadow(view: UIView, shadowColor: UIColor, opacity: Float, offset: CGSize,  shadowRadius: CGFloat) {
-        view.layer.shadowColor = shadowColor.cgColor // 设置阴影颜色
-        view.layer.shadowOpacity = opacity // 设置透明度
-        view.layer.shadowOffset = offset // 设置阴影偏移量
-        view.layer.shadowRadius = shadowRadius // 设置阴影半径
     }
 
     required init?(coder: NSCoder) {
@@ -150,7 +141,13 @@ class UserProfileTableHeaderView: UIView {
 //            $0.top.equalToSuperview().offset(self.safeAreaInsets.top+44).priority(.low)
 //        }
     }
-    
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        ctaAnimationView?.setShadowPath(shadowPathType: .bottom, shadowColor: UIColor.lightGray, shadowOpacity: 0.8, shadowRadius: 10, shadowPathWidth: 3)
+//        ctaAnimationView?.layer.lk_setShadow(color: UIColor.lightGray, alpha: 1, x: 0, y: 3, blur: 10, spread: 3)
+    }
+
     var viewModel: UserProfileViewModel? {
         didSet {
             nameLabel?.text = viewModel?.model?.userInfo?.userName
@@ -161,5 +158,69 @@ class UserProfileTableHeaderView: UIView {
     
     @objc func click(){
         self.viewModel?.headerClick()
+    }
+}
+
+extension UIView {
+
+    enum ShadowPathDirection {
+        case top, left, bottom, right, topRL, bottomRL, around
+    }
+
+    func setShadowPath(shadowPathType: ShadowPathDirection, shadowColor: UIColor, shadowOpacity: Float, shadowRadius: CGFloat,  shadowPathWidth: CGFloat) {
+
+        self.layer.masksToBounds = false //必须要等于NO否则会把阴影切割隐藏掉
+        self.layer.shadowColor = shadowColor.cgColor // 阴影颜色
+        self.layer.shadowOpacity = shadowOpacity // 阴影透明度，默认0
+        self.layer.shadowOffset = CGSize(width: 0, height: 0) //shadowOffset阴影偏移，默认(0, -3),这个跟shadowRadius配合使用
+        self.layer.shadowRadius = shadowRadius //阴影半径/模糊，默认3
+
+        var shadowRect = CGRect(x: 0, y: 0, width: 0, height: 0)
+        let sizeWidth = self.bounds.size.width
+        let sizeHeight = self.bounds.size.height
+
+        switch shadowPathType {
+        case .top:
+            shadowRect = CGRect(x: 0, y: -shadowPathWidth, width: sizeWidth, height: shadowPathWidth)
+        case .left:
+            shadowRect = CGRect(x: -shadowPathWidth, y: 0, width: shadowPathWidth, height: sizeHeight)
+        case .bottom:
+            shadowRect = CGRect(x: 0, y: sizeHeight, width: sizeWidth, height: shadowPathWidth)
+        case .right:
+            shadowRect = CGRect(x: sizeWidth, y: 0, width: shadowPathWidth, height: sizeHeight)
+        case .topRL:
+            shadowRect = CGRect(x: -shadowPathWidth, y: -shadowPathWidth, width: sizeWidth + shadowPathWidth*2, height: sizeHeight + shadowPathWidth)
+        case .bottomRL:
+            shadowRect = CGRect(x: -shadowPathWidth, y: 0, width: sizeWidth + shadowPathWidth*2, height: sizeHeight + shadowPathWidth)
+        case .around:
+            shadowRect = CGRect(x: -shadowPathWidth, y: -shadowPathWidth, width: sizeWidth + shadowPathWidth*2, height: sizeHeight + shadowPathWidth*2)
+        }
+
+        let path = UIBezierPath(rect: shadowRect)
+        self.layer.shadowPath = path.cgPath
+    }
+
+    func setShadow(shadowColor: UIColor, opacity: Float, offset: CGSize,  shadowRadius: CGFloat) {
+        self.layer.shadowColor = shadowColor.cgColor // 设置阴影颜色
+        self.layer.shadowOpacity = opacity // 设置透明度
+        self.layer.shadowOffset = offset // 设置阴影偏移量
+        self.layer.shadowRadius = shadowRadius // 设置阴影半径
+    }
+}
+
+extension CALayer {
+    func lk_setShadow(color: UIColor? = .black,
+                       alpha: CGFloat = 0.5,
+                       x: CGFloat = 0, y: CGFloat = 2,
+                       blur: CGFloat = 4,
+                       spread: CGFloat = 0) {
+
+        shadowOffset = CGSize(width: x, height: y)
+        shadowRadius = blur * 0.5
+        shadowColor = color?.cgColor
+        shadowOpacity = Float(alpha)
+        let rect = bounds.insetBy(dx: -spread, dy: -spread)
+        let path = UIBezierPath(roundedRect: rect, cornerRadius: cornerRadius)
+        shadowPath = path.cgPath
     }
 }

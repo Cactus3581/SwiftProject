@@ -9,7 +9,6 @@
 import UIKit
 
 class UserProfileViewController: BaseViewController, UITableViewDelegate {
-    
 
     weak var naviBackView: UIView!
     weak var titleLabel: UILabel!

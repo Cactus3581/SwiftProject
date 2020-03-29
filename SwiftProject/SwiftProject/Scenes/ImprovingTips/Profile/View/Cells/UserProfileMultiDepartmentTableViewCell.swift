@@ -79,35 +79,6 @@ class UserProfileDepartmentTableViewCell: UITableViewCell, UserProfileTableViewC
             }
             topicView.label.text = cellViewModel.topic
             titleLabel.text = cellViewModel.path
-
-            // 获取行数
-
-//            let lineHeight = titleLabel.sizeThatFits(CGSize(width: titleLabel.bounds.size.width, height: CGFloat.greatestFiniteMagnitude)).height
-//            let lines = (lineHeight) / titleLabel.font.lineHeight
-//            if lines > 3 {
-//                // 原始内容超过了限制的行数
-//                if cellViewModel.isFold {
-//                    // 当展开状态时，所有内容都显示完全
-//                    titleLabel.numberOfLines = 0;
-//                    // 添加按钮
-//                } else {
-//                    _contentLabel.numberOfLines = 3;
-//                    appandString = @"...  展开";
-//                    // 收起状态
-//                    for (NSInteger i = 0; i < maxLineNums - 1; i++) {
-//                        showText = [showText stringByAppendingString:array[i]];
-//                    }
-//                    //最后一行特殊处理
-//                    NSString *lastLineOriginString = array[maxLineNums-1];
-//                    if (lastLineOriginString.length < appandString.length) {
-//                        showText = [showText stringByAppendingString:appandString];
-//                    } else {
-//                        // 可能会因为字符宽的问题，导致看上去，行宽收窄
-//                        NSString *lastLineFrontString = [lastLineOriginString substringToIndex:lastLineOriginString.length - appandString.length];
-//                        showText = [showText stringByAppendingString:[NSString stringWithFormat:@"%@%@",lastLineFrontString,appandString]];
-//                    }
-//                }
-//            }
         }
     }
 
