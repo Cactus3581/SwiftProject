@@ -33,12 +33,19 @@ target 'SwiftProject' do
     pod 'SwiftLint' # Swift 代码规范检查工具
     pod 'Aspects' # 面向切面编程（AOP）库
     #pod 'Quick' # 测试框架
-    #pod 'CocoaLumberjack/Swift' # 日志
+    pod 'CocoaLumberjack/Swift' # 日志
+
+pod 'DoraemonKit/Core', :git => "https://github.com/didi/DoraemonKit.git", :tag => '3.0.0', :configurations => ['Debug']
+    pod 'DoraemonKit/WithLogger', :git => "https://github.com/didi/DoraemonKit.git", :tag => '3.0.0', :configurations => ['Debug']
+    pod 'DoraemonKit/WithGPS', :git => "https://github.com/didi/DoraemonKit.git", :tag => '3.0.0', :configurations => ['Debug']
+    pod 'DoraemonKit/WithLoad', :git => "https://github.com/didi/DoraemonKit.git", :tag => '3.0.0', :configurations => ['Debug']
+    pod 'DoraemonKit/WithDatabase', :git => "https://github.com/didi/DoraemonKit.git", :tag => '3.0.0', :configurations => ['Debug']
+    pod 'DoraemonKit/WithMLeaksFinder', :git => "https://github.com/didi/DoraemonKit.git", :tag => '3.0.0', :configurations => ['Debug']
+
 
 # 工具
     pod 'TextAttributes' #从attributed strings处理
     pod 'SwiftyAttributes' #富文本
-    pod 'Chameleon' #色彩框架
     pod 'UIImageColors' #从图像中获取最主要和最突出的颜色。
     pod 'SwiftDate' #日期
     pod 'IQKeyboardManagerSwift' #键盘相关

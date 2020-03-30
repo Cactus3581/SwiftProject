@@ -1,9 +1,15 @@
 ${PODS_ROOT}/Target Support Files/Pods-SwiftProject/Pods-SwiftProject-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework
+${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework
 ${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework
+${BUILT_PRODUCTS_DIR}/DoraemonKit/DoraemonKit.framework
+${PODS_ROOT}/DoraemonKit/iOS/DoraemonKit/Framework/DoraemonLoadAnalyze.framework
+${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework
+${BUILT_PRODUCTS_DIR}/GCDWebServer/GCDWebServer.framework
 ${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework
+${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework
 ${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
 ${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework
 ${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
@@ -16,6 +22,9 @@ ${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyAttributes/SwiftyAttributes.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
 ${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework
+${BUILT_PRODUCTS_DIR}/TextAttributes/TextAttributes.framework
 ${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework
+${BUILT_PRODUCTS_DIR}/UIImageColors/UIImageColors.framework
 ${BUILT_PRODUCTS_DIR}/URLNavigator/URLNavigator.framework
 ${BUILT_PRODUCTS_DIR}/Validator/Validator.framework
+${BUILT_PRODUCTS_DIR}/YYDebugDatabase/YYDebugDatabase.framework

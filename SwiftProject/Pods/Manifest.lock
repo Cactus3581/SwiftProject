@@ -1,9 +1,34 @@
 PODS:
   - Alamofire (5.0.5)
   - Aspects (1.4.1)
+  - CocoaLumberjack (3.6.1):
+    - CocoaLumberjack/Core (= 3.6.1)
+  - CocoaLumberjack/Core (3.6.1)
+  - CocoaLumberjack/Swift (3.6.1):
+    - CocoaLumberjack/Core
   - CryptoSwift (1.3.0)
+  - DoraemonKit/Core (3.0.0)
+  - DoraemonKit/WithDatabase (3.0.0):
+    - DoraemonKit/Core
+    - YYDebugDatabase
+  - DoraemonKit/WithGPS (3.0.0):
+    - DoraemonKit/Core
+  - DoraemonKit/WithLoad (3.0.0):
+    - DoraemonKit/Core
+  - DoraemonKit/WithLogger (3.0.0):
+    - CocoaLumberjack
+    - DoraemonKit/Core
+  - DoraemonKit/WithMLeaksFinder (3.0.0):
+    - DoraemonKit/Core
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - GCDWebServer (3.5.4):
+    - GCDWebServer/Core (= 3.5.4)
+  - GCDWebServer/Core (3.5.4)
   - HandyJSON (5.0.1)
   - IQKeyboardManagerSwift (6.5.5)
+  - KeychainAccess (4.1.0)
   - Kingfisher (5.13.2):
     - Kingfisher/Core (= 5.13.2)
   - Kingfisher/Core (5.13.2)
@@ -42,16 +67,29 @@ PODS:
   - SwiftyAttributes (5.1.1)
   - SwiftyJSON (5.0.0)
   - Swinject (2.7.1)
+  - TextAttributes (2.0.2)
   - Toast-Swift (5.0.1)
+  - UIImageColors (2.1.0)
   - URLNavigator (2.3.0)
   - Validator (3.2.1)
+  - YYDebugDatabase (2.0.8):
+    - FMDB
+    - GCDWebServer
 
 DEPENDENCIES:
   - Alamofire
   - Aspects
+  - CocoaLumberjack/Swift
   - CryptoSwift
+  - DoraemonKit/Core (from `https://github.com/didi/DoraemonKit.git`, tag `3.0.0`)
+  - DoraemonKit/WithDatabase (from `https://github.com/didi/DoraemonKit.git`, tag `3.0.0`)
+  - DoraemonKit/WithGPS (from `https://github.com/didi/DoraemonKit.git`, tag `3.0.0`)
+  - DoraemonKit/WithLoad (from `https://github.com/didi/DoraemonKit.git`, tag `3.0.0`)
+  - DoraemonKit/WithLogger (from `https://github.com/didi/DoraemonKit.git`, tag `3.0.0`)
+  - DoraemonKit/WithMLeaksFinder (from `https://github.com/didi/DoraemonKit.git`, tag `3.0.0`)
   - HandyJSON
   - IQKeyboardManagerSwift
+  - KeychainAccess
   - Kingfisher
   - PKHUD
   - RxCocoa
@@ -64,7 +102,9 @@ DEPENDENCIES:
   - SwiftyAttributes
   - SwiftyJSON
   - Swinject
+  - TextAttributes
   - Toast-Swift
+  - UIImageColors
   - URLNavigator
   - Validator
 
@@ -72,9 +112,13 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Aspects
+    - CocoaLumberjack
     - CryptoSwift
+    - FMDB
+    - GCDWebServer
     - HandyJSON
     - IQKeyboardManagerSwift
+    - KeychainAccess
     - Kingfisher
     - PKHUD
     - RxCocoa
@@ -88,16 +132,34 @@ SPEC REPOS:
     - SwiftyAttributes
     - SwiftyJSON
     - Swinject
+    - TextAttributes
     - Toast-Swift
+    - UIImageColors
     - URLNavigator
     - Validator
+    - YYDebugDatabase
+
+EXTERNAL SOURCES:
+  DoraemonKit:
+    :git: https://github.com/didi/DoraemonKit.git
+    :tag: 3.0.0
+
+CHECKOUT OPTIONS:
+  DoraemonKit:
+    :git: https://github.com/didi/DoraemonKit.git
+    :tag: 3.0.0
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
   CryptoSwift: 1283821600233bdbeb96d7b389c3288c3bf77211
+  DoraemonKit: 4ad75a74374d836425e947f0f891157cacfdcf46
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
   HandyJSON: d45b8415c501e3affc59ca9762c1197ff0feb646
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
+  KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
   Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
@@ -111,10 +173,13 @@ SPEC CHECKSUMS:
   SwiftyAttributes: e3e13891ddac3c62b3d7798d5c3969cea88e62bb
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+  TextAttributes: 89905fb52c36de587010f335bd4071463d9c6d9b
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+  UIImageColors: d2ef3b0877d203cbb06489eeb78ea8b7788caabe
   URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
   Validator: 80a6f567220c962dfd2d9928ae98a8c1d164f6f4
+  YYDebugDatabase: 037486297a7dd40bc50e2c6df5de7b4ad24c9c17
 
-PODFILE CHECKSUM: c900cd906e81b49b5b18b4bf820ee77f735b829e
+PODFILE CHECKSUM: 0eef87b48da55d489d5bd8fbe4a6cb99655a6a45
 
 COCOAPODS: 1.8.4
