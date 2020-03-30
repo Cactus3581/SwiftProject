@@ -2,7 +2,6 @@ PODS:
   - Alamofire (5.0.5)
   - Aspects (1.4.1)
   - CryptoSwift (1.3.0)
-  - EZSwiftExtensions (2.0)
   - HandyJSON (5.0.1)
   - IQKeyboardManagerSwift (6.5.5)
   - Kingfisher (5.13.2):
@@ -51,7 +50,6 @@ DEPENDENCIES:
   - Alamofire
   - Aspects
   - CryptoSwift
-  - EZSwiftExtensions
   - HandyJSON
   - IQKeyboardManagerSwift
   - Kingfisher
@@ -75,7 +73,6 @@ SPEC REPOS:
     - Alamofire
     - Aspects
     - CryptoSwift
-    - EZSwiftExtensions
     - HandyJSON
     - IQKeyboardManagerSwift
     - Kingfisher
@@ -99,7 +96,6 @@ SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   CryptoSwift: 1283821600233bdbeb96d7b389c3288c3bf77211
-  EZSwiftExtensions: f73648a591e529a1dbd83c22b19fd3e57df6fb7d
   HandyJSON: d45b8415c501e3affc59ca9762c1197ff0feb646
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
@@ -119,6 +115,6 @@ SPEC CHECKSUMS:
   URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
   Validator: 80a6f567220c962dfd2d9928ae98a8c1d164f6f4
 
-PODFILE CHECKSUM: aff42d260e3e563d306b68179b410cddc6e94ab4
+PODFILE CHECKSUM: c900cd906e81b49b5b18b4bf820ee77f735b829e
 
 COCOAPODS: 1.8.4

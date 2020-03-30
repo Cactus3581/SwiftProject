@@ -21,7 +21,7 @@ target 'SwiftProject' do
 
 # 扩展
     pod 'SwifterSwift' 
-    pod 'EZSwiftExtensions' 
+    #pod 'EZSwiftExtensions' 
 
 # 响应式编程框架
     pod 'RxSwift'
