@@ -17,7 +17,7 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
     weak var tableView: UITableView!
     weak var headerView: UserProfileTableHeaderView!
     weak var ctaView: UserProfileCTAView?
-    weak var ctaAnimationView: UIView?
+    weak var ctaAnimationView: UserProfileShadowView?
 
     static var isRemoving: Bool = false
     var naviHeight: CGFloat = 64

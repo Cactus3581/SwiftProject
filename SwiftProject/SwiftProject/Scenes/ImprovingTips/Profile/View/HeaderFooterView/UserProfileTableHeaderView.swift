@@ -17,7 +17,7 @@ class UserProfileTableHeaderView: UIView {
     weak var dependLayoutView: UIView!
     weak var dependLayoutView1: UIView!
     weak var ctaView: UserProfileCTAView?
-    weak var ctaAnimationView: UIView?
+    weak var ctaAnimationView: UserProfileShadowView?
 
     static let bottom: CGFloat = 15
 
@@ -44,7 +44,7 @@ class UserProfileTableHeaderView: UIView {
         let dependLayoutView1 = UIView()
         self.dependLayoutView1 = dependLayoutView1
 
-        let ctaAnimationView = UIView()
+        let ctaAnimationView = UserProfileShadowView()
         self.ctaAnimationView = ctaAnimationView
 
         super.init(frame: frame)
@@ -144,11 +144,6 @@ class UserProfileTableHeaderView: UIView {
          */
     }
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        ctaAnimationView?.layer.sp_setShadowPath(direction: .bottom, shadowColor: UIColor.lightGray, shadowOpacity: 0.8, shadowRadius: 10, shadowPathOffset: 3)
-    }
-
     var viewModel: UserProfileViewModel? {
         didSet {
             nameLabel?.text = viewModel?.model?.userInfo?.userName
@@ -193,27 +188,44 @@ extension CALayer {
         self.shadowColor = shadowColor.cgColor // 阴影颜色
         self.shadowOpacity = shadowOpacity // 阴影透明度，默认0
         self.shadowRadius = shadowRadius //阴影半径/模糊，默认3
-        self.shadowOffset = CGSize(width: 0, height: 40) //阴影偏移，默认(0, -3)
+        self.shadowOffset = CGSize(width: 0, height: 0) //阴影偏移，默认(0, -3)
 
         var shadowRect = CGRect(x: 0, y: 0, width: 0, height: 0)
         let width = self.bounds.size.width
         let height = self.bounds.size.height
 
+//        switch direction {
+//        case .top:
+//            shadowRect = CGRect(x: 0, y: -shadowPathOffset, width: width, height: shadowPathOffset)
+//        case .left:
+//            shadowRect = CGRect(x: -shadowPathOffset, y: 0, width: shadowPathOffset, height: height)
+//        case .bottom:
+//            shadowRect = CGRect(x: 0, y: height, width: width, height: shadowPathOffset)
+//        case .right:
+//            shadowRect = CGRect(x: width, y: 0, width: shadowPathOffset, height: height)
+//        case .topRL:
+//            shadowRect = CGRect(x: -shadowPathOffset, y: -shadowPathOffset, width: width + shadowPathOffset*2, height: height + shadowPathOffset)
+//        case .bottomRL:
+//            shadowRect = CGRect(x: -shadowPathOffset, y: 0, width: width + shadowPathOffset*2, height: height + shadowPathOffset)
+//        case .around:
+//            shadowRect = CGRect(x: -shadowPathOffset, y: -shadowPathOffset, width: width + shadowPathOffset*2, height: height + shadowPathOffset*2)
+//        }
+
         switch direction {
         case .top:
-            shadowRect = CGRect(x: 0, y: -shadowPathOffset, width: width, height: shadowPathOffset)
+            shadowRect = CGRect(x: 0, y: -shadowPathOffset/2, width: width, height: shadowPathOffset)
         case .left:
-            shadowRect = CGRect(x: -shadowPathOffset, y: 0, width: shadowPathOffset, height: height)
+            shadowRect = CGRect(x: -shadowPathOffset/2, y: 0, width: shadowPathOffset, height: height)
         case .bottom:
-            shadowRect = CGRect(x: 0, y: height, width: width, height: shadowPathOffset)
+            shadowRect = CGRect(x: 0, y: height - shadowPathOffset/2, width: width, height: shadowPathOffset)
         case .right:
-            shadowRect = CGRect(x: width, y: 0, width: shadowPathOffset, height: height)
+            shadowRect = CGRect(x: width - -shadowPathOffset/2, y: 0, width: shadowPathOffset, height: height)
         case .topRL:
             shadowRect = CGRect(x: -shadowPathOffset, y: -shadowPathOffset, width: width + shadowPathOffset*2, height: height + shadowPathOffset)
         case .bottomRL:
             shadowRect = CGRect(x: -shadowPathOffset, y: 0, width: width + shadowPathOffset*2, height: height + shadowPathOffset)
         case .around:
-            shadowRect = CGRect(x: -shadowPathOffset, y: -shadowPathOffset, width: width + shadowPathOffset*2, height: height + shadowPathOffset*2)
+            shadowRect = CGRect(x: -shadowPathOffset/2, y: -shadowPathOffset/2, width: width + shadowPathOffset, height: height + shadowPathOffset)
         }
 
         let path = UIBezierPath(rect: shadowRect)

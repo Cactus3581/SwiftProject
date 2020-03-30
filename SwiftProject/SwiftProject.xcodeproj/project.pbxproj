@@ -129,6 +129,7 @@
 		01E15CD823BF595200A69E23 /* ErrorhandlingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CD723BF595200A69E23 /* ErrorhandlingViewController.swift */; };
 		01E15CDB23BF59BB00A69E23 /* NestedTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CDA23BF59BB00A69E23 /* NestedTypeViewController.swift */; };
 		01E15CDE23BF59E400A69E23 /* OpaqueTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CDD23BF59E400A69E23 /* OpaqueTypeViewController.swift */; };
+		01E2F1302431E30700B52138 /* UserProfileShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E2F12F2431E30700B52138 /* UserProfileShadowView.swift */; };
 		01E9B3552420D9F000FF618D /* MVVMListSectionImageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E9B3542420D9F000FF618D /* MVVMListSectionImageHeaderView.swift */; };
 		01E9B3572420D9F800FF618D /* MVVMListSectionImageFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E9B3562420D9F800FF618D /* MVVMListSectionImageFooterView.swift */; };
 		01E9B3592420DE1A00FF618D /* MVVMListSectionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E9B3582420DE1A00FF618D /* MVVMListSectionViewProtocol.swift */; };
@@ -295,6 +296,7 @@
 		01E15CD723BF595200A69E23 /* ErrorhandlingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorhandlingViewController.swift; sourceTree = "<group>"; };
 		01E15CDA23BF59BB00A69E23 /* NestedTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedTypeViewController.swift; sourceTree = "<group>"; };
 		01E15CDD23BF59E400A69E23 /* OpaqueTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpaqueTypeViewController.swift; sourceTree = "<group>"; };
+		01E2F12F2431E30700B52138 /* UserProfileShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileShadowView.swift; sourceTree = "<group>"; };
 		01E9B3542420D9F000FF618D /* MVVMListSectionImageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSectionImageHeaderView.swift; sourceTree = "<group>"; };
 		01E9B3562420D9F800FF618D /* MVVMListSectionImageFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSectionImageFooterView.swift; sourceTree = "<group>"; };
 		01E9B3582420DE1A00FF618D /* MVVMListSectionViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSectionViewProtocol.swift; sourceTree = "<group>"; };
@@ -460,6 +462,7 @@
 			isa = PBXGroup;
 			children = (
 				01026735242379B900CA6D00 /* UserProfileTableHeaderView.swift */,
+				01E2F12F2431E30700B52138 /* UserProfileShadowView.swift */,
 				01026736242379B900CA6D00 /* UserProfileCTAView.swift */,
 				01BFFC74242DA501004AA94B /* UserProfileTagsView.swift */,
 			);
@@ -1760,6 +1763,7 @@
 				019FE1A223C0E99F00B241B1 /* FactoryViewController.swift in Sources */,
 				0102673B242379B900CA6D00 /* UserProfileCTAItemViewModel.swift in Sources */,
 				01937ECA2418FF91009BD6AD /* MVVMModel.swift in Sources */,
+				01E2F1302431E30700B52138 /* UserProfileShadowView.swift in Sources */,
 				0112F9AE23BF57FD0002788E /* ControlFlowViewController.swift in Sources */,
 				0102673E242379B900CA6D00 /* UserProfileViewController.swift in Sources */,
 				0196CDE823D1888300112AB8 /* SnapViewController.swift in Sources */,
