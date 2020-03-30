@@ -11,7 +11,7 @@ target 'SwiftProject' do
     pod 'SnapKit' #布局
     pod 'Kingfisher' #图片库
     pod 'Alamofire' #网络库
-    pod 'Reachability.swift' # 替换苹果的 Reachability 类
+    #pod 'Reachability.swift' # 替换苹果的 Reachability 类
     pod 'SwiftyJSON' #json解析库
     pod 'HandyJSON'
     pod 'Toast-Swift' #加载指示器

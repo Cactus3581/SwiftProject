@@ -1,55 +1,124 @@
 PODS:
-  - Alamofire (4.9.1)
+  - Alamofire (5.0.5)
+  - Aspects (1.4.1)
+  - CryptoSwift (1.3.0)
+  - EZSwiftExtensions (2.0)
   - HandyJSON (5.0.1)
-  - Kingfisher (5.12.0):
-    - Kingfisher/Core (= 5.12.0)
-  - Kingfisher/Core (5.12.0)
-  - RxCocoa (5.0.1):
+  - IQKeyboardManagerSwift (6.5.5)
+  - Kingfisher (5.13.2):
+    - Kingfisher/Core (= 5.13.2)
+  - Kingfisher/Core (5.13.2)
+  - PKHUD (5.3.0)
+  - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
-  - RxRelay (5.0.1):
+  - RxRelay (5.1.1):
     - RxSwift (~> 5)
-  - RxSwift (5.0.1)
+  - RxSwift (5.1.1)
   - SnapKit (5.0.1)
+  - SwiftDate (6.1.0)
+  - SwifterSwift (5.1.0):
+    - SwifterSwift/AppKit (= 5.1.0)
+    - SwifterSwift/CoreGraphics (= 5.1.0)
+    - SwifterSwift/CoreLocation (= 5.1.0)
+    - SwifterSwift/Dispatch (= 5.1.0)
+    - SwifterSwift/Foundation (= 5.1.0)
+    - SwifterSwift/MapKit (= 5.1.0)
+    - SwifterSwift/SceneKit (= 5.1.0)
+    - SwifterSwift/SpriteKit (= 5.1.0)
+    - SwifterSwift/SwiftStdlib (= 5.1.0)
+    - SwifterSwift/UIKit (= 5.1.0)
+  - SwifterSwift/AppKit (5.1.0)
+  - SwifterSwift/CoreGraphics (5.1.0)
+  - SwifterSwift/CoreLocation (5.1.0)
+  - SwifterSwift/Dispatch (5.1.0)
+  - SwifterSwift/Foundation (5.1.0)
+  - SwifterSwift/MapKit (5.1.0)
+  - SwifterSwift/SceneKit (5.1.0)
+  - SwifterSwift/SpriteKit (5.1.0)
+  - SwifterSwift/SwiftStdlib (5.1.0)
+  - SwifterSwift/UIKit (5.1.0)
+  - SwiftLint (0.39.1)
+  - SwiftPullToRefresh (3.1.1)
+  - SwiftyAttributes (5.1.1)
   - SwiftyJSON (5.0.0)
   - Swinject (2.7.1)
+  - Toast-Swift (5.0.1)
+  - URLNavigator (2.3.0)
+  - Validator (3.2.1)
 
 DEPENDENCIES:
   - Alamofire
+  - Aspects
+  - CryptoSwift
+  - EZSwiftExtensions
   - HandyJSON
+  - IQKeyboardManagerSwift
   - Kingfisher
+  - PKHUD
   - RxCocoa
   - RxSwift
   - SnapKit
+  - SwiftDate
+  - SwifterSwift
+  - SwiftLint
+  - SwiftPullToRefresh
+  - SwiftyAttributes
   - SwiftyJSON
   - Swinject
+  - Toast-Swift
+  - URLNavigator
+  - Validator
 
 SPEC REPOS:
-  "git@code.byted.org:ee/pods_specs.git":
-    - SnapKit
-    - Swinject
-  "git@code.byted.org:iOS_Library/publicthird_source_repo.git":
-    - SwiftyJSON
-  https://cdn.cocoapods.org/:
-    - RxSwift
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
+    - Aspects
+    - CryptoSwift
+    - EZSwiftExtensions
     - HandyJSON
+    - IQKeyboardManagerSwift
     - Kingfisher
+    - PKHUD
     - RxCocoa
     - RxRelay
+    - RxSwift
+    - SnapKit
+    - SwiftDate
+    - SwifterSwift
+    - SwiftLint
+    - SwiftPullToRefresh
+    - SwiftyAttributes
+    - SwiftyJSON
+    - Swinject
+    - Toast-Swift
+    - URLNavigator
+    - Validator
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  CryptoSwift: 1283821600233bdbeb96d7b389c3288c3bf77211
+  EZSwiftExtensions: f73648a591e529a1dbd83c22b19fd3e57df6fb7d
   HandyJSON: d45b8415c501e3affc59ca9762c1197ff0feb646
-  Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
-  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
-  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
-  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
-  SnapKit: 1151856f0f44d50235970e5a711db83424674c7a
-  SwiftyJSON: de9f85069c6820b6dc9d5ac8fb364c8863e49b55
-  Swinject: 291602aaf5195c1b2aea6fadb4817d5a1e60f982
+  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
+  Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
+  PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
+  SwifterSwift: a9e8e144832638c2850b43da5feaf9598c6ad65b
+  SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
+  SwiftPullToRefresh: f61d67439c5b8d66420fe57193cab8c279398e7a
+  SwiftyAttributes: e3e13891ddac3c62b3d7798d5c3969cea88e62bb
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+  URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
+  Validator: 80a6f567220c962dfd2d9928ae98a8c1d164f6f4
 
-PODFILE CHECKSUM: 982554d6f189486a0afdc8fdf74421c4c3c9983c
+PODFILE CHECKSUM: aff42d260e3e563d306b68179b410cddc6e94ab4
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4
