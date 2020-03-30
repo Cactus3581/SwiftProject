@@ -54,6 +54,7 @@
 		0156813023BE28F100B42FB9 /* ProtocolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156812F23BE28F100B42FB9 /* ProtocolViewController.swift */; };
 		015846FE24239FA700B7BEBE /* UserProfileTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015846FD24239FA700B7BEBE /* UserProfileTextTableViewCell.swift */; };
 		015847002423A13000B7BEBE /* UserProfileSectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015846FF2423A13000B7BEBE /* UserProfileSectionFooterView.swift */; };
+		015CBDE42431A02F00393F1B /* UserProfileConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015CBDE32431A02F00393F1B /* UserProfileConstants.swift */; };
 		015E177C24275F7000351EA9 /* UserProfileTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E177B24275F7000351EA9 /* UserProfileTableViewDelegate.swift */; };
 		015E177E242763D200351EA9 /* UserProfileDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E177D242763D200351EA9 /* UserProfileDataHandler.swift */; };
 		0167EE842418F2EC00E4830F /* MVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0167EE832418F2EC00E4830F /* MVVMViewController.swift */; };
@@ -220,6 +221,7 @@
 		0156812F23BE28F100B42FB9 /* ProtocolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolViewController.swift; sourceTree = "<group>"; tabWidth = 3; };
 		015846FD24239FA700B7BEBE /* UserProfileTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTextTableViewCell.swift; sourceTree = "<group>"; };
 		015846FF2423A13000B7BEBE /* UserProfileSectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileSectionFooterView.swift; sourceTree = "<group>"; };
+		015CBDE32431A02F00393F1B /* UserProfileConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileConstants.swift; sourceTree = "<group>"; };
 		015E177B24275F7000351EA9 /* UserProfileTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewDelegate.swift; sourceTree = "<group>"; };
 		015E177D242763D200351EA9 /* UserProfileDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDataHandler.swift; sourceTree = "<group>"; };
 		0167EE832418F2EC00E4830F /* MVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewController.swift; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 		01026725242379B900CA6D00 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				015CBDE32431A02F00393F1B /* UserProfileConstants.swift */,
 				01026728242379B900CA6D00 /* UserProfileModel.swift */,
 				01026727242379B900CA6D00 /* UserProfileDict.json */,
 				0188AC81242A4DCD00BA7654 /* UserProfileArray.json */,
@@ -1830,6 +1833,7 @@
 				01D38A13241A770E00F6D74D /* MVVMLisSecFactory.swift in Sources */,
 				0196DCC323D1897500112AB8 /* SnapView.swift in Sources */,
 				01E15CDE23BF59E400A69E23 /* OpaqueTypeViewController.swift in Sources */,
+				015CBDE42431A02F00393F1B /* UserProfileConstants.swift in Sources */,
 				0167EE842418F2EC00E4830F /* MVVMViewController.swift in Sources */,
 				01026741242379B900CA6D00 /* UserProfileModel.swift in Sources */,
 				01937EE824193353009BD6AD /* MVVMListFactory.swift in Sources */,

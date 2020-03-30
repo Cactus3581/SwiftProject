@@ -335,7 +335,7 @@ class UserProfileViewController: BaseViewController, UITableViewDelegate {
                 }
 
                 self.headerView.ctaView?.snp.remakeConstraints {
-                    $0.leading.equalToSuperview().offset(16)
+                    $0.leading.equalToSuperview().offset(UserProfileConstants.ViewLayout.viewHorizontalInset)
                     $0.trailing.equalToSuperview().offset(-16)
                     $0.bottom.equalToSuperview().offset(-UserProfileTableHeaderView.bottom)
                 }

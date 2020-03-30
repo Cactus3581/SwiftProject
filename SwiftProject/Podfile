@@ -6,20 +6,41 @@ target 'SwiftProject' do
   use_frameworks!
 
   # Pods for SwiftProject
-    pod 'RxSwift'
-    pod 'RxCocoa'
-    pod 'Swinject'
-    pod 'SnapKit'
+
+# 必备
+    pod 'SnapKit' #布局
     pod 'Kingfisher' #图片库
     pod 'Alamofire' #网络库
-    pod 'SwiftyJSON'
+    pod 'Reachability.swift' # 替换苹果的 Reachability 类
+    pod 'SwiftyJSON' #json解析库
     pod 'HandyJSON'
-    #pod 'Locksmith' # Keychain
-    #pod 'SwiftLint' # Swift 代码规范检查工具
-    #pod 'Aspects' 
+    pod 'Toast-Swift' #加载指示器
+    pod 'PKHUD' # HUD
+    pod 'SwiftPullToRefresh' #上下拉刷新
+    pod 'URLNavigator' #路由跳转
+
+# 扩展
+    pod 'SwifterSwift' 
+    pod 'EZSwiftExtensions' 
+
+# 响应式编程框架
+    pod 'RxSwift'
+    pod 'RxCocoa'
+
+# 框架级工具
+    pod 'Swinject'
+    pod 'SwiftLint' # Swift 代码规范检查工具
+    pod 'Aspects' # 面向切面编程（AOP）库 
     #pod 'Quick' # 测试框架
     #pod 'CocoaLumberjack/Swift' # 日志
 
+# 工具
+    pod 'SwiftyAttributes' #富文本
+    pod 'SwiftDate' #日期
+    pod 'IQKeyboardManagerSwift' #键盘相关
+    pod 'CryptoSwift' #加密库
+    pod 'Validator' #正则判断		
+    #pod 'Locksmith' # Keychain
 
   target 'SwiftProjectTests' do
     inherit! :search_paths
