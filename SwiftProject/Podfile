@@ -22,6 +22,7 @@ target 'SwiftProject' do
 # 扩展
     pod 'SwifterSwift' 
     #pod 'EZSwiftExtensions' 
+    #pod 'ExSwift' 
 
 # 响应式编程框架
     pod 'RxSwift'
@@ -30,17 +31,20 @@ target 'SwiftProject' do
 # 框架级工具
     pod 'Swinject'
     pod 'SwiftLint' # Swift 代码规范检查工具
-    pod 'Aspects' # 面向切面编程（AOP）库 
+    pod 'Aspects' # 面向切面编程（AOP）库
     #pod 'Quick' # 测试框架
     #pod 'CocoaLumberjack/Swift' # 日志
 
 # 工具
+    pod 'TextAttributes' #从attributed strings处理
     pod 'SwiftyAttributes' #富文本
+    pod 'Chameleon' #色彩框架
+    pod 'UIImageColors' #从图像中获取最主要和最突出的颜色。
     pod 'SwiftDate' #日期
     pod 'IQKeyboardManagerSwift' #键盘相关
     pod 'CryptoSwift' #加密库
     pod 'Validator' #正则判断		
-    #pod 'Locksmith' # Keychain
+    pod 'KeychainAccess' # Keychain
 
   target 'SwiftProjectTests' do
     inherit! :search_paths
