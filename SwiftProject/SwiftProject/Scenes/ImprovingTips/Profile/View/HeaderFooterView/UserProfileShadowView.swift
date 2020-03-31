@@ -2,7 +2,7 @@
 //  UserProfileShadowView.swift
 //  SwiftProject
 //
-//  Created by 夏汝震 on 2020/3/30.
+//  Created by ryan on 2020/3/30.
 //  Copyright © 2020 cactus. All rights reserved.
 //
 

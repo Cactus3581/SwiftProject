@@ -52,6 +52,8 @@
 		013D09F823BE281A0050F15A /* FunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D09F723BE281A0050F15A /* FunctionViewController.swift */; };
 		014C81E62424F6CC007129AD /* UserProfilePhoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014C81E52424F6CC007129AD /* UserProfilePhoneTableViewCell.swift */; };
 		0156813023BE28F100B42FB9 /* ProtocolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156812F23BE28F100B42FB9 /* ProtocolViewController.swift */; };
+		01569B9D243319DA004879E9 /* NSAttributedStringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01569B9B243319DA004879E9 /* NSAttributedStringViewController.xib */; };
+		01569B9E243319DA004879E9 /* NSAttributedStringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01569B9C243319DA004879E9 /* NSAttributedStringViewController.swift */; };
 		015846FE24239FA700B7BEBE /* UserProfileTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015846FD24239FA700B7BEBE /* UserProfileTextTableViewCell.swift */; };
 		015847002423A13000B7BEBE /* UserProfileSectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015846FF2423A13000B7BEBE /* UserProfileSectionFooterView.swift */; };
 		015CBDE42431A02F00393F1B /* UserProfileConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015CBDE32431A02F00393F1B /* UserProfileConstants.swift */; };
@@ -104,6 +106,16 @@
 		01A550BE2428649500472B6A /* UserProfileNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A550BD2428649500472B6A /* UserProfileNetWork.swift */; };
 		01A550C1242864C200472B6A /* UserProfileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A550C0242864C200472B6A /* UserProfileStorage.swift */; };
 		01A550C3242864EB00472B6A /* UserProfileTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A550C2242864EB00472B6A /* UserProfileTableViewDataSource.swift */; };
+		01ACCE662433375D0025C9EA /* UITextView+SPAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACCE652433375D0025C9EA /* UITextView+SPAdd.swift */; };
+		01ACCE68243337760025C9EA /* UIView+SPAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACCE67243337760025C9EA /* UIView+SPAdd.swift */; };
+		01ACCE6B243337B30025C9EA /* UIImageView+SPAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACCE6A243337B30025C9EA /* UIImageView+SPAdd.swift */; };
+		01ACCE6E243337D00025C9EA /* UIColor+SPAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACCE6D243337D00025C9EA /* UIColor+SPAdd.swift */; };
+		01ACCE71243337FB0025C9EA /* String+SPAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACCE70243337FB0025C9EA /* String+SPAdd.swift */; };
+		01ACCE742433383B0025C9EA /* Date+SPAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACCE732433383B0025C9EA /* Date+SPAdd.swift */; };
+		01ACCE772433386C0025C9EA /* UICollectionView+SPAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACCE762433386C0025C9EA /* UICollectionView+SPAdd.swift */; };
+		01ACCE7A243338830025C9EA /* UITableView+SPAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACCE79243338830025C9EA /* UITableView+SPAdd.swift */; };
+		01ACCE7D243338A40025C9EA /* UILabel+SPAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACCE7C243338A40025C9EA /* UILabel+SPAdd.swift */; };
+		01ACCE8024333AB30025C9EA /* Int+SPAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ACCE7F24333AB30025C9EA /* Int+SPAdd.swift */; };
 		01ADB56823BE290F00EAB005 /* PropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADB56723BE290F00EAB005 /* PropertyViewController.swift */; };
 		01ADB56B23BE294300EAB005 /* InheritViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADB56A23BE294300EAB005 /* InheritViewController.swift */; };
 		01ADB56E23BE296700EAB005 /* ClassStructViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ADB56D23BE296700EAB005 /* ClassStructViewController.swift */; };
@@ -220,6 +232,8 @@
 		013D09F723BE281A0050F15A /* FunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionViewController.swift; sourceTree = "<group>"; };
 		014C81E52424F6CC007129AD /* UserProfilePhoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePhoneTableViewCell.swift; sourceTree = "<group>"; };
 		0156812F23BE28F100B42FB9 /* ProtocolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolViewController.swift; sourceTree = "<group>"; tabWidth = 3; };
+		01569B9B243319DA004879E9 /* NSAttributedStringViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NSAttributedStringViewController.xib; sourceTree = "<group>"; };
+		01569B9C243319DA004879E9 /* NSAttributedStringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedStringViewController.swift; sourceTree = "<group>"; };
 		015846FD24239FA700B7BEBE /* UserProfileTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTextTableViewCell.swift; sourceTree = "<group>"; };
 		015846FF2423A13000B7BEBE /* UserProfileSectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileSectionFooterView.swift; sourceTree = "<group>"; };
 		015CBDE32431A02F00393F1B /* UserProfileConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileConstants.swift; sourceTree = "<group>"; };
@@ -272,6 +286,16 @@
 		01A550BD2428649500472B6A /* UserProfileNetWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileNetWork.swift; sourceTree = "<group>"; };
 		01A550C0242864C200472B6A /* UserProfileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileStorage.swift; sourceTree = "<group>"; };
 		01A550C2242864EB00472B6A /* UserProfileTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewDataSource.swift; sourceTree = "<group>"; };
+		01ACCE652433375D0025C9EA /* UITextView+SPAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+SPAdd.swift"; sourceTree = "<group>"; };
+		01ACCE67243337760025C9EA /* UIView+SPAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SPAdd.swift"; sourceTree = "<group>"; };
+		01ACCE6A243337B30025C9EA /* UIImageView+SPAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+SPAdd.swift"; sourceTree = "<group>"; };
+		01ACCE6D243337D00025C9EA /* UIColor+SPAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+SPAdd.swift"; sourceTree = "<group>"; };
+		01ACCE70243337FB0025C9EA /* String+SPAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+SPAdd.swift"; sourceTree = "<group>"; };
+		01ACCE732433383B0025C9EA /* Date+SPAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+SPAdd.swift"; sourceTree = "<group>"; };
+		01ACCE762433386C0025C9EA /* UICollectionView+SPAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+SPAdd.swift"; sourceTree = "<group>"; };
+		01ACCE79243338830025C9EA /* UITableView+SPAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+SPAdd.swift"; sourceTree = "<group>"; };
+		01ACCE7C243338A40025C9EA /* UILabel+SPAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+SPAdd.swift"; sourceTree = "<group>"; };
+		01ACCE7F24333AB30025C9EA /* Int+SPAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+SPAdd.swift"; sourceTree = "<group>"; };
 		01ADB56723BE290F00EAB005 /* PropertyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyViewController.swift; sourceTree = "<group>"; };
 		01ADB56A23BE294300EAB005 /* InheritViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InheritViewController.swift; sourceTree = "<group>"; };
 		01ADB56D23BE296700EAB005 /* ClassStructViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassStructViewController.swift; sourceTree = "<group>"; };
@@ -708,6 +732,23 @@
 			path = Property;
 			sourceTree = "<group>";
 		};
+		015691F724322704004879E9 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				015691F8243227A9004879E9 /* NSAttributedString */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		015691F8243227A9004879E9 /* NSAttributedString */ = {
+			isa = PBXGroup;
+			children = (
+				01569B9C243319DA004879E9 /* NSAttributedStringViewController.swift */,
+				01569B9B243319DA004879E9 /* NSAttributedStringViewController.xib */,
+			);
+			path = NSAttributedString;
+			sourceTree = "<group>";
+		};
 		0167EE7A2418F09500E4830F /* RxSwift */ = {
 			isa = PBXGroup;
 			children = (
@@ -991,14 +1032,14 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
-		01A9C6C623B1733E000349E2 /* Foundation */ = {
+		01A9C6C623B1733E000349E2 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
 				0196CDE523D182FB00112AB8 /* Snap */,
 				01B25D0723BF55EB00677023 /* RxSwift */,
 				010D6AC623A9FD8F00B84621 /* Swinject */,
 			);
-			path = Foundation;
+			path = Framework;
 			sourceTree = "<group>";
 		};
 		01A9C6C723B17392000349E2 /* Basics */ = {
@@ -1007,6 +1048,143 @@
 				0195230123B173D600AE491B /* BasicViewController.swift */,
 			);
 			path = Basics;
+			sourceTree = "<group>";
+		};
+		01ACCE5D2433368F0025C9EA /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				01ACCE63243336FE0025C9EA /* Foundation */,
+				01ACCE5F243336B70025C9EA /* QuartzCore */,
+				01ACCE5E243336A60025C9EA /* UIKit */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		01ACCE5E243336A60025C9EA /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				01ACCE7B243338950025C9EA /* UILabel */,
+				01ACCE782433387A0025C9EA /* UITableView */,
+				01ACCE752433385F0025C9EA /* UICollectionView */,
+				01ACCE6C243337C10025C9EA /* UIColor */,
+				01ACCE69243337A20025C9EA /* UIImageView */,
+				01ACCE62243336E60025C9EA /* UITextView */,
+				01ACCE61243336D80025C9EA /* UIView */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		01ACCE5F243336B70025C9EA /* QuartzCore */ = {
+			isa = PBXGroup;
+			children = (
+				01ACCE60243336C50025C9EA /* CALayer */,
+			);
+			path = QuartzCore;
+			sourceTree = "<group>";
+		};
+		01ACCE60243336C50025C9EA /* CALayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CALayer;
+			sourceTree = "<group>";
+		};
+		01ACCE61243336D80025C9EA /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				01ACCE67243337760025C9EA /* UIView+SPAdd.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		01ACCE62243336E60025C9EA /* UITextView */ = {
+			isa = PBXGroup;
+			children = (
+				01ACCE652433375D0025C9EA /* UITextView+SPAdd.swift */,
+			);
+			path = UITextView;
+			sourceTree = "<group>";
+		};
+		01ACCE63243336FE0025C9EA /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				01ACCE7E24333AA60025C9EA /* Int */,
+				01ACCE72243338280025C9EA /* Date */,
+				01ACCE6F243337E90025C9EA /* String */,
+				01ACCE642433370A0025C9EA /* NSAttributedString */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		01ACCE642433370A0025C9EA /* NSAttributedString */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NSAttributedString;
+			sourceTree = "<group>";
+		};
+		01ACCE69243337A20025C9EA /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				01ACCE6A243337B30025C9EA /* UIImageView+SPAdd.swift */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
+		01ACCE6C243337C10025C9EA /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				01ACCE6D243337D00025C9EA /* UIColor+SPAdd.swift */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		01ACCE6F243337E90025C9EA /* String */ = {
+			isa = PBXGroup;
+			children = (
+				01ACCE70243337FB0025C9EA /* String+SPAdd.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		01ACCE72243338280025C9EA /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				01ACCE732433383B0025C9EA /* Date+SPAdd.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		01ACCE752433385F0025C9EA /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				01ACCE762433386C0025C9EA /* UICollectionView+SPAdd.swift */,
+			);
+			path = UICollectionView;
+			sourceTree = "<group>";
+		};
+		01ACCE782433387A0025C9EA /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				01ACCE79243338830025C9EA /* UITableView+SPAdd.swift */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
+		01ACCE7B243338950025C9EA /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				01ACCE7C243338A40025C9EA /* UILabel+SPAdd.swift */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
+		01ACCE7E24333AA60025C9EA /* Int */ = {
+			isa = PBXGroup;
+			children = (
+				01ACCE7F24333AB30025C9EA /* Int+SPAdd.swift */,
+			);
+			path = Int;
 			sourceTree = "<group>";
 		};
 		01ADB56923BE293800EAB005 /* Inherit */ = {
@@ -1098,6 +1276,7 @@
 		01CABD5D23F3D392009410C3 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				01ACCE5D2433368F0025C9EA /* Category */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1356,9 +1535,10 @@
 		01EA7BF323ABA50C00712B20 /* BaseKnowledge */ = {
 			isa = PBXGroup;
 			children = (
+				015691F724322704004879E9 /* Foundation */,
 				019BBDDD23D3FB0700061503 /* Thread */,
 				010442B523B4E3F700B1BF54 /* DesignPatterns */,
-				01A9C6C623B1733E000349E2 /* Foundation */,
+				01A9C6C623B1733E000349E2 /* Framework */,
 				01EA7BF523ABA5DC00712B20 /* LearnSwift */,
 			);
 			path = BaseKnowledge;
@@ -1617,6 +1797,7 @@
 				01026740242379B900CA6D00 /* UserProfileDict.json in Resources */,
 				0196CDE923D1888300112AB8 /* SnapViewController.xib in Resources */,
 				0192A6C0242270110015F9CD /* MVVMListSectionDict.json in Resources */,
+				01569B9D243319DA004879E9 /* NSAttributedStringViewController.xib in Resources */,
 				016FE6D923B5DD7800CE8784 /* sql.py in Resources */,
 				0102674F24237B6A00CA6D00 /* FeatureCatalog.plist in Resources */,
 				010CE4E823B0D6E900AE57A9 /* BasicKnowledgCatalog.plist in Resources */,
@@ -1744,6 +1925,7 @@
 				01C01BB423BDEA97008B2D9E /* ClosureViewController.swift in Sources */,
 				01A550C1242864C200472B6A /* UserProfileStorage.swift in Sources */,
 				0182B7C6241A79050033BF0A /* MVVMListSectionTextHeaderView.swift in Sources */,
+				01569B9E243319DA004879E9 /* NSAttributedStringViewController.swift in Sources */,
 				01026745242379B900CA6D00 /* UserProfileSectionViewProtocol.swift in Sources */,
 				016A976D2430504200D8C280 /* UserProfileTopicView.swift in Sources */,
 				019FE1A623C0E9BF00B241B1 /* Produce.swift in Sources */,
@@ -1753,6 +1935,7 @@
 				01D38A0C241A770E00F6D74D /* MVVMListSecViewModel.swift in Sources */,
 				019FE1A423C0E9B700B241B1 /* Factory.swift in Sources */,
 				01EA7C0023ABA97600712B20 /* ListTableViewCell.swift in Sources */,
+				01ACCE68243337760025C9EA /* UIView+SPAdd.swift in Sources */,
 				01EA7C0723ABAAFD00712B20 /* RootTabBarController.swift in Sources */,
 				01A3A40923BF5A55003FEA19 /* AccessControlViewController.swift in Sources */,
 				01E15CDB23BF59BB00A69E23 /* NestedTypeViewController.swift in Sources */,
@@ -1776,6 +1959,7 @@
 				01BFFC75242DA502004AA94B /* UserProfileTagsView.swift in Sources */,
 				0182346D23C4AA8C00FB30A9 /* RxSwiftViewController.swift in Sources */,
 				0112F9A823BF57CA0002788E /* StringAndCharViewController.swift in Sources */,
+				01ACCE772433386C0025C9EA /* UICollectionView+SPAdd.swift in Sources */,
 				01026749242379B900CA6D00 /* UserProfileCTAView.swift in Sources */,
 				01ADB56B23BE294300EAB005 /* InheritViewController.swift in Sources */,
 				01937ED5241906D3009BD6AD /* MVVMListViewModel.swift in Sources */,
@@ -1789,6 +1973,7 @@
 				01E15CD523BF593300A69E23 /* OptionalChainViewController.swift in Sources */,
 				0182B7C4241A78F40033BF0A /* MVVMListSectionTextFooterView.swift in Sources */,
 				01E15CCF23BF58F300A69E23 /* InitializeViewController.swift in Sources */,
+				01ACCE6B243337B30025C9EA /* UIImageView+SPAdd.swift in Sources */,
 				01A3A40C23BF6218003FEA19 /* AdvancedOperatorViewController.swift in Sources */,
 				0182B7CD241A86C00033BF0A /* MVVMListLabelTableViewCell.swift in Sources */,
 				019BBDE023D3FB2C00061503 /* GCDViewController.swift in Sources */,
@@ -1800,6 +1985,7 @@
 				011E9E9023BE28BE00BD0A17 /* ExtensionViewController.swift in Sources */,
 				015846FE24239FA700B7BEBE /* UserProfileTextTableViewCell.swift in Sources */,
 				0182B7D4241A882B0033BF0A /* MVVMListSecCellViewModel.swift in Sources */,
+				01ACCE7D243338A40025C9EA /* UILabel+SPAdd.swift in Sources */,
 				0102673A242379B900CA6D00 /* UserProfileViewModel.swift in Sources */,
 				01026748242379B900CA6D00 /* UserProfileTableHeaderView.swift in Sources */,
 				01EA7C0C23AC69ED00712B20 /* ListViewModel.swift in Sources */,
@@ -1809,9 +1995,12 @@
 				01EA7C0923ABAB1300712B20 /* RootNavigationController.swift in Sources */,
 				01D38A0D241A770E00F6D74D /* MVVMListSecViewController.swift in Sources */,
 				015847002423A13000B7BEBE /* UserProfileSectionFooterView.swift in Sources */,
+				01ACCE71243337FB0025C9EA /* String+SPAdd.swift in Sources */,
 				010D6AD923A9FF6F00B84621 /* TestBridge.m in Sources */,
 				010D6AD223A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.m in Sources */,
+				01ACCE7A243338830025C9EA /* UITableView+SPAdd.swift in Sources */,
 				0102673C242379B900CA6D00 /* UserProfileCellViewModel.swift in Sources */,
+				01ACCE6E243337D00025C9EA /* UIColor+SPAdd.swift in Sources */,
 				01E15CD823BF595200A69E23 /* ErrorhandlingViewController.swift in Sources */,
 				0156813023BE28F100B42FB9 /* ProtocolViewController.swift in Sources */,
 				01E9B3552420D9F000FF618D /* MVVMListSectionImageHeaderView.swift in Sources */,
@@ -1820,11 +2009,14 @@
 				01EE3A1C24152264008ECA89 /* SPSwift.swift in Sources */,
 				01A550BE2428649500472B6A /* UserProfileNetWork.swift in Sources */,
 				012E2EBB23C0EBE5008F6253 /* Produce1.swift in Sources */,
+				01ACCE8024333AB30025C9EA /* Int+SPAdd.swift in Sources */,
 				010D6AD523A9FDB500B84621 /* BPSubViewController.swift in Sources */,
+				01ACCE662433375D0025C9EA /* UITextView+SPAdd.swift in Sources */,
 				01C01BB123BDE699008B2D9E /* EnumViewController.swift in Sources */,
 				013C7D3123B8600000804143 /* MVCViewController.swift in Sources */,
 				013C7D3C23B87B1700804143 /* MVVMViewModel.swift in Sources */,
 				0182B7D0241A86F00033BF0A /* MVVMListCourseTableViewCell.swift in Sources */,
+				01ACCE742433383B0025C9EA /* Date+SPAdd.swift in Sources */,
 				01937ED9241906F5009BD6AD /* MVVMListModel.swift in Sources */,
 				0182B7CA241A793A0033BF0A /* MVVMListTableFooterView.swift in Sources */,
 				01E9B3592420DE1A00FF618D /* MVVMListSectionViewProtocol.swift in Sources */,

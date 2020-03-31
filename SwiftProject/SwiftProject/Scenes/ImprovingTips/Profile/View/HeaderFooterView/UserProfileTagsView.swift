@@ -29,6 +29,7 @@ class UserProfileTagsView: UIView {
         self.addSubview(stackView)
         stackView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
+            make.height.equalTo(20)
         }
     }
 
@@ -36,18 +37,44 @@ class UserProfileTagsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    var tags: [String]? {
+    var tags: [UserProfileTagModel]? {
         didSet {
             guard let tags = tags else {
                 return
             }
             for tag in tags {
-                let imageView = UIImageView()
-                imageView.clipsToBounds = true
-                imageView.contentMode = .scaleAspectFill
-                imageView.image = UIImage(named: "profilegender")
-                stackView.addArrangedSubview(imageView)
+                if let type = tag.type {
+                    if type == 1 {
+                        let view = UIView()
+
+                        let label = UILabel()
+                        label.font = UIFont.systemFont(ofSize: 12)
+                        label.text = tag.text
+                        view.backgroundColor = UIColor.yellow
+                        view.addSubview(label)
+                        label.snp.makeConstraints { (make) in
+                            make.leading.equalToSuperview().offset(5)
+                            make.trailing.equalToSuperview().offset(-5)
+                            make.top.equalToSuperview().offset(5)
+                            make.bottom.equalToSuperview().offset(-5)
+                        }
+                        stackView.addArrangedSubview(view)
+                    } else if type == 2 {
+                        let imageView = UIImageView()
+                        imageView.clipsToBounds = true
+                        imageView.contentMode = .scaleAspectFill
+                        imageView.image = UIImage(named: "profilegender")
+                        stackView.addArrangedSubview(imageView)
+                    }
+                }
             }
         }
     }
+}
+
+class UserProfileTagModel: NSObject {
+    var type: Int?    // 图片还是文字
+    var text: String?
+    var imageName: String?
+    override required init() {}
 }

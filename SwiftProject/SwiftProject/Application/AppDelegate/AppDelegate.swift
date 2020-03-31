@@ -7,14 +7,20 @@
 //
 
 import UIKit
-
+#if DEBUG
+    import DoraemonKit
+#endif
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         print("DidFinishLaunch")
-        return true
+        #if DEBUG
+               DoraemonManager.shareInstance().install()
+               DoraemonManager.shareInstance().install(withStartingPosition: CGPoint(x: 100, y: 100))
+        #endif
+               return true
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {

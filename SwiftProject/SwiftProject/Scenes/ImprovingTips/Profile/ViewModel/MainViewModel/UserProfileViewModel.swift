@@ -82,25 +82,30 @@ class UserProfileViewModel: NSObject {
 
     func handleTags(model: UserProfileModel) {
         // 性别/勿扰/请假/离职
-        if let gender = model.userInfo?.gender {
-            if gender == 1 {
-                self.tags.append("")
-            } else if gender == 2 {
-                self.tags.append("")
-            }
-        }
+        self.tags.append("ddsadsad")
+        self.tags.append("dsadas")
+        self.tags.append("dsa")
+        self.tags.append("dsa")
 
-        if let notDisturbEndTime = model.userInfo?.notDisturbEndTime {
-
-        }
-
-        if let workStatus = model.userInfo?.workStatus?.status {
-            //工作状态：默认:0；请假:1；开会:2
-        }
-
-        if let isResign = model.userInfo?.isResign {
-
-        }
+//        if let gender = model.userInfo?.gender {
+//            if gender == 1 {
+//                self.tags.append("")
+//            } else if gender == 2 {
+//                self.tags.append("")
+//            }
+//        }
+//
+//        if let notDisturbEndTime = model.userInfo?.notDisturbEndTime {
+//
+//        }
+//
+//        if let workStatus = model.userInfo?.workStatus?.status {
+//            //工作状态：默认:0；请假:1；开会:2
+//        }
+//
+//        if let isResign = model.userInfo?.isResign {
+//
+//        }
     }
 
     func handleCTAData(data: [String: Any]) {

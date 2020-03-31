@@ -146,7 +146,7 @@ class UserProfileMultiDepartmentTableViewCell: UITableViewCell, UserProfileTable
         dotView.backgroundColor = UIColor.lightGray
         dotView.layer.cornerRadius = 3
         
-        label.numberOfLines = 0
+        label.numberOfLines = maxLine
 
         label.font = font
         label.textColor = UIColor.darkText
@@ -161,7 +161,7 @@ class UserProfileMultiDepartmentTableViewCell: UITableViewCell, UserProfileTable
             guard let cellViewModel = cellViewModel as? UserProfileDepartmentCellViewModel else {
                 return
             }
-            titleLabel.text = cellViewModel.path
+//            titleLabel.text = cellViewModel.path
             topicView.label.text = cellViewModel.topic
             if cellViewModel.isFirstOffset {
                 self.titleLabel.snp.updateConstraints {
@@ -179,6 +179,9 @@ class UserProfileMultiDepartmentTableViewCell: UITableViewCell, UserProfileTable
                     }
                 }
             }
+            self.setNeedsLayout()
+            self.layoutIfNeeded()
+            titleLabel.attributedText = handleHeadData(message: NSAttributedString.init(string: cellViewModel.path ?? ""), label: titleLabel, tailWidth: 60)
         }
     }
     
@@ -189,9 +192,60 @@ class UserProfileMultiDepartmentTableViewCell: UITableViewCell, UserProfileTable
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+
+    func handleHeadData(message: NSAttributedString, label: UILabel, tailWidth: CGFloat) -> NSAttributedString {
+
+        let layoutManager = NSLayoutManager()
+        let labelSize = CGSize(width: label.bounds.size.width, height: CGFloat(MAXFLOAT))
+        let container = NSTextContainer.init(size: labelSize)
+        layoutManager.addTextContainer(container)
+
+        let storage = NSTextStorage.init(attributedString: message)
+        storage.addLayoutManager(layoutManager)
+
+        container.lineFragmentPadding = 0;
+        container.lineBreakMode = label.lineBreakMode
+        container.maximumNumberOfLines = label.numberOfLines
+
+        var range: NSRange = NSRange.init()
+        layoutManager.glyphRange(forCharacterRange: NSRange.init(location: 0, length: message.length - 1), actualCharacterRange: &range)
+
+        var i: Int = 0
+        var lastUsedRect = CGRect(x: 0, y: 0, width: 0, height: 0)
+        var lastGlyphRange = NSRange.init()
+
+        layoutManager.enumerateLineFragments(forGlyphRange: range) { (rect, usedRect, textContainer, glyphRange, stop) in
+            if (i < container.maximumNumberOfLines) {
+                lastUsedRect = usedRect
+                lastGlyphRange = glyphRange
+                i += 1
+            } else {
+                stop.pointee = true
+            }
+        }
+
+        var stringToUse: NSAttributedString = message;
+
+        // 最后一行文字宽度会与按钮重叠才需要处理
+        if (lastUsedRect.size.width > label.bounds.size.width - tailWidth) {
+            // 算出重叠位置
+            let ellipsisPoint = CGPoint(x: label.bounds.size.width - tailWidth, y: lastUsedRect.origin.y + lastUsedRect.size.height / 2)
+            // 重叠位置的字符 Index
+            let characterIndex = layoutManager.characterIndex(for: ellipsisPoint, in: container, fractionOfDistanceBetweenInsertionPoints: nil)
+            // 如果往后退两个字符就到了上一行，就不进行压缩了，这里的 location 指的是最后一行第一个字符的 Index
+            if (characterIndex - 2 > lastGlyphRange.location) {
+                let tempString = message.attributedSubstring(from: NSRange.init(location: 0, length: characterIndex - 2))
+                let tempString1 = NSMutableAttributedString.init(attributedString: tempString)
+                let attributes = message.attributes(at: 0, effectiveRange: nil)
+                tempString1.append(NSAttributedString.init(string: "…", attributes: attributes))
+                stringToUse = tempString
+            }
+        }
+        return stringToUse
+    }
 }
 
-extension String{
+extension String {
     //MARK:获得文本内容高度
     func stringHeightWith(fontSize: CGFloat,width: CGFloat, lineSpace: CGFloat) -> CGFloat {
         let font = UIFont.systemFont(ofSize: fontSize)

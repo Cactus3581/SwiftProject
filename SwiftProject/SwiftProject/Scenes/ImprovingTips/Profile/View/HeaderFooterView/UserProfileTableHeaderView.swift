@@ -149,18 +149,18 @@ class UserProfileTableHeaderView: UIView {
             nameLabel?.text = viewModel?.model?.userInfo?.userName
             companyLabel?.text = viewModel?.model?.userInfo?.tenantName
             self.ctaView?.ctaList = viewModel?.ctaList
-            self.tagsView.tags = viewModel?.tags
-            self.tagsView.setNeedsLayout()
-            self.tagsView.layoutIfNeeded()
-
-            let nameLastLineWidth = self.nameLabel.bounds.size.width
-            let tagsWidth = self.tagsView.bounds.size.width
-            let totalWidth = self.bounds.size.width - 16*2
-            if totalWidth < nameLastLineWidth + tagsWidth {
-                // tagsView 换行
-            } else {
-                // tagsView 跟在名字后面
-            }
+//            self.tagsView.tags = viewModel?.tags
+//            self.tagsView.setNeedsLayout()
+//            self.tagsView.layoutIfNeeded()
+//
+//            let nameLastLineWidth = self.nameLabel.bounds.size.width
+//            let tagsWidth = self.tagsView.bounds.size.width
+//            let totalWidth = self.bounds.size.width - 16*2
+//            if totalWidth < nameLastLineWidth + tagsWidth {
+//                // tagsView 换行
+//            } else {
+//                // tagsView 跟在名字后面
+//            }
         }
     }
     
