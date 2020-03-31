@@ -18,13 +18,10 @@ import UIKit
 
 import UIKit
 
-
-
 /*
- 1. sizeThatFits 和 boundingRect 都用来获取高度，下面是区别：
-    1. 都需要提供文本和宽度，前者还需要view的参与
-    2. 使用sizeThatFit：根据实际内容返回size，不管实际内容是富文本还是普通文本，但是只能用于获取整体的高度
-    3. 使用boundingRect：需要label的属性和富文本的相关属性值相等才可以，否则计算不准确。如果使用了富文本，尽可能不设置label的字体/截断属性，而是使用富文本的相关属性，否则在使用boundingRect方法时会计算不准确。如果使用普通文本需要提供attribute属性（需要与label的相关属性匹配），最终还是通过富文本来计算的
+ 1. sizeThatFits 和 boundingRect的共同点：都需要提供文本和宽度，都是用来计算size的。
+ boundingRect：适用场景范围广，不局限于计算整体高度；局限性是label的属性必须与富文本的属性一致才可以，否则计算会有偏差；计算普通文本/富文本计算方法的本质都是走的富文本的配置属性
+ sizeThatFit：需要引入view，决定了只能在view内部使用；只能计算整体高度；返回的size是最准确的；不需要关心值是普通文本还是富文本
 
 2. 给一段宽度，能占几个字符：用于部门路径的折叠展开功能
 
@@ -38,14 +35,11 @@ class NSAttributedStringViewController: BaseViewController {
         super.viewDidLoad()
 
         label.numberOfLines = 0
-//        label.backgroundColor = UIColor.green
-//        label.lineBreakMode = .byWordWrapping
-//        label.textAlignment = .left
-//        label.textColor = UIColor.green
-//        let font = UIFont.systemFont(ofSize: 12)
-//        label.font = font
-//        print(lineHeight, wordHeight)
-
+        //label.font = UIFont.systemFont(ofSize: 12)
+        //label.lineBreakMode = .byWordWrapping
+        //label.textAlignment = .left
+        //label.textColor = UIColor.green
+        //label.backgroundColor = UIColor.green
         let text = "君不见黄河之水天"
         test1(text: text)
         //sizeThatFits(text: text)
@@ -255,7 +249,7 @@ class NSAttributedStringViewController: BaseViewController {
 //        paragraphStyle.tailIndent = 0  //文本行末缩进距离
         paragraphStyle.alignment = .justified      //文本对齐方向
         //paragraphStyle.baseWritingDirection = .rightToLeft  //文本排序方向
-        paragraphStyle.lineBreakMode = .byWordWrapping
+        paragraphStyle.lineBreakMode = .byWordWrapping
         attributeText.addAttributes([NSAttributedString.Key.paragraphStyle: paragraphStyle], range: NSMakeRange(0, count))
 
         //设置粗体
