@@ -68,16 +68,16 @@ extension TimeInterval {
         // 日期格式
         let formatter = DateFormatter()
         // 判断当前日期是否为今年
-        guard createDate.isThisYear() else {
+        guard createDate.sp_isThisYear() else {
             formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             return formatter.string(from: createDate)
         }
 
         // 是否是前天
-        if createDate.isBeforeYesterday() {
+        if createDate.sp_isBeforeYesterday() {
             formatter.dateFormat = "前天 HH:mm"
             return formatter.string(from: createDate)
-        } else if createDate.isToday() || createDate.isYesterday() {
+        } else if createDate.sp_isToday() || createDate.sp_isYesterday() {
             // 判断是否是今天或者昨天
             if comps.hour! >= 1 {
                 return String(format: "%d小时前", comps.hour!)

@@ -40,12 +40,12 @@ extension UILabel {
             let currentAttributedString = NSMutableAttributedString(attributedString: attributedString.attributedSubstring(from: range))
             if hasImage { // 如果有图片，就把第四行替换
                 if index == 3 && currentAttributedString.length >= 18 {
-                    replaceContent(currentAttributedString)
+                    sp_replaceContent(currentAttributedString)
                 }
 
             } else { // 如果没有图片，就把第六行替换
                 if index == 5 && currentAttributedString.length >= 18 {
-                    replaceContent(currentAttributedString)
+                    sp_replaceContent(currentAttributedString)
                 }
             }
             attributedStrings.append(currentAttributedString)
