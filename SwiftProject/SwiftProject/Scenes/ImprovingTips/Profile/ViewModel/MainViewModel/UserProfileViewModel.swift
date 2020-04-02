@@ -132,19 +132,34 @@ class UserProfileViewModel: NSObject {
                 continue
             }
             //监听list的变化
-            observableObject.addObserver(self, forKeyPath: "list", options: [.new], context:nil)
+            // rx
+            if let observableObject1 =  observableObject as? UserProfileDepartmentSessionViewModel {
+                observableObject1.obList?.subscribe(onNext: { (section) in
+                    if let reloadSectionHandler = self.reloadSectionHandler {
+                           reloadSectionHandler(section)
+                       }
+                }, onError: { (error) in
 
-            guard let list = sessionViewModel.list else {
-                continue
+                }, onCompleted: {
+
+                }, onDisposed: {
+
+                })
             }
-            for cellViewModel in list {
-                guard let cellObject = cellViewModel as? NSObject else {
-                    continue
-                }
-                if cellObject is UserProfilePhoneCellViewModel {
-                    //cellObject.addObserver(self, forKeyPath: "model.isShow", options: [.new], context:nil)
-                }
-            }
+            //kvo
+//            observableObject.addObserver(self, forKeyPath: "list", options: [.new], context:nil)
+//
+//            guard let list = sessionViewModel.list else {
+//                continue
+//            }
+//            for cellViewModel in list {
+//                guard let cellObject = cellViewModel as? NSObject else {
+//                    continue
+//                }
+//                if cellObject is UserProfilePhoneCellViewModel {
+//                    //cellObject.addObserver(self, forKeyPath: "model.isShow", options: [.new], context:nil)
+//                }
+//            }
         }
     }
 

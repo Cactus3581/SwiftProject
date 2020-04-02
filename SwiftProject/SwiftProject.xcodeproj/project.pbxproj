@@ -23,6 +23,8 @@
 		0102674B242379B900CA6D00 /* UserProfileViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026739242379B900CA6D00 /* UserProfileViewModelFactory.swift */; };
 		0102674D24237B5600CA6D00 /* ImprovingTipCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0102674C24237B5600CA6D00 /* ImprovingTipCatalog.plist */; };
 		0102674F24237B6A00CA6D00 /* FeatureCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0102674E24237B6A00CA6D00 /* FeatureCatalog.plist */; };
+		01038FF82434B8A800F3BB0B /* RxSwiftViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01038FF62434B8A800F3BB0B /* RxSwiftViewController1.swift */; };
+		01038FF92434B8A800F3BB0B /* RxSwiftViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01038FF72434B8A800F3BB0B /* RxSwiftViewController1.xib */; };
 		010442B423B4E1C100B1BF54 /* OptionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010442B323B4E1C100B1BF54 /* OptionalViewController.swift */; };
 		010CD84623B0C61300AE57A9 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010CD84523B0C61300AE57A9 /* TestViewController.swift */; };
 		010CE4E823B0D6E900AE57A9 /* BasicKnowledgCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 010CE4E723B0D6E800AE57A9 /* BasicKnowledgCatalog.plist */; };
@@ -193,6 +195,8 @@
 		01026739242379B900CA6D00 /* UserProfileViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewModelFactory.swift; sourceTree = "<group>"; };
 		0102674C24237B5600CA6D00 /* ImprovingTipCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ImprovingTipCatalog.plist; sourceTree = "<group>"; };
 		0102674E24237B6A00CA6D00 /* FeatureCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FeatureCatalog.plist; sourceTree = "<group>"; };
+		01038FF62434B8A800F3BB0B /* RxSwiftViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftViewController1.swift; sourceTree = "<group>"; };
+		01038FF72434B8A800F3BB0B /* RxSwiftViewController1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxSwiftViewController1.xib; sourceTree = "<group>"; };
 		010442B323B4E1C100B1BF54 /* OptionalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalViewController.swift; sourceTree = "<group>"; };
 		010CD84523B0C61300AE57A9 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		010CE4E723B0D6E800AE57A9 /* BasicKnowledgCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BasicKnowledgCatalog.plist; sourceTree = "<group>"; };
@@ -754,6 +758,8 @@
 			children = (
 				0182346B23C4AA8C00FB30A9 /* RxSwiftViewController.swift */,
 				0182346C23C4AA8C00FB30A9 /* RxSwiftViewController.xib */,
+				01038FF62434B8A800F3BB0B /* RxSwiftViewController1.swift */,
+				01038FF72434B8A800F3BB0B /* RxSwiftViewController1.xib */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -1809,6 +1815,7 @@
 				010D6A9E23A9FB4C00B84621 /* LaunchScreen.storyboard in Resources */,
 				010D6A9B23A9FB4C00B84621 /* Assets.xcassets in Resources */,
 				016FE6D823B5DD7800CE8784 /* statistics.py in Resources */,
+				01038FF92434B8A800F3BB0B /* RxSwiftViewController1.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1927,6 +1934,7 @@
 				0182B7C6241A79050033BF0A /* MVVMListSectionTextHeaderView.swift in Sources */,
 				01569B9E243319DA004879E9 /* NSAttributedStringViewController.swift in Sources */,
 				01026745242379B900CA6D00 /* UserProfileSectionViewProtocol.swift in Sources */,
+				01038FF82434B8A800F3BB0B /* RxSwiftViewController1.swift in Sources */,
 				016A976D2430504200D8C280 /* UserProfileTopicView.swift in Sources */,
 				019FE1A623C0E9BF00B241B1 /* Produce.swift in Sources */,
 				0102673D242379B900CA6D00 /* UserProfileSessionViewModel.swift in Sources */,

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 //MARK:该协议服务于sessionViewModel，为sessionView提供数据和事件。协议的作用就是解决通用性问题，替代继承用的
 protocol UserProfileSessionViewModelProtocol {
@@ -128,6 +130,7 @@ class UserProfileDepartmentSessionViewModel: NSObject, UserProfileSessionViewMod
     var maxCount = 5
     var headerHeight: CGFloat?
     var footerHeight: CGFloat?
+    var obList: PublishSubject<Int>?
 
     static func canHandle(type: Int) -> Bool {
         if type == 3 {
@@ -164,7 +167,9 @@ class UserProfileDepartmentSessionViewModel: NSObject, UserProfileSessionViewMod
                 allList.append(cellViewModel)
             }
         }
-        
+
+        obList = PublishSubject.init()
+
         if allList.count > maxCount {
             self.list = [] + allList.prefix(maxCount)
             if let list = self.list, list.count > 1 {
@@ -241,6 +246,7 @@ class UserProfileDepartmentSessionViewModel: NSObject, UserProfileSessionViewMod
                 }
             }
             self.list = list
+            obList?.onNext(self.section ?? 0)
         } else {
             self.footerText = "展开更多部门"
             let list = [] + allList.prefix(5)
@@ -257,6 +263,7 @@ class UserProfileDepartmentSessionViewModel: NSObject, UserProfileSessionViewMod
                 }
             }
             self.list = list
+            obList?.onNext(self.section ?? 0)
         }
     }
     

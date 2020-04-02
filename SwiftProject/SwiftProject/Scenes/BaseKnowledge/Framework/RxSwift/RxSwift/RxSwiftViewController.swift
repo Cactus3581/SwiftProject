@@ -179,8 +179,6 @@ class RxSwiftViewController : BaseViewController {
             observer.onCompleted()
             return Disposables.create()
         }
-
-
         numbers.subscribe(onNext: { number in
             print(number)
         }, onError: { error in
@@ -195,6 +193,5 @@ class RxSwiftViewController : BaseViewController {
         }.subscribe(onNext: {
             print($0)
         }).disposed(by: disposeBag)
-
     }
 }

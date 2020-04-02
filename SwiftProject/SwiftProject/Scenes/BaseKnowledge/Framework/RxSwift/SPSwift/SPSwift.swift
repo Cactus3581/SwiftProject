@@ -11,12 +11,6 @@ import UIKit
 typealias EventHandler = (String) -> Void
 typealias SubscribeHandler = (SPObserver) -> Void
 
-class SPSwift: NSObject {
-
-    override init() {
-        super.init()
-    }
-}
 
 class SPObservable {
 

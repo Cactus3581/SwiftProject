@@ -289,6 +289,12 @@
 						<key>fileName</key>
 						<string>SPSwiftViewController</string>
 					</dict>
+					<dict>
+						<key>title</key>
+						<string>RxSwift1</string>
+						<key>fileName</key>
+						<string>RxSwiftViewController</string>
+					</dict>
 				</array>
 			</dict>
 		</array>

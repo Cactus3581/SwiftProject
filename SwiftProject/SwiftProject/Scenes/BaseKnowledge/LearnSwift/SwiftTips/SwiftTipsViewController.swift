@@ -9,6 +9,7 @@
 import UIKit
 
 // https://mp.weixin.qq.com/s/GZl7Cbf1ZG83UFtInEFnyQ
+// https://github.com/LeiHao0/swift-style-guide/blob/master/README_CN.md
 
 class SwiftTipsViewController: BaseViewController {
 
