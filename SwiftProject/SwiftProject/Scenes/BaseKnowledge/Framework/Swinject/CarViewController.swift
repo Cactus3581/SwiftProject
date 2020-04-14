@@ -13,7 +13,7 @@ class CarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let container = BPContainer.container
-        let car = container.resolve(Driver.self)!
+        let car = container.resolve(DriverPerson.self)!
 //        let car2 = container.resolve(Driver.self, arguments: "Sedan", true)!
 
         car.drive()
@@ -21,7 +21,7 @@ class CarViewController: UIViewController {
 }
 
 //将 PetOwner 类修改为依赖于 Animal 协议接口, 而非具体的 Cat 类
-class Driver {
+class DriverPerson {
 
     var car: CarService? = nil
 
@@ -48,7 +48,7 @@ protocol CarService {
 // 轿车
 class Sedan:CarService {
 
-    weak var parent: Driver?
+    weak var parent: DriverPerson?
 
     func run() {
         print("轿车开始接人")

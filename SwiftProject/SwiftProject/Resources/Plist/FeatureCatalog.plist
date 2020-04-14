@@ -4,9 +4,9 @@
 <array>
 	<dict>
 		<key>title</key>
-		<string></string>
+		<string>RxSwift</string>
 		<key>fileName</key>
-		<string></string>
+		<string>RxSwiftExampleViewController</string>
 	</dict>
 </array>
 </plist>

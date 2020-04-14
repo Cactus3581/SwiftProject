@@ -30,7 +30,15 @@ class SPSwiftViewController: BaseViewController {
 
         observable.subscribe(eventHandler: closure)
 
-//        func map(source: SPObservable, transform: @escaping (_ value: String) -> String) -> SPObservable {
+        func map(source: SPObservable, transform: @escaping (_ value: String) -> String) -> SPObservable {
+
+            let observable = SPObservable.init{ (observer) -> Void in
+                let closure = {(value: String) -> Void in
+                    let transformedValue = transform(value)
+                    observer.next(value: transformedValue)
+                }
+                source.subscribe(eventHandler: closure)
+            }
 //            let observable = SPObservable{(observer) -> Void in
 //                let closure = {(value: String) -> Void in
 //                    let transformedValue = transform(value)
@@ -38,11 +46,11 @@ class SPSwiftViewController: BaseViewController {
 //                }
 //                source.subscribe(eventHandler: closure)
 //            }
-//            return observable
-//        }
-//
-//        map(source: observable) { (value) -> String in
-//            return "hi " + value
-//        }.subscribe(eventHandler: closure)
+            return observable
+        }
+
+        map(source: observable) { (value) -> String in
+            return "hi " + value
+        }.subscribe(eventHandler: closure)
     }
 }

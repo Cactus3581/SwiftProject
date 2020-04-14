@@ -23,9 +23,13 @@
 		0102674B242379B900CA6D00 /* UserProfileViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01026739242379B900CA6D00 /* UserProfileViewModelFactory.swift */; };
 		0102674D24237B5600CA6D00 /* ImprovingTipCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0102674C24237B5600CA6D00 /* ImprovingTipCatalog.plist */; };
 		0102674F24237B6A00CA6D00 /* FeatureCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0102674E24237B6A00CA6D00 /* FeatureCatalog.plist */; };
-		01038FF82434B8A800F3BB0B /* RxSwiftViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01038FF62434B8A800F3BB0B /* RxSwiftViewController1.swift */; };
-		01038FF92434B8A800F3BB0B /* RxSwiftViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01038FF72434B8A800F3BB0B /* RxSwiftViewController1.xib */; };
 		010442B423B4E1C100B1BF54 /* OptionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010442B323B4E1C100B1BF54 /* OptionalViewController.swift */; };
+		0108907E243C93E100DBF606 /* RxMVVMListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0108907C243C93E100DBF606 /* RxMVVMListViewController.swift */; };
+		0108907F243C93E100DBF606 /* RxMVVMListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0108907D243C93E100DBF606 /* RxMVVMListViewController.xib */; };
+		01089082243C93F400DBF606 /* RxMVVMTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01089080243C93F400DBF606 /* RxMVVMTableViewCell.swift */; };
+		01089083243C93F400DBF606 /* RxMVVMTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01089081243C93F400DBF606 /* RxMVVMTableViewCell.xib */; };
+		01089085243C940300DBF606 /* RxMVVMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01089084243C940300DBF606 /* RxMVVMModel.swift */; };
+		01089087243C940E00DBF606 /* RxMVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01089086243C940E00DBF606 /* RxMVVMViewModel.swift */; };
 		010CD84623B0C61300AE57A9 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010CD84523B0C61300AE57A9 /* TestViewController.swift */; };
 		010CE4E823B0D6E900AE57A9 /* BasicKnowledgCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 010CE4E723B0D6E800AE57A9 /* BasicKnowledgCatalog.plist */; };
 		010D6A9223A9FB4A00B84621 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010D6A9123A9FB4A00B84621 /* AppDelegate.swift */; };
@@ -47,6 +51,9 @@
 		0112F9AE23BF57FD0002788E /* ControlFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0112F9AD23BF57FD0002788E /* ControlFlowViewController.swift */; };
 		011E9E9023BE28BE00BD0A17 /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011E9E8F23BE28BE00BD0A17 /* ExtensionViewController.swift */; };
 		012E2EBB23C0EBE5008F6253 /* Produce1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012E2EBA23C0EBE5008F6253 /* Produce1.swift */; };
+		012FE3042435F7B2008060D5 /* RxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012FE3022435F7B2008060D5 /* RxSwiftViewController.swift */; };
+		012FE3052435F7B2008060D5 /* RxSwiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012FE3032435F7B2008060D5 /* RxSwiftViewController.xib */; };
+		012FE3082435FE9A008060D5 /* HigherOrderFunctionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012FE3072435FE9A008060D5 /* HigherOrderFunctionsViewController.swift */; };
 		013C7D3123B8600000804143 /* MVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C7D3023B8600000804143 /* MVCViewController.swift */; };
 		013C7D3523B8602D00804143 /* MVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C7D3423B8602D00804143 /* MVCModel.swift */; };
 		013C7D3923B8604500804143 /* MVCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C7D3823B8604500804143 /* MVCView.swift */; };
@@ -64,10 +71,10 @@
 		0167EE842418F2EC00E4830F /* MVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0167EE832418F2EC00E4830F /* MVVMViewController.swift */; };
 		016A976D2430504200D8C280 /* UserProfileTopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A976C2430504200D8C280 /* UserProfileTopicView.swift */; };
 		016B8EF623C58A19007F6EC5 /* SwiftTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016B8EF523C58A19007F6EC5 /* SwiftTipsViewController.swift */; };
+		016D7D1C243E08EE00733053 /* MeunLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016D7D1B243E08EE00733053 /* MeunLabel.swift */; };
+		016D7D1E243E1DC400733053 /* MenuTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016D7D1D243E1DC400733053 /* MenuTextView.swift */; };
 		016FE6D823B5DD7800CE8784 /* statistics.py in Resources */ = {isa = PBXBuildFile; fileRef = 016FE6D623B5DD7800CE8784 /* statistics.py */; };
 		016FE6D923B5DD7800CE8784 /* sql.py in Resources */ = {isa = PBXBuildFile; fileRef = 016FE6D723B5DD7800CE8784 /* sql.py */; };
-		0182346D23C4AA8C00FB30A9 /* RxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182346B23C4AA8C00FB30A9 /* RxSwiftViewController.swift */; };
-		0182346E23C4AA8C00FB30A9 /* RxSwiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0182346C23C4AA8C00FB30A9 /* RxSwiftViewController.xib */; };
 		0182B7C4241A78F40033BF0A /* MVVMListSectionTextFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182B7C3241A78F40033BF0A /* MVVMListSectionTextFooterView.swift */; };
 		0182B7C6241A79050033BF0A /* MVVMListSectionTextHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182B7C5241A79050033BF0A /* MVVMListSectionTextHeaderView.swift */; };
 		0182B7C8241A792E0033BF0A /* MVVMListTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182B7C7241A792E0033BF0A /* MVVMListTableHeaderView.swift */; };
@@ -105,6 +112,8 @@
 		01A3A40623BF5A3C003FEA19 /* MemorySafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A3A40523BF5A3C003FEA19 /* MemorySafeViewController.swift */; };
 		01A3A40923BF5A55003FEA19 /* AccessControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A3A40823BF5A55003FEA19 /* AccessControlViewController.swift */; };
 		01A3A40C23BF6218003FEA19 /* AdvancedOperatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A3A40B23BF6218003FEA19 /* AdvancedOperatorViewController.swift */; };
+		01A545BB2437208800D6CB5F /* MeunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A545B92437208800D6CB5F /* MeunViewController.swift */; };
+		01A545BC2437208800D6CB5F /* MeunViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A545BA2437208800D6CB5F /* MeunViewController.xib */; };
 		01A550BE2428649500472B6A /* UserProfileNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A550BD2428649500472B6A /* UserProfileNetWork.swift */; };
 		01A550C1242864C200472B6A /* UserProfileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A550C0242864C200472B6A /* UserProfileStorage.swift */; };
 		01A550C3242864EB00472B6A /* UserProfileTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A550C2242864EB00472B6A /* UserProfileTableViewDataSource.swift */; };
@@ -144,9 +153,12 @@
 		01E15CDB23BF59BB00A69E23 /* NestedTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CDA23BF59BB00A69E23 /* NestedTypeViewController.swift */; };
 		01E15CDE23BF59E400A69E23 /* OpaqueTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CDD23BF59E400A69E23 /* OpaqueTypeViewController.swift */; };
 		01E2F1302431E30700B52138 /* UserProfileShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E2F12F2431E30700B52138 /* UserProfileShadowView.swift */; };
+		01E46C52244470ED006699DE /* FloatMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E46C51244470ED006699DE /* FloatMenuView.swift */; };
 		01E9B3552420D9F000FF618D /* MVVMListSectionImageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E9B3542420D9F000FF618D /* MVVMListSectionImageHeaderView.swift */; };
 		01E9B3572420D9F800FF618D /* MVVMListSectionImageFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E9B3562420D9F800FF618D /* MVVMListSectionImageFooterView.swift */; };
 		01E9B3592420DE1A00FF618D /* MVVMListSectionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E9B3582420DE1A00FF618D /* MVVMListSectionViewProtocol.swift */; };
+		01E9B8202444038E003CDDEA /* RxSwiftExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E9B81E2444038E003CDDEA /* RxSwiftExampleViewController.swift */; };
+		01E9B8212444038E003CDDEA /* RxSwiftExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01E9B81F2444038E003CDDEA /* RxSwiftExampleViewController.xib */; };
 		01EA7BFD23ABA87A00712B20 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA7BFB23ABA87900712B20 /* ListViewController.swift */; };
 		01EA7C0023ABA97600712B20 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA7BFF23ABA97600712B20 /* ListTableViewCell.swift */; };
 		01EA7C0223ABA99700712B20 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA7C0123ABA99700712B20 /* ListModel.swift */; };
@@ -195,9 +207,13 @@
 		01026739242379B900CA6D00 /* UserProfileViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewModelFactory.swift; sourceTree = "<group>"; };
 		0102674C24237B5600CA6D00 /* ImprovingTipCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ImprovingTipCatalog.plist; sourceTree = "<group>"; };
 		0102674E24237B6A00CA6D00 /* FeatureCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FeatureCatalog.plist; sourceTree = "<group>"; };
-		01038FF62434B8A800F3BB0B /* RxSwiftViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftViewController1.swift; sourceTree = "<group>"; };
-		01038FF72434B8A800F3BB0B /* RxSwiftViewController1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxSwiftViewController1.xib; sourceTree = "<group>"; };
 		010442B323B4E1C100B1BF54 /* OptionalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalViewController.swift; sourceTree = "<group>"; };
+		0108907C243C93E100DBF606 /* RxMVVMListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMVVMListViewController.swift; sourceTree = "<group>"; };
+		0108907D243C93E100DBF606 /* RxMVVMListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxMVVMListViewController.xib; sourceTree = "<group>"; };
+		01089080243C93F400DBF606 /* RxMVVMTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMVVMTableViewCell.swift; sourceTree = "<group>"; };
+		01089081243C93F400DBF606 /* RxMVVMTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxMVVMTableViewCell.xib; sourceTree = "<group>"; };
+		01089084243C940300DBF606 /* RxMVVMModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMVVMModel.swift; sourceTree = "<group>"; };
+		01089086243C940E00DBF606 /* RxMVVMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMVVMViewModel.swift; sourceTree = "<group>"; };
 		010CD84523B0C61300AE57A9 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		010CE4E723B0D6E800AE57A9 /* BasicKnowledgCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BasicKnowledgCatalog.plist; sourceTree = "<group>"; };
 		010D6A8E23A9FB4A00B84621 /* SwiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,6 +245,9 @@
 		011E9E8F23BE28BE00BD0A17 /* ExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionViewController.swift; sourceTree = "<group>"; };
 		0127DAE30FD31B3FF2766436 /* Pods-SwiftProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftProjectUITests/Pods-SwiftProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		012E2EBA23C0EBE5008F6253 /* Produce1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Produce1.swift; sourceTree = "<group>"; };
+		012FE3022435F7B2008060D5 /* RxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftViewController.swift; sourceTree = "<group>"; };
+		012FE3032435F7B2008060D5 /* RxSwiftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxSwiftViewController.xib; sourceTree = "<group>"; };
+		012FE3072435FE9A008060D5 /* HigherOrderFunctionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HigherOrderFunctionsViewController.swift; sourceTree = "<group>"; };
 		013C7D3023B8600000804143 /* MVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCViewController.swift; sourceTree = "<group>"; };
 		013C7D3423B8602D00804143 /* MVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCModel.swift; sourceTree = "<group>"; };
 		013C7D3823B8604500804143 /* MVCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCView.swift; sourceTree = "<group>"; };
@@ -246,10 +265,10 @@
 		0167EE832418F2EC00E4830F /* MVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewController.swift; sourceTree = "<group>"; };
 		016A976C2430504200D8C280 /* UserProfileTopicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTopicView.swift; sourceTree = "<group>"; };
 		016B8EF523C58A19007F6EC5 /* SwiftTipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTipsViewController.swift; sourceTree = "<group>"; };
+		016D7D1B243E08EE00733053 /* MeunLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeunLabel.swift; sourceTree = "<group>"; };
+		016D7D1D243E1DC400733053 /* MenuTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTextView.swift; sourceTree = "<group>"; };
 		016FE6D623B5DD7800CE8784 /* statistics.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = statistics.py; sourceTree = "<group>"; };
 		016FE6D723B5DD7800CE8784 /* sql.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = sql.py; sourceTree = "<group>"; };
-		0182346B23C4AA8C00FB30A9 /* RxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftViewController.swift; sourceTree = "<group>"; };
-		0182346C23C4AA8C00FB30A9 /* RxSwiftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxSwiftViewController.xib; sourceTree = "<group>"; };
 		0182B7C3241A78F40033BF0A /* MVVMListSectionTextFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSectionTextFooterView.swift; sourceTree = "<group>"; };
 		0182B7C5241A79050033BF0A /* MVVMListSectionTextHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSectionTextHeaderView.swift; sourceTree = "<group>"; };
 		0182B7C7241A792E0033BF0A /* MVVMListTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListTableHeaderView.swift; sourceTree = "<group>"; };
@@ -287,6 +306,8 @@
 		01A3A40523BF5A3C003FEA19 /* MemorySafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorySafeViewController.swift; sourceTree = "<group>"; };
 		01A3A40823BF5A55003FEA19 /* AccessControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessControlViewController.swift; sourceTree = "<group>"; };
 		01A3A40B23BF6218003FEA19 /* AdvancedOperatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedOperatorViewController.swift; sourceTree = "<group>"; };
+		01A545B92437208800D6CB5F /* MeunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeunViewController.swift; sourceTree = "<group>"; };
+		01A545BA2437208800D6CB5F /* MeunViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeunViewController.xib; sourceTree = "<group>"; };
 		01A550BD2428649500472B6A /* UserProfileNetWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileNetWork.swift; sourceTree = "<group>"; };
 		01A550C0242864C200472B6A /* UserProfileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileStorage.swift; sourceTree = "<group>"; };
 		01A550C2242864EB00472B6A /* UserProfileTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewDataSource.swift; sourceTree = "<group>"; };
@@ -315,6 +336,7 @@
 		01D38A05241A770E00F6D74D /* MVVMListSecTableViewCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMListSecTableViewCellProtocol.swift; sourceTree = "<group>"; };
 		01D38A0A241A770E00F6D74D /* MVVMLisSecFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMLisSecFactory.swift; sourceTree = "<group>"; };
 		01D38A0B241A770E00F6D74D /* MVVMListSecAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMListSecAssembly.swift; sourceTree = "<group>"; };
+		01DB6C5F243EAD3100E14C70 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		01E058C52429E51B0073854E /* UserProfileLinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileLinkTableViewCell.swift; sourceTree = "<group>"; };
 		01E15CC823BF583100A69E23 /* MethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodViewController.swift; sourceTree = "<group>"; };
 		01E15CCB23BF58D800A69E23 /* SubscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptViewController.swift; sourceTree = "<group>"; };
@@ -325,9 +347,12 @@
 		01E15CDA23BF59BB00A69E23 /* NestedTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedTypeViewController.swift; sourceTree = "<group>"; };
 		01E15CDD23BF59E400A69E23 /* OpaqueTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpaqueTypeViewController.swift; sourceTree = "<group>"; };
 		01E2F12F2431E30700B52138 /* UserProfileShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileShadowView.swift; sourceTree = "<group>"; };
+		01E46C51244470ED006699DE /* FloatMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatMenuView.swift; sourceTree = "<group>"; };
 		01E9B3542420D9F000FF618D /* MVVMListSectionImageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSectionImageHeaderView.swift; sourceTree = "<group>"; };
 		01E9B3562420D9F800FF618D /* MVVMListSectionImageFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSectionImageFooterView.swift; sourceTree = "<group>"; };
 		01E9B3582420DE1A00FF618D /* MVVMListSectionViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSectionViewProtocol.swift; sourceTree = "<group>"; };
+		01E9B81E2444038E003CDDEA /* RxSwiftExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftExampleViewController.swift; sourceTree = "<group>"; };
+		01E9B81F2444038E003CDDEA /* RxSwiftExampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxSwiftExampleViewController.xib; sourceTree = "<group>"; };
 		01EA7BFB23ABA87900712B20 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		01EA7BFF23ABA97600712B20 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		01EA7C0123ABA99700712B20 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
@@ -525,6 +550,51 @@
 			path = DesignPatterns;
 			sourceTree = "<group>";
 		};
+		01089077243C93A200DBF606 /* RxMVVM */ = {
+			isa = PBXGroup;
+			children = (
+				0108907A243C93BB00DBF606 /* Model */,
+				0108907B243C93BE00DBF606 /* View */,
+				01089079243C93BA00DBF606 /* ViewModel */,
+				01089078243C93B100DBF606 /* Controller */,
+			);
+			path = RxMVVM;
+			sourceTree = "<group>";
+		};
+		01089078243C93B100DBF606 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0108907C243C93E100DBF606 /* RxMVVMListViewController.swift */,
+				0108907D243C93E100DBF606 /* RxMVVMListViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		01089079243C93BA00DBF606 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				01089086243C940E00DBF606 /* RxMVVMViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0108907A243C93BB00DBF606 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				01089084243C940300DBF606 /* RxMVVMModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0108907B243C93BE00DBF606 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				01089080243C93F400DBF606 /* RxMVVMTableViewCell.swift */,
+				01089081243C93F400DBF606 /* RxMVVMTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		010CE4E623B0D6D900AE57A9 /* Plist */ = {
 			isa = PBXGroup;
 			children = (
@@ -664,6 +734,14 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		012FE3062435FE7D008060D5 /* HigherOrderFunctions */ = {
+			isa = PBXGroup;
+			children = (
+				012FE3072435FE9A008060D5 /* HigherOrderFunctionsViewController.swift */,
+			);
+			path = HigherOrderFunctions;
+			sourceTree = "<group>";
+		};
 		013C7D3223B8601900804143 /* MVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -728,6 +806,25 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		01453ADD2437314E0008D999 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				01453ADE243731580008D999 /* UIMenuController */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		01453ADE243731580008D999 /* UIMenuController */ = {
+			isa = PBXGroup;
+			children = (
+				016D7D14243E089A00733053 /* TextView */,
+				016D7D13243E089400733053 /* Label */,
+				01A545B92437208800D6CB5F /* MeunViewController.swift */,
+				01A545BA2437208800D6CB5F /* MeunViewController.xib */,
+			);
+			path = UIMenuController;
+			sourceTree = "<group>";
+		};
 		0156813123BE28F600B42FB9 /* Property */ = {
 			isa = PBXGroup;
 			children = (
@@ -756,10 +853,10 @@
 		0167EE7A2418F09500E4830F /* RxSwift */ = {
 			isa = PBXGroup;
 			children = (
-				0182346B23C4AA8C00FB30A9 /* RxSwiftViewController.swift */,
-				0182346C23C4AA8C00FB30A9 /* RxSwiftViewController.xib */,
-				01038FF62434B8A800F3BB0B /* RxSwiftViewController1.swift */,
-				01038FF72434B8A800F3BB0B /* RxSwiftViewController1.xib */,
+				012FE3022435F7B2008060D5 /* RxSwiftViewController.swift */,
+				012FE3032435F7B2008060D5 /* RxSwiftViewController.xib */,
+				01E9B81E2444038E003CDDEA /* RxSwiftExampleViewController.swift */,
+				01E9B81F2444038E003CDDEA /* RxSwiftExampleViewController.xib */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -784,6 +881,7 @@
 		0167EE7D2418F17A00E4830F /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				01089077243C93A200DBF606 /* RxMVVM */,
 				01D389FB241A770E00F6D74D /* MVVMListSection */,
 				0167EE7F2418F18A00E4830F /* ListMVVM */,
 				0167EE7E2418F18400E4830F /* MVVM */,
@@ -844,6 +942,23 @@
 				016B8EF523C58A19007F6EC5 /* SwiftTipsViewController.swift */,
 			);
 			path = SwiftTips;
+			sourceTree = "<group>";
+		};
+		016D7D13243E089400733053 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				016D7D1B243E08EE00733053 /* MeunLabel.swift */,
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
+		016D7D14243E089A00733053 /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				016D7D1D243E1DC400733053 /* MenuTextView.swift */,
+				01E46C51244470ED006699DE /* FloatMenuView.swift */,
+			);
+			path = TextView;
 			sourceTree = "<group>";
 		};
 		0182B7C0241A786D0033BF0A /* SectionView */ = {
@@ -1541,6 +1656,7 @@
 		01EA7BF323ABA50C00712B20 /* BaseKnowledge */ = {
 			isa = PBXGroup;
 			children = (
+				01453ADD2437314E0008D999 /* UIKit */,
 				015691F724322704004879E9 /* Foundation */,
 				019BBDDD23D3FB0700061503 /* Thread */,
 				010442B523B4E3F700B1BF54 /* DesignPatterns */,
@@ -1592,6 +1708,7 @@
 				01A3A40423BF5A1D003FEA19 /* MemorySafe */,
 				01A3A40723BF5A45003FEA19 /* AccessControl */,
 				01A3A40A23BF61FB003FEA19 /* AdvancedOperator */,
+				012FE3062435FE7D008060D5 /* HigherOrderFunctions */,
 			);
 			path = LearnSwift;
 			sourceTree = "<group>";
@@ -1781,6 +1898,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 010D6A8523A9FB4A00B84621;
 			productRefGroup = 010D6A8F23A9FB4A00B84621 /* Products */;
@@ -1799,23 +1917,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0108907F243C93E100DBF606 /* RxMVVMListViewController.xib in Resources */,
 				0102674D24237B5600CA6D00 /* ImprovingTipCatalog.plist in Resources */,
+				012FE3052435F7B2008060D5 /* RxSwiftViewController.xib in Resources */,
 				01026740242379B900CA6D00 /* UserProfileDict.json in Resources */,
+				01089083243C93F400DBF606 /* RxMVVMTableViewCell.xib in Resources */,
 				0196CDE923D1888300112AB8 /* SnapViewController.xib in Resources */,
+				01E9B8212444038E003CDDEA /* RxSwiftExampleViewController.xib in Resources */,
 				0192A6C0242270110015F9CD /* MVVMListSectionDict.json in Resources */,
 				01569B9D243319DA004879E9 /* NSAttributedStringViewController.xib in Resources */,
 				016FE6D923B5DD7800CE8784 /* sql.py in Resources */,
 				0102674F24237B6A00CA6D00 /* FeatureCatalog.plist in Resources */,
 				010CE4E823B0D6E900AE57A9 /* BasicKnowledgCatalog.plist in Resources */,
-				0182346E23C4AA8C00FB30A9 /* RxSwiftViewController.xib in Resources */,
 				01EE3A202415288A008ECA89 /* SPSwiftViewController.xib in Resources */,
+				01A545BC2437208800D6CB5F /* MeunViewController.xib in Resources */,
 				0196DCC523D1898500112AB8 /* SnapView.xib in Resources */,
 				0192A6C22422703D0015F9CD /* MVVMListSectionArray.json in Resources */,
 				0188AC82242A4DCD00BA7654 /* UserProfileArray.json in Resources */,
 				010D6A9E23A9FB4C00B84621 /* LaunchScreen.storyboard in Resources */,
 				010D6A9B23A9FB4C00B84621 /* Assets.xcassets in Resources */,
 				016FE6D823B5DD7800CE8784 /* statistics.py in Resources */,
-				01038FF92434B8A800F3BB0B /* RxSwiftViewController1.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1933,13 +2054,14 @@
 				01A550C1242864C200472B6A /* UserProfileStorage.swift in Sources */,
 				0182B7C6241A79050033BF0A /* MVVMListSectionTextHeaderView.swift in Sources */,
 				01569B9E243319DA004879E9 /* NSAttributedStringViewController.swift in Sources */,
+				012FE3042435F7B2008060D5 /* RxSwiftViewController.swift in Sources */,
 				01026745242379B900CA6D00 /* UserProfileSectionViewProtocol.swift in Sources */,
-				01038FF82434B8A800F3BB0B /* RxSwiftViewController1.swift in Sources */,
 				016A976D2430504200D8C280 /* UserProfileTopicView.swift in Sources */,
 				019FE1A623C0E9BF00B241B1 /* Produce.swift in Sources */,
 				0102673D242379B900CA6D00 /* UserProfileSessionViewModel.swift in Sources */,
 				0197847D242B9B31009EB2D4 /* UserProfileUserStatusTableViewCell.swift in Sources */,
 				01E15CC923BF583100A69E23 /* MethodViewController.swift in Sources */,
+				016D7D1C243E08EE00733053 /* MeunLabel.swift in Sources */,
 				01D38A0C241A770E00F6D74D /* MVVMListSecViewModel.swift in Sources */,
 				019FE1A423C0E9B700B241B1 /* Factory.swift in Sources */,
 				01EA7C0023ABA97600712B20 /* ListTableViewCell.swift in Sources */,
@@ -1950,12 +2072,14 @@
 				01E058C62429E51B0073854E /* UserProfileLinkTableViewCell.swift in Sources */,
 				010CD84623B0C61300AE57A9 /* TestViewController.swift in Sources */,
 				013D09F823BE281A0050F15A /* FunctionViewController.swift in Sources */,
+				01E9B8202444038E003CDDEA /* RxSwiftExampleViewController.swift in Sources */,
 				0195230223B173D600AE491B /* BasicViewController.swift in Sources */,
 				019FE1A223C0E99F00B241B1 /* FactoryViewController.swift in Sources */,
 				0102673B242379B900CA6D00 /* UserProfileCTAItemViewModel.swift in Sources */,
 				01937ECA2418FF91009BD6AD /* MVVMModel.swift in Sources */,
 				01E2F1302431E30700B52138 /* UserProfileShadowView.swift in Sources */,
 				0112F9AE23BF57FD0002788E /* ControlFlowViewController.swift in Sources */,
+				01089087243C940E00DBF606 /* RxMVVMViewModel.swift in Sources */,
 				0102673E242379B900CA6D00 /* UserProfileViewController.swift in Sources */,
 				0196CDE823D1888300112AB8 /* SnapViewController.swift in Sources */,
 				01026744242379B900CA6D00 /* UserProfileTableViewCellProtocol.swift in Sources */,
@@ -1965,7 +2089,6 @@
 				010D6ACB23A9FD8F00B84621 /* CarViewController.swift in Sources */,
 				010D6ACC23A9FD8F00B84621 /* SwinjectViewController.swift in Sources */,
 				01BFFC75242DA502004AA94B /* UserProfileTagsView.swift in Sources */,
-				0182346D23C4AA8C00FB30A9 /* RxSwiftViewController.swift in Sources */,
 				0112F9A823BF57CA0002788E /* StringAndCharViewController.swift in Sources */,
 				01ACCE772433386C0025C9EA /* UICollectionView+SPAdd.swift in Sources */,
 				01026749242379B900CA6D00 /* UserProfileCTAView.swift in Sources */,
@@ -1977,17 +2100,21 @@
 				016B8EF623C58A19007F6EC5 /* SwiftTipsViewController.swift in Sources */,
 				01D38A10241A770E00F6D74D /* MVVMListSecTableViewCellProtocol.swift in Sources */,
 				0102674B242379B900CA6D00 /* UserProfileViewModelFactory.swift in Sources */,
+				012FE3082435FE9A008060D5 /* HigherOrderFunctionsViewController.swift in Sources */,
 				01937EE324192DEA009BD6AD /* MVVMListTableViewCellProtocol.swift in Sources */,
 				01E15CD523BF593300A69E23 /* OptionalChainViewController.swift in Sources */,
 				0182B7C4241A78F40033BF0A /* MVVMListSectionTextFooterView.swift in Sources */,
 				01E15CCF23BF58F300A69E23 /* InitializeViewController.swift in Sources */,
+				0108907E243C93E100DBF606 /* RxMVVMListViewController.swift in Sources */,
 				01ACCE6B243337B30025C9EA /* UIImageView+SPAdd.swift in Sources */,
 				01A3A40C23BF6218003FEA19 /* AdvancedOperatorViewController.swift in Sources */,
 				0182B7CD241A86C00033BF0A /* MVVMListLabelTableViewCell.swift in Sources */,
 				019BBDE023D3FB2C00061503 /* GCDViewController.swift in Sources */,
 				014C81E62424F6CC007129AD /* UserProfilePhoneTableViewCell.swift in Sources */,
 				01E9B3572420D9F800FF618D /* MVVMListSectionImageFooterView.swift in Sources */,
+				01A545BB2437208800D6CB5F /* MeunViewController.swift in Sources */,
 				01ADB56823BE290F00EAB005 /* PropertyViewController.swift in Sources */,
+				016D7D1E243E1DC400733053 /* MenuTextView.swift in Sources */,
 				01EA7C0223ABA99700712B20 /* ListModel.swift in Sources */,
 				01A3A40323BF5A18003FEA19 /* ARCViewController.swift in Sources */,
 				011E9E9023BE28BE00BD0A17 /* ExtensionViewController.swift in Sources */,
@@ -2022,6 +2149,7 @@
 				01ACCE662433375D0025C9EA /* UITextView+SPAdd.swift in Sources */,
 				01C01BB123BDE699008B2D9E /* EnumViewController.swift in Sources */,
 				013C7D3123B8600000804143 /* MVCViewController.swift in Sources */,
+				01E46C52244470ED006699DE /* FloatMenuView.swift in Sources */,
 				013C7D3C23B87B1700804143 /* MVVMViewModel.swift in Sources */,
 				0182B7D0241A86F00033BF0A /* MVVMListCourseTableViewCell.swift in Sources */,
 				01ACCE742433383B0025C9EA /* Date+SPAdd.swift in Sources */,
@@ -2031,6 +2159,8 @@
 				0182B7D2241A881E0033BF0A /* MVVMListSessionViewModel.swift in Sources */,
 				010D6ACA23A9FD8F00B84621 /* BPContainer.swift in Sources */,
 				010D6A9423A9FB4A00B84621 /* SceneDelegate.swift in Sources */,
+				01089085243C940300DBF606 /* RxMVVMModel.swift in Sources */,
+				01089082243C93F400DBF606 /* RxMVVMTableViewCell.swift in Sources */,
 				01D38A0F241A770E00F6D74D /* MVVMListListeningTableViewCell.swift in Sources */,
 				01EA7BFD23ABA87A00712B20 /* ListViewController.swift in Sources */,
 				01ADB56E23BE296700EAB005 /* ClassStructViewController.swift in Sources */,
@@ -2095,6 +2225,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				010D6A9D23A9FB4C00B84621 /* Base */,
+				01DB6C5F243EAD3100E14C70 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -2106,6 +2237,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2166,6 +2298,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

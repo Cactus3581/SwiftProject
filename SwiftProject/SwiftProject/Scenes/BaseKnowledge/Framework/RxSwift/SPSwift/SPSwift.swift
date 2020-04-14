@@ -27,12 +27,12 @@ class SPObservable {
 }
 
 class SPObserver {
-    private let _eventHandler : EventHandler
+    private let eventHandler : EventHandler
     init(eventHandler: @escaping EventHandler) {
-        self._eventHandler = eventHandler
+        self.eventHandler = eventHandler
     }
 
     func next(value: String) {
-        self._eventHandler(value)
+        self.eventHandler(value)
     }
 }

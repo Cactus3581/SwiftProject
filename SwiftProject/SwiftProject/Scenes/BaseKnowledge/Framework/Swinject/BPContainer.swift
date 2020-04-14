@@ -52,15 +52,15 @@ class BPContainer: NSObject {
         container.register(CarService.self) { _ in Sedan() }
         .initCompleted { r, c in
             let child = c as! Sedan
-            child.parent = r.resolve(Driver.self)
+            child.parent = r.resolve(DriverPerson.self)
         }
 
         //如果class B的实例对于class A是optional的，就可以通过setter注入。
 
-        container.register(Driver.self) { resolver in
+        container.register(DriverPerson.self) { resolver in
             //初始化注入
             //Driver(car: resolver.resolve(CarService.self)!)
-            let driver = Driver()
+            let driver = DriverPerson()
             // 属性注入
 //            driver.car = resolver.resolve(CarService.self)
             // 方法注入
