@@ -50,12 +50,12 @@ class MenuTextView: UITextView {
 //        guard let range = Range(self.selectedRange, in: self.text), let str = String(self.text[range]) else { return }
 //        print(str)
 
-
         // 方法2
-        guard let selectedTextRange = self.selectedTextRange, let str1 = self.text(in: selectedTextRange) else { return }
+        guard let selectedTextRange = self.selectedTextRange, let str1 = self.text(in: selectedTextRange) else {
+            print(self.text)
+            return
+        }
         print(str1)
-
-
     }
 
     override func pressesEnded(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
@@ -106,3 +106,18 @@ extension MenuTextView {
         self.selectedTextRange = selectionTextRange//设置光标选中范围
     }
 }
+
+extension MenuTextView {
+    override func beginFloatingCursor(at point: CGPoint) {
+        print("beginFloatingCursor\(point)")
+    }
+
+    override func updateFloatingCursor(at point: CGPoint) {
+        print("endFloatingCursor\(point)")
+    }
+
+    override func endFloatingCursor() {
+        print("endFloatingCursor")
+    }
+}
+

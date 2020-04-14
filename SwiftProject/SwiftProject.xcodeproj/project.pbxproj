@@ -112,6 +112,8 @@
 		01A3A40623BF5A3C003FEA19 /* MemorySafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A3A40523BF5A3C003FEA19 /* MemorySafeViewController.swift */; };
 		01A3A40923BF5A55003FEA19 /* AccessControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A3A40823BF5A55003FEA19 /* AccessControlViewController.swift */; };
 		01A3A40C23BF6218003FEA19 /* AdvancedOperatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A3A40B23BF6218003FEA19 /* AdvancedOperatorViewController.swift */; };
+		01A51634244591D200AC92E3 /* CJLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A51631244591D100AC92E3 /* CJLabel.m */; };
+		01A51635244591D200AC92E3 /* CJLabelConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A51633244591D200AC92E3 /* CJLabelConfigure.m */; };
 		01A545BB2437208800D6CB5F /* MeunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A545B92437208800D6CB5F /* MeunViewController.swift */; };
 		01A545BC2437208800D6CB5F /* MeunViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A545BA2437208800D6CB5F /* MeunViewController.xib */; };
 		01A550BE2428649500472B6A /* UserProfileNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A550BD2428649500472B6A /* UserProfileNetWork.swift */; };
@@ -306,6 +308,11 @@
 		01A3A40523BF5A3C003FEA19 /* MemorySafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorySafeViewController.swift; sourceTree = "<group>"; };
 		01A3A40823BF5A55003FEA19 /* AccessControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessControlViewController.swift; sourceTree = "<group>"; };
 		01A3A40B23BF6218003FEA19 /* AdvancedOperatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedOperatorViewController.swift; sourceTree = "<group>"; };
+		01A51630244591D100AC92E3 /* CJLabelConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLabelConfigure.h; sourceTree = "<group>"; };
+		01A51631244591D100AC92E3 /* CJLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLabel.m; sourceTree = "<group>"; };
+		01A51632244591D200AC92E3 /* CJLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLabel.h; sourceTree = "<group>"; };
+		01A51633244591D200AC92E3 /* CJLabelConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLabelConfigure.m; sourceTree = "<group>"; };
+		01A516362445927300AC92E3 /* CJJLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJJLabel.h; sourceTree = "<group>"; };
 		01A545B92437208800D6CB5F /* MeunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeunViewController.swift; sourceTree = "<group>"; };
 		01A545BA2437208800D6CB5F /* MeunViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeunViewController.xib; sourceTree = "<group>"; };
 		01A550BD2428649500472B6A /* UserProfileNetWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileNetWork.swift; sourceTree = "<group>"; };
@@ -955,8 +962,13 @@
 		016D7D14243E089A00733053 /* TextView */ = {
 			isa = PBXGroup;
 			children = (
+				01A51632244591D200AC92E3 /* CJLabel.h */,
+				01A51631244591D100AC92E3 /* CJLabel.m */,
+				01A51630244591D100AC92E3 /* CJLabelConfigure.h */,
+				01A51633244591D200AC92E3 /* CJLabelConfigure.m */,
 				016D7D1D243E1DC400733053 /* MenuTextView.swift */,
 				01E46C51244470ED006699DE /* FloatMenuView.swift */,
+				01A516362445927300AC92E3 /* CJJLabel.h */,
 			);
 			path = TextView;
 			sourceTree = "<group>";
@@ -2063,6 +2075,7 @@
 				01E15CC923BF583100A69E23 /* MethodViewController.swift in Sources */,
 				016D7D1C243E08EE00733053 /* MeunLabel.swift in Sources */,
 				01D38A0C241A770E00F6D74D /* MVVMListSecViewModel.swift in Sources */,
+				01A51634244591D200AC92E3 /* CJLabel.m in Sources */,
 				019FE1A423C0E9B700B241B1 /* Factory.swift in Sources */,
 				01EA7C0023ABA97600712B20 /* ListTableViewCell.swift in Sources */,
 				01ACCE68243337760025C9EA /* UIView+SPAdd.swift in Sources */,
@@ -2134,6 +2147,7 @@
 				010D6AD923A9FF6F00B84621 /* TestBridge.m in Sources */,
 				010D6AD223A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.m in Sources */,
 				01ACCE7A243338830025C9EA /* UITableView+SPAdd.swift in Sources */,
+				01A51635244591D200AC92E3 /* CJLabelConfigure.m in Sources */,
 				0102673C242379B900CA6D00 /* UserProfileCellViewModel.swift in Sources */,
 				01ACCE6E243337D00025C9EA /* UIColor+SPAdd.swift in Sources */,
 				01E15CD823BF595200A69E23 /* ErrorhandlingViewController.swift in Sources */,
@@ -2290,6 +2304,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -2344,6 +2359,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};

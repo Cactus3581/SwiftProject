@@ -16,19 +16,20 @@ class MeunViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = UIColor.init(r: 43, g: 47, b: 54)
         func update(str: Bool, str1: Bool? = nil) {
              if let str1 = str1  {
                  print(str1)
              }
         }
 
+
         update(str: true, str1: true)
         update(str: false)
 
 
 //        setup() b
-        let attributeText = NSMutableAttributedString.init(string: "白日依山尽，黄河入海流")
+        let attributeText = NSMutableAttributedString.init(string: "你们有没有听说过半身放远")
         textView.attributedText = attributeText
     }
 
