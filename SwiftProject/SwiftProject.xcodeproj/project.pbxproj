@@ -824,6 +824,7 @@
 		01453ADE243731580008D999 /* UIMenuController */ = {
 			isa = PBXGroup;
 			children = (
+				01C4B2F62447622900A90E8F /* CJLabel */,
 				016D7D14243E089A00733053 /* TextView */,
 				016D7D13243E089400733053 /* Label */,
 				01A545B92437208800D6CB5F /* MeunViewController.swift */,
@@ -954,7 +955,6 @@
 		016D7D13243E089400733053 /* Label */ = {
 			isa = PBXGroup;
 			children = (
-				016D7D1D243E1DC400733053 /* MenuTextView.swift */,
 				016D7D1B243E08EE00733053 /* MeunLabel.swift */,
 			);
 			path = Label;
@@ -963,12 +963,7 @@
 		016D7D14243E089A00733053 /* TextView */ = {
 			isa = PBXGroup;
 			children = (
-				01A51632244591D200AC92E3 /* CJLabel.h */,
-				01A51631244591D100AC92E3 /* CJLabel.m */,
-				01A51630244591D100AC92E3 /* CJLabelConfigure.h */,
-				01A51633244591D200AC92E3 /* CJLabelConfigure.m */,
-				01FC29992445FA36002A5340 /* CJFloatMenuView.h */,
-				01FC29982445FA36002A5340 /* CJFloatMenuView.m */,
+				016D7D1D243E1DC400733053 /* MenuTextView.swift */,
 			);
 			path = TextView;
 			sourceTree = "<group>";
@@ -1383,6 +1378,19 @@
 				01C01BB323BDEA97008B2D9E /* ClosureViewController.swift */,
 			);
 			path = Closure;
+			sourceTree = "<group>";
+		};
+		01C4B2F62447622900A90E8F /* CJLabel */ = {
+			isa = PBXGroup;
+			children = (
+				01A51632244591D200AC92E3 /* CJLabel.h */,
+				01A51631244591D100AC92E3 /* CJLabel.m */,
+				01A51630244591D100AC92E3 /* CJLabelConfigure.h */,
+				01A51633244591D200AC92E3 /* CJLabelConfigure.m */,
+				01FC29992445FA36002A5340 /* CJFloatMenuView.h */,
+				01FC29982445FA36002A5340 /* CJFloatMenuView.m */,
+			);
+			path = CJLabel;
 			sourceTree = "<group>";
 		};
 		01CABD5A23F3D360009410C3 /* Helpers */ = {
