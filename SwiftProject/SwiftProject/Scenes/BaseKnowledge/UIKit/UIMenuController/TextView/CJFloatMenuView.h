@@ -1,5 +1,5 @@
 //
-//  FloatMenuView.h
+//  CJFloatMenuView.h
 //  SwiftProject
 //
 //  Created by 夏汝震 on 2020/4/14.
@@ -10,7 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FloatMenuView : UIView
+extern NSInteger const FloatMenuViewHeight;
+extern NSInteger const FloatMenuViewInset;
+
+@interface CJFloatMenuView : UIView
 
 + (instancetype)share;
 

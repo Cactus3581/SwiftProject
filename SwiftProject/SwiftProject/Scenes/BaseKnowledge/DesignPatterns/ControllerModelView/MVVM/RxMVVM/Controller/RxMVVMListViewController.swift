@@ -14,6 +14,12 @@ class RxMVVMListViewController: BaseViewController, UITableViewDelegate, UITable
 
     var cell1: RxMVVMTableViewCell? = nil
 
+    fileprivate lazy var behaviorSubtitleCell: RxMVVMTableViewCell = {
+        let nibName = String(describing: RxMVVMTableViewCell.self)
+        let nib =  Bundle.main.loadNibNamed(nibName, owner: nil, options: nil)
+        return nib?.first as! RxMVVMTableViewCell
+    }()
+    
     @IBOutlet weak var tableView: UITableView!
     var second = 0
     var array = ["君不见黄河之水天上来，奔流到海不复回。君不见高堂明镜悲白发，朝如青丝暮成雪。人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来"]
@@ -34,12 +40,14 @@ class RxMVVMListViewController: BaseViewController, UITableViewDelegate, UITable
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        behaviorSubtitleCell.isHidden = true
+        view.addSubview(behaviorSubtitleCell)
         tableView.estimatedRowHeight = 0
         self.model.update(RxMVVMModel())
         setupSubviews()
-//        let timer = Timer.init(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
-//        timer.fire()
-//        RunLoop.current.add(timer, forMode: .default)
+        let timer = Timer.init(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        timer.fire()
+        RunLoop.current.add(timer, forMode: .default)
 
 
         NotificationCenter.default.addObserver(self, selector: #selector(willShowMenuNotification),
@@ -54,13 +62,10 @@ class RxMVVMListViewController: BaseViewController, UITableViewDelegate, UITable
     }
 
     @objc func willShowMenuNotification() {
-        self.tableView.resignFirstResponder()
         RxMVVMListViewController.isMenuShow = true
-        print("willShowMenuNotification")
     }
 
     @objc func didHideMenuNotification() {
-        print("didHideMenuNotification")
         RxMVVMListViewController.isMenuShow = false
         if dataObservable.value == array {
             return
@@ -86,20 +91,16 @@ class RxMVVMListViewController: BaseViewController, UITableViewDelegate, UITable
         //2. 将数据源与 tableView 绑定
         dataObservable
             .do(onNext: { (array) in
-                print("do onNext\(self.array.count) \(array.count)")
                 self.tableView.reloadData()
+                self.tableView.setNeedsLayout()
+                self.tableView.layoutIfNeeded()
+                self.tableView.scrollToBottom()
             }, afterNext: { array in
-                print("do afterNext")
-
             }, onError: nil, afterError: nil, onCompleted: nil, afterCompleted: nil, onSubscribe: nil, onSubscribed: nil, onDispose: nil)
-
             .subscribe(onNext: { (texts) in
-                print("subscribe onNext\(self.array.count) \(texts.count)")
             }, onError: { (error) in
-                print("subscribe error")
 
             }, onCompleted: {
-                print("subscribe onCompleted")
             }, onDisposed: nil).disposed(by: disposeBag)
 
 //        dataObservable.do(onNext: { (_) in
@@ -165,15 +166,18 @@ class RxMVVMListViewController: BaseViewController, UITableViewDelegate, UITable
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
-        // 使用
-        DispatchQueue.once {
-            // your code
-            cell1 = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RxMVVMTableViewCell
-        }
+//        // 使用
+//        DispatchQueue.once {
+//            // your code
+//            cell1 = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RxMVVMTableViewCell
+//        }
 
-        guard let cell = cell1 else {
-            return 0
-        }
+        let cell = behaviorSubtitleCell
+
+
+//        guard let cell = cell1 else {
+//            return 0
+//        }
         cell.bounds.size.width =  UIScreen.main.bounds.size.width
         cell.setNeedsLayout()
         cell.layoutIfNeeded()
@@ -189,28 +193,6 @@ class RxMVVMListViewController: BaseViewController, UITableViewDelegate, UITable
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
 
     }
-
-//    func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
-////        if indexPath.row == 0 {
-//            // 第一行长按cell后才会出现菜单
-//           return true
-////        }
-////        return false
-//    }
-//
-//    func tableView(_ tableView: UITableView, canPerformAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-//        // 菜单中只有 copy 会显示出来
-//        if action == #selector(UIResponderStandardEditActions.copy(_:)) {
-//            return true
-//        }
-//        return false
-//    }
-//
-//    func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
-//        if action == #selector(UIResponderStandardEditActions.copy(_:)) {
-//            UIPasteboard.general.string = array[indexPath.row]
-//        }
-//    }
 }
 
 extension UIScrollView {

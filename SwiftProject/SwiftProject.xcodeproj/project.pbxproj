@@ -169,7 +169,7 @@
 		01EE3A1C24152264008ECA89 /* SPSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EE3A1B24152264008ECA89 /* SPSwift.swift */; };
 		01EE3A1F2415288A008ECA89 /* SPSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EE3A1D2415288A008ECA89 /* SPSwiftViewController.swift */; };
 		01EE3A202415288A008ECA89 /* SPSwiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01EE3A1E2415288A008ECA89 /* SPSwiftViewController.xib */; };
-		01FC299A2445FA36002A5340 /* FloatMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FC29982445FA36002A5340 /* FloatMenuView.m */; };
+		01FC299A2445FA36002A5340 /* CJFloatMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FC29982445FA36002A5340 /* CJFloatMenuView.m */; };
 		235E9168D353E7999CFACF49 /* Pods_SwiftProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9847732F357B69C8139F8CA2 /* Pods_SwiftProjectTests.framework */; };
 		940100AA012F54B13D3D76AF /* Pods_SwiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A882ABBE491E084E7CF053 /* Pods_SwiftProject.framework */; };
 		CF62C4077E897668DAB0C2B1 /* Pods_SwiftProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD91B97E7BD8440AE716CCC /* Pods_SwiftProjectUITests.framework */; };
@@ -367,8 +367,8 @@
 		01EE3A1B24152264008ECA89 /* SPSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPSwift.swift; sourceTree = "<group>"; };
 		01EE3A1D2415288A008ECA89 /* SPSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPSwiftViewController.swift; sourceTree = "<group>"; };
 		01EE3A1E2415288A008ECA89 /* SPSwiftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPSwiftViewController.xib; sourceTree = "<group>"; };
-		01FC29982445FA36002A5340 /* FloatMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatMenuView.m; sourceTree = "<group>"; };
-		01FC29992445FA36002A5340 /* FloatMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatMenuView.h; sourceTree = "<group>"; };
+		01FC29982445FA36002A5340 /* CJFloatMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJFloatMenuView.m; sourceTree = "<group>"; };
+		01FC29992445FA36002A5340 /* CJFloatMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJFloatMenuView.h; sourceTree = "<group>"; };
 		1915CA2FEB8E8D836B0B0B01 /* Pods-SwiftProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftProjectTests/Pods-SwiftProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		2A58B499B2B4B6FBD70B84C7 /* Pods-SwiftProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-SwiftProjectUITests/Pods-SwiftProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2CD91B97E7BD8440AE716CCC /* Pods_SwiftProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -965,10 +965,10 @@
 			children = (
 				01A51632244591D200AC92E3 /* CJLabel.h */,
 				01A51631244591D100AC92E3 /* CJLabel.m */,
-				01FC29992445FA36002A5340 /* FloatMenuView.h */,
-				01FC29982445FA36002A5340 /* FloatMenuView.m */,
 				01A51630244591D100AC92E3 /* CJLabelConfigure.h */,
 				01A51633244591D200AC92E3 /* CJLabelConfigure.m */,
+				01FC29992445FA36002A5340 /* CJFloatMenuView.h */,
+				01FC29982445FA36002A5340 /* CJFloatMenuView.m */,
 			);
 			path = TextView;
 			sourceTree = "<group>";
@@ -2119,7 +2119,7 @@
 				0182B7C4241A78F40033BF0A /* MVVMListSectionTextFooterView.swift in Sources */,
 				01E15CCF23BF58F300A69E23 /* InitializeViewController.swift in Sources */,
 				0108907E243C93E100DBF606 /* RxMVVMListViewController.swift in Sources */,
-				01FC299A2445FA36002A5340 /* FloatMenuView.m in Sources */,
+				01FC299A2445FA36002A5340 /* CJFloatMenuView.m in Sources */,
 				01ACCE6B243337B30025C9EA /* UIImageView+SPAdd.swift in Sources */,
 				01A3A40C23BF6218003FEA19 /* AdvancedOperatorViewController.swift in Sources */,
 				0182B7CD241A86C00033BF0A /* MVVMListLabelTableViewCell.swift in Sources */,

@@ -401,4 +401,4 @@ extern NSString * const kCJStrikethroughColorAttributeName;
  */
 extern NSString * const kCJLinkStringIdentifierAttributesName;
 
-extern NSInteger const kCJPinWidth;
+extern NSInteger const kCJPinRoundPointSize;

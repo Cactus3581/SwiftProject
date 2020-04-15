@@ -9,7 +9,6 @@
 #import "CJLabel.h"
 #import <objc/runtime.h>
 
-
 @class CJGlyphRunStrokeItem;
 @class CJSelectView;
 
@@ -22,12 +21,15 @@ NSString * const kCJActiveBackgroundStrokeColorAttributeName = @"kCJActiveBackgr
 NSString * const kCJStrikethroughStyleAttributeName          = @"kCJStrikethroughStyleAttributeName";
 NSString * const kCJStrikethroughColorAttributeName          = @"kCJStrikethroughColorAttributeName";
 NSString * const kCJLinkStringIdentifierAttributesName       = @"kCJLinkStringIdentifierAttributesName";
-NSInteger const kCJPinWidth = 6;
+NSInteger const kCJPinRoundPointSize = 6;
 
 @interface CJCTRunUrl: NSURL
+
 @property (nonatomic, assign) NSInteger index;
 @property (nonatomic, strong) NSValue *rangeValue;
+
 @end
+
 
 @implementation CJCTRunUrl
 
@@ -40,6 +42,8 @@ NSInteger const kCJPinWidth = 6;
 @property (nonatomic, copy) NSAttributedString *renderedAttributedText;
 @property (nonatomic, strong) UILongPressGestureRecognizer *longPressGestureRecognizer;//长按手势
 @property (nonatomic, strong) UITapGestureRecognizer *doubleTapGes;//双击手势
+@property (nonatomic, strong) UITapGestureRecognizer *oneTapGes;//单击手势
+
 /**
  是否需要计算支持复制的每个字符的frame大小
  */
@@ -52,7 +56,9 @@ NSInteger const kCJPinWidth = 6;
  支持复制时计算每一个CTRun的frame完成后的block
  */
 @property (nonatomic, copy) void(^caculateCTRunSizeBlock)(void);
+
 @end
+
 
 @implementation CJLabel {
 @private
@@ -78,18 +84,8 @@ NSInteger const kCJPinWidth = 6;
 
 @dynamic text;
 @dynamic attributedText;
-//@synthesize text = _text;
-//@synthesize attributedText = _attributedText;
 
 #pragma mark - Life cycle
-- (id)initWithCoder:(NSCoder *)coder {
-    self = [super initWithCoder:coder];
-    if (self) {
-        [self commonInit];
-    }
-    return self;
-}
-
 - (instancetype)init {
     self = [super init];
     if (self) {
@@ -98,6 +94,13 @@ NSInteger const kCJPinWidth = 6;
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)coder {
+    self = [super initWithCoder:coder];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -145,6 +148,10 @@ NSInteger const kCJPinWidth = 6;
     if (_doubleTapGes) {
         [self removeGestureRecognizer:_doubleTapGes];
     }
+    if (_oneTapGes) {
+        [self removeGestureRecognizer:_oneTapGes];
+    }
+
     _delegate = nil;
 }
 
@@ -156,16 +163,19 @@ NSInteger const kCJPinWidth = 6;
 - (void)setEnableCopy:(BOOL)enableCopy {
     _enableCopy = enableCopy;
     if (_enableCopy) {
-        self.doubleTapGes =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapTwoAct:)];
+        self.doubleTapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapTwoAct:)];
         self.doubleTapGes.numberOfTapsRequired = 2;
         self.doubleTapGes.delegate = self;
         [self addGestureRecognizer:self.doubleTapGes];
+
+//        self.oneTapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOneAct:)];
+//        self.oneTapGes.delegate = self;
+//        [self addGestureRecognizer:self.oneTapGes];
         
         if (_allRunItemArray.count == 0) {
             self.caculateCopySize = YES;
             self.attributedText = self.attributedText;
         }
-        
     }
 }
 
@@ -182,7 +192,7 @@ NSInteger const kCJPinWidth = 6;
         paragraphStyle.alignment = self.textAlignment;
         [mutableAttributes setObject:paragraphStyle forKey:(NSString *)kCTParagraphStyleAttributeName];
         mutableAttributedString = [[NSMutableAttributedString alloc] initWithString:text attributes:mutableAttributes];
-    }else{
+    }else {
         mutableAttributedString = text;
     }
     
@@ -203,7 +213,7 @@ NSInteger const kCJPinWidth = 6;
         if ([text isEqualToAttributedString:_attributedText]) {
             return;
         }
-    }else{
+    }else {
         if (![text isEqualToAttributedString:_attributedText]) {
             self.caculateCopySize = NO;
         }
@@ -240,11 +250,11 @@ NSInteger const kCJPinWidth = 6;
                     linkRange = NSMakeRange(range.location, linkLength);
                 }
                 //相同的链点
-                else{
+                else {
                     linkRange = NSMakeRange(linkRange.location, linkLength);
                 }
                 [attText addAttribute:kCJLinkRangeAttributesName value:NSStringFromRange(linkRange) range:range];
-            }else{
+            }else {
                 linkRange = NSMakeRange(0, 0);
                 [attText removeAttribute:kCJLinkRangeAttributesName range:range];
             }
@@ -254,7 +264,6 @@ NSInteger const kCJPinWidth = 6;
             if (!CJLabelIsNull(imgInfoDic)) {
                 needEnumerateAllCharacter = YES;
             }
-            
         }];
     }
     
@@ -319,7 +328,7 @@ NSInteger const kCJPinWidth = 6;
                         if (range.location >= _currentClickRunStrokeItem.range.location && (range.location+range.length) <= clickRunItemRange) {
                             [fullString addAttributes:activeLinkAttributes range:range];
                         }
-                    }else{
+                    }else {
                         for (NSString *key in activeLinkAttributes) {
                             [fullString removeAttribute:key range:range];
                         }
@@ -336,7 +345,6 @@ NSInteger const kCJPinWidth = 6;
         NSAttributedString *string = [[NSAttributedString alloc] initWithAttributedString:fullString];
         self.renderedAttributedText = string;
     }
-    
     return _renderedAttributedText;
 }
 
@@ -364,7 +372,6 @@ NSInteger const kCJPinWidth = 6;
             }
         }
     }
-    
     return _framesetter;
 }
 
@@ -376,7 +383,6 @@ NSInteger const kCJPinWidth = 6;
     if (_framesetter) {
         CFRelease(_framesetter);
     }
-    
     _framesetter = framesetter;
 }
 
@@ -392,7 +398,6 @@ NSInteger const kCJPinWidth = 6;
     if (_highlightFramesetter) {
         CFRelease(_highlightFramesetter);
     }
-    
     _highlightFramesetter = highlightFramesetter;
 }
 
@@ -417,6 +422,7 @@ NSInteger const kCJPinWidth = 6;
         [self setNeedsDisplay];
     }
 }
+
 #pragma mark - UILabel
 - (CGRect)textRectForBounds:(CGRect)bounds limitedToNumberOfLines:(NSInteger)numberOfLines {
     bounds = UIEdgeInsetsInsetRect(bounds, self.textInsets);
@@ -548,7 +554,7 @@ NSInteger const kCJPinWidth = 6;
 }
 
 - (UIEdgeInsets)alignmentRectInsets {
-    return UIEdgeInsetsMake(kCJPinWidth, 0.0, kCJPinWidth, 0.0);
+    return UIEdgeInsetsMake(kCJPinRoundPointSize, 0.0, kCJPinRoundPointSize, 0.0);
 }
 
 #pragma mark - Draw Method
@@ -556,8 +562,7 @@ NSInteger const kCJPinWidth = 6;
        attributedString:(NSAttributedString *)attributedString
               textRange:(CFRange)textRange
                  inRect:(CGRect)rect
-                context:(CGContextRef)c
-{
+                context:(CGContextRef)c {
     for (UIView *view in self.subviews) {
         if ([view isKindOfClass:[CJInsertBackView class]]) {
             [view removeFromSuperview];
@@ -618,6 +623,7 @@ NSInteger const kCJPinWidth = 6;
     CFRelease(frame);
     CGPathRelease(path);
 }
+
 //处理最后一行CTLine
 - (CTLineRef)handleLastCTLine:(CTLineRef)line textRange:(CFRange)textRange attributedString:(NSAttributedString *)attributedString rect:(CGRect)rect context:(CGContextRef)c {
     // 判断最后一行是否占满整行
@@ -652,7 +658,7 @@ NSInteger const kCJPinWidth = 6;
         if (!self.attributedTruncationToken) {
             NSString *truncationTokenString = @"\u2026"; // \u2026 对应"…"的Unicode编码
             attributedTruncationString = [[NSMutableAttributedString alloc] initWithString:truncationTokenString attributes:truncationTokenStringAttributes];
-        }else{
+        }else {
             NSDictionary *attributedTruncationTokenAttributes = [self.attributedTruncationToken attributesAtIndex:(NSUInteger)0 effectiveRange:NULL];
             [attributedTruncationString appendAttributedString:self.attributedTruncationToken];
             if (attributedTruncationTokenAttributes.count == 0) {
@@ -708,11 +714,12 @@ NSInteger const kCJPinWidth = 6;
         
         return lastLine;
     }
-    else{
+    else {
         CTLineRef lastLine = CFRetain(line);
         return lastLine;
     }
 }
+
 //绘制CTLine
 - (void)drawCTLine:(CTLineRef)line
          lineIndex:(CFIndex)lineIndex
@@ -724,8 +731,7 @@ NSInteger const kCJPinWidth = 6;
          lineWidth:(CGFloat)lineWidth
               rect:(CGRect)rect
         penOffsetX:(CGFloat)penOffsetX
-   lineLayoutModel:(CJCTLineLayoutModel *)lineLayoutModel
-{
+   lineLayoutModel:(CJCTLineLayoutModel *)lineLayoutModel {
     //计算当前行的CJCTLineVerticalLayout 结构体
     CJCTLineVerticalLayout lineVerticalLayout = lineLayoutModel.lineVerticalLayout;
     
@@ -788,7 +794,7 @@ NSInteger const kCJPinWidth = 6;
                         NSMutableAttributedString *labelLinkAttStr = attributes[kCJActiveLinkAttributesName][kCJNonLineWrapAttributesName];
                         [(CJLabel *)view setAttributedText:labelLinkAttStr];
                         [(CJLabel *)view flushText];
-                    }else{
+                    }else {
                         NSMutableAttributedString *labelAttStr = attributes[kCJLinkAttributesName][kCJNonLineWrapAttributesName];
                         [(CJLabel *)view setAttributedText:labelAttStr];
                         [(CJLabel *)view flushText];
@@ -802,10 +808,10 @@ NSInteger const kCJPinWidth = 6;
                 CGContextDrawImage(c, runBounds, image.CGImage);
             }
         }
-        else{//绘制文字
+        else {//绘制文字
             if (runItem.lineVerticalLayout.verticalAlignment != CJVerticalAlignmentBottom) {
                 CGContextSetTextPosition(c, penOffsetX, runBounds.origin.y);
-            }else{
+            }else {
                 CGContextSetTextPosition(c, penOffsetX, lineOrigin.y);
             }
             CTRunDraw(runItem.runRef, c, CFRangeMake(0, 0));
@@ -837,8 +843,7 @@ NSInteger const kCJPinWidth = 6;
                                                           lineDescent:(CGFloat)lineDescent
                                                           lineLeading:(CGFloat)lineLeading
                                                             lineWidth:(CGFloat)lineWidth
-                                                   lineVerticalLayout:(CJCTLineVerticalLayout)lineVerticalLayout
-{
+                                                   lineVerticalLayout:(CJCTLineVerticalLayout)lineVerticalLayout {
     // 先获取每一行所有的runStrokeItems数组
     NSMutableArray *lineRunItems = [NSMutableArray arrayWithCapacity:3];
     
@@ -872,8 +877,7 @@ NSInteger const kCJPinWidth = 6;
 }
 
 //调整CTRun在Y轴方向的坐标
-- (CGFloat)yOffset:(CGFloat)y lineVerticalLayout:(CJCTLineVerticalLayout)lineVerticalLayout isImage:(BOOL)isImage runHeight:(CGFloat)runHeight imageVerticalAlignment:(CJLabelVerticalAlignment)imageVerticalAlignment lineLeading:(CGFloat)lineLeading runAscent:(CGFloat)runAscent
-{
+- (CGFloat)yOffset:(CGFloat)y lineVerticalLayout:(CJCTLineVerticalLayout)lineVerticalLayout isImage:(BOOL)isImage runHeight:(CGFloat)runHeight imageVerticalAlignment:(CJLabelVerticalAlignment)imageVerticalAlignment lineLeading:(CGFloat)lineLeading runAscent:(CGFloat)runAscent {
     CJLabelVerticalAlignment verticalAlignment = lineVerticalLayout.verticalAlignment;
     if (isImage) {
         verticalAlignment = imageVerticalAlignment;
@@ -897,7 +901,7 @@ NSInteger const kCJPinWidth = 6;
         if (isImage) {
             ascentY = maxRunAscent - runAscent + self.font.descender/2 - lineLeading;
         }
-    }else{
+    }else {
         ascentY = maxImageAscent - runAscent;
     }
     
@@ -925,8 +929,7 @@ NSInteger const kCJPinWidth = 6;
  @param c 上下文
  @param runStrokeItems 需要绘制的CJGlyphRunStrokeItem数组
  */
-- (void)drawStrikethroughContext:(CGContextRef)c runStrokeItems:(NSArray <CJGlyphRunStrokeItem *>*)runStrokeItems
-{
+- (void)drawStrikethroughContext:(CGContextRef)c runStrokeItems:(NSArray <CJGlyphRunStrokeItem *>*)runStrokeItems {
     if (runStrokeItems.count > 0) {
         for (CJGlyphRunStrokeItem *item in runStrokeItems) {
             [self drawBackgroundColor:c runStrokeItem:item isStrokeColor:NO active:NO isStrikethrough:YES];
@@ -936,35 +939,34 @@ NSInteger const kCJPinWidth = 6;
 
 - (void)drawBackgroundColor:(CGContextRef)c
                     runItem:(CJGlyphRunStrokeItem *)runItem
-              isStrokeColor:(BOOL)isStrokeColor
-{
+              isStrokeColor:(BOOL)isStrokeColor {
     if (runItem) {
         if (_currentClickRunStrokeItem && NSEqualRanges(_currentClickRunStrokeItem.range,runItem.range)) {
             [self drawBackgroundColor:c runStrokeItem:runItem isStrokeColor:isStrokeColor active:YES isStrikethrough:NO];
         }
-        else{
+        else {
             [self drawBackgroundColor:c runStrokeItem:runItem isStrokeColor:isStrokeColor active:NO isStrikethrough:NO];
         }
     }
 }
+
 //isStrokeColor 是否填充描边
 - (void)drawBackgroundColor:(CGContextRef)c
              runStrokeItems:(NSArray <CJGlyphRunStrokeItem *>*)runStrokeItems
-              isStrokeColor:(BOOL)isStrokeColor
-{
+              isStrokeColor:(BOOL)isStrokeColor {
     if (runStrokeItems.count > 0) {
         for (CJGlyphRunStrokeItem *item in runStrokeItems) {
             [self drawBackgroundColor:c runItem:item isStrokeColor:isStrokeColor];
         }
     }
 }
+
 //isStrokeColor 是否填充描边
 - (void)drawBackgroundColor:(CGContextRef)c
               runStrokeItem:(CJGlyphRunStrokeItem *)runStrokeItem
               isStrokeColor:(BOOL)isStrokeColor
                      active:(BOOL)active
-            isStrikethrough:(BOOL)isStrikethrough
-{
+            isStrikethrough:(BOOL)isStrikethrough {
     CGContextSetLineJoin(c, kCGLineJoinRound);
     CGFloat x = runStrokeItem.runBounds.origin.x-self.textInsets.left;
     CGFloat y = runStrokeItem.runBounds.origin.y;
@@ -1004,7 +1006,7 @@ NSInteger const kCJPinWidth = 6;
     if (!isStrokeColor && runStrokeItem.strokeLineWidth > 1) {
         if (active) {
             cornerRadius = (isNotClearColor(runStrokeItem.activeFillColor) && isNotClearColor(runStrokeItem.activeStrokeColor))?0:cornerRadius;
-        }else{
+        }else {
             cornerRadius = (isNotClearColor(runStrokeItem.fillColor) && isNotClearColor(runStrokeItem.strokeColor))?0:cornerRadius;
         }
     }
@@ -1047,8 +1049,7 @@ NSInteger const kCJPinWidth = 6;
                                                  context:(CGContextRef)c
                                               lineAscent:(CGFloat)lineAscent
                                              lineDescent:(CGFloat)lineDescent
-                                             lineLeading:(CGFloat)lineLeading
-{
+                                             lineLeading:(CGFloat)lineLeading {
     //上下行高
     CGFloat lineAscentAndDescent = lineAscent + fabs(lineDescent);
     //默认底部对齐
@@ -1070,7 +1071,7 @@ NSInteger const kCJPinWidth = 6;
                 maxRunHeight = runAscent + fabs(runDescent);
                 maxRunAscent = runAscent;
             }
-        }else{
+        }else {
             if (maxImageHeight < runAscent + fabs(runDescent)) {
                 maxImageHeight = runAscent + fabs(runDescent);
                 maxImageAscent = runAscent;
@@ -1106,8 +1107,7 @@ NSInteger const kCJPinWidth = 6;
                                                          context:(CGContextRef)c
                                                        textRange:(CFRange)textRange
                                                 attributedString:(NSAttributedString *)attributedString
-                                                truncateLastLine:(BOOL)truncateLastLine
-{
+                                                truncateLastLine:(BOOL)truncateLastLine {
     NSMutableArray *verticalLayoutArray = [NSMutableArray arrayWithCapacity:3];
     
     // 遍历所有行
@@ -1130,7 +1130,7 @@ NSInteger const kCJPinWidth = 6;
             [verticalLayoutArray addObject:lineLayoutModel];
             
             CFRelease(lastLine);
-        }else{
+        }else {
             CJCTLineVerticalLayout lineVerticalLayout = [self CJCTLineVerticalLayoutFromLine:line lineIndex:lineIndex origin:origins[lineIndex] context:c lineAscent:lineAscent lineDescent:lineDescent lineLeading:lineLeading];
             
             CJCTLineLayoutModel *lineLayoutModel = [[CJCTLineLayoutModel alloc]init];
@@ -1144,9 +1144,7 @@ NSInteger const kCJPinWidth = 6;
     return verticalLayoutArray;
 }
 
-- (CJGlyphRunStrokeItem *)CJGlyphRunStrokeItemFromCTRunRef:(CTRunRef)glyphRun origin:(CGPoint)origin line:(CTLineRef)line lineIndex:(CFIndex)lineIndex lineAscent:(CGFloat)lineAscent lineDescent:(CGFloat)lineDescent lineLeading:(CGFloat)lineLeading lineWidth:(CGFloat)lineWidth lineVerticalLayout:(CJCTLineVerticalLayout)lineVerticalLayout inRect:(CGRect)rect context:(CGContextRef)c
-{
-    
+- (CJGlyphRunStrokeItem *)CJGlyphRunStrokeItemFromCTRunRef:(CTRunRef)glyphRun origin:(CGPoint)origin line:(CTLineRef)line lineIndex:(CFIndex)lineIndex lineAscent:(CGFloat)lineAscent lineDescent:(CGFloat)lineDescent lineLeading:(CGFloat)lineLeading lineWidth:(CGFloat)lineWidth lineVerticalLayout:(CJCTLineVerticalLayout)lineVerticalLayout inRect:(CGRect)rect context:(CGContextRef)c {
     NSDictionary *attributes = (__bridge NSDictionary *)CTRunGetAttributes(glyphRun);
     
     NSMutableAttributedString *labelAttStr = attributes[kCJLinkAttributesName][kCJNonLineWrapAttributesName];
@@ -1309,7 +1307,7 @@ NSInteger const kCJPinWidth = 6;
             runStrokeItem.longPressBlock = attributes[kCJLongPressBlockAttributesName];
         }
     }
-    else{
+    else {
         //不是可点击链点。但存在自定义边框线或背景色
         if (isNotClearColor(strokeColor) || isNotClearColor(fillColor) || isNotClearColor(activeStrokeColor) || isNotClearColor(activeFillColor) || strikethroughStyle != 0) {
             runStrokeItem.strokeColor = strokeColor;
@@ -1331,8 +1329,7 @@ NSInteger const kCJPinWidth = 6;
 }
 
 //当前run相对于self的CGRect
-- (CGRect)getRunStrokeItemlocRunBoundsFromGlyphRun:(CTRunRef)glyphRun line:(CTLineRef)line origin:(CGPoint)origin lineIndex:(CFIndex)lineIndex inRect:(CGRect)rect width:(CGFloat)width lineVerticalLayout:(CJCTLineVerticalLayout)lineVerticalLayout isImage:(BOOL)isImage imageVerticalAlignment:(CJLabelVerticalAlignment)imageVerticalAlignment lineDescent:(CGFloat)lineDescent lineLeading:(CGFloat)lineLeading runBounds:(CGRect)runBounds runAscent:(CGFloat)runAscent
-{
+- (CGRect)getRunStrokeItemlocRunBoundsFromGlyphRun:(CTRunRef)glyphRun line:(CTLineRef)line origin:(CGPoint)origin lineIndex:(CFIndex)lineIndex inRect:(CGRect)rect width:(CGFloat)width lineVerticalLayout:(CJCTLineVerticalLayout)lineVerticalLayout isImage:(BOOL)isImage imageVerticalAlignment:(CJLabelVerticalAlignment)imageVerticalAlignment lineDescent:(CGFloat)lineDescent lineLeading:(CGFloat)lineLeading runBounds:(CGRect)runBounds runAscent:(CGFloat)runAscent {
     CGFloat xOffset = 0.0f;
     CFRange glyphRange = CTRunGetStringRange(glyphRun);
     switch (CTRunGetStatus(glyphRun)) {
@@ -1374,7 +1371,7 @@ NSInteger const kCJPinWidth = 6;
             //第一个item无需判断
             if (i == 0) {
                 _lastGlyphRunStrokeItem = item;
-            }else{
+            }else {
                 
                 CGRect runBounds = item.runBounds;
                 CGRect locBounds = item.locBounds;
@@ -1426,7 +1423,7 @@ NSInteger const kCJPinWidth = 6;
                         
                         if (!strokeColor && !fillColor && !activeStrokeColor && !activeFillColor) {
                             same = NO;
-                        }else{
+                        }else {
                             if (strokeColor) {
                                 same = isSameColor(strokeColor,lastStrokeColor);
                             }
@@ -1479,7 +1476,7 @@ NSInteger const kCJPinWidth = 6;
                     }
                 }
                 //有合并
-                else{
+                else {
                     _lastGlyphRunStrokeItem.strikethroughStyle = MAX(strikethroughStyle, lastStrikethroughStyle);
                     if (_lastGlyphRunStrokeItem.strikethroughStyle != 0) {
                         if (lastStrikethroughColor) {
@@ -1502,7 +1499,7 @@ NSInteger const kCJPinWidth = 6;
         }
         [mergeLineStrokePathItems addObjectsFromArray:strokePathTempItems];
     }
-    else{
+    else {
         if (lineStrokePathItems.count == 1) {
             CJGlyphRunStrokeItem *item = lineStrokePathItems[0];
             item = [self adjustItemHeight:item height:ascentAndDescent];
@@ -1560,7 +1557,7 @@ NSInteger const kCJPinWidth = 6;
     BOOL linkPoint = [self linkAtPoint:point extendsLinkTouchArea:NO];
     if (!linkPoint) {
         return [super hitTest:point withEvent:event];
-    }else{
+    }else {
         return self;
     }
 }
@@ -1630,7 +1627,7 @@ NSInteger const kCJPinWidth = 6;
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     if (_longPress) {
         [super touchesEnded:touches withEvent:event];
-    }else{
+    }else {
         if (_currentClickRunStrokeItem) {
             
             NSAttributedString *attributedString = [self.attributedText attributedSubstringFromRange:_currentClickRunStrokeItem.range];
@@ -1664,7 +1661,7 @@ NSInteger const kCJPinWidth = 6;
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     if (_longPress) {
         [super touchesCancelled:touches withEvent:event];
-    }else{
+    }else {
         if (_currentClickRunStrokeItem) {
             _needRedrawn = NO;
             _currentClickRunStrokeItem = nil;
@@ -1684,7 +1681,6 @@ NSInteger const kCJPinWidth = 6;
     self.attributedText = self.attributedText;
 }
 
-
 #pragma mark - UIGestureRecognizerDelegate
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     if (gestureRecognizer == self.longPressGestureRecognizer) {
@@ -1693,7 +1689,14 @@ NSInteger const kCJPinWidth = 6;
     else if (gestureRecognizer == self.doubleTapGes) {
         objc_setAssociatedObject(self.doubleTapGes, &kAssociatedUITouchKey, touch, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
+    else if (gestureRecognizer == self.oneTapGes) {
+//        objc_setAssociatedObject(self.oneTapGes, &kAssociatedUITouchKey, touch, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
     return YES;
+}
+
+- (void)tapOneAct:(UITapGestureRecognizer *)sender {
+
 }
 
 - (void)tapTwoAct:(UITapGestureRecognizer *)sender {
@@ -1726,7 +1729,7 @@ NSInteger const kCJPinWidth = 6;
         //立即刷新界面
         [CATransaction flush];
     }
-    else{
+    else {
         if (self.enableCopy) {
             CGPoint point = [touch locationInView:self];
             [self caculateCTRunCopySizeBlock:^(){
@@ -1794,7 +1797,7 @@ NSInteger const kCJPinWidth = 6;
                     [self setNeedsDisplay];
                     [CATransaction flush];
                 }
-            }else{
+            }else {
                 if (self.enableCopy) {
                     _afterLongPressEnd = NO;
                     [self caculateCTRunCopySizeBlock:^(){
@@ -1803,7 +1806,7 @@ NSInteger const kCJPinWidth = 6;
                             CJGlyphRunStrokeItem *currentItem = [CJBackView currentItem:point allRunItemArray:self->_allRunItemArray inset:0.5];
                             if (currentItem) {
                                 [[CJBackView instance] showMagnifyInCJLabel:self magnifyPoint:point runItem:currentItem];
-                            }else{
+                            }else {
                                 if (CGRectContainsPoint(self.bounds, point)) {
                                     [[CJBackView instance] showMagnifyInCJLabel:self magnifyPoint:point runItem:nil];
                                 }
@@ -1848,7 +1851,7 @@ NSInteger const kCJPinWidth = 6;
                             navCtr.interactivePopGestureRecognizer.enabled = popGestureEnable;
                         }
                     }];
-                }else{
+                }else {
                     [[CJBackView instance] hideView];
                 }
             }
@@ -1862,7 +1865,7 @@ NSInteger const kCJPinWidth = 6;
                 CJGlyphRunStrokeItem *currentItem = [CJBackView currentItem:point allRunItemArray:_allRunItemArray inset:1];
                 if (currentItem) {
                     [[CJBackView instance] showMagnifyInCJLabel:self magnifyPoint:point runItem:currentItem];
-                }else{
+                }else {
                     if (CGRectContainsPoint(self.bounds, point)) {
                         [[CJBackView instance] showMagnifyInCJLabel:self magnifyPoint:point runItem:nil];
                     }
@@ -1935,8 +1938,7 @@ NSInteger const kCJPinWidth = 6;
                      activeLinkAttributes:(NSDictionary<NSString *, id> *)activeLinkAttributes
                                 parameter:(id)parameter
                            clickLinkBlock:(CJLabelLinkModelBlock)clickLinkBlock
-                           longPressBlock:(CJLabelLinkModelBlock)longPressBlock
-{
+                           longPressBlock:(CJLabelLinkModelBlock)longPressBlock {
     CJLabelConfigure *configure = [[CJLabelConfigure alloc]init];
     if (configure) {
         configure.attributes = attributes;
@@ -2064,7 +2066,7 @@ NSInteger const kCJPinWidth = 6;
         NSMutableAttributedString *result = [CJLabelConfigure configureLinkAttributedString:attrString withAttString:linkStr sameStringEnable:sameStringEnable linkAttributes:configure.attributes activeLinkAttributes:configure.activeLinkAttributes parameter:configure.parameter clickLinkBlock:configure.clickLinkBlock longPressBlock:configure.longPressBlock islink:isLink];
         return result;
     }
-    else{
+    else {
         NSMutableAttributedString *result = [CJLabel configureAttrString:attrString withString:attributedString.string sameStringEnable:sameStringEnable configure:configure];
         return result;
     }

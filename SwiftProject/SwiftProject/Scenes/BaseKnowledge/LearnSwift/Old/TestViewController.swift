@@ -228,7 +228,7 @@ class TestViewController: BaseViewController {
 //        if optionalString != nil {
 //           // 使用 !强制解析/解包：表示"我知道这个可选有值，请使用它。但是强行解包存在着风险，当为nil时，程序运行会崩溃，所以需要判断好是否为nil。
 //           print(optionalString!)
-//        }else{
+//        }else {
 //           print("optionalString 值为 nil")
 //        }
 //    //自动解析：、在声明可选变量时使用感叹号（!）替换问号（?）。这样可选变量在使用时就不需要再加一个感叹号（!）来获取值，它会自动解析。
@@ -236,14 +236,14 @@ class TestViewController: BaseViewController {
 //        myString = "Hello, Swift!"
 //        if myString != nil {
 //           print(myString)
-//        }else{
+//        }else {
 //           print("myString 值为 nil")
 //        }
 //
 ////可选绑定：使用可选绑定来判断可选类型是否包含值，如果包含值就自动解包，把值赋给一个临时常量或者变量，并返回true，否则返回false。可选绑定可以用在if和while语句中来对可选类型的值进行判断并把值赋给一个常量或者变量。
 //        if let yourString = myString {
 //           print("你的字符串值为：\(yourString)")
-//        }else{
+//        }else {
 //           print("你的字符串没有值")
 //        }
 //

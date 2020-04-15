@@ -16,7 +16,7 @@ static char kAssociatedUITouchKey;
 
 extern NSString * const kCJInsertViewTag;
 
-#define CJLabelIsNull(a) ((a)==nil || (a)==NULL || (NSNull *)(a)==[NSNull null])
+#define CJLabelIsNull(a) ((a)==nil || (a)==NULL || (NSNull *)(a)== [NSNull null])
 #define CJUIRGBColor(r,g,b,a) ([UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a])
 
 typedef void (^CJLabelLinkModelBlock)(CJLabelLinkModel *linkModel);
@@ -435,7 +435,7 @@ static inline CGFloat compareMaxNum(CGFloat firstNum, CGFloat secondNum, BOOL ma
     CGFloat result = firstNum;
     if (max) {
         result = (firstNum >= secondNum)?firstNum:secondNum;
-    }else{
+    }else {
         result = (firstNum <= secondNum)?firstNum:secondNum;
     }
     return result;
