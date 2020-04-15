@@ -74,7 +74,8 @@ class MeunViewController: BaseViewController {
 
         menuView.center = CGPoint(x: 200, y: 300)
         menuView.text = "复制"
-        menuView.show()
+//        menuView.show()
+        self.view.addSubview(menuView)
 
 //        guard sender.state == .began,
 //            let senderView = sender.view,
