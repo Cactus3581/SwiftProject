@@ -52,6 +52,7 @@ CGFloat RunDelegateGetWidthCallback(void * refCon) {
     return [(NSNumber *)[(__bridge NSDictionary *)refCon objectForKey:kCJImageWidth] floatValue];
 }
 
+
 @implementation CJLabelConfigure
 
 - (void)addAttributes:(id)attributes key:(NSString *)key {
@@ -605,6 +606,7 @@ CGFloat RunDelegateGetWidthCallback(void * refCon) {
 
 @end
 
+
 /**
  大头针的显示类型
  */
@@ -802,9 +804,8 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
         backView.textRangeView.hidden = YES;
         [backView addSubview:backView.textRangeView];
 
-        backView.menuView = [[CJFloatMenuView alloc] init];
+        backView.menuView = [CJFloatMenuView share];
         backView.menuView.hidden = YES;
-        backView.menuView.backgroundColor = [UIColor clearColor];
         //[CJkeyWindow() addSubview:backView.menuView];
 
         [backView addSubview:backView.menuView];
@@ -919,6 +920,7 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
                                  _endCopyRunItem.withOutMergeBounds.origin.y + _endCopyRunItem.withOutMergeBounds.size.height + 16);
 
         CGFloat bottom = 5;
+        self.menuView.text = @"Copy";
         if (_startCopyRunItem.withOutMergeBounds.origin.y == _endCopyRunItem.withOutMergeBounds.origin.y) {
             self.menuView.center = CGPointMake(_startCopyRunItem.withOutMergeBounds.origin.x + (_endCopyRunItem.withOutMergeBounds.origin.x+_endCopyRunItem.withOutMergeBounds.size.width -  _startCopyRunItem.withOutMergeBounds.origin.x)/2.0,_startCopyRunItem.withOutMergeBounds.origin.y -self.menuView.bounds.size.height/2-bottom);
         } else {
@@ -1058,21 +1060,38 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
 - (void)hideAllCopySelectView {
     _startCopyRunItem = nil;
     _endCopyRunItem = nil;
-    [UIView animateWithDuration:0.25 animations:^{
-        self.textRangeView.alpha = 0;
-        self.menuView.alpha = 0;
-    } completion:^(BOOL finished) {
-        self.textRangeView.hidden = YES;
-        self.menuView.hidden = YES;
-        self.magnifierView.hidden = YES;
-        self.backWindView.hidden = YES;
-        [self.magnifierView removeFromSuperview];
-        [self.backWindView removeFromSuperview];
-        if (isShow) {
-            isShow = NO;
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"FloatMenuViewHidden" object:nil];
-        }
-    }];
+
+    self.textRangeView.hidden = YES;
+    self.menuView.hidden = YES;
+    self.magnifierView.hidden = YES;
+    self.backWindView.hidden = YES;
+    [self.magnifierView removeFromSuperview];
+    [self.backWindView removeFromSuperview];
+    if (isShow) {
+        isShow = NO;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"FloatMenuViewHidden" object:nil];
+    }
+
+//    self.textRangeView.alpha = 1;
+//    self.menuView.alpha = 1;
+//    [UIView animateWithDuration:0.25 animations:^{
+//        self.textRangeView.alpha = 0;
+//        self.menuView.alpha = 0;
+//    } completion:^(BOOL finished) {
+//        self.textRangeView.hidden = YES;
+//        self.menuView.hidden = YES;
+//        self.magnifierView.hidden = YES;
+//        self.backWindView.hidden = YES;
+//        self.textRangeView.alpha = 1;
+//        self.menuView.alpha = 1;
+//        [self.magnifierView removeFromSuperview];
+//        [self.backWindView removeFromSuperview];
+//        if (isShow) {
+//            isShow = NO;
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"FloatMenuViewHidden" object:nil];
+//        }
+//    }];
+
     [self resignFirstResponder];
     [self removeFromSuperview];
     //[[UIMenuController sharedMenuController] setMenuVisible:NO];
@@ -1191,7 +1210,6 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
 
     [self.textRangeView updateFrame:frame headRect:headRect middleRect:middleRect tailRect:tailRect differentLine:differentLine];
 
-    self.textRangeView.alpha = 1;
     self.textRangeView.hidden = NO;
     self.menuView.hidden = NO;
     if (!isShow) {

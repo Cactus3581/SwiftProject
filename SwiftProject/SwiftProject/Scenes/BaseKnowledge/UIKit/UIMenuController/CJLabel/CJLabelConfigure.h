@@ -468,7 +468,7 @@ static inline BOOL isSameColor(UIColor *color1, UIColor *color2){
     return same;
 }
 
-static inline UIWindow * CJkeyWindow() {
+static inline UIWindow *CJkeyWindow() {
     UIApplication *app = [UIApplication sharedApplication];
     if ([app.delegate respondsToSelector:@selector(window)]) {
         return [app.delegate window];
@@ -476,4 +476,3 @@ static inline UIWindow * CJkeyWindow() {
         return [app keyWindow];
     }
 }
-

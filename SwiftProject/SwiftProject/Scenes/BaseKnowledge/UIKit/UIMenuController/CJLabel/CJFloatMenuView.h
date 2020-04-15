@@ -16,7 +16,10 @@ extern NSInteger const FloatMenuViewInset;
 @interface CJFloatMenuView : UIView
 
 + (instancetype)share;
+- (instancetype)init NS_UNAVAILABLE;
+- (void)show;
 
+@property (nonatomic, copy) NSString *text;
 @property (nonatomic, copy) dispatch_block_t didClick;
 
 @end

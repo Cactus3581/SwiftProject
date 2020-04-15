@@ -23,7 +23,6 @@ static CJFloatMenuView *menuView = nil;
 
 @implementation CJFloatMenuView
 
-#pragma mark - 初始化 单例
 + (instancetype)share {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -31,7 +30,6 @@ static CJFloatMenuView *menuView = nil;
     });
     return menuView;
 }
-
 
 - (instancetype)init {
     self = [super init];
@@ -41,7 +39,15 @@ static CJFloatMenuView *menuView = nil;
     return self;
 }
 
+- (void)setText: (NSString *)text {
+    _text = text;
+    _label.text = text;
+    CGFloat labelWidth = [_label sizeThatFits:CGSizeZero].width;
+    self.bounds = CGRectMake(0, 0, labelWidth + FloatMenuViewInset*2, FloatMenuViewHeight);
+}
+
 - (void)setup {
+    self.backgroundColor = [UIColor clearColor];
     UIView *contentView = [[UIView alloc] init];
     _contentView = contentView;
     contentView.layer.cornerRadius = 8;
@@ -52,7 +58,6 @@ static CJFloatMenuView *menuView = nil;
     UILabel *label = [[UILabel alloc] init];
     _label = label;
     label.backgroundColor = UIColor.blackColor;
-    label.text = @"Copy";
     label.font = [UIFont systemFontOfSize:15];
     label.textColor = [UIColor whiteColor];
     [contentView addSubview:label];
@@ -60,9 +65,6 @@ static CJFloatMenuView *menuView = nil;
     UIImageView *imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"icon-copy-bg"]];
     _imageView = imageView;
     [self addSubview:imageView];
-
-    CGFloat labelWidth = [label sizeThatFits:CGSizeZero].width;
-    self.bounds = CGRectMake(0, 0, labelWidth + FloatMenuViewInset*2, FloatMenuViewHeight);
 
     self.userInteractionEnabled = true;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(click)];
@@ -77,6 +79,10 @@ static CJFloatMenuView *menuView = nil;
     _imageView.frame = CGRectMake(self.bounds.size.width/2-20/2, self.bounds.size.height-12, 20, 12);
 }
 
+- (void)show {
+//    [CdJJkeyWindow() addSubview:self];
+}
+
 - (void)click {
     if (self.didClick) {
         self.didClick();
@@ -84,3 +90,12 @@ static CJFloatMenuView *menuView = nil;
 }
 
 @end
+
+//static inline UIWindow *CdJJkeyWindow() {
+//    UIApplication *app = [UIApplication sharedApplication];
+//    if ([app.delegate respondsToSelector:@selector(window)]) {
+//        return [app.delegate window];
+//    } else {
+//        return [app keyWindow];
+//    }
+//}
