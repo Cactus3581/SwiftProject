@@ -274,7 +274,7 @@ typedef struct CJCTLineVerticalLayout CJCTLineVerticalLayout;
  CJSelectBackView 在 window 层，全局只有一个
  CJSelectTextRangeView（选中填充背景色的view）在 CJSelectBackView上，CJMagnifierView（放大镜）则在window上
  */
-@interface CJSelectCopyManagerView : UIView
+@interface CJBackView : UIView
 @property (nonatomic, strong) CJMagnifierView *magnifierView;//放大镜
 + (instancetype)instance;
 

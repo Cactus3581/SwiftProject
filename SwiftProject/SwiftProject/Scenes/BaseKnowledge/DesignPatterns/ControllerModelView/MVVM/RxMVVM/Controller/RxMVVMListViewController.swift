@@ -16,7 +16,7 @@ class RxMVVMListViewController: BaseViewController, UITableViewDelegate, UITable
 
     @IBOutlet weak var tableView: UITableView!
     var second = 0
-    var array = ["君不见黄河之之之之之之之"]
+    var array = ["君不见黄河之水天上来，奔流到海不复回。君不见高堂明镜悲白发，朝如青丝暮成雪。人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来"]
     var model: RxMVVMModelEnum {
         get {
             return .w
@@ -27,7 +27,7 @@ class RxMVVMListViewController: BaseViewController, UITableViewDelegate, UITable
         }
     }
 
-    let dataObservable = BehaviorRelay<[String]>(value: ["君不见黄河之之之之之之之"])
+    let dataObservable = BehaviorRelay<[String]>(value: ["君不见黄河之水天上来，奔流到海不复回。君不见高堂明镜悲白发，朝如青丝暮成雪。人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来"])
 
     let disposeBag = DisposeBag()
     private static var isMenuShow = false
@@ -37,16 +37,17 @@ class RxMVVMListViewController: BaseViewController, UITableViewDelegate, UITable
         tableView.estimatedRowHeight = 0
         self.model.update(RxMVVMModel())
         setupSubviews()
-        let timer = Timer.init(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
-        timer.fire()
-        RunLoop.current.add(timer, forMode: .default)
+//        let timer = Timer.init(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+//        timer.fire()
+//        RunLoop.current.add(timer, forMode: .default)
+
 
         NotificationCenter.default.addObserver(self, selector: #selector(willShowMenuNotification),
-                                               name: UIMenuController.willShowMenuNotification,
+                                               name: NSNotification.Name(rawValue: "FloatMenuViewShow"),
                                                object: nil)
 
         NotificationCenter.default.addObserver(self, selector: #selector(didHideMenuNotification),
-                                               name: UIMenuController.didHideMenuNotification,
+                                               name: NSNotification.Name(rawValue: "FloatMenuViewHidden"),
                                                object: nil)
         
 
@@ -173,11 +174,15 @@ class RxMVVMListViewController: BaseViewController, UITableViewDelegate, UITable
         guard let cell = cell1 else {
             return 0
         }
+        cell.bounds.size.width =  UIScreen.main.bounds.size.width
+        cell.setNeedsLayout()
+        cell.layoutIfNeeded()
+        cell.label.preferredMaxLayoutWidth = cell.label.width;
+
         let attributeText = NSMutableAttributedString.init(string: array[indexPath.row])
         cell.attributedText = attributeText
-        let textViewHeight = cell.textView.sizeThatFits(CGSize(width: tableView.bounds.size.width-40, height: CGFloat.greatestFiniteMagnitude)).height
         let cellHeight = cell.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
-        let height =  (textViewHeight) + (1.0) + (cellHeight)
+        let height =  (cellHeight)
         return height
     }
 

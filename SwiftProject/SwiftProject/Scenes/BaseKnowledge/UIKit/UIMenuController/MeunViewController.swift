@@ -23,22 +23,77 @@ class MeunViewController: BaseViewController {
              }
         }
 
+//        let label = CJLabel.init(frame: CGRect(x: 0, y: 100, width: UIScreen.main.bounds.size.width, height: 50))
+        let label = CJLabel.init()
+        label.backgroundColor = UIColor.green
+        label.numberOfLines = 0
+        self.view.addSubview(label)
+        label.snp.makeConstraints { (make) in
+            make.leading.equalToSuperview().offset(30)
+            make.trailing.equalToSuperview().offset(-30)
+            make.top.equalToSuperview().offset(190);
+        }
+
+
+
+        //设置垂直对齐方式
+        label.verticalAlignment = .verticalAlignmentCenter
+        label.text = "dsadasdasds盛大的撒的撒打算；来到拉萨开到拉萨看到了卡到拉萨经典款撒的就撒开的adasddsadasdasds盛大的撒的撒打算；来到拉萨开到拉萨看到了卡到拉萨经典款撒的就撒开的adasd"
+
+        //支持选择复制
+        label.enableCopy = true
+
+
+
+//        label.sizeToFit()
+
+
+
+
+
+
 
         update(str: true, str1: true)
         update(str: false)
 
 
-//        setup() b
+        setup()
         let attributeText = NSMutableAttributedString.init(string: "你们有没有听说过半身放远")
         textView.attributedText = attributeText
     }
 
     func setup() {
         responsiveView.isUserInteractionEnabled = true
-        let longPressGR = UILongPressGestureRecognizer(target: self, action: #selector(longPressHandler))
-        longPressGR.minimumPressDuration = 0.3 // how long before menu pops up
-        responsiveView.addGestureRecognizer(longPressGR)
+
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapClick))
+        responsiveView.addGestureRecognizer(tap)
+
+        let button = UIButton()
+        responsiveView.addSubview(button)
+        button.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+            $0.top.equalToSuperview().offset(50)
+            $0.bottom.equalToSuperview().offset(-50)
+        }
+        button.backgroundColor = UIColor.green
+        button.setTitleColor(UIColor.white,for: .normal)
+        button.addTarget(self, action: #selector(buttonClick), for: .touchUpInside)
+
+//        responsiveView.isUserInteractionEnabled = true
+//        let longPressGR = UILongPressGestureRecognizer(target: self, action: #selector(longPressHandler))
+//        longPressGR.minimumPressDuration = 0.3 // how long before menu pops up
+//        responsiveView.addGestureRecognizer(longPressGR)
     }
+
+    @objc func tapClick() {
+
+    }
+
+    @objc func buttonClick() {
+
+    }
+
+
 
     @objc func longPressHandler(sender: UILongPressGestureRecognizer) {
         guard sender.state == .began,
@@ -71,7 +126,7 @@ class MeunViewController: BaseViewController {
 }
 
 class ResponsiveView: UIView {
-    override var canBecomeFirstResponder: Bool {
-        return true
-    }
+//    override var canBecomeFirstResponder: Bool {
+//        return true
+//    }
 }

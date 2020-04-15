@@ -9,6 +9,7 @@
 #import "CJLabelConfigure.h"
 #import "CJLabel.h"
 #import <objc/runtime.h>
+#import "FloatMenuView.h"
 
 NSString * const kCJInsertViewTag                            = @"kCJInsertViewTag";
 
@@ -30,9 +31,12 @@ NSString * const kCJLongPressBlockAttributesName             = @"kCJLongPressBlo
 NSString * const kCJLinkNeedRedrawnAttributesName            = @"kCJLinkNeedRedrawnAttributesName";
 NSString * const kCJNonLineWrapAttributesName                = @"kCJNonLineWrapAttributesName";
 
+NSInteger const kCJYOffset = 10;
+
+
 
 void RunDelegateDeallocCallback(void * refCon) {
-    
+
 }
 
 //获取图片高度
@@ -103,12 +107,12 @@ CGFloat RunDelegateGetWidthCallback(void * refCon) {
     if ([image isKindOfClass:[NSString class]]) {
        NSParameterAssert([image length] != 0);
     }
-    
+
     NSDictionary *imgInfoDic = @{kCJImage:image,
                                  kCJImageWidth:@(size.width),
                                  kCJImageHeight:@(size.height),
                                  kCJImageLineVerticalAlignment:@(verticalAlignment)};
-    
+
     //创建CTRunDelegateRef并设置回调函数
     CTRunDelegateCallbacks imageCallbacks;
     imageCallbacks.version = kCTRunDelegateVersion1;
@@ -117,7 +121,7 @@ CGFloat RunDelegateGetWidthCallback(void * refCon) {
     imageCallbacks.getAscent = RunDelegateGetAscentCallback;
     imageCallbacks.getDescent = RunDelegateGetDescentCallback;
     CTRunDelegateRef runDelegate = CTRunDelegateCreate(&imageCallbacks, (__bridge void *)imgInfoDic);
-    
+
     unichar imgReplacementChar = 0xFFFC;
     NSString *imgReplacementString = [NSString stringWithCharacters:&imgReplacementChar length:1];
     //插入图片 空白占位符
@@ -127,7 +131,7 @@ CGFloat RunDelegateGetWidthCallback(void * refCon) {
     NSMutableAttributedString *imageAttributedString = [[NSMutableAttributedString alloc] initWithString:imgPlaceholderStr];
     [imageAttributedString addAttribute:(NSString *)kCTRunDelegateAttributeName value:(__bridge id)runDelegate range:imgRange];
     [imageAttributedString addAttribute:kCJImageAttributeName value:imgInfoDic range:imgRange];
-    
+
     if (!CJLabelIsNull(linkAttributes) && linkAttributes.count > 0) {
         [imageAttributedString addAttribute:kCJLinkAttributesName value:linkAttributes range:imgRange];
     }
@@ -153,7 +157,7 @@ CGFloat RunDelegateGetWidthCallback(void * refCon) {
     }
     NSRange range = NSMakeRange(loc, imgPlaceholderStr.length);
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithAttributedString:attrStr];
-    
+
     /* 设置默认换行模式为：NSLineBreakByCharWrapping
      * 当Label的宽度不够显示内容或图片的时候就自动换行, 不自动换行, 部分图片将会看不见
      */
@@ -173,13 +177,13 @@ CGFloat RunDelegateGetWidthCallback(void * refCon) {
         paragraph = [[NSMutableParagraphStyle alloc] init];
         paragraph.lineBreakMode = NSLineBreakByCharWrapping;
     }
-    
+
     [attributedString insertAttributedString:imageAttributedString atIndex:range.location];
     if (!CJLabelIsNull(paragraph)) {
         [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraph range:NSMakeRange(0, attributedString.length)];
     }
     CFRelease(runDelegate);
-    
+
     return attributedString;
 }
 
@@ -194,7 +198,7 @@ CGFloat RunDelegateGetWidthCallback(void * refCon) {
 {
     NSParameterAssert(attrStr.length > 0);
     NSParameterAssert((range.location + range.length) <= attrStr.length);
-    
+
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithAttributedString:attrStr];
     UIFont *linkFont = nil;
     UIFont *activeLinkFont = nil;
@@ -304,11 +308,11 @@ CGFloat RunDelegateGetWidthCallback(void * refCon) {
     if (CJLabelIsNull(identifier) || identifier.length == 0) {
         identifier = @"";
     }
-    
+
     NSDictionary *dic = CJLabelIsNull(attrs)?[[NSDictionary alloc] init]:[[NSDictionary alloc]initWithDictionary:attrs];
     NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc]initWithString:string attributes:dic];
     [attStr addAttribute:kCJLinkStringIdentifierAttributesName value:identifier range:NSMakeRange(0, attStr.length)];
-    
+
     return attStr;
 }
 
@@ -331,7 +335,7 @@ CGFloat RunDelegateGetWidthCallback(void * refCon) {
     if (range.location == NSNotFound) {
         return range;
     }
-    
+
     NSAttributedString *str = [attString attributedSubstringFromRange:range];
     NSRange strRange = NSMakeRange(0, str.length);
     NSDictionary *strDic = nil;
@@ -339,14 +343,14 @@ CGFloat RunDelegateGetWidthCallback(void * refCon) {
         strDic = [str attributesAtIndex:0 effectiveRange:&strRange];
     }
     NSString *identifier = strDic[kCJLinkStringIdentifierAttributesName];
-    
+
     NSRange withStrRange = NSMakeRange(0, withAttString.length);
     NSDictionary *withStrDic = nil;
     if (withStrRange.length > 0) {
         withStrDic = [withAttString attributesAtIndex:0 effectiveRange:&withStrRange];
     }
     NSString *withIdentifier = withStrDic[kCJLinkStringIdentifierAttributesName];
-    
+
     if (!identifier || !identifier || ![identifier isEqualToString:withIdentifier]) {
         range = NSMakeRange(NSNotFound, 0);
     }
@@ -356,16 +360,16 @@ CGFloat RunDelegateGetWidthCallback(void * refCon) {
 + (NSArray <NSValue *>*)getLinkAttStringRangeArray:(NSAttributedString *)linkAttString inAttString:(NSAttributedString *)attString {
     NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:3];
     NSArray *strRanges = [self getRangeArrayWithString:linkAttString.string inString:attString.string lastRange:NSMakeRange(0, 0) rangeArray:[NSMutableArray array]];
-    
+
     if (strRanges.count > 0) {
-        
+
         NSRange withStrRange = NSMakeRange(0, linkAttString.length);
         NSDictionary *withStrDic = nil;
         if (withStrRange.length > 0) {
             withStrDic = [linkAttString attributesAtIndex:0 effectiveRange:&withStrRange];
         }
         NSString *withKey = withStrDic[kCJLinkStringIdentifierAttributesName];
-        
+
         [strRanges enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             NSValue *rangeValue = (NSValue *)obj;
             NSRange range = rangeValue.rangeValue;
@@ -376,7 +380,7 @@ CGFloat RunDelegateGetWidthCallback(void * refCon) {
                 strDic = [str attributesAtIndex:0 effectiveRange:&strRange];
             }
             NSString *key = strDic[kCJLinkStringIdentifierAttributesName];
-            
+
             if (key.length > 0) {
                 if ([key isEqualToString:withKey]) {
                     [array addObject:rangeValue];
@@ -388,7 +392,7 @@ CGFloat RunDelegateGetWidthCallback(void * refCon) {
             }
         }];
     }
-    
+
     return array;
 }
 
@@ -462,7 +466,7 @@ CGFloat RunDelegateGetWidthCallback(void * refCon) {
     item.withOutMergeBounds = self.withOutMergeBounds;
     item.runDescent = self.runDescent;
     item.runRef = self.runRef;
-    
+
     item.insertView = self.insertView;
     item.isInsertView = self.isInsertView;
     item.range = self.range;
@@ -516,7 +520,7 @@ CGFloat RunDelegateGetWidthCallback(void * refCon) {
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
-        
+
         //白色背景
         CALayer *backLayer = [CALayer layer];
         backLayer.frame = CGRectMake(0, 0, 120, 30);
@@ -531,7 +535,7 @@ CGFloat RunDelegateGetWidthCallback(void * refCon) {
         backLayer.shadowOpacity = 0.75;
         backLayer.shadowRadius = 0.75;
         [self.layer addSublayer:backLayer];
-        
+
         CALayer *backLayer2 = [CALayer layer];
         backLayer2.frame = CGRectMake(0, 0, 120, 30);
         backLayer2.backgroundColor = [UIColor whiteColor].CGColor;
@@ -545,7 +549,7 @@ CGFloat RunDelegateGetWidthCallback(void * refCon) {
         backLayer2.shadowOpacity = 1;
         backLayer2.shadowRadius = 1;
         [self.layer addSublayer:backLayer2];
-        
+
         //底部白色小三角
         CALayer *whiteLayer = [CALayer layer];
         whiteLayer.frame = CGRectMake(51, 21.5, 18, 18);
@@ -564,7 +568,7 @@ CGFloat RunDelegateGetWidthCallback(void * refCon) {
         whiteTriangleLayer.contentsScale = [[UIScreen mainScreen] scale];
         [self.layer addSublayer:whiteTriangleLayer];
         whiteTriangleLayer.transform = transform;
-        
+
         //放大绘制layer
         self.contentLayer = [CJContentLayer layer];
         self.contentLayer.frame = CGRectMake(0, 0, 120, 30);
@@ -650,7 +654,7 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
 
     //背景色
     UIColor *backColor = CJUIRGBColor(0,84,166,0.2);
-    
+
     if (self.differentLine) {
         [backColor set];
         CGContextAddRect(ctx, self.headRect);
@@ -659,40 +663,42 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
         }
         CGContextAddRect(ctx, self.tailRect);
         CGContextFillPath(ctx);
-        
+
         [self updatePinLayer:ctx point:CGPointMake(self.headRect.origin.x, self.headRect.origin.y) height:self.headRect.size.height isLeft:YES];
-        
+
         [self updatePinLayer:ctx point:CGPointMake(self.tailRect.origin.x + self.tailRect.size.width, self.tailRect.origin.y) height:self.tailRect.size.height isLeft:NO];
     }else{
-        
+
         [backColor set];
         CGContextAddRect(ctx, self.middleRect);
         CGContextFillPath(ctx);
-        
+
         [self updatePinLayer:ctx point:CGPointMake(self.middleRect.origin.x, self.middleRect.origin.y) height:self.middleRect.size.height isLeft:YES];
-        
+
         [self updatePinLayer:ctx point:CGPointMake(self.middleRect.origin.x + self.middleRect.size.width, self.middleRect.origin.y) height:self.middleRect.size.height isLeft:NO];
     }
-    
+
     CGContextStrokePath(ctx);
 }
 
 - (void)updatePinLayer:(CGContextRef)ctx point:(CGPoint)point height:(CGFloat)height isLeft:(BOOL)isLeft {
     UIColor *color = [UIColor colorWithRed:0/255.0 green:128/255.0 blue:255/255.0 alpha:1.0];
-    CGRect roundRect = CGRectMake(point.x - 5,
-                                  isLeft?(point.y - 10):(point.y + height),
-                                  10,
-                                  10);
+
+    NSInteger width = kCJPinWidth;
+    CGRect roundRect = CGRectMake(point.x - width/2,
+                                  isLeft?(point.y - width):(point.y + height),
+                                  width,
+                                  width);
     //画圆
     CGContextAddEllipseInRect(ctx, roundRect);
     [color set];
     CGContextFillPath(ctx);
-    
+
     CGContextMoveToPoint(ctx, point.x, point.y);
     CGContextAddLineToPoint(ctx, point.x, point.y + height);
     CGContextSetLineWidth(ctx, 2.0);
     CGContextSetStrokeColorWithColor(ctx, color.CGColor);
-    
+
     CGContextStrokePath(ctx);
 }
 
@@ -725,7 +731,7 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
 /**
  选择复制view
  */
-@interface CJSelectCopyManagerView()<UIGestureRecognizerDelegate>
+@interface CJBackView()<UIGestureRecognizerDelegate>
 {
     CGFloat _lineVerticalMaxWidth;//每一行文字中的最大宽度
     NSArray *_CTLineVerticalLayoutArray;//记录 所有CTLine在垂直方向的对齐方式的数组
@@ -743,6 +749,8 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
 
 @property (nonatomic, weak) CJLabel *label;//选择复制对应的label
 @property (nonatomic, strong) CJSelectTextRangeView *textRangeView;//选中复制填充背景色的view
+@property (nonatomic, strong) FloatMenuView *menuView;//选中复制填充背景色的view
+
 @property (nonatomic, assign) CJSelectViewAction selectViewAction;//用于判断选中移动的是左边还是右边的大头针
 @property (nonatomic, strong) CJWindowView *backWindView;//添加在window层的view，用来检测点击任意view时隐藏CJSelectBackView
 @property (nonatomic, strong) NSMutableArray *scrlooViewArray;//记录CJLabel所属的superview数组
@@ -752,51 +760,61 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
 @property (nonatomic, strong) UIFont *font;
 @property (nonatomic, strong) NSAttributedString *attributedText;
 @end
-@implementation CJSelectCopyManagerView
+@implementation CJBackView
 + (instancetype)instance {
-    static CJSelectCopyManagerView *manager = nil;
+    static CJBackView *backView = nil;
     static dispatch_once_t once;
     dispatch_once(&once, ^{
-        manager = [[CJSelectCopyManagerView alloc] initWithFrame:CGRectZero];
-        manager.backgroundColor = [UIColor clearColor];
-        
-        manager.backWindView = [[CJWindowView alloc]initWithFrame:CGRectMake(0, 0, 1, 1)];
-        __weak typeof(manager)wManager = manager;
-        manager.backWindView.hitTestBlock = ^(BOOL hide) {
+        backView = [[CJBackView alloc] initWithFrame:CGRectZero];
+        backView.backgroundColor = [UIColor clearColor];
+
+        backView.backWindView = [[CJWindowView alloc]initWithFrame:CGRectMake(0, 0, 1, 1)];
+        __weak typeof(backView)wManager = backView;
+        backView.backWindView.hitTestBlock = ^(BOOL hide) {
             [wManager hideView];
         };
 
         /*
          *选择复制填充背景色视图
          */
-        manager.textRangeView = [[CJSelectTextRangeView alloc]init];
-        manager.textRangeView.hidden = YES;
-        [manager addSubview:manager.textRangeView];
+        backView.textRangeView = [[CJSelectTextRangeView alloc]init];
+        backView.textRangeView.hidden = YES;
+        [backView addSubview:backView.textRangeView];
+
+        backView.menuView = [[FloatMenuView alloc] init];
+        backView.menuView.hidden = YES;
+        backView.menuView.backgroundColor = [UIColor redColor];
+        backView.menuView.bounds = CGRectMake(0, 0, 67, 36+12);
+
+//        [CJkeyWindow() addSubview:backView.menuView];
+
+        [backView addSubview:backView.menuView];
+
         //放大镜
-        manager.magnifierView = [[CJMagnifierView alloc] initWithFrame:CGRectMake(0, 0, 120, 44)];
-        
-        manager.singleTapGes =[[UITapGestureRecognizer alloc] initWithTarget:manager action:@selector(tapOneAct:)];
-        [manager addGestureRecognizer:manager.singleTapGes];
-        
-        manager.doubleTapGes =[[UITapGestureRecognizer alloc] initWithTarget:manager action:@selector(tapTwoAct:)];
+        backView.magnifierView = [[CJMagnifierView alloc] initWithFrame:CGRectMake(0, 0, 120, 44)];
+
+        backView.singleTapGes =[[UITapGestureRecognizer alloc] initWithTarget:backView action:@selector(tapOneAct:)];
+        [backView addGestureRecognizer:backView.singleTapGes];
+
+        backView.doubleTapGes =[[UITapGestureRecognizer alloc] initWithTarget:backView action:@selector(tapTwoAct:)];
         //双击时触发事件 ,默认值为1
-        manager.doubleTapGes.numberOfTapsRequired = 2;
-        manager.doubleTapGes.delegate = manager;
-        [manager addGestureRecognizer:manager.doubleTapGes];
+        backView.doubleTapGes.numberOfTapsRequired = 2;
+        backView.doubleTapGes.delegate = backView;
+        [backView addGestureRecognizer:backView.doubleTapGes];
         //当单击操作遇到了 双击 操作时，单击失效
-        [manager.singleTapGes requireGestureRecognizerToFail:manager.doubleTapGes];
-        
-        manager.longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:manager
+        [backView.singleTapGes requireGestureRecognizerToFail:backView.doubleTapGes];
+
+        backView.longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:backView
                                                                                     action:@selector(longPressGestureDidFire:)];
-        manager.longPressGestureRecognizer.delegate = manager;
-        [manager addGestureRecognizer:manager.longPressGestureRecognizer];
-        
-        [[NSNotificationCenter defaultCenter] addObserver:manager selector:@selector(applicationEnterBackground) name: UIApplicationDidEnterBackgroundNotification object:nil];
-        
-        manager.scrlooViewArray = [NSMutableArray arrayWithCapacity:3];
-    
+        backView.longPressGestureRecognizer.delegate = backView;
+        [backView addGestureRecognizer:backView.longPressGestureRecognizer];
+
+        [[NSNotificationCenter defaultCenter] addObserver:backView selector:@selector(applicationEnterBackground) name: UIApplicationDidEnterBackgroundNotification object:nil];
+
+        backView.scrlooViewArray = [NSMutableArray arrayWithCapacity:3];
+
     });
-    return manager;
+    return backView;
 }
 
 - (void)dealloc {
@@ -815,7 +833,7 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
     if ( (action == @selector(select:) && self.attributedText) // 需要有文字才能支持选择复制
         || (action == @selector(selectAll:) && self.attributedText)
-        || (action == @selector(copy:) && self.attributedText))
+        || (action == @selector(copyText:) && self.attributedText))
     {
         return YES;
     }
@@ -849,23 +867,24 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
     self.magnifierView.hidden = YES;
     [self showMenuView];
 }
-- (void)copy:(nullable id)sender {
+- (void)copyText:(nullable id)sender {
     if (_startCopyRunItem && _endCopyRunItem) {
-        
+
         NSUInteger loc = _startCopyRunItem.characterRange.location;
         loc = loc<=0?0:loc;
-        
+
         NSUInteger length = _endCopyRunItem.characterRange.location+_endCopyRunItem.characterRange.length - loc;
-        
+
         if (length >= self.attributedText.string.length-loc) {
             length = self.attributedText.string.length-loc;
         }
-        
+
         @autoreleasepool {
             NSRange rangeCopy = NSMakeRange(loc,length);
             NSString *str = [self.attributedText.string substringWithRange:rangeCopy];
             UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
             pasteboard.string = str;
+            NSLog(@"%@",str);
         }
     }
     [self hideView];
@@ -878,8 +897,25 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
                                  _startCopyRunItemY-5,
                                  _lineVerticalMaxWidth,
                                  _endCopyRunItem.withOutMergeBounds.origin.y + _endCopyRunItem.withOutMergeBounds.size.height + 16);
-        [[UIMenuController sharedMenuController] setTargetRect:rect inView:self];
-        [[UIMenuController sharedMenuController] setMenuVisible:YES animated:YES];
+
+        if (_startCopyRunItem.withOutMergeBounds.origin.y == _endCopyRunItem.withOutMergeBounds.origin.y) {
+            self.menuView.center = CGPointMake(_startCopyRunItem.withOutMergeBounds.origin.x + (_endCopyRunItem.withOutMergeBounds.origin.x+kCJYOffset -  _startCopyRunItem.withOutMergeBounds.origin.x)/2.0,_startCopyRunItem.withOutMergeBounds.origin.y -self.menuView.bounds.size.height/2-5);
+        } else {
+            self.menuView.center = CGPointMake(_startCopyRunItem.withOutMergeBounds.origin.x+(self.bounds.size.width - _startCopyRunItem.withOutMergeBounds.origin.x)/2, _startCopyRunItem.withOutMergeBounds.origin.y-self.menuView.bounds.size.height/2-5);
+        }
+        [self addSubview:self.menuView];
+
+        CGRect rect1 = [self.menuView convertRect:self.menuView.bounds toView:CJkeyWindow()];
+//        self.menuView.center = [self.menuView convertPoint:self.menuView.center toView:CJkeyWindow()];
+        [CJkeyWindow() addSubview:self.menuView];
+        self.menuView.frame = rect1;
+        __weak typeof (self) weakSelf = self;
+        self.menuView.didClick = ^{
+            [weakSelf copyText:nil];
+            [weakSelf hideView];
+        };
+//        [[UIMenuController sharedMenuController] setTargetRect:rect inView:self];
+//        [[UIMenuController sharedMenuController] setMenuVisible:YES animated:YES];
     }
 }
 
@@ -898,7 +934,7 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
     }
 }
 
-- (void)setScrollView:(UIView *)view scrollUnable:(BOOL)unable {    
+- (void)setScrollView:(UIView *)view scrollUnable:(BOOL)unable {
     if (view.superview) {
         if ([view.superview isKindOfClass:[UIScrollView class]]) {
             UIScrollView *scrollView = (UIScrollView *)view.superview;
@@ -928,7 +964,7 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
     self.frame = labelFrame;
     [label addSubview:self];
     [label bringSubviewToFront:self];
-    self.magnifierView.hidden = NO;
+//    self.magnifierView.hidden = NO;
     [CJkeyWindow() addSubview:self.magnifierView];
     [self updateMagnifyPoint:point item:runItem];
 }
@@ -950,21 +986,22 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
     self.font = label.font;
     CGRect labelFrame = label.bounds;
     self.frame = labelFrame;
+//    self.frame = CGRectMake(0, 0, labelFrame.size.width, labelFrame.size.height+0);
     _lineVerticalMaxWidth = maxLineWidth;
     _CTLineVerticalLayoutArray = allCTLineVerticalArray;
     _allRunItemArray = allRunItemArray;
     _firstRunItem = [[allRunItemArray firstObject] copy];
     _lastRunItem = [[allRunItemArray lastObject] copy];
-    
+
     _startCopyRunItem = [item copy];
     _endCopyRunItem = _startCopyRunItem;
     [self showCJSelectViewWithPoint:point selectType:ShowAllSelectView item:_startCopyRunItem startCopyRunItem:_startCopyRunItem endCopyRunItem:_startCopyRunItem allCTLineVerticalArray:_CTLineVerticalLayoutArray needShowMagnifyView:NO];
-    
+
     CGRect windowFrame = [label.superview convertRect:self.label.frame toView:CJkeyWindow()];
     self.backWindView.frame = windowFrame;
     self.backWindView.hidden = NO;
     [CJkeyWindow() addSubview:self.backWindView];
-    
+
     [label addSubview:self];
     [label bringSubviewToFront:self];
     [CJkeyWindow() addSubview:self.magnifierView];
@@ -998,13 +1035,15 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
     _startCopyRunItem = nil;
     _endCopyRunItem = nil;
     self.textRangeView.hidden = YES;
+    _menuView.hidden = YES;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"FloatMenuViewHidden" object:nil];
     self.magnifierView.hidden = YES;
     [self.magnifierView removeFromSuperview];
     self.backWindView.hidden = YES;
     [self.backWindView removeFromSuperview];
     [self resignFirstResponder];
     [self removeFromSuperview];
-    [[UIMenuController sharedMenuController] setMenuVisible:NO];
+    //[[UIMenuController sharedMenuController] setMenuVisible:NO];
 }
 
 
@@ -1017,10 +1056,10 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
               needShowMagnifyView:(BOOL)needShowMagnifyView
 {
     //隐藏“选择、全选、复制”菜单
-    [[UIMenuController sharedMenuController] setMenuVisible:NO];
+    //[[UIMenuController sharedMenuController] setMenuVisible:NO];
     //选中部分填充背景色
     [self updateSelectTextRangeViewStartCopyRunItem:startCopyRunItem endCopyRunItem:endCopyRunItem allCTLineVerticalArray:allCTLineVerticalArray];
-    
+
     if (needShowMagnifyView) {
         //更新放大镜的位置
         [self updateMagnifyPoint:point item:item];
@@ -1030,12 +1069,12 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
 //更新放大镜的位置
 - (void)updateMagnifyPoint:(CGPoint)point item:(CJGlyphRunStrokeItem *)item {
     if (item) {
-        
+
         CJCTLineVerticalLayout lineVerticalLayout = item.lineVerticalLayout;
-        
+
         CGFloat selectPointY = item.locBounds.origin.y - 20;
         CGFloat pointToMagnifyY = item.locBounds.origin.y + item.locBounds.size.height/2;
-        
+
         if (lineVerticalLayout.maxImageHeight != 0) {
             CJCTLineLayoutModel *lineLayoutModel = _CTLineVerticalLayoutArray[item.lineVerticalLayout.line];
             if (lineVerticalLayout.verticalAlignment == CJVerticalAlignmentTop) {
@@ -1049,13 +1088,13 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
             }
             selectPointY = pointToMagnifyY - 20;
         }
-        
+
         // Y 值往上偏移20 像素
         CGPoint selectPoint = CGPointMake(point.x, selectPointY);
         CGPoint pointToMagnify = CGPointMake(point.x, pointToMagnifyY);
         selectPoint = [self convertPoint:selectPoint toView:CJkeyWindow()];
         pointToMagnify = [self convertPoint:pointToMagnify toView:CJkeyWindow()];
-        self.magnifierView.hidden = NO;
+//        self.magnifierView.hidden = NO;
         [self.magnifierView updateMagnifyPoint:pointToMagnify showMagnifyViewIn:selectPoint];
     }
     else {
@@ -1064,10 +1103,10 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
         CGPoint pointToMagnify = CGPointMake(point.x, point.y);
         selectPoint = [self convertPoint:selectPoint toView:CJkeyWindow()];
         pointToMagnify = [self convertPoint:pointToMagnify toView:CJkeyWindow()];
-        self.magnifierView.hidden = NO;
+//        self.magnifierView.hidden = NO;
         [self.magnifierView updateMagnifyPoint:pointToMagnify showMagnifyViewIn:selectPoint];
     }
-    
+
 
 }
 
@@ -1078,23 +1117,23 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
                                    endCopyRunItem:(CJGlyphRunStrokeItem *)endCopyRunItem
                            allCTLineVerticalArray:(NSArray *)allCTLineVerticalArray
 {
-    
+
     CGRect frame = self.bounds;
     CGRect headRect = CGRectNull;
     CGRect middleRect = CGRectNull;
     CGRect tailRect = CGRectNull;
-    
+
     CJCTLineLayoutModel *lineLayoutModel = nil;
-    
+
     CGFloat maxWidth = _lineVerticalMaxWidth;
-    
+
     //headRect 坐标
     lineLayoutModel = allCTLineVerticalArray[startCopyRunItem.lineVerticalLayout.line];
     _startCopyRunItemY = lineLayoutModel.selectCopyBackY;
     CGFloat headWidth = maxWidth - startCopyRunItem.withOutMergeBounds.origin.x;
     CGFloat headHeight = lineLayoutModel.selectCopyBackHeight;
     headRect = CGRectMake(startCopyRunItem.withOutMergeBounds.origin.x, _startCopyRunItemY, headWidth, headHeight);
-    
+
     //tailRect 坐标
     lineLayoutModel = allCTLineVerticalArray[endCopyRunItem.lineVerticalLayout.line];
     CGFloat tailWidth = endCopyRunItem.withOutMergeBounds.origin.x+endCopyRunItem.withOutMergeBounds.size.width;
@@ -1106,9 +1145,9 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
         tailHeight = tailHeight + lineLayoutModel.selectCopyBackY - tailY;
     }
     tailRect = CGRectMake(0, tailY, tailWidth, tailHeight);
-    
+
     CGFloat maxHeight = tailY + tailHeight - _startCopyRunItemY;
-    
+
     BOOL differentLine = YES;
     if (startCopyRunItem.lineVerticalLayout.line == endCopyRunItem.lineVerticalLayout.line) {
         differentLine = NO;
@@ -1126,35 +1165,38 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
             middleRect = CGRectMake(0, _startCopyRunItemY+headHeight, maxWidth, maxHeight-headHeight-tailHeight);
         }
     }
-    
+
     [self.textRangeView updateFrame:frame headRect:headRect middleRect:middleRect tailRect:tailRect differentLine:differentLine];
-    
+
     self.textRangeView.hidden = NO;
+    self.menuView.hidden = NO;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"FloatMenuViewShow" object:nil];
     [self bringSubviewToFront:self.textRangeView];
+    [self bringSubviewToFront:self.menuView];
 }
 
 - (CJSelectViewAction)choseSelectView:(CGPoint)point {
     if (self.textRangeView.hidden) {
         return ShowAllSelectView;
     }
-    
-    
+
+
     CJCTLineLayoutModel *lineLayoutModel = nil;
-    
+
     //headRect 坐标
     lineLayoutModel = _CTLineVerticalLayoutArray[_startCopyRunItem.lineVerticalLayout.line];
     _startCopyRunItemY = lineLayoutModel.selectCopyBackY;
     CGFloat headHeight = lineLayoutModel.selectCopyBackHeight;
     CGRect leftRect = CGRectMake(_startCopyRunItem.withOutMergeBounds.origin.x-5, _startCopyRunItemY-10, 10, headHeight+30);
-    
-    
+
+
     //rightRect 坐标
     lineLayoutModel = _CTLineVerticalLayoutArray[_endCopyRunItem.lineVerticalLayout.line];
     CGFloat tailWidth = _endCopyRunItem.withOutMergeBounds.origin.x+_endCopyRunItem.withOutMergeBounds.size.width;
     CGFloat tailHeight = lineLayoutModel.selectCopyBackHeight;
     CGFloat tailY = lineLayoutModel.selectCopyBackY;
     CGRect rightRect = CGRectMake(tailWidth-5, tailY, 10, tailHeight+20);
-    
+
     CJSelectViewAction selectView = [self choseSelectView:point inset:1 leftRect:leftRect rightRect:rightRect time:0];
     return selectView;
 }
@@ -1166,10 +1208,10 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
         return selectView;
     }
     time ++;
-    
+
     BOOL inLeftView = CGRectContainsPoint(CGRectInset(leftRect, inset, inset), point);
     BOOL inRightView = CGRectContainsPoint(CGRectInset(rightRect, inset, inset), point);
-    
+
     if (!inLeftView && !inRightView) {
         //加大点击区域判断
         return [self choseSelectView:point inset:inset+(-0.35) leftRect:leftRect rightRect:rightRect time:time];
@@ -1224,7 +1266,7 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
 - (void)tapTwoAct:(UITapGestureRecognizer *)sender {
     UITouch *touch = objc_getAssociatedObject(self.doubleTapGes, &kAssociatedUITouchKey);
     CGPoint point = [touch locationInView:self];
-    CJGlyphRunStrokeItem *currentItem = [CJSelectCopyManagerView currentItem:point allRunItemArray:_allRunItemArray inset:1];
+    CJGlyphRunStrokeItem *currentItem = [CJBackView currentItem:point allRunItemArray:_allRunItemArray inset:1];
     if (currentItem) {
         _startCopyRunItem = currentItem;
         _endCopyRunItem = currentItem;
@@ -1235,23 +1277,23 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
 
 #pragma mark - UILongPressGestureRecognizer
 - (void)longPressGestureDidFire:(UILongPressGestureRecognizer *)sender {
-    
+
     UITouch *touch = objc_getAssociatedObject(self.longPressGestureRecognizer, &kAssociatedUITouchKey);
     CGPoint point = [touch locationInView:self];
     switch (sender.state) {
         case UIGestureRecognizerStateBegan: {
             //发生长按，显示放大镜
-            CJGlyphRunStrokeItem *currentItem = [CJSelectCopyManagerView currentItem:point allRunItemArray:_allRunItemArray inset:0.5];
+            CJGlyphRunStrokeItem *currentItem = [CJBackView currentItem:point allRunItemArray:_allRunItemArray inset:0.5];
             if (currentItem) {
                 //隐藏“选择、全选、复制”菜单
-                [[UIMenuController sharedMenuController] setMenuVisible:NO];
+                //[[UIMenuController sharedMenuController] setMenuVisible:NO];
                 [self updateMagnifyPoint:point item:currentItem];
             }
             break;
         }
         case UIGestureRecognizerStateEnded:{
             self.magnifierView.hidden = YES;
-            CJGlyphRunStrokeItem *currentItem = [CJSelectCopyManagerView currentItem:point allRunItemArray:_allRunItemArray inset:1.5];
+            CJGlyphRunStrokeItem *currentItem = [CJBackView currentItem:point allRunItemArray:_allRunItemArray inset:1.5];
             if (currentItem) {
                 _startCopyRunItem = currentItem;
                 _endCopyRunItem = currentItem;
@@ -1262,10 +1304,10 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
         }
         case UIGestureRecognizerStateChanged:{
             //长按位置改变，显示放大镜
-            CJGlyphRunStrokeItem *currentItem = [CJSelectCopyManagerView currentItem:point allRunItemArray:_allRunItemArray inset:0.5];
+            CJGlyphRunStrokeItem *currentItem = [CJBackView currentItem:point allRunItemArray:_allRunItemArray inset:0.5];
             if (currentItem) {
                 //隐藏“选择、全选、复制”菜单
-                [[UIMenuController sharedMenuController] setMenuVisible:NO];
+                //[[UIMenuController sharedMenuController] setMenuVisible:NO];
                 [self updateMagnifyPoint:point item:currentItem];
             }
         }
@@ -1301,25 +1343,25 @@ typedef NS_ENUM(NSInteger, CJSelectViewAction) {
     [self becomeFirstResponder];
     _haveMove = YES;
     CGPoint point = [[touches anyObject] locationInView:self];
-    
+
     CJGlyphRunStrokeItem *currentItem = nil;
     //最后一个CTRun选中判断
     CGFloat lastRunItemX = _lastRunItem.withOutMergeBounds.origin.x;
     CGFloat lastRunItemY = _lastRunItem.withOutMergeBounds.origin.y;
     CGFloat lastRunItemHeight = _lastRunItem.withOutMergeBounds.size.height;
     CGFloat lastRunItemWidth = _lastRunItem.withOutMergeBounds.size.width;
-    
+
     if ((point.x >= lastRunItemX + lastRunItemWidth) && (point.y >= lastRunItemY)) {
         currentItem = [_lastRunItem copy];
     }
     else if (point.y > lastRunItemY + lastRunItemHeight + 1) {
         currentItem = [_lastRunItem copy];
     }
-    
+
     if (!currentItem) {
-        currentItem = [CJSelectCopyManagerView currentItem:point allRunItemArray:_allRunItemArray inset:0.5];
+        currentItem = [CJBackView currentItem:point allRunItemArray:_allRunItemArray inset:0.5];
     }
-    
+
     if (currentItem && self.selectViewAction != ShowAllSelectView) {
         CGPoint selectPoint = CGPointMake(point.x, (currentItem.lineVerticalLayout.lineRect.size.height/2)+currentItem.lineVerticalLayout.lineRect.origin.y);
         if (self.selectViewAction == MoveLeftSelectView) {

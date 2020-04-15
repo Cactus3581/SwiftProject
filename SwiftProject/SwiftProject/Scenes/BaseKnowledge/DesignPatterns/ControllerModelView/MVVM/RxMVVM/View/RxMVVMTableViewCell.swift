@@ -10,25 +10,27 @@ import UIKit
 
 class RxMVVMTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var textView: MenuTextView!
+    @IBOutlet weak var label: CJLabel!
     var attributedText: NSAttributedString? {
         didSet {
-            textView.attributedText = attributedText
+            label.attributedText = attributedText
         }
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
         setup()
-        textView.backgroundColor = UIColor.lightGray
-        textView.layoutManager.allowsNonContiguousLayout = true
+        self.contentView.backgroundColor = UIColor.red
 
-        textView.isEditable = false
-//        textView.isScrollEnabled = false // 写了计算高度不对
-        //内容缩进为0（去除左右边距）
-        self.textView.textContainer.lineFragmentPadding = 0
-        //文本边距设为0（去除上下边距）
-        self.textView.textContainerInset = .zero
+        label.backgroundColor = UIColor.lightGray
+        label.numberOfLines = 0
+        //设置垂直对齐方式
+        label.verticalAlignment = .verticalAlignmentCenter
+//        label.text = "dsadasdasds盛大的撒的撒打算；来到拉萨开到拉萨看到了卡到拉萨经典款撒的就撒开的adasd"
+        //支持选择复制
+        label.enableCopy = true
+        self.layer.masksToBounds = false
+        self.selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
