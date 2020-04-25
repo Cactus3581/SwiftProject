@@ -11,7 +11,7 @@
 
 #import "TestBridge.h"
 #import "CJLabel.h"
-#import "CJLabelConfigure.h"
+#import "CJLabelConfig.h"
 #import "CJFloatMenuView.h"
 
 #endif /* SwiftProject_Bridging_Header_h */

@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MeunViewController" customModule="SwiftProject" customModuleProvider="target">
             <connections>
+                <outlet property="cjLabel1" destination="28C-Rr-dYQ" id="LOS-ST-rob"/>
+                <outlet property="clLabel2" destination="bQl-U1-4Ds" id="si1-mU-QmP"/>
                 <outlet property="label" destination="RaN-ho-l9G" id="1gS-JP-A67"/>
                 <outlet property="responsiveView" destination="2CB-Pt-Ctf" id="H3q-jW-VuI"/>
                 <outlet property="textView" destination="SsO-VI-C2S" id="yCY-zZ-6qn"/>
@@ -21,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2CB-Pt-Ctf" customClass="ResponsiveView" customModule="SwiftProject" customModuleProvider="target">
-                    <rect key="frame" x="30" y="313" width="200" height="200"/>
+                    <rect key="frame" x="20" y="335" width="200" height="200"/>
                     <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="dZw-WW-y27"/>
@@ -34,8 +36,20 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SsO-VI-C2S" customClass="MenuTextView" customModule="SwiftProject" customModuleProvider="target">
-                    <rect key="frame" x="150" y="135" width="244" height="128"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28C-Rr-dYQ" customClass="CJLabel">
+                    <rect key="frame" x="30" y="105" width="364" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQl-U1-4Ds" customClass="CJLabel">
+                    <rect key="frame" x="30" y="146" width="364" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SsO-VI-C2S" customClass="MenuTextView" customModule="SwiftProject" customModuleProvider="target">
+                    <rect key="frame" x="30" y="248" width="374" height="128"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="128" id="9Gj-HR-ELc"/>
@@ -48,12 +62,18 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="SsO-VI-C2S" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="150" id="2GB-vn-1V9"/>
+                <constraint firstItem="SsO-VI-C2S" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="2GB-vn-1V9"/>
+                <constraint firstItem="bQl-U1-4Ds" firstAttribute="trailing" secondItem="28C-Rr-dYQ" secondAttribute="trailing" id="4Ij-iU-VRi"/>
+                <constraint firstItem="28C-Rr-dYQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="92O-Xd-iz4"/>
+                <constraint firstItem="2CB-Pt-Ctf" firstAttribute="top" secondItem="SsO-VI-C2S" secondAttribute="bottom" constant="20" id="97u-pV-mxX"/>
+                <constraint firstItem="bQl-U1-4Ds" firstAttribute="leading" secondItem="28C-Rr-dYQ" secondAttribute="leading" id="D8u-Ec-WNL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SsO-VI-C2S" secondAttribute="trailing" constant="20" id="M2S-c9-wiT"/>
-                <constraint firstItem="SsO-VI-C2S" firstAttribute="top" secondItem="RaN-ho-l9G" secondAttribute="bottom" constant="50" id="Q5f-me-OHh"/>
+                <constraint firstItem="SsO-VI-C2S" firstAttribute="top" secondItem="bQl-U1-4Ds" secondAttribute="bottom" constant="20" id="RPU-rE-Chq"/>
                 <constraint firstItem="RaN-ho-l9G" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="WDZ-EB-DP8"/>
-                <constraint firstItem="2CB-Pt-Ctf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="dFs-TO-6ai"/>
-                <constraint firstItem="2CB-Pt-Ctf" firstAttribute="top" secondItem="SsO-VI-C2S" secondAttribute="bottom" constant="50" id="oos-tb-O48"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="28C-Rr-dYQ" secondAttribute="trailing" constant="20" id="c11-YD-Cwi"/>
+                <constraint firstItem="2CB-Pt-Ctf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="dFs-TO-6ai"/>
+                <constraint firstItem="bQl-U1-4Ds" firstAttribute="top" secondItem="28C-Rr-dYQ" secondAttribute="bottom" constant="20" id="q5z-4z-fHP"/>
+                <constraint firstItem="28C-Rr-dYQ" firstAttribute="top" secondItem="RaN-ho-l9G" secondAttribute="bottom" constant="20" id="qxV-ol-lMA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RaN-ho-l9G" secondAttribute="trailing" constant="20" id="scC-D0-w3y"/>
                 <constraint firstItem="RaN-ho-l9G" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="tQj-Ok-BOS"/>
             </constraints>

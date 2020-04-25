@@ -44,7 +44,7 @@ class RxSwiftViewController: BaseViewController {
     }
     
     //MARK:创建序列
-    func creatObservable() {
+    func creatObservable() -> Single<Any>{
         
         // 参数：创建序列时定义一个参数类型，block内部观察者调用方法时传递这个类型的参数，监听时拿到的就是这个参数
         let json: Observable<Any> = Observable.create { (observer) -> Disposable in
@@ -82,9 +82,11 @@ class RxSwiftViewController: BaseViewController {
         })
             .disposed(by: disposeBag)
         
-        // 转成Single序列
-        json.asSingle().do(onSuccess: { _ in
-        })
+//        // 转成Single序列
+//        json.asSingle().do(onSuccess: { _ in
+//        })
+
+        return  json.asSingle()
 
 
 
@@ -399,7 +401,6 @@ class RxSwiftViewController: BaseViewController {
          
          不会产生 error 事件
          一定在 MainScheduler 订阅（主线程订阅）
-         一定在 MainScheduler 监听（主线程监听）
          共享附加作用
          
          */
@@ -623,54 +624,5 @@ class RxSwiftViewController: BaseViewController {
     }
     
     
-    //MARK:常用例子
-    func other() {
-        
-        
-        //多个任务之间有依赖关系
-        /// 用 Rx 封装接口
-        //        enum API {
-        //            /// 通过用户名密码取得一个 token
-        //            static func token(username: String, password: String) -> Observable<String> {
-        //                return ""
-        //            }
-        //
-        //            /// 通过 token 取得用户信息
-        //            static func userInfo(token: String) -> Observable<NSDictionary> {
-        //                return ["":""]
-        //            }
-        //        }
-        //
-        //        /// 通过用户名和密码获取用户信息
-        //        API.token(username: "beeth0ven", password: "987654321")
-        //            .flatMapLatest(API.userInfo)
-        //            .subscribe(onNext: { userInfo in
-        //                print("获取用户信息成功: \(userInfo)")
-        //            }, onError: { error in
-        //                print("获取用户信息失败: \(error)")
-        //            })
-        //            .disposed(by: disposeBag)
-        //
-        //        //MARK：等待多个并发任务完成后处理结果
-        //        /// 用 Rx 封装接口
-        //        enum API1 {
-        //            /// 取得老师的详细信息
-        //            static func teacher(teacherId: Int) -> Observable<String> {}
-        //
-        //            /// 取得老师的评论
-        //            static func teacherComments(teacherId: Int) -> Observable<[String]> { }
-        //        }
-        //
-        //        /// 同时取得老师信息和老师评论
-        //        Observable.zip(
-        //              API1.teacher(teacherId: 10000),
-        //              API1.teacherComments(teacherId: 10000)
-        //            ).subscribe(onNext: { (teacher, comments) in
-        //                print("获取老师信息成功: \(teacher)")
-        //                print("获取老师评论成功: \(comments.count) 条")
-        //            }, onError: { error in
-        //                print("获取老师信息或评论失败: \(error)")
-        //            })
-        //            .disposed(by: disposeBag)
-    }
+
 }

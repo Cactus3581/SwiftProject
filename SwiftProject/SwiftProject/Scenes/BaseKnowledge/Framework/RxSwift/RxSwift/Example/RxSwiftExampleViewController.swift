@@ -128,6 +128,57 @@ class RxSwiftExampleViewController: BaseViewController {
                 .asCompletable()
         })
     }
+
+    //MARK:常用例子
+    func other() {
+
+
+        //多个任务之间有依赖关系
+        /// 用 Rx 封装接口
+        //        enum API {
+        //            /// 通过用户名密码取得一个 token
+        //            static func token(username: String, password: String) -> Observable<String> {
+        //                return ""
+        //            }
+        //
+        //            /// 通过 token 取得用户信息
+        //            static func userInfo(token: String) -> Observable<NSDictionary> {
+        //                return ["":""]
+        //            }
+        //        }
+        //
+        //        /// 通过用户名和密码获取用户信息
+        //        API.token(username: "beeth0ven", password: "987654321")
+        //            .flatMapLatest(API.userInfo)
+        //            .subscribe(onNext: { userInfo in
+        //                print("获取用户信息成功: \(userInfo)")
+        //            }, onError: { error in
+        //                print("获取用户信息失败: \(error)")
+        //            })
+        //            .disposed(by: disposeBag)
+        //
+        //        //MARK：等待多个并发任务完成后处理结果
+        //        /// 用 Rx 封装接口
+        //        enum API1 {
+        //            /// 取得老师的详细信息
+        //            static func teacher(teacherId: Int) -> Observable<String> {}
+        //
+        //            /// 取得老师的评论
+        //            static func teacherComments(teacherId: Int) -> Observable<[String]> { }
+        //        }
+        //
+        //        /// 同时取得老师信息和老师评论
+        //        Observable.zip(
+        //              API1.teacher(teacherId: 10000),
+        //              API1.teacherComments(teacherId: 10000)
+        //            ).subscribe(onNext: { (teacher, comments) in
+        //                print("获取老师信息成功: \(teacher)")
+        //                print("获取老师评论成功: \(comments.count) 条")
+        //            }, onError: { error in
+        //                print("获取老师信息或评论失败: \(error)")
+        //            })
+        //            .disposed(by: disposeBag)
+    }
     
 }
 

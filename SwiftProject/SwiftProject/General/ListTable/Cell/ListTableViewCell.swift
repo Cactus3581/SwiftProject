@@ -69,6 +69,10 @@ class ListTableViewCell: UITableViewCell {
 
         _titleLabel?.backgroundColor = UIColor.red
         _detailLabel?.backgroundColor = UIColor.green
+
+        // 为linkLabel添加手势
+        isUserInteractionEnabled = true
+        addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(showMenu(_:))))
     }
 
     func setModel(_ model: ListModel, indexPath: IndexPath) {

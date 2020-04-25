@@ -6,7 +6,52 @@
 		<key>title</key>
 		<string>RxSwift</string>
 		<key>fileName</key>
-		<string>RxSwiftExampleViewController</string>
+		<string>ListViewController</string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>Observable</string>
+				<key>fileName</key>
+				<string>RxSwiftObservableViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Observer</string>
+				<key>fileName</key>
+				<string>RxSwiftObserverViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Subject</string>
+				<key>fileName</key>
+				<string>RxSwiftSubjectViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Observer</string>
+				<key>fileName</key>
+				<string>RxSwiftObserverViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Cocoa</string>
+				<key>fileName</key>
+				<string>RxSwiftCocoaViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Example</string>
+				<key>fileName</key>
+				<string>RxSwiftCocoaViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>RxSwift</string>
+				<key>fileName</key>
+				<string>RxSwiftViewController</string>
+			</dict>
+		</array>
 	</dict>
 </array>
 </plist>

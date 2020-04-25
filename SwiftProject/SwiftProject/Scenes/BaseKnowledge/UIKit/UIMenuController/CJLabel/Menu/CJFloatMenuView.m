@@ -11,6 +11,10 @@
 NSInteger const FloatMenuViewHeight = 48;
 NSInteger const FloatMenuViewInset = 16;
 
+static CJFloatMenuView *menuView = nil;
+static CGFloat imageViewWidth = 18;
+static CGFloat imageViewHeight = 9;
+
 @interface CJFloatMenuView()
 
 @property (nonatomic, weak) UIView *contentView;
@@ -19,7 +23,6 @@ NSInteger const FloatMenuViewInset = 16;
 
 @end
 
-static CJFloatMenuView *menuView = nil;
 
 @implementation CJFloatMenuView
 
@@ -73,14 +76,14 @@ static CJFloatMenuView *menuView = nil;
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _contentView.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height-12);
+    _contentView.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height-imageViewHeight);
     [_label sizeToFit];
     _label.center = _contentView.center;
-    _imageView.frame = CGRectMake(self.bounds.size.width/2-20/2, self.bounds.size.height-12, 20, 12);
+    _imageView.frame = CGRectMake(self.bounds.size.width/2-imageViewWidth/2, self.bounds.size.height-imageViewHeight, imageViewWidth, imageViewHeight);
 }
 
 - (void)show {
-//    [CdJJkeyWindow() addSubview:self];
+    //[CdJJkeyWindow() addSubview:self];
 }
 
 - (void)click {
@@ -90,12 +93,3 @@ static CJFloatMenuView *menuView = nil;
 }
 
 @end
-
-//static inline UIWindow *CdJJkeyWindow() {
-//    UIApplication *app = [UIApplication sharedApplication];
-//    if ([app.delegate respondsToSelector:@selector(window)]) {
-//        return [app.delegate window];
-//    } else {
-//        return [app keyWindow];
-//    }
-//}

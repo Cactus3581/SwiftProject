@@ -13,8 +13,9 @@ class MeunViewController: BaseViewController {
     @IBOutlet weak var label: MeunLabel!
     @IBOutlet weak var textView: MenuTextView!
     @IBOutlet weak var responsiveView: ResponsiveView!
-    weak var label1: CJLabel!
-    weak var label2: CJLabel!
+
+    @IBOutlet weak var cjLabel1: CJLabel!
+    @IBOutlet weak var clLabel2: CJLabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,33 +31,19 @@ class MeunViewController: BaseViewController {
     }
 
     func testCLLabel() {
-        let label = CJLabel.init()
-        self.label1 = label
-        label.backgroundColor = UIColor.green
-        label.numberOfLines = 0
-        self.view.addSubview(label)
-        label.snp.makeConstraints { (make) in
-            make.leading.equalToSuperview().offset(30)
-            make.trailing.equalToSuperview().offset(-30)
-            make.top.equalTo(self.label.snp.bottom).offset(30)
-        }
-        label.verticalAlignment = .verticalAlignmentCenter
-        label.text = "dsadasdasds盛大的撒的撒打算；来到拉萨开到拉萨看到了卡到拉萨经典款撒的就撒开的adasddsadasdasds盛大的撒的撒打算；来到拉萨开到拉萨看到了卡到拉萨经典款撒的就撒开的adasd"
-        label.enableCopy = true
+        cjLabel1.backgroundColor = UIColor.green
+        cjLabel1.numberOfLines = 0
 
-        let label1 = CJLabel.init()
-        self.label2 = label1
-        label1.backgroundColor = UIColor.green
-        label1.numberOfLines = 0
-        self.view.addSubview(label1)
-        label1.snp.makeConstraints { (make) in
-            make.leading.equalToSuperview().offset(30)
-            make.trailing.equalToSuperview().offset(-30)
-            make.top.equalTo(label.snp.bottom).offset(30)
-        }
-        label1.verticalAlignment = .verticalAlignmentCenter
-        label1.text = "dsadasdasds盛大的撒的撒打算；来到拉萨开到拉萨看到了卡到拉萨经典款撒的就撒开的adasddsadasdasds盛大的撒的撒打算；来到拉萨开到拉萨看到了卡到拉萨经典款撒的就撒开的adasd"
-        label1.enableCopy = true
+        cjLabel1.verticalAlignment = .verticalAlignmentCenter
+        cjLabel1.text = "dsadasdasds盛大的撒的撒打算；来到拉萨开到拉萨看到了卡到拉萨经典款撒的就撒开的adasddsadasdasds盛大的撒的撒打算；来到拉萨开到拉萨看到了卡到拉萨经典款撒的就撒开的adasd"
+        cjLabel1.enableCopy = true
+
+        clLabel2.backgroundColor = UIColor.green
+        clLabel2.numberOfLines = 0
+        clLabel2.verticalAlignment = .verticalAlignmentCenter
+        clLabel2.text = "dsadasdasds盛大的撒的撒打算；来到拉萨开到拉萨看到了卡到拉萨经典款撒的就撒开的adasddsadasdasds盛大的撒的撒打算；来到拉萨开到拉萨看到了卡到拉萨经典款撒的就撒开的adasd"
+        clLabel2.enableCopy = true
+        clLabel2.isHidden = true
     }
 
     func testResponsiveView() {
@@ -106,8 +93,11 @@ class MeunViewController: BaseViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: { (context) in
-            self.label1.text = "dsadasdasds盛大的撒的撒打算；来到拉萨开到拉萨看到了卡到拉萨经典款撒的就撒开的adasddsadasdasds盛大的撒的撒打算；来到拉萨开到拉萨看到了卡到拉萨经典款撒的就撒开的adasd"
-            self.label2.text = "dsadasdasds盛大的撒的撒打算；来到拉萨开到拉萨看到了卡到拉萨经典款撒的就撒开的adasddsadasdasds盛大的撒的撒打算；来到拉萨开到拉萨看到了卡到拉萨经典款撒的就撒开的adasd"
+            self.cjLabel1.text = "dsadasdasds盛大的撒的撒打算；来到拉萨开到拉萨看到了卡到拉萨经典款撒的就撒开的adasddsadasdasds盛大的撒的撒打算；来到拉萨开到拉萨看到了卡到拉萨经典款撒的就撒开的adasd"
+            self.clLabel2.text = "dsadasdasds盛大的撒的撒打算；来到拉萨开到拉萨看到了卡到拉萨经典款撒的就撒开的adasddsadasdasds盛大的撒的撒打算；来到拉萨开到拉萨看到了卡到拉萨经典款撒的就撒开的adasd"
+            self.cjLabel1.setNeedsDisplay()
+            self.clLabel2.setNeedsDisplay()
+
 
         }) { (context) in
 

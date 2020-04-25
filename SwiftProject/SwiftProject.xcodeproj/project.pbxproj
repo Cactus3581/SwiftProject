@@ -59,6 +59,8 @@
 		013C7D3923B8604500804143 /* MVCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C7D3823B8604500804143 /* MVCView.swift */; };
 		013C7D3C23B87B1700804143 /* MVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C7D3B23B87B1700804143 /* MVVMViewModel.swift */; };
 		013D09F823BE281A0050F15A /* FunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D09F723BE281A0050F15A /* FunctionViewController.swift */; };
+		0149AA352451F44100F76D70 /* CJWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0149AA342451F44100F76D70 /* CJWindowView.m */; };
+		014BCA762452CD0F004DA58B /* CJPicAreaBackGroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 014BCA752452CD0F004DA58B /* CJPicAreaBackGroundView.m */; };
 		014C81E62424F6CC007129AD /* UserProfilePhoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014C81E52424F6CC007129AD /* UserProfilePhoneTableViewCell.swift */; };
 		0156813023BE28F100B42FB9 /* ProtocolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156812F23BE28F100B42FB9 /* ProtocolViewController.swift */; };
 		01569B9D243319DA004879E9 /* NSAttributedStringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01569B9B243319DA004879E9 /* NSAttributedStringViewController.xib */; };
@@ -84,6 +86,14 @@
 		0182B7D0241A86F00033BF0A /* MVVMListCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182B7CF241A86F00033BF0A /* MVVMListCourseTableViewCell.swift */; };
 		0182B7D2241A881E0033BF0A /* MVVMListSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182B7D1241A881E0033BF0A /* MVVMListSessionViewModel.swift */; };
 		0182B7D4241A882B0033BF0A /* MVVMListSecCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182B7D3241A882B0033BF0A /* MVVMListSecCellViewModel.swift */; };
+		0183AD0F244B42C300355346 /* RxSwiftObservableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183AD0D244B42C300355346 /* RxSwiftObservableViewController.swift */; };
+		0183AD10244B42C300355346 /* RxSwiftObservableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0183AD0E244B42C300355346 /* RxSwiftObservableViewController.xib */; };
+		0183AD17244B431C00355346 /* RxSwiftSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183AD15244B431C00355346 /* RxSwiftSubjectViewController.swift */; };
+		0183AD18244B431C00355346 /* RxSwiftSubjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0183AD16244B431C00355346 /* RxSwiftSubjectViewController.xib */; };
+		0183AD1B244B432F00355346 /* RxSwiftObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183AD19244B432F00355346 /* RxSwiftObserverViewController.swift */; };
+		0183AD1C244B432F00355346 /* RxSwiftObserverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0183AD1A244B432F00355346 /* RxSwiftObserverViewController.xib */; };
+		0183AD20244B453D00355346 /* RxSwiftCocoaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183AD1E244B453D00355346 /* RxSwiftCocoaViewController.swift */; };
+		0183AD21244B453D00355346 /* RxSwiftCocoaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0183AD1F244B453D00355346 /* RxSwiftCocoaViewController.xib */; };
 		0188AC7E242A3FA300BA7654 /* UserProfileThreePointsItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0188AC7D242A3FA300BA7654 /* UserProfileThreePointsItemViewModel.swift */; };
 		0188AC82242A4DCD00BA7654 /* UserProfileArray.json in Resources */ = {isa = PBXBuildFile; fileRef = 0188AC81242A4DCD00BA7654 /* UserProfileArray.json */; };
 		0192A6C0242270110015F9CD /* MVVMListSectionDict.json in Resources */ = {isa = PBXBuildFile; fileRef = 0192A6BF242270110015F9CD /* MVVMListSectionDict.json */; };
@@ -113,7 +123,7 @@
 		01A3A40923BF5A55003FEA19 /* AccessControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A3A40823BF5A55003FEA19 /* AccessControlViewController.swift */; };
 		01A3A40C23BF6218003FEA19 /* AdvancedOperatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A3A40B23BF6218003FEA19 /* AdvancedOperatorViewController.swift */; };
 		01A51634244591D200AC92E3 /* CJLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A51631244591D100AC92E3 /* CJLabel.m */; };
-		01A51635244591D200AC92E3 /* CJLabelConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A51633244591D200AC92E3 /* CJLabelConfigure.m */; };
+		01A51635244591D200AC92E3 /* CJLabelConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A51633244591D200AC92E3 /* CJLabelConfig.m */; };
 		01A545BB2437208800D6CB5F /* MeunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A545B92437208800D6CB5F /* MeunViewController.swift */; };
 		01A545BC2437208800D6CB5F /* MeunViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A545BA2437208800D6CB5F /* MeunViewController.xib */; };
 		01A550BE2428649500472B6A /* UserProfileNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A550BD2428649500472B6A /* UserProfileNetWork.swift */; };
@@ -138,6 +148,11 @@
 		01C01BB123BDE699008B2D9E /* EnumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C01BB023BDE699008B2D9E /* EnumViewController.swift */; };
 		01C01BB423BDEA97008B2D9E /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C01BB323BDEA97008B2D9E /* ClosureViewController.swift */; };
 		01C0DCB623FC08610069FF78 /* ProtocolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156812F23BE28F100B42FB9 /* ProtocolViewController.swift */; };
+		01C5B6252451E5E000978974 /* CJSelectTextRangeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C5B6242451E5E000978974 /* CJSelectTextRangeView.m */; };
+		01C5B6282451E7C800978974 /* CJCTLineLayoutModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C5B6272451E7C800978974 /* CJCTLineLayoutModel.m */; };
+		01C5B62B2451E80200978974 /* CJLabelRangeContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C5B62A2451E80200978974 /* CJLabelRangeContainerView.m */; };
+		01C5B62E2451E89600978974 /* CJLabelLinkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C5B62D2451E89600978974 /* CJLabelLinkModel.m */; };
+		01C5B6312451E8C600978974 /* CJGlyphRunStrokeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C5B6302451E8C600978974 /* CJGlyphRunStrokeItem.m */; };
 		01D38A0C241A770E00F6D74D /* MVVMListSecViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D389FD241A770E00F6D74D /* MVVMListSecViewModel.swift */; };
 		01D38A0D241A770E00F6D74D /* MVVMListSecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D389FF241A770E00F6D74D /* MVVMListSecViewController.swift */; };
 		01D38A0E241A770E00F6D74D /* MVVMListSecModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D38A01241A770E00F6D74D /* MVVMListSecModel.swift */; };
@@ -255,6 +270,10 @@
 		013C7D3823B8604500804143 /* MVCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCView.swift; sourceTree = "<group>"; };
 		013C7D3B23B87B1700804143 /* MVVMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewModel.swift; sourceTree = "<group>"; };
 		013D09F723BE281A0050F15A /* FunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionViewController.swift; sourceTree = "<group>"; };
+		0149AA332451F44100F76D70 /* CJWindowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJWindowView.h; sourceTree = "<group>"; };
+		0149AA342451F44100F76D70 /* CJWindowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJWindowView.m; sourceTree = "<group>"; };
+		014BCA742452CD0F004DA58B /* CJPicAreaBackGroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJPicAreaBackGroundView.h; sourceTree = "<group>"; };
+		014BCA752452CD0F004DA58B /* CJPicAreaBackGroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJPicAreaBackGroundView.m; sourceTree = "<group>"; };
 		014C81E52424F6CC007129AD /* UserProfilePhoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePhoneTableViewCell.swift; sourceTree = "<group>"; };
 		0156812F23BE28F100B42FB9 /* ProtocolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolViewController.swift; sourceTree = "<group>"; tabWidth = 3; };
 		01569B9B243319DA004879E9 /* NSAttributedStringViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NSAttributedStringViewController.xib; sourceTree = "<group>"; };
@@ -280,6 +299,14 @@
 		0182B7CF241A86F00033BF0A /* MVVMListCourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMListCourseTableViewCell.swift; sourceTree = "<group>"; };
 		0182B7D1241A881E0033BF0A /* MVVMListSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSessionViewModel.swift; sourceTree = "<group>"; };
 		0182B7D3241A882B0033BF0A /* MVVMListSecCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSecCellViewModel.swift; sourceTree = "<group>"; };
+		0183AD0D244B42C300355346 /* RxSwiftObservableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftObservableViewController.swift; sourceTree = "<group>"; };
+		0183AD0E244B42C300355346 /* RxSwiftObservableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxSwiftObservableViewController.xib; sourceTree = "<group>"; };
+		0183AD15244B431C00355346 /* RxSwiftSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftSubjectViewController.swift; sourceTree = "<group>"; };
+		0183AD16244B431C00355346 /* RxSwiftSubjectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxSwiftSubjectViewController.xib; sourceTree = "<group>"; };
+		0183AD19244B432F00355346 /* RxSwiftObserverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftObserverViewController.swift; sourceTree = "<group>"; };
+		0183AD1A244B432F00355346 /* RxSwiftObserverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxSwiftObserverViewController.xib; sourceTree = "<group>"; };
+		0183AD1E244B453D00355346 /* RxSwiftCocoaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftCocoaViewController.swift; sourceTree = "<group>"; };
+		0183AD1F244B453D00355346 /* RxSwiftCocoaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxSwiftCocoaViewController.xib; sourceTree = "<group>"; };
 		0188AC7D242A3FA300BA7654 /* UserProfileThreePointsItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileThreePointsItemViewModel.swift; sourceTree = "<group>"; };
 		0188AC81242A4DCD00BA7654 /* UserProfileArray.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserProfileArray.json; sourceTree = "<group>"; };
 		0192A6BF242270110015F9CD /* MVVMListSectionDict.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MVVMListSectionDict.json; sourceTree = "<group>"; };
@@ -308,10 +335,10 @@
 		01A3A40523BF5A3C003FEA19 /* MemorySafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorySafeViewController.swift; sourceTree = "<group>"; };
 		01A3A40823BF5A55003FEA19 /* AccessControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessControlViewController.swift; sourceTree = "<group>"; };
 		01A3A40B23BF6218003FEA19 /* AdvancedOperatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedOperatorViewController.swift; sourceTree = "<group>"; };
-		01A51630244591D100AC92E3 /* CJLabelConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLabelConfigure.h; sourceTree = "<group>"; };
+		01A51630244591D100AC92E3 /* CJLabelConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLabelConfig.h; sourceTree = "<group>"; };
 		01A51631244591D100AC92E3 /* CJLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLabel.m; sourceTree = "<group>"; };
 		01A51632244591D200AC92E3 /* CJLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJLabel.h; sourceTree = "<group>"; };
-		01A51633244591D200AC92E3 /* CJLabelConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLabelConfigure.m; sourceTree = "<group>"; };
+		01A51633244591D200AC92E3 /* CJLabelConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLabelConfig.m; sourceTree = "<group>"; };
 		01A545B92437208800D6CB5F /* MeunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeunViewController.swift; sourceTree = "<group>"; };
 		01A545BA2437208800D6CB5F /* MeunViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeunViewController.xib; sourceTree = "<group>"; };
 		01A550BD2428649500472B6A /* UserProfileNetWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileNetWork.swift; sourceTree = "<group>"; };
@@ -335,6 +362,16 @@
 		01BFFC74242DA501004AA94B /* UserProfileTagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTagsView.swift; sourceTree = "<group>"; };
 		01C01BB023BDE699008B2D9E /* EnumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumViewController.swift; sourceTree = "<group>"; };
 		01C01BB323BDEA97008B2D9E /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
+		01C5B6232451E5E000978974 /* CJSelectTextRangeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJSelectTextRangeView.h; sourceTree = "<group>"; };
+		01C5B6242451E5E000978974 /* CJSelectTextRangeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJSelectTextRangeView.m; sourceTree = "<group>"; };
+		01C5B6262451E7C800978974 /* CJCTLineLayoutModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJCTLineLayoutModel.h; sourceTree = "<group>"; };
+		01C5B6272451E7C800978974 /* CJCTLineLayoutModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJCTLineLayoutModel.m; sourceTree = "<group>"; };
+		01C5B6292451E80200978974 /* CJLabelRangeContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJLabelRangeContainerView.h; sourceTree = "<group>"; };
+		01C5B62A2451E80200978974 /* CJLabelRangeContainerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJLabelRangeContainerView.m; sourceTree = "<group>"; };
+		01C5B62C2451E89600978974 /* CJLabelLinkModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJLabelLinkModel.h; sourceTree = "<group>"; };
+		01C5B62D2451E89600978974 /* CJLabelLinkModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJLabelLinkModel.m; sourceTree = "<group>"; };
+		01C5B62F2451E8C600978974 /* CJGlyphRunStrokeItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJGlyphRunStrokeItem.h; sourceTree = "<group>"; };
+		01C5B6302451E8C600978974 /* CJGlyphRunStrokeItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJGlyphRunStrokeItem.m; sourceTree = "<group>"; };
 		01D389FD241A770E00F6D74D /* MVVMListSecViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMListSecViewModel.swift; sourceTree = "<group>"; };
 		01D389FF241A770E00F6D74D /* MVVMListSecViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMListSecViewController.swift; sourceTree = "<group>"; };
 		01D38A01241A770E00F6D74D /* MVVMListSecModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMListSecModel.swift; sourceTree = "<group>"; };
@@ -824,11 +861,11 @@
 		01453ADE243731580008D999 /* UIMenuController */ = {
 			isa = PBXGroup;
 			children = (
+				01A545B92437208800D6CB5F /* MeunViewController.swift */,
+				01A545BA2437208800D6CB5F /* MeunViewController.xib */,
 				01C4B2F62447622900A90E8F /* CJLabel */,
 				016D7D14243E089A00733053 /* TextView */,
 				016D7D13243E089400733053 /* Label */,
-				01A545B92437208800D6CB5F /* MeunViewController.swift */,
-				01A545BA2437208800D6CB5F /* MeunViewController.xib */,
 			);
 			path = UIMenuController;
 			sourceTree = "<group>";
@@ -863,8 +900,11 @@
 			children = (
 				012FE3022435F7B2008060D5 /* RxSwiftViewController.swift */,
 				012FE3032435F7B2008060D5 /* RxSwiftViewController.xib */,
-				01E9B81E2444038E003CDDEA /* RxSwiftExampleViewController.swift */,
-				01E9B81F2444038E003CDDEA /* RxSwiftExampleViewController.xib */,
+				0183AD1D244B433900355346 /* Cocoa */,
+				0183AD14244B430000355346 /* Subject */,
+				0183AD13244B42F900355346 /* Observer */,
+				0183AD12244B42DD00355346 /* Example */,
+				0183AD11244B42D000355346 /* Observable */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -994,6 +1034,51 @@
 				01E9B3562420D9F800FF618D /* MVVMListSectionImageFooterView.swift */,
 			);
 			path = Image;
+			sourceTree = "<group>";
+		};
+		0183AD11244B42D000355346 /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				0183AD0D244B42C300355346 /* RxSwiftObservableViewController.swift */,
+				0183AD0E244B42C300355346 /* RxSwiftObservableViewController.xib */,
+			);
+			path = Observable;
+			sourceTree = "<group>";
+		};
+		0183AD12244B42DD00355346 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				01E9B81E2444038E003CDDEA /* RxSwiftExampleViewController.swift */,
+				01E9B81F2444038E003CDDEA /* RxSwiftExampleViewController.xib */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		0183AD13244B42F900355346 /* Observer */ = {
+			isa = PBXGroup;
+			children = (
+				0183AD19244B432F00355346 /* RxSwiftObserverViewController.swift */,
+				0183AD1A244B432F00355346 /* RxSwiftObserverViewController.xib */,
+			);
+			path = Observer;
+			sourceTree = "<group>";
+		};
+		0183AD14244B430000355346 /* Subject */ = {
+			isa = PBXGroup;
+			children = (
+				0183AD15244B431C00355346 /* RxSwiftSubjectViewController.swift */,
+				0183AD16244B431C00355346 /* RxSwiftSubjectViewController.xib */,
+			);
+			path = Subject;
+			sourceTree = "<group>";
+		};
+		0183AD1D244B433900355346 /* Cocoa */ = {
+			isa = PBXGroup;
+			children = (
+				0183AD1E244B453D00355346 /* RxSwiftCocoaViewController.swift */,
+				0183AD1F244B453D00355346 /* RxSwiftCocoaViewController.xib */,
+			);
+			path = Cocoa;
 			sourceTree = "<group>";
 		};
 		0188AC7C242A3F7600BA7654 /* ThreePoints */ = {
@@ -1385,12 +1470,42 @@
 			children = (
 				01A51632244591D200AC92E3 /* CJLabel.h */,
 				01A51631244591D100AC92E3 /* CJLabel.m */,
-				01A51630244591D100AC92E3 /* CJLabelConfigure.h */,
-				01A51633244591D200AC92E3 /* CJLabelConfigure.m */,
+				01A51630244591D100AC92E3 /* CJLabelConfig.h */,
+				01A51633244591D200AC92E3 /* CJLabelConfig.m */,
+				014BCA742452CD0F004DA58B /* CJPicAreaBackGroundView.h */,
+				014BCA752452CD0F004DA58B /* CJPicAreaBackGroundView.m */,
+				01C5B63C2451F37E00978974 /* Menu */,
+				01C5B6382451EF6900978974 /* Model */,
+			);
+			path = CJLabel;
+			sourceTree = "<group>";
+		};
+		01C5B6382451EF6900978974 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				01C5B6262451E7C800978974 /* CJCTLineLayoutModel.h */,
+				01C5B6272451E7C800978974 /* CJCTLineLayoutModel.m */,
+				01C5B62C2451E89600978974 /* CJLabelLinkModel.h */,
+				01C5B62D2451E89600978974 /* CJLabelLinkModel.m */,
+				01C5B62F2451E8C600978974 /* CJGlyphRunStrokeItem.h */,
+				01C5B6302451E8C600978974 /* CJGlyphRunStrokeItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		01C5B63C2451F37E00978974 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				01C5B6292451E80200978974 /* CJLabelRangeContainerView.h */,
+				01C5B62A2451E80200978974 /* CJLabelRangeContainerView.m */,
+				01C5B6232451E5E000978974 /* CJSelectTextRangeView.h */,
+				01C5B6242451E5E000978974 /* CJSelectTextRangeView.m */,
+				0149AA332451F44100F76D70 /* CJWindowView.h */,
+				0149AA342451F44100F76D70 /* CJWindowView.m */,
 				01FC29992445FA36002A5340 /* CJFloatMenuView.h */,
 				01FC29982445FA36002A5340 /* CJFloatMenuView.m */,
 			);
-			path = CJLabel;
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		01CABD5A23F3D360009410C3 /* Helpers */ = {
@@ -1937,9 +2052,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0183AD10244B42C300355346 /* RxSwiftObservableViewController.xib in Resources */,
 				0108907F243C93E100DBF606 /* RxMVVMListViewController.xib in Resources */,
+				0183AD21244B453D00355346 /* RxSwiftCocoaViewController.xib in Resources */,
 				0102674D24237B5600CA6D00 /* ImprovingTipCatalog.plist in Resources */,
 				012FE3052435F7B2008060D5 /* RxSwiftViewController.xib in Resources */,
+				0183AD18244B431C00355346 /* RxSwiftSubjectViewController.xib in Resources */,
 				01026740242379B900CA6D00 /* UserProfileDict.json in Resources */,
 				01089083243C93F400DBF606 /* RxMVVMTableViewCell.xib in Resources */,
 				0196CDE923D1888300112AB8 /* SnapViewController.xib in Resources */,
@@ -1947,6 +2065,7 @@
 				0192A6C0242270110015F9CD /* MVVMListSectionDict.json in Resources */,
 				01569B9D243319DA004879E9 /* NSAttributedStringViewController.xib in Resources */,
 				016FE6D923B5DD7800CE8784 /* sql.py in Resources */,
+				0183AD1C244B432F00355346 /* RxSwiftObserverViewController.xib in Resources */,
 				0102674F24237B6A00CA6D00 /* FeatureCatalog.plist in Resources */,
 				010CE4E823B0D6E900AE57A9 /* BasicKnowledgCatalog.plist in Resources */,
 				01EE3A202415288A008ECA89 /* SPSwiftViewController.xib in Resources */,
@@ -2083,6 +2202,7 @@
 				01E15CC923BF583100A69E23 /* MethodViewController.swift in Sources */,
 				016D7D1C243E08EE00733053 /* MeunLabel.swift in Sources */,
 				01D38A0C241A770E00F6D74D /* MVVMListSecViewModel.swift in Sources */,
+				0149AA352451F44100F76D70 /* CJWindowView.m in Sources */,
 				01A51634244591D200AC92E3 /* CJLabel.m in Sources */,
 				019FE1A423C0E9B700B241B1 /* Factory.swift in Sources */,
 				01EA7C0023ABA97600712B20 /* ListTableViewCell.swift in Sources */,
@@ -2096,6 +2216,7 @@
 				01E9B8202444038E003CDDEA /* RxSwiftExampleViewController.swift in Sources */,
 				0195230223B173D600AE491B /* BasicViewController.swift in Sources */,
 				019FE1A223C0E99F00B241B1 /* FactoryViewController.swift in Sources */,
+				01C5B62E2451E89600978974 /* CJLabelLinkModel.m in Sources */,
 				0102673B242379B900CA6D00 /* UserProfileCTAItemViewModel.swift in Sources */,
 				01937ECA2418FF91009BD6AD /* MVVMModel.swift in Sources */,
 				01E2F1302431E30700B52138 /* UserProfileShadowView.swift in Sources */,
@@ -2106,6 +2227,7 @@
 				01026744242379B900CA6D00 /* UserProfileTableViewCellProtocol.swift in Sources */,
 				0197847B242B9AFE009EB2D4 /* UserProfileAliasTableViewCell.swift in Sources */,
 				0102674A242379B900CA6D00 /* UserProfileAssembly.swift in Sources */,
+				0183AD0F244B42C300355346 /* RxSwiftObservableViewController.swift in Sources */,
 				01B24E2C23BF33A500677023 /* GenericsViewController.swift in Sources */,
 				010D6ACB23A9FD8F00B84621 /* CarViewController.swift in Sources */,
 				010D6ACC23A9FD8F00B84621 /* SwinjectViewController.swift in Sources */,
@@ -2123,6 +2245,7 @@
 				0102674B242379B900CA6D00 /* UserProfileViewModelFactory.swift in Sources */,
 				012FE3082435FE9A008060D5 /* HigherOrderFunctionsViewController.swift in Sources */,
 				01937EE324192DEA009BD6AD /* MVVMListTableViewCellProtocol.swift in Sources */,
+				01C5B6252451E5E000978974 /* CJSelectTextRangeView.m in Sources */,
 				01E15CD523BF593300A69E23 /* OptionalChainViewController.swift in Sources */,
 				0182B7C4241A78F40033BF0A /* MVVMListSectionTextFooterView.swift in Sources */,
 				01E15CCF23BF58F300A69E23 /* InitializeViewController.swift in Sources */,
@@ -2135,6 +2258,7 @@
 				014C81E62424F6CC007129AD /* UserProfilePhoneTableViewCell.swift in Sources */,
 				01E9B3572420D9F800FF618D /* MVVMListSectionImageFooterView.swift in Sources */,
 				01A545BB2437208800D6CB5F /* MeunViewController.swift in Sources */,
+				01C5B62B2451E80200978974 /* CJLabelRangeContainerView.m in Sources */,
 				01ADB56823BE290F00EAB005 /* PropertyViewController.swift in Sources */,
 				016D7D1E243E1DC400733053 /* MenuTextView.swift in Sources */,
 				01EA7C0223ABA99700712B20 /* ListModel.swift in Sources */,
@@ -2148,19 +2272,22 @@
 				01EA7C0C23AC69ED00712B20 /* ListViewModel.swift in Sources */,
 				01937EE624193344009BD6AD /* MVVMListAssembly.swift in Sources */,
 				013C7D3923B8604500804143 /* MVCView.swift in Sources */,
+				01C5B6312451E8C600978974 /* CJGlyphRunStrokeItem.m in Sources */,
 				015E177C24275F7000351EA9 /* UserProfileTableViewDelegate.swift in Sources */,
 				01EA7C0923ABAB1300712B20 /* RootNavigationController.swift in Sources */,
 				01D38A0D241A770E00F6D74D /* MVVMListSecViewController.swift in Sources */,
 				015847002423A13000B7BEBE /* UserProfileSectionFooterView.swift in Sources */,
 				01ACCE71243337FB0025C9EA /* String+SPAdd.swift in Sources */,
+				0183AD17244B431C00355346 /* RxSwiftSubjectViewController.swift in Sources */,
 				010D6AD923A9FF6F00B84621 /* TestBridge.m in Sources */,
 				010D6AD223A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.m in Sources */,
 				01ACCE7A243338830025C9EA /* UITableView+SPAdd.swift in Sources */,
-				01A51635244591D200AC92E3 /* CJLabelConfigure.m in Sources */,
+				01A51635244591D200AC92E3 /* CJLabelConfig.m in Sources */,
 				0102673C242379B900CA6D00 /* UserProfileCellViewModel.swift in Sources */,
 				01ACCE6E243337D00025C9EA /* UIColor+SPAdd.swift in Sources */,
 				01E15CD823BF595200A69E23 /* ErrorhandlingViewController.swift in Sources */,
 				0156813023BE28F100B42FB9 /* ProtocolViewController.swift in Sources */,
+				0183AD1B244B432F00355346 /* RxSwiftObserverViewController.swift in Sources */,
 				01E9B3552420D9F000FF618D /* MVVMListSectionImageHeaderView.swift in Sources */,
 				010D6A9223A9FB4A00B84621 /* AppDelegate.swift in Sources */,
 				013C7D3523B8602D00804143 /* MVCModel.swift in Sources */,
@@ -2200,13 +2327,16 @@
 				01E15CCC23BF58D800A69E23 /* SubscriptViewController.swift in Sources */,
 				010D6AC423A9FC6200B84621 /* BaseViewController.swift in Sources */,
 				01937ED2241906B1009BD6AD /* MVVMListViewController.swift in Sources */,
+				01C5B6282451E7C800978974 /* CJCTLineLayoutModel.m in Sources */,
 				01A550C3242864EB00472B6A /* UserProfileTableViewDataSource.swift in Sources */,
 				01D38A0E241A770E00F6D74D /* MVVMListSecModel.swift in Sources */,
 				01E15CD223BF590B00A69E23 /* DeinitViewController.swift in Sources */,
 				0112F9A523BF57B30002788E /* BaseOperatorViewController.swift in Sources */,
+				0183AD20244B453D00355346 /* RxSwiftCocoaViewController.swift in Sources */,
 				01937ECC2418FFA5009BD6AD /* MVVMView.swift in Sources */,
 				01B24E2F23BF358100677023 /* DataTypeConvertViewController.swift in Sources */,
 				0112F9AB23BF57E30002788E /* CollectionTypesViewController.swift in Sources */,
+				014BCA762452CD0F004DA58B /* CJPicAreaBackGroundView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
