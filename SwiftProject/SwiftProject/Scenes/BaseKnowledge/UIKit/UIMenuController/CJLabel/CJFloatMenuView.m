@@ -83,7 +83,7 @@ static CGFloat imageViewHeight = 9;
 }
 
 - (void)show {
-    //[CdJJkeyWindow() addSubview:self];
+//    [CdJJkeyWindow() addSubview:self];
 }
 
 - (void)click {
@@ -93,3 +93,4 @@ static CGFloat imageViewHeight = 9;
 }
 
 @end
+

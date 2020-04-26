@@ -1,6 +1,6 @@
 //
 //  CJLabel.m
-//  SwiftProject
+//  CJLabelTest
 //
 //  Created by ChiJinLian on 17/3/31.
 //  Copyright © 2017年 ChiJinLian. All rights reserved.
@@ -8,11 +8,33 @@
 
 #import "CJLabel.h"
 #import <objc/runtime.h>
-#import "CJCTLineLayoutModel.h"
-#import "CJLabelLinkModel.h"
-#import "CJGlyphRunStrokeItem.h"
-#import "CJLabelRangeContainerView.h"
-#import "CJPicAreaBackGroundView.h"
+
+@class CJGlyphRunStrokeItem;
+@class CJSelectView;
+
+NSString * const kCJBackgroundFillColorAttributeName         = @"kCJBackgroundFillColor";
+NSString * const kCJBackgroundStrokeColorAttributeName       = @"kCJBackgroundStrokeColor";
+NSString * const kCJBackgroundLineWidthAttributeName         = @"kCJBackgroundLineWidth";
+NSString * const kCJBackgroundLineCornerRadiusAttributeName  = @"kCJBackgroundLineCornerRadius";
+NSString * const kCJActiveBackgroundFillColorAttributeName   = @"kCJActiveBackgroundFillColor";
+NSString * const kCJActiveBackgroundStrokeColorAttributeName = @"kCJActiveBackgroundStrokeColor";
+NSString * const kCJStrikethroughStyleAttributeName          = @"kCJStrikethroughStyleAttributeName";
+NSString * const kCJStrikethroughColorAttributeName          = @"kCJStrikethroughColorAttributeName";
+NSString * const kCJLinkStringIdentifierAttributesName       = @"kCJLinkStringIdentifierAttributesName";
+NSInteger const kCJPinRoundPointSize = 6;
+
+@interface CJCTRunUrl: NSURL
+
+@property (nonatomic, assign) NSInteger index;
+@property (nonatomic, strong) NSValue *rangeValue;
+
+@end
+
+
+@implementation CJCTRunUrl
+
+@end
+
 
 @interface CJLabel ()<UIGestureRecognizerDelegate>
 
@@ -129,7 +151,7 @@
     if (_oneTapGes) {
         [self removeGestureRecognizer:_oneTapGes];
     }
-    
+
     _delegate = nil;
 }
 
@@ -145,10 +167,10 @@
         self.doubleTapGes.numberOfTapsRequired = 2;
         self.doubleTapGes.delegate = self;
         [self addGestureRecognizer:self.doubleTapGes];
-        
-        //        self.oneTapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOneAct:)];
-        //        self.oneTapGes.delegate = self;
-        //        [self addGestureRecognizer:self.oneTapGes];
+
+//        self.oneTapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOneAct:)];
+//        self.oneTapGes.delegate = self;
+//        [self addGestureRecognizer:self.oneTapGes];
         
         if (_allRunItemArray.count == 0) {
             self.caculateCopySize = YES;
@@ -255,18 +277,18 @@
             
             [attText.string enumerateSubstringsInRange:NSMakeRange(0, [attText length]) options:NSStringEnumerationByComposedCharacterSequences usingBlock:
              ^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
-                CJCTRunUrl *runUrl = nil;
-                if (!runUrl) {
-                    NSString *urlStr = [NSString stringWithFormat:@"https://www.CJLabel%@",@(index)];
-                    runUrl = [CJCTRunUrl URLWithString:urlStr];
-                }
-                runUrl.index = index;
-                runUrl.rangeValue = [NSValue valueWithRange:substringRange];
-                [attText addAttribute:NSLinkAttributeName
-                                value:runUrl
-                                range:substringRange];
-                index++;
-            }];
+                 CJCTRunUrl *runUrl = nil;
+                 if (!runUrl) {
+                     NSString *urlStr = [NSString stringWithFormat:@"https://www.CJLabel%@",@(index)];
+                     runUrl = [CJCTRunUrl URLWithString:urlStr];
+                 }
+                 runUrl.index = index;
+                 runUrl.rangeValue = [NSValue valueWithRange:substringRange];
+                 [attText addAttribute:NSLinkAttributeName
+                                 value:runUrl
+                                 range:substringRange];
+                 index++;
+             }];
             [_allRunItemArray removeAllObjects];
         }
     }
@@ -334,7 +356,7 @@
     _CTLineVerticalLayoutArray = nil;
     _textNumberOfLines = -1;
     _needRedrawn = YES;
-    [[CJLabelRangeContainerView instance] hideView];
+    [[CJBackView instance] hideView];
 }
 
 - (CTFramesetterRef)framesetter {
@@ -542,7 +564,7 @@
                  inRect:(CGRect)rect
                 context:(CGContextRef)c {
     for (UIView *view in self.subviews) {
-        if ([view isKindOfClass:[CJPicAreaBackGroundView class]]) {
+        if ([view isKindOfClass:[CJInsertBackView class]]) {
             [view removeFromSuperview];
         }
     }
@@ -963,8 +985,8 @@
     if (isStrikethrough) {
         if (runStrokeItem.strikethroughStyle != 0) {
             CGFloat strikethroughY = roundedRect.origin.y + runStrokeItem.runBounds.size.height/2 + runStrokeItem.strikethroughStyle/2;
-            //            CGFloat strikethroughX = x + runStrokeItem.strikethroughStyle/2;
-            //            CGFloat strikethroughEndX = x + roundedRect.size.width - runStrokeItem.strikethroughStyle/2;
+//            CGFloat strikethroughX = x + runStrokeItem.strikethroughStyle/2;
+//            CGFloat strikethroughEndX = x + roundedRect.size.width - runStrokeItem.strikethroughStyle/2;
             
             CGFloat strikethroughX = x;
             CGFloat strikethroughEndX = x + roundedRect.size.width;
@@ -1491,7 +1513,7 @@
 - (CJGlyphRunStrokeItem *)adjustItemHeight:(CJGlyphRunStrokeItem *)item height:(CGFloat)ascentAndDescent {
     // runBounds小于 ascent + Descent 时，rect高度上下扩大 1
     if (item.runBounds.size.height < ascentAndDescent) {
-        //        item.runBounds = CGRectInset(item.runBounds,-1,-1);
+//        item.runBounds = CGRectInset(item.runBounds,-1,-1);
         CGRect runBounds = item.runBounds;
         item.runBounds = CGRectMake(runBounds.origin.x+1, runBounds.origin.y-1, runBounds.size.width-2, runBounds.size.height+2);
     }
@@ -1621,8 +1643,8 @@
             if (_currentClickRunStrokeItem.linkBlock) {
                 _currentClickRunStrokeItem.linkBlock(linkModel);
             }
-            if (self.delegate && [self.delegate respondsToSelector:@selector(cjLable:didClickLink:)]) {
-                [self.delegate cjLable:self didClickLink:linkModel];
+            if (self.delegate && [self.delegate respondsToSelector:@selector(CJLable:didClickLink:)]) {
+                [self.delegate CJLable:self didClickLink:linkModel];
             }
             
             _needRedrawn = _currentClickRunStrokeItem.needRedrawn;
@@ -1668,13 +1690,13 @@
         objc_setAssociatedObject(self.doubleTapGes, &kAssociatedUITouchKey, touch, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     else if (gestureRecognizer == self.oneTapGes) {
-        //        objc_setAssociatedObject(self.oneTapGes, &kAssociatedUITouchKey, touch, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+//        objc_setAssociatedObject(self.oneTapGes, &kAssociatedUITouchKey, touch, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return YES;
 }
 
 - (void)tapOneAct:(UITapGestureRecognizer *)sender {
-    
+
 }
 
 - (void)tapTwoAct:(UITapGestureRecognizer *)sender {
@@ -1697,8 +1719,8 @@
         if (_currentClickRunStrokeItem.linkBlock) {
             _currentClickRunStrokeItem.linkBlock(linkModel);
         }
-        if (self.delegate && [self.delegate respondsToSelector:@selector(cjLable:didClickLink:)]) {
-            [self.delegate cjLable:self didClickLink:linkModel];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(CJLable:didClickLink:)]) {
+            [self.delegate CJLable:self didClickLink:linkModel];
         }
         _needRedrawn = _currentClickRunStrokeItem.needRedrawn;
         _currentClickRunStrokeItem = nil;
@@ -1711,7 +1733,7 @@
         if (self.enableCopy) {
             CGPoint point = [touch locationInView:self];
             [self caculateCTRunCopySizeBlock:^(){
-                CJGlyphRunStrokeItem *currentItem = [CJLabelRangeContainerView currentItem:point allRunItemArray:self->_allRunItemArray inset:1];
+                CJGlyphRunStrokeItem *currentItem = [CJBackView currentItem:point allRunItemArray:self->_allRunItemArray inset:1];
                 if (currentItem) {
                     
                     UIViewController *topVC = [self topViewController];
@@ -1724,7 +1746,7 @@
                     }
                     
                     //唤起 选择复制视图
-                    [[CJLabelRangeContainerView instance] showSelectViewInCJLabel:self atPoint:point runItem:[currentItem copy] maxLineWidth:self->_lineVerticalMaxWidth allCTLineVerticalArray:self->_CTLineVerticalLayoutArray allRunItemArray:self->_allRunItemArray hideViewBlock:^(){
+                    [[CJBackView instance]showSelectViewInCJLabel:self atPoint:point runItem:[currentItem copy] maxLineWidth:self->_lineVerticalMaxWidth allCTLineVerticalArray:self->_CTLineVerticalLayoutArray allRunItemArray:self->_allRunItemArray hideViewBlock:^(){
                         self.caculateCopySize = NO;
                         if (navCtr) {
                             navCtr.interactivePopGestureRecognizer.enabled = popGestureEnable;
@@ -1762,8 +1784,8 @@
                     if (_currentClickRunStrokeItem.longPressBlock) {
                         _currentClickRunStrokeItem.longPressBlock(linkModel);
                     }
-                    if (self.delegate && [self.delegate respondsToSelector:@selector(cjLable:didLongPressLink:)]) {
-                        [self.delegate cjLable:self didLongPressLink:linkModel];
+                    if (self.delegate && [self.delegate respondsToSelector:@selector(CJLable:didLongPressLink:)]) {
+                        [self.delegate CJLable:self didLongPressLink:linkModel];
                     }
                 }
                 
@@ -1780,7 +1802,15 @@
                     _afterLongPressEnd = NO;
                     [self caculateCTRunCopySizeBlock:^(){
                         if (!self->_afterLongPressEnd) {
-                            //发生长按
+                            //发生长按，显示放大镜
+                            CJGlyphRunStrokeItem *currentItem = [CJBackView currentItem:point allRunItemArray:self->_allRunItemArray inset:0.5];
+                            if (currentItem) {
+                                [[CJBackView instance] showMagnifyInCJLabel:self magnifyPoint:point runItem:currentItem];
+                            }else {
+                                if (CGRectContainsPoint(self.bounds, point)) {
+                                    [[CJBackView instance] showMagnifyInCJLabel:self magnifyPoint:point runItem:nil];
+                                }
+                            }
                         }
                     }];
                 }
@@ -1790,7 +1820,7 @@
         }
         case UIGestureRecognizerStateEnded:{
             _afterLongPressEnd = YES;
-            [[CJLabelRangeContainerView instance] hideView];
+            [[CJBackView instance] hideView];
             if (isLinkItem) {
                 _longPress = NO;
                 if (_currentClickRunStrokeItem) {
@@ -1802,7 +1832,7 @@
                 }
             }
             if (self.enableCopy) {
-                CJGlyphRunStrokeItem *currentItem = [CJLabelRangeContainerView currentItem:point allRunItemArray:_allRunItemArray inset:1];
+                CJGlyphRunStrokeItem *currentItem = [CJBackView currentItem:point allRunItemArray:_allRunItemArray inset:1];
                 if (currentItem) {
                     
                     UIViewController *topVC = [self topViewController];
@@ -1815,20 +1845,32 @@
                     }
                     
                     //唤起 选择复制视图
-                    [[CJLabelRangeContainerView instance] showSelectViewInCJLabel:self atPoint:point runItem:[currentItem copy] maxLineWidth:_lineVerticalMaxWidth allCTLineVerticalArray:_CTLineVerticalLayoutArray allRunItemArray:_allRunItemArray hideViewBlock:^(){
+                    [[CJBackView instance]showSelectViewInCJLabel:self atPoint:point runItem:[currentItem copy] maxLineWidth:_lineVerticalMaxWidth allCTLineVerticalArray:_CTLineVerticalLayoutArray allRunItemArray:_allRunItemArray hideViewBlock:^(){
                         self.caculateCopySize = NO;
                         if (navCtr) {
                             navCtr.interactivePopGestureRecognizer.enabled = popGestureEnable;
                         }
                     }];
                 }else {
-                    [[CJLabelRangeContainerView instance] hideView];
+                    [[CJBackView instance] hideView];
                 }
             }
             break;
         }
-        case UIGestureRecognizerStateChanged: {
-            break;
+        case UIGestureRecognizerStateChanged:
+        {
+            //只移动放大镜
+            if (self.enableCopy && ![CJBackView instance].magnifierView.hidden) {
+                //发生长按，显示放大镜
+                CJGlyphRunStrokeItem *currentItem = [CJBackView currentItem:point allRunItemArray:_allRunItemArray inset:1];
+                if (currentItem) {
+                    [[CJBackView instance] showMagnifyInCJLabel:self magnifyPoint:point runItem:currentItem];
+                }else {
+                    if (CGRectContainsPoint(self.bounds, point)) {
+                        [[CJBackView instance] showMagnifyInCJLabel:self magnifyPoint:point runItem:nil];
+                    }
+                }
+            }
         }
         default:
             break;
@@ -1891,13 +1933,13 @@
     return caculateSize;
 }
 
-+ (CJLabelConfig *)configureAttributes:(NSDictionary<NSString *, id> *)attributes
++ (CJLabelConfigure *)configureAttributes:(NSDictionary<NSString *, id> *)attributes
                                    isLink:(BOOL)isLink
                      activeLinkAttributes:(NSDictionary<NSString *, id> *)activeLinkAttributes
                                 parameter:(id)parameter
                            clickLinkBlock:(CJLabelLinkModelBlock)clickLinkBlock
                            longPressBlock:(CJLabelLinkModelBlock)longPressBlock {
-    CJLabelConfig *configure = [[CJLabelConfig alloc]init];
+    CJLabelConfigure *configure = [[CJLabelConfigure alloc]init];
     if (configure) {
         configure.attributes = attributes;
         configure.isLink = isLink;
@@ -1909,84 +1951,84 @@
     return configure;
 }
 
-+ (NSMutableAttributedString *)initWithImage:(id)image imageSize:(CGSize)size imagelineAlignment:(CJLabelVerticalAlignment)lineAlignment configure:(CJLabelConfig *)configure {
++ (NSMutableAttributedString *)initWithImage:(id)image imageSize:(CGSize)size imagelineAlignment:(CJLabelVerticalAlignment)lineAlignment configure:(CJLabelConfigure *)configure {
     NSAttributedString *attStr = [[NSAttributedString alloc]init];
     BOOL isLink = configure.isLink;
-    NSMutableAttributedString *result = [CJLabelConfig configureLinkAttributedString:attStr addImage:image imageSize:size atIndex:0 verticalAlignment:lineAlignment linkAttributes:configure.attributes activeLinkAttributes:configure.activeLinkAttributes parameter:configure.parameter clickLinkBlock:configure.clickLinkBlock longPressBlock:configure.longPressBlock islink:isLink];
+    NSMutableAttributedString *result = [CJLabelConfigure configureLinkAttributedString:attStr addImage:image imageSize:size atIndex:0 verticalAlignment:lineAlignment linkAttributes:configure.attributes activeLinkAttributes:configure.activeLinkAttributes parameter:configure.parameter clickLinkBlock:configure.clickLinkBlock longPressBlock:configure.longPressBlock islink:isLink];
     return result;
 }
 
-+ (NSMutableAttributedString *)initWithView:(id)view viewSize:(CGSize)size lineAlignment:(CJLabelVerticalAlignment)lineAlignment configure:(CJLabelConfig *)configure {
++ (NSMutableAttributedString *)initWithView:(id)view viewSize:(CGSize)size lineAlignment:(CJLabelVerticalAlignment)lineAlignment configure:(CJLabelConfigure *)configure {
     NSAttributedString *attStr = [[NSAttributedString alloc]init];
     BOOL isLink = configure.isLink;
     id insertView = view;
     if ([view isKindOfClass:[UIView class]]) {
-        CJPicAreaBackGroundView *insertBackView = [[CJPicAreaBackGroundView alloc]initWithFrame:CGRectMake(0, 0, size.width+1, size.height)];
+        CJInsertBackView *backView = [[CJInsertBackView alloc]initWithFrame:CGRectMake(0, 0, size.width+1, size.height)];
         [(UIView *)view setFrame:CGRectMake(0, 0, size.width, size.height)];
         [(UIView *)view setAutoresizingMask:UIViewAutoresizingNone];
-        insertBackView.userInteractionEnabled = YES;
+        backView.userInteractionEnabled = YES;
         [(UIView *)view setUserInteractionEnabled:YES];
         [(UIView *)view setTag:[kCJInsertViewTag hash]];
-        [insertBackView addSubview:view];
-        insertView = insertBackView;
+        [backView addSubview:view];
+        insertView = backView;
     }
-    NSMutableAttributedString *result = [CJLabelConfig configureLinkAttributedString:attStr addImage:insertView imageSize:CGSizeMake(size.width+1, size.height) atIndex:0 verticalAlignment:lineAlignment linkAttributes:configure.attributes activeLinkAttributes:configure.activeLinkAttributes parameter:configure.parameter clickLinkBlock:configure.clickLinkBlock longPressBlock:configure.longPressBlock islink:isLink];
+    NSMutableAttributedString *result = [CJLabelConfigure configureLinkAttributedString:attStr addImage:insertView imageSize:CGSizeMake(size.width+1, size.height) atIndex:0 verticalAlignment:lineAlignment linkAttributes:configure.attributes activeLinkAttributes:configure.activeLinkAttributes parameter:configure.parameter clickLinkBlock:configure.clickLinkBlock longPressBlock:configure.longPressBlock islink:isLink];
     return result;
 }
 
-+ (NSMutableAttributedString *)insertImageAtAttrString:(NSAttributedString *)attrStr image:(id)image imageSize:(CGSize)size atIndex:(NSUInteger)loc imagelineAlignment:(CJLabelVerticalAlignment)lineAlignment configure:(CJLabelConfig *)configure {
++ (NSMutableAttributedString *)insertImageAtAttrString:(NSAttributedString *)attrStr image:(id)image imageSize:(CGSize)size atIndex:(NSUInteger)loc imagelineAlignment:(CJLabelVerticalAlignment)lineAlignment configure:(CJLabelConfigure *)configure {
     BOOL isLink = configure.isLink;
-    NSMutableAttributedString *result = [CJLabelConfig configureLinkAttributedString:attrStr addImage:image imageSize:size atIndex:loc verticalAlignment:lineAlignment linkAttributes:configure.attributes activeLinkAttributes:configure.activeLinkAttributes parameter:configure.parameter clickLinkBlock:configure.clickLinkBlock longPressBlock:configure.longPressBlock islink:isLink];
+    NSMutableAttributedString *result = [CJLabelConfigure configureLinkAttributedString:attrStr addImage:image imageSize:size atIndex:loc verticalAlignment:lineAlignment linkAttributes:configure.attributes activeLinkAttributes:configure.activeLinkAttributes parameter:configure.parameter clickLinkBlock:configure.clickLinkBlock longPressBlock:configure.longPressBlock islink:isLink];
     return result;
 }
 
-+ (NSMutableAttributedString *)insertViewAtAttrString:(NSAttributedString *)attrStr view:(id)view viewSize:(CGSize)size atIndex:(NSUInteger)loc lineAlignment:(CJLabelVerticalAlignment)lineAlignment configure:(CJLabelConfig *)configure {
++ (NSMutableAttributedString *)insertViewAtAttrString:(NSAttributedString *)attrStr view:(id)view viewSize:(CGSize)size atIndex:(NSUInteger)loc lineAlignment:(CJLabelVerticalAlignment)lineAlignment configure:(CJLabelConfigure *)configure {
     BOOL isLink = configure.isLink;
     id insertView = view;
     if ([view isKindOfClass:[UIView class]]) {
-        CJPicAreaBackGroundView *insertBackView = [[CJPicAreaBackGroundView alloc]initWithFrame:CGRectMake(0, 0, size.width+1, size.height)];
+        CJInsertBackView *backView = [[CJInsertBackView alloc]initWithFrame:CGRectMake(0, 0, size.width+1, size.height)];
         [(UIView *)view setFrame:CGRectMake(0, 0, size.width, size.height)];
         [(UIView *)view setAutoresizingMask:UIViewAutoresizingNone];
-        insertBackView.userInteractionEnabled = YES;
+        backView.userInteractionEnabled = YES;
         [(UIView *)view setUserInteractionEnabled:YES];
         [(UIView *)view setTag:[kCJInsertViewTag hash]];
-        [insertBackView addSubview:view];
-        insertView = insertBackView;
+        [backView addSubview:view];
+        insertView = backView;
     }
-    NSMutableAttributedString *result = [CJLabelConfig configureLinkAttributedString:attrStr addImage:insertView imageSize:CGSizeMake(size.width+1, size.height) atIndex:loc verticalAlignment:lineAlignment linkAttributes:configure.attributes activeLinkAttributes:configure.activeLinkAttributes parameter:configure.parameter clickLinkBlock:configure.clickLinkBlock longPressBlock:configure.longPressBlock islink:isLink];
+    NSMutableAttributedString *result = [CJLabelConfigure configureLinkAttributedString:attrStr addImage:insertView imageSize:CGSizeMake(size.width+1, size.height) atIndex:loc verticalAlignment:lineAlignment linkAttributes:configure.attributes activeLinkAttributes:configure.activeLinkAttributes parameter:configure.parameter clickLinkBlock:configure.clickLinkBlock longPressBlock:configure.longPressBlock islink:isLink];
     return result;
 }
 
-+ (NSMutableAttributedString *)configureAttrString:(NSAttributedString *)attrStr atRange:(NSRange)range configure:(CJLabelConfig *)configure {
++ (NSMutableAttributedString *)configureAttrString:(NSAttributedString *)attrStr atRange:(NSRange)range configure:(CJLabelConfigure *)configure {
     BOOL isLink = configure.isLink;
-    NSMutableAttributedString *result = [CJLabelConfig configureLinkAttributedString:attrStr atRange:range linkAttributes:configure.attributes activeLinkAttributes:configure.activeLinkAttributes parameter:configure.parameter clickLinkBlock:configure.clickLinkBlock longPressBlock:configure.longPressBlock islink:isLink];
+    NSMutableAttributedString *result = [CJLabelConfigure configureLinkAttributedString:attrStr atRange:range linkAttributes:configure.attributes activeLinkAttributes:configure.activeLinkAttributes parameter:configure.parameter clickLinkBlock:configure.clickLinkBlock longPressBlock:configure.longPressBlock islink:isLink];
     return result;
 }
 
-+ (NSMutableAttributedString *)initWithString:(NSString *)string configure:(CJLabelConfig *)configure {
++ (NSMutableAttributedString *)initWithString:(NSString *)string configure:(CJLabelConfigure *)configure {
     NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:string];
     if (configure.attributes && configure.attributes.count > 0) {
         [attrStr setAttributes:configure.attributes range:NSMakeRange(0, attrStr.length)];
     }
     BOOL isLink = configure.isLink;
-    NSMutableAttributedString *result = [CJLabelConfig configureLinkAttributedString:attrStr atRange:NSMakeRange(0, attrStr.length) linkAttributes:configure.attributes activeLinkAttributes:configure.activeLinkAttributes parameter:configure.parameter clickLinkBlock:configure.clickLinkBlock longPressBlock:configure.longPressBlock islink:isLink];
+    NSMutableAttributedString *result = [CJLabelConfigure configureLinkAttributedString:attrStr atRange:NSMakeRange(0, attrStr.length) linkAttributes:configure.attributes activeLinkAttributes:configure.activeLinkAttributes parameter:configure.parameter clickLinkBlock:configure.clickLinkBlock longPressBlock:configure.longPressBlock islink:isLink];
     return result;
 }
 
-+ (NSMutableAttributedString *)initWithNSString:(NSString *)string strIdentifier:(NSString *)strIdentifier configure:(CJLabelConfig *)configure {
-    NSMutableAttributedString *attrStr = [CJLabelConfig linkAttStr:string attributes:configure.attributes identifier:strIdentifier];
++ (NSMutableAttributedString *)initWithNSString:(NSString *)string strIdentifier:(NSString *)strIdentifier configure:(CJLabelConfigure *)configure {
+    NSMutableAttributedString *attrStr = [CJLabelConfigure linkAttStr:string attributes:configure.attributes identifier:strIdentifier];
     BOOL isLink = configure.isLink;
-    NSMutableAttributedString *result = [CJLabelConfig configureLinkAttributedString:attrStr atRange:NSMakeRange(0, attrStr.length) linkAttributes:configure.attributes activeLinkAttributes:configure.activeLinkAttributes parameter:configure.parameter clickLinkBlock:configure.clickLinkBlock longPressBlock:configure.longPressBlock islink:isLink];
+    NSMutableAttributedString *result = [CJLabelConfigure configureLinkAttributedString:attrStr atRange:NSMakeRange(0, attrStr.length) linkAttributes:configure.attributes activeLinkAttributes:configure.activeLinkAttributes parameter:configure.parameter clickLinkBlock:configure.clickLinkBlock longPressBlock:configure.longPressBlock islink:isLink];
     return result;
 }
 
-+ (NSMutableAttributedString *)configureAttrString:(NSAttributedString *)attrStr withString:(NSString *)string sameStringEnable:(BOOL)sameStringEnable configure:(CJLabelConfig *)configure {
++ (NSMutableAttributedString *)configureAttrString:(NSAttributedString *)attrStr withString:(NSString *)string sameStringEnable:(BOOL)sameStringEnable configure:(CJLabelConfigure *)configure {
     BOOL isLink = configure.isLink;
-    NSMutableAttributedString *result = [CJLabelConfig configureLinkAttributedString:attrStr withString:string sameStringEnable:sameStringEnable linkAttributes:configure.attributes activeLinkAttributes:configure.activeLinkAttributes parameter:configure.parameter clickLinkBlock:configure.clickLinkBlock longPressBlock:configure.longPressBlock islink:isLink];
+    NSMutableAttributedString *result = [CJLabelConfigure configureLinkAttributedString:attrStr withString:string sameStringEnable:sameStringEnable linkAttributes:configure.attributes activeLinkAttributes:configure.activeLinkAttributes parameter:configure.parameter clickLinkBlock:configure.clickLinkBlock longPressBlock:configure.longPressBlock islink:isLink];
     return result;
 }
 
-+ (NSMutableAttributedString *)initWithAttributedString:(NSAttributedString *)attributedString strIdentifier:(NSString *)strIdentifier configure:(CJLabelConfig *)configure {
++ (NSMutableAttributedString *)initWithAttributedString:(NSAttributedString *)attributedString strIdentifier:(NSString *)strIdentifier configure:(CJLabelConfigure *)configure {
     
     NSMutableDictionary *linkStrDic = [NSMutableDictionary dictionaryWithCapacity:3];
     NSRange strRange = NSMakeRange(0, attributedString.length);
@@ -1999,14 +2041,14 @@
         [linkStrDic addEntriesFromDictionary:configure.attributes];
     }
     
-    NSMutableAttributedString *attrStr = [CJLabelConfig linkAttStr:attributedString.string attributes:linkStrDic identifier:strIdentifier];
+    NSMutableAttributedString *attrStr = [CJLabelConfigure linkAttStr:attributedString.string attributes:linkStrDic identifier:strIdentifier];
     
     BOOL isLink = configure.isLink;
-    NSMutableAttributedString *result = [CJLabelConfig configureLinkAttributedString:attrStr atRange:NSMakeRange(0, attrStr.length) linkAttributes:configure.attributes activeLinkAttributes:configure.activeLinkAttributes parameter:configure.parameter clickLinkBlock:configure.clickLinkBlock longPressBlock:configure.longPressBlock islink:isLink];
+    NSMutableAttributedString *result = [CJLabelConfigure configureLinkAttributedString:attrStr atRange:NSMakeRange(0, attrStr.length) linkAttributes:configure.attributes activeLinkAttributes:configure.activeLinkAttributes parameter:configure.parameter clickLinkBlock:configure.clickLinkBlock longPressBlock:configure.longPressBlock islink:isLink];
     return result;
 }
 
-+ (NSMutableAttributedString *)configureAttrString:(NSAttributedString *)attrString withAttributedString:(NSAttributedString *)attributedString strIdentifier:(NSString *)strIdentifier sameStringEnable:(BOOL)sameStringEnable configure:(CJLabelConfig *)configure {
++ (NSMutableAttributedString *)configureAttrString:(NSAttributedString *)attrString withAttributedString:(NSAttributedString *)attributedString strIdentifier:(NSString *)strIdentifier sameStringEnable:(BOOL)sameStringEnable configure:(CJLabelConfigure *)configure {
     
     NSRange strRange = NSMakeRange(0, attributedString.length);
     NSDictionary *strDic = nil;
@@ -2019,9 +2061,9 @@
     if (strIdentifier.length > 0) {
         NSAssert([linkIdentifier isEqualToString:strIdentifier], @"\"withAttributedString\"必须包含\"kCJLinkStringIdentifierAttributesName\"属性；并且如果属性值为\"linkIdentifier\"，则必须保证\"[linkIdentifier isEqualToString:strIdentifier]\"");
         
-        NSAttributedString *linkStr = [CJLabelConfig linkAttStr:attributedString.string attributes:strDic identifier:linkIdentifier];
+        NSAttributedString *linkStr = [CJLabelConfigure linkAttStr:attributedString.string attributes:strDic identifier:linkIdentifier];
         BOOL isLink = configure.isLink;
-        NSMutableAttributedString *result = [CJLabelConfig configureLinkAttributedString:attrString withAttString:linkStr sameStringEnable:sameStringEnable linkAttributes:configure.attributes activeLinkAttributes:configure.activeLinkAttributes parameter:configure.parameter clickLinkBlock:configure.clickLinkBlock longPressBlock:configure.longPressBlock islink:isLink];
+        NSMutableAttributedString *result = [CJLabelConfigure configureLinkAttributedString:attrString withAttString:linkStr sameStringEnable:sameStringEnable linkAttributes:configure.attributes activeLinkAttributes:configure.activeLinkAttributes parameter:configure.parameter clickLinkBlock:configure.clickLinkBlock longPressBlock:configure.longPressBlock islink:isLink];
         return result;
     }
     else {
@@ -2030,7 +2072,7 @@
     }
 }
 
-+ (NSMutableAttributedString *)initWithNonLineWrapAttributedString:(NSAttributedString *)attString textInsets:(UIEdgeInsets)textInsets configure:(CJLabelConfig *)configure {
++ (NSMutableAttributedString *)initWithNonLineWrapAttributedString:(NSAttributedString *)attString textInsets:(UIEdgeInsets)textInsets configure:(CJLabelConfigure *)configure {
     
     NSRange strRange = NSMakeRange(0, attString.length);
     NSDictionary *strDic = nil;
@@ -2083,7 +2125,7 @@
 }
 
 + (NSArray <NSValue *>*)sameLinkStringRangeArray:(NSString *)linkString inAttString:(NSAttributedString *)attString {
-    return [CJLabelConfig getLinkStringRangeArray:linkString inAttString:attString];
+    return [CJLabelConfigure getLinkStringRangeArray:linkString inAttString:attString];
 }
 
 + (NSArray <NSValue *>*)samelinkAttStringRangeArray:(NSAttributedString *)linkAttString strIdentifier:(NSString *)strIdentifier inAttString:(NSAttributedString *)attString {
@@ -2092,8 +2134,8 @@
     if (strRange.length > 0) {
         strDic = [linkAttString attributesAtIndex:0 effectiveRange:&strRange];
     }
-    NSAttributedString *linkStr = [CJLabelConfig linkAttStr:linkAttString.string attributes:strDic identifier:strIdentifier];
-    return [CJLabelConfig getLinkAttStringRangeArray:linkStr inAttString:attString];
+    NSAttributedString *linkStr = [CJLabelConfigure linkAttStr:linkAttString.string attributes:strDic identifier:strIdentifier];
+    return [CJLabelConfigure getLinkAttStringRangeArray:linkStr inAttString:attString];
 }
 
 - (NSAttributedString *)removeLinkAtRange:(NSRange)linkRange {

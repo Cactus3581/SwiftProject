@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XcO-VF-CJo" customClass="CJLabel">
-                        <rect key="frame" x="100" y="10" width="170" height="24"/>
+                        <rect key="frame" x="20" y="10" width="280" height="24"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -26,8 +26,8 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="XcO-VF-CJo" secondAttribute="bottom" constant="10" id="99b-8k-pEo"/>
                     <constraint firstItem="XcO-VF-CJo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="HfI-tF-i12"/>
-                    <constraint firstItem="XcO-VF-CJo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="100" id="YL6-me-MBw"/>
-                    <constraint firstAttribute="trailing" secondItem="XcO-VF-CJo" secondAttribute="trailing" constant="50" id="paE-VZ-65M"/>
+                    <constraint firstItem="XcO-VF-CJo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="YL6-me-MBw"/>
+                    <constraint firstAttribute="trailing" secondItem="XcO-VF-CJo" secondAttribute="trailing" constant="20" id="paE-VZ-65M"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
