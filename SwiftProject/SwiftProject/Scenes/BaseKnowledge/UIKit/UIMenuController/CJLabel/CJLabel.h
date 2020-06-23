@@ -5,6 +5,13 @@
 //  Created by ChiJinLian on 17/3/31.
 //  Copyright © 2017年 ChiJinLian. All rights reserved.
 //
+/*
+  ____       _   _               _              _
+ / ___|     | | | |       __ _  | |__     ___  | |
+| |      _  | | | |      / _` | | '_ \   / _ \ | |
+| |___  | |_| | | |___  | (_| | | |_) | |  __/ | |
+ \____|  \___/  |_____|  \__,_| |_.__/   \___| |_|
+ */
 
 #import <UIKit/UIKit.h>
 #import <CoreText/CoreText.h>
@@ -12,7 +19,6 @@
 
 @class CJLabel;
 @class CJLabelLinkModel;
-
 
 @protocol CJLabelLinkDelegate <NSObject>
 @optional
@@ -74,6 +80,7 @@
  * 指定初始化函数为 -initWithFrame: 或 -initWithCoder:
  * 直接调用 init 会忽略相关属性的设置，所以不能直接调用 init 初始化.
  */
+- (instancetype)init NS_UNAVAILABLE;
 
 /**
  * 对应UILabel的attributedText属性
@@ -393,5 +400,3 @@ extern NSString * const kCJStrikethroughColorAttributeName;
  对NSAttributedString文本设置链点属性时候的唯一标识
  */
 extern NSString * const kCJLinkStringIdentifierAttributesName;
-
-extern NSInteger const kCJPinRoundPointSize;

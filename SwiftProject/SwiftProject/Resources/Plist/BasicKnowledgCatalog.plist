@@ -339,6 +339,12 @@
 				<key>fileName</key>
 				<string>MeunViewController</string>
 			</dict>
+			<dict>
+				<key>title</key>
+				<string>Popover</string>
+				<key>fileName</key>
+				<string>PopoverViewController</string>
+			</dict>
 		</array>
 	</dict>
 </array>

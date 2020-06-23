@@ -14,19 +14,28 @@ class RxSwiftSubjectViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        publishRelay()
 
-        // Do any additional setup after loading the view.
     }
 
+    //MARK: - PublishRelay
+    func publishRelay() {
+        let disposeBag = DisposeBag()
+        let relay = PublishRelay<String>()
 
-    /*
-    // MARK: - Navigation
+        relay
+            .subscribe { print("Event:", $0) }
+            .disposed(by: disposeBag)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        relay.accept("🐶")
+        relay.accept("🐱")
+
+        /*
+        输出结果：
+        Event: next(🐶)
+        Event: next(🐱)
+         */
     }
-    */
+
 
 }

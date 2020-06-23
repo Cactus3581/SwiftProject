@@ -35,9 +35,36 @@ class SwiftProjectUITests: XCTestCase {
     func testLaunchPerformance() {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
             // This measures how long it takes to launch your application.
-            measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
+                                    measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
                 XCUIApplication().launch()
             }
+        }
+    }
+
+    func testInboxCardsTwoUpdatesOneDelete() throws {
+
+        let app = XCUIApplication()
+        let cellsOriginalCount = 15
+        app.launchArguments = ["InboxCardsTwoUpdatesOneDeleteMockFeedAPI", String(cellsOriginalCount), String(0)]
+        app.launch()
+//        wait(for: 5)
+//        app.restart()
+    }
+}
+
+extension XCUIApplication {
+    func restart() {
+        self.terminate()
+
+        let defaultTimeout = 5 as TimeInterval
+        if !self.wait(for: .notRunning, timeout: defaultTimeout) {
+            XCTFail("App didn't terminate within the alloted time.")
+        }
+
+        self.launch()
+
+        if !self.wait(for: .runningForeground, timeout: defaultTimeout) {
+            XCTFail("App didn't launch within the alloted time.")
         }
     }
 }

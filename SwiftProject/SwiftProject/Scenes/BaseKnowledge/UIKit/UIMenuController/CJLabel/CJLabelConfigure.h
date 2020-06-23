@@ -16,7 +16,7 @@ static char kAssociatedUITouchKey;
 
 extern NSString * const kCJInsertViewTag;
 
-#define CJLabelIsNull(a) ((a)==nil || (a)==NULL || (NSNull *)(a)== [NSNull null])
+#define CJLabelIsNull(a) ((a)==nil || (a)==NULL || (NSNull *)(a)==[NSNull null])
 #define CJUIRGBColor(r,g,b,a) ([UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a])
 
 typedef void (^CJLabelLinkModelBlock)(CJLabelLinkModel *linkModel);
@@ -274,7 +274,7 @@ typedef struct CJCTLineVerticalLayout CJCTLineVerticalLayout;
  CJSelectBackView 在 window 层，全局只有一个
  CJSelectTextRangeView（选中填充背景色的view）在 CJSelectBackView上，CJMagnifierView（放大镜）则在window上
  */
-@interface CJBackView : UIView
+@interface CJSelectCopyManagerView : UIView
 @property (nonatomic, strong) CJMagnifierView *magnifierView;//放大镜
 + (instancetype)instance;
 
@@ -435,7 +435,7 @@ static inline CGFloat compareMaxNum(CGFloat firstNum, CGFloat secondNum, BOOL ma
     CGFloat result = firstNum;
     if (max) {
         result = (firstNum >= secondNum)?firstNum:secondNum;
-    }else {
+    }else{
         result = (firstNum <= secondNum)?firstNum:secondNum;
     }
     return result;
@@ -468,7 +468,7 @@ static inline BOOL isSameColor(UIColor *color1, UIColor *color2){
     return same;
 }
 
-static inline UIWindow *CJkeyWindow() {
+static inline UIWindow * CJkeyWindow() {
     UIApplication *app = [UIApplication sharedApplication];
     if ([app.delegate respondsToSelector:@selector(window)]) {
         return [app.delegate window];
@@ -476,3 +476,4 @@ static inline UIWindow *CJkeyWindow() {
         return [app keyWindow];
     }
 }
+

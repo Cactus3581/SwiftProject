@@ -90,14 +90,14 @@ class MeunViewController: BaseViewController {
 
     @objc func longPressHandler(sender: UILongPressGestureRecognizer) {
 
-        let menuView = CJFloatMenuView.share()
-        menuView.alpha = 1
-        menuView.isHidden = false
-
-        menuView.center = CGPoint(x: 200, y: 300)
-        menuView.text = "复制"
-        //        menuView.show()
-        self.view.addSubview(menuView)
+//        let menuView = CJFloatMenuView.share()
+//        menuView.alpha = 1
+//        menuView.isHidden = false
+//
+//        menuView.center = CGPoint(x: 200, y: 300)
+//        menuView.text = "复制"
+//        //        menuView.show()
+//        self.view.addSubview(menuView)
 
         //        guard sender.state == .began,
         //            let senderView = sender.view,

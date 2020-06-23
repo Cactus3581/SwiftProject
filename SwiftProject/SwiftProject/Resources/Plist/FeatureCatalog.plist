@@ -51,6 +51,21 @@
 				<key>fileName</key>
 				<string>RxSwiftViewController</string>
 			</dict>
+			<dict>
+				<key>title</key>
+				<string>Operator</string>
+				<key>fileName</key>
+				<string>ListViewController</string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>Operator</string>
+						<key>fileName</key>
+						<string>OperatorViewController</string>
+					</dict>
+				</array>
+			</dict>
 		</array>
 	</dict>
 </array>
