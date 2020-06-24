@@ -291,15 +291,63 @@
 				<array>
 					<dict>
 						<key>title</key>
-						<string>RxSwift</string>
-						<key>fileName</key>
-						<string>RxSwiftViewController</string>
-					</dict>
-					<dict>
-						<key>title</key>
 						<string>SPSwift</string>
 						<key>fileName</key>
 						<string>SPSwiftViewController</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>Observable：可被观察的序列</string>
+						<key>fileName</key>
+						<string>RxObservableViewController</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>Observer：观察者</string>
+						<key>fileName</key>
+						<string>RxObserverViewController</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>Subject：既是可被监听的序列也是观察者</string>
+						<key>fileName</key>
+						<string>RxSubjectViewController</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>Operator：操作符</string>
+						<key>fileName</key>
+						<string>RxOperatorViewController</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>dispose：Observable清除的时机</string>
+						<key>fileName</key>
+						<string>RxDisposableViewController</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>Schedulers：调度器</string>
+						<key>fileName</key>
+						<string>RxSchedulerViewController</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>Error Handling：错误处理</string>
+						<key>fileName</key>
+						<string>RxErrorHandlingViewController</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>替代传统的事件传递</string>
+						<key>fileName</key>
+						<string>RxReplaceCocoaSignalViewController</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>常用例子</string>
+						<key>fileName</key>
+						<string>RxSwiftExampleViewController</string>
 					</dict>
 				</array>
 			</dict>

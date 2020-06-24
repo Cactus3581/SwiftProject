@@ -32,7 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
-        func baseuse(vc:TestViewController) {
+        func baseuse(vc:OldTiewController) {
 
 //            // 通过在类名字后边添加一对圆括号来创建一个类的实例
 //            // 使用点语法来访问实例里的属性和方法。
@@ -62,7 +62,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //            vc.protocolFunc()
 //            vc.errorFunc()
 //            //        vc.optional()
-//            TestViewController.classMethod()
+//            OldTiewController.classMethod()
         }
 
     func sceneDidDisconnect(_ scene: UIScene) {

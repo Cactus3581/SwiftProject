@@ -15,7 +15,25 @@
 				<key>fileName</key>
 				<string>UserProfileViewController</string>
 			</dict>
+			<dict>
+				<key>title</key>
+				<string>Vew的懒加载和移除</string>
+				<key>fileName</key>
+				<string>LazyAndRemoveViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>位移枚举</string>
+				<key>fileName</key>
+				<string>DisplacementEnumerationViewController</string>
+			</dict>
 		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>临时测试</string>
+		<key>fileName</key>
+		<string>TestViewController</string>
 	</dict>
 </array>
 </plist>

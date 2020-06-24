@@ -1,5 +1,5 @@
 //
-//  TestViewController.swift
+//  OldTiewController.swift
 //  SwiftProject
 //
 //  Created by Ryan on 2019/12/23.
@@ -7,10 +7,10 @@
 //
 
 // MARK:创建一个类，在 class后接类名称来创建一个类,声明子类就在它名字后面跟上父类的名字，用冒号分隔
-class TestViewController: BaseViewController {
+class OldTiewController: BaseViewController {
 
 }
-//class TestViewController: BaseViewController {
+//class OldTiewController: BaseViewController {
 //
 //    // MARK:属性/方法，在类里边声明属性与声明常量或者变量的方法是相同的，唯一的区别的它们在类环境下。同样的，方法和函数的声明也是相同的写法。
 //    var ivarNum: Int = 1

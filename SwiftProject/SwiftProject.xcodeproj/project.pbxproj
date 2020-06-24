@@ -32,7 +32,7 @@
 		01089087243C940E00DBF606 /* RxMVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01089086243C940E00DBF606 /* RxMVVMViewModel.swift */; };
 		0109C27C248F41160056D8C2 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0109C27A248F41160056D8C2 /* PopoverViewController.swift */; };
 		0109C27D248F41160056D8C2 /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0109C27B248F41160056D8C2 /* PopoverViewController.xib */; };
-		010CD84623B0C61300AE57A9 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010CD84523B0C61300AE57A9 /* TestViewController.swift */; };
+		010CD84623B0C61300AE57A9 /* OldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010CD84523B0C61300AE57A9 /* OldViewController.swift */; };
 		010CE4E823B0D6E900AE57A9 /* BasicKnowledgCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 010CE4E723B0D6E800AE57A9 /* BasicKnowledgCatalog.plist */; };
 		010D6A9223A9FB4A00B84621 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010D6A9123A9FB4A00B84621 /* AppDelegate.swift */; };
 		010D6A9423A9FB4A00B84621 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010D6A9323A9FB4A00B84621 /* SceneDelegate.swift */; };
@@ -55,10 +55,13 @@
 		01209BEB2455E30200C159BB /* CJLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01209BE72455E30200C159BB /* CJLabel.m */; };
 		01209BEC2455E30200C159BB /* CJLabelConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 01209BEA2455E30200C159BB /* CJLabelConfigure.m */; };
 		012E2EBB23C0EBE5008F6253 /* Produce1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012E2EBA23C0EBE5008F6253 /* Produce1.swift */; };
-		012FE3042435F7B2008060D5 /* RxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012FE3022435F7B2008060D5 /* RxSwiftViewController.swift */; };
-		012FE3052435F7B2008060D5 /* RxSwiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012FE3032435F7B2008060D5 /* RxSwiftViewController.xib */; };
+		012FE3042435F7B2008060D5 /* RxReplaceCocoaSignalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012FE3022435F7B2008060D5 /* RxReplaceCocoaSignalViewController.swift */; };
+		012FE3052435F7B2008060D5 /* RxReplaceCocoaSignalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012FE3032435F7B2008060D5 /* RxReplaceCocoaSignalViewController.xib */; };
 		012FE3082435FE9A008060D5 /* HigherOrderFunctionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012FE3072435FE9A008060D5 /* HigherOrderFunctionsViewController.swift */; };
 		0133CEAD2477AA96006B40D4 /* MockDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CEAC2477AA96006B40D4 /* MockDataTests.swift */; };
+		0135046724A2E5EF00D074F9 /* RxObservableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0135046624A2E5EF00D074F9 /* RxObservableViewController.xib */; };
+		0135047C24A304F900D074F9 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0135047A24A304F900D074F9 /* TestViewController.swift */; };
+		0135047D24A304F900D074F9 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0135047B24A304F900D074F9 /* TestViewController.xib */; };
 		013C7D3123B8600000804143 /* MVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C7D3023B8600000804143 /* MVCViewController.swift */; };
 		013C7D3523B8602D00804143 /* MVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C7D3423B8602D00804143 /* MVCModel.swift */; };
 		013C7D3923B8604500804143 /* MVCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C7D3823B8604500804143 /* MVCView.swift */; };
@@ -73,7 +76,16 @@
 		015CBDE42431A02F00393F1B /* UserProfileConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015CBDE32431A02F00393F1B /* UserProfileConstants.swift */; };
 		015E177C24275F7000351EA9 /* UserProfileTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E177B24275F7000351EA9 /* UserProfileTableViewDelegate.swift */; };
 		015E177E242763D200351EA9 /* UserProfileDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E177D242763D200351EA9 /* UserProfileDataHandler.swift */; };
+		0164491024A2421E0038DA33 /* RxSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0164490F24A2421E0038DA33 /* RxSubjectViewController.swift */; };
+		0164491324A242890038DA33 /* RxObservableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0164491224A242890038DA33 /* RxObservableViewController.swift */; };
+		0164491624A243480038DA33 /* RxObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0164491524A243480038DA33 /* RxObserverViewController.swift */; };
 		0167EE842418F2EC00E4830F /* MVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0167EE832418F2EC00E4830F /* MVVMViewController.swift */; };
+		01692D1924A23A1200B221FA /* RxOperatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01692D1824A23A1200B221FA /* RxOperatorViewController.swift */; };
+		01692D1C24A23A7800B221FA /* RxDisposableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01692D1B24A23A7800B221FA /* RxDisposableViewController.swift */; };
+		01692D1F24A23A9B00B221FA /* RxSchedulerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01692D1E24A23A9B00B221FA /* RxSchedulerViewController.swift */; };
+		01692D2224A23ABE00B221FA /* RxErrorHandlingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01692D2124A23ABE00B221FA /* RxErrorHandlingViewController.swift */; };
+		01692D2524A23C7B00B221FA /* DisplacementEnumerationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01692D2424A23C7B00B221FA /* DisplacementEnumerationViewController.swift */; };
+		01692D2824A23C9400B221FA /* LazyAndRemoveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01692D2724A23C9400B221FA /* LazyAndRemoveViewController.swift */; };
 		016A976D2430504200D8C280 /* UserProfileTopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016A976C2430504200D8C280 /* UserProfileTopicView.swift */; };
 		016B8EF623C58A19007F6EC5 /* SwiftTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016B8EF523C58A19007F6EC5 /* SwiftTipsViewController.swift */; };
 		016D7D1C243E08EE00733053 /* MeunLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016D7D1B243E08EE00733053 /* MeunLabel.swift */; };
@@ -89,10 +101,6 @@
 		0182B7D0241A86F00033BF0A /* MVVMListCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182B7CF241A86F00033BF0A /* MVVMListCourseTableViewCell.swift */; };
 		0182B7D2241A881E0033BF0A /* MVVMListSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182B7D1241A881E0033BF0A /* MVVMListSessionViewModel.swift */; };
 		0182B7D4241A882B0033BF0A /* MVVMListSecCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182B7D3241A882B0033BF0A /* MVVMListSecCellViewModel.swift */; };
-		0183AD0F244B42C300355346 /* RxSwiftObservableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183AD0D244B42C300355346 /* RxSwiftObservableViewController.swift */; };
-		0183AD17244B431C00355346 /* RxSwiftSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183AD15244B431C00355346 /* RxSwiftSubjectViewController.swift */; };
-		0183AD1B244B432F00355346 /* RxSwiftObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183AD19244B432F00355346 /* RxSwiftObserverViewController.swift */; };
-		0183AD20244B453D00355346 /* RxSwiftCocoaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183AD1E244B453D00355346 /* RxSwiftCocoaViewController.swift */; };
 		0188AC7E242A3FA300BA7654 /* UserProfileThreePointsItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0188AC7D242A3FA300BA7654 /* UserProfileThreePointsItemViewModel.swift */; };
 		0188AC82242A4DCD00BA7654 /* UserProfileArray.json in Resources */ = {isa = PBXBuildFile; fileRef = 0188AC81242A4DCD00BA7654 /* UserProfileArray.json */; };
 		0192A6C0242270110015F9CD /* MVVMListSectionDict.json in Resources */ = {isa = PBXBuildFile; fileRef = 0192A6BF242270110015F9CD /* MVVMListSectionDict.json */; };
@@ -152,7 +160,6 @@
 		01D38A10241A770E00F6D74D /* MVVMListSecTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D38A05241A770E00F6D74D /* MVVMListSecTableViewCellProtocol.swift */; };
 		01D38A13241A770E00F6D74D /* MVVMLisSecFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D38A0A241A770E00F6D74D /* MVVMLisSecFactory.swift */; };
 		01D38A14241A770E00F6D74D /* MVVMListSecAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D38A0B241A770E00F6D74D /* MVVMListSecAssembly.swift */; };
-		01DBE8B12487C93000D50FFC /* OperatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DBE8B02487C93000D50FFC /* OperatorViewController.swift */; };
 		01E058C62429E51B0073854E /* UserProfileLinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E058C52429E51B0073854E /* UserProfileLinkTableViewCell.swift */; };
 		01E15CC923BF583100A69E23 /* MethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CC823BF583100A69E23 /* MethodViewController.swift */; };
 		01E15CCC23BF58D800A69E23 /* SubscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CCB23BF58D800A69E23 /* SubscriptViewController.swift */; };
@@ -224,7 +231,7 @@
 		01089086243C940E00DBF606 /* RxMVVMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMVVMViewModel.swift; sourceTree = "<group>"; };
 		0109C27A248F41160056D8C2 /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		0109C27B248F41160056D8C2 /* PopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
-		010CD84523B0C61300AE57A9 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		010CD84523B0C61300AE57A9 /* OldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldViewController.swift; sourceTree = "<group>"; };
 		010CE4E723B0D6E800AE57A9 /* BasicKnowledgCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BasicKnowledgCatalog.plist; sourceTree = "<group>"; };
 		010D6A8E23A9FB4A00B84621 /* SwiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		010D6A9123A9FB4A00B84621 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -259,10 +266,13 @@
 		01209BEA2455E30200C159BB /* CJLabelConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLabelConfigure.m; sourceTree = "<group>"; };
 		0127DAE30FD31B3FF2766436 /* Pods-SwiftProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftProjectUITests/Pods-SwiftProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		012E2EBA23C0EBE5008F6253 /* Produce1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Produce1.swift; sourceTree = "<group>"; };
-		012FE3022435F7B2008060D5 /* RxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftViewController.swift; sourceTree = "<group>"; };
-		012FE3032435F7B2008060D5 /* RxSwiftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxSwiftViewController.xib; sourceTree = "<group>"; };
+		012FE3022435F7B2008060D5 /* RxReplaceCocoaSignalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxReplaceCocoaSignalViewController.swift; sourceTree = "<group>"; };
+		012FE3032435F7B2008060D5 /* RxReplaceCocoaSignalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxReplaceCocoaSignalViewController.xib; sourceTree = "<group>"; };
 		012FE3072435FE9A008060D5 /* HigherOrderFunctionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HigherOrderFunctionsViewController.swift; sourceTree = "<group>"; };
 		0133CEAC2477AA96006B40D4 /* MockDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataTests.swift; sourceTree = "<group>"; };
+		0135046624A2E5EF00D074F9 /* RxObservableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxObservableViewController.xib; sourceTree = "<group>"; };
+		0135047A24A304F900D074F9 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		0135047B24A304F900D074F9 /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		013C7D3023B8600000804143 /* MVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCViewController.swift; sourceTree = "<group>"; };
 		013C7D3423B8602D00804143 /* MVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCModel.swift; sourceTree = "<group>"; };
 		013C7D3823B8604500804143 /* MVCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCView.swift; sourceTree = "<group>"; };
@@ -277,7 +287,16 @@
 		015CBDE32431A02F00393F1B /* UserProfileConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileConstants.swift; sourceTree = "<group>"; };
 		015E177B24275F7000351EA9 /* UserProfileTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewDelegate.swift; sourceTree = "<group>"; };
 		015E177D242763D200351EA9 /* UserProfileDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDataHandler.swift; sourceTree = "<group>"; };
+		0164490F24A2421E0038DA33 /* RxSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSubjectViewController.swift; sourceTree = "<group>"; };
+		0164491224A242890038DA33 /* RxObservableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxObservableViewController.swift; sourceTree = "<group>"; };
+		0164491524A243480038DA33 /* RxObserverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxObserverViewController.swift; sourceTree = "<group>"; };
 		0167EE832418F2EC00E4830F /* MVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewController.swift; sourceTree = "<group>"; };
+		01692D1824A23A1200B221FA /* RxOperatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxOperatorViewController.swift; sourceTree = "<group>"; };
+		01692D1B24A23A7800B221FA /* RxDisposableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxDisposableViewController.swift; sourceTree = "<group>"; };
+		01692D1E24A23A9B00B221FA /* RxSchedulerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSchedulerViewController.swift; sourceTree = "<group>"; };
+		01692D2124A23ABE00B221FA /* RxErrorHandlingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxErrorHandlingViewController.swift; sourceTree = "<group>"; };
+		01692D2424A23C7B00B221FA /* DisplacementEnumerationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplacementEnumerationViewController.swift; sourceTree = "<group>"; };
+		01692D2724A23C9400B221FA /* LazyAndRemoveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyAndRemoveViewController.swift; sourceTree = "<group>"; };
 		016A976C2430504200D8C280 /* UserProfileTopicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTopicView.swift; sourceTree = "<group>"; };
 		016B8EF523C58A19007F6EC5 /* SwiftTipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTipsViewController.swift; sourceTree = "<group>"; };
 		016D7D1B243E08EE00733053 /* MeunLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeunLabel.swift; sourceTree = "<group>"; };
@@ -293,10 +312,6 @@
 		0182B7CF241A86F00033BF0A /* MVVMListCourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMListCourseTableViewCell.swift; sourceTree = "<group>"; };
 		0182B7D1241A881E0033BF0A /* MVVMListSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSessionViewModel.swift; sourceTree = "<group>"; };
 		0182B7D3241A882B0033BF0A /* MVVMListSecCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSecCellViewModel.swift; sourceTree = "<group>"; };
-		0183AD0D244B42C300355346 /* RxSwiftObservableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftObservableViewController.swift; sourceTree = "<group>"; };
-		0183AD15244B431C00355346 /* RxSwiftSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftSubjectViewController.swift; sourceTree = "<group>"; };
-		0183AD19244B432F00355346 /* RxSwiftObserverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftObserverViewController.swift; sourceTree = "<group>"; };
-		0183AD1E244B453D00355346 /* RxSwiftCocoaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftCocoaViewController.swift; sourceTree = "<group>"; };
 		0188AC7D242A3FA300BA7654 /* UserProfileThreePointsItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileThreePointsItemViewModel.swift; sourceTree = "<group>"; };
 		0188AC81242A4DCD00BA7654 /* UserProfileArray.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserProfileArray.json; sourceTree = "<group>"; };
 		0192A6BF242270110015F9CD /* MVVMListSectionDict.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MVVMListSectionDict.json; sourceTree = "<group>"; };
@@ -356,7 +371,6 @@
 		01D38A0A241A770E00F6D74D /* MVVMLisSecFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMLisSecFactory.swift; sourceTree = "<group>"; };
 		01D38A0B241A770E00F6D74D /* MVVMListSecAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMListSecAssembly.swift; sourceTree = "<group>"; };
 		01DB6C5F243EAD3100E14C70 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		01DBE8B02487C93000D50FFC /* OperatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorViewController.swift; sourceTree = "<group>"; };
 		01E058C52429E51B0073854E /* UserProfileLinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileLinkTableViewCell.swift; sourceTree = "<group>"; };
 		01E15CC823BF583100A69E23 /* MethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodViewController.swift; sourceTree = "<group>"; };
 		01E15CCB23BF58D800A69E23 /* SubscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptViewController.swift; sourceTree = "<group>"; };
@@ -553,7 +567,7 @@
 		010442B223B4E1A400B1BF54 /* Old */ = {
 			isa = PBXGroup;
 			children = (
-				010CD84523B0C61300AE57A9 /* TestViewController.swift */,
+				010CD84523B0C61300AE57A9 /* OldViewController.swift */,
 				010D6AD423A9FDB500B84621 /* BPSubViewController.swift */,
 			);
 			path = Old;
@@ -781,6 +795,15 @@
 			path = HigherOrderFunctions;
 			sourceTree = "<group>";
 		};
+		0135047924A304E700D074F9 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				0135047A24A304F900D074F9 /* TestViewController.swift */,
+				0135047B24A304F900D074F9 /* TestViewController.xib */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		013C7D3223B8601900804143 /* MVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -891,17 +914,43 @@
 			path = NSAttributedString;
 			sourceTree = "<group>";
 		};
+		0164490E24A242150038DA33 /* Subject */ = {
+			isa = PBXGroup;
+			children = (
+				0164490F24A2421E0038DA33 /* RxSubjectViewController.swift */,
+			);
+			path = Subject;
+			sourceTree = "<group>";
+		};
+		0164491124A2427A0038DA33 /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				0164491224A242890038DA33 /* RxObservableViewController.swift */,
+				0135046624A2E5EF00D074F9 /* RxObservableViewController.xib */,
+			);
+			path = Observable;
+			sourceTree = "<group>";
+		};
+		0164491424A2433B0038DA33 /* Observer */ = {
+			isa = PBXGroup;
+			children = (
+				0164491524A243480038DA33 /* RxObserverViewController.swift */,
+			);
+			path = Observer;
+			sourceTree = "<group>";
+		};
 		0167EE7A2418F09500E4830F /* RxSwift */ = {
 			isa = PBXGroup;
 			children = (
-				012FE3022435F7B2008060D5 /* RxSwiftViewController.swift */,
-				012FE3032435F7B2008060D5 /* RxSwiftViewController.xib */,
-				01DBE8B22487C94300D50FFC /* Operator */,
-				0183AD1D244B433900355346 /* Cocoa */,
-				0183AD14244B430000355346 /* Subject */,
-				0183AD13244B42F900355346 /* Observer */,
+				0164491124A2427A0038DA33 /* Observable */,
+				0164491424A2433B0038DA33 /* Observer */,
+				0164490E24A242150038DA33 /* Subject */,
+				01692D0E24A239B000B221FA /* Operator */,
+				01692D1A24A23A6500B221FA /* Disposable */,
+				01692D1D24A23A8D00B221FA /* Scheduler */,
+				01692D2024A23AB100B221FA /* ErrorHandling */,
+				01692D2924A23FD200B221FA /* ReplaceCocoaSignal */,
 				0183AD12244B42DD00355346 /* Example */,
-				0183AD11244B42D000355346 /* Observable */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -981,6 +1030,63 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		01692D0E24A239B000B221FA /* Operator */ = {
+			isa = PBXGroup;
+			children = (
+				01692D1824A23A1200B221FA /* RxOperatorViewController.swift */,
+			);
+			path = Operator;
+			sourceTree = "<group>";
+		};
+		01692D1A24A23A6500B221FA /* Disposable */ = {
+			isa = PBXGroup;
+			children = (
+				01692D1B24A23A7800B221FA /* RxDisposableViewController.swift */,
+			);
+			path = Disposable;
+			sourceTree = "<group>";
+		};
+		01692D1D24A23A8D00B221FA /* Scheduler */ = {
+			isa = PBXGroup;
+			children = (
+				01692D1E24A23A9B00B221FA /* RxSchedulerViewController.swift */,
+			);
+			path = Scheduler;
+			sourceTree = "<group>";
+		};
+		01692D2024A23AB100B221FA /* ErrorHandling */ = {
+			isa = PBXGroup;
+			children = (
+				01692D2124A23ABE00B221FA /* RxErrorHandlingViewController.swift */,
+			);
+			path = ErrorHandling;
+			sourceTree = "<group>";
+		};
+		01692D2324A23C3A00B221FA /* DisplacementEnumeration */ = {
+			isa = PBXGroup;
+			children = (
+				01692D2424A23C7B00B221FA /* DisplacementEnumerationViewController.swift */,
+			);
+			path = DisplacementEnumeration;
+			sourceTree = "<group>";
+		};
+		01692D2624A23C8200B221FA /* LazyAndRemove */ = {
+			isa = PBXGroup;
+			children = (
+				01692D2724A23C9400B221FA /* LazyAndRemoveViewController.swift */,
+			);
+			path = LazyAndRemove;
+			sourceTree = "<group>";
+		};
+		01692D2924A23FD200B221FA /* ReplaceCocoaSignal */ = {
+			isa = PBXGroup;
+			children = (
+				012FE3022435F7B2008060D5 /* RxReplaceCocoaSignalViewController.swift */,
+				012FE3032435F7B2008060D5 /* RxReplaceCocoaSignalViewController.xib */,
+			);
+			path = ReplaceCocoaSignal;
+			sourceTree = "<group>";
+		};
 		016B8EF423C58A07007F6EC5 /* SwiftTips */ = {
 			isa = PBXGroup;
 			children = (
@@ -1033,44 +1139,12 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
-		0183AD11244B42D000355346 /* Observable */ = {
-			isa = PBXGroup;
-			children = (
-				0183AD0D244B42C300355346 /* RxSwiftObservableViewController.swift */,
-			);
-			path = Observable;
-			sourceTree = "<group>";
-		};
 		0183AD12244B42DD00355346 /* Example */ = {
 			isa = PBXGroup;
 			children = (
 				01E9B81E2444038E003CDDEA /* RxSwiftExampleViewController.swift */,
 			);
 			path = Example;
-			sourceTree = "<group>";
-		};
-		0183AD13244B42F900355346 /* Observer */ = {
-			isa = PBXGroup;
-			children = (
-				0183AD19244B432F00355346 /* RxSwiftObserverViewController.swift */,
-			);
-			path = Observer;
-			sourceTree = "<group>";
-		};
-		0183AD14244B430000355346 /* Subject */ = {
-			isa = PBXGroup;
-			children = (
-				0183AD15244B431C00355346 /* RxSwiftSubjectViewController.swift */,
-			);
-			path = Subject;
-			sourceTree = "<group>";
-		};
-		0183AD1D244B433900355346 /* Cocoa */ = {
-			isa = PBXGroup;
-			children = (
-				0183AD1E244B453D00355346 /* RxSwiftCocoaViewController.swift */,
-			);
-			path = Cocoa;
 			sourceTree = "<group>";
 		};
 		0188AC7C242A3F7600BA7654 /* ThreePoints */ = {
@@ -1572,14 +1646,6 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		01DBE8B22487C94300D50FFC /* Operator */ = {
-			isa = PBXGroup;
-			children = (
-				01DBE8B02487C93000D50FFC /* OperatorViewController.swift */,
-			);
-			path = Operator;
-			sourceTree = "<group>";
-		};
 		01E15CCA23BF58CD00A69E23 /* Subscript */ = {
 			isa = PBXGroup;
 			children = (
@@ -1761,6 +1827,9 @@
 		01EA7BF423ABA51300712B20 /* ImprovingTips */ = {
 			isa = PBXGroup;
 			children = (
+				0135047924A304E700D074F9 /* Test */,
+				01692D2624A23C8200B221FA /* LazyAndRemove */,
+				01692D2324A23C3A00B221FA /* DisplacementEnumeration */,
 				01026719242379B900CA6D00 /* Profile */,
 				010D6ACD23A9FD9E00B84621 /* Bridge */,
 			);
@@ -2011,17 +2080,19 @@
 			files = (
 				0108907F243C93E100DBF606 /* RxMVVMListViewController.xib in Resources */,
 				0102674D24237B5600CA6D00 /* ImprovingTipCatalog.plist in Resources */,
-				012FE3052435F7B2008060D5 /* RxSwiftViewController.xib in Resources */,
+				012FE3052435F7B2008060D5 /* RxReplaceCocoaSignalViewController.xib in Resources */,
 				01026740242379B900CA6D00 /* UserProfileDict.json in Resources */,
 				0109C27D248F41160056D8C2 /* PopoverViewController.xib in Resources */,
 				01089083243C93F400DBF606 /* RxMVVMTableViewCell.xib in Resources */,
 				0196CDE923D1888300112AB8 /* SnapViewController.xib in Resources */,
+				0135046724A2E5EF00D074F9 /* RxObservableViewController.xib in Resources */,
 				0192A6C0242270110015F9CD /* MVVMListSectionDict.json in Resources */,
 				01569B9D243319DA004879E9 /* NSAttributedStringViewController.xib in Resources */,
 				016FE6D923B5DD7800CE8784 /* sql.py in Resources */,
 				0102674F24237B6A00CA6D00 /* FeatureCatalog.plist in Resources */,
 				010CE4E823B0D6E900AE57A9 /* BasicKnowledgCatalog.plist in Resources */,
 				01EE3A202415288A008ECA89 /* SPSwiftViewController.xib in Resources */,
+				0135047D24A304F900D074F9 /* TestViewController.xib in Resources */,
 				01A545BC2437208800D6CB5F /* MeunViewController.xib in Resources */,
 				0196DCC523D1898500112AB8 /* SnapView.xib in Resources */,
 				0192A6C22422703D0015F9CD /* MVVMListSectionArray.json in Resources */,
@@ -2141,14 +2212,15 @@
 			files = (
 				01D38A14241A770E00F6D74D /* MVVMListSecAssembly.swift in Sources */,
 				01A3A40623BF5A3C003FEA19 /* MemorySafeViewController.swift in Sources */,
-				01DBE8B12487C93000D50FFC /* OperatorViewController.swift in Sources */,
 				01EE3A1F2415288A008ECA89 /* SPSwiftViewController.swift in Sources */,
 				01C01BB423BDEA97008B2D9E /* ClosureViewController.swift in Sources */,
 				01A550C1242864C200472B6A /* UserProfileStorage.swift in Sources */,
 				0182B7C6241A79050033BF0A /* MVVMListSectionTextHeaderView.swift in Sources */,
 				01569B9E243319DA004879E9 /* NSAttributedStringViewController.swift in Sources */,
-				012FE3042435F7B2008060D5 /* RxSwiftViewController.swift in Sources */,
+				012FE3042435F7B2008060D5 /* RxReplaceCocoaSignalViewController.swift in Sources */,
+				01692D2824A23C9400B221FA /* LazyAndRemoveViewController.swift in Sources */,
 				01026745242379B900CA6D00 /* UserProfileSectionViewProtocol.swift in Sources */,
+				0135047C24A304F900D074F9 /* TestViewController.swift in Sources */,
 				016A976D2430504200D8C280 /* UserProfileTopicView.swift in Sources */,
 				019FE1A623C0E9BF00B241B1 /* Produce.swift in Sources */,
 				0102673D242379B900CA6D00 /* UserProfileSessionViewModel.swift in Sources */,
@@ -2163,7 +2235,7 @@
 				01A3A40923BF5A55003FEA19 /* AccessControlViewController.swift in Sources */,
 				01E15CDB23BF59BB00A69E23 /* NestedTypeViewController.swift in Sources */,
 				01E058C62429E51B0073854E /* UserProfileLinkTableViewCell.swift in Sources */,
-				010CD84623B0C61300AE57A9 /* TestViewController.swift in Sources */,
+				010CD84623B0C61300AE57A9 /* OldViewController.swift in Sources */,
 				013D09F823BE281A0050F15A /* FunctionViewController.swift in Sources */,
 				01E9B8202444038E003CDDEA /* RxSwiftExampleViewController.swift in Sources */,
 				0195230223B173D600AE491B /* BasicViewController.swift in Sources */,
@@ -2175,10 +2247,10 @@
 				01089087243C940E00DBF606 /* RxMVVMViewModel.swift in Sources */,
 				0102673E242379B900CA6D00 /* UserProfileViewController.swift in Sources */,
 				0196CDE823D1888300112AB8 /* SnapViewController.swift in Sources */,
+				0164491024A2421E0038DA33 /* RxSubjectViewController.swift in Sources */,
 				01026744242379B900CA6D00 /* UserProfileTableViewCellProtocol.swift in Sources */,
 				0197847B242B9AFE009EB2D4 /* UserProfileAliasTableViewCell.swift in Sources */,
 				0102674A242379B900CA6D00 /* UserProfileAssembly.swift in Sources */,
-				0183AD0F244B42C300355346 /* RxSwiftObservableViewController.swift in Sources */,
 				01B24E2C23BF33A500677023 /* GenericsViewController.swift in Sources */,
 				010D6ACB23A9FD8F00B84621 /* CarViewController.swift in Sources */,
 				010D6ACC23A9FD8F00B84621 /* SwinjectViewController.swift in Sources */,
@@ -2188,6 +2260,7 @@
 				01026749242379B900CA6D00 /* UserProfileCTAView.swift in Sources */,
 				01ADB56B23BE294300EAB005 /* InheritViewController.swift in Sources */,
 				01937ED5241906D3009BD6AD /* MVVMListViewModel.swift in Sources */,
+				01692D2524A23C7B00B221FA /* DisplacementEnumerationViewController.swift in Sources */,
 				01937EE124190748009BD6AD /* MVVMListButtonTableViewCell.swift in Sources */,
 				015E177E242763D200351EA9 /* UserProfileDataHandler.swift in Sources */,
 				0182B7C8241A792E0033BF0A /* MVVMListTableHeaderView.swift in Sources */,
@@ -2196,6 +2269,7 @@
 				0102674B242379B900CA6D00 /* UserProfileViewModelFactory.swift in Sources */,
 				012FE3082435FE9A008060D5 /* HigherOrderFunctionsViewController.swift in Sources */,
 				01937EE324192DEA009BD6AD /* MVVMListTableViewCellProtocol.swift in Sources */,
+				01692D2224A23ABE00B221FA /* RxErrorHandlingViewController.swift in Sources */,
 				01E15CD523BF593300A69E23 /* OptionalChainViewController.swift in Sources */,
 				0182B7C4241A78F40033BF0A /* MVVMListSectionTextFooterView.swift in Sources */,
 				01E15CCF23BF58F300A69E23 /* InitializeViewController.swift in Sources */,
@@ -2225,7 +2299,7 @@
 				01D38A0D241A770E00F6D74D /* MVVMListSecViewController.swift in Sources */,
 				015847002423A13000B7BEBE /* UserProfileSectionFooterView.swift in Sources */,
 				01ACCE71243337FB0025C9EA /* String+SPAdd.swift in Sources */,
-				0183AD17244B431C00355346 /* RxSwiftSubjectViewController.swift in Sources */,
+				01692D1C24A23A7800B221FA /* RxDisposableViewController.swift in Sources */,
 				010D6AD923A9FF6F00B84621 /* TestBridge.m in Sources */,
 				010D6AD223A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.m in Sources */,
 				01ACCE7A243338830025C9EA /* UITableView+SPAdd.swift in Sources */,
@@ -2233,13 +2307,13 @@
 				01ACCE6E243337D00025C9EA /* UIColor+SPAdd.swift in Sources */,
 				01E15CD823BF595200A69E23 /* ErrorhandlingViewController.swift in Sources */,
 				0156813023BE28F100B42FB9 /* ProtocolViewController.swift in Sources */,
-				0183AD1B244B432F00355346 /* RxSwiftObserverViewController.swift in Sources */,
 				01E9B3552420D9F000FF618D /* MVVMListSectionImageHeaderView.swift in Sources */,
 				010D6A9223A9FB4A00B84621 /* AppDelegate.swift in Sources */,
 				01209BEC2455E30200C159BB /* CJLabelConfigure.m in Sources */,
 				013C7D3523B8602D00804143 /* MVCModel.swift in Sources */,
 				01EE3A1C24152264008ECA89 /* SPSwift.swift in Sources */,
 				01A550BE2428649500472B6A /* UserProfileNetWork.swift in Sources */,
+				0164491324A242890038DA33 /* RxObservableViewController.swift in Sources */,
 				012E2EBB23C0EBE5008F6253 /* Produce1.swift in Sources */,
 				01ACCE8024333AB30025C9EA /* Int+SPAdd.swift in Sources */,
 				010D6AD523A9FDB500B84621 /* BPSubViewController.swift in Sources */,
@@ -2252,6 +2326,7 @@
 				01ACCE742433383B0025C9EA /* Date+SPAdd.swift in Sources */,
 				01937ED9241906F5009BD6AD /* MVVMListModel.swift in Sources */,
 				0182B7CA241A793A0033BF0A /* MVVMListTableFooterView.swift in Sources */,
+				01692D1F24A23A9B00B221FA /* RxSchedulerViewController.swift in Sources */,
 				01E9B3592420DE1A00FF618D /* MVVMListSectionViewProtocol.swift in Sources */,
 				0182B7D2241A881E0033BF0A /* MVVMListSessionViewModel.swift in Sources */,
 				010D6ACA23A9FD8F00B84621 /* BPContainer.swift in Sources */,
@@ -2267,7 +2342,9 @@
 				015CBDE42431A02F00393F1B /* UserProfileConstants.swift in Sources */,
 				0167EE842418F2EC00E4830F /* MVVMViewController.swift in Sources */,
 				01026741242379B900CA6D00 /* UserProfileModel.swift in Sources */,
+				01692D1924A23A1200B221FA /* RxOperatorViewController.swift in Sources */,
 				01209BEB2455E30200C159BB /* CJLabel.m in Sources */,
+				0164491624A243480038DA33 /* RxObserverViewController.swift in Sources */,
 				01937EE824193353009BD6AD /* MVVMListFactory.swift in Sources */,
 				010442B423B4E1C100B1BF54 /* OptionalViewController.swift in Sources */,
 				01026742242379B900CA6D00 /* UserProfileMultiDepartmentTableViewCell.swift in Sources */,
@@ -2280,7 +2357,6 @@
 				01D38A0E241A770E00F6D74D /* MVVMListSecModel.swift in Sources */,
 				01E15CD223BF590B00A69E23 /* DeinitViewController.swift in Sources */,
 				0112F9A523BF57B30002788E /* BaseOperatorViewController.swift in Sources */,
-				0183AD20244B453D00355346 /* RxSwiftCocoaViewController.swift in Sources */,
 				01937ECC2418FFA5009BD6AD /* MVVMView.swift in Sources */,
 				01B24E2F23BF358100677023 /* DataTypeConvertViewController.swift in Sources */,
 				0112F9AB23BF57E30002788E /* CollectionTypesViewController.swift in Sources */,

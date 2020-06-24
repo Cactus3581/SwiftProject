@@ -2,7 +2,7 @@
 //  RxSwiftExampleViewController.swift
 //  SwiftProject
 //
-//  Created by 夏汝震 on 2020/4/13.
+//  Created by Ryan on 2020/4/13.
 //  Copyright © 2020 cactus. All rights reserved.
 //
 
@@ -10,51 +10,16 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-//位移枚举
- struct Status : OptionSet {
-    let rawValue: Int
-    static let normal = Status(rawValue: 1)
-    static let searching = Status(rawValue: 2)
-    static let filtering = Status(rawValue: 4)
+enum VCError: Error {
+    case unknown // 未知错误
 }
-
-
 
 class RxSwiftExampleViewController: BaseViewController {
 
     let disposeBag = DisposeBag()
-    var status: Status = [.normal]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let vc = RxSwiftViewController()
-        self.present(vc,animated:true,completion:nil)
-
-
-
-
-//        print(status.contains(.normal))
-//        print(status.contains(.searching))
-//        print(status.contains(.filtering))
-//        status = [.normal, .searching]
-//        print(status.contains(.normal))
-//        print(status.contains(.searching))
-//        print(status.contains(.filtering))
-        status = [.normal, .searching, .filtering]
-//        print(status.contains(.normal))
-//        print(status.contains(.searching))
-//        print(status.contains(.filtering))
-
-
-        //  交集
-        let commonEvents = status.intersection(.filtering)
-        print(commonEvents)
-
-        print(commonEvents.contains(.normal))
-        print(commonEvents.contains(.searching))
-        print(commonEvents.contains(.filtering))
-
 
         fetchSubtitles().subscribe().disposed(by: disposeBag)
         dataObservable.subscribe(onNext: { (array) in
@@ -129,59 +94,57 @@ class RxSwiftExampleViewController: BaseViewController {
         })
     }
 
-    //MARK:常用例子
-    func other() {
+    func example1() {
+//        //多个任务之间有依赖关系
+//        enum API {
+//            /// 通过用户名密码取得一个 token
+//            static func token(username: String, password: String) -> Observable<String> {
+//                return ""
+//            }
+//
+//            /// 通过 token 取得用户信息
+//            static func userInfo(token: String) -> Observable<NSDictionary> {
+//                return ["":""]
+//            }
+//        }
+//
+//        /// 通过用户名和密码获取用户信息
+//        API.token(username: "beeth0ven", password: "987654321")
+//            .flatMapLatest(API.userInfo)
+//            .subscribe(onNext: { userInfo in
+//                print("获取用户信息成功: \(userInfo)")
+//            }, onError: { error in
+//                print("获取用户信息失败: \(error)")
+//            })
+//            .disposed(by: disposeBag)
+    }
 
-
-        //多个任务之间有依赖关系
+    func example2() {
+        //MARK：等待多个并发任务完成后处理结果
         /// 用 Rx 封装接口
-        //        enum API {
-        //            /// 通过用户名密码取得一个 token
-        //            static func token(username: String, password: String) -> Observable<String> {
-        //                return ""
-        //            }
-        //
-        //            /// 通过 token 取得用户信息
-        //            static func userInfo(token: String) -> Observable<NSDictionary> {
-        //                return ["":""]
-        //            }
-        //        }
-        //
-        //        /// 通过用户名和密码获取用户信息
-        //        API.token(username: "beeth0ven", password: "987654321")
-        //            .flatMapLatest(API.userInfo)
-        //            .subscribe(onNext: { userInfo in
-        //                print("获取用户信息成功: \(userInfo)")
-        //            }, onError: { error in
-        //                print("获取用户信息失败: \(error)")
-        //            })
-        //            .disposed(by: disposeBag)
-        //
-        //        //MARK：等待多个并发任务完成后处理结果
-        //        /// 用 Rx 封装接口
-        //        enum API1 {
-        //            /// 取得老师的详细信息
-        //            static func teacher(teacherId: Int) -> Observable<String> {}
-        //
-        //            /// 取得老师的评论
-        //            static func teacherComments(teacherId: Int) -> Observable<[String]> { }
-        //        }
-        //
-        //        /// 同时取得老师信息和老师评论
-        //        Observable.zip(
-        //              API1.teacher(teacherId: 10000),
-        //              API1.teacherComments(teacherId: 10000)
-        //            ).subscribe(onNext: { (teacher, comments) in
-        //                print("获取老师信息成功: \(teacher)")
-        //                print("获取老师评论成功: \(comments.count) 条")
-        //            }, onError: { error in
-        //                print("获取老师信息或评论失败: \(error)")
-        //            })
-        //            .disposed(by: disposeBag)
+//        enum API1 {
+//            /// 取得老师的详细信息
+//            static func teacher(teacherId: Int) -> Observable<String> {
+//
+//            }
+//
+//            /// 取得老师的评论
+//            static func teacherComments(teacherId: Int) -> Observable<[String]> {
+//
+//            }
+//        }
+//
+//        /// 同时取得老师信息和老师评论
+//        Observable.zip(
+//              API1.teacher(teacherId: 10000),
+//              API1.teacherComments(teacherId: 10000)
+//            ).subscribe(onNext: { (teacher, comments) in
+//                print("获取老师信息成功: \(teacher)")
+//                print("获取老师评论成功: \(comments.count) 条")
+//            }, onError: { error in
+//                print("获取老师信息或评论失败: \(error)")
+//            })
+//            .disposed(by: disposeBag)
     }
     
-}
-
-enum VCError: Error {
-    case unknown // 未知错误
 }
