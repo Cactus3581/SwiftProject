@@ -30,6 +30,8 @@
 		01089083243C93F400DBF606 /* RxMVVMTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01089081243C93F400DBF606 /* RxMVVMTableViewCell.xib */; };
 		01089085243C940300DBF606 /* RxMVVMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01089084243C940300DBF606 /* RxMVVMModel.swift */; };
 		01089087243C940E00DBF606 /* RxMVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01089086243C940E00DBF606 /* RxMVVMViewModel.swift */; };
+		01091DAC24AA1E9A006831FA /* testAudio.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 01091DAB24AA1E9A006831FA /* testAudio.m4a */; };
+		01091DAD24AA1F04006831FA /* testAudio.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 01091DAB24AA1E9A006831FA /* testAudio.m4a */; };
 		0109C27C248F41160056D8C2 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0109C27A248F41160056D8C2 /* PopoverViewController.swift */; };
 		0109C27D248F41160056D8C2 /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0109C27B248F41160056D8C2 /* PopoverViewController.xib */; };
 		010CD84623B0C61300AE57A9 /* OldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010CD84523B0C61300AE57A9 /* OldViewController.swift */; };
@@ -229,6 +231,7 @@
 		01089081243C93F400DBF606 /* RxMVVMTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxMVVMTableViewCell.xib; sourceTree = "<group>"; };
 		01089084243C940300DBF606 /* RxMVVMModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMVVMModel.swift; sourceTree = "<group>"; };
 		01089086243C940E00DBF606 /* RxMVVMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMVVMViewModel.swift; sourceTree = "<group>"; };
+		01091DAB24AA1E9A006831FA /* testAudio.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = testAudio.m4a; sourceTree = "<group>"; };
 		0109C27A248F41160056D8C2 /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		0109C27B248F41160056D8C2 /* PopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
 		010CD84523B0C61300AE57A9 /* OldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldViewController.swift; sourceTree = "<group>"; };
@@ -798,6 +801,7 @@
 		0135047924A304E700D074F9 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				01091DAB24AA1E9A006831FA /* testAudio.m4a */,
 				0135047A24A304F900D074F9 /* TestViewController.swift */,
 				0135047B24A304F900D074F9 /* TestViewController.xib */,
 			);
@@ -2100,6 +2104,7 @@
 				010D6A9E23A9FB4C00B84621 /* LaunchScreen.storyboard in Resources */,
 				010D6A9B23A9FB4C00B84621 /* Assets.xcassets in Resources */,
 				016FE6D823B5DD7800CE8784 /* statistics.py in Resources */,
+				01091DAC24AA1E9A006831FA /* testAudio.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2114,6 +2119,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01091DAD24AA1F04006831FA /* testAudio.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -70,6 +70,12 @@ class EnumViewController: BaseViewController {
             case qrCode(String)
         }
 
+        let code = Barcode.qrCode("")
+
+        if case Barcode.qrCode(_) = code {
+
+        }
+
         var productBarcode = Barcode.upc(8, 85909, 51226, 3)
         productBarcode = .qrCode("ABCDEFGHIJKLMNOP")
 
