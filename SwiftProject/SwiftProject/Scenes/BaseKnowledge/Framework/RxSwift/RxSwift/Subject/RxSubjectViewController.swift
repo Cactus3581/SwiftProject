@@ -2,7 +2,7 @@
 //  RxSubjectViewController.swift
 //  SwiftProject
 //
-//  Created by 夏汝震 on 2020/6/23.
+//  Created by Ryan on 2020/6/23.
 //  Copyright © 2020 cactus. All rights reserved.
 //
 
@@ -110,25 +110,26 @@ class RxSubjectViewController: BaseViewController {
 
     func behaviorRelay() {
         //创建一个初始值为111的BehaviorRelay
-        let subject = BehaviorRelay<String>(value: "111")
+        let relay = BehaviorRelay<String>(value: "111")
 
         //修改value值
-        subject.accept("222")
+        relay.accept("222")
+        relay.accept("333")
 
         //第1次订阅
-        subject.asObservable().subscribe {
+        relay.asObservable().skip(0).subscribe {
             print("第1次订阅：", $0)
         }.disposed(by: disposeBag)
 
         //修改value值
-        subject.accept("333")
+        relay.accept("333")
 
         //第2次订阅
-        subject.asObservable().subscribe {
+        relay.asObservable().subscribe {
             print("第2次订阅：", $0)
         }.disposed(by: disposeBag)
 
         //修改value值
-        subject.accept("444")
+        relay.accept("444")
     }
 }

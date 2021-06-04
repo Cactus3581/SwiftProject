@@ -36,26 +36,6 @@ class RxErrorHandlingViewController: BaseViewController {
         })
             .disposed(by: disposeBag)
 
-        //retryWhen：如果我们需要在发生错误时，经过一段延时后重试
-        // 请求 JSON 失败时，等待 5 秒后重试，
-        // 重试 4 次后仍然失败，就将错误抛出。
-        let maxRetryCount = 4       // 最多重试 4 次
-        let retryDelay: Double = 5  // 重试延时 5 秒
-        rxData.retryWhen { (rxError: Observable<Error>) -> Observable<Int> in
-            return rxError.flatMapWithIndex { (error, index) -> Observable<Int> in
-                guard index < maxRetryCount else {
-                    return Observable.error(error)
-                }
-                return Observable<Int>.timer(retryDelay, scheduler: MainScheduler.instance)
-            }
-        }
-        .subscribe(onNext: { data in
-            print("取得 data 成功: \(data)")
-        }, onError: { error in
-            print("取得 data 失败: \(error)")
-        })
-            .disposed(by: disposeBag)
-
         //使用 catchError，当错误产生时，将错误事件替换成一个备选序列：
         // 先从网络获取数据，如果获取失败了，就从本地缓存获取数据
         // 之前本地缓存的数据

@@ -118,6 +118,7 @@ class ListViewController: BaseViewController, UITableViewDelegate {
         }
         let cell = tableView.cellForRow(at: indexPath)
         cell?.isSelected = false
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

@@ -33,16 +33,6 @@ class NSAttributedStringViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        label.numberOfLines = 0
-        //label.font = UIFont.systemFont(ofSize: 12)
-        //label.lineBreakMode = .byWordWrapping
-        //label.textAlignment = .left
-        //label.textColor = UIColor.green
-        //label.backgroundColor = UIColor.green
-        let text = "君不见黄河之水天"
-        test1(text: text)
-        //sizeThatFits(text: text)
     }
 
     func test1(text: String) {
@@ -98,16 +88,15 @@ class NSAttributedStringViewController: BaseViewController {
         }
     }
 
-    func getAttributes() -> [NSAttributedString.Key : Any] {
+    func getAttributes() -> [NSAttributedString.Key: Any] {
         //设置文本段落排版格式
           let paragraphStyle = NSMutableParagraphStyle()
           paragraphStyle.lineSpacing = 45     //设置行间距
           paragraphStyle.alignment = .left      //文本对齐方向
           paragraphStyle.lineBreakMode = .byWordWrapping
-        let font = UIFont.systemFont(ofSize: 32)
         let dic = [
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
-            NSAttributedString.Key.font: font,
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 32),
             NSAttributedString.Key.kern: 0,
             NSAttributedString.Key.foregroundColor: UIColor.darkGray,
             NSAttributedString.Key.backgroundColor: UIColor.lightGray

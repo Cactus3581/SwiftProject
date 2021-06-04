@@ -146,5 +146,4 @@ class RxSwiftExampleViewController: BaseViewController {
 //            })
 //            .disposed(by: disposeBag)
     }
-    
 }

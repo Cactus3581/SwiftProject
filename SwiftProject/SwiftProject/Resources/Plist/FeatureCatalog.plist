@@ -4,9 +4,21 @@
 <array>
 	<dict>
 		<key>title</key>
+		<string>Pano</string>
+		<key>fileName</key>
+		<string>PanoViewController</string>
+	</dict>
+	<dict>
+		<key>title</key>
 		<string>zx</string>
 		<key>fileName</key>
 		<string>ListViewController</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>JSON</string>
+		<key>fileName</key>
+		<string>JSONViewController</string>
 	</dict>
 </array>
 </plist>

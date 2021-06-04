@@ -8,15 +8,15 @@
 
 import UIKit
 
-
+@available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
-    
 
         //由于 swift 中的类属性都是 lazy 方式求值的, 所以需要在 AppDelegate 中先引用一次, 以保证 container 中的所有注册内容都是在程序最开始就运行:
-//    let container = BPContainer.container
+    let container = BPContainer.container
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        print("启动")
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
@@ -28,48 +28,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window?.backgroundColor = UIColor.white
         self.window?.rootViewController = RootTabBarController.init()
         self.window?.makeKeyAndVisible()
-    //        baseuse(vc: vc)
-        guard let _ = (scene as? UIWindowScene) else { return }
     }
-
-        func baseuse(vc:OldTiewController) {
-
-//            // 通过在类名字后边添加一对圆括号来创建一个类的实例
-//            // 使用点语法来访问实例里的属性和方法。
-//            vc.ivarString = "ivarString"
-//            vc.ivarNum = 2
-//
-//            vc.simple()
-//            //        vc.control()
-//            vc.func1()
-//            let string = vc.func2(var1: "1", var2: 2)
-//            print(string);
-//
-//            // 打印属性
-//            print(vc.ivarNum,vc.ivarString);
-//
-//            print(vc.perimeter) // getter
-//            vc.perimeter = 1// setter
-//            print(vc.ivarNum)
-//
-//            print(vc.perimeter1) // getter
-//            vc.perimeter1 = 1// setter
-//            print(vc.ivarNum)
-//
-//            print(vc.ivarString)
-//
-//            vc.enumFunc()
-//            vc.protocolFunc()
-//            vc.errorFunc()
-//            //        vc.optional()
-//            OldTiewController.classMethod()
-        }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
         // The scene may re-connect later, as its session was not neccessarily discarded (see `application:didDiscardSceneSessions` instead).
+        print("当场景与app断开连接")
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {

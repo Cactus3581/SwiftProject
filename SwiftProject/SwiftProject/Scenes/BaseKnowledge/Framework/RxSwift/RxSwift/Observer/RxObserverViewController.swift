@@ -2,7 +2,7 @@
 //  RxObserverViewController.swift
 //  SwiftProject
 //
-//  Created by 夏汝震 on 2020/6/23.
+//  Created by Ryan on 2020/6/23.
 //  Copyright © 2020 cactus. All rights reserved.
 //
 
@@ -86,21 +86,21 @@ class RxObserverViewController: BaseViewController {
             }
 
             //Observable序列（每隔1秒钟发出一个索引数）
-            let observable = Observable<Int>.interval(1, scheduler: MainScheduler.instance)
+//            let observable = Observable<Int>.interval(1, scheduler: MainScheduler.instance)
     //        observable
     //            .map { "当前索引数：\($0 )"}
     //            .bind(to: observer)
     //            .disposed(by: disposeBag)
 
-            observable
-                .map { "当前索引数：\($0 )"}
-                .do(onNext: { (text) in
-                    print("do(onNext\(text)")
-                }, afterNext: { (text) in
-                    print("do(afterNext\(text)")
-                }, onError: nil, afterError: nil, onCompleted: nil, afterCompleted: nil, onSubscribe: nil, onSubscribed: nil, onDispose: nil)
-                .bind(to: observer)
-                .disposed(by: disposeBag)
+//            observable
+//                .map { "当前索引数：\($0 )"}
+//                .do(onNext: { (text) in
+//                    print("do(onNext\(text)")
+//                }, afterNext: { (text) in
+//                    print("do(afterNext\(text)")
+//                }, onError: nil, afterError: nil, onCompleted: nil, afterCompleted: nil, onSubscribe: nil, onSubscribed: nil, onDispose: nil)
+//                .bind(to: observer)
+//                .disposed(by: disposeBag)
 
 
             // 把UITextField里的文字赋值给UIButton(把被观察者的值赋值给观察者)

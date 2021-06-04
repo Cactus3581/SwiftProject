@@ -44,11 +44,12 @@ class SwiftProjectUITests: XCTestCase {
     func testInboxCardsTwoUpdatesOneDelete() throws {
 
         let app = XCUIApplication()
-        let cellsOriginalCount = 15
-        app.launchArguments = ["InboxCardsTwoUpdatesOneDeleteMockFeedAPI", String(cellsOriginalCount), String(0)]
+        //let cellsOriginalCount = 15
+        //app.launchArguments = ["InboxCardsTwoUpdatesOneDeleteMockFeedAPI", String(cellsOriginalCount), String(0)]
         app.launch()
-//        wait(for: 5)
-//        app.restart()
+        app.wait1()
+        //app.restart()
+        app.terminate()
     }
 }
 
@@ -65,6 +66,13 @@ extension XCUIApplication {
 
         if !self.wait(for: .runningForeground, timeout: defaultTimeout) {
             XCTFail("App didn't launch within the alloted time.")
+        }
+    }
+
+    func wait1() {
+        let defaultTimeout = 5 as TimeInterval
+        if !self.wait(for: .notRunning, timeout: defaultTimeout) {
+            XCTFail("App didn't terminate within the alloted time.")
         }
     }
 }

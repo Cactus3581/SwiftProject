@@ -2,7 +2,7 @@
 //  RxObservableViewController.swift
 //  SwiftProject
 //
-//  Created by 夏汝震 on 2020/6/23.
+//  Created by Ryan on 2020/6/23.
 //  Copyright © 2020 cactus. All rights reserved.
 //
 
@@ -90,11 +90,11 @@ class RxObservableViewController: BaseViewController {
             let url = URL(string: "https://api.github.com/repos")!
             let task = URLSession.shared.dataTask(with: url) { data, _, error in
                 if let error = error {
-                    singleObserver(.error(error))
+//                    singleObserver(.error(error))
                     return
                 }
                 guard let data = data,let json = try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves),let result = json as? [String: Any] else {
-                    singleObserver(.error(error!))
+//                    singleObserver(.error(error!))
                     return
                 }
                 singleObserver(.success(result))

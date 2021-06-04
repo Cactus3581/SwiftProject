@@ -167,10 +167,7 @@ class OptionalViewController: BaseViewController {
           }
           let cat = animal as! Cat //如果确保肯定会转换成功，则可使用 as!，否则使用 as?
 
-          //Optional可以将方法的返回值强制变为Optional，哪怕这个方法没有返回值，但是Void也算是一个类型：
-          if let p: Void = run() {
-              p
-          }
+          //Optional可以将方法的返回值强制变为Optional，哪怕这个方法没有返回值，但是Void也算是一个类型
 
           let xm = Student()
           xm.age = 3

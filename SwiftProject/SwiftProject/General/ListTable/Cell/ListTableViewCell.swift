@@ -14,10 +14,12 @@ private var cellIdentifier: String = "ListTableViewCell"
 class ListTableViewCell: UITableViewCell {
 
     var model: ListModel?
-    var _titleLabel: UILabel?
-    var _detailLabel: UILabel?
+    let titleLabel: UILabel
+    let detailLabel: UILabel
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        self.titleLabel = UILabel()
+        self.detailLabel = UILabel()
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         initializeUI()
     }
@@ -49,9 +51,6 @@ class ListTableViewCell: UITableViewCell {
 
         //self.selectionStyle = .none
         self.backgroundColor = UIColor.white
-
-        let titleLabel: UILabel = UILabel()
-        _titleLabel = titleLabel
         titleLabel.numberOfLines = 0
         self.contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
@@ -59,18 +58,11 @@ class ListTableViewCell: UITableViewCell {
             make.top.equalTo(self).offset(10);
         }
 
-        let detailLabel: UILabel = UILabel()
-        _detailLabel = detailLabel
         self.contentView.addSubview(detailLabel)
         detailLabel.snp.makeConstraints { (make) in
             make.leading.equalTo(titleLabel);
             make.top.equalTo(titleLabel.snp.bottom).offset(2.5);
         }
-
-        _titleLabel?.backgroundColor = UIColor.red
-        _detailLabel?.backgroundColor = UIColor.green
-
-        // 为linkLabel添加手势
     }
 
     func setModel(_ model: ListModel, indexPath: IndexPath) {
@@ -83,17 +75,12 @@ class ListTableViewCell: UITableViewCell {
             self.accessoryType = .none
         }
 
-        if indexPath != nil {
-            self.textLabel?.text = "\(indexPath.row+1). \(String(describing: model.title!))"
-        } else {
-            self.textLabel?.text = model.title!
-
-        }
+        self.titleLabel.text = "\(indexPath.row+1). \(model.title!)"
 
         if model.fileName?.count ?? 0 > 0 {
-            self.textLabel?.textColor = UIColor.black
+            self.titleLabel.textColor = UIColor.black
         } else {
-            self.textLabel?.textColor = UIColor.lightGray
+            self.titleLabel.textColor = UIColor.lightGray
         }
     }
 }

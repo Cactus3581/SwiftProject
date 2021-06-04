@@ -1,12 +1,12 @@
 PODS:
-  - Alamofire (5.0.5)
+  - Alamofire (5.4.1)
   - Aspects (1.4.1)
-  - CocoaLumberjack (3.6.1):
-    - CocoaLumberjack/Core (= 3.6.1)
-  - CocoaLumberjack/Core (3.6.1)
-  - CocoaLumberjack/Swift (3.6.1):
+  - CocoaLumberjack (3.7.2):
+    - CocoaLumberjack/Core (= 3.7.2)
+  - CocoaLumberjack/Core (3.7.2)
+  - CocoaLumberjack/Swift (3.7.2):
     - CocoaLumberjack/Core
-  - CryptoSwift (1.3.0)
+  - CryptoSwift (1.3.8)
   - DoraemonKit/Core (3.0.0)
   - DoraemonKit/WithDatabase (3.0.0):
     - DoraemonKit/Core
@@ -26,43 +26,45 @@ PODS:
   - GCDWebServer (3.5.4):
     - GCDWebServer/Core (= 3.5.4)
   - GCDWebServer/Core (3.5.4)
-  - HandyJSON (5.0.1)
-  - IQKeyboardManagerSwift (6.5.5)
-  - KeychainAccess (4.1.0)
-  - Kingfisher (5.13.2):
-    - Kingfisher/Core (= 5.13.2)
-  - Kingfisher/Core (5.13.2)
+  - HandyJSON (5.0.2)
+  - IQKeyboardManagerSwift (6.5.6)
+  - KeychainAccess (4.2.1)
+  - Kingfisher (6.1.1)
   - PKHUD (5.3.0)
-  - RxCocoa (5.1.1):
-    - RxRelay (~> 5)
-    - RxSwift (~> 5)
-  - RxRelay (5.1.1):
-    - RxSwift (~> 5)
-  - RxSwift (5.1.1)
+  - RxCocoa (6.1.0):
+    - RxRelay (= 6.1.0)
+    - RxSwift (= 6.1.0)
+  - RxRelay (6.1.0):
+    - RxSwift (= 6.1.0)
+  - RxSwift (6.1.0)
   - SnapKit (5.0.1)
-  - SwiftDate (6.1.0)
-  - SwifterSwift (5.1.0):
-    - SwifterSwift/AppKit (= 5.1.0)
-    - SwifterSwift/CoreGraphics (= 5.1.0)
-    - SwifterSwift/CoreLocation (= 5.1.0)
-    - SwifterSwift/Dispatch (= 5.1.0)
-    - SwifterSwift/Foundation (= 5.1.0)
-    - SwifterSwift/MapKit (= 5.1.0)
-    - SwifterSwift/SceneKit (= 5.1.0)
-    - SwifterSwift/SpriteKit (= 5.1.0)
-    - SwifterSwift/SwiftStdlib (= 5.1.0)
-    - SwifterSwift/UIKit (= 5.1.0)
-  - SwifterSwift/AppKit (5.1.0)
-  - SwifterSwift/CoreGraphics (5.1.0)
-  - SwifterSwift/CoreLocation (5.1.0)
-  - SwifterSwift/Dispatch (5.1.0)
-  - SwifterSwift/Foundation (5.1.0)
-  - SwifterSwift/MapKit (5.1.0)
-  - SwifterSwift/SceneKit (5.1.0)
-  - SwifterSwift/SpriteKit (5.1.0)
-  - SwifterSwift/SwiftStdlib (5.1.0)
-  - SwifterSwift/UIKit (5.1.0)
-  - SwiftLint (0.39.1)
+  - SwiftDate (6.3.1)
+  - SwifterSwift (5.2.0):
+    - SwifterSwift/AppKit (= 5.2.0)
+    - SwifterSwift/CoreAnimation (= 5.2.0)
+    - SwifterSwift/CoreGraphics (= 5.2.0)
+    - SwifterSwift/CoreLocation (= 5.2.0)
+    - SwifterSwift/Dispatch (= 5.2.0)
+    - SwifterSwift/Foundation (= 5.2.0)
+    - SwifterSwift/MapKit (= 5.2.0)
+    - SwifterSwift/SceneKit (= 5.2.0)
+    - SwifterSwift/SpriteKit (= 5.2.0)
+    - SwifterSwift/StoreKit (= 5.2.0)
+    - SwifterSwift/SwiftStdlib (= 5.2.0)
+    - SwifterSwift/UIKit (= 5.2.0)
+  - SwifterSwift/AppKit (5.2.0)
+  - SwifterSwift/CoreAnimation (5.2.0)
+  - SwifterSwift/CoreGraphics (5.2.0)
+  - SwifterSwift/CoreLocation (5.2.0)
+  - SwifterSwift/Dispatch (5.2.0)
+  - SwifterSwift/Foundation (5.2.0)
+  - SwifterSwift/MapKit (5.2.0)
+  - SwifterSwift/SceneKit (5.2.0)
+  - SwifterSwift/SpriteKit (5.2.0)
+  - SwifterSwift/StoreKit (5.2.0)
+  - SwifterSwift/SwiftStdlib (5.2.0)
+  - SwifterSwift/UIKit (5.2.0)
+  - SwiftLint (0.43.1)
   - SwiftPullToRefresh (3.1.1)
   - SwiftyAttributes (5.1.1)
   - SwiftyJSON (5.0.0)
@@ -72,7 +74,7 @@ PODS:
   - UIImageColors (2.1.0)
   - URLNavigator (2.3.0)
   - Validator (3.2.1)
-  - YYDebugDatabase (2.0.8):
+  - YYDebugDatabase (2.1.0):
     - FMDB
     - GCDWebServer
 
@@ -150,25 +152,25 @@ CHECKOUT OPTIONS:
     :tag: 3.0.0
 
 SPEC CHECKSUMS:
-  Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
-  CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
-  CryptoSwift: 1283821600233bdbeb96d7b389c3288c3bf77211
+  CocoaLumberjack: b7e05132ff94f6ae4dfa9d5bce9141893a21d9da
+  CryptoSwift: 01b0f0cba1d5c212e5a335ff6c054fb75a204f00
   DoraemonKit: 4ad75a74374d836425e947f0f891157cacfdcf46
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
-  HandyJSON: d45b8415c501e3affc59ca9762c1197ff0feb646
-  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
-  KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
-  Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
+  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
+  Kingfisher: 676d63307fbef6ed5d5ed400bff36983480d7500
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
-  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
-  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
-  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
+  RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
+  RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
-  SwifterSwift: a9e8e144832638c2850b43da5feaf9598c6ad65b
-  SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
+  SwiftDate: 72d28954e8e1c6c1c0f917ccc8005e4f83c7d4b2
+  SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
+  SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
   SwiftPullToRefresh: f61d67439c5b8d66420fe57193cab8c279398e7a
   SwiftyAttributes: e3e13891ddac3c62b3d7798d5c3969cea88e62bb
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
@@ -178,8 +180,8 @@ SPEC CHECKSUMS:
   UIImageColors: d2ef3b0877d203cbb06489eeb78ea8b7788caabe
   URLNavigator: 2593c0e2d293732ec5c44503cf54dceba1a68085
   Validator: 80a6f567220c962dfd2d9928ae98a8c1d164f6f4
-  YYDebugDatabase: 037486297a7dd40bc50e2c6df5de7b4ad24c9c17
+  YYDebugDatabase: e684a7f79fca2e3673a23347cefb822f911f3124
 
-PODFILE CHECKSUM: 0eef87b48da55d489d5bd8fbe4a6cb99655a6a45
+PODFILE CHECKSUM: 8ac953d20ad804045b26a2383d7869306fb15201
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3

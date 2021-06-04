@@ -31,9 +31,15 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>临时测试</string>
+		<string>测试</string>
 		<key>fileName</key>
 		<string>TestViewController</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>NaviAndPresent</string>
+		<key>fileName</key>
+		<string>NaviAndPresent</string>
 	</dict>
 </array>
 </plist>

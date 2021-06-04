@@ -368,6 +368,12 @@
 		<array>
 			<dict>
 				<key>title</key>
+				<string>String</string>
+				<key>fileName</key>
+				<string>StringViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
 				<string>富文本</string>
 				<key>fileName</key>
 				<string>NSAttributedStringViewController</string>
@@ -383,6 +389,18 @@
 		<array>
 			<dict>
 				<key>title</key>
+				<string>TableViewView</string>
+				<key>fileName</key>
+				<string>TableViewViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>CollectionView</string>
+				<key>fileName</key>
+				<string>CollectionViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
 				<string>UIMenuController</string>
 				<key>fileName</key>
 				<string>MeunViewController</string>
@@ -392,6 +410,45 @@
 				<string>Popover</string>
 				<key>fileName</key>
 				<string>PopoverViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>TextView</string>
+				<key>fileName</key>
+				<string>TextViewViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UIView</string>
+				<key>fileName</key>
+				<string>UIKitViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UIStackView</string>
+				<key>fileName</key>
+				<string>UIStackViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UILabel</string>
+				<key>fileName</key>
+				<string>UILabelViewController</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>事件处理</string>
+		<key>fileName</key>
+		<string>ListViewController</string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>手势拖动view</string>
+				<key>fileName</key>
+				<string>BPGesSlidePopupViewController</string>
 			</dict>
 		</array>
 	</dict>
