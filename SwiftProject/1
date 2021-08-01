@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/Users/xiaruzhen/Library/Caches/com.bytedance.buildinfra/common/build_success_hook.py", line 85, in <module>
+    main()
+  File "/Users/xiaruzhen/Library/Caches/com.bytedance.buildinfra/common/build_success_hook.py", line 38, in main
+    if upload_use_xcodehook is True and derived_path:
+UnboundLocalError: local variable 'upload_use_xcodehook' referenced before assignment

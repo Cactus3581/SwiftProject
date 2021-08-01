@@ -51,6 +51,7 @@
 		0112F9A823BF57CA0002788E /* StringAndCharViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0112F9A723BF57CA0002788E /* StringAndCharViewController.swift */; };
 		0112F9AB23BF57E30002788E /* CollectionTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0112F9AA23BF57E30002788E /* CollectionTypesViewController.swift */; };
 		0112F9AE23BF57FD0002788E /* ControlFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0112F9AD23BF57FD0002788E /* ControlFlowViewController.swift */; };
+		011C6E09268C206500CA4D60 /* TableViewDiffController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011C6E08268C206500CA4D60 /* TableViewDiffController.swift */; };
 		011DEDD92527F71A006B2198 /* TextViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011DEDD82527F71A006B2198 /* TextViewViewController.swift */; };
 		011E9E9023BE28BE00BD0A17 /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011E9E8F23BE28BE00BD0A17 /* ExtensionViewController.swift */; };
 		01209BEB2455E30200C159BB /* CJLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01209BE72455E30200C159BB /* CJLabel.m */; };
@@ -73,6 +74,8 @@
 		013C7D3923B8604500804143 /* MVCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C7D3823B8604500804143 /* MVCView.swift */; };
 		013C7D3C23B87B1700804143 /* MVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C7D3B23B87B1700804143 /* MVVMViewModel.swift */; };
 		013D09F823BE281A0050F15A /* FunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D09F723BE281A0050F15A /* FunctionViewController.swift */; };
+		0142205D269E9844001913B1 /* ClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142205C269E9843001913B1 /* ClassModel.swift */; };
+		0142205F269E984E001913B1 /* StructModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0142205E269E984E001913B1 /* StructModel.swift */; };
 		014C81E62424F6CC007129AD /* UserProfilePhoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014C81E52424F6CC007129AD /* UserProfilePhoneTableViewCell.swift */; };
 		0156813023BE28F100B42FB9 /* ProtocolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156812F23BE28F100B42FB9 /* ProtocolViewController.swift */; };
 		01569B9D243319DA004879E9 /* NSAttributedStringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01569B9B243319DA004879E9 /* NSAttributedStringViewController.xib */; };
@@ -278,6 +281,7 @@
 		0112F9A723BF57CA0002788E /* StringAndCharViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringAndCharViewController.swift; sourceTree = "<group>"; };
 		0112F9AA23BF57E30002788E /* CollectionTypesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTypesViewController.swift; sourceTree = "<group>"; };
 		0112F9AD23BF57FD0002788E /* ControlFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlFlowViewController.swift; sourceTree = "<group>"; };
+		011C6E08268C206500CA4D60 /* TableViewDiffController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDiffController.swift; sourceTree = "<group>"; };
 		011DEDD82527F71A006B2198 /* TextViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewViewController.swift; sourceTree = "<group>"; };
 		011E9E8F23BE28BE00BD0A17 /* ExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionViewController.swift; sourceTree = "<group>"; };
 		01209BE72455E30200C159BB /* CJLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJLabel.m; sourceTree = "<group>"; };
@@ -303,6 +307,8 @@
 		013C7D3823B8604500804143 /* MVCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCView.swift; sourceTree = "<group>"; };
 		013C7D3B23B87B1700804143 /* MVVMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMViewModel.swift; sourceTree = "<group>"; };
 		013D09F723BE281A0050F15A /* FunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionViewController.swift; sourceTree = "<group>"; };
+		0142205C269E9843001913B1 /* ClassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassModel.swift; sourceTree = "<group>"; };
+		0142205E269E984E001913B1 /* StructModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructModel.swift; sourceTree = "<group>"; };
 		014C81E52424F6CC007129AD /* UserProfilePhoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePhoneTableViewCell.swift; sourceTree = "<group>"; };
 		0156812F23BE28F100B42FB9 /* ProtocolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolViewController.swift; sourceTree = "<group>"; tabWidth = 3; };
 		01569B9B243319DA004879E9 /* NSAttributedStringViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NSAttributedStringViewController.xib; sourceTree = "<group>"; };
@@ -807,6 +813,14 @@
 			path = BaseOperator;
 			sourceTree = "<group>";
 		};
+		011C6E07268C205700CA4D60 /* Diff */ = {
+			isa = PBXGroup;
+			children = (
+				011C6E08268C206500CA4D60 /* TableViewDiffController.swift */,
+			);
+			path = Diff;
+			sourceTree = "<group>";
+		};
 		011DEDD72527F6FD006B2198 /* TextView */ = {
 			isa = PBXGroup;
 			children = (
@@ -875,6 +889,7 @@
 				01AE64712538776400998E59 /* TableViewHeightController.swift */,
 				01AE6476253879C300998E59 /* TableViewHeightCell.swift */,
 				01211F9825C2B7F50086ECE9 /* UpdateTableViewHeader.swift */,
+				011C6E07268C205700CA4D60 /* Diff */,
 			);
 			path = UITableView;
 			sourceTree = "<group>";
@@ -1604,6 +1619,8 @@
 			isa = PBXGroup;
 			children = (
 				01ADB56D23BE296700EAB005 /* ClassStructViewController.swift */,
+				0142205E269E984E001913B1 /* StructModel.swift */,
+				0142205C269E9843001913B1 /* ClassModel.swift */,
 			);
 			path = ClassStruct;
 			sourceTree = "<group>";
@@ -2365,6 +2382,7 @@
 				01E15CC923BF583100A69E23 /* MethodViewController.swift in Sources */,
 				016D7D1C243E08EE00733053 /* MeunLabel.swift in Sources */,
 				01D38A0C241A770E00F6D74D /* MVVMListSecViewModel.swift in Sources */,
+				011C6E09268C206500CA4D60 /* TableViewDiffController.swift in Sources */,
 				019FE1A423C0E9B700B241B1 /* Factory.swift in Sources */,
 				01EA7C0023ABA97600712B20 /* ListTableViewCell.swift in Sources */,
 				01ACCE68243337760025C9EA /* UIView+SPAdd.swift in Sources */,
@@ -2488,6 +2506,7 @@
 				01D38A0F241A770E00F6D74D /* MVVMListListeningTableViewCell.swift in Sources */,
 				01EA7BFD23ABA87A00712B20 /* ListViewController.swift in Sources */,
 				01ADB56E23BE296700EAB005 /* ClassStructViewController.swift in Sources */,
+				0142205D269E9844001913B1 /* ClassModel.swift in Sources */,
 				01D38A13241A770E00F6D74D /* MVVMLisSecFactory.swift in Sources */,
 				0196DCC323D1897500112AB8 /* SnapView.swift in Sources */,
 				01E15CDE23BF59E400A69E23 /* OpaqueTypeViewController.swift in Sources */,
@@ -2506,6 +2525,7 @@
 				010D6AC423A9FC6200B84621 /* BaseViewController.swift in Sources */,
 				0187CBCA25E6906B008F4116 /* UIStackViewController.swift in Sources */,
 				01E68F9E266486FA008B8216 /* BPGesSlidePopupViewController.swift in Sources */,
+				0142205F269E984E001913B1 /* StructModel.swift in Sources */,
 				01937ED2241906B1009BD6AD /* MVVMListViewController.swift in Sources */,
 				01A550C3242864EB00472B6A /* UserProfileTableViewDataSource.swift in Sources */,
 				0171FF6524DBB05A00A5D0D4 /* UIViewController+Add.swift in Sources */,

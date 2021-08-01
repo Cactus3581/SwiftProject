@@ -105,6 +105,8 @@ class BPGesSlidePopupView: UIView, UIGestureRecognizerDelegate, BPGesSlidePopupV
 // #pragma mark - UIGestureRecognizerDelegate
     // 获取内部的scroll
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        // TODO: 为了临时解决bug才粗暴写的
+        self.scrollView = nil
         if gestureRecognizer == self.panGesture {
             var touchView = touch.view
             while (touchView != nil) {
@@ -191,6 +193,7 @@ class BPGesSlidePopupView: UIView, UIGestureRecognizerDelegate, BPGesSlidePopupV
 
         // 复位
         panGesture.setTranslation(.zero, in: contentView)
+        panGesture.setTranslation(.zero, in: scrollView)
     }
 
     // #pragma mark - 内部方法
@@ -243,7 +246,8 @@ class BPGesSlidePopupView: UIView, UIGestureRecognizerDelegate, BPGesSlidePopupV
     }
 
     private func showOrDismissWhenPanEnd() {
-        let criticalY = self.frame.size.height - self.contentView.frame.size.height/2
+        let rate: CGFloat = 0.25
+        let criticalY = self.frame.size.height * rate
         if (self.contentView.frame.origin.y > criticalY) {
             dismiss()
         }else {

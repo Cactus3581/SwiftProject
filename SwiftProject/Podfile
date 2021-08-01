@@ -19,6 +19,7 @@ target 'SwiftProject' do
     pod 'PKHUD' # HUD
     pod 'SwiftPullToRefresh' #上下拉刷新
     pod 'URLNavigator' #路由跳转
+    pod 'RxDataSources' #路由跳转
 
 # 扩展
     pod 'SwifterSwift' 

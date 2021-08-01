@@ -391,7 +391,22 @@
 				<key>title</key>
 				<string>TableViewView</string>
 				<key>fileName</key>
-				<string>TableViewViewController</string>
+				<string>ListViewController</string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>测试diff刷新</string>
+						<key>fileName</key>
+						<string>TableViewDiffController</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>基础</string>
+						<key>fileName</key>
+						<string>TableViewViewController</string>
+					</dict>
+				</array>
 			</dict>
 			<dict>
 				<key>title</key>

@@ -11,7 +11,7 @@ import SnapKit
 
 class BPGesSlidePopupViewController: BaseViewController, BPGesSlidePopupViewDelegate {
 
-    private var dataSource = ["1", "1", "1", "1", "1"]
+    private var dataSource = ["1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"]
 
     private weak var popupView: BPGesSlidePopupViewProtocol?
     private weak var contentView: BPGesSlidePopupContentView?
