@@ -1,6 +1,6 @@
 //
 //  FlowCatagoryView.swift
-//  UDCCatalog
+//  SwiftProject
 //
 //  Created by Ryan on 2021/7/5.
 //  Copyright © 2021 Ryan. All rights reserved.
@@ -48,7 +48,7 @@ class FlowCatagoryView: UIView, UICollectionViewDataSource, UICollectionViewDele
         collectionView.dataSource = self
         collectionView.bounces = true
         collectionView.alwaysBounceVertical = true
-        collectionView.backgroundColor = .red
+        collectionView.backgroundColor = .green
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         return collectionView
     }()
@@ -65,6 +65,7 @@ class FlowCatagoryView: UIView, UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CollectionViewCell else { return UICollectionViewCell() }
         cell.label.text = titles[indexPath.row]
+        cell.label.textAlignment = .center
         cell.backgroundColor = .green
         return cell
     }

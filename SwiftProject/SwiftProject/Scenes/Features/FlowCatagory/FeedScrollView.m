@@ -17,9 +17,9 @@
 }
 
 // 解决方案：将scroll的滑动事件，转化到当前tab下scrollView，从而实现滑动联动
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-    return _innterTableView;
-}
+//- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+//    return _innterTableView;
+//}
 
 - (void)setContentOffset:(CGPoint)contentOffset {
     if (!self.contentOffsetDidChange) {
@@ -42,6 +42,7 @@
     super.contentOffset = newOffset;
     BOOL shouldChange = self.contentOffsetDidChange(self, oldOffset, newOffset);
     if (shouldChange) {
+        NSLog(@"阻尼效果-scroll-可滑动: oldY: %.2f, newY: %.2f", oldOffset.y, newOffset.y);
         return;
     }
     
@@ -52,7 +53,7 @@
     if (y > max) {
         y = max;
     }
-    NSLog(@"测试卡死-1");
+    NSLog(@"阻尼效果-scroll-不可滑动: oldY: %.2f, newY: %.2f", oldOffset.y, newOffset.y);
     super.contentOffset = CGPointMake(oldOffset.x, y);
 }
 
@@ -89,6 +90,7 @@
     super.contentOffset = newOffset;
     BOOL shouldChange = self.contentOffsetDidChange(self, oldOffset, newOffset);
     if (shouldChange) {
+        NSLog(@"阻尼效果-table-可滑动: oldY: %.2f, newY: %.2f", oldOffset.y, newOffset.y);
         return;
     }
     
@@ -99,7 +101,7 @@
     if (y < min) {
         y = min;
     }
-    NSLog(@"测试卡死-2");
+    NSLog(@"阻尼效果-table-不可滑动: oldOffset.y: %.2f, y: %.2f", oldOffset.y, y);
     super.contentOffset = CGPointMake(oldOffset.x, y);
 }
 

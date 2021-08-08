@@ -1,6 +1,6 @@
 //
 //  ListContainerView.swift
-//  UDCCatalog
+//  SwiftProject
 //
 //  Created by Ryan on 2021/7/5.
 //  Copyright © 2021 Ryan. All rights reserved.
@@ -17,9 +17,9 @@ class ListContainerView: UIView {
         return currentListVC?.tableView
     }
     
-    private var currentListVC: SubListVC2?
+    private var currentListVC: SubListVC?
     
-    var map = [String: SubListVC2]()
+    var map = [String: SubListVC]()
     weak var parentViewController: UIViewController?
 
     init() {
@@ -34,11 +34,11 @@ class ListContainerView: UIView {
     func change(key: String) {
         guard let parentViewController = self.parentViewController else { return }
         
-        let willShowListVC: SubListVC2
+        let willShowListVC: SubListVC
         if let listView = map[key] {
             willShowListVC = listView
         } else {
-            willShowListVC = SubListVC2(key: key)
+            willShowListVC = SubListVC(key: key)
             map[key] = willShowListVC
             parentViewController.addChildController(willShowListVC, parentView: self)
         }

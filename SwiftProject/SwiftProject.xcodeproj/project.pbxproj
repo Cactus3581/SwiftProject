@@ -136,14 +136,11 @@
 		0197847B242B9AFE009EB2D4 /* UserProfileAliasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197847A242B9AFE009EB2D4 /* UserProfileAliasTableViewCell.swift */; };
 		0197847D242B9B31009EB2D4 /* UserProfileUserStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197847C242B9B31009EB2D4 /* UserProfileUserStatusTableViewCell.swift */; };
 		019A7E3826C032A700F81E07 /* ListContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A7E2D26C032A700F81E07 /* ListContainerView.swift */; };
-		019A7E3926C032A700F81E07 /* SubListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A7E2E26C032A700F81E07 /* SubListVC.swift */; };
 		019A7E3A26C032A700F81E07 /* FlowCatagoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A7E2F26C032A700F81E07 /* FlowCatagoryView.swift */; };
-		019A7E3B26C032A700F81E07 /* FeedTeamHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A7E3126C032A700F81E07 /* FeedTeamHeader.swift */; };
+		019A7E3B26C032A700F81E07 /* FeedSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A7E3126C032A700F81E07 /* FeedSectionHeader.swift */; };
 		019A7E3C26C032A700F81E07 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A7E3226C032A700F81E07 /* HeaderView.swift */; };
-		019A7E3D26C032A700F81E07 /* SubListVC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A7E3326C032A700F81E07 /* SubListVC3.swift */; };
+		019A7E3D26C032A700F81E07 /* SubListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A7E3326C032A700F81E07 /* SubListVC.swift */; };
 		019A7E3E26C032A700F81E07 /* ContainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A7E3426C032A700F81E07 /* ContainViewController.swift */; };
-		019A7E3F26C032A700F81E07 /* SubListVC4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A7E3526C032A700F81E07 /* SubListVC4.swift */; };
-		019A7E4026C032A700F81E07 /* SubListVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A7E3626C032A700F81E07 /* SubListVC2.swift */; };
 		019A7E4126C032A700F81E07 /* FeedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 019A7E3726C032A700F81E07 /* FeedScrollView.m */; };
 		019BBDE023D3FB2C00061503 /* GCDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019BBDDF23D3FB2C00061503 /* GCDViewController.swift */; };
 		019D8D0724F4F2070055F331 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D8D0624F4F2070055F331 /* ViewModelTests.swift */; };
@@ -380,15 +377,12 @@
 		0197847A242B9AFE009EB2D4 /* UserProfileAliasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileAliasTableViewCell.swift; sourceTree = "<group>"; };
 		0197847C242B9B31009EB2D4 /* UserProfileUserStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileUserStatusTableViewCell.swift; sourceTree = "<group>"; };
 		019A7E2D26C032A700F81E07 /* ListContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListContainerView.swift; sourceTree = "<group>"; };
-		019A7E2E26C032A700F81E07 /* SubListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubListVC.swift; sourceTree = "<group>"; };
 		019A7E2F26C032A700F81E07 /* FlowCatagoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowCatagoryView.swift; sourceTree = "<group>"; };
 		019A7E3026C032A700F81E07 /* FeedScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedScrollView.h; sourceTree = "<group>"; };
-		019A7E3126C032A700F81E07 /* FeedTeamHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTeamHeader.swift; sourceTree = "<group>"; };
+		019A7E3126C032A700F81E07 /* FeedSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedSectionHeader.swift; sourceTree = "<group>"; };
 		019A7E3226C032A700F81E07 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		019A7E3326C032A700F81E07 /* SubListVC3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubListVC3.swift; sourceTree = "<group>"; };
+		019A7E3326C032A700F81E07 /* SubListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubListVC.swift; sourceTree = "<group>"; };
 		019A7E3426C032A700F81E07 /* ContainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainViewController.swift; sourceTree = "<group>"; };
-		019A7E3526C032A700F81E07 /* SubListVC4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubListVC4.swift; sourceTree = "<group>"; };
-		019A7E3626C032A700F81E07 /* SubListVC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubListVC2.swift; sourceTree = "<group>"; };
 		019A7E3726C032A700F81E07 /* FeedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedScrollView.m; sourceTree = "<group>"; };
 		019BBDDF23D3FB2C00061503 /* GCDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDViewController.swift; sourceTree = "<group>"; };
 		019D8D0624F4F2070055F331 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
@@ -1404,14 +1398,11 @@
 				019A7E3426C032A700F81E07 /* ContainViewController.swift */,
 				019A7E3026C032A700F81E07 /* FeedScrollView.h */,
 				019A7E3726C032A700F81E07 /* FeedScrollView.m */,
-				019A7E3126C032A700F81E07 /* FeedTeamHeader.swift */,
+				019A7E3126C032A700F81E07 /* FeedSectionHeader.swift */,
 				019A7E2F26C032A700F81E07 /* FlowCatagoryView.swift */,
 				019A7E3226C032A700F81E07 /* HeaderView.swift */,
 				019A7E2D26C032A700F81E07 /* ListContainerView.swift */,
-				019A7E2E26C032A700F81E07 /* SubListVC.swift */,
-				019A7E3626C032A700F81E07 /* SubListVC2.swift */,
-				019A7E3326C032A700F81E07 /* SubListVC3.swift */,
-				019A7E3526C032A700F81E07 /* SubListVC4.swift */,
+				019A7E3326C032A700F81E07 /* SubListVC.swift */,
 			);
 			path = FlowCatagory;
 			sourceTree = "<group>";
@@ -2461,7 +2452,6 @@
 				01BFFC75242DA502004AA94B /* UserProfileTagsView.swift in Sources */,
 				0112F9A823BF57CA0002788E /* StringAndCharViewController.swift in Sources */,
 				01ACCE772433386C0025C9EA /* UICollectionView+SPAdd.swift in Sources */,
-				019A7E3926C032A700F81E07 /* SubListVC.swift in Sources */,
 				01E3E58D2668D68200DCD7A3 /* BPGesSlidePopupView.swift in Sources */,
 				01026749242379B900CA6D00 /* UserProfileCTAView.swift in Sources */,
 				01ADB56B23BE294300EAB005 /* InheritViewController.swift in Sources */,
@@ -2508,7 +2498,7 @@
 				019A7E3C26C032A700F81E07 /* HeaderView.swift in Sources */,
 				01937EE624193344009BD6AD /* MVVMListAssembly.swift in Sources */,
 				013C7D3923B8604500804143 /* MVCView.swift in Sources */,
-				019A7E3D26C032A700F81E07 /* SubListVC3.swift in Sources */,
+				019A7E3D26C032A700F81E07 /* SubListVC.swift in Sources */,
 				01B9AA6224EE5C5100845204 /* CollectionViewCell.swift in Sources */,
 				015E177C24275F7000351EA9 /* UserProfileTableViewDelegate.swift in Sources */,
 				01EA7C0923ABAB1300712B20 /* RootNavigationController.swift in Sources */,
@@ -2525,9 +2515,8 @@
 				01E15CD823BF595200A69E23 /* ErrorhandlingViewController.swift in Sources */,
 				0156813023BE28F100B42FB9 /* ProtocolViewController.swift in Sources */,
 				01E9B3552420D9F000FF618D /* MVVMListSectionImageHeaderView.swift in Sources */,
-				019A7E4026C032A700F81E07 /* SubListVC2.swift in Sources */,
 				010D6A9223A9FB4A00B84621 /* AppDelegate.swift in Sources */,
-				019A7E3B26C032A700F81E07 /* FeedTeamHeader.swift in Sources */,
+				019A7E3B26C032A700F81E07 /* FeedSectionHeader.swift in Sources */,
 				0123471C25669FB80080DD98 /* NaviAndPresent1.swift in Sources */,
 				01209BEC2455E30200C159BB /* CJLabelConfigure.m in Sources */,
 				013C7D3523B8602D00804143 /* MVCModel.swift in Sources */,
@@ -2539,7 +2528,6 @@
 				01ACCE8024333AB30025C9EA /* Int+SPAdd.swift in Sources */,
 				01AE6477253879C300998E59 /* TableViewHeightCell.swift in Sources */,
 				010D6AD523A9FDB500B84621 /* BPSubViewController.swift in Sources */,
-				019A7E3F26C032A700F81E07 /* SubListVC4.swift in Sources */,
 				01ACCE662433375D0025C9EA /* UITextView+SPAdd.swift in Sources */,
 				01C01BB123BDE699008B2D9E /* EnumViewController.swift in Sources */,
 				013C7D3123B8600000804143 /* MVCViewController.swift in Sources */,

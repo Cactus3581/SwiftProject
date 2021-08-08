@@ -1,6 +1,6 @@
 //
 //  HeaderView.swift
-//  UDCCatalog
+//  SwiftProject
 //
 //  Created by Ryan on 2021/7/5.
 //  Copyright © 2021 Ryan. All rights reserved.
@@ -23,7 +23,7 @@ class HeaderView: UIView {
     var isFilterViewSupportCeiling = true
     var isExpanded = false
     weak var delegate: (HeaderViewLayoutDelegate & FlowCatagoryViewLayoutDelegate)?
-    var headerViewHeight: CGFloat = 600
+    var headerViewHeight: CGFloat = 200
 
     init() {
         super.init(frame: .zero)

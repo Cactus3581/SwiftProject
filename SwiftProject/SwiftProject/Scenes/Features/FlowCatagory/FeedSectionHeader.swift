@@ -1,5 +1,5 @@
 //
-//  FeedTeamHeader.swift
+//  FeedSectionHeader.swift
 //  LarkFeed
 //
 //  Created by 夏汝震 on 2021/7/13.
@@ -8,16 +8,16 @@
 import Foundation
 import UIKit
 
-protocol FeedTeamHeaderDelegate: AnyObject {
+protocol FeedSectionHeaderDelegate: AnyObject {
     func expandAction(_ section: Int)
 }
 
-class FeedTeamHeader: UITableViewHeaderFooterView {
-    static var identifier: String = "FeedTeamHeader"
-    weak var delegate: FeedTeamHeaderDelegate?
+class FeedSectionHeader: UITableViewHeaderFooterView {
+    static var identifier: String = "FeedSectionHeader"
+    weak var delegate: FeedSectionHeaderDelegate?
     let arrowImageView = UIImageView()
     var section = 0
-    var model = SubListVC3Model()
+    var model = SubListVCModel()
 
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
@@ -40,7 +40,7 @@ class FeedTeamHeader: UITableViewHeaderFooterView {
         }
     }
 
-    func set(_ model: SubListVC3Model, _ section: Int) {
+    func set(_ model: SubListVCModel, _ section: Int) {
         self.section = section
         self.model = model
         self.arrowImageView.transform = CGAffineTransform(rotationAngle: getRotation(isWillExpanded: model.isExpanded).1)
