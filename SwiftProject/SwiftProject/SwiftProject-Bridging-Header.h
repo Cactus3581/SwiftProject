@@ -11,5 +11,6 @@
 
 #import "TestBridge.h"
 #import "CJLabel.h"
+#import "FeedScrollView.h"
 
 #endif /* SwiftProject_Bridging_Header_h */

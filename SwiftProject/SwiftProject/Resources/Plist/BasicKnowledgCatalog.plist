@@ -73,7 +73,22 @@
 				<key>title</key>
 				<string>类和结构体</string>
 				<key>fileName</key>
-				<string>ClassStructViewController</string>
+				<string>ListViewController</string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>在多层结构中修改底层变量</string>
+						<key>fileName</key>
+						<string>ClassStructViewController</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>在多层结构中修改底层变量</string>
+						<key>fileName</key>
+						<string>ClassStructViewController1</string>
+					</dict>
+				</array>
 			</dict>
 			<dict>
 				<key>title</key>

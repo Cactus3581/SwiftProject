@@ -20,5 +20,11 @@
 		<key>fileName</key>
 		<string>JSONViewController</string>
 	</dict>
+	<dict>
+		<key>title</key>
+		<string>FlowCategory</string>
+		<key>fileName</key>
+		<string>ContainViewController</string>
+	</dict>
 </array>
 </plist>
