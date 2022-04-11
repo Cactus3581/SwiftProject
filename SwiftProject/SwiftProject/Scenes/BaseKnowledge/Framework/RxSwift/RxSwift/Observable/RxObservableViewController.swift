@@ -10,7 +10,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-
+/*
+重点：
+ 1. 发送信号和订阅信号的时间序
+ 2. 多个信号一起协作
+ 3. 信号的转换
+ */
 class RxObservableViewController: BaseViewController {
     let disposeBag = DisposeBag()
 

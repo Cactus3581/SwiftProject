@@ -32,6 +32,7 @@
 		01089087243C940E00DBF606 /* RxMVVMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01089086243C940E00DBF606 /* RxMVVMViewModel.swift */; };
 		0109C27C248F41160056D8C2 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0109C27A248F41160056D8C2 /* PopoverViewController.swift */; };
 		0109C27D248F41160056D8C2 /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0109C27B248F41160056D8C2 /* PopoverViewController.xib */; };
+		010B27F026CCB29600F4A3F1 /* String+Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B27EF26CCB29600F4A3F1 /* String+Log.swift */; };
 		010CD84623B0C61300AE57A9 /* OldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010CD84523B0C61300AE57A9 /* OldViewController.swift */; };
 		010CE4E823B0D6E900AE57A9 /* BasicKnowledgCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 010CE4E723B0D6E800AE57A9 /* BasicKnowledgCatalog.plist */; };
 		010D6A9223A9FB4A00B84621 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010D6A9123A9FB4A00B84621 /* AppDelegate.swift */; };
@@ -144,6 +145,10 @@
 		019A7E4126C032A700F81E07 /* FeedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 019A7E3726C032A700F81E07 /* FeedScrollView.m */; };
 		019BBDE023D3FB2C00061503 /* GCDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019BBDDF23D3FB2C00061503 /* GCDViewController.swift */; };
 		019D8D0724F4F2070055F331 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D8D0624F4F2070055F331 /* ViewModelTests.swift */; };
+		019F97192804849700C43CE9 /* DataQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019F97182804849700C43CE9 /* DataQueue.swift */; };
+		019F971C280490B600C43CE9 /* ActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019F971B280490B600C43CE9 /* ActionHandler.swift */; };
+		019F97202804931100C43CE9 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019F971F2804931100C43CE9 /* Context.swift */; };
+		019F97222804939300C43CE9 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019F97212804939300C43CE9 /* GroupCell.swift */; };
 		019FE1A223C0E99F00B241B1 /* FactoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FE1A123C0E99F00B241B1 /* FactoryViewController.swift */; };
 		019FE1A423C0E9B700B241B1 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FE1A323C0E9B700B241B1 /* Factory.swift */; };
 		019FE1A623C0E9BF00B241B1 /* Produce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FE1A523C0E9BF00B241B1 /* Produce.swift */; };
@@ -187,6 +192,13 @@
 		01D38A13241A770E00F6D74D /* MVVMLisSecFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D38A0A241A770E00F6D74D /* MVVMLisSecFactory.swift */; };
 		01D38A14241A770E00F6D74D /* MVVMListSecAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D38A0B241A770E00F6D74D /* MVVMListSecAssembly.swift */; };
 		01D7551D26B687FE00BA980D /* ClassStructViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D7551C26B687FE00BA980D /* ClassStructViewController1.swift */; };
+		01DD0C272800CFB300598818 /* TableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DD0C262800CFB300598818 /* TableViewAdapter.swift */; };
+		01DEC6CB27F830A30070C89A /* GroupVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DEC6CA27F830A30070C89A /* GroupVM.swift */; };
+		01DEC6CD27F830AC0070C89A /* GroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DEC6CC27F830AC0070C89A /* GroupVC.swift */; };
+		01DEC6CF27F830B50070C89A /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DEC6CE27F830B50070C89A /* Fetcher.swift */; };
+		01DEC6D127F830BF0070C89A /* GroupDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DEC6D027F830BF0070C89A /* GroupDataSource.swift */; };
+		01DEC6D627F83F770070C89A /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DEC6D527F83F770070C89A /* Entity.swift */; };
+		01DEC6D927F83FF10070C89A /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DEC6D827F83FF10070C89A /* Index.swift */; };
 		01E058C62429E51B0073854E /* UserProfileLinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E058C52429E51B0073854E /* UserProfileLinkTableViewCell.swift */; };
 		01E15CC923BF583100A69E23 /* MethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CC823BF583100A69E23 /* MethodViewController.swift */; };
 		01E15CCC23BF58D800A69E23 /* SubscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CCB23BF58D800A69E23 /* SubscriptViewController.swift */; };
@@ -210,6 +222,10 @@
 		01EA7C0723ABAAFD00712B20 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA7C0623ABAAFD00712B20 /* RootTabBarController.swift */; };
 		01EA7C0923ABAB1300712B20 /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA7C0823ABAB1300712B20 /* RootNavigationController.swift */; };
 		01EA7C0C23AC69ED00712B20 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EA7C0B23AC69ED00712B20 /* ListViewModel.swift */; };
+		01EACC6D26F1180D005B5EC1 /* FeedFeatureGating.c in Sources */ = {isa = PBXBuildFile; fileRef = 01EACC6B26F1180C005B5EC1 /* FeedFeatureGating.c */; };
+		01EAE14526F119B9005B5EC1 /* CPPerson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01EAE14226F119B8005B5EC1 /* CPPerson.cpp */; };
+		01EAE14626F119B9005B5EC1 /* CBridgeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EAE14326F119B8005B5EC1 /* CBridgeController.swift */; };
+		01EDC95E277CBCC900315D83 /* LeakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EDC95D277CBCC900315D83 /* LeakViewController.swift */; };
 		01EE3A1C24152264008ECA89 /* SPSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EE3A1B24152264008ECA89 /* SPSwift.swift */; };
 		01EE3A1F2415288A008ECA89 /* SPSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EE3A1D2415288A008ECA89 /* SPSwiftViewController.swift */; };
 		01EE3A202415288A008ECA89 /* SPSwiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01EE3A1E2415288A008ECA89 /* SPSwiftViewController.xib */; };
@@ -261,6 +277,7 @@
 		01089086243C940E00DBF606 /* RxMVVMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMVVMViewModel.swift; sourceTree = "<group>"; };
 		0109C27A248F41160056D8C2 /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		0109C27B248F41160056D8C2 /* PopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
+		010B27EF26CCB29600F4A3F1 /* String+Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Log.swift"; sourceTree = "<group>"; };
 		010CD84523B0C61300AE57A9 /* OldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldViewController.swift; sourceTree = "<group>"; };
 		010CE4E723B0D6E800AE57A9 /* BasicKnowledgCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BasicKnowledgCatalog.plist; sourceTree = "<group>"; };
 		010D6A8E23A9FB4A00B84621 /* SwiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -386,6 +403,10 @@
 		019A7E3726C032A700F81E07 /* FeedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedScrollView.m; sourceTree = "<group>"; };
 		019BBDDF23D3FB2C00061503 /* GCDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDViewController.swift; sourceTree = "<group>"; };
 		019D8D0624F4F2070055F331 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
+		019F97182804849700C43CE9 /* DataQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataQueue.swift; sourceTree = "<group>"; };
+		019F971B280490B600C43CE9 /* ActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionHandler.swift; sourceTree = "<group>"; };
+		019F971F2804931100C43CE9 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		019F97212804939300C43CE9 /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		019FE1A123C0E99F00B241B1 /* FactoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryViewController.swift; sourceTree = "<group>"; };
 		019FE1A323C0E9B700B241B1 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		019FE1A523C0E9BF00B241B1 /* Produce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Produce.swift; sourceTree = "<group>"; };
@@ -429,6 +450,13 @@
 		01D38A0B241A770E00F6D74D /* MVVMListSecAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMListSecAssembly.swift; sourceTree = "<group>"; };
 		01D7551C26B687FE00BA980D /* ClassStructViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassStructViewController1.swift; sourceTree = "<group>"; };
 		01DB6C5F243EAD3100E14C70 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		01DD0C262800CFB300598818 /* TableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAdapter.swift; sourceTree = "<group>"; };
+		01DEC6CA27F830A30070C89A /* GroupVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupVM.swift; sourceTree = "<group>"; };
+		01DEC6CC27F830AC0070C89A /* GroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupVC.swift; sourceTree = "<group>"; };
+		01DEC6CE27F830B50070C89A /* Fetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
+		01DEC6D027F830BF0070C89A /* GroupDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDataSource.swift; sourceTree = "<group>"; };
+		01DEC6D527F83F770070C89A /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		01DEC6D827F83FF10070C89A /* Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
 		01E058C52429E51B0073854E /* UserProfileLinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileLinkTableViewCell.swift; sourceTree = "<group>"; };
 		01E15CC823BF583100A69E23 /* MethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodViewController.swift; sourceTree = "<group>"; };
 		01E15CCB23BF58D800A69E23 /* SubscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptViewController.swift; sourceTree = "<group>"; };
@@ -452,6 +480,13 @@
 		01EA7C0623ABAAFD00712B20 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		01EA7C0823ABAB1300712B20 /* RootNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
 		01EA7C0B23AC69ED00712B20 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		01EACC5F26F1118A005B5EC1 /* CBridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBridging.h; sourceTree = "<group>"; };
+		01EACC6A26F1180C005B5EC1 /* FeedFeatureGating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedFeatureGating.h; sourceTree = "<group>"; };
+		01EACC6B26F1180C005B5EC1 /* FeedFeatureGating.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = FeedFeatureGating.c; sourceTree = "<group>"; };
+		01EAE14226F119B8005B5EC1 /* CPPerson.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CPPerson.cpp; sourceTree = "<group>"; };
+		01EAE14326F119B8005B5EC1 /* CBridgeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBridgeController.swift; sourceTree = "<group>"; };
+		01EAE14426F119B8005B5EC1 /* CPPerson.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CPPerson.hpp; sourceTree = "<group>"; };
+		01EDC95D277CBCC900315D83 /* LeakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeakViewController.swift; sourceTree = "<group>"; };
 		01EE3A1B24152264008ECA89 /* SPSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPSwift.swift; sourceTree = "<group>"; };
 		01EE3A1D2415288A008ECA89 /* SPSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPSwiftViewController.swift; sourceTree = "<group>"; };
 		01EE3A1E2415288A008ECA89 /* SPSwiftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPSwiftViewController.xib; sourceTree = "<group>"; };
@@ -779,7 +814,7 @@
 			path = Swinject;
 			sourceTree = "<group>";
 		};
-		010D6ACD23A9FD9E00B84621 /* Bridge */ = {
+		010D6ACD23A9FD9E00B84621 /* Bridge1 */ = {
 			isa = PBXGroup;
 			children = (
 				010D6AD023A9FD9E00B84621 /* NSUserDefaults+LarkAddMonitor.h */,
@@ -787,7 +822,7 @@
 				010D6AD823A9FF6F00B84621 /* TestBridge.h */,
 				010D6AD723A9FF6F00B84621 /* TestBridge.m */,
 			);
-			path = Bridge;
+			path = Bridge1;
 			sourceTree = "<group>";
 		};
 		0112F9A623BF57BC0002788E /* StringAndChar */ = {
@@ -1410,6 +1445,7 @@
 		019BBDDD23D3FB0700061503 /* Thread */ = {
 			isa = PBXGroup;
 			children = (
+				01EDC95C277CBCB100315D83 /* Leak */,
 				019BBDDE23D3FB0E00061503 /* GCD */,
 			);
 			path = Thread;
@@ -1421,6 +1457,30 @@
 				019BBDDF23D3FB2C00061503 /* GCDViewController.swift */,
 			);
 			path = GCD;
+			sourceTree = "<group>";
+		};
+		019F971A280490AA00C43CE9 /* ActionHandler */ = {
+			isa = PBXGroup;
+			children = (
+				019F971B280490B600C43CE9 /* ActionHandler.swift */,
+			);
+			path = ActionHandler;
+			sourceTree = "<group>";
+		};
+		019F971D280490D100C43CE9 /* DataQueue */ = {
+			isa = PBXGroup;
+			children = (
+				019F97182804849700C43CE9 /* DataQueue.swift */,
+			);
+			path = DataQueue;
+			sourceTree = "<group>";
+		};
+		019F971E2804930300C43CE9 /* Context */ = {
+			isa = PBXGroup;
+			children = (
+				019F971F2804931100C43CE9 /* Context.swift */,
+			);
+			path = Context;
 			sourceTree = "<group>";
 		};
 		019FE1A023C0E98600B241B1 /* Factory */ = {
@@ -1724,6 +1784,7 @@
 		01CABD5C23F3D382009410C3 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				01DEC6C427F830330070C89A /* Group */,
 				019A7E2C26C032A700F81E07 /* FlowCatagory */,
 				017FA2082534901A005BFCAB /* JSON */,
 			);
@@ -1822,6 +1883,72 @@
 				015E177D242763D200351EA9 /* UserProfileDataHandler.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		01DEC6C427F830330070C89A /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				019F971E2804930300C43CE9 /* Context */,
+				019F971D280490D100C43CE9 /* DataQueue */,
+				019F971A280490AA00C43CE9 /* ActionHandler */,
+				01DEC6D427F83AEC0070C89A /* Model */,
+				01DEC6C927F830740070C89A /* UI */,
+				01DEC6C827F830690070C89A /* VC */,
+				01DEC6C727F8305F0070C89A /* VM */,
+				01DEC6C627F8304F0070C89A /* Fetcher */,
+				01DEC6C527F830420070C89A /* DataSource */,
+			);
+			path = Group;
+			sourceTree = "<group>";
+		};
+		01DEC6C527F830420070C89A /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				01DEC6D027F830BF0070C89A /* GroupDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		01DEC6C627F8304F0070C89A /* Fetcher */ = {
+			isa = PBXGroup;
+			children = (
+				01DEC6CE27F830B50070C89A /* Fetcher.swift */,
+			);
+			path = Fetcher;
+			sourceTree = "<group>";
+		};
+		01DEC6C727F8305F0070C89A /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				01DEC6CA27F830A30070C89A /* GroupVM.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		01DEC6C827F830690070C89A /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				01DEC6CC27F830AC0070C89A /* GroupVC.swift */,
+				01DD0C262800CFB300598818 /* TableViewAdapter.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		01DEC6C927F830740070C89A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				019F97212804939300C43CE9 /* GroupCell.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		01DEC6D427F83AEC0070C89A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				01DEC6D527F83F770070C89A /* Entity.swift */,
+				01DEC6D827F83FF10070C89A /* Index.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		01E15CCA23BF58CD00A69E23 /* Subscript */ = {
@@ -1985,6 +2112,7 @@
 			isa = PBXGroup;
 			children = (
 				010D6A9123A9FB4A00B84621 /* AppDelegate.swift */,
+				010B27EF26CCB29600F4A3F1 /* String+Log.swift */,
 				010D6A9323A9FB4A00B84621 /* SceneDelegate.swift */,
 			);
 			path = AppDelegate;
@@ -2017,9 +2145,10 @@
 		01EA7BF423ABA51300712B20 /* ImprovingTips */ = {
 			isa = PBXGroup;
 			children = (
+				01EACC6726F114CC005B5EC1 /* Bridge */,
 				0123470F25669EC40080DD98 /* NaviAndPresent */,
 				01026719242379B900CA6D00 /* Profile */,
-				010D6ACD23A9FD9E00B84621 /* Bridge */,
+				010D6ACD23A9FD9E00B84621 /* Bridge1 */,
 			);
 			path = ImprovingTips;
 			sourceTree = "<group>";
@@ -2113,6 +2242,28 @@
 				01EA7C0B23AC69ED00712B20 /* ListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		01EACC6726F114CC005B5EC1 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				01EAE14326F119B8005B5EC1 /* CBridgeController.swift */,
+				01EAE14426F119B8005B5EC1 /* CPPerson.hpp */,
+				01EAE14226F119B8005B5EC1 /* CPPerson.cpp */,
+				01EACC6A26F1180C005B5EC1 /* FeedFeatureGating.h */,
+				01EACC6B26F1180C005B5EC1 /* FeedFeatureGating.c */,
+				01EACC5F26F1118A005B5EC1 /* CBridging.h */,
+			);
+			name = Bridge;
+			path = ../../Application/AppDelegate/Bridge;
+			sourceTree = "<group>";
+		};
+		01EDC95C277CBCB100315D83 /* Leak */ = {
+			isa = PBXGroup;
+			children = (
+				01EDC95D277CBCC900315D83 /* LeakViewController.swift */,
+			);
+			path = Leak;
 			sourceTree = "<group>";
 		};
 		01EE3A172415222D008ECA89 /* SPSwift */ = {
@@ -2399,6 +2550,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				019F97192804849700C43CE9 /* DataQueue.swift in Sources */,
 				01D38A14241A770E00F6D74D /* MVVMListSecAssembly.swift in Sources */,
 				01A3A40623BF5A3C003FEA19 /* MemorySafeViewController.swift in Sources */,
 				01EE3A1F2415288A008ECA89 /* SPSwiftViewController.swift in Sources */,
@@ -2455,6 +2607,7 @@
 				01E3E58D2668D68200DCD7A3 /* BPGesSlidePopupView.swift in Sources */,
 				01026749242379B900CA6D00 /* UserProfileCTAView.swift in Sources */,
 				01ADB56B23BE294300EAB005 /* InheritViewController.swift in Sources */,
+				01DEC6D627F83F770070C89A /* Entity.swift in Sources */,
 				01D7551D26B687FE00BA980D /* ClassStructViewController1.swift in Sources */,
 				017FA20A25349038005BFCAB /* JSONViewController.swift in Sources */,
 				01937ED5241906D3009BD6AD /* MVVMListViewModel.swift in Sources */,
@@ -2469,6 +2622,7 @@
 				01937EE324192DEA009BD6AD /* MVVMListTableViewCellProtocol.swift in Sources */,
 				01692D2224A23ABE00B221FA /* RxErrorHandlingViewController.swift in Sources */,
 				01E15CD523BF593300A69E23 /* OptionalChainViewController.swift in Sources */,
+				01DEC6D127F830BF0070C89A /* GroupDataSource.swift in Sources */,
 				0182B7C4241A78F40033BF0A /* MVVMListSectionTextFooterView.swift in Sources */,
 				011DEDD92527F71A006B2198 /* TextViewViewController.swift in Sources */,
 				01E15CCF23BF58F300A69E23 /* InitializeViewController.swift in Sources */,
@@ -2490,6 +2644,7 @@
 				01A3A40323BF5A18003FEA19 /* ARCViewController.swift in Sources */,
 				011E9E9023BE28BE00BD0A17 /* ExtensionViewController.swift in Sources */,
 				015846FE24239FA700B7BEBE /* UserProfileTextTableViewCell.swift in Sources */,
+				01EAE14526F119B9005B5EC1 /* CPPerson.cpp in Sources */,
 				0182B7D4241A882B0033BF0A /* MVVMListSecCellViewModel.swift in Sources */,
 				01ACCE7D243338A40025C9EA /* UILabel+SPAdd.swift in Sources */,
 				0102673A242379B900CA6D00 /* UserProfileViewModel.swift in Sources */,
@@ -2515,6 +2670,7 @@
 				01E15CD823BF595200A69E23 /* ErrorhandlingViewController.swift in Sources */,
 				0156813023BE28F100B42FB9 /* ProtocolViewController.swift in Sources */,
 				01E9B3552420D9F000FF618D /* MVVMListSectionImageHeaderView.swift in Sources */,
+				01DEC6D927F83FF10070C89A /* Index.swift in Sources */,
 				010D6A9223A9FB4A00B84621 /* AppDelegate.swift in Sources */,
 				019A7E3B26C032A700F81E07 /* FeedSectionHeader.swift in Sources */,
 				0123471C25669FB80080DD98 /* NaviAndPresent1.swift in Sources */,
@@ -2530,6 +2686,7 @@
 				010D6AD523A9FDB500B84621 /* BPSubViewController.swift in Sources */,
 				01ACCE662433375D0025C9EA /* UITextView+SPAdd.swift in Sources */,
 				01C01BB123BDE699008B2D9E /* EnumViewController.swift in Sources */,
+				019F971C280490B600C43CE9 /* ActionHandler.swift in Sources */,
 				013C7D3123B8600000804143 /* MVCViewController.swift in Sources */,
 				0109C27C248F41160056D8C2 /* PopoverViewController.swift in Sources */,
 				01E3E597266A18A200DCD7A3 /* BPGesSlidePopupContentView.swift in Sources */,
@@ -2544,6 +2701,7 @@
 				010D6ACA23A9FD8F00B84621 /* BPContainer.swift in Sources */,
 				010D6A9423A9FB4A00B84621 /* SceneDelegate.swift in Sources */,
 				01089085243C940300DBF606 /* RxMVVMModel.swift in Sources */,
+				01EAE14626F119B9005B5EC1 /* CBridgeController.swift in Sources */,
 				01089082243C93F400DBF606 /* RxMVVMTableViewCell.swift in Sources */,
 				01D38A0F241A770E00F6D74D /* MVVMListListeningTableViewCell.swift in Sources */,
 				01EA7BFD23ABA87A00712B20 /* ListViewController.swift in Sources */,
@@ -2554,26 +2712,35 @@
 				01E15CDE23BF59E400A69E23 /* OpaqueTypeViewController.swift in Sources */,
 				015CBDE42431A02F00393F1B /* UserProfileConstants.swift in Sources */,
 				0167EE842418F2EC00E4830F /* MVVMViewController.swift in Sources */,
+				010B27F026CCB29600F4A3F1 /* String+Log.swift in Sources */,
 				01026741242379B900CA6D00 /* UserProfileModel.swift in Sources */,
 				01692D1924A23A1200B221FA /* RxOperatorViewController.swift in Sources */,
 				01209BEB2455E30200C159BB /* CJLabel.m in Sources */,
 				0164491624A243480038DA33 /* RxObserverViewController.swift in Sources */,
 				01937EE824193353009BD6AD /* MVVMListFactory.swift in Sources */,
+				019F97202804931100C43CE9 /* Context.swift in Sources */,
 				010442B423B4E1C100B1BF54 /* OptionalViewController.swift in Sources */,
 				01026742242379B900CA6D00 /* UserProfileMultiDepartmentTableViewCell.swift in Sources */,
+				01DEC6CD27F830AC0070C89A /* GroupVC.swift in Sources */,
 				0182B7CE241A86C00033BF0A /* MVVMListImageTableViewCell.swift in Sources */,
 				0188AC7E242A3FA300BA7654 /* UserProfileThreePointsItemViewModel.swift in Sources */,
 				01E15CCC23BF58D800A69E23 /* SubscriptViewController.swift in Sources */,
+				01DD0C272800CFB300598818 /* TableViewAdapter.swift in Sources */,
+				019F97222804939300C43CE9 /* GroupCell.swift in Sources */,
 				010D6AC423A9FC6200B84621 /* BaseViewController.swift in Sources */,
+				01DEC6CF27F830B50070C89A /* Fetcher.swift in Sources */,
 				0187CBCA25E6906B008F4116 /* UIStackViewController.swift in Sources */,
 				01E68F9E266486FA008B8216 /* BPGesSlidePopupViewController.swift in Sources */,
 				0142205F269E984E001913B1 /* StructModel.swift in Sources */,
 				01937ED2241906B1009BD6AD /* MVVMListViewController.swift in Sources */,
 				01A550C3242864EB00472B6A /* UserProfileTableViewDataSource.swift in Sources */,
 				0171FF6524DBB05A00A5D0D4 /* UIViewController+Add.swift in Sources */,
+				01EACC6D26F1180D005B5EC1 /* FeedFeatureGating.c in Sources */,
 				01D38A0E241A770E00F6D74D /* MVVMListSecModel.swift in Sources */,
 				01E15CD223BF590B00A69E23 /* DeinitViewController.swift in Sources */,
+				01EDC95E277CBCC900315D83 /* LeakViewController.swift in Sources */,
 				0112F9A523BF57B30002788E /* BaseOperatorViewController.swift in Sources */,
+				01DEC6CB27F830A30070C89A /* GroupVM.swift in Sources */,
 				01937ECC2418FFA5009BD6AD /* MVVMView.swift in Sources */,
 				01B24E2F23BF358100677023 /* DataTypeConvertViewController.swift in Sources */,
 				0112F9AB23BF57E30002788E /* CollectionTypesViewController.swift in Sources */,

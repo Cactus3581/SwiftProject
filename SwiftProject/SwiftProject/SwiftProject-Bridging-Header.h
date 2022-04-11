@@ -13,4 +13,7 @@
 #import "CJLabel.h"
 #import "FeedScrollView.h"
 
+#import "CBridging.h"
+extern int(^ __nonnull getFgValueOfSwiftImpl)(const char *fg);
+
 #endif /* SwiftProject_Bridging_Header_h */

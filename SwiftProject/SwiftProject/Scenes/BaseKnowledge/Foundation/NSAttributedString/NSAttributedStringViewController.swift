@@ -2,21 +2,29 @@
 //  NSAttributedStringViewController.swift
 //  SwiftProject
 //
-//  Created by ryan on 2020/3/30.
+//  Created by ryan on 2020/3/20.
 //  Copyright © 2020 cactus. All rights reserved.
 //
 
 import UIKit
 
-//
-//  NSAttributedStringViewController.swift
-//  SwiftProject
-//
-//  Created by ryan on 2020/3/30.
-//  Copyright © 2020 cactus. All rights reserved.
-//
+extension String {
+    func x_toNSRange(_ range: Range<String.Index>) -> NSRange {
+        guard let from = range.lowerBound.samePosition(in: utf16),
+              let to = range.upperBound.samePosition(in: utf16) else {
+            return NSMakeRange(0, 0)
+        }
+        return NSMakeRange(utf16.distance(from: utf16.startIndex, to: from), utf16.distance(from: from, to: to))
+    }
 
-import UIKit
+    func x_toRange(_ range: NSRange) -> Range<String.Index>? {
+        guard let from16 = utf16.index(utf16.startIndex, offsetBy: range.location, limitedBy: utf16.endIndex) else { return nil }
+        guard let to16 = utf16.index(from16, offsetBy: range.length, limitedBy: utf16.endIndex) else { return nil }
+        guard let from = String.Index(from16, within: self) else { return nil }
+        guard let to = String.Index(to16, within: self) else { return nil }
+        return from ..< to
+    }
+}
 
 /*
  1. sizeThatFits 和 boundingRect的共同点：都需要提供文本和宽度，都是用来计算size的。
@@ -33,6 +41,67 @@ class NSAttributedStringViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    func test2() {
+        let a = NSMutableAttributedString(string: "abcd")
+        let b = NSMutableAttributedString(string: "ab👯‍♀️cd")
+
+        print(a.length, a.string, a.string.utf16.count, a.string.count)
+        print(b.length, b.string, b.string.utf16.count, b.string.count)
+
+        let aNSRange = NSRange(location: 0, length: a.length)
+        print(a.attributedSubstring(from: aNSRange))
+
+        let bNSRange = NSRange(location: 0, length: b.length)
+        print(b.attributedSubstring(from: bNSRange))
+    }
+
+    func test1() {
+        let a = "abcd"
+        let b = "ab👯‍♀️cd"
+        print(a.count, a.utf8.count, a.utf16.count)
+        print(b.count, b.utf8.count, b.utf16.count)
+
+        let c = a.utf8CString
+        let d = b.utf8CString
+        print(c.count)
+        print(d.count)
+
+        let aNSRange = NSRange(location: 0, length: a.count)
+        if let aRange = a.x_toRange(aNSRange) {
+            print(a.substring(with: aRange))
+        }
+
+        let bNSRange = NSRange(location: 0, length: b.utf16.count)
+        if let bRange = a.x_toRange(bNSRange) {
+            print(b.substring(with: bRange))
+        }
+
+        // 截取：用的count
+        print(a.prefix(3))
+        print(b.prefix(3))
+
+        // range 截取，用的count
+        let index3 = b.index(b.startIndex, offsetBy: 2)
+        let index4 = b.index(b.startIndex, offsetBy: 3)
+        let str5 = b[index3...index4]
+        print(str5)
+
+        // Range 和 NSRange 使用的length指的是字节数，不是字符数
+        let snowy = "❄️ Let it snow! ☃️"
+        let nsrange = NSRange(location: 0, length: 2)
+        if let range = Range(nsrange, in: snowy) {
+            print(snowy[range])
+        }
+
+        // 通过Range获取子串
+        let range: Range = b.range(of: "👯‍♀️")!
+        print(b.substring(with: range))
+        print(b[range])
+        print(b[range.lowerBound..<range.upperBound])
+
+        //  Range 与 NSRange 互相转换的方法
     }
 
     func test1(text: String) {
@@ -91,13 +160,13 @@ class NSAttributedStringViewController: BaseViewController {
     func getAttributes() -> [NSAttributedString.Key: Any] {
         //设置文本段落排版格式
           let paragraphStyle = NSMutableParagraphStyle()
-          paragraphStyle.lineSpacing = 45     //设置行间距
+          paragraphStyle.lineSpacing = 20     //设置行间距
           paragraphStyle.alignment = .left      //文本对齐方向
           paragraphStyle.lineBreakMode = .byWordWrapping
         let dic = [
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 32),
-            NSAttributedString.Key.kern: 0,
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20),
+            NSAttributedString.Key.kern: 3,
             NSAttributedString.Key.foregroundColor: UIColor.darkGray,
             NSAttributedString.Key.backgroundColor: UIColor.lightGray
             ] as [NSAttributedString.Key : Any]
@@ -212,18 +281,6 @@ class NSAttributedStringViewController: BaseViewController {
 
         let text = """
         君不见黄河之水天上来，奔流到海不复回。\n
-        君不见高堂明镜悲白发，朝如青丝暮成雪。\n
-        人生得意须尽欢，莫使金樽空对月。\n
-        天生我材必有用，千金散尽还复来。\n
-        烹羊宰牛且为乐，会须一饮三百杯。\n
-        岑夫子，丹丘生，将进酒，杯莫停。\n
-        与君歌一曲，请君为我倾耳听。\n
-        钟鼓馔玉不足贵，但愿长醉不愿醒。\n
-        古来圣贤皆寂寞，惟有饮者留其名。\n
-        陈王昔时宴平乐，斗酒十千恣欢谑。\n
-        主人何为言少钱，径须沽取对君酌。\n
-        五花马、千金裘，呼儿将出换美酒，与尔同销万古愁。\n
-        😄！
         """
 
         let attributeText = NSMutableAttributedString.init(string: text)
@@ -286,8 +343,9 @@ class NSAttributedStringViewController: BaseViewController {
         attributeText.addAttributes([NSAttributedString.Key.verticalGlyphForm: 0], range: NSMakeRange(0, count))
 
         //设置文本附件,取值为NSTextAttachment对象,常用于文字图片混排
-        let textAttachment : NSTextAttachment = NSTextAttachment()
-        textAttachment.image = UIImage.init(named: "profilegender")
+        let textAttachment: NSTextAttachment = NSTextAttachment()
+        let image = UIImage.init(named: "cactus_explicit")
+        textAttachment.image = image
         //计算文字高度
         let lineHeight = label.font.lineHeight
         //设置图片的显示大小

@@ -47,7 +47,7 @@ extension Reactive where Base: UICollectionView {
             let dataSource = RxCollectionViewReactiveArrayDataSourceSequenceWrapper<Sequence>(cellFactory: cellFactory)
             return self.items(dataSource: dataSource)(source)
         }
-        
+
     }
     
     /**
@@ -60,7 +60,6 @@ extension Reactive where Base: UICollectionView {
     - returns: Disposable object that can be used to unbind.
      
      Example
-
          let items = Observable.just([
              1,
              2,

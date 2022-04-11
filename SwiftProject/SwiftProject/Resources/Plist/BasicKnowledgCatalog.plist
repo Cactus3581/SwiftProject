@@ -372,7 +372,22 @@
 		<key>title</key>
 		<string> 线程</string>
 		<key>fileName</key>
-		<string>GCDViewController</string>
+		<string>ListViewController</string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>内存泄露</string>
+				<key>fileName</key>
+				<string>LeakViewController</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>GCD</string>
+				<key>fileName</key>
+				<string>GCDViewController</string>
+			</dict>
+		</array>
 	</dict>
 	<dict>
 		<key>title</key>

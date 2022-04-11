@@ -26,5 +26,11 @@
 		<key>fileName</key>
 		<string>ContainViewController</string>
 	</dict>
+	<dict>
+		<key>title</key>
+		<string>二级列表</string>
+		<key>fileName</key>
+		<string>GroupVC</string>
+	</dict>
 </array>
 </plist>

@@ -63,4 +63,12 @@ class CollectionTypesViewController: BaseViewController {
         var dict1: [String: String] = ["YYZ": "Toront", "DUB": "Dublin"]
         var dict2 = ["YYZ": "Toront", "DUB": "Dublin"]//简写
     }
+
+    func dict_merging() {
+        let dict1 = ["name": "Swift", "version": "5.3"]
+        let dict2 = ["platform": "iOS"]
+        let total = dict1.merging(dict2) { (first, _) -> String in
+            return first
+        }
+    }
 }

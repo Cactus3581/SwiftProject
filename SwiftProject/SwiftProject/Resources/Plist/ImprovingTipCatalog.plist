@@ -41,5 +41,11 @@
 		<key>fileName</key>
 		<string>NaviAndPresent</string>
 	</dict>
+	<dict>
+		<key>title</key>
+		<string>Swift与c转换</string>
+		<key>fileName</key>
+		<string>CBridgeController</string>
+	</dict>
 </array>
 </plist>

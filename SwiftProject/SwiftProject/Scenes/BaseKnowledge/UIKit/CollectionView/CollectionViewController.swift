@@ -11,15 +11,17 @@ import SnapKit
 
 class CollectionViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
-//    var dataSource = ["1","2","3"]
     var dataSource = ["1"]
+    var collectionview: UICollectionView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 50, height: 50)
-        layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 0
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 10
         let collectionview = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        self.collectionview = collectionview
         collectionview.delegate = self
         collectionview.dataSource = self
         self.view.addSubview(collectionview)
@@ -28,12 +30,23 @@ class CollectionViewController: BaseViewController, UICollectionViewDataSource, 
         }
         collectionview.register(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")
 
+        let item = UIBarButtonItem(title:"show",
+                                   style:.plain,
+                                   target:self,
+                                   action:#selector(click))
+        self.navigationItem.rightBarButtonItem = item
+    }
 
+    @objc
+    func click() {
+        dataSource.append("1")
+        UIView.performWithoutAnimation {
+            self.collectionview.performBatchUpdates {
+                let indexPath = IndexPath(item: dataSource.count-1, section: 0)
+                self.collectionview.insertItems(at: [indexPath])
+            } completion: { _ in
 
-        let dict1 = ["name": "Swift", "version": "5.3"]
-        let dict2 = ["platform": "iOS"]
-        let total = dict1.merging(dict2) { (first, _) -> String in
-            return first
+            }
         }
     }
 
@@ -52,35 +65,11 @@ class CollectionViewController: BaseViewController, UICollectionViewDataSource, 
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        dataSource[2] = "4"
-//        dataSource.remove(at: 0)
-//        dataSource.remove(at: 0)
-//        UIView.performWithoutAnimation {
-////            collectionView.performBatchUpdates({
-//                collectionView.reloadItems(at: [IndexPath(item: 2, section: 0)])
-//                collectionView.deleteItems(at: [IndexPath(item: 0, section: 0),IndexPath(item: 1, section: 0)])
-////            }, completion: nil)
-//
-//        }
-
-        // {"former count":"1","current count":"3","changeset":"delete 0,reload 1,insert 2"}        dataSource[2] = "4"
-
-        dataSource.insert("2", at: 1)
-        dataSource.insert("3", at: 2)
-//        dataSource[1] = "5"
+        dataSource.removeLast()
         UIView.performWithoutAnimation {
             collectionView.performBatchUpdates({
-                //collectionView.deleteItems(at: [IndexPath(item: 0, section: 0),IndexPath(item: 1, section: 0)])
-//                collectionView.reloadItems(at: [IndexPath(item: 0, section: 0)])
-                collectionView.insertItems(at: [IndexPath(item: 1, section: 0),IndexPath(item: 2, section: 0)])
+                collectionView.deleteItems(at: [indexPath])
             }, completion: nil)
         }
-
-//        UIView.performWithoutAnimation {
-//                //collectionView.deleteItems(at: [IndexPath(item: 0, section: 0),IndexPath(item: 1, section: 0)])
-//                collectionView.reloadItems(at: [IndexPath(item: 0, section: 0)])
-////                collectionView.insertItems(at: [IndexPath(item: 0, section: 0),IndexPath(item: 2, section: 0)])
-//        }
     }
-
 }
