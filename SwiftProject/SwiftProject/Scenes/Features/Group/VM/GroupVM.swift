@@ -9,82 +9,26 @@
 import RxSwift
 import RxCocoa
 
+/** GroupVM的设计：面向VC，管理dataSource、ViewDataState
+ 1. 管理并协调其下面的各个角色
+ 2. 不做具体的工作，具体工作由它管理的各个角色来实现
+*/
+
 final class GroupVM {
 
-    private var _dataSource: GroupDataSource
-    var dataSource: GroupDataSourceInterface {
-        return _dataSource
-    }
-
-    let fetcher = Fetcher()
-    let dataQueue = DataQueue()
-
-    let dataRelay: BehaviorRelay<GroupDataSourceInterface>
-    let disposeBag: DisposeBag
-
-    enum UpdateData {
-        case none,
-             waiting,
-             fetching,
-             success(GroupDataSourceInterface),
-             error
-    }
+    let data: DataSource
+    let viewDataState: ViewDataState
+    private let disposeBag: DisposeBag
 
     init() {
         self.disposeBag = DisposeBag()
-        let _dataSource = GroupDataSource()
-        self._dataSource = _dataSource
-        self.dataRelay = BehaviorRelay<GroupDataSourceInterface>(value: _dataSource)
+        let data = DataSource()
+        self.data = data
+        self.viewDataState = ViewDataState(data: data)
         setup()
     }
 
-    func setup() {
-        fetcher.dataRelay.subscribe(onNext: { [weak self] data in
-            let task = { [weak self] in
-                guard let self = self else { return }
-                self.handlaData(data)
-                self.fireRefresh(self._dataSource)
-            }
-            self?.dataQueue.addTask(task)
-        }).disposed(by: disposeBag)
-        fetcher.getParent()
-        fetcher.getChild()
-    }
-
-    func handlaData(_ datas: GroupDataState.Data) {
-        var isNeedUIReRender = true
-        datas.forEach({ data in
-            switch data {
-            case .none:
-                isNeedUIReRender = false
-                break
-            case .reloadData:
-                break
-            case .updateParent(let parentEntitys):
-                self._dataSource.update(parents: parentEntitys)
-                break
-
-            case .removeParent(let parentIds):
-                self._dataSource.remove(parentIds: parentIds)
-                break
-
-            case .updateChild(let childEntitys):
-                self._dataSource.update(childs: childEntitys)
-                break
-
-            case .removeChild(let childIds):
-                break
-
-            case .foldParent(let parentIds):
-                break
-            }
-        })
-    }
-
-    private func fireRefresh(_ data: GroupDataSourceInterface) {
-        DispatchQueue.main.async { [data, weak self] in
-            guard let self = self else { return }
-            self.dataRelay.accept(data)
-        }
+    private func setup() {
+        data.fetcher.refresh()
     }
 }

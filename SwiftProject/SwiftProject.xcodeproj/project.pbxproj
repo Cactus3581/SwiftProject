@@ -102,6 +102,9 @@
 		016FE6D923B5DD7800CE8784 /* sql.py in Resources */ = {isa = PBXBuildFile; fileRef = 016FE6D723B5DD7800CE8784 /* sql.py */; };
 		0171FF6524DBB05A00A5D0D4 /* UIViewController+Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0171FF6424DBB05A00A5D0D4 /* UIViewController+Add.swift */; };
 		0173DE7625120F7700EF1C65 /* StringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0173DE7525120F7700EF1C65 /* StringViewController.swift */; };
+		0177F0042805D0DD0076E3D3 /* GroupHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177F0032805D0DD0076E3D3 /* GroupHeader.swift */; };
+		0177F0062805D4310076E3D3 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177F0052805D4310076E3D3 /* DataSource.swift */; };
+		0177F0082805D4C10076E3D3 /* ViewDataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177F0072805D4C10076E3D3 /* ViewDataState.swift */; };
 		017FA20A25349038005BFCAB /* JSONViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017FA20925349038005BFCAB /* JSONViewController.swift */; };
 		0182B7C4241A78F40033BF0A /* MVVMListSectionTextFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182B7C3241A78F40033BF0A /* MVVMListSectionTextFooterView.swift */; };
 		0182B7C6241A79050033BF0A /* MVVMListSectionTextHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0182B7C5241A79050033BF0A /* MVVMListSectionTextHeaderView.swift */; };
@@ -184,6 +187,7 @@
 		01C01BB123BDE699008B2D9E /* EnumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C01BB023BDE699008B2D9E /* EnumViewController.swift */; };
 		01C01BB423BDEA97008B2D9E /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C01BB323BDEA97008B2D9E /* ClosureViewController.swift */; };
 		01C0DCB623FC08610069FF78 /* ProtocolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0156812F23BE28F100B42FB9 /* ProtocolViewController.swift */; };
+		01C3C509280D9147001B65A1 /* GroupDataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C3C508280D9147001B65A1 /* GroupDataState.swift */; };
 		01D38A0C241A770E00F6D74D /* MVVMListSecViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D389FD241A770E00F6D74D /* MVVMListSecViewModel.swift */; };
 		01D38A0D241A770E00F6D74D /* MVVMListSecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D389FF241A770E00F6D74D /* MVVMListSecViewController.swift */; };
 		01D38A0E241A770E00F6D74D /* MVVMListSecModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D38A01241A770E00F6D74D /* MVVMListSecModel.swift */; };
@@ -196,9 +200,9 @@
 		01DEC6CB27F830A30070C89A /* GroupVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DEC6CA27F830A30070C89A /* GroupVM.swift */; };
 		01DEC6CD27F830AC0070C89A /* GroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DEC6CC27F830AC0070C89A /* GroupVC.swift */; };
 		01DEC6CF27F830B50070C89A /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DEC6CE27F830B50070C89A /* Fetcher.swift */; };
-		01DEC6D127F830BF0070C89A /* GroupDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DEC6D027F830BF0070C89A /* GroupDataSource.swift */; };
+		01DEC6D127F830BF0070C89A /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DEC6D027F830BF0070C89A /* DataStore.swift */; };
 		01DEC6D627F83F770070C89A /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DEC6D527F83F770070C89A /* Entity.swift */; };
-		01DEC6D927F83FF10070C89A /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DEC6D827F83FF10070C89A /* Index.swift */; };
+		01DEC6D927F83FF10070C89A /* IndexData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DEC6D827F83FF10070C89A /* IndexData.swift */; };
 		01E058C62429E51B0073854E /* UserProfileLinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E058C52429E51B0073854E /* UserProfileLinkTableViewCell.swift */; };
 		01E15CC923BF583100A69E23 /* MethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CC823BF583100A69E23 /* MethodViewController.swift */; };
 		01E15CCC23BF58D800A69E23 /* SubscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E15CCB23BF58D800A69E23 /* SubscriptViewController.swift */; };
@@ -359,6 +363,9 @@
 		016FE6D723B5DD7800CE8784 /* sql.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = sql.py; sourceTree = "<group>"; };
 		0171FF6424DBB05A00A5D0D4 /* UIViewController+Add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Add.swift"; sourceTree = "<group>"; };
 		0173DE7525120F7700EF1C65 /* StringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringViewController.swift; sourceTree = "<group>"; };
+		0177F0032805D0DD0076E3D3 /* GroupHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupHeader.swift; sourceTree = "<group>"; };
+		0177F0052805D4310076E3D3 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		0177F0072805D4C10076E3D3 /* ViewDataState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDataState.swift; sourceTree = "<group>"; };
 		017FA20925349038005BFCAB /* JSONViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONViewController.swift; sourceTree = "<group>"; };
 		0182B7C3241A78F40033BF0A /* MVVMListSectionTextFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSectionTextFooterView.swift; sourceTree = "<group>"; };
 		0182B7C5241A79050033BF0A /* MVVMListSectionTextHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMListSectionTextHeaderView.swift; sourceTree = "<group>"; };
@@ -441,6 +448,7 @@
 		01BFFC74242DA501004AA94B /* UserProfileTagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTagsView.swift; sourceTree = "<group>"; };
 		01C01BB023BDE699008B2D9E /* EnumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumViewController.swift; sourceTree = "<group>"; };
 		01C01BB323BDEA97008B2D9E /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
+		01C3C508280D9147001B65A1 /* GroupDataState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDataState.swift; sourceTree = "<group>"; };
 		01D389FD241A770E00F6D74D /* MVVMListSecViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMListSecViewModel.swift; sourceTree = "<group>"; };
 		01D389FF241A770E00F6D74D /* MVVMListSecViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMListSecViewController.swift; sourceTree = "<group>"; };
 		01D38A01241A770E00F6D74D /* MVVMListSecModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMListSecModel.swift; sourceTree = "<group>"; };
@@ -454,9 +462,9 @@
 		01DEC6CA27F830A30070C89A /* GroupVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupVM.swift; sourceTree = "<group>"; };
 		01DEC6CC27F830AC0070C89A /* GroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupVC.swift; sourceTree = "<group>"; };
 		01DEC6CE27F830B50070C89A /* Fetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
-		01DEC6D027F830BF0070C89A /* GroupDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDataSource.swift; sourceTree = "<group>"; };
+		01DEC6D027F830BF0070C89A /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		01DEC6D527F83F770070C89A /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
-		01DEC6D827F83FF10070C89A /* Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
+		01DEC6D827F83FF10070C89A /* IndexData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexData.swift; sourceTree = "<group>"; };
 		01E058C52429E51B0073854E /* UserProfileLinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileLinkTableViewCell.swift; sourceTree = "<group>"; };
 		01E15CC823BF583100A69E23 /* MethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodViewController.swift; sourceTree = "<group>"; };
 		01E15CCB23BF58D800A69E23 /* SubscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptViewController.swift; sourceTree = "<group>"; };
@@ -1459,30 +1467,6 @@
 			path = GCD;
 			sourceTree = "<group>";
 		};
-		019F971A280490AA00C43CE9 /* ActionHandler */ = {
-			isa = PBXGroup;
-			children = (
-				019F971B280490B600C43CE9 /* ActionHandler.swift */,
-			);
-			path = ActionHandler;
-			sourceTree = "<group>";
-		};
-		019F971D280490D100C43CE9 /* DataQueue */ = {
-			isa = PBXGroup;
-			children = (
-				019F97182804849700C43CE9 /* DataQueue.swift */,
-			);
-			path = DataQueue;
-			sourceTree = "<group>";
-		};
-		019F971E2804930300C43CE9 /* Context */ = {
-			isa = PBXGroup;
-			children = (
-				019F971F2804931100C43CE9 /* Context.swift */,
-			);
-			path = Context;
-			sourceTree = "<group>";
-		};
 		019FE1A023C0E98600B241B1 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
@@ -1888,39 +1872,32 @@
 		01DEC6C427F830330070C89A /* Group */ = {
 			isa = PBXGroup;
 			children = (
-				019F971E2804930300C43CE9 /* Context */,
-				019F971D280490D100C43CE9 /* DataQueue */,
-				019F971A280490AA00C43CE9 /* ActionHandler */,
 				01DEC6D427F83AEC0070C89A /* Model */,
 				01DEC6C927F830740070C89A /* UI */,
 				01DEC6C827F830690070C89A /* VC */,
 				01DEC6C727F8305F0070C89A /* VM */,
-				01DEC6C627F8304F0070C89A /* Fetcher */,
-				01DEC6C527F830420070C89A /* DataSource */,
+				01DEC6C527F830420070C89A /* Store */,
 			);
 			path = Group;
 			sourceTree = "<group>";
 		};
-		01DEC6C527F830420070C89A /* DataSource */ = {
+		01DEC6C527F830420070C89A /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				01DEC6D027F830BF0070C89A /* GroupDataSource.swift */,
-			);
-			path = DataSource;
-			sourceTree = "<group>";
-		};
-		01DEC6C627F8304F0070C89A /* Fetcher */ = {
-			isa = PBXGroup;
-			children = (
+				0177F0052805D4310076E3D3 /* DataSource.swift */,
+				019F97182804849700C43CE9 /* DataQueue.swift */,
+				01DEC6D027F830BF0070C89A /* DataStore.swift */,
 				01DEC6CE27F830B50070C89A /* Fetcher.swift */,
+				01C3C508280D9147001B65A1 /* GroupDataState.swift */,
 			);
-			path = Fetcher;
+			path = Store;
 			sourceTree = "<group>";
 		};
 		01DEC6C727F8305F0070C89A /* VM */ = {
 			isa = PBXGroup;
 			children = (
 				01DEC6CA27F830A30070C89A /* GroupVM.swift */,
+				0177F0072805D4C10076E3D3 /* ViewDataState.swift */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -1930,6 +1907,8 @@
 			children = (
 				01DEC6CC27F830AC0070C89A /* GroupVC.swift */,
 				01DD0C262800CFB300598818 /* TableViewAdapter.swift */,
+				019F971B280490B600C43CE9 /* ActionHandler.swift */,
+				019F971F2804931100C43CE9 /* Context.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -1938,6 +1917,7 @@
 			isa = PBXGroup;
 			children = (
 				019F97212804939300C43CE9 /* GroupCell.swift */,
+				0177F0032805D0DD0076E3D3 /* GroupHeader.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1946,7 +1926,7 @@
 			isa = PBXGroup;
 			children = (
 				01DEC6D527F83F770070C89A /* Entity.swift */,
-				01DEC6D827F83FF10070C89A /* Index.swift */,
+				01DEC6D827F83FF10070C89A /* IndexData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2553,6 +2533,7 @@
 				019F97192804849700C43CE9 /* DataQueue.swift in Sources */,
 				01D38A14241A770E00F6D74D /* MVVMListSecAssembly.swift in Sources */,
 				01A3A40623BF5A3C003FEA19 /* MemorySafeViewController.swift in Sources */,
+				0177F0082805D4C10076E3D3 /* ViewDataState.swift in Sources */,
 				01EE3A1F2415288A008ECA89 /* SPSwiftViewController.swift in Sources */,
 				01C01BB423BDEA97008B2D9E /* ClosureViewController.swift in Sources */,
 				01A550C1242864C200472B6A /* UserProfileStorage.swift in Sources */,
@@ -2622,9 +2603,10 @@
 				01937EE324192DEA009BD6AD /* MVVMListTableViewCellProtocol.swift in Sources */,
 				01692D2224A23ABE00B221FA /* RxErrorHandlingViewController.swift in Sources */,
 				01E15CD523BF593300A69E23 /* OptionalChainViewController.swift in Sources */,
-				01DEC6D127F830BF0070C89A /* GroupDataSource.swift in Sources */,
+				01DEC6D127F830BF0070C89A /* DataStore.swift in Sources */,
 				0182B7C4241A78F40033BF0A /* MVVMListSectionTextFooterView.swift in Sources */,
 				011DEDD92527F71A006B2198 /* TextViewViewController.swift in Sources */,
+				0177F0042805D0DD0076E3D3 /* GroupHeader.swift in Sources */,
 				01E15CCF23BF58F300A69E23 /* InitializeViewController.swift in Sources */,
 				019A7E3E26C032A700F81E07 /* ContainViewController.swift in Sources */,
 				0108907E243C93E100DBF606 /* RxMVVMListViewController.swift in Sources */,
@@ -2670,7 +2652,7 @@
 				01E15CD823BF595200A69E23 /* ErrorhandlingViewController.swift in Sources */,
 				0156813023BE28F100B42FB9 /* ProtocolViewController.swift in Sources */,
 				01E9B3552420D9F000FF618D /* MVVMListSectionImageHeaderView.swift in Sources */,
-				01DEC6D927F83FF10070C89A /* Index.swift in Sources */,
+				01DEC6D927F83FF10070C89A /* IndexData.swift in Sources */,
 				010D6A9223A9FB4A00B84621 /* AppDelegate.swift in Sources */,
 				019A7E3B26C032A700F81E07 /* FeedSectionHeader.swift in Sources */,
 				0123471C25669FB80080DD98 /* NaviAndPresent1.swift in Sources */,
@@ -2703,6 +2685,7 @@
 				01089085243C940300DBF606 /* RxMVVMModel.swift in Sources */,
 				01EAE14626F119B9005B5EC1 /* CBridgeController.swift in Sources */,
 				01089082243C93F400DBF606 /* RxMVVMTableViewCell.swift in Sources */,
+				0177F0062805D4310076E3D3 /* DataSource.swift in Sources */,
 				01D38A0F241A770E00F6D74D /* MVVMListListeningTableViewCell.swift in Sources */,
 				01EA7BFD23ABA87A00712B20 /* ListViewController.swift in Sources */,
 				01ADB56E23BE296700EAB005 /* ClassStructViewController.swift in Sources */,
@@ -2724,6 +2707,7 @@
 				01DEC6CD27F830AC0070C89A /* GroupVC.swift in Sources */,
 				0182B7CE241A86C00033BF0A /* MVVMListImageTableViewCell.swift in Sources */,
 				0188AC7E242A3FA300BA7654 /* UserProfileThreePointsItemViewModel.swift in Sources */,
+				01C3C509280D9147001B65A1 /* GroupDataState.swift in Sources */,
 				01E15CCC23BF58D800A69E23 /* SubscriptViewController.swift in Sources */,
 				01DD0C272800CFB300598818 /* TableViewAdapter.swift in Sources */,
 				019F97222804939300C43CE9 /* GroupCell.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  Index.swift
+//  IndexData.swift
 //  SwiftProject
 //
 //  Created by 夏汝震 on 2022/4/2.
@@ -15,17 +15,21 @@ protocol IndexDataBaseInterface {
 
 protocol IndexDataInterface: IndexDataBaseInterface {
     var count: Int { get }
-    func update(childId: Int, originOrder: Int)
-    func remove(id: Int)
-    func remove(index: Int)
+    var hasMore: Bool? { set get }
+    mutating func update(childId: Int, originOrder: Int)
+    mutating func update(childIndexData: IndexData)
+    mutating func remove(id: Int)
+    mutating func remove(index: Int)
     func getIndexData(id: Int) -> IndexDataInterface?
     func getIndexData(index: Int) -> IndexDataInterface?
 }
 
-class IndexData: Hashable, IndexDataInterface {
+struct IndexData: Hashable, IndexDataInterface {
     let id: Int
     let parentId: Int
     private let originOrder: Int
+    // TODO: hasMore的默认值应该是true还是false
+    var hasMore: Bool?
     // 顺序关系
     private var childIndexList: [IndexData] = []
     // 辅助查询：key: id, value: IndexData的index
@@ -45,26 +49,25 @@ class IndexData: Hashable, IndexDataInterface {
         return IndexData(id: 0, parentId: 0, originOrder: 0)
     }
 
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    mutating func update(childId: Int, originOrder: Int) {
+        let indexData = IndexData(id: childId, parentId: parentId, originOrder: originOrder)
+        update(childIndexData: indexData)
     }
 
-    func update(childId: Int, originOrder: Int) {
-        if let index = self.childIndexMap[childId] {
-            let indexData = IndexData(id: childId, parentId: parentId, originOrder: originOrder)
-            self.childIndexList.replaceSubrange(index..<(index + 1), with: [indexData])
+    mutating func update(childIndexData: IndexData) {
+        if let index = self.childIndexMap[childIndexData.id] {
+            self.childIndexList.replaceSubrange(index..<(index + 1), with: [childIndexData])
         } else {
-            let indexData = IndexData(id: childId, parentId: parentId, originOrder: originOrder)
-            self.childIndexList.append(indexData)
+            self.childIndexList.append(childIndexData)
         }
     }
 
-    func remove(id: Int) {
+    mutating func remove(id: Int) {
         guard let index = self.childIndexMap[id] else { return }
         remove(index: index)
     }
 
-    func remove(index: Int) {
+    mutating func remove(index: Int) {
         guard index < self.childIndexList.count else { return }
         self.childIndexList.remove(at: index)
     }
@@ -83,7 +86,7 @@ class IndexData: Hashable, IndexDataInterface {
         return self.childIndexMap[id]
     }
 
-    func sort() {
+    mutating func sort() {
         self.childIndexList = self.childIndexList.sorted(by: { $0.originOrder > $1.originOrder })
         self.childIndexMap.removeAll()
         for i in 0..<childIndexList.count {
@@ -92,11 +95,11 @@ class IndexData: Hashable, IndexDataInterface {
         }
     }
 
-    static func == (lhs: IndexData, rhs: IndexData) -> Bool {
-        return lhs === rhs
-    }
-    
     func hash(into hasher: inout Hasher) {
-        ObjectIdentifier(self).hash(into: &hasher)
+        hasher.combine(id)
+    }
+
+    static func == (lhs: IndexData, rhs: IndexData) -> Bool {
+        return lhs.id == rhs.id
     }
 }

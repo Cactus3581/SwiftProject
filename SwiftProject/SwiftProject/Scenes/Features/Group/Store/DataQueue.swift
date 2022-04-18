@@ -8,6 +8,11 @@
 
 import Foundation
 
+/** DataQueue的设计：队列的纯粹操作
+1. 增加queue日志
+2. 丰富queue函数
+*/
+
 class DataQueue {
 
     enum TaskType: String {

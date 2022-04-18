@@ -11,17 +11,23 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class TableViewAdapter: NSObject, UITableViewDataSource, UITableViewDelegate {
-    let vm: GroupVM
-    weak var tableView: UITableView?
-    let actionHandler: ActionHandler
-    let disposeBag: DisposeBag
+/** TableViewAdapter的设计：分担VC的工作（tableView相关）
+ 1. 实现tableView相关协议
+ 2. 实现刷新table
+ 3. loadmore 触发器
+*/
 
-    init(vm: GroupVM,
-         table: UITableView,
+final class TableViewAdapter: NSObject, UITableViewDataSource, UITableViewDelegate {
+    private weak var tableView: UITableView?
+    private let viewDataState: ViewDataState
+    private let actionHandler: ActionHandler
+    private let disposeBag: DisposeBag
+
+    init(table: UITableView,
+         viewDataState: ViewDataState,
          actionHandler: ActionHandler) {
-        self.vm = vm
         self.tableView = table
+        self.viewDataState = viewDataState
         self.actionHandler = actionHandler
         self.disposeBag = DisposeBag()
         super.init()
@@ -32,34 +38,22 @@ final class TableViewAdapter: NSObject, UITableViewDataSource, UITableViewDelega
         fatalError("Not supported")
     }
 
-    func setup() {
-        bind()
-    }
-
-    func bind() {
-        tableView?.register(GroupCell.self, forCellReuseIdentifier: "cell")
-        vm.dataRelay
-            .asObservable()
-            .observe(on: MainScheduler.instance)
-            .subscribe(onNext: { [weak self] data in
-            self?.tableView?.reloadData()
-        }).disposed(by: disposeBag)
-    }
-
     func numberOfSections(in tableView: UITableView) -> Int {
-        return vm.dataSource.indexData.count
+        return viewDataState.sectionCount
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return vm.dataSource.indexData.getIndexData(index: section)?.count ?? 0
+        guard let parent = viewDataState.getParentEntity(section: section) else { return 0 }
+        guard viewDataState.getExpandState(id: parent.id) ?? false else { return 0 }
+        return viewDataState.count(in: section)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let child = vm.dataSource.getChildEntity(indexPath: indexPath),
+        guard let child = viewDataState.getChildEntity(indexPath: indexPath),
            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? GroupCell else {
                return tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         }
-        cell.setContent(row: indexPath.row)
+        cell.setContent(indexPath: indexPath, entity: child)
         cell.setActionHandler(actionHandler)
         return cell
     }
@@ -69,14 +63,19 @@ final class TableViewAdapter: NSObject, UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "")  else {
+        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? GroupHeader else {
             return nil
         }
+        guard let parent = viewDataState.getParentEntity(section: section) else {
+            return nil
+        }
+        header.setContent(section: section, entity: parent)
+        header.setActionHandler(actionHandler)
         return header
     }
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 12
+        return 0
     }
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -92,5 +91,54 @@ final class TableViewAdapter: NSObject, UITableViewDataSource, UITableViewDelega
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard tableView.cellForRow(at: indexPath) != nil else { return }
+    }
+
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let parent = viewDataState.getParentEntity(section: section) else {
+            return
+        }
+        self.viewDataState.loadChild(sectionId: parent.id, index: section)
+    }
+}
+
+extension TableViewAdapter {
+
+    private func setup() {
+        tableView?.register(GroupCell.self, forCellReuseIdentifier: "cell")
+        tableView?.register(GroupHeader.self, forHeaderFooterViewReuseIdentifier: "header")
+
+        viewDataState.renderObservable
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] extraInfo in
+                self?.render(extraInfo.render)
+                self?.viewDataState.renderFinish(dataFrom: extraInfo.dataFrom)
+        }).disposed(by: disposeBag)
+    }
+
+    private func render(_ render: ViewDataState.Render) {
+        switch render {
+        case .none:
+            break
+        case .fullReload:
+            fullReload()
+        case .reloadSection(let section):
+            reloadSection(section)
+        }
+    }
+
+    private func reloadSection(_ section: Int) {
+        guard let tableView = self.tableView else { return }
+        guard section < tableView.numberOfSections else {
+            fullReload()
+            return
+        }
+        let task = {
+            tableView.reloadSections(IndexSet(integer: section), with: .automatic)
+        }
+        tableView.performBatchUpdates(task, completion: nil)
+    }
+
+    private func fullReload() {
+        tableView?.reloadData()
     }
 }

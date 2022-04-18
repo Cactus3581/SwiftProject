@@ -10,15 +10,16 @@ import Foundation
 
 struct ParentEntity {
     let id: Int
-    let position: Int
+    let item: EntityItem
 }
 
 struct ChildEntity {
-    let parentItems: [Int:ParentItem]
     let id: Int
+    let item: EntityItem
 }
 
-struct ParentItem {
+struct EntityItem {
+    let id: Int
     let parentId: Int
     let position: Int
 }

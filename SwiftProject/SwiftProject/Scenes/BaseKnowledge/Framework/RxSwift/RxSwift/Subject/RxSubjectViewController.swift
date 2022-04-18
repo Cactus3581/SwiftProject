@@ -14,9 +14,34 @@ import RxCocoa
 class RxSubjectViewController: BaseViewController {
 
     let disposeBag = DisposeBag()
+    let subject1 = PublishSubject<String>()
+    let subject2 = PublishSubject<String>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+    }
+
+    func testZip() {
+        subject2.onNext("a")
+        subject2.onNext("b")
+        subject2.onNext("c")
+
+//        var localBag = DisposeBag()
+        Observable.zip(subject1.asObservable(), subject2.asObservable())
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] a, b in
+                print("aaaaaa: \(a), b: \(b)")
+//                localBag = DisposeBag()
+            }).disposed(by: self.disposeBag)
+
+        subject2.onNext("d")
+        subject2.onNext("e")
+        subject2.onNext("f")
+        subject1.onNext("A")
+        subject2.onNext("g")
+        subject2.onNext("h")
+        subject1.onNext("B")
     }
 
     //MARK:订阅方法
